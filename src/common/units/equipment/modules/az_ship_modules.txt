@@ -1,0 +1,332 @@
+equipment_modules = {
+	light_ship_daodan = {
+		abbreviation = "sad"
+		category = ship_light_battery
+		gfx = DOH_daodan
+		
+		add_stats = {
+			lg_attack = 10
+			hg_attack = 12.5
+			naval_light_gun_hit_chance_factor = 0.1
+			naval_heavy_gun_hit_chance_factor = 0.1
+			build_cost_ic = 1200	
+		}
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+			tungsten = 1
+		}
+		multiply_stats = {
+			reliability = -0.05
+		}
+		add_average_stats = {
+			lg_armor_piercing = 100
+			hg_armor_piercing = 100
+		}
+
+		critical_parts = { damaged_light_guns }
+	}	
+	heavy_ship_cruiser_daodan = {
+		abbreviation = "sad"
+		category = ship_medium_battery
+		add_equipment_type = capital_ship
+		gfx = DOH_daodan
+		
+		add_stats = {
+			lg_attack = 20
+			hg_attack = 25
+			naval_light_gun_hit_chance_factor = 0.1
+			naval_heavy_gun_hit_chance_factor = 0.1
+			build_cost_ic = 1800	
+		}
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+			tungsten = 1
+		}
+		multiply_stats = {
+			reliability = -0.05
+		}
+		add_average_stats = {
+			lg_armor_piercing = 100
+			hg_armor_piercing = 100
+		}
+		forbid_module_categories = {
+		    ship_light_medium_battery
+		    dp_light_battery
+		    ship_light_battery  
+		}
+		critical_parts = { damaged_heavy_guns }
+	}
+	heavy_ship_daodan = {
+		abbreviation = "sad"
+		category = ship_heavy_battery
+		gfx = DOH_daodan
+		
+		add_stats = {
+			lg_attack = 40
+			hg_attack = 50
+			naval_light_gun_hit_chance_factor = 0.1
+			naval_heavy_gun_hit_chance_factor = 0.1
+			build_cost_ic = 2800	
+		}
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+			tungsten = 1
+		}
+		multiply_stats = {
+			reliability = -0.05
+		}
+		add_average_stats = {
+			lg_armor_piercing = 100
+			hg_armor_piercing = 100
+		}
+
+		critical_parts = { damaged_heavy_guns }
+	}	
+	super_heavy_battery_daodan = {
+		abbreviation = "sad"
+		category = ship_super_heavy_battery
+		gfx = DOH_daodan
+		
+		add_stats = {
+			lg_attack = 60
+			hg_attack = 75
+			naval_light_gun_hit_chance_factor = 0.1
+			naval_heavy_gun_hit_chance_factor = 0.1
+			build_cost_ic = 3800	
+		}
+		build_cost_resources = {
+			steel = 1
+			chromium = 1
+			tungsten = 1
+		}
+		multiply_stats = {
+			reliability = -0.05
+		}
+		add_average_stats = {
+			lg_armor_piercing = 100
+			hg_armor_piercing = 100
+		}
+
+		critical_parts = { damaged_heavy_guns }
+	}
+	ship_damagecontrol_xzmf = {
+		category = ship_damagecontrol
+		gfx = ship_manjiusunguan_xzmf
+		
+		add_stats = {
+			reliability = 0.1
+			
+		}
+		add_average_stats = {
+			
+		}
+		multiply_stats = {
+			max_strength = 0.15
+			reliability = 0.15
+			
+		}
+		build_cost_resources = {
+			
+		}
+		
+	}
+	ship_damagecontrol_xzmf_yuanban = {
+		category = ship_secondaries
+		gfx = ship_manjiusunguan_xzmf
+		
+		add_stats = {
+			reliability = 0.1
+			
+		}
+		add_average_stats = {
+			
+		}
+		multiply_stats = {
+			max_strength = 0.15
+			reliability = 0.15
+			
+		}
+		build_cost_resources = {
+			
+		}
+		
+	}
+	ship_fire_control_system_xzmf = {
+		category = ship_fire_control_system
+		gfx = ship_fire_control_system_xzmf
+		
+		
+		manpower = 0
+		add_stats = {
+			build_cost_ic = 500
+			supply_consumption = 0.001
+			naval_light_gun_hit_chance_factor = 0.2
+			naval_heavy_gun_hit_chance_factor = 0.2
+			
+		}
+		add_average_stats = {
+			
+		}
+		multiply_stats = {
+			anti_air_attack = 0.4
+			
+		}
+		build_cost_resources = {
+			
+		}
+		
+	}
+	ship_anti_air_daodan = {
+		category = ship_anti_air
+		gfx = DOH_daodan
+
+		add_equipment_type = anti_air
+		add_stats = {
+			anti_air_attack = 10
+			build_cost_ic = 500
+		}
+		
+		multiply_stats = {
+			build_cost_ic = 0.05
+			anti_air_attack = 0.3
+		}
+		build_cost_resources = {
+			
+		}
+
+	}
+	ship_torpedo_sub_xzmf = {
+		category = ship_torpedo_sub
+        gfx = ship_torpedo_sub_xzmf
+
+		add_stats = {
+			torpedo_attack = 56
+			build_cost_ic = 400
+			naval_torpedo_hit_chance_factor = 0.04
+		}
+		multiply_stats = {
+			naval_speed = -0.04			
+		}
+
+		critical_parts = { damaged_torpedoes }
+	}
+	ship_torpedo_xzmf = {
+		category = ship_torpedo
+        gfx = ship_torpedo_xzmf
+
+		add_stats = {
+			torpedo_attack = 72
+			build_cost_ic = 500
+			naval_torpedo_hit_chance_factor = 0.04
+		}
+		multiply_stats = {
+			naval_speed = -0.04			
+		}
+
+		critical_parts = { damaged_torpedoes }
+	}
+	ship_deck_space_xzmf = {
+		category = ship_deck_space
+		gfx = ship_deck_space_xzmf
+
+		add_equipment_type = capital_ship
+		add_stats = {
+			carrier_size = 4
+			build_cost_ic = 6000
+		}
+		manpower = 500 #outside the add_stats section for code reasons
+		multiply_stats = {
+			naval_speed = -0.05
+		}
+		build_cost_resources = {
+			steel = 1
+		}
+    }
+	heavy_ship_engine_xzmf = {
+		category = heavy_ship_engine
+		gfx = ship_engine_xzmf
+
+		add_stats = {
+			naval_speed = 15
+			fuel_consumption = 10
+			build_cost_ic = 4000
+		}
+		
+		multiply_stats = {
+			naval_speed = 0.55
+			reliability = -0.05
+			
+		}
+	}
+	cruiser_ship_engine_xzmf = {
+		category = cruiser_ship_engine
+		gfx = ship_engine_xzmf
+
+		
+		add_stats = {
+			naval_speed = 10
+			fuel_consumption = 5
+			build_cost_ic = 1000
+		}
+		
+		multiply_stats = {
+			naval_speed = 0.55
+			reliability = -0.05
+		}
+		
+	}
+	sub_ship_engine_xzmf = {
+		category = sub_ship_engine
+		gfx = ship_engine_xzmf
+
+		
+		add_stats = {
+			fuel_consumption = 5
+			build_cost_ic = 500
+		}
+		
+		multiply_stats = {
+			naval_speed = 0.25
+			sub_visibility = -0.2
+		}
+		
+	}
+	light_ship_engine_xzmf = {
+		category = light_ship_engine
+		gfx = ship_engine_xzmf
+
+		
+		add_stats = {
+			naval_speed = 7
+			fuel_consumption = 5
+			build_cost_ic = 500
+		}
+		
+		multiply_stats = {
+			naval_speed = 0.55
+			reliability = -0.05
+		}
+		
+	}
+    carrier_ship_engine_xzmf = {
+		category = carrier_ship_engine
+		gfx = ship_engine_xzmf
+
+		
+		add_stats = {
+			naval_speed = 7
+			fuel_consumption = 10
+			build_cost_ic = 4000
+		}
+		
+		multiply_stats = {
+			naval_speed = 0.55
+			reliability = -0.05
+		}
+		
+	}
+
+}

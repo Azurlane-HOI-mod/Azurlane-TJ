@@ -1,0 +1,153 @@
+CHY_colonial_police_final = {
+	icon = 13
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	fallback_law = foreign_civilian_oversight
+
+	visible = {
+		is_puppet = no
+		original_tag = CHY
+		OR = {
+			has_completed_focus = CHY_badao
+			has_completed_focus = CHY_kuangredekuozhangzhuyi
+		}
+	}
+
+	state_modifier = {
+		resistance_target 				= 0.3
+		required_garrison_factor 		= 0.3
+		resistance_damage_to_garrison	= 0.2
+		local_factories 				= 0.35
+		local_resources 				= 0.45
+
+	}
+
+
+	ai_will_do = {
+		base = 800
+	}
+}
+
+YUW_colonial_police_final = {
+	icon = 2
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		is_puppet = no
+		original_tag = YUW
+		has_completed_focus = YUW_yidapianlan
+		not = { has_completed_focus = YUW_zhengxinyongheng }
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.30
+		compliance_gain 				= 0.03
+		required_garrison_factor 		= -0.5
+		resistance_damage_to_garrison 	= -0.5
+		production_speed_buildings_factor = 0.1
+		local_factories 				= -0.2
+		local_resources 				= 0.2
+		enemy_operative_detection_chance_over_occupied_tag = -0.25 
+		enemy_intel_network_gain_factor_over_occupied_tag = 0.25 
+	}
+
+
+	ai_will_do = {
+		base = 800
+	}
+}
+
+YUW_chuanjiao_laws = {
+	icon = 2
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		is_puppet = no
+		original_tag = YUW
+		has_completed_focus = YUW_zhengxinyongheng
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.30
+		compliance_gain 				= 0.05
+		required_garrison_factor 		= -0.5
+		resistance_damage_to_garrison 	= -0.5
+		enemy_operative_detection_chance_over_occupied_tag = 0.25 
+		enemy_intel_network_gain_factor_over_occupied_tag = -0.25 
+	}
+
+
+	ai_will_do = {
+		base = 800
+	}
+}
+
+BLI_autonomous_occupation = {
+	icon = 2
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		is_puppet = no
+		original_tag = BLI
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.2
+		required_garrison_factor 		= 0.05
+		compliance_gain 				= 0.03
+		local_factories 				= 0.25
+		local_resources 				= 0.25
+	}
+
+	ai_will_do = {
+		base = 800
+	}
+}
+
+SIR_autonomous_occupation = {
+	icon = 10
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		is_puppet = no
+		original_tag = SIR
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.99
+		required_garrison_factor 		= -0.69
+		compliance_gain 				= 0.10
+	}
+
+	ai_will_do = {
+		base = 800
+	}
+}
+
+TIX_colonial_police_final = {
+	icon = 10
+	sound_effect = "Martial_Law_Interface_Harsh_Quotas_Occupation"
+
+	visible = {
+		is_puppet = no
+		original_tag = TIX
+		has_completed_focus = TIX_tiexuededaolu
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.2
+		compliance_gain 				= -0.02
+		required_garrison_factor 		= -0.3
+		resistance_damage_to_garrison 	= -0.3
+		production_speed_buildings_factor = 0.3
+		local_factories 				= 0.35
+		local_resources 				= 0.4
+		enemy_operative_detection_chance_over_occupied_tag = 0.25 
+		enemy_intel_network_gain_factor_over_occupied_tag = -0.25 
+	}
+
+
+	ai_will_do = {
+		base = 800
+	}
+}

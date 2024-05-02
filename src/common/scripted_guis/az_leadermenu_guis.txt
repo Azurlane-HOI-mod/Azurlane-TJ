@@ -1,0 +1,833 @@
+scripted_gui = {
+	az_leadermenu_open_button_window_guis = {
+		window_name = "az_leadermenu_open_button_window"
+		context_type = player_context
+		visible = {
+			always = yes
+		}  
+		effects = {
+			az_leadermenu_open_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = az_leadermenu_main_window_show
+						}
+						
+					}
+					 set_country_flag = az_leadermenu_main_window_show 
+				}
+				else = {
+					clr_country_flag = az_leadermenu_main_window_show 
+				}
+				shaixuan_leader_seffect = yes
+			}
+		}
+	}
+	az_leadermenu_main_window_guis = {
+		window_name = "az_leadermenu_main_window"
+		context_type = player_context
+		visible = {
+			has_country_flag = az_leadermenu_main_window_show
+		}  
+		triggers = {
+		
+
+			####
+			
+			####舰娘菜单
+			az_single_leader_xiuchangjia_click_enabled = {
+				is_country_leader = no  
+			}
+			az_single_leader_xiuchangjia_visible = {
+				always = NO
+			}
+			
+			az_single_leader_xiujia_click_enabled = {
+				NOT = { has_character_flag = xiujia_doing }
+				is_assigned = no
+				check_variable = {
+					ROOT.wz_sl > var:THIS.xiujia_leader_wuzi_cost
+				}
+				#always = NO 
+			}  
+			az_single_leader_qianghua_click_enabled = {
+				#lv1
+				if = {
+					limit = {
+						THIS = {
+							skill > 0
+							skill < 2
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >499
+					}
+				}
+				#lv2  
+				if = {
+					limit = {
+						THIS = {
+							skill > 1
+							skill < 3
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >999
+					}
+				}
+				#lv3
+				if = {
+					limit = {
+						THIS = {
+							skill > 2 
+							skill < 4
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >2999
+					}
+				}
+				#lv4
+				if = {
+					limit = {
+						THIS = {
+							skill > 3 
+							skill < 5 
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >5999
+					}
+				}
+				#lv5
+				
+				if = {
+					limit = {
+						THIS = {
+							skill > 4 
+							skill < 6 
+						}
+
+					}
+					check_variable = { 
+						ROOT.ROOT.wz_sl >9999
+					} 
+					check_variable = {
+						ROOT.ROOT.xzmf_sl >0 
+					} 
+				}
+				
+				
+				#lv6
+				if = {
+					limit = {
+						THIS = {
+							skill > 5 
+							skill < 7 
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >14999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >0
+					}
+				}
+				#lv7
+				if = {
+					limit = {
+						THIS = {
+							skill > 6
+							skill < 8 
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >19999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >1
+					}
+				}
+				#lv8
+				if = {
+					limit = {
+						THIS = {
+							skill > 7 
+							skill < 9 
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >29999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >1
+					}
+				}
+				#lv9
+				if = {
+					limit = {
+						THIS = {
+							skill > 8
+							skill < 10 
+							is_navy_leader = NO
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >34999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >2
+					}
+					check_variable = {
+						ROOT.zs_sl >19
+					}
+				}
+				#lv9haijun
+				if = {
+					limit = {
+						THIS = { 
+							is_navy_leader = yes
+							skill > 8
+						}
+					}
+					always = NO
+				}
+				#lv10
+				if = {
+					limit = {
+						THIS = {
+							skill > 9 
+							skill < 11 
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >39999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >2
+					}
+					check_variable = {
+						ROOT.zs_sl >59
+					}
+				}
+				#lv11
+				if = {
+					limit = {
+						THIS = {
+							skill > 10
+							skill < 12
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >49999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >3
+					}
+					check_variable = {
+						ROOT.zs_sl >99
+					}
+				}
+				#lv12
+				if = {
+					limit = {
+						THIS = {
+							skill > 11
+						}
+					}
+					always = NO
+				}
+			}
+		} 
+		effects = {
+			####筛选
+			az_leadermenu_shaixuan_button_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = az_leadermenu_shaixuan_window_show
+							}
+						}
+					}
+					ROOT = { set_country_flag = az_leadermenu_shaixuan_window_show }
+				}
+				else = {
+					ROOT = { clr_country_flag = az_leadermenu_shaixuan_window_show }
+				}
+			}
+			
+
+			####舰娘菜单
+			az_leadermenu_main_window_close_button_click = {
+				clr_country_flag = az_leadermenu_main_window_show
+			}
+			az_single_leader_xiuchangjia_click = {
+
+					if = {
+						limit = {
+							THIS = {
+								OR = {
+									is_corps_commander = yes
+									is_field_marshal = yes
+								}
+							}
+						}
+						add_skill_level = -12
+						add_logistics = -15
+						add_planning = -15
+						add_defense = -15
+						add_attack = -15
+					}
+					else_if = {
+						limit = {
+							THIS = {
+							is_navy_leader = yes
+							}
+						}
+						add_skill_level = -9
+						add_coordination = -10
+						add_maneuver = -10
+						add_defense = -10
+						add_attack = -10
+					}
+				
+			}
+			az_single_leader_qianghua_click = {
+				#lv1
+				if = { 
+					limit = {
+						skill > 0
+						skill < 2
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -500
+					}
+					
+					add_skill_level = 1
+					
+				}
+				#lv2
+				else_if = {
+					limit = {
+						
+							skill > 1
+							skill < 3
+						
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -1000
+					}
+					
+						add_skill_level = 1
+					
+				}
+				#lv3
+				else_if = {
+					limit = {
+						
+							skill > 2 
+							skill < 4
+						
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -3000
+					}
+					
+						add_skill_level = 1
+					
+				}
+				#lv4
+				else_if = {
+					limit = {
+						
+							skill > 3 
+							skill < 5 
+						
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -6000
+					}
+					
+						add_skill_level = 1
+					
+				}
+				#lv5
+				else_if = {
+					limit = {
+						
+							skill > 4 
+							skill < 6 
+						
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -10000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -1
+					}
+					
+						add_skill_level = 1
+					
+				}
+				#lv6
+				else_if = {
+					limit = {
+						
+							skill > 5 
+							skill < 7 
+						
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -15000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -1
+					}
+					
+						add_skill_level = 1
+					
+				}
+				#lv7
+				else_if = {
+					limit = {
+						
+							skill > 6
+							skill < 8 
+						
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -20000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -2
+					}
+					
+						add_skill_level = 1
+					
+				}
+				#lv8
+				else_if = {
+					limit = {
+						
+							skill > 7 
+							skill < 9 
+						
+					}
+					
+					add_to_variable = {
+						ROOT.wz_sl = -30000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -2
+					}
+					
+					randomize_temp_variable = { 
+						var = chenggonggailv 
+						distribution = uniform
+						min = 0
+						max = 100
+					} 
+					if = {
+						limit = {
+							check_variable = { 
+								chenggonggailv > 20
+							}
+						}
+						
+						add_skill_level = 1
+						
+					}
+					else = {
+						
+						PREV = { unit_leader_event = getzhg_event.2501 } 
+						
+					}
+					
+					
+					
+				}
+				#lv9
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 8
+							skill < 10 
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -35000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -3
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -20
+					}
+					randomize_temp_variable = {
+						var = chenggonggailv 
+						distribution = uniform
+						min = 0
+						max = 100
+					}
+					if = {
+						limit = {
+							check_variable = { 
+								chenggonggailv > 25
+							}
+						}
+						
+						add_skill_level = 1
+						
+					}
+					else = {
+						
+						PREV = { unit_leader_event = getzhg_event.2501 } 
+						
+					}
+				}
+				#lv10
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 9 
+							skill < 11 
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -40000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -3
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -60
+					}
+					randomize_temp_variable = {
+						var = chenggonggailv 
+						distribution = uniform
+						min = 0
+						max = 100
+					}
+					if = {
+						limit = {
+							check_variable = { 
+								chenggonggailv > 30
+							}
+						}
+						
+						add_skill_level = 1
+						
+					}
+					else = {
+						
+						PREV = { unit_leader_event = getzhg_event.2501 } 
+						
+					}
+				}
+				#lv11
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 10
+							skill < 12
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -50000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -4
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -100
+					}
+					randomize_temp_variable = {
+						var = chenggonggailv 
+						distribution = uniform
+						min = 0
+						max = 100
+					}
+					randomize_temp_variable = {
+						var = chenggonggailv 
+						distribution = uniform
+						min = 0
+						max = 100
+					}
+					if = {
+						limit = {
+							check_variable = { 
+								chenggonggailv > 40
+							}  
+						}
+						
+						add_skill_level = 1
+						
+					}
+					else = {
+						
+						PREV = { unit_leader_event = getzhg_event.2501 } 
+						
+					}
+				} 
+				
+			}
+			az_single_leader_xiujia_click = {
+				ROOT = {
+					add_to_variable = { xiujia_leader_amount = 1 }
+					set_variable = { xiujia_leader_modifier_cm_gain_var = xiujia_leader_amount }
+					set_variable = { xiujia_leader_modifier_cm_max_var = xiujia_leader_amount }
+					set_variable = { xiujia_leader_modifier_pp_var = xiujia_leader_amount }
+					multiply_variable = { xiujia_leader_modifier_cm_gain_var = -0.25 }
+					multiply_variable = { xiujia_leader_modifier_cm_max_var = -20 }
+					multiply_variable = { xiujia_leader_modifier_pp_var = -0.05 }
+
+				}
+				#set_temp_variable = { THIS.skill_level }
+				#ROOT = { add_command_power = 500 }
+				THIS = { 
+					set_variable = { THIS.xiujia_leader_wuzi_cost = THIS.num_traits }
+					multiply_variable = { THIS.xiujia_leader_wuzi_cost = 200 }
+					subtract_from_variable = { ROOT.wz_sl = THIS.xiujia_leader_wuzi_cost }
+					set_character_flag = xiujia_doing
+					log = "xiujia_leader_amount=[?xiujia_leader_amount]"
+					random_list = {
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2601 days = 60 random_days = 60 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2602 days = 90 random_days = 60 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2603 days = 120 random_days = 60 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2604 days = 90 random_days = 60 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2606 days = 90 random_days = 30 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2607 days = 60 random_days = 30 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2608 days = 60 random_days = 30 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2609 days = 90 random_days = 90 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2610 days = 60 random_days = 60 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2611 days = 120 random_days = 90 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2612 days = 60 random_days = 60 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2613 days = 90 random_days = 90 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2614 days = 90 random_days = 60 }
+						}
+						10 = { 
+							unit_leader_event = { id = getzhg_event.2615 days = 60 random_days = 60 }
+						}
+						1 = { 
+							unit_leader_event = { id = getzhg_event.2616 days = 150 random_days = 150}
+						}
+					}
+					
+				}
+			}
+			az_single_leader_huanzhuang_click = {
+				ROOT = {
+					set_variable = {
+						huanzhuangleader = PREV
+					}	
+				}
+				
+				THIS = {
+					unit_leader_event = getzhg_event.24
+					
+				} 
+			}
+			
+		}
+		dynamic_lists = {
+            az_leadermenu_gridbox = {
+                array = ROOT.az_leader_list_array
+                entry_container = az_single_leader_menu
+		        change_scope = yes 
+            }
+        }
+	
+	}
+	az_leadermenu_shaixuan_window_guis = {
+		window_name = "az_leadermenu_shaixuan_window"
+		 
+		context_type = player_context 
+
+		visible = { 
+			ROOT = { 
+
+				AND = {
+					has_country_flag = az_leadermenu_shaixuan_window_show 
+					has_country_flag = az_leadermenu_main_window_show
+				}
+				
+			
+			}
+		} 
+		effects = {
+			az_leadermenu_shaixuan_window_close_button_click = {
+				clr_country_flag = az_leadermenu_shaixuan_window_show
+			}
+			leader_shaixuan_btn1_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = leader_shaixuan_lujunjiangling
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_lujunjiangling }
+				}
+				else = {
+					ROOT = { clr_country_flag = leader_shaixuan_lujunjiangling }
+				}
+			}
+			leader_shaixuan_btn2_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = leader_shaixuan_haijunjiangling
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_haijunjiangling }
+				}
+				else = {
+					ROOT = { clr_country_flag = leader_shaixuan_haijunjiangling }
+				}
+			}
+			leader_shaixuan_btn3_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = leader_shaixuan_zhanlie
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_zhanlie }
+				}
+				else = {
+					ROOT = { clr_country_flag = leader_shaixuan_zhanlie }
+				}
+			}
+			leader_shaixuan_btn4_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = leader_shaixuan_hangmu
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_hangmu }
+				}
+				else = {
+					ROOT = { clr_country_flag = leader_shaixuan_hangmu }
+				}
+			}
+			leader_shaixuan_btn5_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = leader_shaixuan_xunyang
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_xunyang }
+				}
+				else = {
+					ROOT = { clr_country_flag = leader_shaixuan_xunyang }
+				}
+			}
+			leader_shaixuan_btn6_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = leader_shaixuan_quzhu
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_quzhu }
+				}
+				else = {
+					ROOT = { clr_country_flag = leader_shaixuan_quzhu }
+				}
+			}
+			leader_shaixuan_btn7_click = {
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_country_flag = leader_shaixuan_qianting
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_qianting }
+				}
+				else = {
+					ROOT = { clr_country_flag = leader_shaixuan_qianting }
+				}
+			}
+			az_leadermenu_shaixuan_quanxuan_button_click = {
+				if = {
+					limit = {
+						AND = {
+							has_country_flag = leader_shaixuan_lujunjiangling
+							has_country_flag = leader_shaixuan_haijunjiangling
+							has_country_flag = leader_shaixuan_zhanlie
+							has_country_flag = leader_shaixuan_hangmu
+							has_country_flag = leader_shaixuan_xunyang
+							has_country_flag = leader_shaixuan_quzhu
+							has_country_flag = leader_shaixuan_qianting 
+						}
+					}
+					clr_country_flag = leader_shaixuan_lujunjiangling
+					clr_country_flag = leader_shaixuan_haijunjiangling
+					clr_country_flag = leader_shaixuan_zhanlie
+					clr_country_flag = leader_shaixuan_hangmu
+					clr_country_flag = leader_shaixuan_xunyang
+					clr_country_flag = leader_shaixuan_quzhu
+					clr_country_flag = leader_shaixuan_qianting 
+				}
+				else = {
+					ROOT = { 
+						set_country_flag = leader_shaixuan_lujunjiangling
+						set_country_flag = leader_shaixuan_haijunjiangling
+						set_country_flag = leader_shaixuan_zhanlie
+						set_country_flag = leader_shaixuan_hangmu
+						set_country_flag = leader_shaixuan_xunyang
+						set_country_flag = leader_shaixuan_quzhu
+						set_country_flag = leader_shaixuan_qianting 
+					}
+				}
+				
+			}
+			az_leadermenu_shaixuan_confirm_button_click = {
+				shaixuan_leader_seffect = yes
+			}
+		}
+		
+	}
+	
+}

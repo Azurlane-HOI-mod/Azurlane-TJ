@@ -1,0 +1,623 @@
+guiTypes = {
+	extendedScrollbarType = {
+		name = "az_slider"
+		position = { x = -2 y = 0 }
+ 		size = { width = 18 height = 18 }
+		startValue = 0
+		orientation = upper_right
+		origo = upper_right
+		smooth_scrolling = 0.25
+
+		
+		
+		slider = {
+			name = "Slider"	
+			quadTextureSprite = "GFX_az_slider_button"
+			position = { x = -2 y = -2 }
+		}
+
+		track = {
+			name = "Track" 
+			quadTextureSprite = "GFX_az_slider_track"
+			position = { x = 3 y = 0 }
+			alwaystransparent = yes
+		}
+
+		decreaseButton = {
+			name = "Decrease"
+			quadTextureSprite = "GFX_az_slider_up" 
+			position = { x = 2 y = 3 }
+		}
+		
+		increaseButton = {
+			name = "Increase"
+			quadTextureSprite = "GFX_az_slider_down"
+			position = { x=-17 y = -19}	
+		}
+	}  
+	containerWindowType = {
+        name = "az_start_mainwindow"
+		position = { x = -350 y = -300 }
+		size = { width = 700 height = 600 }
+		moveable = yes
+		orientation = CENTER
+ 
+		background = {
+			name = "AZ_start_mainwindow_bg"
+			spriteType = GFX_az_start_window_bg
+		}
+		iconType = {
+			name = "AZ_start_mainwindow_dashanghuayuan"
+			spriteType = "GFX_az_huayuangif_h75"   
+			position = { x= -80 y = 40 }
+			Orientation = UPPER_RIGHT
+			pdx_tooltip = "AZ_start_mainwindow_dashanghuayuan_tooltip" 
+		}
+		instantTextboxType = {
+			name = "AZ_start_mainwindow_dashanghuayuan_text" 
+			position = { x= -105 y = 105 } 
+			Orientation = UPPER_RIGHT 
+			font = "hoi_20b" 
+			text = "AZ_start_mainwindow_dashanghuayuan_text" 
+			maxWidth = 100 
+			maxHeight = 20
+			format = center
+			fixedsize=yes 
+		}
+		buttonType = {
+			name = "az_start_mainwindow_gengxinshuoming_btn"
+			position = { x = 30 y = -450 } 
+			quadTextureSprite ="GFX_az_gengxinshuoming_button"
+			buttonFont = "Main_14_black"
+			Orientation = LOWER_LEFT 
+			clicksound = click_close
+		
+		} 
+		buttonType = {
+			name = "az_start_mainwindow_wanfagonglue_btn"
+			position = { x = 30 y = -350 } 
+			quadTextureSprite ="GFX_az_wanfagonglue_button"
+			buttonFont = "Main_14_black"
+			Orientation = LOWER_LEFT 
+			clicksound = click_close
+		
+		}
+		buttonType = {
+			name = "az_start_mainwindow_modoption_btn"
+			position = { x = 30 y = -250 } 
+			quadTextureSprite ="GFX_az_modoption_button"
+			buttonFont = "Main_14_black"
+			Orientation = LOWER_LEFT 
+			clicksound = click_close
+		
+		}
+		buttonType = {
+			name = "az_start_mainwindow_stratgame_btn"
+			position = { x = 28 y = -150 }
+			quadTextureSprite ="GFX_az_start_button"
+			pdx_tooltip = "az_start_mainwindow_stratgame_btn_tooltip" 
+			Orientation = LOWER_LEFT  
+			clicksound = click_close
+			
+		}
+	} 
+	containerWindowType = { 
+		name = "az_start_dashang_window" 
+		orientation = CENTER
+		position = { x = -150 y = -190 }   
+		size = { width = 489 height = 445 } 
+		verticalScrollbar = "az_slider" 
+		margin = { top = 10 bottom = 20 }
+		background = {
+			name = "AZ_start_smallwindow_bg"
+			spriteType = GFX_az_start_smallwindow_bg
+		}  
+		
+		instantTextboxType = {
+			name = "dashang_text3"
+			position = { x = 50 y = 60 } 
+			Orientation = UPPER_LEFT
+			font = "hoi_20b"
+			text = "gengxinshuoming_text3" 
+			maxWidth = 410
+			maxHeight = 400
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "dashang_quit_tooltip"
+			position = { x = 50 y = 20 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "dashang_quit_tooltip"  
+			maxWidth = 410
+			maxHeight = 100
+			format = center
+			fixedsize=yes
+		} 
+		iconType ={  
+			name ="dashang_gif"
+			spriteType = "GFX_az_huayuangif"   
+			position = { x= -80 y = 250 } 
+			Orientation = CENTER
+			pdx_tooltip = "dancingxiaotiancheng_tooltip" 
+
+		}
+	}  
+	containerWindowType = { 
+		name = "az_start_gengxinshuoming_window" 
+		orientation = CENTER
+		position = { x = -150 y = -190 }   
+		size = { width = 489 height = 445 } 
+		verticalScrollbar = "az_slider" 
+		margin = { top = 10 bottom = 20 }
+		background = {
+			name = "AZ_start_smallwindow_bg"
+			spriteType = GFX_az_start_smallwindow_bg
+		}  
+		###########
+
+		###########
+		iconType ={  
+			name ="gengxinshuoming_gif"
+			spriteType = "GFX_az_xiaotianchenggif"   
+			position = { x= -80 y = 900 } 
+			Orientation = CENTER
+			pdx_tooltip = "dancingxiaotiancheng_tooltip" 
+
+		}
+		instantTextboxType = { 
+			name = "gengxinshuoming_title1"
+			position = { x = 0 y = 350 }
+			Orientation = UPPER_LEFT
+			font = "hoi_36header"
+			text = "gengxinshuoming_title1" 
+			maxWidth = 489
+			maxHeight = 100
+			format = center
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "gengxinshuoming_text1"
+			position = { x = 50 y = 380 }
+			Orientation = UPPER_LEFT
+			font = "hoi_20b"
+			text = "gengxinshuoming_text1" 
+			maxWidth = 410
+			maxHeight = 1000
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = { 
+			name = "gengxinshuoming_title2"
+			position = { x = 0 y = 20 }
+			Orientation = UPPER_LEFT
+			font = "hoi_36header"
+			text = "gengxinshuoming_title2" 
+			maxWidth = 489
+			maxHeight = 100
+			format = center
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "gengxinshuoming_text2"
+			position = { x = 50 y = 60 } 
+			Orientation = UPPER_LEFT
+			font = "hoi_20b"
+			text = "gengxinshuoming_text2" 
+			maxWidth = 410
+			maxHeight = 500
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "gengxinshuoming_to_gonglue_btn"
+			position = { x = -100 y = 300 } 
+			Orientation = UPPER_RIGHT
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "gengxinshuoming_to_gonglue_btn_text"
+			pdx_tooltip = "gengxinshuoming_to_gonglue_btn_text_tt"
+			clicksound = click_close
+			
+		}
+	}  
+	containerWindowType = { 
+		name = "az_start_wanfagonglue_window" 
+		orientation = CENTER
+		position = { x = -150 y = -190 }   
+		size = { width = 489 height = 445 } 
+		verticalScrollbar = "az_slider" 
+		margin = { top = 10 bottom = 20 }
+		background = {
+			name = "AZ_start_smallwindow_bg"
+			spriteType = GFX_az_start_smallwindow_bg
+		}  
+		###########
+		instantTextboxType = { 
+			name = "wanfagonglue_title1"
+			position = { x = 0 y = 20 }
+			Orientation = UPPER_LEFT
+			font = "hoi_36header"
+			text = "wanfagonglue_title1" 
+			maxWidth = 489
+			maxHeight = 100
+			format = center
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "wanfagonglue_text1"
+			position = { x = 50 y = 60 }
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "wanfagonglue_text1"
+			maxWidth = 410
+			maxHeight = 600
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "wanfagonglue_text2"
+			position = { x = 50 y = 230 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_16mbs"
+			text = "wanfagonglue_text2" 
+			maxWidth = 410
+			maxHeight = 700 
+			format = left
+			fixedsize=yes
+		} 
+		instantTextboxType = { 
+			name = "wanfagonglue_title3"
+			position = { x = 50 y = 410 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "wanfagonglue_title3" 
+			maxWidth = 489
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		}
+		iconType ={  
+			name ="dashang_gif"
+			spriteType = "GFX_az_huayuangif"   
+			position = { x= -80 y = 550 } 
+			Orientation = CENTER
+			pdx_tooltip = "dancingxiaotiancheng_tooltip" 
+
+		}
+		###########
+	}
+	containerWindowType = { 
+		name = "az_start_modoption_window" 
+		orientation = CENTER
+		position = { x = -150 y = -190 }   
+		size = { width = 489 height = 445 }   
+		verticalScrollbar = "az_slider" 
+		margin = { top = 10 bottom = 20 } 
+		background = {
+			name = "AZ_start_smallwindow_bg"
+			spriteType = GFX_az_start_smallwindow_bg
+		}  
+			###########
+		instantTextboxType = { 
+			name = "modoption_title1"
+			position = { x = 50 y = 50 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "modoption_title1" 
+			maxWidth = 300
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "modoption_text1"
+			position = { x = 50 y = 90 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_text1" 
+			maxWidth = 410 
+			maxHeight = 600 
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_button1_on"
+			position = { x = 310 y = 60 }  
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "modoption_btn_1"
+			clicksound = click_close
+			
+		}
+
+		instantTextboxType = { 
+			name = "modoption_title2"
+			position = { x = 50 y = 150 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "modoption_title2" 
+			maxWidth = 300
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "modoption_text2"
+			position = { x = 50 y = 190 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_text2" 
+			maxWidth = 410 
+			maxHeight = 600 
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_button2_on"
+			position = { x = 310 y = 160 }
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "modoption_btn_2"
+			Orientation = UPPER_LEF
+			clicksound = click_close
+			
+		}
+
+		instantTextboxType = { 
+			name = "modoption_title3"
+			position = { x = 50 y = 250 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "modoption_title3" 
+			maxWidth = 300
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "modoption_text3"
+			position = { x = 50 y = 290 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_text3" 
+			maxWidth = 410 
+			maxHeight = 600 
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_button3_on"
+			position = { x = 310 y = 260 }
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "modoption_btn_3"
+			clicksound = click_close
+			
+		}
+		instantTextboxType = { 
+			name = "modoption_title4"
+			position = { x = 50 y = 350 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "modoption_title4" 
+			maxWidth = 300
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "modoption_text4"
+			position = { x = 50 y = 390 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_text4" 
+			maxWidth = 410 
+			maxHeight = 600 
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_button4_on"
+			position = { x = 310 y = 360 }
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "modoption_btn_4"
+			Orientation = UPPER_LEF
+			clicksound = click_close
+			
+		}
+		instantTextboxType = { 
+			name = "modoption_title5"
+			position = { x = 50 y = 450 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "modoption_title5" 
+			maxWidth = 300
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "modoption_text5"
+			position = { x = 50 y = 490 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_text5" 
+			maxWidth = 410 
+			maxHeight = 600 
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_button5_on"
+			position = { x = 310 y = 460 }
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "modoption_btn_5"
+			clicksound = click_close
+			
+		} 
+		instantTextboxType = { 
+			name = "modoption_title6"
+			position = { x = 50 y = 550 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "modoption_title6"
+			maxWidth = 300
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "modoption_text6"
+			position = { x = 50 y = 590 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_text6" 
+			maxWidth = 410 
+			maxHeight = 600 
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_button6_on"
+			position = { x = 310 y = 560 }
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "[modoption_btn_6]"
+			clicksound = click_close
+			
+		} 
+		instantTextboxType = { 
+			name = "modoption_title7"
+			position = { x = 50 y = 660 }
+			Orientation = UPPER_LEFT
+			font = "hoi_24header"
+			text = "modoption_title7"
+			maxWidth = 300
+			maxHeight = 100
+			format = left
+			fixedsize=yes
+		} 
+		instantTextboxType = {
+			name = "modoption_text7"
+			position = { x = 50 y = 700 }   
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_text7"
+			maxWidth = 410 
+			maxHeight = 600 
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_button7_on"
+			position = { x = 310 y = 670 }
+			quadTextureSprite ="GFX_az_smallbutton1" 
+			buttonFont = "hoi_16mbs"
+			buttonText = "[modoption_btn_7]"
+			clicksound = click_close
+			
+		} 
+
+		instantTextboxType = { 
+			name = "modoption_sirennandu_title"
+			position = { x = 0 y = 800 }
+			Orientation = UPPER_LEFT
+			font = "hoi_36header"
+			text = "modoption_sirennandu_title" 
+			maxWidth = 489
+			maxHeight = 100
+			format = center
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_sirennandu1"
+			position = { x = 100 y = 850 } 
+			quadTextureSprite ="GFX_az_siren_nandu1" 
+			Orientation = UPPER_LEFT
+			clicksound = click_close
+			pdx_tooltip = "modoption_sirennandu_tooltip"
+			
+		}
+		instantTextboxType = {
+			name = "modoption_sirennandu1_text"
+			position = { x = 75 y = 900 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_sirennandu1_text" 
+			maxWidth = 160 
+			maxHeight = 250
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_sirennandu2"
+			position = { x = 300 y = 850 } 
+			quadTextureSprite ="GFX_az_siren_nandu2" 
+			Orientation = UPPER_LEFT
+			clicksound = click_close 
+			pdx_tooltip = "modoption_sirennandu_tooltip"
+		}
+		instantTextboxType = {
+			name = "modoption_sirennandu2_text"
+			position = { x = 275 y = 900 }  
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_sirennandu2_text" 
+			maxWidth = 160 
+			maxHeight = 250
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_sirennandu3"
+			position = { x = 200 y = 1000 }   
+			quadTextureSprite ="GFX_az_siren_nandu3" 
+			Orientation = UPPER_LEFT
+			clicksound = click_close 
+			pdx_tooltip = "modoption_sirennandu_tooltip"
+		}
+		instantTextboxType = {
+			name = "modoption_sirennandu3_text"
+			position = { x = 55 y = 1050 } 
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_sirennandu3_text" 
+			maxWidth = 400
+			maxHeight = 280
+			format = left
+			fixedsize=yes
+		}
+		buttonType = {
+			name = "modoption_sirennandu4"
+			position = { x = 200 y = 1150 }   
+			quadTextureSprite ="GFX_az_siren_nandu4" 
+			Orientation = UPPER_LEFT
+			clicksound = click_close 
+			pdx_tooltip = "modoption_sirennandu_tooltip"
+		}
+		instantTextboxType = {
+			name = "modoption_sirennandu4_text"
+			position = { x = 55 y = 1200 } 
+			Orientation = UPPER_LEFT
+			font = "hoi_20b" 
+			text = "modoption_sirennandu4_text" 
+			maxWidth = 400
+			maxHeight = 280
+			format = left
+			fixedsize=yes
+		}
+		###########	 
+		iconType ={ 
+			name ="dancingxiaotiancheng"
+			spriteType = "GFX_az_xiaotianchenggif"   
+			position = { x= 160 y = 1400 } 
+			Orientation = UPPER_LEFT
+			pdx_tooltip = "dancingxiaotiancheng_tooltip" 
+
+		}
+	}
+}

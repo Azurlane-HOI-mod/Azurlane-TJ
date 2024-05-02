@@ -1,0 +1,111 @@
+scripted_gui = {
+	az_autooption_decision_window_guis = {  
+		context_type = decision_category
+
+		window_name = "az_autooption_decision_window"
+
+		visible = {
+			always = yes
+		}
+		effects = {
+			az_autooption_decision_button_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_az_autooption_window }
+					}
+					set_country_flag = open_az_autooption_window
+				}
+				else = {
+					clr_country_flag = open_az_autooption_window
+				}
+			}
+		}
+	}
+	az_autooption_window_guis = {
+		window_name = "az_autooption_window"
+		context_type = player_context
+		visible = {
+			has_country_flag = open_az_autooption_window
+		}
+		effects = {
+			az_autooption_close_btn_click = { 
+				clr_country_flag = open_az_autooption_window
+			}
+			az_autooption_1_on_btn_click = { 
+				set_country_flag = az_autooption_automofang_on
+			}
+			az_autooption_1_off_btn_click = { 
+				clr_country_flag = az_autooption_automofang_on
+			}
+			az_autooption_2_on_btn_click = { 
+				set_country_flag = az_autooption_autotansuodui1_on
+			}
+			az_autooption_2_off_btn_click = { 
+				clr_country_flag = az_autooption_autotansuodui1_on
+			}
+			az_autooption_3_on_btn_click = { 
+				set_country_flag = az_autooption_autotansuodui2_on
+			}
+			az_autooption_3_off_btn_click = { 
+				clr_country_flag = az_autooption_autotansuodui2_on
+			}
+			az_autooption_4_on_btn_click = { 
+				set_country_flag = az_autooption_mofangjiexi_on
+			}
+			az_autooption_4_off_btn_click = { 
+				clr_country_flag = az_autooption_mofangjiexi_on
+			}
+			az_autooption_5_on_btn_click = { 
+				set_country_flag = az_autooption_mofangjichuang_on
+			}
+			az_autooption_5_off_btn_click = { 
+				clr_country_flag = az_autooption_mofangjichuang_on
+			}
+			az_autooption_6_on_btn_click = { 
+				set_country_flag = az_autooption_mofangzaochuan_on
+			}
+			az_autooption_6_off_btn_click = { 
+				clr_country_flag = az_autooption_mofangzaochuan_on
+			}
+		}
+		triggers = {
+			az_autooption_1_on_btn_visible = {
+				NOT = { has_country_flag = az_autooption_automofang_on }
+			}
+			az_autooption_1_off_btn_visible = {
+				has_country_flag = az_autooption_automofang_on
+			}
+			az_autooption_2_on_btn_visible = {
+				NOT = { has_country_flag = az_autooption_autotansuodui1_on }
+			}
+			az_autooption_2_off_btn_visible = {
+				has_country_flag = az_autooption_autotansuodui1_on
+			}
+			az_autooption_3_on_btn_visible = {
+				NOT = { has_country_flag = az_autooption_autotansuodui2_on }
+			}
+			az_autooption_3_off_btn_visible = {
+				has_country_flag = az_autooption_autotansuodui2_on
+			}
+			az_autooption_4_on_btn_visible = {
+				NOT = { has_country_flag = az_autooption_mofangjiexi_on }
+			}
+			az_autooption_4_off_btn_visible = {
+				has_country_flag = az_autooption_mofangjiexi_on
+			}
+			az_autooption_5_on_btn_visible = {
+				NOT = { has_country_flag = az_autooption_mofangjichuang_on }
+			}
+			az_autooption_5_off_btn_visible = {
+				has_country_flag = az_autooption_mofangjichuang_on
+			}
+			az_autooption_6_on_btn_visible = {
+				NOT = { has_country_flag = az_autooption_mofangzaochuan_on }
+			}
+			az_autooption_6_off_btn_visible = {
+				has_country_flag = az_autooption_mofangzaochuan_on
+			}
+		}
+	}
+	
+}

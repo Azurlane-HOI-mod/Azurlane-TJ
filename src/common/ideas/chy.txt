@@ -1,0 +1,786 @@
+ideas = {
+	
+	hidden_ideas = {
+		
+		CHY_jiaohuodekuangchuan = {
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_resources_factor = 0.05
+				industrial_capacity_factory = 0.125
+				production_factory_efficiency_gain_factor = 0.25
+			}
+		}
+		CHY_liangshigongying = {
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				monthly_population = 0.2
+				supply_consumption_factor = -0.1
+				no_supply_grace = 3
+				
+			}
+		}
+		CHY_jingjilueduo = {
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.15
+				
+			}
+		}
+	}
+	
+	# Special ones that can be applied on other countries through focus system.
+	
+	
+	
+	country = {
+		
+		CHY_zbcz = {
+			picture = generic_infantry_equipment_manufacturer_3
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				army_speed_factor = 0.05
+				supply_consumption_factor = -0.2
+				no_supply_grace = 6
+			}	
+		}
+		CHY_rxdlj = {
+			picture = jap_ichi_go
+
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = DOH
+				attack_bonus_against = 0.2
+				defense_bonus_against = 0.2
+			
+			}
+			
+		}
+		CHY_rxdlj2 = {
+			picture = jap_ichi_go
+
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = DOH
+				attack_bonus_against = 0.4
+				defense_bonus_against = 0.4
+			}
+			modifier = {
+				breakthrough_factor = 0.1
+				org_loss_when_moving = -0.65
+				army_speed_factor = 0.1
+				supply_consumption_factor = -0.2
+			}
+		}
+		CHY_rxdlj3 = {
+			picture = jap_ichi_go
+
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = DOH
+				attack_bonus_against = 0.3
+				defense_bonus_against = 0.3
+			}
+			modifier = {
+				required_garrison_factor = 0.05
+			}
+		}
+		CHY_rxdlj4 = {
+			picture = jap_ichi_go
+
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = DOH
+				attack_bonus_against = 0.2
+				defense_bonus_against = 0.2
+			}
+			modifier = {
+				resistance_growth = 0.05
+				supply_consumption_factor = 0.1
+				required_garrison_factor = 0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		CHY_dybz = {
+			picture = warrior_traditions_idea
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+				political_power_factor = 0.1
+				opinion_gain_monthly_factor = 0.25
+				research_speed_factor = 0.03
+				local_resources_factor = 0.05
+			}
+		}
+		CHY_cyjn = {
+			picture = CHY_cyjn
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				naval_speed_factor = 0.1
+				recon_factor = 0.15
+				spotting_chance = 0.15
+			}	
+		}
+		CHY_cfjy = {
+			picture = warrior_traditions_idea
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_attack_factor = 0.4
+				army_speed_factor = 0.15
+			}
+		}
+		CHY_cyjn2 = {
+			picture = CHY_cyjn
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				naval_speed_factor = 0.1
+				supply_consumption_factor = -0.07
+				army_attack_factor = 0.08
+				army_defence_factor = 0.05
+				recon_factor = 0.15
+				spotting_chance = 0.15
+				positioning = 0.1
+				sortie_efficiency = 0.1
+			}	
+		}
+		CHY_cytl = {
+			picture = generic_build_infrastructure
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				production_speed_rail_way_factor = 0.2
+				local_resources_factor = 0.05			
+			}	
+		}
+		CHY_cytszh = {
+			picture = jap_militarism_showa
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				recon_factor = 0.05
+				no_supply_grace = 24
+				breakthrough_factor = 0.1
+				land_reinforce_rate = 0.08
+			}	
+		}
+		CHY_hjxl = {
+			picture = generic_navy_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				experience_gain_navy_factor = 0.333
+			}	
+		}
+		CHY_dlkj = {
+			picture = generic_air_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				air_mission_efficiency = 0.1
+				air_agility_factor = 0.05
+				air_ace_generation_chance_factor = 0.25
+			}	
+		}
+		CHY_cylxyh = {
+			picture = SOV_scientist_defect
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				max_command_power = 15
+				planning_speed = 0.1
+				max_planning = 0.2
+			}
+		}
+		CHY_lqzz = {
+			picture = generic_coastal_defense_ships2
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				air_escort_efficiency = 0.15
+				invasion_preparation = -0.35
+				amphibious_invasion = 0.15
+			}
+		}
+		CHY_qbdw = {
+			picture = service_by_requirement
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				war_support_weekly = 0.03
+				training_time_army_factor = -0.25
+				conscription = 0.015
+				industrial_capacity_factory = 0.15
+				production_speed_arms_factory_factor = 0.25		
+			}
+		}
+		CHY_czyl = {
+			picture = MEX_callistas
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = 0.4
+				production_speed_industrial_complex_factor = -0.35
+			}
+		}
+		CHY_jhlb = {
+			picture = CHY_buzhihuo
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				industrial_capacity_factory = 0.05
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		CHY_cymygs = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.2
+				trade_opinion_factor = 0.25
+				political_power_gain = 0.5
+			}
+		}
+		CHY_cymygs_js = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.25
+				trade_opinion_factor = -0.5
+			}
+		}
+		CHY_cymygs_cx = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.16
+				trade_opinion_factor = 0.5
+				political_power_gain = 1.0
+			}
+		}
+		CHY_dcbcp = {
+			picture = FRA_factory_strikes
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				industrial_capacity_factory = 0.12
+			}
+		}
+		CHY_fndgk = {
+			picture = chi_war_of_resistance3
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				stability_factor = -0.25
+			}
+		}
+		
+		CHY_khdgc = {
+			picture = jap_the_unthinkable_option
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				fascism_drift = -0.3
+				neutrality_drift = -0.3
+				political_power_factor = -0.4
+			}
+		}
+		CHY_gyjj = {
+			picture = jap_the_unthinkable_option
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_infrastructure_factor = 0.25
+				local_resources_factor = 0.15
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		CHY_jxpdz = {
+			picture = jap_the_unthinkable_option
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				stability_weekly = -0.02
+				political_power_factor = -0.25
+				
+			}
+		}
+		CHY_xsdrczg = {
+			picture = nkvd_2
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				political_power_factor = 0.25
+				
+			}
+		}
+		CHY_cysdj = {
+			picture = state_shintoism
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				army_morale_factor = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				experience_loss_factor = 0.25
+			}
+		}
+		CHY_rczy = {
+			picture = jap_militarism_showa
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				conscription = 0.025
+				conscription_factor = 0.15
+				industrial_capacity_dockyard = 0.05
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.25
+			}
+		}
+		
+		CHY_zykc = {
+			picture = ast_all_in
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_resources_factor = 0.2
+			}
+			
+		}
+		CHY_qlcx = {
+			picture = jap_militarism_showa
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				justify_war_goal_time = -0.4
+				war_support_factor = 0.35
+				army_attack_factor = 0.10
+				army_speed_factor = 0.10
+			}
+		}
+		CHY_qmdz = {
+			picture = chi_war_of_resistance3
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				war_support_factor = 0.1
+				conscription = 0.015
+				consumer_goods_factor = 0.1
+			}
+		}
+		CHY_ltfxd = {
+			picture = generic_air_research
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				air_untrained_pilots_penalty_factor = 0.1
+				air_accidents_factor = 0.1
+				air_training_xp_gain_factor = 0.25
+				air_wing_xp_loss_when_killed_factor = -0.25
+			}
+		}
+		CHY_tlzdj = {
+			picture = CHY_tlzdj
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+			    air_attack_factor = 0.1
+				air_defence_factor = 0.1
+				naval_strike_attack_factor = 0.1
+			}
+		}
+	}
+	
+
+
+	# TECHNOLOGY
+	tank_manufacturer = { 
+	
+		designer = yes
+		osaka_army_arsenal = {
+			
+			allowed = {
+				original_tag = CHY
+			}
+			available = {
+				has_completed_focus = CHY_zhuangjiaxianfeng
+			}		
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { tank_manufacturer }
+		}
+	}
+	
+	naval_manufacturer = { 
+	
+		designer = yes
+		
+		kure_naval_arsenal = {
+			
+			
+			allowed = {
+				original_tag = CHY
+			}
+
+			available = {
+				has_completed_focus = CHY_haijunxinlilun
+			}
+
+			cost = 75
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { battlefleet_designer } # built Yamato
+
+		}
+		
+		yokosuka_naval_arsenal = {
+						
+			allowed = {
+				original_tag = CHY
+			}
+			available = {
+				has_completed_focus = CHY_haijunxinlilun
+			}
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer } #built best CVs
+
+			equipment_bonus = {
+				# 
+			}
+		}
+		
+		maizuru_naval_arsenal = {
+						
+			allowed = {
+				original_tag = CHY
+			}
+			available = {
+				has_completed_focus = CHY_haijunxinlilun
+			}
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer } #destroyer R&D
+
+			equipment_bonus = {
+				# 
+			}
+		}
+		
+		sasebo_naval_arsenal = {
+			
+			allowed = {
+				original_tag = CHY
+			}
+			available = {
+				has_completed_focus = CHY_haijunxinlilun
+			}
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer } #used for many repairs and conversions
+			
+			equipment_bonus = {
+				
+			}
+		}
+	
+		
+	}
+
+	aircraft_manufacturer = { 
+	
+		designer = yes
+		mitsubishi = {
+						
+			allowed = {
+				original_tag = CHY	
+			}
+			available = {
+				has_completed_focus = CHY_lantianfeixingdui
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer_2 }
+
+			modifier = {
+
+			}
+		}
+
+		aichi = {
+			
+			allowed = {
+				original_tag = CHY
+			}
+			available = {
+				has_completed_focus = CHY_lantianfeixingdui
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+		
+		nakajima = {
+						
+			allowed = {
+				original_tag = CHY
+			}
+			available = {
+				has_completed_focus = CHY_lantianfeixingdui
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+
+		}
+		
+		yokosuka = {
+						
+			allowed = {
+				original_tag = CHY
+			}
+			available = {
+				has_completed_focus = CHY_lantianfeixingdui
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+		
+	}
+
+	industrial_concern = {
+		kawasaki = {
+			
+			allowed = {
+				original_tag = CHY
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+		
+		
+		sumitomo = {
+						
+			allowed = {
+				original_tag = CHY
+			}
+						
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+
+		JAP_idemitsu_kosan = {
+						
+			picture = generic_industrial_concern_2
+			
+			allowed = {
+				original_tag = CHY
+			}
+						
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.1
+			}
+			
+			traits = { refinery_concern }
+		}
+		
+	}
+
+	materiel_manufacturer = {
+	
+		designer = yes
+		tokyo_arsenal = {
+			
+			allowed = {
+				original_tag = CHY
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		nissan = {
+						
+			allowed = {
+				original_tag = CHY
+			}
+						
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+	}
+
+	political_advisor = {
+	
+	}
+
+	army_chief = {
+
+	}
+
+	air_chief = {
+
+	}
+	navy_chief = {
+
+	}
+	high_command = {
+		
+	}
+
+	theorist = {
+
+	}
+}
+
+

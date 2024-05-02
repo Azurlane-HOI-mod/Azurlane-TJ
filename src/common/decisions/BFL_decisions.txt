@@ -1,0 +1,1167 @@
+#购买武器(1政治点=15的IC产能） 1军工满效率每天5IC产出 10把步枪（净生产量+三分之一） 1.42火炮（净生产量+五分之一） 2卡车（净生产量+四分之一）
+bfl_jihua_category = {
+	bfl_jihua_missiondoing = {
+		icon = generic_construction
+		priority = 5
+		available = {
+			if = {
+				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+				or = {
+				AND = {
+				is_ai = yes
+				date > 1940.1.1
+			    } 
+				AND = {
+				num_of_factories > 300
+				arms_factory > 150
+			}
+			}
+			}
+			else_if = {
+				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+				or = {
+				AND = {
+				is_ai = yes
+				date > 1940.12.1
+			    } 
+				AND = {
+				num_of_factories > 800
+				arms_factory > 399
+			}
+			}
+			}
+		}
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_start
+		}
+		activation = {                    
+			has_country_flag = BFL_wunianjihua_start
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 1800
+		
+		timeout_effect = { 
+			country_event = BFL_event.100
+			clr_country_flag = BFL_wunianjihua_start
+		}
+	
+		complete_effect = { 
+			country_event = BFL_event.101 
+			clr_country_flag = BFL_wunianjihua_start
+			set_country_flag = BFL_wunianjihua_completed
+		}
+	}
+	bfl_jihua_yiwulaodong = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_start
+		}
+		days_remove = 180
+		
+		days_re_enable = 90
+		cost = 50
+		modifier = {
+			production_speed_buildings_factor = 0.1
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	bfl_jihua_xuexiguowaijishu = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_start
+		}
+		days_remove = 30
+		
+		fire_only_once = yes
+		cost = 100
+		
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+			
+		}
+		remove_effect = {
+			add_tech_bonus = {
+				name = "学习国外"
+				bonus = 1
+				uses = 2
+				category = industry
+
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+	}
+	bfl_jihua_manjiujiaoyujihua = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_start
+		}
+		days_remove = 180
+		
+		days_re_enable = 180
+		cost = 100
+		modifier = {
+			stability_weekly = 0.005
+			monthly_population = 0.25
+			mobilization_speed = 0.5
+			consumer_goods_factor = 0.05
+			political_power_cost = 0.5
+			research_speed_factor = 0.08
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+			
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+			has_stability < 1
+			add = 100
+			}
+		}
+	}
+	bfl_jihua_kaikenhuangdi = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_start
+		}
+		days_remove = 90
+		
+		days_re_enable = 90
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+			    limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			    }
+			    add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	bfl_jihua_gulixiaozuofang = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_start
+		}
+		days_remove = 120
+		
+		days_re_enable = 120
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+			    limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			    }
+			    add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+}
+
+BFL_shenjizhizaoshang_category = {
+	BFL_shenjijianzhushejiju = {
+		icon = generic_construction
+		available = {
+			has_idea = BFL_gosproyektstroy
+			has_completed_focus = BFL_yaoqinwaiguozhuanjia
+		}
+		visible = {
+			has_idea = BFL_gosproyektstroy
+			has_completed_focus = BFL_yaoqinwaiguozhuanjia
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = BFL_gosproyektstroy_up
+			swap_ideas = {
+				remove_idea = BFL_gosproyektstroy
+				add_idea = BFL_gosproyektstroy_plus
+			}
+		}
+	}
+	BFL_shenjitielugongsi = {
+		icon = generic_construction
+		available = {
+			has_idea = BFL_soviet_railways
+			has_completed_focus = BFL_yaoqinwaiguozhuanjia
+		}
+		visible = {
+			has_idea = BFL_soviet_railways
+			has_completed_focus = BFL_yaoqinwaiguozhuanjia
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = BFL_soviet_railways_up
+			swap_ideas = {
+				remove_idea = BFL_soviet_railways
+				add_idea = BFL_soviet_railways_plus
+			}
+		}
+	}
+	BFL_shenjiqingtanzhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = morozov_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = morozov_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = morozov_design_bureau_up
+			swap_ideas = {
+				remove_idea = morozov_design_bureau
+				add_idea = morozov_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjizhongtanzhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = astrov_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = astrov_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = astrov_design_bureau_up
+			swap_ideas = {
+				remove_idea = astrov_design_bureau
+				add_idea = astrov_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjibutanzhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = okmo
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = okmo
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = okmo_up
+			swap_ideas = {
+				remove_idea = okmo
+				add_idea = okmo_plus
+			}
+		}
+	}
+	BFL_shenjijiqizhizaochang = {
+		icon = generic_construction
+		available = {
+			has_idea = SOV_mytishchy_machine_building_plant
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = SOV_mytishchy_machine_building_plant
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = SOV_mytishchy_machine_building_plant_up
+			swap_ideas = {
+				remove_idea = SOV_mytishchy_machine_building_plant
+				add_idea = SOV_mytishchy_machine_building_plant_plus
+			}
+		}
+	}
+	BFL_shenji_heavy_tanzhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = SOV_kirov
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = SOV_kirov
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = SOV_kirov_up
+			swap_ideas = {
+				remove_idea = SOV_kirov
+				add_idea = SOV_kirov_plus
+			}
+		}
+	}
+	BFL_shenjizhandoujizhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = mig_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = mig_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = mig_design_bureau_up
+			swap_ideas = {
+				remove_idea = mig_design_bureau
+				add_idea = mig_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjizhongxinfeijizhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = ilyushin_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = ilyushin_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = ilyushin_design_bureau_up
+			swap_ideas = {
+				remove_idea = ilyushin_design_bureau
+				add_idea = ilyushin_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjihongzhajizhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = tupolev_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = tupolev_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = tupolev_design_bureau_up
+			swap_ideas = {
+				remove_idea = tupolev_design_bureau
+				add_idea = tupolev_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjihaijunfeijizhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = yakovlev_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = yakovlev_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = yakovlev_design_bureau_up
+			swap_ideas = {
+				remove_idea = yakovlev_design_bureau
+				add_idea = yakovlev_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjihuopaozhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = grabin_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = grabin_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = grabin_design_bureau_up
+			swap_ideas = {
+				remove_idea = grabin_design_bureau
+				add_idea = grabin_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjibubinzhuangbeizhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = tula_arms_plant
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = tula_arms_plant
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = tula_arms_plant_up
+			swap_ideas = {
+				remove_idea = tula_arms_plant
+				add_idea = tula_arms_plant_plus
+			}
+		}
+	}
+	BFL_shenjimotuozhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = gaz
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = gaz
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = gaz_up
+			swap_ideas = {
+				remove_idea = gaz
+				add_idea = gaz_plus
+			}
+		}
+	}
+	BFL_shenjizhulijianzhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = SOV_nevskoye_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = SOV_nevskoye_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = SOV_nevskoye_design_bureau_up
+			swap_ideas = {
+				remove_idea = SOV_nevskoye_design_bureau
+				add_idea = SOV_nevskoye_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjixijijianzhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = SOV_rubin_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = SOV_rubin_design_bureau
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = SOV_rubin_design_bureau_up
+			swap_ideas = {
+				remove_idea = SOV_rubin_design_bureau
+				add_idea = SOV_rubin_design_bureau_plus
+			}
+		}
+	}
+	BFL_shenjiheihaizhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = SOV_black_sea_shipyard
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = SOV_black_sea_shipyard
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = SOV_black_sea_shipyard_up
+			swap_ideas = {
+				remove_idea = SOV_black_sea_shipyard
+				add_idea = SOV_black_sea_shipyard_plus
+			}
+		}
+	}
+	BFL_shenjigaizhuangchangzhizaoshang = {
+		icon = generic_construction
+		available = {
+			has_idea = SOV_sevastopol_marine_plant
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		visible = {
+			has_idea = SOV_sevastopol_marine_plant
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		ai_will_do = {
+			factor = 9000
+		}
+		cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			set_country_flag = SOV_sevastopol_marine_plant_up
+			swap_ideas = {
+				remove_idea = SOV_sevastopol_marine_plant
+				add_idea = SOV_sevastopol_marine_plant_plus
+			}
+		}
+	}
+}
+
+bfl_gongchendui_category = {
+	bfl_gongchendui_yiwulaodong = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_completed_focus = BFL_beilianjijiankuangmo
+		}
+		days_remove = 180
+		
+		days_re_enable = 90
+		cost = 50
+		modifier = {
+			production_speed_buildings_factor = 0.2
+			political_power_cost = 0.5
+			stability_weekly = -0.001
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			add_manpower = -5000
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	bfl_gongchendui_kaikenhuangdi = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_completed_focus = BFL_beilianjijiankuangmo
+		}
+		days_remove = 30
+		
+		days_re_enable = 30
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+			stability_weekly = -0.001
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+			    limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 2
+					include_locked = yes
+				}
+			    }
+			    add_extra_state_shared_building_slots = 2
+			    add_manpower = -2000
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	bfl_gongchendui_gulixiaozuofang = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_completed_focus = BFL_beilianjijiankuangmo
+		}
+		days_remove = 30
+		
+		days_re_enable = 30
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+			stability_weekly = -0.001
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+			    limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 2
+					include_locked = yes
+				}
+			    }
+			    add_extra_state_shared_building_slots = 2
+			    add_manpower = -1000
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	bfl_gongchendui_haijunchuanwu = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_completed_focus = BFL_beilianjijiankuangmo
+		}
+		days_remove = 30
+		
+		days_re_enable = 30
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+			stability_weekly = -0.001
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+			    add_extra_state_shared_building_slots = 2
+			    limit = {
+				is_coastal = yes
+				free_building_slots = {
+					building = dockyard
+					size > 2
+					include_locked = yes
+				}
+			    }
+			    add_manpower = -1000
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	bfl_gongchendui_anfu = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_completed_focus = BFL_beilianjijiankuangmo
+		}
+		days_remove = 180
+		
+		days_re_enable = 180
+		cost = 100
+		modifier = {
+			stability_weekly = 0.02
+			consumer_goods_factor = 0.05
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+			
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+			has_stability < 1
+			add = 100
+			}
+		}
+	}
+}
+
+bfl_jiansheshehuizhuyi_category = {
+	bfl_jiansheshehuizhuyi_yiwulaodong = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			not = { has_country_flag = BFL_wunianjihua_start }
+			has_completed_focus = BFL_xiayigewunianjihua
+		}
+		days_remove = 180
+		
+		days_re_enable = 90
+		cost = 50
+		modifier = {
+			production_speed_buildings_factor = 0.3
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	bfl_jiansheshehuizhuyi_kaikenhuangdi = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_completed 
+		}
+		days_remove = 30
+		
+		days_re_enable = 30
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			
+		}
+		remove_effect = {
+		    add_manpower = -2000
+			random_owned_controlled_state = {
+			    add_extra_state_shared_building_slots = 3
+			    add_manpower = 2000
+				limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 3
+					include_locked = yes
+				}
+			    }
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	bfl_jiansheshehuizhuyi_gulixiaozuofang = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_completed 
+		}
+		days_remove = 30
+		
+		days_re_enable = 30
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			
+		}
+		remove_effect = {
+		    add_manpower = -1000
+			random_owned_controlled_state = {
+			    add_extra_state_shared_building_slots = 3
+			    add_manpower = 1000
+				limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 3
+					include_locked = yes
+				}
+			    }
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	bfl_jiansheshehuizhuyi_haijunchuanwu = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_completed 
+		}
+		days_remove = 30
+		
+		days_re_enable = 30
+		cost = 50
+		modifier = {
+			political_power_cost = 0.5
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 50
+			}
+			
+		}
+		remove_effect = {
+		    add_manpower = -1000
+			random_owned_controlled_state = {
+			    add_extra_state_shared_building_slots = 3
+			    limit = {
+				is_coastal = yes
+				free_building_slots = {
+					building = dockyard
+					size > 3
+					include_locked = yes
+				}
+			    }
+			    add_manpower = 1000
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	bfl_jiansheshehuizhuyi_manjiujiaoyujihua = {
+		icon = generic_construction
+		visible = {
+			tag = BFL
+			has_country_flag = BFL_wunianjihua_completed 
+		}
+		days_remove = 180
+		
+		days_re_enable = 180
+		cost = 100
+		modifier = {
+			stability_weekly = 0.005
+			monthly_population = 0.5
+			mobilization_speed = 0.5
+			political_power_cost = 0.1
+			research_speed_factor = 0.2
+		}
+		complete_effect = {  
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 100
+			}
+			
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+	}
+}

@@ -1,0 +1,245 @@
+﻿add_namespace = SAD_event
+country_event = {
+	id = SAD_event.1
+	title = SAD_event.1.t
+	desc = SAD_event.1.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.1.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -150
+		news_event = aznews.23
+	}
+	option = {
+		name = SAD_event.1.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = SAD_event.2
+	title = SAD_event.2.t
+	desc = SAD_event.2.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.2.a
+		ai_chance = {
+			factor = 5
+		}
+		add_timed_idea = { idea = SAD_sdzffy days = 120 }
+	}
+}
+country_event = {
+	id = SAD_event.3
+	title = SAD_event.3.t
+	desc = SAD_event.3.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.3.a
+		ai_chance = {
+			factor = 5
+		}
+		
+	}
+}
+country_event = {
+	id = SAD_event.4
+	title = SAD_event.4.t
+	desc = SAD_event.4.d
+	picture = GFX_aze_tianyingemoji
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.4.a
+		ai_chance = {
+			factor = 5
+		}
+		create_corps_commander = {
+			name = 天鹰
+			portrait_path = "gfx/leaders/SAD/tianying.png"
+			traits = { xuexixunsu hangmu_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		
+	}
+	option = {
+		name = SAD_event.4.b
+		ai_chance = {
+			factor = 0
+		}
+		create_navy_leader = {
+			name = 天鹰
+			portrait_path = "gfx/leaders/SAD/tianying.png"
+			traits = { air_controller flight_deck_manager hangmu_navy }
+				skill = 4
+				attack_skill = 4
+				defense_skill = 4
+				logistics_skill = 3
+				planning_skill = 2
+		}
+	}
+}
+country_event = {
+	id = SAD_event.5
+	title = SAD_event.5.t
+	desc = SAD_event.5.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.5.a 
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.2
+		add_war_support = -0.1
+		hidden_effect = {
+			country_event = {
+				id = SAD_event.7
+				days = 50
+			}
+		}
+		add_timed_idea = {
+			idea = SAD_fbdzf_0
+			days = 90
+		}
+	}
+	option = {
+		name = SAD_event.5.b
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = SAD_event.6
+				days = 50
+			}
+		}
+		add_political_power = -50
+		add_timed_idea = {
+			idea = SAD_fbdzf_0
+			days = 50
+		}
+	}
+	option = {
+		name = SAD_event.5.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			country_event = {
+				id = SAD_event.6
+				days = 80
+			}
+		}
+		add_political_power = -100
+		add_timed_idea = {
+			idea = SAD_fbdzf_0
+			days = 30
+		}
+		
+		
+	}
+}
+country_event = {
+	id = SAD_event.6
+	title = SAD_event.6.t
+	desc = SAD_event.6.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.6.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = 0.05
+		add_war_support = 0.15
+		
+		remove_ideas = SAD_fbdzf
+		
+	}
+	option = {
+		name = SAD_event.6.b
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = 0.15
+		remove_ideas = SAD_fbdzf
+	}
+	option = {
+		name = SAD_event.6.c
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 150
+		remove_ideas = SAD_fbdzf
+	}
+}
+country_event = {
+	id = SAD_event.7
+	title = SAD_event.7.t
+	desc = SAD_event.7.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.7.a
+		ai_chance = {
+			factor = 5
+		}
+		remove_ideas = SAD_fbdzf 
+		add_ideas = SAD_ljdzf
+	}
+
+}
+country_event = {
+	id = SAD_event.8
+	title = SAD_event.8.t
+	desc = SAD_event.8.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.8.a
+		ai_chance = {
+			factor = 0
+		}
+		set_cosmetic_tag = SAD_ROME
+		
+		custom_effect_tooltip = SAD_event.8.a_tooltip
+		hidden_effect = {
+			news_event = aznews.1002
+			SAD_weineituo = {
+				set_portraits = {
+					civilian = {
+						large="gfx/leaders/SAD/weineituo_emperor.png"
+					}
+					army = {
+						large="gfx/leaders/SAD/weineituo_emperor.png"
+					}
+				}
+				set_character_name = SAD_weineituo_emperor
+				remove_country_leader_trait = sddwg
+				add_country_leader_trait = {
+					trait = lmdgdry
+					ideology = fascism_ideology
+				}
+			}
+		
+		}
+	}
+	option = {
+		name = SAD_event.8.b
+		ai_chance = {
+			factor = 5
+		}
+		custom_effect_tooltip = SAD_event.8.b_tooltip
+		add_political_power = 500
+	}
+}

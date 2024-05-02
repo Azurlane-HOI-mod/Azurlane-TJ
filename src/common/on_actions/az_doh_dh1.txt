@@ -1,0 +1,141 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			# 597 = {
+			# 	set_state_flag = DOH_guocehejueyikaifa
+			# }
+			DOH = {
+				set_variable = {
+					var = DOH_touzi
+					value = 0
+					tooltip = "投资"
+				}
+				set_variable = {
+					var = DOH_touzi_effect
+					value = 0
+					tooltip = "投资影响"
+				}
+				set_variable = {
+					var = DOH_keyanjinfei
+					value = 0
+					tooltip = "额外科研经费"
+				}
+				set_variable = {
+					var = DOH_keyanjinfei_effect
+					value = 0
+					tooltip = "额外科研经费影响"
+				}
+				set_variable = {
+					var = DOH_junshijinfei
+					value = 0
+					tooltip = "额外生产经费"
+				}
+				set_variable = {
+					var = DOH_junshijinfei_effect
+					value = 0
+					tooltip = "额外生产经费影响"
+				}
+				set_variable = {
+					var = DOH_gonggongkaizhi
+					value = 0
+					tooltip = "公共开支"
+				}
+				set_variable = {
+					var = DOH_gonggongkaizhi_effect
+					value = 0
+					tooltip = "公共开支影响"
+				}
+				set_variable = {
+					var = DOH_shichang
+					value = 0
+					tooltip = "市场开放程度"
+				}
+				set_variable = {
+					var = DOH_shichang_effect
+					value = 0
+					tooltip = "市场开放程度影响"
+				}
+				set_variable = {
+					var = DOH_guimoxiaoyin
+					value = 0
+					tooltip = "规模效应"
+				}
+				set_variable = {
+					var = DOH_guimoxiaoyin_effect
+					value = 0
+					tooltip = "规模效应影响"
+				}
+				set_variable = {
+					var = DOH_zongjikaizhi
+					value = 0
+					tooltip = "总计开支"
+				}
+				set_variable = {
+					var = DOH_xiaofeipingyinxiang
+					value = 0
+					tooltip = "对消费品系数影响"
+				}
+				set_variable = {
+					var = DOH_xiaofeipingyinxiang_factor
+					value = 0.08
+					tooltip = "对消费品系数影响系数"
+				}
+				set_variable = {
+					var = DOH_zhichiduchengfa
+					value = -1
+					tooltip = "异议（原始）"
+				}
+				set_variable = {
+					var = extra_xiaofeiping
+					value = 0
+					tooltip = "额外消费品系数修正"
+				}
+				set_variable = {
+					var = DOH_gexinshengchanli
+					value = 0
+					tooltip = "革新生产力"
+				}
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			DOH_mofifier_effect = yes
+			if = {
+				limit = {
+					DOH = {
+						has_country_flag = DOH_shuchu_civ_doing_flag
+					}
+				}
+				if = {
+					limit = {
+						DOH = {
+							has_country_flag = DOH_auto_shuchu_civ
+						}
+					}
+					d_DOH_auto_shuchu_effect = yes
+				}
+				DOH_duiwaishuchu_effect = yes
+			}
+			if = {
+				limit = {
+					DOH = {
+						has_completed_focus = DOH_donghuangkexueyuan
+					}
+				}
+				doh_kexueyuan_effect = yes
+			}
+		}
+	}	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = DH1_kaishiguojimaoyi
+					tag = DH1
+				}
+				add_cic = 2000
+			}
+		}
+	}
+}

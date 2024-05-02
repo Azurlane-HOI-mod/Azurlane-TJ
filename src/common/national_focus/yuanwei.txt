@@ -1,0 +1,7472 @@
+focus_tree = {
+	id = yuanwei_focus
+	shared_focus = AL_zhuanyi
+	shared_focus = AL_gujun
+	shared_focus = AL_junshi
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			original_tag = YUW
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 1100 y = 1700 }
+	focus = {
+		id = YUW_yifengmixin
+		icon = GFX_focus_luoxiya2
+		x = -10
+		y = 0
+		cost = 1
+		mutually_exclusive = { focus = YUW_zhengfugaige focus = YUW_zhidugeming focus = YUW_jiuguoxingdong focus = YUW_tiqianxuanju focus = YUW_shenshengshiming }
+		relative_position_id = YUW_zhengfugaige
+		available = {
+		not = { has_government = fascism}
+		not = { has_government = neutrality}
+		custom_trigger_tooltip = {
+		tooltip = "你还没有经历轮回"
+		not = {has_idea = YUW_geming}
+		}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			#custom_effect_tooltip = "YUW_tips5"
+			country_event = {id = YUW_event.9}
+		}
+	}
+	
+	focus = {
+		id = YUW_womendengbujile
+		icon = GFX_goal_generic_CAS
+		x = -1
+		y = 1
+		cost = 5
+		mutually_exclusive = { focus = YUW_xianshizhengzhi }
+		relative_position_id = YUW_yifengmixin
+		prerequisite = { focus = YUW_yifengmixin }
+		available = {
+		custom_trigger_tooltip = {
+		tooltip = "黎塞留已经做出了她的决定"
+		has_idea = YUW_geming
+	}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			hidden_effect = {
+			start_civil_war = {
+			ruling_party = communism
+			ideology = fascism
+			size = 0.5
+			only_own_territory = no
+			if = {
+				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+			capital = 26
+			states = { 
+				 21 32 22 31 25 20 33 735 1 806 19 23
+			}
+			}
+			if = {
+				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+			capital = 114
+			}
+			keep_unit_leaders = {02001 6194 02006 02012 02011 02010 02008 02014 } 
+			}
+			add_popularity = { ideology = democratic popularity = -0.2 }
+			add_popularity = { ideology = fascism popularity = -1 }
+			add_popularity = { ideology = neutrality popularity = -0.2 }
+			add_popularity = { ideology = communism popularity = 0.5 }
+			load_focus_tree = yuanwei_c_focus
+			country_event = { id =YUW_event.14}
+			}
+			custom_effect_tooltip = "YUW_tips3"
+			set_variable = {
+				var = YUW_ziyou
+				value = 0
+			}
+			set_variable = {
+				var = YUW_weixi
+				value = 0
+			}
+			set_country_flag = YUW_dangerclear
+			BFL = {
+			add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 80
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 50
+			}
+			}
+			YUW = {
+			add_ai_strategy = {
+			type = befriend
+			id = BFL			
+			value = 50
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "BFL"			
+			value = 30
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_xianshizhengzhi
+		icon = GFX_goal_generic_war_with_comintern
+		x = 1
+		y = 1
+		cost = 5
+		mutually_exclusive = { focus = YUW_womendengbujile }
+		relative_position_id = YUW_yifengmixin
+		prerequisite = { focus = YUW_yifengmixin }
+		available = {
+		custom_trigger_tooltip = {
+		tooltip = "黎塞留已经做出了她的决定"
+		has_idea = YUW_biange
+		}
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			YUW_hldzf_dengji = yes
+			BFL = {
+			add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 70
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 50
+			}
+			}
+			YUW = {
+			add_ai_strategy = {
+			type = befriend
+			id = BFL			
+			value = 50
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "BFL"			
+			value = 30
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zengqianghongsexuanchuan
+		icon = GFX_focus_por_workers_of_iberia
+		x = -1
+		y = 1
+		cost = 4
+		relative_position_id = YUW_xianshizhengzhi
+		prerequisite = { focus = YUW_xianshizhengzhi }
+		available = {
+			has_completed_focus = YUW_jienagcdr
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = communist_influence
+			add_political_power = 50
+		}
+	}
+	
+	focus = {
+		id = YUW_bizui
+		icon = GFX_goal_continuous_suppression
+		x = 1
+		y = 1
+		cost = 8
+		relative_position_id = YUW_xianshizhengzhi
+		prerequisite = { focus = YUW_xianshizhengzhi }
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			remove_ideas = YUW_fblx
+			YUW_hldzf_dengji = yes
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			add_popularity = { ideology = fascism popularity = -0.15 }
+			add_popularity = { ideology = neutrality popularity = -0.08 }
+			add_popularity = { ideology = communism popularity = 0.05 }
+			set_variable = {
+				var = YUW_ziyou
+				value = 0
+			}
+			set_variable = {
+				var = YUW_weixi
+				value = 0
+			}
+			set_country_flag = YUW_dangerclear
+		}
+	}
+	
+	focus = {
+		id = YUW_qiangpojueze
+		icon = GFX_goal_generic_forceful_treaty
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = YUW_bizui
+		prerequisite = { focus = YUW_bizui }
+		prerequisite = { focus = YUW_zengqianghongsexuanchuan }
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id = YUW_event.17 }
+			hidden_effect = {
+			load_focus_tree = yuanwei_c_focus
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zhengfugaige
+		icon = GFX_focus_focus_fra_national_resistance_council
+		x = 23
+		y = 0
+		cost = 5
+		mutually_exclusive = { focus = YUW_zhidugeming  focus = YUW_yifengmixin focus = YUW_jiuguoxingdong focus = YUW_tiqianxuanju focus = YUW_shenshengshiming }
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		not = { has_government = fascism}
+		not = { has_government = communism}
+		}
+		bypass = {
+			not = { has_idea = YUW_fblx }
+			not = { has_government = fascism}
+		}
+		
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 150
+			#custom_effect_tooltip = YUN_tips1
+		}
+	}
+	
+	focus = {
+		id = YUW_zhidugeming
+		icon = GFX_focus_ger_reichskommisariats
+		x = 10
+		y = 0
+		cost = 5
+		mutually_exclusive = { focus = YUW_zhengfugaige  focus = YUW_yifengmixin focus = YUW_jiuguoxingdong focus = YUW_tiqianxuanju focus = YUW_shenshengshiming }
+		relative_position_id = YUW_zhengfugaige
+		available = {
+			not = {has_government = communism}
+		}
+		bypass = {
+			 has_civil_war = yes
+			 has_government = fascism
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+			has_government = fascism
+			add = 100
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			#custom_effect_tooltip = YUW_tip8
+			add_war_support = 0.1
+		}
+	}
+	
+	focus = {
+		id = YUW_rangbaerdemingling
+		icon = GFX_focus_rangbaer
+		x = -2
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_zhidugeming }
+		mutually_exclusive = { focus = YUW_yuanweishengkaidejijie focus = YUW_tuanjieweixixingdong  }
+		relative_position_id = YUW_zhidugeming
+
+		bypass = {
+		has_government = fascism
+		has_civil_war = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = { ideology = neutrality popularity = 0.1 }
+			add_popularity = { ideology = fascism popularity = 0.2 }
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			add_political_power = 100
+			add_war_support = 0.2
+			custom_effect_tooltip = yuw_ziyoufennujia2
+			add_to_variable = {
+				var = yuw_ziyou
+				value = 20
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_qinzishangzhen
+		icon = GFX_focus_zhichirangbaer
+		x = 0
+		y = 1
+		cost = 8
+		prerequisite = { focus = YUW_rangbaerdemingling }
+		relative_position_id = YUW_rangbaerdemingling
+
+		bypass = {
+		has_government = fascism
+		has_civil_war = yes
+		}
+		ai_will_do = {
+			factor = 60
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_political_power = 50
+			custom_effect_tooltip = yuw_weixifennujia2
+			add_to_variable = {
+				var = yuw_weixi
+				value = 20
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_yulisailiuhejie
+		icon = GFX_focus_lisailiu
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = YUW_qinzishangzhen }
+		relative_position_id = YUW_qinzishangzhen
+		available = {
+			has_idea = YUW_wddjj
+		}
+		bypass = {
+		has_government = fascism
+		has_civil_war = yes
+		}
+		ai_will_do = {
+			factor = 60
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = { ideology = fascism popularity = 0.2 }
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			YUW_hldzf_dengji = 1
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_weixi
+				value = -10
+			}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_jieguanguojia
+		icon = GFX_focus_fra_milice
+		x = 0
+		y = 1
+		cost = 8
+		prerequisite = { focus = YUW_yulisailiuhejie }
+		relative_position_id = YUW_yulisailiuhejie
+
+		bypass = {
+		has_government = fascism
+		has_civil_war = yes
+		}
+		ai_will_do = {
+			factor = 60
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.2
+			YUW_hldzf_dengji = 1
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_weixi
+				value = -10
+			}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_tuanjieweixixingdong
+		icon = GFX_focus_dunkeerke
+		x = 0
+		y = 1
+		cost = 15
+		prerequisite = { focus = YUW_zhidugeming }
+		mutually_exclusive = { focus = YUW_yuanweishengkaidejijie focus = YUW_rangbaerdemingling }
+		relative_position_id = YUW_zhidugeming
+
+		ai_will_do = {
+			factor = 90
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = -0.1
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+			YUW_dunkerque = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				tdybp
+			}
+			}
+			promote_leader = yes
+			}
+			}
+			add_ideas = YUW_kdzb
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_qiangpozibenjiajuankuan
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 1
+		cost = 15
+		prerequisite = { focus = YUW_tuanjieweixixingdong }
+		relative_position_id = YUW_tuanjieweixixingdong
+		available = {
+			has_idea = yuw_jjbk
+		}
+		bypass = {
+			not = {has_idea = yuw_jjbk}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = -0.1
+			add_war_support = 0.2
+			swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_jjhmhf
+			}
+			add_popularity = { ideology = fascism popularity = 0.05 }
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			add_popularity = { ideology = communism popularity = -0.1 }
+			add_popularity = { ideology = democratic popularity = 0.2 }
+			custom_effect_tooltip = yuw_ziyoufennujia2
+			add_to_variable = {
+				var = yuw_ziyou
+				value = 10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_lianheqilai
+		icon = GFX_fflag_YUW
+		x = 0
+		y = 1
+		cost = 15
+		prerequisite = { focus = YUW_qiangpozibenjiajuankuan }
+		relative_position_id = YUW_qiangpozibenjiajuankuan
+
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.1
+			add_war_support = 0.1
+			YUW_hldzf_dengji = yes
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -10
+			}
+			add_to_variable = {
+				var = yuw_weixi
+				value = -10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_guominjuexing
+		icon = GFX_focus_qimiaomaotou
+		x = 0
+		y = 1
+		cost = 15
+		prerequisite = { focus = YUW_lianheqilai }
+		relative_position_id = YUW_lianheqilai
+		available = {
+			has_idea = YUW_jjhmhf
+		}
+		bypass = {
+			not = {has_idea = YUW_jjhmhf}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id =YUW_event.24}
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_yuanweishengkaidejijie
+		icon = GFX_focus_zhende
+		x = 2
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_zhidugeming }
+		mutually_exclusive = {  focus = YUW_tuanjieweixixingdong focus = YUW_rangbaerdemingling  }
+		relative_position_id = YUW_zhidugeming
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_popularity = { ideology = fascism popularity = -0.2 }
+			YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_gulijuankuan
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_yuanweishengkaidejijie }
+		relative_position_id = YUW_yuanweishengkaidejijie
+		available = {
+			has_idea = yuw_jjbk
+		}
+		bypass = {
+			not = {has_idea = yuw_jjbk}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id = YUW_event.25}
+			add_stability = 0.2
+			add_war_support = 0.2
+			add_popularity = { ideology = democratic popularity = -0.1 }
+			add_popularity = { ideology = communism popularity = 0.1 }
+		}
+	}
+	
+	focus = {
+		id = YUW_shangdizuguoyuzhende
+		icon = GFX_focus_focus_fra_orleans_restoration
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_gulijuankuan }
+		relative_position_id = YUW_gulijuankuan
+
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.2
+			add_popularity = { ideology = neutrality popularity = 0.1 }
+			YUW_hldzf_dengji = yes
+			remove_ideas = YUW_jjhmhf
+		}
+	}
+	
+	focus = {
+		id = YUW_chuantongzhuyidebaquan
+		icon = GFX_focus_focus_fra_third_empire
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_shangdizuguoyuzhende }
+		relative_position_id = YUW_shangdizuguoyuzhende
+
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 150
+			add_popularity = { ideology = neutrality popularity = 0.1 }
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_buliuxuedeneizhan
+		icon = GFX_aflag_YUW
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_guominjuexing focus = YUW_chuantongzhuyidebaquan focus = YUW_jieguanguojia}
+		relative_position_id = YUW_guominjuexing
+
+		bypass = {
+			has_completed_focus = YUW_rangbaerdemingling
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+			limit = {
+			has_completed_focus = YUW_yuanweishengkaidejijie
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = { ideology = neutrality popularity = 0.5 }
+			add_stability = 0.3
+			
+			}else = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = { ideology = fascism popularity = 0.5 }
+			add_stability = 0.2
+			}
+			custom_effect_tooltip = "这个国策将移除分崩离析决议和民族精神。"
+			YUW_hldzf_dengji = yes
+			set_country_flag = YUW_dangerclear
+			add_ideas = extensive_conscription
+			hidden_effect = {
+				remove_ideas = { YUW_fblx YUW_fblx_lisailiu YUW_fblx_rangbaer }
+			}
+			set_variable = {
+				var = YUW_ziyou
+				value = 0
+			}
+			set_variable = {
+				var = YUW_weixi
+				value = 0
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_yuanweideziranbianjie
+		icon = GFX_focus_focus_fra_border
+		x = 9
+		y = 0
+		cost = 5
+		relative_position_id = YUW_chongxinshenshiwaijiaozhengce
+		mutually_exclusive = { focus = YUW_jiaruchisezhongzhou }
+		
+		available = {
+			is_puppet = no
+			or = {
+			has_completed_focus = YUW_buliuxuedeneizhan
+			has_completed_focus = YUW_yuanweikuozhangzhuyi
+			}
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_5 = yes
+			set_rule = { can_create_factions = yes }
+			add_ideas = yuw_fczh
+			add_war_support = 0.2
+		}
+	}
+	
+	focus = {
+		id = YUW_jinjunjiatailuoniya
+		icon = GFX_focus_spr_crush_the_revolution
+		x = -4
+		y = 1
+		cost = 8
+		relative_position_id = YUW_yuanweideziranbianjie
+		prerequisite = { focus = YUW_yuanweideziranbianjie focus = YUW_jiaruchisezhongzhou}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			has_global_flag = spanish_civil_war
+		}
+		bypass = {
+			or = {
+			has_war_with = SPR
+			has_war_with = SPA
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_1 = yes
+			country_event = { id = YUW_event.26 days = 1}
+			add_ideas = SPR_seized_gold_reserves
+		}
+	}
+	
+	focus = {
+		id = YUW_quebaohouhuayuananquan
+		icon = GFX_focus_focus_fra_intervention_spain
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_jinjunjiatailuoniya
+		prerequisite = { focus = YUW_jinjunjiatailuoniya }
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			has_global_flag = scw_over
+		}
+		bypass = {
+			or = {
+			has_war_with = SPR
+			has_war_with = SPA
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_3 = yes
+			every_country = {
+			limit = {
+				original_tag = SPR
+				owns_state = 41
+			}
+			country_event = { id = YUW_event.27 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_xiaomieputaoya
+		icon = GFX_focus_por_portuguese_legion
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_quebaohouhuayuananquan
+		prerequisite = { focus = YUW_quebaohouhuayuananquan }
+		will_lead_to_war_with = POR
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			country_exists = POR
+		}
+		bypass = {
+			has_war_with = POR
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_5 = yes
+			declare_war_on = { target = POR type = annex_everything }
+		}
+	}
+	
+	focus = {
+		id = YUW_suoqufashuwalong
+		icon = GFX_goal_generic_political_pressure
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = YUW_yuanweideziranbianjie
+		prerequisite = { focus = YUW_yuanweideziranbianjie focus = YUW_jiaruchisezhongzhou}
+		will_lead_to_war_with = BEL
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+		}
+		bypass = {
+			or = {
+			has_war_with = HUJ
+			has_war_with = HOL
+			has_war_with = BEL
+			has_war_with = LUX
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_1 = yes
+			add_named_threat = { threat = 5 name = "索取法属瓦隆" }
+			add_state_claim = 34
+			HUJ = {
+			country_event = { id = YUW_event.28 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_diyiciboerduohuiyi
+		icon = GFX_goal_generic_military_deal
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_suoqufashuwalong
+		prerequisite = { focus = YUW_suoqufashuwalong }
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			not = {has_war_with = TIX}
+			TIX = {
+			not = {is_in_faction_with = HUJ}
+			}
+		}
+		bypass = {
+			or = {
+			has_country_flag = huangjiajieru_yuw
+			has_war_with = TIX
+			has_war_with = HOL
+			has_war_with = BEL
+			has_war_with = LUX
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			TIX = {
+			country_event = { id = YUW_event.31 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_didisanguodemingyun
+		icon = GFX_goal_generic_territory_or_war
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_diyiciboerduohuiyi
+		prerequisite = { focus = YUW_diyiciboerduohuiyi }
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = LUX
+		will_lead_to_war_with = HOL
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+		}
+		bypass = {
+			or = {
+			has_country_flag = huangjiajieru_yuw
+			has_war_with = TIX
+			has_war_with = HOL
+			has_war_with = BEL
+			has_war_with = LUX
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_5 = yes
+			add_named_threat = { threat = 10 name = "弟弟三国的命运" }
+			country_event = { id = YUW_event.33 days = 1}
+		}
+	}
+	
+	focus = {
+		id = YUW_guafenruishi
+		icon = GFX_focus_attack_switzerland
+		x = 4
+		y = 1
+		cost = 5
+		relative_position_id = YUW_jiaruchisezhongzhou
+		prerequisite = { focus = YUW_yuanweideziranbianjie focus = YUW_jiaruchisezhongzhou}
+		will_lead_to_war_with = SWI
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+		}
+		bypass = {
+			or = {
+			has_war_with = TIX
+			not = {country_exists = TIX}
+			not = {country_exists = SWI}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_10 = yes
+			add_named_threat = { threat = 5 name = "瓜分瑞士" }
+			SAD = {
+			country_event = { id = YUW_event.39 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_shentouhuangjiazhimindi
+		icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_guafenruishi
+		prerequisite = { focus = YUW_guafenruishi}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+		}
+
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.2
+			add_political_power = -100
+		}
+	}
+	
+	focus = {
+		id = YUW_dierciboerduohuiyi
+		icon = GFX_goal_tripartite_pact
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_shentouhuangjiazhimindi
+		prerequisite = { focus = YUW_shentouhuangjiazhimindi}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			has_completed_focus = YUW_diyiciboerduohuiyi
+		}
+		bypass = {
+			or = {
+			not = {country_exists = SAD}
+			not = {country_exists = HUJ}
+			has_war_with = HUJ
+			has_war_with = SAD
+			is_in_faction_with = HUJ
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_3 = yes
+			add_war_support = 0.2
+			SAD = {
+			country_event = { id = YUW_event.40 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zaiyazhoudeliyi
+		icon = GFX_focus_generic_balkans_focus
+		x = 1
+		y = 1
+		cost = 8
+		relative_position_id = YUW_jiaruchisezhongzhou
+		prerequisite = { focus = YUW_yuanweideziranbianjie focus = YUW_jiaruchisezhongzhou}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+		}
+		bypass = {
+			not = {country_exists = SIA}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_1 = yes
+			SIA = {
+			country_event = { id = YUW_event.27 days = 1}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = YUW_zhiyuandonghuang
+		icon = GFX_focus_generic_royal_wedding
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_zaiyazhoudeliyi
+		prerequisite = { focus = YUW_zaiyazhoudeliyi}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			not = {has_war_with = DOH}
+			DOH = {has_war_with = CHY}
+			
+		}
+		bypass = {
+			not = {country_exists = DOH}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_1 = yes
+			DOH = {
+			add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 200
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 200
+			}
+			}
+			YUW = {
+			add_ai_strategy = {
+			type = befriend
+			id = DOH			
+			value = 20
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "DOH"			
+			value = 100
+			}
+			add_ai_strategy = {
+			type = send_volunteers_desire	#志愿军
+			id = "DOH"			
+			value = 3000
+			}
+			add_ai_strategy = { 
+			type = antagonize
+			id = "CHY"			
+			value = 300
+			}
+			}
+			CHY = {
+			add_ai_strategy = {
+			type = antagonize
+			id = "YUW"			
+			value = 500
+			}
+			}
+			add_opinion_modifier = { target = DOH modifier = YUW_gsgx}
+			reverse_add_opinion_modifier = { target = DOH modifier = YUW_gsgx }
+			DOH = {
+			country_event = { id = YUW_event.37 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_dongxixieyue
+		icon = GFX_fflag_DOH
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_zhiyuandonghuang
+		prerequisite = { focus = YUW_zhiyuandonghuang}
+		available = {
+			is_puppet = no
+			not = {is_in_faction_with = TIX}
+			not = {has_war_with = DOH}
+			or = {
+			if = {
+			DOH = {
+			has_government = fascism
+			has_completed_focus = DOH_huanxingjulong
+			has_opinion = { target = YUW value > 50 }
+			}
+			YUW = { has_government = fascism }
+			}
+			if = {
+			DOH = {
+			has_government = democratic
+			has_completed_focus = DOH_huanxingjulong
+			has_opinion = { target = YUW value > 50 }
+			}
+			YUW = { has_government = democratic }
+			}
+			}
+		}
+		bypass = {
+			not = {country_exists = DOH}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_faction = "东西协约"
+			DOH = {
+			country_event = { id = YUW_event.38 days = 1}
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = YUW_zainanmeidehuoban
+		icon = GFX_focus_por_recover_brazil
+		x = -2
+		y = 1
+		cost = 10
+		relative_position_id = YUW_jiaruchisezhongzhou
+		prerequisite =  { focus = YUW_jiaruchisezhongzhou focus = YUW_yuanweideziranbianjie}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_1 = yes
+			set_autonomy = {
+			target = VEN
+			autonomy_state = autonomy_integrated_puppet
+			}
+			set_autonomy = {
+			target = PRU
+			autonomy_state = autonomy_integrated_puppet
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_xuanchengjiaotingjiudi
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_zainanmeidehuoban
+		prerequisite = { focus = YUW_zainanmeidehuoban }
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			not = {is_in_faction_with = SAD}
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			has_completed_focus = YUW_dierciboerduohuiyi
+			add = 60
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_state_claim = 2
+			add_state_claim = 114
+			add_ideas = YUW_xy
+		}
+	}
+	
+	focus = {
+		id = YUW_laiyinlanhuozhanzheng
+		icon = GFX_aflag_TIX
+		x = 0
+		y = 1
+		cost = 8
+		relative_position_id = YUW_xuanchengjiaotingjiudi
+		prerequisite = { focus = YUW_xuanchengjiaotingjiudi }
+		will_lead_to_war_with = TIX
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			if = {
+			has_government = democratic
+			TIX = {has_added_tension_amount > 40}
+			}
+			is_ai = no
+			has_idea = TY_fengkuangAI
+			}
+			not = {is_in_faction_with = TIX}
+		}
+		bypass = {
+			or = {
+			has_war_with = TIX
+			not = {country_exists = TIX}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+			date > 1939.3.1
+			add = 80
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_named_threat = { threat = 5 name = "莱茵兰或战争" }
+			TIX = {
+			country_event = { id = YUW_event.36 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_jiaruchisezhongzhou
+		icon = GFX_fflag_TIX
+		x = 4
+		y = 0
+		cost = 5
+		relative_position_id = YUW_yuanweideziranbianjie
+		mutually_exclusive = { focus = YUW_yuanweideziranbianjie }
+		
+		available = {
+			or = {
+			has_completed_focus = YUW_buliuxuedeneizhan
+			has_completed_focus = YUW_yuanweikuozhangzhuyi
+			}
+			has_government = fascism
+			custom_trigger_tooltip = {
+				tooltip = "铁血国创建了赤色中轴"
+				has_global_flag = TIX_created_chisezhongzhou
+				TIX = { is_faction_leader = yes } 
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+			modifier = {
+			YUW_rangbaer = {
+			is_country_leader = yes
+			}
+			add = 100
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_3 = yes
+			add_stability = 0.1
+			TIX = {
+			add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 200
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 1000
+			}
+			}
+			SAD = {
+			add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 200
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 1000
+			}
+			}
+			YUW = {
+			add_ai_strategy = {
+			type = befriend
+			id = TIX			
+			value = 500
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "TIX"			
+			value = 1000
+			}
+			}
+			add_opinion_modifier = { target = TIX modifier = YUW_gsgx}
+			add_opinion_modifier = { target = SAD modifier = YUW_gsgx}
+			reverse_add_opinion_modifier = { target = TIX modifier = YUW_gsgx }
+			reverse_add_opinion_modifier = { target = SAD modifier = YUW_gsgx }
+			add_ideas = YUW_zc
+		}
+	}
+	
+	focus = {
+		id = YUW_chalimanjihua
+		icon = GFX_aflag_HUJ
+		x = 0
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 10
+		relative_position_id = YUW_didisanguodemingyun
+		available = {
+			is_puppet = no
+			date > 1940.2.1
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+			or = {
+			has_completed_focus = YUW_laiyinlanhuozhanzheng
+			has_completed_focus = YUW_chedijingjigaige
+			has_completed_focus = YUW_rushensuoyuan
+			has_government = neutrality
+			has_idea = TY_fengkuangAI
+			}
+			not = {has_war_with = TIX}
+			not = {is_in_faction_with = HUJ}
+			or = {
+			not = {country_exists = TIX}
+			TIX = { is_subject_of = YUW }
+			if = {
+			51 = {
+			is_demilitarized_zone = yes
+			}
+			42 = {
+			is_demilitarized_zone = yes
+			}
+			}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			not = {country_exists = BFL}
+			add = 100
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_clmjh
+		}
+	}
+	
+	focus = {
+		id = YUW_tezhanjianniang
+		icon = GFX_focus_jinbuli
+		x = -2
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_chalimanjihua }
+		relative_position_id = YUW_chalimanjihua
+		available = {
+			is_puppet = no
+			date > 1940.1.1
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			set_technology = { shipgirltech_jichulilun = 1 }
+			set_technology = { shipgirltech_xunyangpao_1 = 1 }
+			set_technology = { shipgirltech_xunyangpao_2 = 1 } 
+		}
+	}
+	
+	focus = {
+		id = YUW_lushangxingzhou
+		icon = GFX_focus_manjiu
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YUW_chalimanjihua }
+		relative_position_id = YUW_chalimanjihua
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			set_technology = { mtg_landing_craft = 1 }  
+		}
+	}
+	
+	focus = {
+		id = YUW_shabaidemori
+		icon = GFX_focus_yilishabai
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YUW_lushangxingzhou }
+		prerequisite = { focus = YUW_tezhanjianniang }
+		relative_position_id = YUW_lushangxingzhou
+		will_lead_to_war_with = HUJ
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+			not = {is_in_faction_with = HUJ}
+		}
+		bypass = {
+			or = {
+			has_war_with = HUJ
+			not = {country_exists = HUJ}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_wargoal = { target = HUJ type = take_state_focus }
+		}
+	}
+	
+	focus = {
+		id = YUW_yuanzhengbeilian
+		icon = GFX_aflag_BFL
+		x = 6
+		y = 0
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 10
+		relative_position_id = YUW_chalimanjihua
+		available = {
+			is_puppet = no
+			date > 1940.2.1
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+			or = {
+			has_completed_focus = YUW_chedijingjigaige
+			has_completed_focus = YUW_rushensuoyuan
+			has_completed_focus = YUW_laiyinlanhuozhanzheng
+			has_government = neutrality
+			has_idea = TY_fengkuangAI
+			}
+			not = {has_war_with = TIX}
+			not = {is_in_faction_with = BFL}
+			or = {
+			TIX = {
+			has_government = democratic
+			}
+			not = {country_exists = TIX}
+			TIX = { is_subject_of = YUW }
+			if = {
+			51 = {
+			is_demilitarized_zone = yes
+			}
+			42 = {
+			is_demilitarized_zone = yes
+			}
+			}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_yzbl
+		}
+	}
+	
+	focus = {
+		id = YUW_dongouzhanzhengbuju
+		icon = GFX_focus_generic_aircraft_production
+		x = -2
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_yuanzhengbeilian }
+		relative_position_id = YUW_yuanzhengbeilian
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_zzbj
+		}
+	}
+	
+	focus = {
+		id = YUW_fenxibolibadebaiyin
+		icon = GFX_focus_bolina
+		x = 2
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_yuanzhengbeilian }
+		relative_position_id = YUW_yuanzhengbeilian
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_fxby
+		}
+	}
+	
+	focus = {
+		id = YUW_tongjijuxiong
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YUW_dongouzhanzhengbuju }
+		prerequisite = { focus = YUW_fenxibolibadebaiyin }
+		relative_position_id = YUW_dongouzhanzhengbuju
+		available = {
+			is_puppet = no
+			has_army_manpower = { size > 2999999 }
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+		bypass = {
+			or = {
+			has_war_with = BFL
+			not = {country_exists = BFL}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+			date > 1941.1.1
+			add = 100
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_wargoal = { target = BFL type = take_state_focus }
+		}
+	}
+	
+	focus = {
+		id = YUW_shenglishuyuwomen
+		icon = GFX_fflag_YUW
+		x = 3
+		y = 1
+		cost = 2
+		prerequisite = { focus = YUW_shabaidemori }
+		prerequisite = { focus = YUW_tongjijuxiong }
+		relative_position_id = YUW_shabaidemori
+		available = {
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = neutrality
+			has_government = democratic
+			}
+			or = {
+			not = {country_exists = TIX}
+			TIX = { is_subject_of = YUW }
+			controls_state = 64
+			}
+			or = {
+			not = {country_exists = HUJ}
+			HUJ = { is_subject_of = YUW }
+			controls_state = 126
+			}
+			or = {
+			not = {country_exists = BFL}
+			BFL = { is_subject_of = YUW }
+			controls_state = 219
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_slsywm
+			add_ideas = YUW_arzl
+		}
+	}
+	
+	focus = {
+		id = YUW_hanweiminzhu
+		icon = GFX_goal_support_democracy
+		x = -1
+		y = 1
+		prerequisite = { focus = YUW_zhengfugaige }
+		relative_position_id = YUW_zhengfugaige
+		mutually_exclusive = { focus = YUW_weixixingdong1  }
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			YUW_hldzf_dengji = yes
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			add_popularity = { ideology = fascism popularity = 0.03 }
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+			add_popularity = { ideology = communism popularity = 0.03 }
+			YUW = {
+
+	add_ai_strategy = {
+		type = befriend
+		id = "HUJ"			
+		value = 50
+	}
+	add_ai_strategy = {
+		type = befriend
+		id = "BFL"			
+		value = 30
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = "HUJ"			
+		value = 100
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = "BFL"			
+		value = 50
+	}
+}
+	HUJ = {
+		add_ai_strategy = {
+		type = befriend
+		id = "YUW"			
+		value = 50
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = "YUW"			
+		value = 50
+	}
+	}
+	BYG = {
+	add_ai_strategy = {
+		type = antagonize
+		id = "YUW"			
+		value = 60
+	}
+	}
+		}
+	}
+	
+	focus = {
+		id = YUW_weixixingdong1
+		icon = GFX_focus_spa_eliminate_the_carlists
+		x = 1
+		y = 1
+		prerequisite = { focus = YUW_zhengfugaige }
+		relative_position_id = YUW_zhengfugaige
+		mutually_exclusive = { focus = YUW_hanweiminzhu  }
+		cost = 5
+		available = {
+			has_civil_war = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = yes
+			}
+			YUW_hldzf_dengji = yes
+			add_popularity = { ideology = neutrality popularity = 0.1 }
+			add_popularity = { ideology = fascism popularity = 0.2 }
+			add_popularity = { ideology = democratic popularity = -0.1 }
+			add_stability = -0.1
+			YUW = {
+			add_ai_strategy = {
+			type = befriend
+			id = TIX			
+			value = 150
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "TIX"			
+			value = 150
+			}
+			add_ai_strategy = {
+			type = befriend
+			id = SAD			
+			value = 30
+			}
+			}
+			TIX = {
+			add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 30
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 30
+			}
+			}
+			SAD = {
+			add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 30
+			}
+			add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 30
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_shiyejiuji
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -3
+		y = 1
+		prerequisite = { focus = YUW_hanweiminzhu focus = YUW_xianshizhengzhi }
+		relative_position_id = YUW_hanweiminzhu
+		cost = 5
+		available = {
+		or= {
+		has_completed_focus = YUW_gailiangjingji
+		has_completed_focus = YUW_yifengmixin
+		}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.03 }
+			add_popularity = { ideology = democratic popularity = 0.05 }
+			add_stability = 0.1
+		}
+	}
+	
+	focus = {
+		id = YUW_gongrenquanyifaan
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 1
+		prerequisite = { focus = YUW_shiyejiuji }
+		relative_position_id = YUW_shiyejiuji
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.03 }
+			add_popularity = { ideology = fascism popularity = -0.05 }
+			add_popularity = { ideology = democratic popularity = 0.05 }
+			add_stability = 0.1
+			add_ideas = YUW_gr
+			custom_effect_tooltip = yuw_weixifennujia2
+			add_to_variable = {
+				var = yuw_weixi
+				value = 10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_jienagcdr
+		icon = GFX_focus_generic_soviet_politics
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_gongrenquanyifaan }
+		relative_position_id = YUW_gongrenquanyifaan
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.1 }
+			add_popularity = { ideology = fascism popularity = -0.1 }
+			add_popularity = { ideology = democratic popularity = 0.15 }
+			custom_effect_tooltip = yuw_weixifennujia2
+			add_to_variable = {
+				var = yuw_weixi
+				value = 10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_ziyoumaoyigaige
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 1
+		y = 1
+		prerequisite = { focus = YUW_shiyejiuji }
+		relative_position_id = YUW_shiyejiuji
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = 0.08 }
+			add_ideas = YUW_zymygg
+		}
+	}
+	
+	focus = {
+		id = YUW_caiyuangungun
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_ziyoumaoyigaige }
+		relative_position_id = YUW_ziyoumaoyigaige
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			add_stability = 0.1
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_weixi
+				value = -15
+			}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -15
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zaiminzhuqizhixiatuanjie
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 1
+		y = 2
+		prerequisite = { focus = YUW_jienagcdr}
+		prerequisite = { focus = YUW_caiyuangungun}
+		relative_position_id = YUW_gongrenquanyifaan
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			YUW_hldzf_dengji = yes
+			add_popularity = { ideology = communism popularity = -0.05 }
+			add_popularity = { ideology = fascism popularity = -0.05 }
+			add_popularity = { ideology = neutrality popularity = -0.05 }
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			add_political_power = 100
+			custom_effect_tooltip = yuw_weixifennujia2
+			add_to_variable = {
+				var = yuw_weixi
+				value = 10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_gailiangjingji
+		icon = GFX_goal_generic_neutrality_focus
+		x = 1
+		y = 1
+		prerequisite = { focus = YUW_hanweiminzhu  focus = YUW_weixixingdong1 focus = YUW_rangbaerdemingling}
+		
+		relative_position_id = YUW_hanweiminzhu
+		cost = 5
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_jjhmhf
+		}
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_weixi
+				value = -10
+			}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_gaigefanganA
+		icon = GFX_focus_lisailiu
+		x = -1
+		y = 1
+		prerequisite = { focus = YUW_gailiangjingji}
+		mutually_exclusive = { focus = YUW_gaigefanganB  }
+		
+		relative_position_id = YUW_gailiangjingji
+		cost = 5
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+			has_completed_focus = YUW_weixixingdong1
+			factor = 0
+			}
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_jjggA
+			custom_effect_tooltip = yuw_weixifennujia2
+			add_to_variable = {
+				var = yuw_weixi
+				value = 10
+			}
+		}
+	}
+	focus = {
+		id = YUW_junhengfazhan
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_gaigefanganA}
+		
+		relative_position_id = YUW_gaigefanganA
+		cost = 5
+		available = {
+			or = {
+		has_completed_focus = YUW_jingchaguojia
+		has_completed_focus = YUW_zaiminzhuqizhixiatuanjie
+		}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			swap_ideas = {
+			remove_idea = YUW_jjggA
+			add_idea = YUW_jjggA1
+		}
+		}
+	}
+	focus = {
+		id = YUW_gaigefanganB
+		icon = GFX_focus_rangbaer
+		x = 1
+		y = 1
+		prerequisite = { focus = YUW_gailiangjingji}
+		mutually_exclusive = { focus = YUW_gaigefanganA  }
+		relative_position_id = YUW_gailiangjingji
+		cost = 5
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			has_completed_focus = YUW_weixixingdong1
+			factor = 100
+			}
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_jjggB
+			custom_effect_tooltip = yuw_ziyoufennujia2
+			add_to_variable = {
+				var = yuw_ziyou
+				value = 10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_junshiguanzhijingji
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_gaigefanganB}
+		relative_position_id = YUW_gaigefanganB
+		cost = 5
+		available = {
+			or = {
+		has_completed_focus = YUW_jingchaguojia
+		has_completed_focus = YUW_zaiminzhuqizhixiatuanjie
+		}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			swap_ideas = {
+			remove_idea = YUW_jjggB
+			add_idea = YUW_jjggB1
+		}
+		}
+	}
+	
+	focus = {
+		id = YUW_jingjigaige
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -1
+		y = 1
+		prerequisite = { focus = YUW_junshiguanzhijingji focus = YUW_junhengfazhan}
+		relative_position_id = YUW_junshiguanzhijingji
+		cost = 5
+		available = {
+			or = {
+		has_completed_focus = YUW_qingjiaohaidao
+		has_completed_focus = YUW_zhaoanhaidao
+		}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			YUW_hldzf_dengji = yes
+			swap_ideas = {
+			remove_idea = YUW_jjhmhf
+			add_idea = YUW_wddjj
+		}
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_weixi
+				value = -15
+			}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -15
+			}
+		}
+	}
+	focus = {
+		id = YUW_kuodazhengbing
+		icon = GFX_focus_generic_little_entente
+		x = 3
+		y = 1
+		prerequisite = { focus = YUW_weixixingdong1 focus = YUW_rangbaerdemingling}
+		relative_position_id = YUW_weixixingdong1
+		cost = 5
+		available = {
+		or = {
+		has_completed_focus = YUW_gailiangjingji
+		has_completed_focus = YUW_zhidugeming
+		}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.1
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			add_popularity = { ideology = fascism popularity = -0.05 }
+			add_popularity = { ideology = democratic popularity = 0.03 }
+			add_popularity = { ideology = communism popularity = 0.02 }
+			add_ideas = YUW_kdzb
+		}
+	}
+	focus = {
+		id = YUW_boxuelaodongli
+		icon = GFX_focus_generic_manpower
+		x = 1
+		y = 1
+		prerequisite = { focus = YUW_kuodazhengbing }
+		relative_position_id = YUW_kuodazhengbing
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.04 }
+			add_popularity = { ideology = fascism popularity = 0.07 }
+			add_popularity = { ideology = democratic popularity = -0.03 }
+			add_popularity = { ideology = communism popularity = -0.02 }
+			add_ideas = YUW_bxldl
+			custom_effect_tooltip = yuw_ziyoufennujia2
+			add_to_variable = {
+				var = yuw_ziyou
+				value = 10
+			}
+		}
+	}
+	focus = {
+		id = YUW_jingchaguojia
+		icon = GFX_goal_support_fascism
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_boxuelaodongli }
+		relative_position_id = YUW_boxuelaodongli
+		cost = 5
+		available = {
+		has_completed_focus = YUW_bupinghengdegongyefazhan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			add_popularity = { ideology = fascism popularity = 0.2 }
+			add_popularity = { ideology = democratic popularity = -0.1 }
+			add_popularity = { ideology = communism popularity = -0.1 }
+			add_ideas = YUW_jcgj
+			custom_effect_tooltip = yuw_ziyoufennujia2
+			add_to_variable = {
+				var = yuw_ziyou
+				value = 10
+			}
+		}
+	}
+	focus = {
+		id = YUW_kongzhizhengfu
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_jingchaguojia }
+		relative_position_id = YUW_jingchaguojia
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			YUW_hldzf_dengji = yes
+			custom_effect_tooltip = yuw_ziyoufennujia2
+			add_to_variable = {
+				var = yuw_ziyou
+				value = 10
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_jungongyouxian
+		icon = GFX_goal_generic_construct_civilian
+		x = -1
+		y = 1
+		prerequisite = { focus = YUW_kuodazhengbing }
+		relative_position_id = YUW_kuodazhengbing
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			add_popularity = { ideology = fascism popularity = 0.05 }
+			add_popularity = { ideology = democratic popularity = -0.03 }
+			add_popularity = { ideology = communism popularity = -0.03 }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes 
+				}
+			}
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_weixi
+				value = -15
+			}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -15
+			}
+		}
+	}
+	focus = {
+		id = YUW_bupinghengdegongyefazhan
+		icon = GFX_focus_generic_tank_production
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_jungongyouxian }
+		relative_position_id = YUW_jungongyouxian
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.04 }
+			add_popularity = { ideology = fascism popularity = 0.07 }
+			add_popularity = { ideology = democratic popularity = -0.05 }
+			add_popularity = { ideology = communism popularity = -0.05 }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUW_wuqishengchan
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_bupinghengdegongyefazhan }
+		relative_position_id = YUW_bupinghengdegongyefazhan
+		cost = 5
+		ai_will_do = {
+			factor = 80
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+			}
+			add_war_support = 0.1
+			
+		}
+	}
+	
+	focus = {
+		id = YUW_daxuan
+		icon = GFX_focus_fra_le_deluge
+		x = -3
+		y = 1
+		relative_position_id = YUW_jingjigaige
+		cost = 10
+		available = {
+		always = no
+		date > 1938.6.1
+		not = { has_country_flag = yiwai_daxuanwufajinxing }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			activate_mission = YUWdxsj
+			custom_effect_tooltip = "这个国策将会在你稳定经济与政府之后通过事件自动解锁。"
+			custom_effect_tooltip = wufazidongjiesuo_daxuan
+		}
+	}
+	
+	focus = {
+		id = YUW_chongxinshenshiwaijiaozhengce
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 7
+		y = 0
+		relative_position_id = YUW_daxuan
+		cost = 10
+		available = {
+		always = no
+		has_completed_focus = YUW_daxuan
+		not = { has_country_flag = yiwai_daxuanwufajinxing }
+		}
+		bypass = {
+			date > 1939.1.1
+			has_country_flag = yiwai_daxuanwufajinxing
+			or = {
+			has_completed_focus = YUW_lianhezhizheng
+			has_completed_focus = YUW_dulandaquan
+			has_completed_focus = YUW_hanweiminzhu
+			has_completed_focus = YUW_weixixingdong1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			YUW_hldzf_dengji = yes
+			custom_effect_tooltip = "这个国策将会在你大选结束之后通过事件自动解锁。"
+			custom_effect_tooltip = wufazidongjiesuo_daxuan
+		}
+	}
+	
+	focus = {
+		id = YUW_lan
+		icon = GFX_focus_lisailiu
+		x = -2
+		y = 1
+		relative_position_id = YUW_chongxinshenshiwaijiaozhengce
+		prerequisite = { focus = YUW_chongxinshenshiwaijiaozhengce }
+		mutually_exclusive = { focus = YUW_hei focus = YUW_bai  }
+		cost = 5
+		available = {
+			has_government = democratic
+			not = { has_completed_focus = YUW_tingshinuhou }
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.2
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = YUW_gcgj
+		icon = GFX_focus_generic_join_comintern
+		x = -1
+		y = 1
+		relative_position_id = YUW_lan
+		prerequisite = { focus = YUW_lan }
+		mutually_exclusive = { focus = YUW_blhx focus = YUW_cszz  focus = YUW_aoranzili }
+		cost = 5
+		available = {
+			has_completed_focus = YUW_hanweiminzhu
+			or= {
+				has_government = democratic
+				has_government = communism
+				}
+			BFL = {
+			has_government = communism
+			has_opinion = { target = YUW value > 50 }
+			}
+				not = { has_completed_focus = YUW_zhengquzhendezhichi }
+				custom_trigger_tooltip = {
+				tooltip = "共产联盟存在"
+				has_global_flag = BFL_created_gongchanlianmeng
+				BFL = { is_faction_leader = yes } 
+			}
+		}
+		
+		bypass = {
+			is_in_faction_with = BFL
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_opinion_modifier = { target = BFL modifier = YUW_gsgx}
+			reverse_add_opinion_modifier = { target = BFL modifier = YUW_gsgx }
+			
+				remove_from_faction = YUW
+			
+			BFL = {
+				add_to_faction = YUW
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_ziyoupingdengtuanjie
+		icon = GFX_focus_focus_fra_liberte_egalite_solidarite
+		x = 0
+		y = 1
+		relative_position_id = YUW_gcgj
+		prerequisite = { focus = YUW_gcgj }
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_zyodba
+		}
+	}
+	
+	focus = {
+		id = YUW_fanfaxisigongrengeming
+		icon = GFX_focus_por_workers_of_iberia
+		x = 0
+		y = 1
+		relative_position_id = YUW_ziyoupingdengtuanjie
+		prerequisite = { focus = YUW_ziyoupingdengtuanjie }
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			date > 1940.1.1
+			has_army_manpower = { size > 1999999 }
+			not = {is_in_faction_with = TIX}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+			create_wargoal = {
+ 				type = take_state_focus
+ 				target = TIX
+ 				expire = 0
+ 			}
+		}
+	}
+	
+	focus = {
+		id = YUW_blhx
+		icon = GFX_goal_support_democracy
+		x = 1
+		y = 1
+		relative_position_id = YUW_lan
+		prerequisite = { focus = YUW_lan focus = YUW_bai}
+		mutually_exclusive = { focus = YUW_gcgj focus = YUW_cszz  focus = YUW_aoranzili }
+		cost = 5
+		available = {
+			or= {
+				has_government = democratic
+				has_government = neutrality
+				}
+				not = {  has_completed_focus = YUW_zhidugeming }
+		}
+		ai_will_do = {
+			factor = 60
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_5 = yes
+			add_opinion_modifier = { target = HUJ modifier = YUW_gsgx}
+			add_opinion_modifier = { target = BYG modifier = YUW_gsgx}
+			reverse_add_opinion_modifier = { target = BYG modifier = YUW_gsgx }
+			reverse_add_opinion_modifier = { target = HUJ modifier = YUW_gsgx }
+			add_stability = 0.2
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = YUW_duisairendezhimingyiji
+		icon = GFX_goal_generic_navy_carrier
+		x = 0
+		y = 1
+		relative_position_id = YUW_blhx
+		prerequisite = { focus = YUW_blhx }
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			navy_experience = 100
+			add_tech_bonus = {
+				name = "战舰"
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+			add_tech_bonus = {
+				name = "航母"
+				bonus = 1
+				uses = 1
+				category = cv_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_hanweiminzhu1
+		icon = GFX_focus_bisimai_prison
+		x = 0
+		y = 1
+		relative_position_id = YUW_duisairendezhimingyiji
+		prerequisite = { focus = YUW_duisairendezhimingyiji }
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			date > 1940.1.1
+			has_army_manpower = { size > 1999999 }
+			not = {is_in_faction_with = TIX}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_wargoal = {
+ 				type = take_state_focus
+ 				target = TIX
+ 				expire = 0
+ 			}
+		}
+	}
+	
+	focus = {
+		id = YUW_cszz
+		icon = GFX_goal_support_fascism
+		x = 3
+		y = 1
+		relative_position_id = YUW_lan
+		prerequisite = { focus = YUW_bai   focus = YUW_hei}
+		mutually_exclusive = { focus = YUW_gcgj focus = YUW_blhx focus = YUW_aoranzili }
+		cost = 5
+		available = {
+			is_puppet = no
+			or = {
+				has_government = fascism
+				has_government = neutrality
+				has_completed_focus = YUW_tingshinuhou
+			}
+			not = { has_completed_focus = YUW_hanweiminzhu }
+			custom_trigger_tooltip = {
+				tooltip = "铁血国创建了赤色中轴"
+				has_global_flag = TIX_created_chisezhongzhou
+				TIX = { is_faction_leader = yes } 
+			}
+		}
+		
+		bypass = {
+			is_in_faction_with = TIX
+		}
+		
+		ai_will_do = {
+			factor = 60
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_3 = yes
+			add_opinion_modifier = { target = TIX modifier = YUW_gsgx}
+			add_opinion_modifier = { target = SAD modifier = YUW_gsgx}
+			reverse_add_opinion_modifier = { target = TIX modifier = YUW_gsgx }
+			reverse_add_opinion_modifier = { target = SAD modifier = YUW_gsgx }
+			
+				remove_from_faction = YUW
+			
+			TIX = {
+				add_to_faction = YUW
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_junshihezuo
+		icon = GFX_focus_ger_oppose_hitler
+		x = 0
+		y = 1
+		relative_position_id = YUW_cszz
+		prerequisite = { focus = YUW_cszz }
+		cost = 5
+		available = {
+			is_in_faction_with = TIX
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = "陆军理论"
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_sipomianju
+		icon = GFX_focus_yilishabai
+		x = 0
+		y = 1
+		relative_position_id = YUW_junshihezuo
+		prerequisite = { focus = YUW_junshihezuo }
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			has_army_manpower = { size > 999999 }
+			not = {is_in_faction_with = HUJ}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_wargoal = {
+ 				type = take_state_focus
+ 				target = HUJ
+ 				expire = 0
+ 			}
+		}
+	}
+	
+	focus = {
+		id = YUW_aoranzili
+		icon = GFX_focus_ger_reichskommisariats
+		x = 5
+		y = 1
+		relative_position_id = YUW_lan
+		prerequisite = {  focus = YUW_hei}
+		mutually_exclusive = {  focus = YUW_cszz focus = YUW_gcgj focus = YUW_blhx }
+		cost = 10
+		available = {
+			has_completed_focus = YUW_weixixingdong1
+			has_government = fascism
+			or = {
+			not = { has_completed_focus = YUW_zhengquzhendezhichi }
+			not = { has_completed_focus = YUW_tuanjieweixixingdong } 
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_3 = yes
+			create_faction = "鸢尾帝国"
+			set_rule = {
+				can_create_factions = yes
+			}
+			add_ideas = YUW_arzl
+			add_ideas = YUW_ozdmc
+			if = {
+			limit = {
+			is_in_faction_with = HUJ
+			}
+			HUJ = {
+				remove_from_faction = YUW
+			}
+			}
+		}
+		
+	}
+	
+	focus = {
+		id = YUW_fuchou1
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = YUW_aoranzili
+		prerequisite = { focus = YUW_aoranzili }
+		cost = 2
+
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_fczh
+        	if = {
+				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+			swap_ideas = {
+				remove_idea = YUW_arzl
+				add_idea = YUW_arzl1
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_shijieshengzhan
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 0
+		y = 1
+		relative_position_id = YUW_fuchou1
+		prerequisite = { focus = YUW_fuchou1 }
+		cost = 10
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_army_manpower = { size > 2999999 }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+			add = 100
+			date > 1941.1.1
+			has_war = no
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = kennegkadun_yuw
+			swap_ideas = {
+				remove_idea = YUW_arzl
+				add_idea = YUW_arzl1
+			}
+				add_nuclear_bombs = 10
+				custom_effect_tooltip = YUW_tips3
+				activate_mission = YUWmrsj
+				hidden_effect = {
+				every_country = {
+				YUW = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+				}
+				}
+		}
+	}
+	
+	focus = {
+		id = YUW_bai
+		icon = GFX_focus_zhende
+		x = 0
+		y = 1
+		relative_position_id = YUW_chongxinshenshiwaijiaozhengce
+		prerequisite = { focus = YUW_chongxinshenshiwaijiaozhengce }
+		mutually_exclusive = { focus = YUW_hei focus = YUW_lan  }
+		cost = 5
+		available = {
+			or = {
+			has_government = democratic
+			has_government = fascism
+			has_government = communism
+			}
+			or = {
+				has_completed_focus = YUW_yuanweishengkaidejijie
+				has_completed_focus = YUW_zhengquzhendezhichi
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.2
+			add_political_power = 150
+			set_party_name = { ideology = neutrality long_name = "自由鸢尾" name = "自由鸢尾" }
+			set_party_name = { ideology = fascism long_name = "自由鸢尾" name = "自由鸢尾" }
+		YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = liberalism
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = despotism
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_hei
+		icon = GFX_focus_rangbaer
+		x = 2
+		y = 1
+		relative_position_id = YUW_chongxinshenshiwaijiaozhengce
+		prerequisite = { focus = YUW_chongxinshenshiwaijiaozhengce }
+		mutually_exclusive = { focus = YUW_lan focus = YUW_bai  }
+		cost = 5
+		available = {
+			or = {
+			has_government = fascism
+			has_completed_focus = YUW_tingshinuhou
+			}
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.2
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = YUW_qingchuzhengzhiduishou
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 1
+		relative_position_id = YUW_daxuan
+		prerequisite = { focus = YUW_daxuan }
+		cost = 5
+		available = {
+			has_idea = YUW_fdp
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.05 }
+			add_popularity = { ideology = fascism popularity = 0.05 }
+			add_popularity = { ideology = democratic popularity = -0.05 }
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+		}
+	}
+	
+	focus = {
+		id = YUW_waiguojianniangzhichi
+		icon = GFX_goal_tripartite_pact
+		x = 0
+		y = 1
+		relative_position_id = YUW_qingchuzhengzhiduishou
+		prerequisite = { focus = YUW_qingchuzhengzhiduishou }
+		cost = 5
+		available = {
+			has_idea = YUW_fdp
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.05 }
+			add_popularity = { ideology = fascism popularity = 0.08 }
+			add_popularity = { ideology = democratic popularity = -0.05 }
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+			add_political_power = 10
+		}
+	}
+	
+	focus = {
+		id = YUW_wangquanyunluo
+		icon = GFX_goal_support_fascism
+		x = 1
+		y = 1
+		relative_position_id = YUW_waiguojianniangzhichi
+		prerequisite = { focus = YUW_waiguojianniangzhichi }
+		mutually_exclusive = { focus = YUW_zhengquzhendezhichi focus = YUW_jueduiminzhu  }
+		cost = 10
+		available = {
+			has_idea = YUW_fdp
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.05 }
+			add_popularity = { ideology = fascism popularity = 0.25 }
+			add_popularity = { ideology = democratic popularity = -0.07 }
+			add_popularity = { ideology = neutrality popularity = -0.25 }
+			add_days_mission_timeout = { mission = YUWdxsj days = 70 }
+			add_political_power = -50
+		}
+	}
+	
+	focus = {
+		id = YUW_quebaomanjiuzhichi
+		icon = GFX_focus_secret_rearmament
+		x = -1
+		y = 1
+		relative_position_id = YUW_wangquanyunluo
+		prerequisite = { focus = YUW_wangquanyunluo   focus = YUW_zhengquzhendezhichi}
+		cost = 5
+		available = {
+			has_idea = YUW_fdp
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.08 }
+			add_popularity = { ideology = fascism popularity = 0.15 }
+			add_popularity = { ideology = democratic popularity = -0.08 }
+			add_popularity = { ideology = neutrality popularity = 0.02 }
+			add_political_power = -20
+		}
+	}
+	focus = {
+		id = YUW_zibenjiazhenxian
+		icon = GFX_focus_rom_parties_end
+		x = 0
+		y = 1
+		relative_position_id = YUW_quebaomanjiuzhichi
+		prerequisite = { focus = YUW_quebaomanjiuzhichi }
+		cost = 5
+		available = {
+			has_idea = YUW_fdp
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.2 }
+			add_popularity = { ideology = fascism popularity = 0.2 }
+			add_popularity = { ideology = democratic popularity = 0.05 }
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+			add_political_power = -50
+		}
+	}
+	focus = {
+		id = YUW_huilutidu
+		icon = GFX_focus_xinzhimofang
+		x = 0
+		y = 1
+		relative_position_id = YUW_zibenjiazhenxian
+		prerequisite = { focus = YUW_zibenjiazhenxian }
+		cost = 5
+		available = {
+			has_idea = YUW_fdp
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.1 }
+			add_popularity = { ideology = fascism popularity = 0.3 }
+			add_popularity = { ideology = democratic popularity = -0.1 }
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+			custom_effect_tooltip = YUW_wxmofang
+			add_to_variable = {
+				var = xzmf_sl
+				value = 6
+			}
+		}
+	}
+	focus = {
+		id = YUW_zhengquzhendezhichi
+		icon = GFX_focus_zhende
+		x = -1
+		y = 1
+		relative_position_id = YUW_waiguojianniangzhichi
+		prerequisite = { focus = YUW_waiguojianniangzhichi focus = YUW_jianniangminzhuniudai}
+		mutually_exclusive = { focus = YUW_wangquanyunluo focus = YUW_jueduiminzhu  }
+		cost = 10
+		available = {
+		or = {
+			has_idea = YUW_fdp
+			has_idea = YUW_mzp
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+		if = {
+			limit = {
+					has_idea = YUW_fdp
+				}
+			add_popularity = { ideology = communism popularity = -0.2 }
+			add_popularity = { ideology = fascism popularity = 0.3 }
+			add_popularity = { ideology = neutrality popularity = 0.15 }
+			}
+		if = {
+			limit = {
+					has_idea = YUW_mzp
+				}
+			add_popularity = { ideology = communism popularity = -0.2 }
+			add_popularity = { ideology = democratic popularity= 0.3 }
+			add_popularity = { ideology = neutrality popularity = 0.15 }
+			}
+		custom_effect_tooltip = "这个国策会随着你支持的政党发生变化。"
+		}
+	}
+	
+	focus = {
+		id = YUW_zhengquxuanpiao
+		icon = GFX_goal_generic_major_alliance
+		x = -1
+		y = 1
+		relative_position_id = YUW_daxuan
+		prerequisite = { focus = YUW_daxuan }
+		cost = 5
+		available = {
+			has_idea = YUW_mzp
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.03 }
+			add_popularity = { ideology = fascism popularity = -0.03 }
+			add_popularity = { ideology = democratic popularity = 0.05 }
+			add_popularity = { ideology = neutrality popularity = -0.02 }
+		}
+	}
+	
+	focus = {
+		id = YUW_jianniangminzhuniudai
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = YUW_zhengquxuanpiao
+		prerequisite = { focus = YUW_zhengquxuanpiao }
+		cost = 5
+		available = {
+			has_idea = YUW_mzp
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.05 }
+			add_popularity = { ideology = fascism popularity = -0.05 }
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			add_popularity = { ideology = neutrality popularity = -0.03 }
+			add_political_power = 10
+			add_days_mission_timeout = { mission = YUWdxsj days = -35 }
+		}
+	}
+	
+	focus = {
+		id = YUW_jueduiminzhu
+		icon = GFX_goal_support_democracy
+		x = -1
+		y = 1
+		relative_position_id = YUW_jianniangminzhuniudai
+		prerequisite = { focus = YUW_jianniangminzhuniudai }
+		mutually_exclusive = { focus = YUW_zhengquzhendezhichi focus = YUW_wangquanyunluo  }
+		cost = 10
+		available = {
+			has_idea = YUW_mzp
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.05 }
+			add_popularity = { ideology = fascism popularity = -0.15 }
+			add_popularity = { ideology = democratic popularity = 0.25 }
+			add_popularity = { ideology = neutrality popularity = -0.15 }
+			add_political_power = -50
+			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+		}
+	}
+	
+	focus = {
+		id = YUW_xiangtidudanbao
+		icon = GFX_focus_generic_military_mission
+		x = 1
+		y = 1
+		relative_position_id = YUW_jueduiminzhu
+		prerequisite = { focus = YUW_jueduiminzhu focus = YUW_zhengquzhendezhichi }
+		cost = 5
+		available = {
+			has_idea = YUW_mzp
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = -0.05 }
+			add_popularity = { ideology = fascism popularity = -0.05 }
+			add_popularity = { ideology = democratic popularity = 0.08 }
+			add_popularity = { ideology = neutrality popularity = -0.05 }
+			add_political_power = -20
+		}
+	}
+	
+	focus = {
+		id = YUW_gongrenyushimin
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = YUW_xiangtidudanbao
+		prerequisite = { focus = YUW_xiangtidudanbao }
+		cost = 5
+		available = {
+			has_idea = YUW_mzp
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.05 }
+			add_popularity = { ideology = fascism popularity = -0.1 }
+			add_popularity = { ideology = democratic popularity = 0.2 }
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+			add_days_mission_timeout = { mission = YUWdxsj days = -35 }
+		}
+	}
+	
+	focus = {
+		id = YUW_gongpiongxuanju
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 0
+		y = 1
+		relative_position_id = YUW_gongrenyushimin
+		prerequisite = { focus = YUW_gongrenyushimin }
+		cost = 5
+		available = {
+			has_idea = YUW_mzp
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.05 }
+			add_popularity = { ideology = fascism popularity = 0.05 }
+			add_popularity = { ideology = democratic popularity = 0.3 }
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			add_days_mission_timeout = { mission = YUWdxsj days = -70 }
+		}
+	}
+	
+	focus = {
+		id = YUW_jiuciweizhiderongren
+		icon = GFX_focus_focus_fra_fascist_threat
+		x = 6
+		y = 0
+		relative_position_id = YUW_jichujianshe
+		cost = 3
+		
+		available = {
+			is_puppet = no
+			or = {
+			not = { has_completed_focus = YUW_shenshengshiming }
+			has_country_flag = lyjs_fubibeituifan
+			}
+			not = { has_completed_focus = YUW_buliuxuedeneizhan }
+			not = {has_idea = YUW_hldzf1 has_idea = YUW_hldzf2 has_idea = YUW_hldzf3 }
+			not = {has_completed_focus = YUW_jiuguoxingdong}
+			or = {
+			not = {has_completed_focus = YUW_tiqianxuanju}
+			has_completed_focus = YUW_jingjigaige
+			}
+			or = {
+			not = {has_completed_focus = YUW_zhidugeming}
+			has_government = neutrality
+			has_global_flag = MOD_azurlane_sairenzhizai
+			}
+		}
+		bypass = {
+			or = {
+			if = {
+			has_completed_focus = YUW_buliuxuedeneizhan
+			has_government = neutrality
+			}
+			if = {
+			date > 1938.1.1
+			has_completed_focus = YUW_tiqianxuanju
+			has_completed_focus = YUW_chedijingjigaige
+			}
+			if = {
+			has_completed_focus = YUW_rushensuoyuan
+			}
+			if = {
+			has_completed_focus = YUW_chongjianwangguo
+			not = { has_country_flag = lyjs_fubibeituifan }
+			}
+			if = {
+			has_completed_focus = YUW_zhanxinyuanwei
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 90
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			set_variable = {
+				var = YUW_ziyou
+				value = 0
+			}
+			set_variable = {
+				var = YUW_weixi
+				value = 0
+			}
+			if = {
+				limit = {
+				has_government = democratic
+				}
+				add_popularity = { ideology = democratic popularity = 0.2 }
+			}
+			if = {
+				limit = {
+				has_government = fascism
+				}
+				add_popularity = { ideology = fascism popularity = 0.2 }
+			}
+			custom_effect_tooltip = "现在我们应该摒弃前嫌，共同向前。这个国策将移除分崩离析决议和民族精神。"
+			add_stability = -0.2
+			set_country_flag = YUW_dangerclear
+			hidden_effect = {
+				remove_ideas = { YUW_fblx YUW_fblx_lisailiu YUW_fblx_rangbaer }
+			}
+		}
+	}
+
+	focus = {
+		id = YUW_gongfangzhuanhuan
+		icon = GFX_focus_eng_special_air_service
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_jiuciweizhiderongren }
+		relative_position_id = YUW_jiuciweizhiderongren
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.3
+			army_experience = 300
+		}
+	}
+	#sairenmod
+	focus = {
+		id = YUW_huangjinbandao_sr
+		icon = GFX_focus_focus_fra_intervention_spain
+		allow_branch = {
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		x = -2
+		y = 1
+		prerequisite = { focus = YUW_gongfangzhuanhuan }
+		relative_position_id = YUW_gongfangzhuanhuan
+		available = {
+			has_war_with = SIR
+		}
+		cost = 7
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			165 = { add_core_of = YUW }
+			794 = { add_core_of = YUW }
+			167 = { add_core_of = YUW }
+			custom_effect_tooltip = "五个先遣师登陆巴塞罗那"
+			hidden_effect = {
+				load_oob = "YUW_huanjinbandao" 
+			}
+		}
+	}
+	focus = {
+		id = YUW_shenglijun
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_huangjinbandao_sr }
+		relative_position_id = YUW_huangjinbandao_sr
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = "10支国民义勇师加入我们"
+			hidden_effect = {
+				load_oob = "YUW_shenglijun"
+			}
+		}
+	}
+	focus = {
+		id = YUW_jiaotingjiudi_sr
+		icon = GFX_focus_fra_milice
+		x = 2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		prerequisite = { focus = YUW_gongfangzhuanhuan }
+		relative_position_id = YUW_gongfangzhuanhuan
+		available = {
+			has_war_with = SIR
+		}
+		bypass = {
+			country_exists = SAD
+		}
+		cost = 7
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			2 = { add_core_of = YUW }
+			custom_effect_tooltip = "三个先遣师登陆罗马"
+			hidden_effect = {
+				load_oob = "YUW_jiaotingjiudi"
+			}
+		}
+	}
+	focus = {
+		id = YUW_renminzhenxian_sr
+		icon = GFX_focus_generic_little_entente
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_jiaotingjiudi_sr }
+		relative_position_id = YUW_jiaotingjiudi_sr
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_rmzx
+		}
+	}
+#tianjiangmod
+	focus = {
+		id = YUW_huangjinbandao
+		icon = GFX_focus_luoxiya
+		x = -2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		prerequisite = { focus = YUW_gongfangzhuanhuan }
+		relative_position_id = YUW_gongfangzhuanhuan
+		available = {
+			is_puppet = no
+			communism > 0.3
+			BFL = {
+			has_government = communism
+			has_opinion = { target = YUW value > 50 }
+			}
+		}
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+		
+			YUW = {give_guarantee = BFL }
+			
+			BFL = {
+			give_guarantee = YUW
+			}
+			
+		}
+	}
+	
+	
+	focus = {
+		id = YUW_cujinzhanzheng
+		icon = GFX_focus_por_workers_of_iberia
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_huangjinbandao }
+		relative_position_id = YUW_huangjinbandao
+		available = {
+			is_puppet = no
+			communism > 0.6
+			not = { is_in_faction_with = HUJ }
+			BFL = {
+			has_government = communism
+			has_opinion = { target = YUW value > 60 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = "共产联盟存在"
+				has_global_flag = BFL_created_gongchanlianmeng
+				BFL = { is_faction_leader = yes } 
+			}
+		}
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			BFL = {
+				add_war_support = 0.2
+				add_stability = 0.1
+				add_to_faction = YUW
+			}
+			add_war_support = 0.1
+			add_stability = 0.1
+			
+		}
+	}
+	
+	focus = {
+		id = YUW_ouzhouxiongji
+		icon = GFX_focus_fra_french_union
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_gongfangzhuanhuan }
+		relative_position_id = YUW_gongfangzhuanhuan
+		available_if_capitulated = yes
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+				add_stability = 0.3
+				add_war_support = 0.5
+				add_political_power =300
+			}
+			else = {
+				custom_effect_tooltip = "获得旧鸢尾国全部核心，并成为普罗旺斯和朗格多克的控制者与拥有者。"
+				#custom_effect_tooltip = "六个先遣师登陆旧鸢尾国南部沿海"
+				if = {
+				limit = {
+				or = {
+				has_government = fascism
+				has_government = neutrality
+				}
+				}
+				add_ideas = YUW_zmyj
+				}
+				hidden_effect = {
+					#load_oob = "YUW_ouzhouxiongji" 
+					735 = { add_core_of = YUW }
+					21 = { add_core_of = YUW }
+					22 = { add_core_of = YUW }
+					32 = { add_core_of = YUW }
+					20 = { add_core_of = YUW }
+					26 = { add_core_of = YUW }
+					25 = { add_core_of = YUW }
+					31 = { add_core_of = YUW }
+					19 = { add_core_of = YUW }
+					23 = { add_core_of = YUW }
+					33 = { add_core_of = YUW }
+					17 = { add_core_of = YUW }
+					27 = { add_core_of = YUW }
+					14 = { add_core_of = YUW }
+					30 = { add_core_of = YUW }
+					24 = { add_core_of = YUW }
+					15 = { add_core_of = YUW }
+					16 = { add_core_of = YUW }
+					18 = { add_core_of = YUW }
+					785 = { add_core_of = YUW }
+					29 = { add_core_of = YUW }
+					28 = { add_core_of = YUW }
+					transfer_state = 21
+					transfer_state = 22
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zhongcheng
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = -1
+		y = 2
+		prerequisite = { focus = YUW_ouzhouxiongji  }
+		relative_position_id = YUW_ouzhouxiongji
+		available_if_capitulated = yes
+		cost = 2
+		available = {
+		or = {
+		has_government = communism
+		has_government = fascism
+		has_completed_focus = YUW_bai
+		has_completed_focus = YUW_chuantongzhuyidebaquan
+		has_completed_focus = YUW_chedijingjigaige
+		not = { has_completed_focus = YUW_rushensuoyuan }
+		has_idea = TY_fengkuangAI
+		}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_zc
+		}
+	}
+	
+	focus = {
+		id = YUW_zhanluoshengxiang
+		icon = GFX_focus_up_joan_of_arc
+		x = -1
+		y = 1
+		prerequisite = { focus = YUW_zhongcheng }
+		relative_position_id = YUW_zhongcheng 
+		available_if_capitulated = yes
+		cost = 2
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "圣女贞德"
+						ruling_only = yes
+					}
+				}
+				add_country_leader_trait = hgsn
+			}
+			if = {
+				limit = {
+					or = {
+					has_government = fascism
+					has_government = neutrality
+					}
+				}
+				add_country_leader_trait = zhdrg
+			}
+		}
+	}
+	focus = {
+		id = YUW_xinyang
+		icon = GFX_focus_generic_home_defense
+		x = 1
+		y = 2
+		prerequisite = { focus = YUW_ouzhouxiongji}
+		relative_position_id = YUW_ouzhouxiongji
+		available_if_capitulated = yes		
+		cost = 2
+		available = {
+		or = {
+		has_government = democratic
+		has_government = neutrality
+		has_completed_focus = YUW_tuanjieweixixingdong
+		has_completed_focus = YUW_chedijingjigaige
+		has_completed_focus = YUW_rushensuoyuan
+		}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_xy
+		}
+	}
+	focus = {
+		id = YUW_luolinshizi
+		icon = GFX_focus_focus_fra_national_resistance_council
+		x = -1
+		y = 1
+		prerequisite = { focus = YUW_xinyang focus = YUW_zhongcheng}
+		relative_position_id = YUW_xinyang
+		available_if_capitulated = yes
+		cost = 3
+		available = {
+		not = {has_country_leader = { ruling_only = yes name = "让巴尔" }}
+		not = {has_country_leader = { ruling_only = yes name = "敦刻尔克" }}
+		not = {has_country_leader = { ruling_only = yes name = "恶毒酱" }}
+		not = {has_country_leader = { ruling_only = yes name = "凯旋" }}
+		not = {has_country_leader = { ruling_only = yes name = "霞飞" }}
+		not = {has_country_leader = { ruling_only = yes name = "路易九世" }}
+		not = {has_country_leader = { ruling_only = yes name = "拉·加利索尼埃" }}
+		not = {
+		has_government = communism
+		}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "圣女贞德"
+						ruling_only = yes
+					}
+				}
+				add_country_leader_trait = ssn
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "黎塞留"
+						ruling_only = yes
+					}
+				}
+				add_country_leader_trait = alszz
+				
+			}
+		}
+	}
+	focus = {
+		id = YUW_yongwangzhiqian
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 1
+		y = 1
+		prerequisite = { focus = YUW_xinyang }
+		relative_position_id = YUW_xinyang
+		available_if_capitulated = yes
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = YUW_ywzq
+				remove_idea = YUW_xy
+			}
+		}
+	}
+	
+#tianjiangmod	
+	focus = {
+		id = YUW_yanchangfangxian
+		icon = GFX_focus_generic_coastal_fort
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		x = 2
+		y = 1
+		prerequisite = { focus = YUW_gongfangzhuanhuan }
+		relative_position_id = YUW_gongfangzhuanhuan
+		available = {
+			is_puppet = no
+			controls_state = 29
+			controls_state = 18
+			controls_state = 785
+		}
+		bypass = {
+			not = {controls_state = 16}
+		}
+		cost = 15
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			18 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 9472
+				}
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 5291
+				}
+				
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 3560
+				}
+			}
+			29 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 11606
+				}
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 11483
+				}
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 575
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_jiaotingjiudi
+		icon = GFX_focus_yilishabai2
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_yanchangfangxian }
+		relative_position_id = YUW_yanchangfangxian
+		available = {
+			is_puppet = no
+			has_government = democratic
+			HUJ = {
+			has_government = democratic
+			has_opinion = { target = YUW value > 9 }
+			}
+		}
+		bypass = {
+			is_in_faction_with = HUJ
+		}
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_5 = yes
+			HUJ = {
+				add_to_faction = YUW
+				give_guarantee = YUW
+			}
+				give_guarantee = HUJ
+			hidden_effect = {
+			news_event = { id = az_tianjiang.36 days = 1}
+			}
+		}
+	}
+	focus = {
+		id = YUW_renminzhenxian
+		icon = GFX_focus_generic_little_entente
+		x = 0
+		y = 1
+		prerequisite = { focus = YUW_ouzhouxiongji }
+		relative_position_id = YUW_ouzhouxiongji 
+		available_if_capitulated = yes
+		cost = 10
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+		or = {
+		date > 1940.10.1
+		has_completed_focus = YUW_chedijingjigaige
+		has_completed_focus = YUW_rushensuoyuan
+		}
+		or = {
+			has_war_with = TIX
+			has_war_with = SAD
+			has_war_with = HUJ
+			has_war_with = BFL
+			has_completed_focus = YUW_chedijingjigaige
+			has_completed_focus = YUW_rushensuoyuan
+		}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			or = {
+			date > 1941.1.1
+			has_capitulated = yes
+			}
+			add = 100
+			}
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_rmzx
+			
+			swap_ideas = {
+			remove_idea = YUW_zbbz
+			add_idea = YUW_zzzz
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_jichujianshe
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 0
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 80
+		}
+		available = {
+		or = {
+		has_completed_focus = YUW_womendengbujile
+		has_completed_focus = YUW_hanweiminzhu
+		has_completed_focus = YUW_weixixingdong1
+		has_completed_focus = YUW_qiangpojueze
+		has_completed_focus = YUW_buliuxuedeneizhan
+		has_completed_focus = YUW_jiuciweizhiderongren
+		has_completed_focus = YUW_rangbaerdemingling
+		has_completed_focus = YUW_chedijingjigaige
+		has_completed_focus = YUW_rushensuoyuan
+		has_completed_focus = YUW_chongjianwangguo
+		}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			build_railway = {
+				level = 1
+				start_province = 11548 
+				target_province = 11506
+			}
+			build_railway = {
+				level = 1
+				start_province = 9503 
+				target_province = 11506
+			}
+			build_railway = {
+				level = 1
+				start_province = 9909
+				target_province = 11506
+			}
+			build_railway = {
+				level = 1
+				start_province = 743 
+				target_province = 11506
+			}
+			build_railway = {
+				level = 1
+				start_province = 6960 
+				target_province = 11506
+			}
+		}
+	}
+
+	focus = {
+		id = YUW_shutonghangxian
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -2
+		y = 1
+		relative_position_id = YUW_jichujianshe
+		prerequisite = { focus = YUW_jichujianshe }
+		
+		cost = 2
+		bypass = {
+			not = {has_idea = YUW_hddqr}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+			navy_experience = 80
+		}
+	}
+	focus = {
+		id = YUW_qingjiaohaidao
+		icon = GFX_goal_generic_more_territorial_claims
+		x = -1
+		y = 1
+		relative_position_id = YUW_shutonghangxian
+		prerequisite = { focus = YUW_shutonghangxian }
+		mutually_exclusive = { focus = YUW_zhaoanhaidao }
+		cost = 5
+		bypass = {
+			not = {has_idea = YUW_hddqr}
+		}
+		ai_will_do = {
+			factor = 90
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_3 = yes
+			army_experience = 150
+			navy_experience = 200
+			remove_ideas = YUW_hddqr
+			#add_timed_idea = { idea = YUW_hddfk days = 60 }
+		}
+	}
+	focus = {
+		id = YUW_zhaoanhaidao
+		icon = GFX_goal_generic_major_alliance
+		x = 1
+		y = 1
+		relative_position_id = YUW_shutonghangxian
+		prerequisite = { focus = YUW_shutonghangxian }
+		mutually_exclusive = { focus = YUW_qingjiaohaidao }
+		cost = 5
+		bypass = {
+			not = {has_idea = YUW_hddqr}
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+			has_government = fascism
+			add = 100
+			}
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_3 = yes
+			remove_ideas = YUW_hddqr
+			add_ideas = YUW_bhhds
+			add_timed_idea = { idea = YUW_nmyr days = 90 } 
+		}
+	}
+	focus = {
+		id = YUW_zhudaojianshe
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		relative_position_id = YUW_jichujianshe
+		prerequisite = { focus = YUW_jichujianshe }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUW_jungongchang
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = YUW_zhudaojianshe
+		prerequisite = { focus = YUW_zhudaojianshe }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUW_dizhonghaijingjiquan
+		icon = GFX_goal_generic_neutrality_focus
+		x = 1
+		y = 1
+		relative_position_id = YUW_zhaoanhaidao
+		prerequisite = { focus = YUW_zhaoanhaidao focus = YUW_qingjiaohaidao }
+		prerequisite = { focus = YUW_jungongchang }
+		cost = 5
+		available = {
+			not = {has_idea = YUW_jjbk}
+		}
+		bypass = {
+			has_idea = YUW_jjfs
+		}
+		ai_will_do = {
+			factor = 8
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_jjfs
+		}
+	}
+	focus = {
+		id = YUW_youhuashengchanlian
+		icon = GFX_goal_generic_consumer_goods
+		x = -2
+		y = 1
+		relative_position_id = YUW_dizhonghaijingjiquan
+		prerequisite = { focus = YUW_dizhonghaijingjiquan }
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_hldfp
+		}
+	}
+	focus = {
+		id = YUW_keyanrencai
+		icon = GFX_focus_research
+		x = 0
+		y = 1
+		relative_position_id = YUW_dizhonghaijingjiquan
+		prerequisite = { focus = YUW_dizhonghaijingjiquan }
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_ywgjy
+		}
+	}
+	focus = {
+		id = YUW_guojiakexueyuan
+		icon = GFX_focus_research2
+		x = 0
+		y = 1
+		relative_position_id = YUW_keyanrencai
+		prerequisite = { focus = YUW_keyanrencai }
+		cost = 8
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = YUW_dianzigongcheng
+		icon = GFX_goal_generic_radar
+		x = -2
+		y = 1
+		relative_position_id = YUW_guojiakexueyuan
+		prerequisite = { focus = YUW_guojiakexueyuan }
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "电子工程"
+				bonus = 1
+				uses = 3
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = YUW_gongyejishu
+		icon = GFX_goal_generic_radar
+		x = 2
+		y = 1
+		relative_position_id = YUW_guojiakexueyuan
+		prerequisite = { focus = YUW_guojiakexueyuan }
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "工业技术"
+				bonus = 1
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = YUW_chongzhengjunbei
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = YUW_yongwangzhiqian
+		available = {
+			or = {
+			has_completed_focus = YUW_jiuciweizhiderongren
+			has_completed_focus = YUW_buliuxuedeneizhan
+			has_completed_focus = YUW_yuanweikuozhangzhuyi
+			has_completed_focus = YUW_chedijingjigaige
+			has_completed_focus = YUW_qishituandedashengzhan
+			has_completed_focus = YUW_chongjianwangguo
+			}
+		}
+		cost = 5
+		bypass = {
+			has_idea = YUW_jgyfs
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+			add_ideas = YUW_jgyfs 
+		
+			}
+	}
+	focus = {
+		id = YUW_henengyanjiu
+		icon = GFX_goal_generic_secret_weapon
+		x = 0
+		y = 1
+		relative_position_id = YUW_guojiakexueyuan
+		prerequisite = { focus = YUW_guojiakexueyuan }
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "核能研究"
+				bonus = 2
+				uses = 1
+				technology = atomic_research
+				ahead_reduction = 3
+			}
+		}
+	}
+	focus = {
+		id = YUW_guominfuli
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 1
+		relative_position_id = YUW_dizhonghaijingjiquan
+		prerequisite = { focus = YUW_dizhonghaijingjiquan }
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_ywgfl
+		}
+	}
+	focus = {
+		id = YUW_lujunzhuangbei
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -3
+		y = 1
+		relative_position_id = YUW_chongzhengjunbei
+		prerequisite = { focus = YUW_chongzhengjunbei }
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "步兵装备"
+				bonus = 1
+				uses = 3
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = YUW_jidonghuazhuangbei
+		icon = GFX_goal_generic_army_motorized
+		x = -1
+		y = 1
+		relative_position_id = YUW_lujunzhuangbei
+		prerequisite = { focus = YUW_lujunzhuangbei }
+		cost = 8
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "机动化装备"
+				bonus = 1
+				uses = 2
+				category = motorized_equipment
+			}
+		}
+	}
+	focus = {
+		id = YUW_zhuangjiakeji
+		icon = GFX_goal_generic_army_tanks
+		x = 1
+		y = 1
+		relative_position_id = YUW_lujunzhuangbei
+		prerequisite = { focus = YUW_lujunzhuangbei }
+		cost = 8
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "装甲科技"
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = YUW_touqietiexuetuzhi
+		icon = GFX_focus_generic_army_tanks2
+		x = 1
+		y = 1
+		relative_position_id = YUW_zhuangjiakeji
+		prerequisite = { focus = YUW_zhuangjiakeji }
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = -150
+			add_tech_bonus = {
+				name = "铁血装甲"
+				bonus = 1.5
+				uses = 1
+				category = armor
+				ahead_reduction = 2
+			}
+		}
+	}
+	focus = {
+		id = YUW_lujunlilun
+		icon = GFX_goal_generic_air_doctrine
+		x = -1
+		y = 1
+		relative_position_id = YUW_zhuangjiakeji
+		prerequisite = { focus = YUW_zhuangjiakeji }
+		prerequisite = { focus = YUW_jidonghuazhuangbei }
+		cost = 10
+		available = {
+			or = {
+			has_completed_focus = YUW_renminzhenxian
+			has_completed_focus = YUW_laiyinlanhuozhanzheng
+			has_war_with = BFL
+			has_war_support > 1.2
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = "陆军理论"
+				cost_reduction = 0.5
+				uses = 4
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = YUW_fangyuzhan
+		icon = GFX_goal_generic_build_tank
+		x = -1
+		y = 1
+		relative_position_id = YUW_lujunlilun
+		prerequisite = { focus = YUW_lujunlilun }
+		mutually_exclusive = { focus = YUW_yundongzhan }
+		cost = 8
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_fyz
+		}
+	}
+	focus = {
+		id = YUW_yundongzhan
+		icon = GFX_goal_generic_cavalry 
+		x = 1
+		y = 1
+		relative_position_id = YUW_lujunlilun
+		prerequisite = { focus = YUW_lujunlilun }
+		mutually_exclusive = { focus = YUW_fangyuzhan }
+		cost = 8
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_ydz
+		}
+	}
+	focus = {
+		id = YUW_liluntupo
+		icon = GFX_goal_generic_cavalry 
+		x = 1
+		y = 1
+		relative_position_id = YUW_fangyuzhan
+		prerequisite = { focus = YUW_fangyuzhan focus = YUW_yundongzhan }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = "允许解锁第二条陆军学说路线"
+			if = {
+			limit = {
+			is_ai = yes
+			}
+			set_technology = { mobile_warfare = 1 }
+			set_technology = { mechanised_infantry = 1 }	
+			}else = {
+			set_country_flag = TY_army_liluntupo
+			}
+			if = {
+			limit = {
+			is_ai = yes
+			has_completed_focus = YUW_dayuanshuaiwlaile
+			}
+			set_technology = { superior_firepower = 1 }
+			}
+			set_technology = { backhand_blow_for_yuw = 1 popup = no }
+		}
+	}
+	focus = {
+		id = YUW_kongjunjianshe
+		icon = GFX_goal_generic_air_fighter
+		x = 0
+		y = 1
+		relative_position_id = YUW_chongzhengjunbei
+		prerequisite = { focus = YUW_chongzhengjunbei }
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			air_experience = 50
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 150
+			}
+		}
+	}
+	focus = {
+		id = YUW_feijiyanjiu
+		icon = GFX_goal_generic_air_fighter2
+		x = 0
+		y = 1
+		relative_position_id = YUW_kongjunjianshe
+		prerequisite = { focus = YUW_kongjunjianshe }
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			TY_kongjunliluntupo = yes
+			add_tech_bonus = {
+				name = "飞机研究"
+				bonus = 1
+				uses = 3
+				category = air_equipment
+			}
+		}
+	}
+	focus = {
+		id = YUW_haijunweihu
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 3
+		y = 1
+		relative_position_id = YUW_chongzhengjunbei
+		prerequisite = { focus = YUW_chongzhengjunbei }
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			navy_experience = 50
+			custom_effect_tooltip = "获得24艘量产型驱逐舰"
+			hidden_effect = {
+				load_oob = "YUW_haijunweihu"
+			}
+		}
+	}
+	focus = {
+		id = YUW_xinshizhuangbei
+		icon = GFX_goal_generic_navy_cruiser
+		x = 0
+		y = 1
+		relative_position_id = YUW_haijunweihu
+		prerequisite = { focus = YUW_haijunweihu }
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			TY_haijunliluntupo = yes
+			add_tech_bonus = {
+				name = "新式装备"
+				bonus = 0.5
+				uses = 5
+				category = naval_equipment
+			}
+		}
+	}
+	focus = {
+		id = YUW_zhanjian
+		icon = GFX_goal_generic_navy_battleship
+		x = -1
+		y = 2
+		relative_position_id = YUW_haijunweihu
+		prerequisite = { focus = YUW_haijunweihu }
+		cost = 8
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "战舰"
+				bonus = 1
+				uses = 2
+				category = bb_tech
+			}
+		}
+	}
+	focus = {
+		id = YUW_hangmu
+		icon = GFX_goal_generic_navy_carrier
+		x = 1
+		y = 2
+		relative_position_id = YUW_haijunweihu
+		prerequisite = { focus = YUW_haijunweihu }
+		cost = 8
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "航母"
+				bonus = 1
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+	focus = {
+		id = YUW_jiuguoxingdong
+		icon = GFX_focus_ger_oppose_hitler
+		x = 8
+		y = 0
+		cost = 8
+		mutually_exclusive = { focus = YUW_zhengfugaige focus = YUW_zhidugeming focus = YUW_yifengmixin focus = YUW_tiqianxuanju focus = YUW_shenshengshiming }
+		relative_position_id = YUW_zhidugeming
+		available = {
+			has_war = no
+			not = { has_government = communism }
+			not = { has_government = fascism }
+			not = { has_country_flag = buqujinjun_beizhizhi }
+			custom_trigger_tooltip = {
+			tooltip = "你还没有经历轮回"
+			not = {has_idea = YUW_geming}
+			}
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 40
+		}
+		select_effect = {
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+			20 = {
+			set_demilitarized_zone = yes
+			}
+			22 = {
+			set_demilitarized_zone = yes
+			}
+			32 = {
+			set_demilitarized_zone = yes
+			}
+			25 = {
+			set_demilitarized_zone = yes
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = xhxr_tips_jinggao
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			custom_effect_tooltip = jiuguoxingdong_tip
+			effect_tooltip = {
+			20 = {
+			set_demilitarized_zone = yes
+			}
+			22 = {
+			set_demilitarized_zone = yes
+			}
+			32 = {
+			set_demilitarized_zone = yes
+			}
+			25 = {
+			set_demilitarized_zone = yes
+			}
+			}
+			custom_effect_tooltip = jiuguoxingdong_tip2
+			27 = {
+			set_demilitarized_zone = yes
+			}
+			33 = {
+			set_demilitarized_zone = yes
+			}
+			26 = {
+			set_demilitarized_zone = yes
+			}
+		}
+	}
+	focus = {
+		id = YUW_jinjunbali
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = -2
+		y = 1
+		cost = 8
+		mutually_exclusive = { focus = YUW_zhangkongjiaoting }
+		relative_position_id = YUW_jiuguoxingdong
+		prerequisite = { focus = YUW_jiuguoxingdong }
+		available = {
+			has_war = no
+			not = { has_government = communism }
+			not = { has_government = fascism }
+			has_country_flag = xiafei_gongtongjinjun
+			not = { has_country_flag = buqujinjun_beizhizhi }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		select_effect = {
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+			if = { limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+			24 = {
+			set_demilitarized_zone = yes
+			}
+			}
+			
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			custom_effect_tooltip = jiuguoxingdong_tip
+			effect_tooltip = {
+			24 = {
+			set_demilitarized_zone = yes
+			}
+			}
+			custom_effect_tooltip = jiuguoxingdong_tip2
+			custom_effect_tooltip = jinjunjieguoweizhi_xiarende
+			hidden_effect = {
+			country_event = az_tianjiang.94
+			20 = {
+			set_demilitarized_zone = no
+			}
+			22 = {
+			set_demilitarized_zone = no
+			}
+			32 = {
+			set_demilitarized_zone = no
+			}
+			25 = {
+			set_demilitarized_zone = no
+			}
+			27 = {
+			set_demilitarized_zone = no
+			}
+			33 = {
+			set_demilitarized_zone = no
+			}
+			26 = {
+			set_demilitarized_zone = no
+			}
+			24 = {
+			set_demilitarized_zone = no
+			}
+			}
+		}
+	}
+	focus = {
+		id = YUW_zhangkongjiaoting
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = 2
+		y = 1
+		cost = 8
+		mutually_exclusive = { focus = YUW_jinjunbali }
+		relative_position_id = YUW_jiuguoxingdong
+		prerequisite = { focus = YUW_jiuguoxingdong }
+		available = {
+			has_war = no
+			not = { has_government = communism }
+			not = { has_government = fascism }
+			not = { has_country_flag = buqujinjun_beizhizhi }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		select_effect = {
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+			if = { limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+			24 = {
+			set_demilitarized_zone = yes
+			}
+			16 = {
+			set_demilitarized_zone = yes
+			}
+			}
+			
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = jiuguoxingdong_tip
+			effect_tooltip = {
+			24 = {
+			set_demilitarized_zone = yes
+			}
+			16 = {
+			set_demilitarized_zone = yes
+			}
+			}
+			custom_effect_tooltip = jiuguoxingdong_tip2
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			custom_effect_tooltip = jinjunjieguoweizhi_xiarende
+			hidden_effect = {
+			20 = {
+			set_demilitarized_zone = no
+			}
+			22 = {
+			set_demilitarized_zone = no
+			}
+			32 = {
+			set_demilitarized_zone = no
+			}
+			25 = {
+			set_demilitarized_zone = no
+			}
+			27 = {
+			set_demilitarized_zone = no
+			}
+			33 = {
+			set_demilitarized_zone = no
+			}
+			26 = {
+			set_demilitarized_zone = no
+			}
+			24 = {
+			set_demilitarized_zone = no
+			}
+			country_event = az_tianjiang.95
+			}
+		}
+	}
+	focus = {
+		id = YUW_zhengjiuyuanweiminzhu
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		cost = 8
+		relative_position_id = YUW_jinjunbali
+		prerequisite = { focus = YUW_jinjunbali }
+		available = {
+			has_government = democratic
+			YUW_xiafei = {
+						is_country_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		select_effect = {
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			add_ideas = YUW_zjyuwmz
+			custom_effect_tooltip = yuw_shuangfangfennujiang
+			add_to_variable = {
+				var = yuw_weixi
+				value = -50
+			}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -50
+			}
+			custom_effect_tooltip = "现在我们应该摒弃前嫌，共同向前。这个国策将移除分崩离析决议和民族精神。"
+			set_country_flag = YUW_dangerclear
+			hidden_effect = {
+				remove_ideas = { YUW_fblx YUW_fblx_lisailiu YUW_fblx_rangbaer }
+			}
+			
+		}
+	}
+	focus = {
+		id = YUW_shishijunshiguanli
+		icon = GFX_focus_SOV_military_purge
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_zhangkongjiaoting
+		prerequisite = { focus = YUW_zhangkongjiaoting }
+		available = {
+			has_government = fascism
+			YUW_buqu = {
+						is_country_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		select_effect = {
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			add_ideas = YUW_ssjsgl
+			custom_effect_tooltip = yuw_ziyoufennujia2
+			add_to_variable = {
+				var = yuw_ziyou
+				value = 5
+			}
+			custom_effect_tooltip = "这个国策将移除分崩离析决议和民族精神。"
+			set_country_flag = YUW_dangerclear
+			hidden_effect = {
+				remove_ideas = { YUW_fblx YUW_fblx_lisailiu YUW_fblx_rangbaer }
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = YUW_wanjiuwomendejingji
+		icon = GFX_focus_SOV_merge_plants
+		x = 2
+		y = 1
+		cost = 30
+		relative_position_id = YUW_zhengjiuyuanweiminzhu
+		prerequisite = { focus = YUW_zhengjiuyuanweiminzhu focus = YUW_shishijunshiguanli }
+		available = {
+			or = {
+			has_government = democratic
+			has_government = fascism
+			}
+			or = {
+			has_country_leader = {
+				name = "霞飞"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "不屈"
+				ruling_only = yes
+			}
+			}
+		}
+		bypass = {
+			not = {has_idea = YUW_jjbk }
+			not = {has_idea = YUW_jjhmhf }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		select_effect = {
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+			remove_ideas = YUW_hddqr
+			swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_jjhmhf
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = wanjiujingji_xiafeidecuozhe
+			custom_effect_tooltip = jiuguoxingdong_tip
+			effect_tooltip = {
+			remove_ideas = YUW_hddqr
+			swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_jjhmhf
+			}
+			}
+			custom_effect_tooltip = jiuguoxingdong_tip2
+			custom_effect_tooltip = wanjiujingji_gongyejidakuozhang
+			complete_national_focus = YUW_jichujianshe
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			add_ideas = YUW_hldzf5
+			swap_ideas = {
+			remove_idea = YUW_jjhmhf
+			add_idea = YUW_wddjj
+			}
+			hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes 
+				}
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_dayuanshuaiwlaile
+		icon = GFX_focus_xiafei
+		x = 0
+		y = 2
+		cost = 10
+		relative_position_id = YUW_zhengjiuyuanweiminzhu
+		prerequisite = { focus = YUW_wanjiuwomendejingji }
+		available = {
+			has_government = democratic
+			has_country_leader = {
+				name = "霞飞"
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.2
+			add_ideas = YUW_jjfs
+			add_ideas = YUW_jgyfs
+			random_unit_leader = {
+				limit = { 
+				is_country_leader = yes
+				}
+				add_skill_level = 1
+				add_unit_leader_trait = panzer_leader
+				add_unit_leader_trait = infantry_leader
+			}
+		}
+	}
+	focus = {
+		id = YUW_buqujishiyuanwei
+		icon = GFX_focus_buqu
+		x = 0
+		y = 2
+		cost = 10
+		relative_position_id = YUW_shishijunshiguanli
+		prerequisite = { focus = YUW_wanjiuwomendejingji }
+		available = {
+			has_government = fascism
+			has_country_leader = {
+				name = "不屈"
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_war_support = 0.2
+			add_ideas = YUW_kdzb
+			add_ideas = extensive_conscription
+			add_ideas = war_economy
+			random_unit_leader = {
+				limit = { 
+				is_country_leader = yes
+				}
+				add_skill_level = 1
+				add_unit_leader_trait = panzer_leader
+				add_unit_leader_trait = infantry_leader
+			}
+		}
+	}
+	focus = {
+		id = YUW_yuanweikuozhangzhuyi
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		x = 2
+		y = 1
+		cost = 8
+		relative_position_id = YUW_dayuanshuaiwlaile
+		prerequisite = { focus = YUW_dayuanshuaiwlaile focus = YUW_buqujishiyuanwei }
+		available = {
+			or = {
+			has_government = democratic
+			has_government = fascism
+			}
+			or = {
+			has_country_leader = {
+				name = "霞飞"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "不屈"
+				ruling_only = yes
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = yuanweikuozhang_dongtai
+			if = {
+			limit = {
+			has_completed_focus = YUW_buqujishiyuanwei
+			}
+			add_stability = 0.2
+			complete_national_focus = YUW_jiaruchisezhongzhou
+			}else = {
+			complete_national_focus = YUW_yuanweideziranbianjie
+			set_rule = { can_send_volunteers = yes }
+			custom_effect_tooltip = ENG_no_further_appeasement_tt
+			add_ideas = YUW_yuwkzzy
+			hidden_effect = {
+			set_rule = { can_declare_war_on_same_ideology = yes }
+			set_rule = { can_puppet = yes }
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_yidapianlan
+		icon = GFX_fflag_YUW
+		x = 7
+		y = 0
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 2
+		relative_position_id = YUW_guafenruishi
+		available = {
+			date > 1939.1.1
+			not = { has_government = communism }
+			or = {
+			has_completed_focus = YUW_buliuxuedeneizhan
+			has_completed_focus = YUW_yuanweikuozhangzhuyi
+			has_completed_focus = YUW_renminzhenxian
+			}
+		}
+		bypass = {
+			has_capitulated = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = jiesuo_yuwkuileiguojueyi
+		}
+	}
+	
+	focus = {
+		id = YUW_minzhushizijun
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = -4
+		y = 1
+		cost = 8
+		relative_position_id = YUW_yidapianlan
+		prerequisite = { focus = YUW_yidapianlan}
+		available_if_capitulated = yes
+		available = {
+			is_puppet = no
+			or = {
+			has_government = democratic
+			has_government = neutrality
+			}
+			or = {
+			has_defensive_war = yes
+			has_idea = TY_fengkuangAI
+			}
+			or = {
+			any_country = {
+			has_war_with = YUW
+			is_major = yes
+			or = {
+			has_government = fascism
+			has_government = communism
+			}
+			}
+			has_idea = TY_fengkuangAI
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_mzszj
+		}
+	}
+	
+	focus = {
+		id = YUW_zhengyipanguan
+		icon = GFX_focus_POL_ban_nazi_party
+		x = -2
+		y = 1
+		cost = 8
+		relative_position_id = YUW_yidapianlan
+		prerequisite = { focus = YUW_yidapianlan}
+		available_if_capitulated = yes
+		available = {
+			is_puppet = no
+			not = { has_government = communism }
+			or = {
+			has_defensive_war = yes
+			has_idea = TY_fengkuangAI
+			}
+			or = {
+			any_country = {
+			has_war_with = YUW
+			is_major = yes
+			or = {
+			has_government = fascism
+			has_government = communism
+			has_government = siren
+			}
+			}
+			has_idea = TY_fengkuangAI
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_zypg
+		}
+	}
+	
+	focus = {
+		id = YUW_yuanweidemingtian
+		icon = GFX_goal_anschluss
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = YUW_zhengyipanguan
+		prerequisite = { focus = YUW_zhengyipanguan}
+		prerequisite = { focus = YUW_minzhushizijun}
+		available = {
+			is_puppet = no
+			has_government = democratic
+			has_war = no
+			date > 1942.1.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = YUW_tips
+		}
+	}
+	
+	focus = {
+		id = YUW_zongjiaoshehui
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 1
+		cost = 8
+		relative_position_id = YUW_yidapianlan
+		prerequisite = { focus = YUW_yidapianlan}
+		available_if_capitulated = yes
+		available = {
+			is_puppet = no
+			has_completed_focus = YUW_rushensuoyuan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_zjsh
+		}
+	}
+	
+	focus = {
+		id = YUW_shenquanzhengzhi
+		icon = GFX_focus_generic_pope
+		x = 4
+		y = 1
+		cost = 8
+		relative_position_id = YUW_yidapianlan
+		prerequisite = { focus = YUW_yidapianlan}
+		available_if_capitulated = yes
+		available = {
+			is_puppet = no
+			not = { has_government = communism }
+			has_completed_focus = YUW_rushensuoyuan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_sqzz
+		}
+	}
+	
+	focus = {
+		id = YUW_xinyuanweiqianjin
+		icon = GFX_goal_generic_demand_territory
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = YUW_shenquanzhengzhi
+		prerequisite = { focus = YUW_shenquanzhengzhi}
+		prerequisite = { focus = YUW_zongjiaoshehui}
+		available = {
+			is_puppet = no
+			has_government = neutrality
+			has_war = no
+			date > 1942.1.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = YUW_tips
+		}
+	}
+	
+	focus = {
+		id = YUW_shenpanguanzailiuwang
+		icon = GFX_focus_generic_concessions
+		x = -2
+		y = 2
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 2
+		relative_position_id = YUW_yuanweidemingtian
+		available_if_capitulated = yes
+		available = {	
+			has_capitulated = yes
+			is_puppet = no
+			has_war = yes
+			has_completed_focus = YUW_dayuanshuaiwlaile
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = YUW_tips
+			add_political_power = -100
+			add_war_support = 1
+		}
+	}
+	
+	focus = {
+		id = YUW_yutiexuetuoxie
+		icon = GFX_focus_CZE_german_puppet
+		x = -2
+		y = 1
+		cost = 5
+		relative_position_id = YUW_shenpanguanzailiuwang
+		prerequisite = { focus = YUW_shenpanguanzailiuwang}
+		mutually_exclusive = { focus = YUW_dikangdaodi }
+		available_if_capitulated = yes
+		available = {	
+			has_capitulated = yes
+			is_puppet = no
+			has_war_with = TIX
+			TIX = { controls_state = 16 }
+			has_country_leader = {
+				name = "霞飞"
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			load_focus_tree = weixi_focus
+			custom_effect_tooltip = YUW_tips
+		}
+	}
+	focus = {
+		id = YUW_dikangdaodi
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 2
+		y = 1
+		cost = 5
+		relative_position_id = YUW_shenpanguanzailiuwang
+		prerequisite = { focus = YUW_shenpanguanzailiuwang}
+		mutually_exclusive = { focus = YUW_yutiexuetuoxie }
+		available_if_capitulated = yes
+		available = {	
+			has_capitulated = yes
+			is_puppet = no
+			has_war = yes
+			has_country_leader = {
+				name = "霞飞"
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			load_focus_tree = yuanwei_free_focus
+			custom_effect_tooltip = YUW_tips
+		}
+	}
+	
+	focus = {
+		id = YUW_tiqianxuanju
+		icon = GFX_focus_SWI_dissolve_the_federal_council
+		x = 8
+		y = 0
+		cost = 10
+		mutually_exclusive = { focus = YUW_zhengfugaige focus = YUW_zhidugeming focus = YUW_jiuguoxingdong focus = YUW_yifengmixin focus = YUW_shenshengshiming }
+		relative_position_id = YUW_jiuguoxingdong
+		available = {
+		has_country_leader = {
+				name = "黎塞留"
+				ruling_only = yes
+			}
+		has_government = democratic
+		custom_trigger_tooltip = {
+		tooltip = "你还没有经历轮回"
+		not = {has_idea = YUW_geming}
+		}
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		select_effect = {
+			country_event = az_tianjiang.165
+			add_ideas = YUW_daxuanqiandejingzheng
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = jiuguoxingdong_tip
+			effect_tooltip = {
+			country_event = az_tianjiang.165
+			add_ideas = YUW_daxuanqiandejingzheng
+			}
+			custom_effect_tooltip = jiuguoxingdong_tip2
+			set_power_balance = {
+			id = YUW_balance
+			left_side = YUW_left_side # will keep the last set side if not specified
+			right_side = YUW_right_side # will keep the last set side if not specified
+			set_default = yes # whether or not to reset the power balance to the initial value, default = no
+			}
+			set_country_flag = yiwai_daxuanwufajinxing
+			custom_effect_tooltip = "这个国策将移除分崩离析决议和民族精神。"
+			set_country_flag = YUW_dangerclear
+			hidden_effect = {
+				remove_ideas = { YUW_fblx YUW_fblx_lisailiu YUW_fblx_rangbaer }
+				country_event = az_tianjiang.168
+			}
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			add_to_variable = {
+				var = yuw_weixi
+				value = -200
+				}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -200
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_xuanjujieguo
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		cost = 30
+		relative_position_id = YUW_tiqianxuanju
+		prerequisite = { focus = YUW_tiqianxuanju}
+		available = {	
+			is_puppet = no
+			has_war = no
+			has_idea = YUW_daxuanqiandejingzheng
+		}
+		select_effect = {
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "选举结果出炉......"
+			custom_effect_tooltip = YUW_tip_xuanren
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			hidden_effect = {
+			if = {
+			limit = {
+			not = { has_country_flag = weixipai_beizhenya }
+			not = { has_country_flag = buqujinjun_beizhizhi }
+			power_balance_value = {
+			id = YUW_balance
+			value < -0.05
+			}
+			}
+			country_event = az_tianjiang.162
+			}
+			if = {
+			limit = {
+			not = { has_country_flag = ziyoupai_beizhenya }
+			not = { has_country_flag = buqujinjun_beizhizhi }
+			power_balance_value = {
+			id = YUW_balance
+			value > 0.05
+			}
+			}
+			country_event = az_tianjiang.163
+			}
+			if = {
+			limit = {
+			has_country_flag = buqujinjun_beizhizhi
+			power_balance_value = {
+			id = YUW_balance
+			value < 0.2
+			}
+			power_balance_value = {
+			id = YUW_balance
+			value > -0.2
+			}
+			}
+			country_event = az_tianjiang.178
+			}
+			if = {
+			limit = {
+			has_country_flag = weixipai_beizhenya
+			not = { has_country_flag = buqujinjun_beizhizhi }
+			power_balance_value = {
+			id = YUW_balance
+			value < -0.2
+			}
+			}
+			country_event = az_tianjiang.179
+			}
+			if = {
+			limit = {
+			has_country_flag = ziyoupai_beizhenya
+			power_balance_value = {
+			id = YUW_balance
+			value > 0.2
+			}
+			}
+			country_event = az_tianjiang.180
+			}
+			if = {
+			limit = {
+			has_country_flag = buqujinjun_beizhizhi
+			power_balance_value = {
+			id = YUW_balance
+			value < -0.2
+			}
+			}
+			country_event = az_tianjiang.181
+			}
+			YUW_hldzf_dengji = yes
+			remove_ideas = YUW_daxuanqiandejingzheng
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_shenglikaixuan
+		icon = GFX_focus_kaixuan
+		x = -2
+		y = 2
+		cost = 8
+		relative_position_id = YUW_xuanjujieguo
+		prerequisite = { focus = YUW_xuanjujieguo}
+		mutually_exclusive = { focus = YUW_tingshinuhou focus = YUW_xingfenzhidu }
+		available = {	
+			is_puppet = no
+			has_government = democratic
+			has_country_leader = {
+				name = "凯旋"
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_shenglikaixuan_idea
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_tingshinuhou
+		icon = GFX_focus_xiafei
+		x = 0
+		y = 2
+		cost = 8
+		relative_position_id = YUW_xuanjujieguo
+		prerequisite = { focus = YUW_xuanjujieguo}
+		mutually_exclusive = { focus = YUW_shenglikaixuan  focus = YUW_xingfenzhidu}
+		available = {	
+			is_puppet = no
+			or = {
+			has_government = fascism
+			has_government = democratic
+			}
+			has_country_leader = {
+				name = "霞飞"
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_tingshinuhou_idea
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_xingfenzhidu 
+		icon = GFX_focus_edu
+		x = 2
+		y = 2
+		cost = 8
+		relative_position_id = YUW_xuanjujieguo
+		prerequisite = { focus = YUW_xuanjujieguo}
+		mutually_exclusive = { focus = YUW_tingshinuhou focus = YUW_shenglikaixuan}
+		available = {	
+			is_puppet = no
+			has_government = fascism
+			has_country_leader = {
+				name = "恶毒酱"
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_xingfenzhidu_idea
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_chedijingjigaige
+		icon = GFX_focus_generic_land_reclamation
+		x = 0
+		y = 1
+		cost = 8
+		relative_position_id = YUW_tingshinuhou
+		prerequisite = { focus = YUW_shenglikaixuan focus = YUW_tingshinuhou focus = YUW_xingfenzhidu}
+		available = {	
+			is_puppet = no
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = wanjiujingji_gongyejidakuozhang
+			complete_national_focus = YUW_jichujianshe
+			remove_ideas = YUW_hddqr
+			swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_wddjj
+			}
+			YUW_hldzf_dengji = yes
+			hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes 
+				}
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_lianhezhizheng
+		icon = GFX_focus_SWI_neutrality_on_the_move
+		x = -2
+		y = 1
+		cost = 8
+		relative_position_id = YUW_chedijingjigaige
+		prerequisite = { focus = YUW_chedijingjigaige }
+		mutually_exclusive = { focus = YUW_dulandaquan }
+		available = {	
+			is_puppet = no
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			custom_effect_tooltip = YUW_tips_cxsswjzc
+			add_ideas = YUW_lianhezhizheng_idea
+			add_ideas = YUW_jjfs
+			add_ideas = YUW_jgyfs
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_dulandaquan
+		icon = GFX_focus_SWI_helvetic_junta
+		x = 2
+		y = 1
+		cost = 8
+		relative_position_id = YUW_chedijingjigaige
+		prerequisite = { focus = YUW_chedijingjigaige }
+		mutually_exclusive = { focus = YUW_lianhezhizheng }
+		available = {	
+			is_puppet = no
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			custom_effect_tooltip = YUW_tips_cxsswjzc
+			add_ideas = YUW_dulandaquan_idea
+			add_ideas = YUW_jjfs
+			add_ideas = YUW_jgyfs
+			YUW_hldzf_dengji = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_shenshengshiming
+		icon = GFX_focus_generic_catholic_dominion
+		x = 8
+		y = 0
+		cost = 10
+		mutually_exclusive = { focus = YUW_zhengfugaige focus = YUW_zhidugeming focus = YUW_jiuguoxingdong focus = YUW_yifengmixin focus = YUW_tiqianxuanju }
+		relative_position_id = YUW_tiqianxuanju
+		available = {
+		has_country_leader = {
+				name = "黎塞留"
+				ruling_only = yes
+			}
+		has_government = democratic
+		custom_trigger_tooltip = {
+		tooltip = "你还没有经历轮回"
+		not = {has_idea = YUW_geming}
+		}
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		select_effect = {
+			country_event = YUW_event.52
+			add_ideas = YUW_daxuanqiandejingzheng
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = yuw_butuijianyouwan_qst
+			custom_effect_tooltip = jiuguoxingdong_tip
+			custom_effect_tooltip = shenshengshiming_quanfuxiafei
+			effect_tooltip = {
+			country_event = YUW_event.52
+			add_ideas = YUW_daxuanqiandejingzheng
+			}
+			custom_effect_tooltip = jiuguoxingdong_tip2
+			set_power_balance = {
+			id = YUW_balance
+			left_side = YUW_left_side # will keep the last set side if not specified
+			right_side = YUW_right_side # will keep the last set side if not specified
+			set_default = yes # whether or not to reset the power balance to the initial value, default = no
+			}
+			set_country_flag = yiwai_daxuanwufajinxing
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			custom_effect_tooltip = "这个国策将移除分崩离析决议和民族精神。"
+			set_country_flag = YUW_dangerclear
+			add_to_variable = {
+				var = yuw_weixi
+				value = -200
+				}
+			add_to_variable = {
+				var = yuw_ziyou
+				value = -200
+			}
+			hidden_effect = {
+				remove_ideas = { YUW_fblx YUW_fblx_lisailiu YUW_fblx_rangbaer }
+				country_event = YUW_event.53
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zhongzhijinjun
+		icon = GFX_focus_spr_crush_the_revolution
+		x = -2
+		y = 1
+		cost = 5
+		relative_position_id = YUW_shenshengshiming
+		prerequisite = { focus = YUW_shenshengshiming }
+		available = {	
+			is_puppet = no
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = xiafeicg_houguo
+			hidden_effect = {
+			if = {
+			limit = {
+			not = { has_country_flag = yuw_geijtqstigongyuanzhu }
+			not = { has_country_flag = yuw_chengonglalongtiaofei_yes }
+			}
+			country_event = { id = az_tianjiang.176 days = 1 }
+			}else = {
+			country_event = { id = az_tianjiang.177 days = 1 }
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_daibuzhengdi
+		icon = GFX_focus_SOV_penal_battalions
+		x = 2
+		y = 1
+		cost = 2
+		relative_position_id = YUW_shenshengshiming
+		prerequisite = { focus = YUW_shenshengshiming }
+		available = {	
+			is_puppet = no
+			has_war = no
+			has_country_flag = yuwzuipaineizhan_kaishi
+		}
+		bypass = {
+			has_country_flag = yuwzuipaineizhan_zhongzhi
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = neizhan_yinmouzhongzhi
+			set_country_flag = yuwzuipaineizhan_zhongzhi
+		}
+	}
+	
+	focus = {
+		id = YUW_cuobaiyinmou
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 0
+		y = 1
+		cost = 3
+		relative_position_id = YUW_zhongzhijinjun
+		prerequisite = { focus = YUW_zhongzhijinjun }
+		available = {	
+			is_puppet = no
+			has_war = no
+			has_country_flag = dunkeerkezhengbian_kaishi
+		}
+		bypass = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = yuw_tips_zhongzhizhengbain
+		}
+	}
+	
+	focus = {
+		id = YUW_tingzhiyaoyan
+		icon = GFX_focus_SWI_spirit_of_saint_bernard
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = YUW_daibuzhengdi
+		prerequisite = { focus = YUW_daibuzhengdi }
+		available = {	
+			is_puppet = no
+			has_war = no
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "维希派的宣传攻势将被削弱"
+		}
+	}
+	
+	focus = {
+		id = YUW_shengzhankaiumu
+		icon = GFX_focus_fra_french_union
+		x = -2
+		y = 1
+		cost = 5
+		relative_position_id = YUW_tingzhiyaoyan
+		prerequisite = { focus = YUW_tingzhiyaoyan }
+		prerequisite = { focus = YUW_cuobaiyinmou }
+		available = {	
+			is_puppet = no
+			has_war = no
+			power_balance_value = {
+			id = YUW_balance
+			value > -0.5
+			}
+			power_balance_value = {
+			id = YUW_balance
+			value < 0.5
+			}
+			not = { has_country_flag = yuw_jihuapochan }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = wufayucezyyuwzhengfufanying
+			hidden_effect = {
+			if = {
+			limit = {
+			has_country_flag = xiafei_gongtongjinjun
+			}
+			country_event = az_tianjiang.95
+			complete_national_focus = YUW_shishijunshiguanli
+			remove_power_balance = { id = YUW_balance }
+			remove_ideas = YUW_daxuanqiandejingzheng
+			set_country_flag = yuw_jihuapochan
+			} else = {
+			country_event = YUW_event.60
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_dongyuanqishi
+		icon = GFX_focus_generic_little_entente
+		x = -2
+		y = 1
+		cost = 2
+		relative_position_id = YUW_shengzhankaiumu
+		prerequisite = { focus = YUW_shengzhankaiumu }
+		available = {	
+			is_puppet = no
+			has_war = no
+			not = { has_country_flag = yuw_jihuapochan }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "不同的盟友舰娘提供的教廷骑士数量也不同"
+			if = {
+			limit = {
+			has_country_flag = yuw_chengonglalongtiaofei_yes
+			}
+			add_to_variable = {
+			var = yuw_qstcgl
+			value = 20
+			}
+			}else = {
+			add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_mitugaoyang
+		icon = GFX_focus_generic_population_growth
+		x = 0
+		y = 1
+		cost = 3
+		relative_position_id = YUW_shengzhankaiumu
+		prerequisite = { focus = YUW_shengzhankaiumu }
+		available = {	
+			is_puppet = no
+			has_war = no
+			not = { has_country_flag = yuw_jihuapochan }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = -500
+			add_stability = 0.3
+			add_war_support = 0.3
+		}
+	}
+	
+	focus = {
+		id = YUW_tongyixinyang
+		icon = GFX_focus_up_joan_of_arc
+		x = 2
+		y = 1
+		cost = 5
+		relative_position_id = YUW_shengzhankaiumu
+		prerequisite = { focus = YUW_shengzhankaiumu }
+		available = {	
+			is_puppet = no
+			has_war = no
+			not = { has_country_flag = yuw_jihuapochan }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = -500
+			add_war_support = 0.5
+		}
+	}
+	
+	focus = {
+		id = YUW_qizongzui
+		icon = GFX_focus_focus_fra_national_resistance_council
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = YUW_mitugaoyang
+		prerequisite = { focus = YUW_tongyixinyang }
+		prerequisite = { focus = YUW_mitugaoyang }
+		prerequisite = { focus = YUW_dongyuanqishi }
+		available = {	
+			is_puppet = no
+			has_war = no
+			not = { has_country_flag = yuw_jihuapochan }
+		}
+		select_effect = {
+			country_event = YUW_event.62
+			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = yuw_tips_shenpanjeiguopanding
+			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
+			if = {
+			limit = {
+			is_ai = yes
+			}
+			set_country_flag = YUW_nishibushiainie
+			}
+			hidden_effect = {
+			if = {
+			limit = {
+			has_country_flag = yuw_chengonglalongtiaofei_yes
+			check_variable = {
+			var = yuw_qstcgl
+			value = 200
+			compare = greater_than_or_equals
+			}
+			}
+			country_event = YUW_event.69
+			}
+			if = {
+			limit = {
+			has_country_flag = yuw_chengonglalongtiaofei_no
+			check_variable = {
+			var = yuw_qstcgl
+			value = 130
+			compare = greater_than_or_equals
+			}
+			}
+			country_event = YUW_event.69
+			}
+			if = {
+			limit = {
+			has_country_flag = yuw_lalongchenggongtiaojian_6
+			has_country_flag = yuw_chengonglalongtiaofei_no
+			check_variable = {
+				yuw_qstcgl < 130
+			}
+			}
+			country_event = YUW_event.68
+			}
+			if = {
+			limit = {
+			not = { has_country_flag = yuw_lalongchenggongtiaojian_6 }
+			has_country_flag = yuw_chengonglalongtiaofei_no
+			check_variable = {
+				yuw_qstcgl < 130
+			}
+			}
+			country_event = YUW_event.67
+			}
+			if = {
+			limit = {
+			has_country_flag = yuw_chengonglalongtiaofei_yes
+			check_variable = {
+				yuw_qstcgl < 200
+			}
+			}
+			country_event = YUW_event.67
+			}
+			} 
+		}
+	}
+	
+	focus = {
+		id = YUW_weihuchuantong
+		icon = GFX_focus_xiafei
+		x = -2
+		y = 1
+		cost = 5
+		relative_position_id = YUW_qizongzui
+		prerequisite = { focus = YUW_qizongzui }
+		mutually_exclusive = { focus = YUW_gexinjiaoyi }
+		available = {	
+			is_puppet = no
+			has_government = democratic
+			YUW_xiafei = {
+			is_country_leader =  yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_wcct
+		}
+	}
+	
+	focus = {
+		id = YUW_gexinjiaoyi
+		icon = GFX_focus_6194
+		x = 2
+		y = 1
+		cost = 5
+		relative_position_id = YUW_qizongzui
+		prerequisite = { focus = YUW_qizongzui }
+		mutually_exclusive = { focus = YUW_weihuchuantong }
+		available = {	
+			is_puppet = no
+			has_government = neutrality
+			or = {
+			YUW_6194 = {
+			is_country_leader =  yes
+			}
+			YUW_jialisuoniai = {
+			is_country_leader =  yes
+			}
+			YUW_dunkerque = {
+			is_country_leader =  yes
+			}
+			}
+			not = { has_country_flag = lyjs_fubiwangguo }
+			not = { has_country_flag = lyjs_fubibeituifan }
+		}
+		bypass = {
+			YUW_shengnvzhende = {
+			is_country_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_gxjy
+		}
+	}
+	
+	focus = {
+		id = YUW_rushensuoyuan
+		icon = GFX_focus_por_concordat
+		x = 2
+		y = 1
+		cost = 20
+		relative_position_id = YUW_weihuchuantong
+		prerequisite = { focus = YUW_weihuchuantong focus = YUW_gexinjiaoyi }
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+			or = {
+			YUW_6194 = {
+			is_country_leader =  yes
+			}
+			YUW_xiafei = {
+			is_country_leader =  yes
+			}
+			YUW_jialisuoniai = {
+			is_country_leader =  yes
+			}
+			YUW_dunkerque = {
+			is_country_leader =  yes
+			}
+			}
+			not = { has_country_flag = lyjs_fubiwangguo }
+			not = { has_country_flag = lyjs_fubibeituifan }
+		}
+		bypass = {
+			YUW_shengnvzhende = {
+			is_country_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_rssy
+			swap_ideas = {
+				remove_idea = YUW_jjbk
+				add_idea = YUW_wddjj
+			}
+			set_rule = { can_send_volunteers = yes }
+			custom_effect_tooltip = ENG_no_further_appeasement_tt
+			hidden_effect = {
+			set_rule = { can_declare_war_on_same_ideology = yes }
+			set_rule = { can_puppet = yes }
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_qishituandedashengzhan
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 1
+		cost = 5
+		relative_position_id = YUW_rushensuoyuan
+		available = {
+			is_puppet = no
+			has_completed_focus = YUW_rushensuoyuan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = yuw_jiesuodashengzhanjueyitip
+			if = {
+			limit = {
+			is_ai = yes
+			has_idea = YUW_fkAIbuff
+			}
+			set_technology = { mobile_warfare = 1 }
+			set_technology = { mechanised_infantry = 1 }
+			division_template = {
+				name = "鸢尾教廷骑士"
+				is_locked = yes
+				priority = 2
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 0 y = 4 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					mechanized = { x = 1 y = 4 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					medium_armor = { x = 3 y = 4 }
+					medium_armor = { x = 4 y = 0 }
+				}
+				support = { 
+					armored_car_recon = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					medium_flame_tank = { x = 0 y = 3 }
+					engineer = { x = 0 y = 4 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 20
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = YUW }
+					create_unit = {
+						division = "name = \"鸢尾骑士团\" division_template = \"鸢尾教廷骑士\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+			random_owned_controlled_state = {
+					limit = { is_core_of = YUW }
+					create_unit = {
+						division = "name = \"圣殿骑士团\" division_template = \"鸢尾教廷骑士\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+			}
+			random_owned_controlled_state = {
+					limit = { is_core_of = YUW }
+					create_unit = {
+						division = "name = \"医院骑士团\" division_template = \"鸢尾教廷骑士\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+			}
+			random_owned_controlled_state = {
+					limit = { is_core_of = YUW }
+					create_unit = {
+						division = "name = \"条顿骑士团\" division_template = \"鸢尾教廷骑士\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+			}
+			random_owned_controlled_state = {
+					limit = { is_core_of = YUW }
+					create_unit = {
+						division = "name = \"光辉圣骑士\" division_template = \"鸢尾教廷骑士\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+			}
+			random_owned_controlled_state = {
+					limit = { is_core_of = YUW }
+					create_unit = {
+						division = "name = \"教廷守护者\" division_template = \"鸢尾教廷骑士\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+			}
+	}
+	
+	focus = {
+		id = YUW_zhengxinyongheng
+		icon = GFX_focus_focus_fra_orleans_restoration
+		x = -2
+		y = 1
+		cost = 10
+		prerequisite = { focus = YUW_qishituandedashengzhan }
+		relative_position_id = YUW_qishituandedashengzhan
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "解锁传教镇压法案，允许在全世界范围内进行传教，传教成功的省份可以整合为核心省份"
+			add_ideas = YUW_zxyh
+		}
+	}
+	
+	focus = {
+		id = YUW_wuzhuangchaosheng
+		icon = GFX_focus_generic_tank_air_support
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YUW_qishituandedashengzhan }
+		relative_position_id = YUW_qishituandedashengzhan
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = yuw_shengdijueyijiesuotip
+		}
+	}
+	
+	focus = {
+		id = YUW_xindejiaoting
+		icon = GFX_focus_generic_vatican_state
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YUW_wuzhuangchaosheng }
+		prerequisite = { focus = YUW_zhengxinyongheng }
+		relative_position_id = YUW_wuzhuangchaosheng
+		will_lead_to_war_with = SAD
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+		bypass = {
+			or = {
+			controls_state = 2
+			has_war_with = SAD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			SAD = {
+			country_event = { id = YUW_event.49 days = 1 }
+			}
+			HUJ = {
+			add_ai_strategy = {
+			type = antagonize
+			id = "BFL"			
+			value = 200
+			}
+			}
+			BYG = {
+			add_ai_strategy = {
+			type = antagonize
+			id = "BFL"			
+			value = 200
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_xinyangshouhuzhe
+		icon = GFX_goal_generic_military_sphere
+		x = 0
+		y = 1
+		cost = 15
+		prerequisite = { focus = YUW_xindejiaoting }
+		relative_position_id = YUW_xindejiaoting
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+			limit = {
+			has_idea = YUW_fkAIbuff
+			is_ai = yes
+			}
+			add_ideas = YUW_xyshz_fkai
+			}else = {
+			add_ideas = YUW_xyshz
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_dongfangronghe
+		icon = GFX_goal_generic_military_deal
+		x = -2
+		y = 1
+		cost = 7
+		prerequisite = { focus = YUW_xinyangshouhuzhe }
+		relative_position_id = YUW_xinyangshouhuzhe
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			guojishengyu_down_5 = yes
+			SIA = {
+			country_event = { id = YUW_event.27 days = 1}
+			}
+			PHI = {
+			country_event = { id = YUW_event.27 days = 1}
+			}
+			INS = {
+			country_event = { id = YUW_event.27 days = 1}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zhengxinduda
+		icon = GFX_focus_fra_le_deluge
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YUW_xinyangshouhuzhe }
+		relative_position_id = YUW_xinyangshouhuzhe
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 500
+			add_stability = -0.2
+			add_war_support = 0.2
+		}
+	}
+	
+	focus = {
+		id = YUW_wanchengshiming
+		icon = GFX_fflag_YUW
+		x = -2
+		y = 1
+		cost = 2
+		prerequisite = { focus = YUW_zhengxinduda }
+		prerequisite = { focus = YUW_dongfangronghe }
+		relative_position_id = YUW_zhengxinduda
+		available = {
+			is_puppet = no
+			or = {
+			has_government = neutrality
+			has_government = democratic
+			}
+			or = {
+			controls_state = 171
+			any_country = {
+			is_in_faction_with = YUW
+			controls_state = 171
+			}
+			}
+			or = {
+			controls_state = 2
+			any_country = {
+			is_in_faction_with = YUW
+			controls_state = 2
+			}
+			}
+			or = {
+			controls_state = 454
+			any_country = {
+			is_in_faction_with = YUW
+			controls_state = 454
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			set_cosmetic_tag = YUWjiaoting
+		}
+	}
+	
+	focus = {
+		id = YUW_diercitelitengdagonghuiyi
+		icon = GFX_focus_generic_league_of_nations
+		x = 6
+		y = 0
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 10
+		relative_position_id = YUW_shenpanguanzailiuwang
+		available = {	
+			custom_trigger_tooltip = {
+			tooltip = YUW_tips
+			always = no
+			}
+			is_puppet = no
+			has_completed_focus = YUW_xindejiaoting
+			or = {
+			has_government = democratic
+			has_government = neutrality
+			}
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "目前效果还没做完，工作量较大，先给大伙看一眼国策"
+		}
+	}
+	
+	focus = {
+		id = YUW_gongguhuiyichengguo
+		icon = GFX_focus_SWI_issue_war_bonds
+		x = -2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 5
+		prerequisite = { focus = YUW_diercitelitengdagonghuiyi }
+		relative_position_id = YUW_diercitelitengdagonghuiyi
+		available = {	
+			custom_trigger_tooltip = {
+			tooltip = YUW_tips
+			always = no
+			}
+			is_puppet = no
+			or = {
+			has_government = democratic
+			has_government = neutrality
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "目前效果还没做完，工作量较大，先给大伙看一眼国策"
+		}
+	}
+	
+	focus = {
+		id = YUW_kejishenxuechongbai
+		icon = GFX_focus_research2
+		x = 2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 5
+		prerequisite = { focus = YUW_diercitelitengdagonghuiyi }
+		relative_position_id = YUW_diercitelitengdagonghuiyi
+		available = {	
+			custom_trigger_tooltip = {
+			tooltip = YUW_tips
+			always = no
+			}
+			is_puppet = no
+			or = {
+			has_government = democratic
+			has_government = neutrality
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "目前效果还没做完，工作量较大，先给大伙看一眼国策"
+		}
+	}
+	
+	focus = {
+		id = YUW_hongyizhujiaodehuigui
+		icon = GFX_focus_lisailiu
+		x = -2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 10
+		prerequisite = { focus = YUW_gongguhuiyichengguo }
+		prerequisite = { focus = YUW_kejishenxuechongbai }
+		relative_position_id = YUW_kejishenxuechongbai
+		available = {	
+			custom_trigger_tooltip = {
+			tooltip = YUW_tips
+			always = no
+			}
+			is_puppet = no
+			has_completed_focus = YUW_wanchengshiming
+			or = {
+			has_government = democratic
+			has_government = neutrality
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = "目前效果还没做完，工作量较大，先给大伙看一眼国策"
+		}
+	}
+	
+	focus = {
+		id = YUW_womingyouwo
+		icon = GFX_focus_6194
+		x = 6
+		y = 0
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 1
+		relative_position_id = YUW_shenshengshiming
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			guojishengyu_down_3 = yes
+			set_cosmetic_tag = YUWwanggguo
+			swap_ideas = {
+				remove_idea = YUW_jjbk
+				add_idea = YUW_wddjj
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zongjiaodediwei
+		icon = GFX_goal_generic_forceful_treaty
+		x = -1
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 2
+		relative_position_id = YUW_womingyouwo
+		prerequisite = { focus = YUW_womingyouwo }
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = { id = YUW_event.72 }
+		}
+	}
+	
+	focus = {
+		id = YUW_chulifanduipai
+		icon = GFX_focus_BUL_condemn_macedonian_organizations
+		x = 1
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 2
+		relative_position_id = YUW_womingyouwo
+		prerequisite = { focus = YUW_womingyouwo }
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = { id = YUW_event.73 }
+		}
+	}
+	
+	focus = {
+		id = YUW_zhangkongjundui
+		icon = GFX_focus_BUL_support_macedonian_organizations
+		x = -1
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 3
+		relative_position_id = YUW_chulifanduipai
+		prerequisite = { focus = YUW_chulifanduipai }
+		prerequisite = { focus = YUW_zongjiaodediwei }
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			army_experience = 150
+		}
+	}
+	
+	focus = {
+		id = YUW_zhenzhengdewang
+		icon = GFX_focus_focus_fra_third_empire
+		x = -2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 2
+		relative_position_id = YUW_zhangkongjundui
+		prerequisite = { focus = YUW_zhangkongjundui }
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = YUW_huanranyixin
+		icon = GFX_focus_focus_fra_down_marianne
+		x = 0
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 1
+		relative_position_id = YUW_zhangkongjundui
+		prerequisite = { focus = YUW_zhangkongjundui }
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = 0.15
+		}
+	}
+	
+	focus = {
+		id = YUW_fenfengguizu
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 2
+		relative_position_id = YUW_zhangkongjundui
+		prerequisite = { focus = YUW_zhangkongjundui }
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = { id = YUW_event.75 }
+		}
+	}
+	
+	focus = {
+		id = YUW_chongjianwangguo
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 0
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 5
+		relative_position_id = YUW_huanranyixin
+		prerequisite = { focus = YUW_zhenzhengdewang }
+		prerequisite = { focus = YUW_huanranyixin }
+		prerequisite = { focus = YUW_fenfengguizu }
+		available = {	
+			has_country_flag = lyjs_fubiwangguo
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = buchuyiwaiqingkuang_yuw
+			hidden_effect = {
+			if = {
+			limit = {
+			has_country_flag = lyjsfanchangdu_1
+			has_country_flag = lyjsfanchangdu_2
+			has_country_flag = lyjsfanchangdu_3
+			}
+			country_event = { id = YUW_event.74 }
+			}else = {
+			add_ideas = YUW_zhenzhengdewang_idea
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_gongheguojianli
+		icon = GFX_focus_generic_support_the_left_right
+		x = 8
+		y = 0
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 1
+		relative_position_id = YUW_womingyouwo
+		available = {	
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			guojishengyu_up_3 = yes
+			set_cosmetic_tag = YUWgonghheguo
+		}
+	}
+	
+	focus = {
+		id = YUW_zongjiaokuanrong
+		icon = GFX_focus_GRE_an_orthodox_state
+		x = -2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 3
+		relative_position_id = YUW_gongheguojianli
+		prerequisite = { focus = YUW_gongheguojianli }
+		available = {	
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = yuw_zjkr
+		}
+	}
+	
+	focus = {
+		id = YUW_jingjigaigenew
+		icon = GFX_focus_generic_land_reclamation
+		x = 2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 3
+		relative_position_id = YUW_gongheguojianli
+		prerequisite = { focus = YUW_gongheguojianli }
+		available = {	
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = wanjiujingji_gongyejidakuozhang
+			hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes 
+				}
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_xuanjuzongtong
+		icon = GFX_focus_generic_treaty
+		x = -2
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 1
+		relative_position_id = YUW_jingjigaigenew
+		prerequisite = { focus = YUW_zongjiaokuanrong }
+		prerequisite = { focus = YUW_jingjigaigenew }
+		available = {	
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = YUW_jiushidaidexiangzheng
+		icon = GFX_focus_zhende
+		x = -3
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 5
+		relative_position_id = YUW_xuanjuzongtong
+		prerequisite = { focus = YUW_xuanjuzongtong }
+		mutually_exclusive = { focus = YUW_chenggongdeouxiang focus = YUW_xinshidaidehongyizhujiao }
+		available = {	
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			add_stability = 0.3
+			YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = liberalism
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_xinshidaidehongyizhujiao
+		icon = GFX_focus_lisailiu
+		x = 0
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 5
+		relative_position_id = YUW_xuanjuzongtong
+		prerequisite = { focus = YUW_xuanjuzongtong }
+		mutually_exclusive = { focus = YUW_chenggongdeouxiang focus = YUW_jiushidaidexiangzheng }
+		available = {	
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+	
+	focus = {
+		id = YUW_chenggongdeouxiang
+		icon = GFX_focus_edu
+		x = 3
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 5
+		relative_position_id = YUW_xuanjuzongtong
+		mutually_exclusive = { focus = YUW_xinshidaidehongyizhujiao focus = YUW_jiushidaidexiangzheng }
+		prerequisite = { focus = YUW_xuanjuzongtong }
+		available = {	
+			is_puppet = no
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			set_politics = {
+			ruling_party = fascism
+			}
+			add_popularity = { ideology = fascism popularity = 0.5 }
+			add_war_support = 0.3
+			YUW_edu = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = gen_nazism
+			traits = {
+				 trait_psh_xingfenzhidu
+				 trait_psh_daiduotianshi
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_zhanxinyuanwei
+		icon = GFX_focus_SWI_establish_pro_helvetia
+		x = 0
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		cost = 5
+		relative_position_id = YUW_xinshidaidehongyizhujiao
+		prerequisite = { focus = YUW_jiushidaidexiangzheng  focus = YUW_xinshidaidehongyizhujiao focus = YUW_chenggongdeouxiang }
+		available = {	
+			is_puppet = no
+			has_country_flag = lyjs_fubibeituifan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = YUW_zxyw
+		}
+	}
+	
+}

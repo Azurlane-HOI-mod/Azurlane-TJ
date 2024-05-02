@@ -1,0 +1,75 @@
+﻿add_namespace = affect_DOH_event
+country_event = {
+	id = affect_DOH_event.1
+	title = affect_DOH_event.1.t
+	desc = affect_DOH_event.1.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes	
+	option = {
+		name = affect_DOH_event.1.a
+		ai_chance = {
+			factor = 5
+		}
+		custom_effect_tooltip = affect_DOH_event.1.effect_tooltip
+		if = {
+			limit = {
+				has_tech = basic_heavy_tank_chassis
+			}
+			army_experience = 100
+		}
+		else = { 
+			add_tech_bonus = {
+				name = "铁血坦克图纸"
+				bonus = 10
+				uses = 1
+				technology = basic_heavy_tank_chassis
+			}
+			army_experience = 20
+		}
+	}
+}
+
+country_event = {
+	id = affect_DOH_event.2
+	title = affect_DOH_event.2.t
+	desc = affect_DOH_event.2.d
+	picture = GFX_aze_guanghui
+	is_triggered_only = yes	
+	option = {
+		name = affect_DOH_event.2.a
+		ai_chance = {
+			factor = 5
+		}
+		add_equipment_to_stockpile = {
+			type = convoy
+			amount = 150
+		}
+		custom_effect_tooltip = affect_DOH_event.2.effect_tooltip
+		add_to_variable = {
+			var = wz_sl
+			value = 1000
+		}
+	}
+}
+
+country_event = {
+	id = affect_DOH_event.3
+	title = affect_DOH_event.3.t
+	desc = affect_DOH_event.3.d
+	picture = GFX_aze_luoxiya
+	is_triggered_only = yes	
+	option = {
+		name = affect_DOH_event.3.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = { ideology = communism popularity = 0.05 }
+		capital_scope = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}

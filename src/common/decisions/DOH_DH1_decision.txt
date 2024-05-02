@@ -1,0 +1,173 @@
+DOH_DH1_decision_category = {
+	DOH_DH1_kaishiyuanzheng = {
+		icon = idea_hun_treaty_of_trianon
+		visible = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				NOT = {
+					has_country_flag = DOH_DH1_kaishiyuanzheng_flag
+				}
+			}
+		}
+		available = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				NOT = {
+					has_country_flag = DOH_DH1_kaishiyuanzheng_flag
+				}
+			}
+		}
+		cost = 0
+		days_remove = 1
+		remove_effect = {
+			custom_effect_tooltip = DOH_DH1_kaishiyuanzheng_tooltip
+			hidden_effect = {
+				DH1 = { set_country_flag = DOH_DH1_kaishiyuanzheng_flag }				
+			}
+		}
+	}
+	DOH_DH1_zhongshijingong_add = {
+		icon = idea_hun_treaty_of_trianon
+		visible = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				has_completed_focus = DH1_jieshouwzhidao
+			}
+		}
+		available = {
+			tag = DOH
+			is_ai = no
+			NOT = {
+				has_country_flag = DOH_DH1_xiadalezhishi
+			}
+		}
+		cost = 100
+		days_remove = 10
+		remove_effect = {
+			DH1 = { add_ideas = DH1_AI_zhongshijingong }
+			set_country_flag = DOH_DH1_xiadalezhishi
+		}
+	}
+	DOH_DH1_zhongshifangyu_add = {
+		icon = idea_hun_treaty_of_trianon
+		visible = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				has_completed_focus = DH1_jieshouwzhidao
+			}
+		}
+		available = {
+			tag = DOH
+			is_ai = no
+			NOT = {
+				has_country_flag = DOH_DH1_xiadalezhishi
+			}
+		}
+		cost = 100
+		days_remove = 10
+		remove_effect = {
+			DH1 = { add_ideas = DH1_AI_zhongshifangyu }
+			set_country_flag = DOH_DH1_xiadalezhishi
+		}
+	}
+	DOH_DH1_zhongshihaijun_add = {
+		icon = idea_hun_treaty_of_trianon
+		visible = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				has_completed_focus = DH1_jieshouwzhidao
+			}
+		}
+		available = {
+			tag = DOH
+			is_ai = no
+			NOT = {
+				has_country_flag = DOH_DH1_xiadalezhishi
+			}
+		}
+		cost = 100
+		days_remove = 10
+		remove_effect = {
+			DH1 = { add_ideas = DH1_AI_zhongshihaijun }
+			set_country_flag = DOH_DH1_xiadalezhishi
+		}
+	}
+	DOH_DH1_zhongshikongjun_add = {
+		icon = idea_hun_treaty_of_trianon
+		visible = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				has_completed_focus = DH1_jieshouwzhidao
+			}
+		}
+		available = {
+			tag = DOH
+			is_ai = no
+			NOT = {
+				has_country_flag = DOH_DH1_xiadalezhishi
+			}
+		}
+		cost = 100
+		days_remove = 10
+		remove_effect = {
+			DH1 = { add_ideas = DH1_AI_zhongshikongjun }
+			set_country_flag = DOH_DH1_xiadalezhishi
+		}
+	}
+	DOH_DH1_xiuyangshengxi_add = {
+		icon = idea_hun_treaty_of_trianon
+		visible = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				has_completed_focus = DH1_jieshouwzhidao
+			}
+		}
+		available = {
+			tag = DOH
+			is_ai = no
+			NOT = {
+				has_country_flag = DOH_DH1_xiadalezhishi
+			}
+		}
+		cost = 100
+		days_remove = 10
+		remove_effect = {
+			DH1 = { add_ideas = DH1_AI_xiuyangshengxi }
+			set_country_flag = DOH_DH1_xiadalezhishi
+		}
+	}
+	DOH_DH1_rm = {
+		icon = idea_hun_treaty_of_trianon
+		visible = {
+			tag = DOH
+			is_ai = no
+			DH1 = {
+				has_completed_focus = DH1_jieshouwzhidao
+			}
+		}
+		available = {
+			tag = DOH
+			is_ai = no
+			has_country_flag = DOH_DH1_xiadalezhishi
+		}
+		cost = 0
+		days_remove = 10
+		remove_effect = {
+			DH1 = {
+				remove_ideas = DH1_AI_xiuyangshengxi
+				remove_ideas = DH1_AI_zhongshihaijun
+				remove_ideas = DH1_AI_zhongshikongjun
+				remove_ideas = DH1_AI_zhongshijingong
+				remove_ideas = DH1_AI_zhongshifangyu
+			}
+			clr_country_flag = DOH_DH1_xiadalezhishi
+		}
+	}
+}

@@ -1,0 +1,744 @@
+scripted_gui = {
+
+	az_start_mainwindow_start = {
+		window_name = "az_start_mainwindow"
+		context_type = player_context
+		visible = {
+			has_country_flag = az_startwindow_open
+		}
+		
+		effects = {
+			az_start_mainwindow_gengxinshuoming_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = az_start_modoption_window_open
+					}
+					clr_country_flag = az_start_modoption_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_wanfagonglue_window_open
+					}
+					clr_country_flag = az_start_wanfagonglue_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_dashang_window_open
+					}
+					clr_country_flag = az_start_dashang_window_open
+				}
+				set_country_flag = az_start_gengxinshuoming_window_open
+			}
+			AZ_start_mainwindow_dashanghuayuan_click = {
+				if = {
+					limit = {
+						has_country_flag = az_start_gengxinshuoming_window_open
+					}
+					clr_country_flag = az_start_gengxinshuoming_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_modoption_window_open
+					}
+					clr_country_flag = az_start_modoption_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_wanfagonglue_window_open
+					}
+					clr_country_flag = az_start_wanfagonglue_window_open
+				}
+				set_country_flag = az_start_dashang_window_open
+			}
+			az_start_mainwindow_wanfagonglue_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = az_start_modoption_window_open
+					}
+					clr_country_flag = az_start_modoption_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_gengxinshuoming_window_open
+					}
+					clr_country_flag = az_start_gengxinshuoming_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_dashang_window_open
+					}
+					clr_country_flag = az_start_dashang_window_open
+				}
+				set_country_flag = az_start_wanfagonglue_window_open
+			}
+			az_start_mainwindow_modoption_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = az_start_gengxinshuoming_window_open
+					}
+					clr_country_flag = az_start_gengxinshuoming_window_open
+				}
+				if = {
+					limit = { 
+						has_country_flag = az_start_wanfagonglue_window_open
+					}
+					clr_country_flag = az_start_wanfagonglue_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_dashang_window_open
+					}
+					clr_country_flag = az_start_dashang_window_open
+				}
+				set_country_flag = az_start_modoption_window_open
+			}
+			az_start_mainwindow_stratgame_btn_click = { 
+				AZ_siren_reinforce_cd_setup = yes
+				AZ_siren_difficulty_setup = yes
+				clr_country_flag = az_startwindow_open
+				set_global_flag = az_gamestarted
+				if = {
+					limit = {
+						AND = {
+							has_global_flag = MOD_azurlane_tianjiangjiannian
+							has_global_flag = MOD_azurlane_sairenzhizai
+						}
+					}
+					country_event = azstartevent.1001
+				}
+				else = {
+					if = {
+						limit = {	
+							has_global_flag = sirennandu2
+						}
+						every_country = {
+							limit = { 
+								shisairen_trigger = yes
+							}
+							add_ideas = SIR_buff1
+							add_ideas = SIR_startbuff_3
+							add_research_slot = 3
+							add_manpower = 10000000
+						}
+						every_country = {
+							limit = { 
+								shijianniangguojia_trigger = yes
+							}
+							add_ideas = TY_tiaozhanjiacheng_3
+							
+						} 
+						every_country = {
+							limit = {
+								AND = {
+									shijianniangguojia_trigger = yes
+									is_ai = yes
+								}
+								
+							}
+						}
+					}
+					if = {
+						limit = {	
+							has_global_flag = sirennandu1
+						}
+						every_country = {
+							limit = { 
+								shisairen_trigger = yes
+							}
+							add_ideas = SIR_startbuff_1
+							add_research_slot = 1
+						}
+						every_country = {
+							limit = { 
+								shijianniangguojia_trigger = yes
+							}
+							add_ideas = TY_tiaozhanjiacheng_1
+							
+						}
+					}
+					if = {
+						limit = {	
+							has_global_flag = sirennandu4
+						}
+						TIX ={  
+							complete_national_focus = TIX_zhunbeichongfanoulu
+
+							if = {
+								limit = { country_exists = TIX }
+								every_state = {
+									limit = { is_core_of = TIX }
+									transfer_state_to = TIX
+								}
+							}
+						}
+						HUJ ={  
+							complete_national_focus = HUJ_buliedianjihua
+							complete_national_focus = HUJ_dizhonghaijihua
+							complete_national_focus = HUJ_sikandenaweiyajihua
+							if = {
+								limit = { country_exists = HUJ }
+								every_state = {
+									limit = { is_core_of = HUJ }
+									transfer_state_to = HUJ
+								}
+							}
+						}
+						YUW ={  
+							complete_national_focus = YUW_ouzhouxiongji
+							complete_national_focus = YUW_huangjinbandao_sr
+							if = {
+								limit = { country_exists = YUW }
+								every_state = {
+									limit = { is_core_of = YUW }
+									transfer_state_to = YUW
+								}
+							}
+						}
+						SAD ={  
+							complete_national_focus = SAD_duohuiyapingning
+							complete_national_focus = SAD_weinisixingdong
+							complete_national_focus = SAD_toudubeifei
+							if = {
+								limit = { country_exists = SAD }
+								every_state = {
+									limit = { is_core_of = SAD }
+									transfer_state_to = SAD
+								}
+							}
+						}
+						BFL ={  
+							complete_national_focus = BFL_dongougongshi
+							complete_national_focus = BFL_wulaergongshi
+							if = {
+								limit = { country_exists = BFL }
+								every_state = {
+									limit = { is_core_of = BFL }
+									transfer_state_to = BFL
+								}
+							}
+						}
+						DOH ={  
+							complete_national_focus = DOH_beishang
+							complete_national_focus = DOH_jiefangxuanyan
+							complete_national_focus = DOH_jixubeifa
+							if = {
+								limit = { country_exists = DOH }
+								every_state = {
+									limit = { is_core_of = DOH }
+									transfer_state_to = DOH
+								}
+							}
+						}
+						CHY ={  
+							complete_national_focus = CHY_shijiyidao
+							if = {
+								limit = { country_exists = CHY }
+								every_state = {
+									limit = { is_core_of = CHY }
+									transfer_state_to = CHY
+								}
+							}
+						}
+						BYG ={  
+							complete_national_focus = BYG_chongduozhiminling
+							complete_national_focus = BYG_qinglimenting
+							complete_national_focus = BYG_zhunbeifangong
+							complete_national_focus = BYG_xianhuashengkai
+							if = {
+								limit = { country_exists = BYG }
+								every_state = {
+									limit = { is_core_of = BYG }
+									transfer_state_to = BYG
+								}
+							}
+						}
+					}
+					if = {
+						limit = {	
+							has_global_flag = sirennandu3
+						}
+						set_country_flag = AL_alone
+						mark_focus_tree_layout_dirty = yes
+						country_event = { id = AL_event.49 days = 1 }
+						every_country = {
+							limit = { 
+								shisairen_trigger = yes
+							}
+							add_ideas = AL_sir_full_armor
+							add_ideas = SIR_buff1
+							add_research_slot = 1
+							add_manpower = 10000000
+						}
+						every_other_country = {
+							limit = { 
+								shijianniangguojia_trigger = yes
+							}
+							every_state = {
+								remove_core_of = PREV
+							}
+							every_character = {
+								limit = {
+									has_character_flag = chushijianniang
+									is_country_leader = no 
+								}
+								set_nationality = ROOT
+							}
+							every_character = {
+								limit = {
+									is_country_leader = yes
+								}
+								remove_country_leader_role = {
+									ideology = socialism
+								}
+								remove_country_leader_role = {
+									ideology = stalinism
+								}
+								remove_country_leader_role = {
+									ideology = fascism_ideology
+								}
+								remove_country_leader_role = {
+									ideology = liberalism
+								}
+								remove_country_leader_role = {
+									ideology = despotism
+								}
+								remove_country_leader_role = {
+									ideology = leninism
+								}
+								remove_country_leader_role = {
+									ideology = marxism
+								}
+								set_nationality = ROOT
+							}
+						}
+						every_other_country = {
+							limit = {
+								OR = {
+									tag = BYG
+									tag = HUJ
+									tag = TIX
+									tag = YUW
+									tag = SAD
+									tag = BFL
+								}
+								is_ai = yes
+							}
+							SIR = {
+								annex_country = {
+									target = PREV
+									transfer_troops = no
+								}
+							}
+						}
+						every_other_country = {
+							limit = {
+								OR = {
+									tag = CHY
+									tag = DOH
+								}
+								is_ai = yes
+							}
+							SR3 = {
+								annex_country = {
+									target = PREV
+									transfer_troops = no
+								}
+							}
+						}
+						every_other_country = {
+							limit = {
+								OR = {
+									tag = BLI
+								}
+								is_ai = yes
+							}
+							SR4 = {
+								annex_country = {
+									target = PREV
+									transfer_troops = no
+								}
+							}
+						}
+					}
+				}
+			}
+			
+
+		}
+		triggers = {
+
+
+		}
+
+
+	}
+	az_start_gengxinshuomingwindow = {
+		window_name = "az_start_gengxinshuoming_window"
+		
+		context_type = player_context 
+
+		visible = { 
+			has_country_flag = az_start_gengxinshuoming_window_open
+		} 
+		parent_window_name = "az_start_mainwindow" 
+		effects = {
+			gengxinshuoming_to_gonglue_btn_click = {
+				if = {
+					limit = {
+						has_country_flag = az_start_modoption_window_open
+					}
+					clr_country_flag = az_start_modoption_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_gengxinshuoming_window_open
+					}
+					clr_country_flag = az_start_gengxinshuoming_window_open
+				}
+				if = {
+					limit = {
+						has_country_flag = az_start_dashang_window_open
+					}
+					clr_country_flag = az_start_dashang_window_open
+				}
+				set_country_flag = az_start_wanfagonglue_window_open
+			}
+		}
+	}   
+	az_start_dashangwindow = {
+		window_name = "az_start_dashang_window"
+		
+		context_type = player_context 
+
+		visible = { 
+			has_country_flag = az_start_dashang_window_open
+		} 
+		parent_window_name = "az_start_mainwindow" 
+   
+	}
+	az_start_wanfagongluewindow = {
+		window_name = "az_start_wanfagonglue_window"
+		
+		context_type = player_context 
+
+		visible = { 
+			has_country_flag = az_start_wanfagonglue_window_open
+		} 
+		parent_window_name = "az_start_mainwindow" 
+		
+   
+	}  
+	az_start_modoptionwindow = {
+		window_name = "az_start_modoption_window"
+		
+		context_type = player_context 
+
+		visible = { 
+			has_country_flag = az_start_modoption_window_open
+		} 
+		parent_window_name = "az_start_mainwindow" 
+		
+		effects = {
+			modoption_sirennandu1_click = {
+				if = {
+					limit = { 
+						has_global_flag = sirennandu1
+					}
+					clr_global_flag = sirennandu1
+				}
+
+				else = {
+					hidden_effect = { scoped_sound_effect = az_nandu1_sound }
+					set_global_flag = sirennandu1
+				}
+				
+			}
+			modoption_sirennandu2_click = {
+
+				if = {
+					limit = { 
+						has_global_flag = sirennandu2
+					}
+					clr_global_flag = sirennandu2
+					
+				}
+				else = {
+					hidden_effect = { scoped_sound_effect = az_nandu3_sound }
+					set_global_flag = sirennandu2
+				}
+			}
+			modoption_sirennandu3_click = {
+				if = {
+					limit = { 
+						has_global_flag = sirennandu3
+					}
+					clr_global_flag = sirennandu3
+				}
+				else = {
+					set_global_flag = sirennandu3
+				}
+			}
+			modoption_sirennandu4_click = {
+				if = {
+					limit = { 
+						has_global_flag = sirennandu4
+					}
+					clr_global_flag = sirennandu4
+				}
+				else = {
+					set_global_flag = sirennandu4
+				}
+			}
+			modoption_button1_on_click = {
+				if = {
+					limit = {
+						has_global_flag = xianzhikongjun_on
+					}
+					clr_global_flag = xianzhikongjun_on
+					every_country = {
+						remove_ideas = TY_xianzhikongjun
+					}
+				}
+				else = {
+					set_global_flag = xianzhikongjun_on
+					every_country = {
+						add_ideas = TY_xianzhikongjun
+					}
+				}
+
+			}
+			modoption_button2_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_navykuaijian_on
+					}
+					clr_global_flag = modoption_navykuaijian_on
+					every_country = {
+						remove_ideas = TY_qianghuachuanwu
+					}
+				}
+				else = {
+					set_global_flag = modoption_navykuaijian_on
+					every_country = {
+						add_ideas = TY_qianghuachuanwu
+					}
+				}
+			}
+			modoption_button3_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_shengchan_on
+					}
+					clr_global_flag = modoption_shengchan_on
+					every_country = {
+						remove_ideas = TY_chaojishengchan
+					}
+				}
+				else = {
+					set_global_flag = modoption_shengchan_on
+					every_country = {
+						add_ideas = TY_chaojishengchan
+					}
+				}
+			}
+			modoption_button4_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_morepp_on
+					}
+					clr_global_flag = modoption_morepp_on
+					every_country = {
+						remove_ideas = TY_gengduoppdian
+					}
+				}
+				else = {
+					set_global_flag = modoption_morepp_on
+					every_country = {
+						add_ideas = TY_gengduoppdian
+					}
+				}
+			}
+			modoption_button5_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_yansukeyan_on
+					}
+					clr_global_flag = modoption_yansukeyan_on
+					every_country = {
+						remove_ideas = TY_jiasuyanjiu
+					}
+				}
+				else = {
+					set_global_flag = modoption_yansukeyan_on
+					every_country = {
+						add_ideas = TY_jiasuyanjiu
+					}
+				}
+			}
+			modoption_button6_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_fengkuangai_on
+					}
+					clr_global_flag = modoption_fengkuangai_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = yes
+								is_ai = yes
+							}
+						}
+						remove_ideas = TY_fengkuangai 
+					}
+				}
+				else = {
+					set_global_flag = modoption_fengkuangai_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = yes
+								is_ai = yes
+							}
+						}
+						add_ideas = TY_fengkuangai
+					}
+				}
+			}
+			modoption_button7_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_dingzhenai_on
+					}
+					clr_global_flag = modoption_dingzhenai_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = yes
+								is_ai = yes
+							}
+						}
+						remove_ideas = TY_dingzhenai
+					}
+				}
+				else = {
+					set_global_flag = modoption_dingzhenai_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = yes
+								is_ai = yes
+							}
+						}
+						add_ideas = TY_dingzhenai
+					}
+				}
+			}
+		}
+		triggers = {
+			modoption_button6_on_click_enabled = {
+				NOT = { has_global_flag = modoption_dingzhenai_on }
+			}
+			modoption_button7_on_click_enabled = {
+				NOT = { has_global_flag = modoption_fengkuangai_on }
+			}
+			modoption_sirennandu1_click_enabled = {
+				NOT = { has_global_flag = sirennandu2 }
+				NOT = { has_global_flag = sirennandu3 }
+			}
+			modoption_sirennandu2_click_enabled = {
+				NOT = { has_global_flag = sirennandu1 }
+				NOT = { has_global_flag = sirennandu3 }
+			}
+			modoption_sirennandu3_click_enabled = {
+				NOT = { has_global_flag = sirennandu1 }
+				NOT = { has_global_flag = sirennandu2 }
+			}
+			modoption_button1_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button2_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button3_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button4_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button5_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button6_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button7_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_sirennandu_title_visible = {
+				has_global_flag = MOD_azurlane_sairenzhizai
+			}
+
+			modoption_sirennandu1_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+				has_global_flag = MOD_azurlane_sairenzhizai
+			}
+			modoption_sirennandu2_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+				has_global_flag = MOD_azurlane_sairenzhizai
+			}
+			modoption_sirennandu3_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+				has_global_flag = MOD_azurlane_sairenzhizai
+			}
+			modoption_sirennandu4_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+				has_global_flag = MOD_azurlane_sairenzhizai
+			}
+			modoption_sirennandu1_text_visible = {
+				if = {
+					limit = {
+						has_global_flag = az_gamestarted
+					}
+					has_global_flag = sirennandu1
+				}
+				else = {
+					has_global_flag = MOD_azurlane_sairenzhizai
+				}
+			}
+			modoption_sirennandu2_text_visible = {
+				if = {
+					limit = {
+						has_global_flag = az_gamestarted
+					}
+					has_global_flag = sirennandu2
+				}
+				else = {
+					has_global_flag = MOD_azurlane_sairenzhizai
+				}
+			}
+			modoption_sirennandu3_text_visible = {
+				if = {
+					limit = {
+						has_global_flag = az_gamestarted
+					}
+					has_global_flag = sirennandu3
+				}
+				else = {
+					has_global_flag = MOD_azurlane_sairenzhizai
+				}
+			}
+			modoption_sirennandu4_text_visible = {
+				if = {
+					limit = {
+						has_global_flag = az_gamestarted
+					}
+					has_global_flag = sirennandu4
+				}
+				else = {
+					has_global_flag = MOD_azurlane_sairenzhizai
+				}
+			}
+	
+		}
+	} 
+}

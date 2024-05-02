@@ -1,0 +1,163 @@
+characters={
+	WEX_rangbaer = {
+		name = YUW_rangbaer
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/leader_rangbaer.png"
+				small="gfx/interface/ideas/idea_rangbaer.png"
+			}
+			civilian = {
+				large="gfx/leaders/YUW/leader_rangbaer.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = rangbaer
+			available = {
+				or = {
+					has_completed_focus = YUW_weixixingdong1
+					has_completed_focus = YUW_rangbaerdemingling
+					has_government = fascism
+				}
+				or = {
+					not = {has_completed_focus = YUW_zhengquzhendezhichi}
+					has_completed_focus = YUW_tuanjieweixixingdong
+				}
+				not = {
+					has_completed_focus = YUW_yuanweishengkaidejijie
+				}
+			}
+			traits = { YUW_fc }
+	
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = rangbaer
+			traits = { army_chief_offensive_3 }
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		country_leader={
+			ideology= fascism_ideology
+			traits={ hdzh }
+			expire="2000.1.1.1"
+		}
+		
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 192002
+			traits = { trait_engineer zhanlie_army }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	WEX_aerjiliya = {
+		name = YUW_aerjiliya
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/aerjiliya.png"
+				small="gfx/interface/ideas/idea_aerjiliya.png"
+			}
+
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = aerjiliya
+			traits = { navy_screen_3 }
+
+			ai_will_do = {
+				factor = 20
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 192003
+			traits = { infantry_leader desert_fox xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	WEX_dunkerque = {
+		name = YUW_dunkerque
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/dunkerque.png"
+				small="gfx/interface/ideas/idea_dunkerque.png"
+			}
+
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = dunkerque
+			available = {
+				OR = {
+					has_completed_focus = YUW_zhengquzhendezhichi
+					has_completed_focus = YUW_tuanjieweixixingdong
+				}
+			}
+			traits = { wddttz silent_workhorse }
+
+			ai_will_do = {
+				factor = 0.1
+				modifier = {
+					factor = 100
+					has_completed_focus = YUW_tuanjieweixixingdong	
+				}
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = dunkerque
+			traits = { army_concealment_3 }
+
+			ai_will_do = {
+				factor = 19
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 192004
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+}

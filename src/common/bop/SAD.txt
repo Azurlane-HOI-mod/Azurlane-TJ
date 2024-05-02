@@ -1,0 +1,108 @@
+SAD_balance = {
+	initial_value = 0.1
+	left_side = SAD_left_side
+	right_side = SAD_right_side
+	decision_category = SAD_quanlipingheng
+	range = {
+		id = SAD_qiaomiaopingheng
+		min = -0.3
+		max = 0.3
+		modifier = {
+			political_power_gain = 1.5
+		}
+	}
+	side = {
+		id = SAD_left_side
+		icon = GFX_bop_ITA_pope_side
+		range = {
+			id = SAD_zhenglunbuduan
+			min = -0.6
+			max = -0.3
+			modifier = {
+				political_advisor_cost_factor = -0.2
+				stability_factor = 0.1
+				defensive_war_stability_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = SAD_hunluanbukan
+			min = -0.9
+			max = -0.6
+			modifier = {
+				political_advisor_cost_factor = -0.33
+				stability_factor = 0.2
+				defensive_war_stability_factor = 0.2
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = SAD_bengkuibianyuan
+			min = -1.0
+			max = -0.9
+			modifier = {
+				political_advisor_cost_factor = -0.5
+				stability_factor = 0.3
+				defensive_war_stability_factor = 0.4
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+			}
+			on_activate = {
+				country_event = az_tianjiang.149
+			}
+		}
+	}
+	side = {
+		id = SAD_right_side
+		icon = GFX_bop_ITA_grand_council_side
+		range = {
+			id = SAD_yizhangquanwei
+			min = 0.3
+			max = 0.7
+			modifier = {
+				political_power_gain = 1
+				war_support_factor = 0.2
+				stability_weekly = 0.005
+				offensive_war_stability_factor = 0.2
+			}
+		}
+		range = {
+			id = SAD_kuodaquanli
+			min = 0.7
+			max = 0.95
+			modifier = {
+				political_power_gain = 0.5
+				war_support_factor = 0.3
+				war_support_weekly = 0.01
+			}
+		}
+		range = {
+			id = SAD_junzhengducai
+			min = 0.95
+			max = 1
+			modifier = {
+				offensive_war_stability_factor = 0.4
+				war_support_factor = 0.5
+				war_support_weekly = 0.02
+			}
+			on_activate = {
+				country_event = az_tianjiang.148
+			}
+		}
+	}	
+		
+}

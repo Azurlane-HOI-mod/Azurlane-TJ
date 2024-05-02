@@ -1,0 +1,1931 @@
+add_namespace = aznews
+
+news_event = {
+	id = aznews.1
+	title = aznews.1.t
+	desc = aznews.1.d
+	picture = GFX_az_hj1
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		126 = { is_controlled_by = HUJ }
+		126 = { is_owned_by = SIR }
+		SIR = { has_war_with = HUJ }
+		NOT = { has_global_flag = huangjia_lundun }
+	}
+	
+	immediate = {
+		set_global_flag = huangjia_lundun
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.1.a
+		trigger = { tag = HUJ }
+	}
+	option = {
+		name = aznews.1.b
+		trigger = { 
+			OR = {
+				tag = BYG
+				tag = DOH
+				tag = YUW
+				tag = BFL
+			}
+		}
+	}
+	option = {
+		name = aznews.1.c
+		trigger = { 
+			OR = {
+				tag = TIX
+				tag = CHY
+			}
+		}
+	}
+}
+news_event = {
+	id = aznews.2
+	title = aznews.2.t
+	desc = aznews.2.d
+	picture = GFX_az_tx1
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		64 = { is_controlled_by = TIX }
+		64 = { is_owned_by = SIR }
+		SIR = { has_war_with = TIX }
+		NOT = { has_global_flag = tiexue_bolin }
+	}
+	
+	immediate = {
+		set_global_flag = tiexue_bolin 
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.2.a
+		trigger = { tag = TIX }
+	}
+	option = {
+		name = aznews.2.b
+		trigger = { 
+			OR = {
+				tag = CHY
+				tag = DOH
+			}
+		}
+	}
+	option = {
+		name = aznews.2.c
+		trigger = { 
+			OR = {
+			tag = HUJ
+			tag = BFL
+			tag = BYG
+			}
+		}
+	}
+	option = {
+		name = aznews.2.e
+		trigger = { 
+			tag = YUW
+		}
+	}
+}
+news_event = {
+	id = aznews.3
+	title = aznews.3.t
+	desc = aznews.3.d
+	picture = GFX_az_byqiye
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		BYG = { has_war = yes }
+		NOT = { has_global_flag = baiying_kaizhan }
+	}
+	
+	immediate = {
+		set_global_flag = baiying_kaizhan
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.3.a
+		trigger = { tag = BYG }
+		add_war_support = 0.15
+	}
+	option = {
+		name = aznews.3.b
+		trigger = { 
+			NOT = { tag = BYG }
+		}
+	}
+	
+}
+news_event = {
+	id = aznews.4
+	title = aznews.4.t
+	desc = aznews.4.d
+	picture = GFX_az_yw1
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		16 = { is_controlled_by = YUW }
+		16 = { is_owned_by = SIR }
+		SIR = { has_war_with = YUW }
+		NOT = { has_global_flag = yuanwei_bali }
+	}
+	
+	immediate = {
+		set_global_flag = yuanwei_bali
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.4.a
+		trigger = { tag = YUW }
+	}
+	option = {
+		name = aznews.4.b
+		trigger = { 
+			NOT = { tag = YUW }
+		}
+	}
+}
+news_event = {
+	id = aznews.5
+	title = aznews.5.t
+	desc = aznews.5.d
+	picture = GFX_az_cy1
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		CHY = { has_completed_focus = CHY_xiuyangshengxi }
+		NOT = { has_global_flag = chongying_xiuyang }
+	}
+	
+	immediate = {
+		set_global_flag = chongying_xiuyang 
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.5.a
+		trigger = { tag = CHY }
+	}
+	option = {
+		name = aznews.5.b
+		trigger = { 
+			NOT = { tag = CHY }
+		}
+	}
+}
+news_event = {
+	id = aznews.6
+	title = aznews.6.t
+	desc = aznews.6.d
+	picture = GFX_az_dh1
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		613 = { is_controlled_by = DOH }
+		613 = { is_owned_by = SR3 }
+		SR3 = { has_war_with = DOH }
+		NOT = { has_global_flag = donghuang_nanjing }
+	}
+	
+	immediate = {
+		set_global_flag = donghuang_nanjing
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.6.a
+		trigger = { tag = DOH }
+	}
+	option = {
+		name = aznews.6.b
+		trigger = { 
+			NOT = { tag = DOH }
+		}
+	}
+}
+news_event = {
+	id = aznews.7
+	title = aznews.7.t
+	desc = aznews.7.d
+	picture = GFX_az_cytiancheng
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.7.a
+		trigger = { tag = CHY }
+	}
+	option = {
+		name = aznews.7.b
+		trigger = { 
+			NOT = { tag = CHY }
+		}
+	}
+}
+news_event = {
+	id = aznews.8
+	title = aznews.8.t
+	desc = aznews.8.d
+	picture = GFX_az_cychicheng
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.8.a
+		trigger = { tag = CHY }
+	}
+	option = {
+		name = aznews.8.b
+		trigger = { 
+			NOT = { tag = CHY }
+		}
+	}
+}
+news_event = {
+	id = aznews.9
+	title = aznews.9.t
+	desc = aznews.9.d
+	picture = GFX_az_cychangmen
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.9.a
+		trigger = { tag = CHY }
+	}
+	option = {
+		name = aznews.9.b
+		trigger = { 
+			NOT = { tag = CHY }
+		}
+	}
+}
+news_event = {
+	id = aznews.10
+	title = aznews.10.t
+	desc = aznews.10.d
+	picture = GFX_az_tx2
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.10.a
+		trigger = { tag = TIX }
+	}
+	option = {
+		name = aznews.10.b
+		trigger = { 
+			NOT = { tag = TIX }
+		}
+	}
+}
+news_event = {
+	id = aznews.11
+	title = aznews.11.t
+	desc = aznews.11.d
+	picture = GFX_az_sr1
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		SIR = { 
+			OR = { 
+			has_war_with = TIX 
+			has_war_with = HUJ 
+			has_war_with = BFL 
+			has_war_with = BYG 
+			has_war_with = YUW 
+			} 
+		}
+		NOT = { has_global_flag = siren_kaizhan }
+	}
+	
+	immediate = {
+		set_global_flag = siren_baobing1
+		set_global_flag = siren1_baobing1
+		set_global_flag = siren2_baobing1
+		set_global_flag = siren3_baobing1
+		set_global_flag = siren4_baobing1
+		set_global_flag = siren_baochuan1
+		set_global_flag = siren_kaizhan
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.11.a
+		trigger = { tag = SIR }
+	}
+	option = {
+		name = aznews.11.b
+		trigger = { 
+			NOT = { tag = SIR }
+		}
+	}
+}
+news_event = {
+	id = aznews.12
+	title = aznews.12.t
+	desc = aznews.12.d
+	picture = GFX_az_blhxyq
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		OR = {
+			HUJ = { has_war_with = SIR }
+			BYG = { has_war_with = SIR }
+			BFL = { has_war_with = SIR }
+			TIX = { has_war_with = SIR }
+			SAD = { has_war_with = SIR }
+			YUW = { has_war_with = SIR }
+		}
+		NOT = { has_global_flag = azurlaneyaoqing }
+	}
+	
+	immediate = {
+		set_global_flag = azurlaneyaoqing
+	}
+	mean_time_to_happen = {
+		days = 3
+	}
+	option = {
+		name = aznews.12.a
+		trigger = { 
+			AND = {
+				is_faction_leader = NO
+				OR = { tag = BFL tag = BYG tag = CHY tag = DOH tag = YUW tag = SAD } 
+			}
+		}
+		ai_chance = {
+			modifier = {
+				OR = { tag = BFL tag = YUW tag = BYG }
+				factor = 100
+			}
+		}
+		country_event = azevent.1
+	}
+	option = {
+		name = aznews.12.b
+		trigger = { 
+			AND = {
+				is_faction_leader = NO
+				OR = { tag = BFL tag = BYG tag = CHY tag = DOH tag = YUW tag = SAD } 
+			}
+		}
+		ai_chance = {
+			modifier = {
+				tag = CHY
+				factor = 100
+			}
+			modifier = {
+				tag = SAD
+				factor = 100
+			}
+			modifier = {
+				tag = DOH
+				factor = 100
+			}
+		}
+		add_war_support = 0.05
+	}
+	option = {
+		name = aznews.12.c
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+		}
+	}
+	option = {
+		name = aznews.12.e
+		trigger = { 
+			tag = TIX 
+		}
+		create_faction = "赤色中轴"
+		set_global_flag = TIX_created_chisezhongzhou
+	}
+	option = {
+		name = aznews.12.f
+		trigger = { 
+			tag = HUJ
+		}
+	}
+}
+news_event = {
+	id = aznews.13
+	title = aznews.13.t
+	desc = aznews.13.d
+	picture = GFX_az_dhyxdj
+	major = yes
+	
+	trigger = {
+		DOH = { has_completed_focus = DOH_yixianwansui }
+		NOT = { has_global_flag = donghuang_yixianchengdi }
+	}
+	
+	immediate = {
+		set_global_flag = donghuang_yixianchengdi
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = aznews.13.a
+		trigger = { tag = DOH }
+	}
+	option = {
+		name = aznews.13.b
+		trigger = { 
+			NOT = { tag = DOH }
+		}
+	}
+}
+news_event = {
+	id = aznews.14
+	title = aznews.14.t
+	desc = aznews.14.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		132 = { NOT = { is_controlled_by = SIR } }
+		128 = { NOT = { is_controlled_by = SIR } }
+		126 = { NOT = { is_controlled_by = SIR } }	
+		16 = { NOT = { is_controlled_by = SIR } }
+		7 = { NOT = { is_controlled_by = SIR } }
+		19 = { NOT = { is_controlled_by = SIR } }
+		160 = { NOT = { is_controlled_by = SIR } }
+		2 = { NOT = { is_controlled_by = SIR } }
+		50 = { NOT = { is_controlled_by = SIR } }	
+		64 = { NOT = { is_controlled_by = SIR } }	
+		4 = { NOT = { is_controlled_by = SIR } }
+		85 = { NOT = { is_controlled_by = SIR } }	
+		NOT = { has_global_flag = siren_xioujiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_xioujiefang
+	}
+	
+	option = {
+		name = aznews.14.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		} 
+	}
+	
+	option = {
+		name = aznews.14.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.15
+	title = aznews.15.t
+	desc = aznews.15.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		359 = { NOT = { is_controlled_by = SIR } } 
+		361 = { NOT = { is_controlled_by = SIR } }
+		362 = { NOT = { is_controlled_by = SIR } }
+		363 = { NOT = { is_controlled_by = SIR } }
+		364 = { NOT = { is_controlled_by = SIR } }
+		365 = { NOT = { is_controlled_by = SIR } }
+		366 = { NOT = { is_controlled_by = SIR } }
+		368 = { NOT = { is_controlled_by = SIR } }
+		364 = { NOT = { is_controlled_by = SIR } }
+		371 = { NOT = { is_controlled_by = SIR } }
+		392 = { NOT = { is_controlled_by = SIR } }
+		373 = { NOT = { is_controlled_by = SIR } }	
+		NOT = { has_global_flag = siren_meiguodongbujiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_meiguodongbujiefang
+	}
+	
+	
+	option = {
+		name = aznews.15.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.15.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.1501
+	title = aznews.1501.t
+	desc = aznews.1501.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		378 = { NOT = { is_controlled_by = SIR } } 
+		385 = { NOT = { is_controlled_by = SIR } } 
+		379 = { NOT = { is_controlled_by = SIR } } 
+		377 = { NOT = { is_controlled_by = SIR } } 
+		380 = { NOT = { is_controlled_by = SIR } } 
+		381 = { NOT = { is_controlled_by = SIR } } 
+		375 = { NOT = { is_controlled_by = SIR } } 
+		376 = { NOT = { is_controlled_by = SIR } } 
+		NOT = { has_global_flag = siren_meiguoxibujiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_meiguoxibujiefang
+	}
+	
+	option = {
+		name = aznews.15.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.15.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.16
+	title = aznews.16.t
+	desc = aznews.16.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		336 = { NOT = { is_controlled_by = SR3 } }
+		724 = { NOT = { is_controlled_by = SR4 } }
+		672 = { NOT = { is_controlled_by = SR4 } }
+		335 = { NOT = { is_controlled_by = SR4 } }
+		NOT = { has_global_flag = siren_maliujiajiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_maliujiajiefang
+	}
+	
+	option = {
+		name = aznews.16.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.16.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.17
+	title = aznews.17.t
+	desc = aznews.17.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		NOT = {
+			88 = { is_controlled_by = SIR } 
+			5 = { is_controlled_by = SIR } 
+			11 = { is_controlled_by = SIR } 
+			93 = { is_controlled_by = SIR } 
+			94 = { is_controlled_by = SIR } 
+			95 = { is_controlled_by = SIR } 
+			203 = { is_controlled_by = SIR } 
+			206 = { is_controlled_by = SIR } 
+			763 = { is_controlled_by = SIR } 
+			206 = { is_controlled_by = SIR } 
+		}
+		NOT = { has_global_flag = siren_dongoujiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_dongoujiefang
+	}
+	
+	option = {
+		name = aznews.17.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.17.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.1701
+	title = aznews.1701.t
+	desc = aznews.1701.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		NOT = {
+			341 = { is_controlled_by = SIR } 
+			46 = { is_controlled_by = SIR } 
+			106 = { is_controlled_by = SIR } 
+			47 = { is_controlled_by = SIR } 
+
+		}
+		NOT = { has_global_flag = siren_baerganjiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_baerganjiefang
+	}
+	
+	option = {
+		name = aznews.17.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.17.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.18
+	title = aznews.18.t
+	desc = aznews.18.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		446 = { NOT = { is_controlled_by = SR2 } }
+		453 = { NOT = { is_controlled_by = SR2 } }
+		447 = { NOT = { is_controlled_by = SR2 } }
+		456 = { NOT = { is_controlled_by = SR2 } }
+		457 = { NOT = { is_controlled_by = SR2 } }
+		551 = { NOT = { is_controlled_by = SR2 } }
+		NOT = { has_global_flag = siren_niluohejiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_niluohejiefang
+	}
+	 
+	option = {
+		name = aznews.18.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.18.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.19
+	title = aznews.19.t
+	desc = aznews.19.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		430 = { NOT = { is_controlled_by = SR3 } }
+		431 = { NOT = { is_controlled_by = SR3 } }
+		435 = { NOT = { is_controlled_by = SR3 } }
+		433 = { NOT = { is_controlled_by = SR3 } }
+		443 = { NOT = { is_controlled_by = SR3 } }
+		438 = { NOT = { is_controlled_by = SR3 } }
+		436 = { NOT = { is_controlled_by = SR3 } }
+		427 = { NOT = { is_controlled_by = SR3 } }
+		424 = { NOT = { is_controlled_by = SR3 } }
+		423 = { NOT = { is_controlled_by = SR3 } }
+		NOT = { has_global_flag = siren_yindujiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_yindujiefang
+	}
+	
+	option = {
+		name = aznews.19.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.19.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.20
+	title = aznews.20.t
+	desc = aznews.20.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		NOT = {
+			142 = { is_controlled_by = SIR } 
+			138 = { is_controlled_by = SIR } 
+			141 = { is_controlled_by = SIR } 
+			144 = { is_controlled_by = SIR } 
+			666 = { is_controlled_by = SIR } 
+		}
+		NOT = { has_global_flag = siren_beioujiefang }
+	}
+	
+	immediate = {
+		set_global_flag = siren_beioujiefang
+	}
+	
+	option = {
+		name = aznews.20.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.20.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+		SIR_buffshangsheng = yes
+	}
+}
+news_event = {
+	id = aznews.21
+	title = aznews.21.t
+	desc = aznews.21.d
+	picture = GFX_az_tianchengbingbian
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = aznews.21.a
+		trigger = { 
+			tag = CHY
+			
+		}
+	}
+	
+	option = {
+		name = aznews.21.b
+		trigger = { 
+			NOT = { tag = CHY }
+		}
+	}
+}
+news_event = {
+	id = aznews.22
+	title = aznews.22.t
+	desc = aznews.22.d
+	picture = GFX_az_cychangmen2
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = aznews.22.a
+		trigger = { 
+			tag = CHY
+			
+		}
+	}
+	
+	option = {
+		name = aznews.22.b
+		trigger = { 
+			NOT = { tag = CHY }
+		}
+	}
+}
+news_event = {
+	id = aznews.23
+	title = aznews.23.t
+	desc = aznews.23.d
+	picture = GFX_az_anqiubi
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = aznews.23.a
+		trigger = { 
+			tag = SAD
+		}
+		swap_ideas = {
+			add_idea = SAD_aqazcxy
+			remove_idea = SAD_tkxy
+			
+		}
+		create_corps_commander = {
+			name = "安丘比"
+			picture = "anqiubi.jpg"
+			traits = { armor_officer panzer_leader }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	
+	option = {
+		name = aznews.23.b
+		trigger = { 
+			NOT = { tag = SAD }
+		}
+	}
+}
+news_event = {
+	id = aznews.24
+	title = aznews.24.t
+	desc = aznews.24.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		123 = { NOT = { is_controlled_by = SIR } }
+		127 = { NOT = { is_controlled_by = SIR } }
+		123 = { NOT = { is_controlled_by = SIR } }
+		127 = { NOT = { is_controlled_by = SIR } }
+		126 = { NOT = { is_controlled_by = SIR } }
+		338 = { NOT = { is_controlled_by = SIR } }
+		125 = { NOT = { is_controlled_by = SIR } }
+		129 = { NOT = { is_controlled_by = SIR } }
+		128 = { NOT = { is_controlled_by = SIR } }
+		122 = { NOT = { is_controlled_by = SIR } }
+		130 = { NOT = { is_controlled_by = SIR } }
+		133 = { NOT = { is_controlled_by = SIR } }
+		136 = { NOT = { is_controlled_by = SIR } }
+		110 = { NOT = { is_controlled_by = SIR } }
+		38 = { NOT = { is_controlled_by = SIR } }
+		666 = { NOT = { is_controlled_by = SIR } }
+		111 = { NOT = { is_controlled_by = SIR } }
+		149 = { NOT = { is_controlled_by = SIR } }
+		190 = { NOT = { is_controlled_by = SIR } }
+		13 = { NOT = { is_controlled_by = SIR } }
+		195 = { NOT = { is_controlled_by = SIR } }
+		58 = { NOT = { is_controlled_by = SIR } }
+		55 = { NOT = { is_controlled_by = SIR } }
+		50 = { NOT = { is_controlled_by = SIR } }
+		152 = { NOT = { is_controlled_by = SIR } }
+		65 = { NOT = { is_controlled_by = SIR } }
+		9 = { NOT = { is_controlled_by = SIR } }
+		16 = { NOT = { is_controlled_by = SIR } }
+		33 = { NOT = { is_controlled_by = SIR } }
+		14 = { NOT = { is_controlled_by = SIR } }
+		735 = { NOT = { is_controlled_by = SIR } }
+		3 = { NOT = { is_controlled_by = SIR } }
+		31 = { NOT = { is_controlled_by = SIR } }
+		151 = { NOT = { is_controlled_by = SIR } }
+		144 = { NOT = { is_controlled_by = SIR } }
+		118 = { NOT = { is_controlled_by = SIR } }
+		179 = { NOT = { is_controlled_by = SIR } }
+		112 = { NOT = { is_controlled_by = SIR } }
+		793 = { NOT = { is_controlled_by = SIR } }
+		168 = { NOT = { is_controlled_by = SIR } }
+		171 = { NOT = { is_controlled_by = SIR } }
+		165 = { NOT = { is_controlled_by = SIR } }
+		156 = { NOT = { is_controlled_by = SIR } }
+		2 = { NOT = { is_controlled_by = SIR } }
+		161 = { NOT = { is_controlled_by = SIR } }
+		158 = { NOT = { is_controlled_by = SIR } }
+		103 = { NOT = { is_controlled_by = SIR } }
+		105 = { NOT = { is_controlled_by = SIR } }
+		185 = { NOT = { is_controlled_by = SIR } }
+		341 = { NOT = { is_controlled_by = SIR } }
+		81 = { NOT = { is_controlled_by = SIR } }
+		154 = { NOT = { is_controlled_by = SIR } }
+		71 = { NOT = { is_controlled_by = SIR } }
+		90 = { NOT = { is_controlled_by = SIR } }
+		87 = { NOT = { is_controlled_by = SIR } }
+		86 = { NOT = { is_controlled_by = SIR } }
+		89 = { NOT = { is_controlled_by = SIR } }
+		79 = { NOT = { is_controlled_by = SIR } }
+		94 = { NOT = { is_controlled_by = SIR } }
+		11 = { NOT = { is_controlled_by = SIR } }
+		193 = { NOT = { is_controlled_by = SIR } }
+		207 = { NOT = { is_controlled_by = SIR } }
+		246 = { NOT = { is_controlled_by = SIR } }
+		219 = { NOT = { is_controlled_by = SIR } }
+		257 = { NOT = { is_controlled_by = SIR } }
+		228 = { NOT = { is_controlled_by = SIR } }
+		137 = { NOT = { is_controlled_by = SIR } }
+		351 = { NOT = { is_controlled_by = SIR } }
+		400 = { NOT = { is_controlled_by = SIR } }
+		217 = { NOT = { is_controlled_by = SIR } }
+		229 = { NOT = { is_controlled_by = SIR } }
+		231 = { NOT = { is_controlled_by = SIR } }
+		406 = { NOT = { is_controlled_by = SIR } }
+		262 = { NOT = { is_controlled_by = SIR } }
+		179 = { NOT = { is_controlled_by = SIR } }
+		171 = { NOT = { is_controlled_by = SIR } }
+		332 = { NOT = { is_controlled_by = SIR } }
+		466 = { NOT = { is_controlled_by = SIR } }
+		468 = { NOT = { is_controlled_by = SIR } }
+		331 = { NOT = { is_controlled_by = SIR } }
+		465 = { NOT = { is_controlled_by = SIR } }
+		357 = { NOT = { is_controlled_by = SIR } }
+		358 = { NOT = { is_controlled_by = SIR } }
+		360 = { NOT = { is_controlled_by = SIR } }
+		361 = { NOT = { is_controlled_by = SIR } }
+		362 = { NOT = { is_controlled_by = SIR } }
+		363 = { NOT = { is_controlled_by = SIR } }
+		683 = { NOT = { is_controlled_by = SIR } }
+		469 = { NOT = { is_controlled_by = SIR } }
+		467 = { NOT = { is_controlled_by = SIR } }
+		470 = { NOT = { is_controlled_by = SIR } }
+		473 = { NOT = { is_controlled_by = SIR } }
+		471 = { NOT = { is_controlled_by = SIR } }
+		386 = { NOT = { is_controlled_by = SIR } }
+		385 = { NOT = { is_controlled_by = SIR } }
+		378 = { NOT = { is_controlled_by = SIR } }
+		388 = { NOT = { is_controlled_by = SIR } }
+		484 = { NOT = { is_controlled_by = SIR } }
+		377 = { NOT = { is_controlled_by = SIR } }
+		376 = { NOT = { is_controlled_by = SIR } }
+		382 = { NOT = { is_controlled_by = SIR } }
+		380 = { NOT = { is_controlled_by = SIR } }
+		375 = { NOT = { is_controlled_by = SIR } }
+		371 = { NOT = { is_controlled_by = SIR } }
+		373 = { NOT = { is_controlled_by = SIR } }
+		392 = { NOT = { is_controlled_by = SIR } }
+		391 = { NOT = { is_controlled_by = SIR } }
+		366 = { NOT = { is_controlled_by = SIR } }
+		368 = { NOT = { is_controlled_by = SIR } }
+		395 = { NOT = { is_controlled_by = SIR } }
+		394 = { NOT = { is_controlled_by = SIR } }
+		393 = { NOT = { is_controlled_by = SIR } }
+		NOT = { has_global_flag = zhongyangsir_touxiang }
+	}
+	immediate = {
+		set_global_flag = zhongyangsir_touxiang
+		every_country = {
+			limit = { 
+				NOT = { 
+					OR = {
+						tag = SIR 
+						tag = SR1 
+						tag = SR2 
+						tag = SR3 
+						tag = SR4 
+					}
+				} 
+			}
+			country_event = azevent.50
+		}
+		HUJ = {
+			country_event = { id = azevent.51 days = 10 }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = aznews.24.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+	}
+	
+	option = {
+		name = aznews.24.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+	}
+}
+news_event = {
+	id = aznews.25
+	title = aznews.25.t
+	desc = aznews.25.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		483 = { NOT = { is_controlled_by = SR1 } }
+		482 = { NOT = { is_controlled_by = SR1 } }
+		480 = { NOT = { is_controlled_by = SR1 } }
+		479 = { NOT = { is_controlled_by = SR1 } }
+		481 = { NOT = { is_controlled_by = SR1 } }
+		478 = { NOT = { is_controlled_by = SR1 } }
+		277 = { NOT = { is_controlled_by = SR1 } }
+		475 = { NOT = { is_controlled_by = SR1 } }
+		313 = { NOT = { is_controlled_by = SR1 } }
+		312 = { NOT = { is_controlled_by = SR1 } }
+		317 = { NOT = { is_controlled_by = SR1 } }
+		316 = { NOT = { is_controlled_by = SR1 } }
+		685 = { NOT = { is_controlled_by = SR1 } }
+		493 = { NOT = { is_controlled_by = SR1 } }
+		486 = { NOT = { is_controlled_by = SR1 } }
+		306 = { NOT = { is_controlled_by = SR1 } }
+		495 = { NOT = { is_controlled_by = SR1 } }
+		488 = { NOT = { is_controlled_by = SR1 } }
+		497 = { NOT = { is_controlled_by = SR1 } }
+		498 = { NOT = { is_controlled_by = SR1 } }
+		499 = { NOT = { is_controlled_by = SR1 } }
+		496 = { NOT = { is_controlled_by = SR1 } }
+		500 = { NOT = { is_controlled_by = SR1 } }
+		501 = { NOT = { is_controlled_by = SR1 } }
+		503 = { NOT = { is_controlled_by = SR1 } }
+		502 = { NOT = { is_controlled_by = SR1 } }
+		300 = { NOT = { is_controlled_by = SR1 } }
+		278 = { NOT = { is_controlled_by = SR1 } }
+		512 = { NOT = { is_controlled_by = SR1 } }
+		279 = { NOT = { is_controlled_by = SR1 } }
+		506 = { NOT = { is_controlled_by = SR1 } }
+		492 = { NOT = { is_controlled_by = SR1 } }
+		303 = { NOT = { is_controlled_by = SR1 } }
+		495 = { NOT = { is_controlled_by = SR1 } }
+		487 = { NOT = { is_controlled_by = SR1 } }
+		509 = { NOT = { is_controlled_by = SR1 } }
+		305 = { NOT = { is_controlled_by = SR1 } }
+		306 = { NOT = { is_controlled_by = SR1 } }
+		NOT = { has_global_flag = meizhousir_touxiang }
+	}
+	immediate = {
+		set_global_flag = meizhousir_touxiang
+		every_country = {
+			limit = { 
+				NOT = { 
+					OR = {
+						tag = SIR 
+						tag = SR1 
+						tag = SR2 
+						tag = SR3 
+						tag = SR4 
+					}
+				} 
+			}
+			country_event = azevent.52
+		}
+		BYG = {
+			country_event = { id = azevent.53 days = 10 }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = aznews.25.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+		
+	}
+	
+	option = {
+		name = aznews.25.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+	}
+}
+news_event = {
+	id = aznews.26
+	title = aznews.26.t
+	desc = aznews.26.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		290 = { NOT = { is_controlled_by = SR2 } }
+		461 = { NOT = { is_controlled_by = SR2 } }
+		459 = { NOT = { is_controlled_by = SR2 } }
+		513 = { NOT = { is_controlled_by = SR2 } }
+		462 = { NOT = { is_controlled_by = SR2 } }
+		699 = { NOT = { is_controlled_by = SR2 } }
+		557 = { NOT = { is_controlled_by = SR2 } }
+		272 = { NOT = { is_controlled_by = SR2 } }
+		780 = { NOT = { is_controlled_by = SR2 } }
+		701 = { NOT = { is_controlled_by = SR2 } }
+		296 = { NOT = { is_controlled_by = SR2 } }
+		700 = { NOT = { is_controlled_by = SR2 } }
+		298 = { NOT = { is_controlled_by = SR2 } }
+		779 = { NOT = { is_controlled_by = SR2 } }
+		778 = { NOT = { is_controlled_by = SR2 } }
+		781 = { NOT = { is_controlled_by = SR2 } }
+		274 = { NOT = { is_controlled_by = SR2 } }
+		777 = { NOT = { is_controlled_by = SR2 } }
+		558 = { NOT = { is_controlled_by = SR2 } }
+		774 = { NOT = { is_controlled_by = SR2 } }
+		549 = { NOT = { is_controlled_by = SR2 } }
+		271 = { NOT = { is_controlled_by = SR2 } }
+		269 = { NOT = { is_controlled_by = SR2 } }
+		550 = { NOT = { is_controlled_by = SR2 } }
+		551 = { NOT = { is_controlled_by = SR2 } }
+		457 = { NOT = { is_controlled_by = SR2 } }
+		456 = { NOT = { is_controlled_by = SR2 } }
+		559 = { NOT = { is_controlled_by = SR2 } }
+		269 = { NOT = { is_controlled_by = SR2 } }
+		547 = { NOT = { is_controlled_by = SR2 } }
+		546 = { NOT = { is_controlled_by = SR2 } }
+		295 = { NOT = { is_controlled_by = SR2 } }
+		539 = { NOT = { is_controlled_by = SR2 } }
+		540 = { NOT = { is_controlled_by = SR2 } }
+		541 = { NOT = { is_controlled_by = SR2 } }
+		681 = { NOT = { is_controlled_by = SR2 } }
+		719 = { NOT = { is_controlled_by = SR2 } }
+		275 = { NOT = { is_controlled_by = SR2 } }
+		544 = { NOT = { is_controlled_by = SR2 } }
+		543 = { NOT = { is_controlled_by = SR2 } }
+		347 = { NOT = { is_controlled_by = SR2 } }
+		339 = { NOT = { is_controlled_by = SR2 } }
+		340 = { NOT = { is_controlled_by = SR2 } }
+		342 = { NOT = { is_controlled_by = SR2 } }
+		348 = { NOT = { is_controlled_by = SR2 } }
+		349 = { NOT = { is_controlled_by = SR2 } }
+		353 = { NOT = { is_controlled_by = SR2 } }
+		230 = { NOT = { is_controlled_by = SR2 } }
+		419 = { NOT = { is_controlled_by = SR2 } }
+		680 = { NOT = { is_controlled_by = SR2 } }
+		677 = { NOT = { is_controlled_by = SR2 } }
+		454 = { NOT = { is_controlled_by = SR2 } }
+		292 = { NOT = { is_controlled_by = SR2 } }
+		413 = { NOT = { is_controlled_by = SR2 } }
+		417 = { NOT = { is_controlled_by = SR2 } }
+		420 = { NOT = { is_controlled_by = SR2 } }
+		676 = { NOT = { is_controlled_by = SR2 } }
+		293 = { NOT = { is_controlled_by = SR2 } }
+		659 = { NOT = { is_controlled_by = SR2 } }
+		294 = { NOT = { is_controlled_by = SR2 } }
+		658 = { NOT = { is_controlled_by = SR2 } }
+		679 = { NOT = { is_controlled_by = SR2 } }
+		NOT = { has_global_flag = feizhousir_touxiang }
+	}
+	immediate = {
+		set_global_flag = feizhousir_touxiang
+		every_country = {
+			limit = { 
+				NOT = { 
+					OR = {
+						tag = SIR 
+						tag = SR1 
+						tag = SR2 
+						tag = SR3 
+						tag = SR4 
+					}
+				} 
+			}
+			country_event = azevent.54
+		}
+		YUW = {
+			country_event = { id = azevent.55 days = 10 }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = aznews.26.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+		
+	}
+	
+	option = {
+		name = aznews.26.b
+		trigger = { 
+			OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+	}
+}
+news_event = {
+	id = aznews.27
+	title = aznews.27.t
+	desc = aznews.27.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		581 = { NOT = { is_controlled_by = SR3 } }
+		573 = { NOT = { is_controlled_by = SR3 } }
+		582 = { NOT = { is_controlled_by = SR3 } }
+		402 = { NOT = { is_controlled_by = SR3 } }
+		587 = { NOT = { is_controlled_by = SR3 } }
+		516 = { NOT = { is_controlled_by = SR3 } }
+		577 = { NOT = { is_controlled_by = SR3 } }
+		571 = { NOT = { is_controlled_by = SR3 } }
+		575 = { NOT = { is_controlled_by = SR3 } }
+		644 = { NOT = { is_controlled_by = SR3 } }
+		637 = { NOT = { is_controlled_by = SR3 } }
+		560 = { NOT = { is_controlled_by = SR3 } }
+		409 = { NOT = { is_controlled_by = SR3 } }
+		408 = { NOT = { is_controlled_by = SR3 } }
+		527 = { NOT = { is_controlled_by = SR3 } }
+		525 = { NOT = { is_controlled_by = SR3 } }
+		714 = { NOT = { is_controlled_by = SR3 } }
+		565 = { NOT = { is_controlled_by = SR3 } }
+		570 = { NOT = { is_controlled_by = SR3 } }
+		590 = { NOT = { is_controlled_by = SR3 } }
+		404 = { NOT = { is_controlled_by = SR3 } }
+		589 = { NOT = { is_controlled_by = SR3 } }
+		330 = { NOT = { is_controlled_by = SR3 } }
+		329 = { NOT = { is_controlled_by = SR3 } }
+		617 = { NOT = { is_controlled_by = SR3 } }
+		732 = { NOT = { is_controlled_by = SR3 } }
+		584 = { NOT = { is_controlled_by = SR3 } }
+		418 = { NOT = { is_controlled_by = SR3 } }
+		411 = { NOT = { is_controlled_by = SR3 } }
+		412 = { NOT = { is_controlled_by = SR3 } }
+		444 = { NOT = { is_controlled_by = SR3 } }
+		428 = { NOT = { is_controlled_by = SR3 } }
+		429 = { NOT = { is_controlled_by = SR3 } }
+		425 = { NOT = { is_controlled_by = SR3 } }
+		423 = { NOT = { is_controlled_by = SR3 } }
+		431 = { NOT = { is_controlled_by = SR3 } }
+		324 = { NOT = { is_controlled_by = SR3 } }
+		323 = { NOT = { is_controlled_by = SR3 } }
+		322 = { NOT = { is_controlled_by = SR3 } }
+		287 = { NOT = { is_controlled_by = SR3 } }
+		752 = { NOT = { is_controlled_by = SR3 } }
+		453 = { NOT = { is_controlled_by = SR3 } }
+		622 = { NOT = { is_controlled_by = SR3 } }
+		607 = { NOT = { is_controlled_by = SR3 } }
+		743 = { NOT = { is_controlled_by = SR3 } }
+		745 = { NOT = { is_controlled_by = SR3 } }
+		595 = { NOT = { is_controlled_by = SR3 } }
+		569 = { NOT = { is_controlled_by = SR3 } }
+		286 = { NOT = { is_controlled_by = SR3 } }
+		336 = { NOT = { is_controlled_by = SR3 } }
+		724 = { NOT = { is_controlled_by = SR3 } }
+		289 = { NOT = { is_controlled_by = SR3 } }
+		597 = { NOT = { is_controlled_by = SR3 } }
+		326 = { NOT = { is_controlled_by = SR3 } }
+		NOT = { has_global_flag = yazhousir_touxiang }
+	}
+	immediate = {
+		set_global_flag = yazhousir_touxiang
+		every_country = {
+			limit = { 
+				NOT = { 
+					OR = {
+						tag = SIR 
+						tag = SR1 
+						tag = SR2 
+						tag = SR3 
+						tag = SR4 
+					}
+				} 
+			}
+			country_event = azevent.56
+		}
+		DOH = {
+			country_event = { id = azevent.57 days = 10 }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = aznews.27.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR3 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+
+	}
+	
+	option = {
+		name = aznews.27.b
+		trigger = { 
+			OR = { tag = SIR tag = SR3 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+	}
+}
+news_event = {
+	id = aznews.28
+	title = aznews.28.t
+	desc = aznews.28.d
+	picture = GFX_az_sr2
+	major = yes
+	
+	trigger = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		672 = { NOT = { is_controlled_by = SR4 } }
+		335 = { NOT = { is_controlled_by = SR4 } }
+		333 = { NOT = { is_controlled_by = SR4 } }
+		334 = { NOT = { is_controlled_by = SR4 } }
+		627 = { NOT = { is_controlled_by = SR4 } }
+		673 = { NOT = { is_controlled_by = SR4 } }
+		335 = { NOT = { is_controlled_by = SR4 } }
+		667 = { NOT = { is_controlled_by = SR4 } }
+		669 = { NOT = { is_controlled_by = SR4 } }
+		523 = { NOT = { is_controlled_by = SR4 } }
+		634 = { NOT = { is_controlled_by = SR4 } }
+		521 = { NOT = { is_controlled_by = SR4 } }
+		520 = { NOT = { is_controlled_by = SR4 } }
+		674 = { NOT = { is_controlled_by = SR4 } }
+		285 = { NOT = { is_controlled_by = SR4 } }
+		519 = { NOT = { is_controlled_by = SR4 } }
+		522 = { NOT = { is_controlled_by = SR4 } }
+		517 = { NOT = { is_controlled_by = SR4 } }
+		723 = { NOT = { is_controlled_by = SR4 } }
+		635 = { NOT = { is_controlled_by = SR4 } }
+		NOT = { has_global_flag = aozhousir_touxiang }
+	}
+	immediate = {
+		set_global_flag = aozhousir_touxiang
+		every_country = {
+			limit = { 
+				NOT = { 
+					OR = {
+						tag = SIR 
+						tag = SR1 
+						tag = SR2 
+						tag = SR3 
+						tag = SR4 
+					}
+				} 
+			}
+			country_event = azevent.58
+		}
+		CHY = {
+			country_event = { id = azevent.59 days = 10 }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = aznews.28.a
+		trigger = { 
+			NOT = { 
+				OR = { tag = SIR tag = SR3 tag = SR2 tag = SR3 tag = SR4 } 
+			} 
+		}
+		country_event = azevent.58
+	}
+	
+	option = {
+		name = aznews.28.b
+		trigger = { 
+			OR = { tag = SIR tag = SR3 tag = SR2 tag = SR3 tag = SR4 }  
+		}
+		
+	}
+}
+
+news_event = {
+	id = aznews.29
+	title = aznews.29.t
+	desc = aznews.29.d
+	picture = GFX_az_gczyz23
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.29.a
+		trigger = { tag = TIX }
+	}
+	option = {
+		name = aznews.29.b
+		trigger = { 
+			NOT = { tag = TIX }
+		}
+	}
+}
+news_event = {
+	id = aznews.30 
+	title = aznews.30.t
+	desc = aznews.30.d
+	picture = GFX_az_tix4
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.30.a
+		trigger = { tag = TIX }
+	}
+	option = {
+		name = aznews.30.b
+		trigger = { 
+			NOT = { tag = TIX }
+		}
+	}
+}
+news_event = {
+	id = aznews.31 
+	title = aznews.31.t
+	desc = aznews.31.d
+	picture = GFX_az_tix3
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.31.a
+		trigger = { tag = TIX }
+	}
+	option = {
+		name = aznews.31.b
+		trigger = { 
+			OR = {
+				tag = BFL
+				tag = HUJ
+				tag = YUW
+				tag = BYG
+			}
+		}
+	}
+	option = { 
+		name = aznews.31.c
+		trigger = { 
+			OR = {
+				tag = CHY
+				tag = SAD
+				tag = DOH
+			}
+		}
+	}
+}
+news_event = {
+	id = aznews.32 
+	title = aznews.32.t
+	desc = aznews.32.d
+	picture = GFX_az_sad1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.32.a
+		trigger = { tag = SAD }
+	}
+	option = {
+		name = aznews.32.b
+		trigger = { 
+			OR = {
+				tag = TIX
+				tag = HUJ
+				tag = BYG
+			}
+		}
+	}
+	option = { 
+		name = aznews.32.c
+		trigger = { 
+			OR = {
+				tag = CHY
+				tag = BFL
+				tag = DOH
+				tag = YUW
+			}
+		}
+	}
+}
+news_event = {
+	id = aznews.33 
+	title = aznews.33.t
+	desc = aznews.33.d
+	picture = GFX_az_bfl1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.33.a
+		trigger = { tag = BFL }
+	}
+	option = {
+		name = aznews.33.b
+		trigger = { 
+			OR = {
+				tag = HUJ
+				tag = BYG
+				tag = CHY
+				tag = DOH
+				tag = YUW
+			}
+		}
+	}
+
+}
+news_event = {
+	id = aznews.34 
+	title = aznews.34.t
+	desc = aznews.34.d
+	picture = GFX_az_chy_jyxxs
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.34.a
+		trigger = { 
+			tag = CHY 
+		}
+	}
+	option = {
+		name = aznews.34.b
+		trigger = { 
+			NOT = { 
+				OR = {
+					tag = CHY 
+					tag = HUJ
+				}
+			}
+		}
+	}
+	option = {
+		name = aznews.34.c
+		trigger = { 
+			tag = HUJ
+		}
+	}
+}
+news_event = {
+	id = aznews.35 
+	title = aznews.35.t
+	desc = aznews.35.d
+	picture = GFX_az_hjnpd
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.35.a
+		trigger = { 
+			tag = HUJ 
+		}
+	}
+	option = {
+		name = aznews.35.b
+		trigger = { 
+			NOT = { 
+				tag = HUJ
+			}
+		}
+	}
+}
+news_event = {
+	id = aznews.36
+	title = aznews.36.t
+	desc = aznews.36.d
+	picture = GFX_az_hxftl
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.36.a
+		trigger = { 
+			tag = TIX
+		}
+	}
+	option = {
+		name = aznews.36.b
+		trigger = { 
+			NOT = { 
+				tag = TIX
+			}
+		}
+	}
+}
+news_event = {
+	id = aznews.40
+	title = aznews.40.t
+	desc = aznews.40.d
+	picture = GFX_az_yilishabai
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.40.a
+		trigger = {
+			tag = HUJ
+		}
+	}
+	option = {
+		name = aznews.40.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = HUJ
+					tag = SAD
+					tag = TIX
+				}
+			}
+		}
+	}
+	option = {
+		name = aznews.40.sad
+		trigger = {
+			tag = SAD
+		}
+		
+	}
+	option = {
+		name = aznews.40.tix
+		trigger = {
+			tag = TIX
+		}
+		
+	}
+}
+news_event = {
+	id = aznews.41
+	title = aznews.41.t
+	desc = aznews.41.d
+	picture = GFX_az_tx2
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = aznews.41.a
+		trigger = {
+			shijianniangguojia_trigger = yes
+		}
+	}
+	option = {
+		name = aznews.41.b
+		trigger = {
+			not_shijianniangguojia_trigger = yes
+		}
+	}
+} 
+news_event = {
+	id = aznews.42
+	title = SAD_event.news1.t
+	desc = SAD_event.news1.d
+	picture = GFX_az_sad1
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.news1.a
+		trigger = {
+			NOT = { tag = SAD }
+		}
+	}
+	option = {
+		name = SAD_event.news1.b
+		trigger = {
+			tag = SAD
+		}
+	}
+}
+news_event = {
+	id = aznews.43
+	title = BYG_event.news1.t
+	desc = BYG_event.news1.d
+	picture = GFX_az_huayuan
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = BYG_event.news1.a
+		trigger = {
+			tag = BYG
+		}
+		add_political_power = 50
+		hidden_effect = {
+			country_event = {
+				id = BYG_event.6
+				days = 120
+			}
+		}
+	}
+	option = {
+		name = BYG_event.news1.b
+		trigger = {
+			NOT = { tag = BYG }
+		}
+	}
+}
+news_event = {
+	id = aznews.44
+	title = aznews.44.t
+	desc = aznews.44.d
+	picture = GFX_az_mowang
+	major = yes 
+	trigger = {
+		not = {
+			has_global_flag = mowangruqin
+		}
+		OR = {
+			date > 1940.1.1
+			any_country = {
+				tag = SIR
+				OR = {
+					has_idea = SIR_buff3
+					has_idea = SIR_buff4
+					has_idea = SIR_buff5
+				}
+				
+			}
+		}
+	}
+	immediate = {
+		set_global_flag = mowangruqin
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+				TAN = {
+					ailier = {
+						set_nationality = SIR
+					}
+					biexibu = {
+						set_nationality = SIR
+					}
+					peikela = {
+						set_nationality = SIR
+					}
+					dajiaxi = {
+						set_nationality = SR2
+					}
+					xiaojiaxi = {
+						set_nationality = SR2
+					}
+					maou = {
+						set_nationality = SR3
+					}
+					sataniya = {
+						set_nationality = SR3
+					}
+					xieshenjiang = {
+						set_nationality = SR3
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+				TAN = {
+					ailier = {
+						set_nationality = SIR
+					}
+					biexibu = {
+						set_nationality = SIR
+					}
+					peikela = {
+						set_nationality = SIR
+					}
+					dajiaxi = {
+						set_nationality = SIR
+					}
+					xiaojiaxi = {
+						set_nationality = SIR
+					}
+					maou = {
+						set_nationality = SIR
+					}
+					sataniya = {
+						set_nationality = SIR
+					}
+					xieshenjiang = {
+						set_nationality = SIR
+					}
+				}
+			}
+		}
+		
+	}
+	option = {
+		name = aznews.44.a
+		
+	}
+}
+news_event = {
+	id = aznews.1001
+	title = BLI_event.1.t
+	desc = BLI_event.1.d
+	picture = GFX_az_buli
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = BLI_event.1.a
+		trigger = {
+			NOT = { tag = BLI }
+		}
+	}
+	option = {
+		name = BLI_event.1.b
+		trigger = {
+			tag = BLI
+		}
+	}
+}
+news_event = {
+	id = aznews.1002
+	title = SAD_event.news1.t
+	desc = SAD_event.news1.d
+	picture = GFX_az_sad1
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = SAD_event.news1.a
+		trigger = {
+			NOT = { tag = SAD }
+		}
+	}
+	option = {
+		name = SAD_event.news1.b
+		trigger = {
+			tag = SAD
+		}
+	}
+}
+news_event = {
+	id = aznews.1003
+	title = aznews.1003.t
+	desc = aznews.1003.d
+	picture = GFX_az_sr2
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = aznews.1003.a
+	}
+	option = {
+		name = aznews.1003.b
+	}
+}

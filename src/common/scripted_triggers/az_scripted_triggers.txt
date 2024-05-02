@@ -1,0 +1,133 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+shijianniangguojia_trigger = {
+	
+	if = {
+		limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+		OR = {
+			tag = BYG
+			tag = HUJ
+			tag = TIX
+			tag = SAD
+			tag = BFL
+			tag = YUW
+			tag = DOH
+			tag = CHY
+			tag = BLI
+			tag = SIR
+			tag = WEX
+			tag = DH1
+			is_ai = NO
+		}
+	}
+	if = {
+		limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+		OR = {
+			tag = BYG
+			tag = HUJ
+			tag = TIX
+			tag = SAD
+			tag = BFL
+			tag = YUW
+			tag = DOH
+			tag = CHY
+			tag = BLI
+			tag = WEX
+			tag = DH1
+			is_ai = NO
+		}
+	}
+}
+
+not_shijianniangguojia_trigger = {
+	if = {
+		limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+		NOT = {
+			OR = {
+				tag = BYG
+				tag = HUJ
+				tag = TIX
+				tag = SAD
+				tag = BFL
+				tag = YUW
+				tag = DOH
+				tag = CHY
+				tag = BLI
+				tag = SIR
+				tag = WEX
+			}
+		}
+	}
+	if = {
+		limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+		NOT = {
+			OR = {
+				tag = BYG
+				tag = HUJ
+				tag = TIX
+				tag = SAD
+				tag = BFL
+				tag = YUW
+				tag = DOH
+				tag = CHY
+				tag = BLI
+				tag = WEX
+			}
+		}
+	}
+	
+}
+
+shisairen_trigger = {
+	if = {
+		limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+		OR = { 
+			tag = SIR
+			tag = SR1
+			tag = SR2
+			tag = SR3
+			tag = SR4
+		}
+	}
+	if = {
+		limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+		OR = { 
+			tag = SR1
+			tag = SR2
+			tag = SR3
+			tag = SR4
+		}
+	}
+}
+
+DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = { 
+			FROM = { has_government = SIREN }
+			ROOT = { NOT = { has_government = SIREN } }
+		}
+		always = NO
+	}
+	
+}
+
+DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = { ROOT = { has_government = SIREN  } }
+		FROM = { has_government = SIREN }
+	}
+	
+}

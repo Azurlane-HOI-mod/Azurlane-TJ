@@ -1,0 +1,34 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+					limit = {
+						tag = CHY
+					}	
+					country_event = CHY_new1_shijian.1
+				}
+		}
+		effect = {
+			every_country = {
+			limit = {
+			has_game_rule = {
+			rule = AZ_chy_guocexuanze_rule
+			option = AZ_chy_guocexuanze_rule_off
+			}
+			}
+			CHY = { load_focus_tree = chongying_focus}
+			}
+		}
+		effect = {
+			every_country = {
+			limit = {
+			has_game_rule = {
+			rule = AZ_chy_guocexuanze_rule
+			option = AZ_chy_guocexuanze_rule_on
+			}
+			}
+			CHY = { load_focus_tree = chongying_new_focus }
+			}
+		}
+	}
+}

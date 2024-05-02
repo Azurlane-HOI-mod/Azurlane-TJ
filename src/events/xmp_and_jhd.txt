@@ -1,0 +1,946 @@
+##卖5000步枪=2000物资 买3000物资=5000步枪 1物资=0.8产能 
+add_namespace = junhuo
+country_event = {
+	id = junhuo.1
+	title = junhuo.1.t
+	desc = junhuo.1.d
+	picture = GFX_aze_junhuodian
+	is_triggered_only = yes
+	option = {
+		name = junhuo.1.a
+		ai_chance = {
+			factor = 0
+		}
+		add_command_power = 100
+	}
+}
+#自动出售指挥点
+country_event = {
+	id = junhuo.2
+	title = junhuo.2.t
+	desc = junhuo.2.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	trigger = {
+		OR = {
+			command_power > 199
+			#command_power = 100
+		}
+		has_country_flag = autosell_command_on
+	}
+	immediate = {
+		add_command_power = -200
+		add_to_variable = { wz_sl = 2000 }
+	}
+	option = {
+		name = junhuo.2.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#自动少量买石油
+country_event = {
+	id = junhuo.3
+	title = junhuo.3t
+	desc = junhuo.3.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	trigger = {
+		fuel_ratio < 0.25
+		has_country_flag = auto_maishiyou1
+		check_variable = { wz_sl > 500 }
+	}
+	immediate = {
+		add_fuel = 100000
+		add_to_variable = { wz_sl = -500 }
+	}
+	option = {
+		name = junhuo.3.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#自动大量买石油
+country_event = {
+	id = junhuo.4
+	title = junhuo.4.t
+	desc = junhuo.4.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	trigger = {
+		fuel_ratio < 0.1
+		has_country_flag = auto_maishiyou1
+		check_variable = { wz_sl > 3000 }
+	}
+	immediate = {
+		add_fuel = 800000
+		add_to_variable = { wz_sl = -3000 }
+	}
+	option = {
+		name = junhuo.4.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#疯狂AI50%投降升级
+country_event = {
+	id = junhuo.5
+	title = junhuo.5.t
+	desc = junhuo.5.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		surrender_progress > 0.5
+	}
+	immediate = {
+		if = {
+			limit = { has_idea = TY_fengkuangai }
+			swap_ideas = {
+				remove_idea = TY_fengkuangai
+				add_idea = TY_fengkuangai2
+			}
+			army_experience = 500
+			navy_experience = 500
+			air_experience = 500
+		}
+		else_if = {
+			limit = { has_idea = TY_fengkuangai2 }
+			swap_ideas = {
+				remove_idea = TY_fengkuangai2
+				add_idea = TY_fengkuangai3
+			}
+			army_experience = 999
+			navy_experience = 999
+			air_experience = 999
+		}
+		else_if = {
+			limit = { has_idea = TY_fengkuangai3 }
+			add_political_power = 2000
+			army_experience = 999
+			navy_experience = 999
+			air_experience = 999
+		}
+	}
+	option = {
+		name = junhuo.4.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#疯狂AI投降倾向刷兵
+country_event = {
+	id = junhuo.6
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		surrender_progress > 0.75
+		NOT = { has_country_flag = fengkuangai_shuabing_1 }
+	}
+	immediate = {
+		set_country_flag = fengkuangai_shuabing_1
+		if = {
+			limit = { has_idea = TY_fengkuangai }
+			add_ideas = TY_fengkuangai2
+		}
+		else_if = {
+			limit = { has_idea = TY_fengkuangai2 }
+			add_ideas = TY_fengkuangai3
+		}
+		else = {
+			add_to_variable = {
+				zs_sl = 500
+			}
+		}
+		if = {
+			limit = {
+				tag = TIX
+			}
+			division_template = {
+				name = "铁血轻装甲猎兵师"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					motorized = { x = 1 y = 4 }
+					light_armor = { x = 2 y = 0 }
+					light_armor = { x = 2 y = 1 }
+					light_armor = { x = 2 y = 2 }
+					light_armor = { x = 2 y = 3 }
+					light_armor = { x = 2 y = 4 }
+				}
+				support = { 
+					light_tank_recon = { x = 0 y = 0 }
+					field_hospital = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					maintenance_company = { x = 0 y = 3 }
+					engineer = { x = 0 y = 4 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 24
+				add = 1 
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = TIX }
+					create_unit = {
+						division = "name = \"铁血轻装甲猎兵师\" division_template = \"铁血轻装甲猎兵师\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+
+					}	
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = BFL
+			}
+			division_template = {
+				name = "北联动员兵"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					artillery_brigade = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+					artillery_brigade = { x = 2 y = 3 }
+					artillery_brigade = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					anti_tank_brigade = { x = 3 y = 2 }
+				}
+				support = { 
+					recon = { x = 0 y = 0 }
+					field_hospital = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					maintenance_company = { x = 0 y = 3 }
+					engineer = { x = 0 y = 4 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 48
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = BFL }
+					create_unit = {
+						division = "name = \"北联动员兵\" division_template = \"北联动员兵\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = HUJ
+
+			}
+			division_template = {
+				name = "皇家禁卫军"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 0 y = 4 }
+					heavy_armor = { x = 1 y = 0 }
+					heavy_armor = { x = 1 y = 1 }
+					heavy_armor = { x = 1 y = 2 }
+					heavy_armor = { x = 1 y = 3 }
+					heavy_armor = { x = 1 y = 4 }
+				}
+				support = { 
+					light_tank_recon = { x = 0 y = 0 }
+					field_hospital = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					maintenance_company = { x = 0 y = 3 }
+					engineer = { x = 0 y = 4 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 20
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = HUJ }
+					create_unit = {
+						division = "name = \"皇家禁卫军\" division_template = \"皇家禁卫军\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = YUW
+			}
+			division_template = {
+				name = "圣教骑士团"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 0 y = 4 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					mechanized = { x = 1 y = 4 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+					medium_armor = { x = 2 y = 4 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+					medium_armor = { x = 3 y = 4 }
+					medium_armor = { x = 4 y = 0 }
+				}
+				support = { 
+					armored_car_recon = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					medium_flame_tank = { x = 0 y = 3 }
+					engineer = { x = 0 y = 4 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 20
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = YUW }
+					create_unit = {
+						division = "name = \"圣教骑士团\" division_template = \"圣教骑士团\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = SAD
+			}
+			division_template = {
+				name = "帝国黑衫军"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					light_armor = { x = 2 y = 0 }
+					light_armor = { x = 2 y = 1 }
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					artillery_brigade = { x = 4 y = 0 }
+					artillery_brigade = { x = 4 y = 1 }
+					artillery_brigade = { x = 4 y = 2 }
+				}
+				support = { 
+					recon = { x = 0 y = 0 }
+					field_hospital = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					maintenance_company = { x = 0 y = 3 }
+					engineer = { x = 0 y = 4 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 20
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = SAD }
+					create_unit = {
+						division = "name = \"帝国黑衫军\" division_template = \"帝国黑衫军\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = BYG
+			}
+			division_template = {
+				name = "联邦国民护卫军"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					artillery_brigade = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+				}
+				support = { 
+					recon = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 72
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = BYG }
+					create_unit = {
+						division = "name = \"联邦国民护卫军\" division_template = \"联邦国民护卫军\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = CHY
+			}
+			division_template = {
+				name = "玉碎军团"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					infantry = { x = 3 y = 3 }
+					infantry = { x = 3 y = 4 }
+				}
+				support = { 
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 30
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = CHY }
+					create_unit = {
+						division = "name = \"玉碎军团\" division_template = \"玉碎军团\" start_experience_factor = 0 start_equipment_factor = 0.9"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = DOH
+			}
+			division_template = {
+				name = "卫国死士"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+				}
+				support = { 
+					artillery = { x = 0 y = 0 }
+				} 
+			}
+			for_loop_effect = { 
+				start = 0
+				end = 96
+				add = 1
+			
+				random_owned_controlled_state = {
+					limit = { is_core_of = DOH }
+					create_unit = {
+						division = "name = \"卫国死士\" division_template = \"卫国死士\" start_experience_factor = 0.1 start_equipment_factor = 1"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = junhuo.4.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#疯狂AI模拟物资大会
+country_event = {
+	id = junhuo.1937
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1937.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 5000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+		}
+	}
+}
+country_event = {
+	id = junhuo.1938
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1938.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 5000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 500
+		}
+		capital_scope = {
+			add_resource = {
+				type = rubber
+				amount = 30
+			}
+		}
+	}
+}
+country_event = {
+	id = junhuo.1939
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1939.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 2500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 500
+		}
+		capital_scope = {
+			add_resource = {
+				type = rubber
+				amount = 30
+			}
+		}
+	}
+}
+country_event = {
+	id = junhuo.1940
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1940.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 2500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 1500
+		}
+	}
+}
+country_event = {
+	id = junhuo.1941
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1941.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment
+			amount = 1000
+		}
+		capital_scope = {
+			add_resource = {
+				type = rubber
+				amount = 30
+			}
+		}
+	}
+}
+country_event = {
+	id = junhuo.1942
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1942.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment
+			amount = 2000
+		}
+	}
+}
+country_event = {
+	id = junhuo.1943
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1943.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment
+			amount = 3000
+		}
+	}
+}
+country_event = {
+	id = junhuo.1944
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1944.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment
+			amount = 3000
+		}
+	}
+}
+country_event = {
+	id = junhuo.1945
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = modoption_fengkuangai_on
+		date>1945.1.1
+	}
+
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 5500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 2500
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment
+			amount = 3000
+		}
+		country_event = { id = azevent.19450 days = 365 }
+		country_event = { id = azevent.19450 days = 730 }
+		country_event = { id = azevent.19450 days = 1095 }
+		country_event = { id = azevent.19450 days = 1460 }
+		country_event = { id = azevent.19450 days = 1825 }
+		country_event = { id = azevent.19450 days = 2190 }
+		country_event = { id = azevent.19450 days = 2555 }
+		country_event = { id = azevent.19450 days = 2920 }
+		country_event = { id = azevent.19450 days = 3285 }
+		country_event = { id = azevent.19450 days = 3650 }
+		country_event = { id = azevent.19450 days = 4015 }
+		country_event = { id = azevent.19450 days = 4380 }
+		country_event = { id = azevent.19450 days = 4745 }
+		country_event = { id = azevent.19450 days = 5110 }
+		country_event = { id = azevent.19450 days = 5475 }
+		country_event = { id = azevent.19450 days = 5840 }
+		country_event = { id = azevent.19450 days = 6205 }
+		country_event = { id = azevent.19450 days = 6570 }
+		country_event = { id = azevent.19450 days = 6935 }
+		country_event = { id = azevent.19450 days = 7300 }
+		country_event = { id = azevent.19450 days = 7665 }
+		country_event = { id = azevent.19450 days = 8030 }
+		country_event = { id = azevent.19450 days = 8395 }
+		country_event = { id = azevent.19450 days = 8760 }
+		country_event = { id = azevent.19450 days = 9125 }
+		country_event = { id = azevent.19450 days = 9490 }
+		country_event = { id = azevent.19450 days = 9855 }
+		country_event = { id = azevent.19450 days = 10220 }
+		country_event = { id = azevent.19450 days = 10585 }
+		country_event = { id = azevent.19450 days = 10950 }
+		country_event = { id = azevent.19450 days = 11315 }
+		country_event = { id = azevent.19450 days = 11680 }
+		country_event = { id = azevent.19450 days = 12045 }
+		country_event = { id = azevent.19450 days = 12410 }
+	}
+}
+country_event = {
+	id = junhuo.19450
+	title = junhuo.6.t
+	desc = junhuo.6.d
+	picture = GFX_aze_junhuodian
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 500
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment
+			amount = 3000
+		}
+	}
+}
+country_event = {
+	id = junhuo.16
+	title = junhuo.16.t
+	desc = junhuo.16.d
+	picture = GFX_aze_junhuodian
+	is_triggered_only = yes
+	option = {
+		name = junhuo.16.sellkeyan.1back
+		ai_chance = {
+			factor = 4
+		}
+		add_research_slot = 1
+		clr_country_flag = junhuo_zhengzaiwaipaikeyanzu
+	}
+}
+country_event = {
+	id = junhuo.17
+	title = junhuo.17.t
+	desc = junhuo.17.d
+	picture = GFX_aze_junhuodian
+	is_triggered_only = yes
+	option = {
+		name = junhuo.17.sellkeyan.2back
+		ai_chance = {
+			factor = 4
+		}
+		add_research_slot = 2
+		clr_country_flag = junhuo_zhengzaiwaipaikeyanzu
+	}
+}
+country_event = {
+	id = junhuo.18
+	title = junhuo.18.t
+	desc = junhuo.18.d
+	picture = GFX_aze_junhuodian
+	is_triggered_only = yes
+	option = {
+		name = junhuo.18.sellkeyan.3back
+		ai_chance = {
+			factor = 4
+		}
+		add_research_slot = 3
+		clr_country_flag = junhuo_zhengzaiwaipaikeyanzu
+	}
+}
+country_event = {
+	id = junhuo.19
+	title = junhuo.19.t
+	desc = junhuo.19.d
+	picture = GFX_aze_junhuodian
+	is_triggered_only = yes
+	option = {
+		name = junhuo.19.option
+		ai_chance = {
+			factor = 100
+		}
+		add_to_variable = { wz_sl = 25000 }
+	}
+}

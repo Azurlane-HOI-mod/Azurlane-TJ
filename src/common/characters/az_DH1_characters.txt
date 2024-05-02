@@ -1,0 +1,68 @@
+characters = {
+	DOH_chy_advisor = {
+        name = DOH_chy_advisor
+        portraits = { 
+            army = {
+				large="gfx/leaders/CHY/xianghe.png"
+				small="gfx/interface/ideas/idea_xianghe.png"
+			}
+        }
+        advisor = {
+            cost = 100
+            slot = theorist
+            idea_token = chy_advisor
+
+            available = {
+				if = {
+					limit = { tag = DOH }
+					is_ally_with = CHY
+					}
+			}
+
+            traits = {
+                trait_aidang
+                trait_xianghe
+                trait_longfeng
+                trait_nengdai
+            }
+            ai_will_do = {
+                factor = 50
+            }
+        }
+    }
+	DH1_79shi = {
+		name = DH1_79shi
+		portraits = { 
+			army = {
+				large="gfx/leaders/DOH/79shi.png"
+				small="gfx/interface/ideas/idea_79shi.png"
+			} 
+		}
+		advisor = {
+			cost = 50
+			slot = theorist
+			idea_token = DH1_79shi
+			
+			available = {
+				if = {
+					limit = { tag = DOH }
+					has_completed_focus = DOH_lujunsilingtiba
+					
+					}
+					
+				}
+			
+			traits = {
+				trait_DOH_79shi
+				trait_DOH_97shi
+				trait_DOH_JS9
+				trait_DOH_NZ75
+				trait_DOH_QBU88
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}

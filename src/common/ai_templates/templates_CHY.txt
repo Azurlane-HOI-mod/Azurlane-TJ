@@ -1,0 +1,815 @@
+armor_default = {
+	available_for = {
+        CHY
+	}
+	roles = {
+		armor
+	}
+	match_to_count = 0.55
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				has_idea = TY_dingzhenai 
+				factor = 0
+			}
+		}
+	light_armor_1_CHY = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+			}
+		}
+		target_width = 42.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+				engineer = 1
+				artillery = 1
+				recon = 1
+				field_hospital = 1
+				logistics_company = 1
+			}
+			regiments = {
+				infantry = 10
+				light_armor = 5
+			}
+		}
+		allowed_types = {
+		    recon
+			infantry		
+			engineer
+			artillery
+			light_armor
+			logistics_company
+			field_hospital
+		}
+	}
+	medium_armor_2 = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				has_country_flag = chy_zhongshijixiehua
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+		has_country_flag = CHY_friend_with_doh 
+    }
+	NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				has_country_flag = chy_zhongshijixiehua
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+		has_country_flag = CHY_friend_with_doh 
+    }
+	NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		target_width = 42
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				logistics_company = 1
+				maintenance_company = 1
+			}
+			regiments = {
+			    medium_armor = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+				mechanized = 8
+			}
+		}
+		allowed_types = {
+		    maintenance_company
+			medium_armor
+			medium_tank_destroyer_brigade
+			medium_sp_anti_air_brigade
+			engineer
+			light_tank_recon
+			logistics_company
+			medium_flame_tank
+			mechanized
+		}
+	}
+	medium_armor_3 = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				has_country_flag = chy_zhongshijixiehua
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+		has_country_flag = CHY_friend_with_doh 
+    }
+	OR = {
+		has_idea = TY_fengkuangai
+		has_idea = TY_fengkuangai2
+		has_idea = TY_fengkuangai3
+	}
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				has_country_flag = chy_zhongshijixiehua
+			OR = {
+		    num_of_military_factories > 150
+		    NOT = { country_exists = DOH }
+			has_country_flag = CHY_friend_with_doh 
+            }
+	        OR = {
+		has_idea = TY_fengkuangai
+		has_idea = TY_fengkuangai2
+		has_idea = TY_fengkuangai3
+	}
+			}
+		}
+		target_width = 42
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				field_hospital = 1
+			}
+			regiments = {
+			    medium_armor = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+				mechanized = 8
+			}
+		}
+		allowed_types = {
+		    field_hospital
+			medium_armor
+			medium_tank_destroyer_brigade
+			medium_sp_anti_air_brigade
+			engineer
+			light_tank_recon
+			maintenance_company
+			medium_flame_tank
+			mechanized
+		}
+	}
+	medium_armor_4 = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				NOT = { has_country_flag = chy_zhongshijixiehua }
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+		has_country_flag = CHY_friend_with_doh 
+    }
+	NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				NOT = { has_country_flag = chy_zhongshijixiehua }
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+    }
+	NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		target_width = 42
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				logistics_company = 1
+				maintenance_company = 1
+			}
+			regiments = {
+			    medium_armor = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+				infantry = 8
+			}
+		}
+		allowed_types = {
+		    maintenance_company
+			medium_armor
+			medium_tank_destroyer_brigade
+			medium_sp_anti_air_brigade
+			engineer
+			light_tank_recon
+			logistics_company
+			medium_flame_tank
+			infantry
+		}
+	}
+	medium_armor_5 = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				NOT = { has_country_flag = chy_zhongshijixiehua }
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+		has_country_flag = CHY_friend_with_doh 
+    }
+	OR = {
+		has_idea = TY_fengkuangai
+		has_idea = TY_fengkuangai2
+		has_idea = TY_fengkuangai3
+	}
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				NOT = { has_country_flag = chy_zhongshijixiehua }
+			OR = {
+		    num_of_military_factories > 150
+		    NOT = { country_exists = DOH }
+            }
+	        OR = {
+		has_idea = TY_fengkuangai
+		has_idea = TY_fengkuangai2
+		has_idea = TY_fengkuangai3
+	}
+			}
+		}
+		target_width = 42
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				field_hospital = 1
+			}
+			regiments = {
+			    medium_armor = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+				infantry = 8
+			}
+		}
+		allowed_types = {
+		    field_hospital
+			medium_armor
+			medium_tank_destroyer_brigade
+			medium_sp_anti_air_brigade
+			engineer
+			light_tank_recon
+			maintenance_company
+			medium_flame_tank
+			infantry
+		}
+	}
+}
+
+garrison_default = {
+	available_for = {	
+    CHY
+	}
+	roles = {
+		garrison
+	}
+	upgrade_prio = {
+		base = 0
+	}
+	match_to_count = 0.60
+	garrison_default = {
+		custom_icon = 7
+		upgrade_prio = { 
+        base = 0
+		}
+		target_width = 50
+		width_weight = 1
+		column_swap_factor = 1.5
+		target_template = {
+			weight = 0.95
+			match_value = 10000
+			
+			support = {
+				military_police = 1
+			}
+
+			regiments = {
+				cavalry = 24
+			}
+		}
+		allowed_types = {
+			cavalry		
+			military_police
+		}
+	}
+}
+
+infantry_CHY = {
+	available_for = {
+		CHY
+	}
+	roles = {
+		infantry
+	}
+	upgrade_prio = {
+			base = 10
+			modifier = {
+				has_idea = TY_dingzhenai 
+				factor = 0
+			}
+		}
+	match_to_count = 0.6
+	infantry_1_CHY = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		DOH = { is_ai = yes }
+		NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		DOH = { is_ai = yes }
+		NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+				engineer = 1
+				artillery = 1
+				recon = 1
+				maintenance_company = 1
+				logistics_company = 1
+			}
+			
+			regiments = {
+				infantry = 8
+				artillery_brigade = 4
+				light_armor = 1
+			}
+		}
+		
+		allowed_types = {
+			engineer
+			infantry
+			artillery
+			recon
+			artillery_brigade
+			maintenance_company
+			logistics_company
+			light_armor
+		}
+	}
+
+	infantry_1_CHY_fk = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		DOH = { is_ai = yes }
+		OR = { has_idea = TY_fengkuangai 
+		has_idea = TY_fengkuangai2 
+		has_idea = TY_fengkuangai3 }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		DOH = { is_ai = yes }
+		OR = { has_idea = TY_fengkuangai 
+		has_idea = TY_fengkuangai2 
+		has_idea = TY_fengkuangai3 }
+			}
+		}
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+				engineer = 1
+				artillery = 1
+				recon = 1
+				maintenance_company = 1
+				field_hospital = 1
+			}
+			
+			regiments = {
+				infantry = 8
+				artillery_brigade = 4
+				light_armor = 1
+			}
+		}
+		
+		allowed_types = {
+			engineer
+			infantry
+			artillery
+			recon
+			artillery_brigade
+			maintenance_company
+			field_hospital
+			light_armor
+		}
+	}
+
+	infantry_1_CHY_playerDOH = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+		NOT = { DOH = { is_ai = yes } }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		NOT = { has_idea = TY_fengkuangai }
+	NOT = { has_idea = TY_fengkuangai2 }
+	NOT = { has_idea = TY_fengkuangai3 }
+		NOT = { DOH = { is_ai = yes } }
+			}
+		}
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+				engineer = 1
+				artillery = 1
+				recon = 1
+				logistics_company = 1
+				maintenance_company = 1
+			}
+			
+			regiments = {
+				infantry = 8
+				artillery_brigade = 4
+				anti_tank_brigade = 1
+				light_armor = 1
+			}
+		}
+		
+		allowed_types = {
+			engineer
+			infantry
+			artillery
+			recon
+			artillery_brigade
+			anti_tank_brigade
+			maintenance_company
+			logistics_company
+			light_armor
+		}
+	}
+
+	infantry_1_CHY_playerDOH_fk = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		OR = { has_idea = TY_fengkuangai 
+		has_idea = TY_fengkuangai2 
+		has_idea = TY_fengkuangai3 }
+		NOT = { DOH = { is_ai = yes } }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		not = { has_country_flag = CHY_friend_with_doh }
+		OR = { has_idea = TY_fengkuangai 
+		has_idea = TY_fengkuangai2 
+		has_idea = TY_fengkuangai3 }
+		NOT = { DOH = { is_ai = yes } }
+			}
+		}
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+				engineer = 1
+				artillery = 1
+				recon = 1
+				field_hospital = 1
+				maintenance_company = 1
+			}
+			
+			regiments = {
+				infantry = 8
+				artillery_brigade = 4
+				anti_tank_brigade = 1
+				light_armor = 1
+			}
+		}
+		
+		allowed_types = {
+			engineer
+			infantry
+			artillery
+			recon
+			artillery_brigade
+			anti_tank_brigade
+			maintenance_company
+			field_hospital
+			light_armor
+		}
+	}
+	
+	infantry_2_CHY = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+		has_country_flag = CHY_friend_with_doh 
+    }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				OR = {
+		num_of_military_factories > 150
+		NOT = { country_exists = DOH }
+		has_country_flag = CHY_friend_with_doh 
+    }
+			}
+		}
+		target_width = 42.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1	
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			
+			regiments = {
+				infantry = 9
+			}
+		}
+		
+		allowed_types = {
+			engineer
+			infantry
+			artillery
+		}
+	}
+	
+}
+
+marines_default = {
+	available_for = {
+        CHY
+	}
+	roles = {
+		marines
+	}
+	match_to_count = 0.55
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_idea = TY_dingzhenai 
+			}
+		}
+	marines_armor_2 = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				OR = {
+		num_of_military_factories > 150
+		date > 1940.1.1	
+		has_country_flag = CHY_friend_with_doh 
+    }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				OR = {
+		num_of_military_factories > 150
+		date > 1940.1.1	
+		has_country_flag = CHY_friend_with_doh 
+    }
+			}
+		}
+		target_width = 42
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				logistics_company = 1
+				field_hospital = 1
+			}
+			regiments = {
+				amphibious_medium_armor = 8
+				marine = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+			}
+		}
+		allowed_types = {
+		    engineer
+			light_tank_recon
+			medium_flame_tank
+			logistics_company
+			field_hospital
+			amphibious_medium_armor
+			medium_tank_destroyer_brigade
+			marine
+			medium_sp_anti_air_brigade
+		}
+	}
+}
+
+# REGIMENTS:
+#infantry
+#light_armor
+#super_heavy_armor
+#modern_armor
+#heavy_armor
+#medium_armor
+#light_armor
+#anti_tank
+#cavalry
+#motorized
+#mechanized
+#marine
+#mountaineers
+#paratrooper
+#rocket_artillery
+#light_tank_destroyer
+#medium_tank_destroyer_brigade
+#heavy_tank_destroyer_brigade
+#super_heavy_tank_destroyer_brigade
+#modern_tank_destroyer_brigade
+#field_hospital
+#artillery
+
+# SUPPORT:
+#engineer
+#recon
+#signal_company
+#field_hospital
+#anti_tank_brigade
+#anti_air_brigade
+#artillery_brigade
+#field_hospital
+#logistics_company
+#military_police
+#light_sp_anti_air_brigade
+#light_sp_artillery_brigade

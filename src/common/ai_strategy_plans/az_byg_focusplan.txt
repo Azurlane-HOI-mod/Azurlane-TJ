@@ -1,0 +1,309 @@
+BYG_historical = {
+	name = "BYG_historical"
+	desc = "BYG_historical_desc"
+
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		or = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = BYG_ai_behavior
+				option = BYG_historical_focus
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = BYG_xiandaishandianzhan
+	}
+
+	ai_national_focuses = {
+	    #1936
+		BYG_yaoqiuxindexuanju #70
+		BYG_minzhudangshengli #35
+		BYG_ziyoudebian #35
+		BYG_chongqiyiminzhengce #70
+		BYG_qiyedezhinangtuan #35
+		BYG_xiyinrencai #49
+		BYG_kuodazhinangtuan #35
+		BYG_xiugaisheding #49
+		#1937
+		BYG_xibudakaifa #70
+		BYG_dongbutielu_tj #70
+		BYG_lianbanggongchengshu #49
+		BYG_manjiugongren #70
+		BYG_jiazhoulvguan #35
+		BYG_jiansheducheng #35
+		BYG_xiaoduyiqingdadushangshen #49
+		#1938
+		BYG_mimiyanjiu #56
+		BYG_junshijidi #49
+		BYG_shenmikeyansuo #70
+		BYG_minzhujungongchang #70
+		BYG_shijiezhidu_tj #49
+		BYG_xiufunvshenxiang_tj #49
+		#1939
+		BYG_fazhanlvyouye #35
+		BYG_dahugongyequ_tj #70
+		BYG_laiyingde #35
+		BYG_kaifakuangchan_tj #70
+		BYG_tilianmofang_tj #70
+		BYG_wanzhengdewomen #105
+		BYG_xueshujiaoliu #49
+		#1940
+		BYG_baiyingzhanzhengbu #70 
+		BYG_wujiaodalou #49
+		BYG_haijunyidengren #70
+		BYG_kongmujiqun #49
+		BYG_dachujihua #70
+		BYG_jianlikongjun #49
+		#1941
+		BYG_zhanluekongjun #49
+		BYG_kongdixietong #70
+		BYG_zhanluepohuai #70
+		BYG_lianbangdeyingxiong#35
+		BYG_zongtongqinshangzhen#49
+		#1942
+		BYG_lujungaigeyantao #70
+		BYG_baiyingjungongchang #49
+		BYG_motuohuafangan #35
+		BYG_zhancheguilai #35
+		BYG_xiandaishandianzhan #70
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+BYG_xiaojiajiaxian = {
+	name = "BYG_xiaojiajiaxian"
+	desc = "BYG_xiaojiajiaxian_desc"
+
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_game_rule = {
+		rule = BYG_ai_behavior
+		option = BYG_chongzuguohui
+		}
+	}
+	abort = {
+		has_completed_focus = BYG_xibudakaifa
+	}
+
+	ai_national_focuses = {
+		BYG_yaoqiuxindexuanju
+		BYG_gonghedangshengli
+		BYG_chongzubaiyingguohui
+		BYG_maoyibaohuzhengce
+		BYG_xianzhiyiminrujing
+		BYG_juxuqiyexinzheng
+		BYG_xiugaisheding
+		BYG_xibudakaifa
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+
+BYG_ankeleiqiluxian = {
+	name = "BYG_ankeleiqiluxian"
+	desc = "BYG_ankeleiqiluxian_desc"
+
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_game_rule = {
+		rule = BYG_ai_behavior
+		option = BYG_anbaoxian
+		}
+	}
+	abort = {
+		has_completed_focus = BYG_zhezhongfangan
+	}
+
+	ai_national_focuses = {
+		BYG_yaoqiuxindexuanju
+		BYG_zhezhongfangan
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+BYG_kelifulanxian = {
+	name = "BYG_kelifulanxian"
+	desc = "BYG_kelifulanxian_desc"
+
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_game_rule = {
+		rule = BYG_ai_behavior
+		option = BYG_qishituanxian
+		}
+	}
+	abort = {
+		has_completed_focus = BYG_kuodaqishituanguimo
+	}
+
+	ai_national_focuses = {
+		BYG_yaoqiuxindexuanju
+		BYG_minzhudangshengli
+		BYG_kuodaqishituanguimo
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+BYG_huashengdunluxian = {
+	name = "BYG_huashengdunluxian"
+	desc = "BYG_huashengdunluxian_desc"
+
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_game_rule = {
+		rule = BYG_ai_behavior
+		option = BYG_zhishangdangxian
+		}
+	}
+	abort = {
+		has_completed_focus = BYG_jianchatanwufubai
+	}
+
+	ai_national_focuses = {
+		BYG_yaoqiuxindexuanju
+		BYG_zhishangdangshengli
+		BYG_baiyingliyiyouxian
+		BYG_yingduidaxiaotiao
+		BYG_jungongkuozhangfaan
+		BYG_yuqiyejiahezuo
+		BYG_fenxiangcaifu
+		BYG_jianchatanwufubai
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+BYG_botelanluxian = {
+	name = "BYG_botelanluxian"
+	desc = "BYG_botelanluxian_desc"
+
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_game_rule = {
+		rule = BYG_ai_behavior
+		option = BYG_tuanjiepaixian
+		}
+	}
+	abort = {
+		has_completed_focus = BYG_jurendejuexing
+	}
+
+	ai_national_focuses = {
+		BYG_yaoqiuxindexuanju
+		BYG_tuanjiepaishengli
+		BYG_hongselianbangdansheng
+		BYG_yuanbendewomen
+		BYG_jurendejuexing
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}

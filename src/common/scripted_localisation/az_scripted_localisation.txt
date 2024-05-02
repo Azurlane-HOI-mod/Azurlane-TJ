@@ -1,0 +1,969 @@
+
+defined_text = {
+	name = luolijianniang_event_title_sl
+	text = { 
+		trigger = {
+			is_character = xiaotiancheng
+		}
+		localization_key = xiaotiancheng_title
+	}
+	text = { 
+		trigger = {
+			is_character = xiaobeifa
+		}
+		localization_key = xiaobeifa_title
+	}
+	text = { 
+		trigger = {
+			is_character = xiaoshengwang
+		}
+		localization_key = xiaoshengwangxiaoguanghui_title
+	}
+	text = { 
+		trigger = {
+			is_character = xiaoqiye
+		}
+		localization_key = xiaoqiyexiaoshengdiyage_title
+	}
+	text = { 
+		trigger = {
+			is_character = xiaohailunna
+		}
+		localization_key = xiaokelifulanxiaohailunna_title
+	}
+	text = { 
+		trigger = {
+			is_character = xiaobirui
+		}
+		localization_key = xiaobiruixiaoqibolin_title
+	}
+}
+defined_text = {
+	name = luolijianniang_event_desc_sl
+	text = { 
+		trigger = {
+			is_character = xiaotiancheng
+		}
+		localization_key = xiaotiancheng_desc
+	}
+	text = { 
+		trigger = {
+			is_character = xiaobeifa
+		}
+		localization_key = xiaobeifa_desc
+	}
+	text = { 
+		trigger = {
+			is_character = xiaoshengwang
+		}
+		localization_key = xiaoshengwangxiaoguanghui_desc
+	}
+	text = { 
+		trigger = {
+			is_character = xiaoqiye
+		}
+		localization_key = xiaoqiyexiaoshengdiyage_desc
+	}
+	text = { 
+		trigger = {
+			is_character = xiaohailunna
+		}
+		localization_key = xiaokelifulanxiaohailunna_desc
+	}
+	text = { 
+		trigger = {
+			is_character = xiaobirui
+		}
+		localization_key = xiaobiruixiaoqibolin_desc
+	}
+}
+defined_text = {
+	name = mf_chushoumofang_scrloc
+	text = { 
+		trigger = {
+			check_variable = {
+				global.market_xzmf = 0
+			}
+		}
+	
+		localization_key = mf_chushoumofang_pingheng
+		
+	}
+	text = { 
+		trigger = {
+			check_variable = {
+				global.market_xzmf > 0
+			}
+		}
+		localization_key = mf_chushoumofang_fuyu
+	}
+	text = { 
+		trigger = {
+			check_variable = {
+				global.market_xzmf < 0
+			}
+		}
+		localization_key = mf_chushoumofang_xuqiu
+	}
+}
+defined_text = {
+	name = getzhg_event_xieshu
+	text = { 
+		trigger = {
+			OR = {
+				has_trait = quzhu_army
+				has_trait = quzhu_navy
+			}
+		}
+		random_list = {
+			10 = { localization_key = getzhg_event_xieshu_quzhu_1 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_2 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_3 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_4 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_5 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_6 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_7 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_8 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_9 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_10 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_11 }
+			10 = { localization_key = getzhg_event_xieshu_quzhu_12 }
+		}
+	}
+	text = { 
+		trigger = {
+			OR = {
+				has_trait = xunyang_army
+				has_trait = xunyang_navy
+			}
+		}
+		random_list = {
+			10 = { localization_key = getzhg_event_xieshu_xunyang_1 }
+			10 = { localization_key = getzhg_event_xieshu_xunyang_2 }
+			10 = { localization_key = getzhg_event_xieshu_xunyang_3 }
+			10 = { localization_key = getzhg_event_xieshu_xunyang_4 }
+			10 = { localization_key = getzhg_event_xieshu_xunyang_5 }
+			10 = { localization_key = getzhg_event_xieshu_xunyang_6 }
+		}
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_trait = zhanlie_army
+				has_trait = zhanlie_navy
+			}
+		}
+		random_list = {
+			10 = { localization_key = getzhg_event_xieshu_zhanlie_1 }
+			10 = { 
+				localization_key = getzhg_event_xieshu_zhanlie_2 
+				
+			}
+			10 = { 
+				localization_key = getzhg_event_xieshu_zhanlie_3 
+				
+			}
+			10 = { 
+				localization_key = getzhg_event_xieshu_zhanlie_4
+
+			}
+			10 = { localization_key = getzhg_event_xieshu_zhanlie_5 }
+			10 = { localization_key = getzhg_event_xieshu_zhanlie_6 }
+			10 = { localization_key = getzhg_event_xieshu_zhanlie_7 }
+			10 = { localization_key = getzhg_event_xieshu_zhanlie_8 }
+			10 = { localization_key = getzhg_event_xieshu_zhanlie_9 }
+		}
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_trait = hangmu_army
+				has_trait = hangmu_navy
+			}
+		}
+		random_list = {
+			10 = { localization_key = getzhg_event_xieshu_hangmu_1 }
+			10 = { 
+				localization_key = getzhg_event_xieshu_hangmu_2 
+				
+			}
+			10 = { 
+				localization_key = getzhg_event_xieshu_hangmu_3 
+				
+			}
+			10 = { 
+				localization_key = getzhg_event_xieshu_hangmu_4
+
+			}
+			10 = { localization_key = getzhg_event_xieshu_hangmu_5 }
+			10 = { localization_key = getzhg_event_xieshu_hangmu_6 }
+			10 = { localization_key = getzhg_event_xieshu_hangmu_7 }
+			10 = { localization_key = getzhg_event_xieshu_hangmu_8 }
+		}
+	}
+	text = { 
+		trigger = {
+			always = yes
+		}
+		random_list = {
+			10 = { localization_key = getzhg_event_xieshu_1 }
+			10 = { localization_key = getzhg_event_xieshu_2 }
+			10 = { localization_key = getzhg_event_xieshu_3 }
+			10 = { localization_key = getzhg_event_xieshu_4 }
+			10 = { localization_key = getzhg_event_xieshu_5 }
+			10 = { localization_key = getzhg_event_xieshu_6 }
+		}
+	}
+}
+defined_text = {
+	name = getzhg_event_xieshu2
+	text = { 
+		trigger = {
+			always = yes
+		}
+		random_list = {
+			10 = { localization_key = getzhg_event_xieshu2_1 }
+			10 = { localization_key = getzhg_event_xieshu2_2 }
+			10 = { localization_key = getzhg_event_xieshu2_3 }
+			10 = { localization_key = getzhg_event_xieshu2_4 }
+		}
+	}
+}
+defined_text = {
+	name = SAD_guofangjianshe_junfei_desc
+	text = {
+		trigger = {
+			NOT = { has_idea = SAD_junfei_1 }
+		}
+		localization_key = sad_guofangjianshe_decision_desc1
+	}
+	text = {
+		trigger = {
+			has_idea = SAD_junfei_1
+		}
+		localization_key = sad_guofangjianshe_decision_desc2
+	}
+}
+defined_text = {
+	name = SAD_guofangjianshe_junfei_idea_text
+	text = {
+		trigger = {
+			has_idea = SAD_junfei_0
+		}
+		localization_key = SAD_junfei_0_text
+	}
+	text = {
+		trigger = {
+			has_idea = SAD_junfei_1
+		}
+		localization_key = SAD_junfei_1_text
+	}
+	text = {
+		trigger = {
+			has_idea = SAD_junfei_army1
+		}
+		localization_key = SAD_junfei_army1_text
+	}
+	text = {
+		trigger = {
+			has_idea = SAD_junfei_army2
+		}
+		localization_key = SAD_junfei_army2_text
+	}
+	text = {
+		trigger = {
+			has_idea = SAD_junfei_navy1
+		}
+		localization_key = SAD_junfei_navy1_text
+	}
+	text = {
+		trigger = {
+			has_idea = SAD_junfei_navy2
+		}
+		localization_key = SAD_junfei_navy2_text
+	}
+}
+defined_text = {
+	name = autosell_command_sloc
+	text = {
+		trigger = {
+			NOT = { has_country_flag = autosell_command_on }
+		}
+		localization_key = autosell_command_off
+	}
+	text = {
+		trigger = {
+			has_country_flag = autosell_command_on
+		}
+		localization_key = autosell_command_on
+	}
+}
+defined_text = {
+	name = autosell_command_tooltip_sloc
+	text = {
+		trigger = {
+			NOT = { has_country_flag = autosell_command_on }
+		}
+		localization_key = autosell_command_off_tooltip
+	}
+	text = {
+		trigger = {
+			has_country_flag = autosell_command_on
+		}
+		localization_key = autosell_command_on_tooltip
+	}
+}
+defined_text = {
+	name = check_sell_slot_text
+	text = {
+		trigger = {
+			NOT = { has_country_flag = junhuo_zhengzaiwaipaikeyanzu }
+		}
+		localization_key = jh_text_1x7_text
+	}
+	text = {
+		trigger = {
+			has_country_flag = junhuo_zhengzaiwaipaikeyanzu
+		}
+		localization_key = jh_text_1x7_text_2
+	}
+}
+defined_text = {
+	name = check_buy_zhanji_1
+	text = {
+		trigger = {
+			NOT = { has_global_flag = xianzhikongjun_on }
+		}
+		localization_key = buy_zhanji_amount_100_text
+	}
+	text = {
+		trigger = {
+			has_global_flag = xianzhikongjun_on
+		}
+		localization_key = buy_zhanji_amount_10_text
+	}
+}
+defined_text = {
+	name = check_buy_zhanji_2
+	text = {
+		trigger = {
+			NOT = { has_global_flag = xianzhikongjun_on }
+		}
+		localization_key = buy_zhanji_amount_500_text
+	}
+	text = {
+		trigger = {
+			has_global_flag = xianzhikongjun_on
+		}
+		localization_key = buy_zhanji_amount_50_text
+	}
+}
+defined_text = {
+	name = check_buy_zhanji_3
+	text = {
+		trigger = {
+			NOT = { has_global_flag = xianzhikongjun_on }
+		}
+		localization_key = buy_zhanji_amount_1000_text
+	}
+	text = {
+		trigger = {
+			has_global_flag = xianzhikongjun_on
+		}
+		localization_key = buy_zhanji_amount_100_text
+	}
+}
+defined_text = {
+	name = check_buy_zhanji
+	text = {
+		trigger = {
+			AND = {
+				has_tech = iw_small_airframe
+				NOT = { has_tech = basic_small_airframe }
+			}
+		}
+		localization_key = buy_iw_small_airframe_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				has_tech = basic_small_airframe
+				NOT = { has_tech = improved_small_airframe }
+			}
+		}
+		localization_key = buy_basic_small_airframe_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				has_tech = improved_small_airframe
+				NOT = { has_tech = advanced_small_airframe } 
+			}
+		}
+		localization_key = buy_improved_small_airframe_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				has_tech = advanced_small_airframe
+				NOT = { has_tech = modern_small_airframe }
+			}
+		}
+		localization_key = buy_advanced_small_airframe_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				has_tech = modern_small_airframe
+			}
+		}
+		localization_key = buy_modern_small_airframe_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				NOT = { has_tech = iw_small_airframe }
+			}
+		}
+		localization_key = need_iw_small_airframe_text
+	}
+}
+defined_text = {
+	name = check_buy_zhiyuanzhuangbei
+	text = {
+		trigger = {
+			has_tech = tech_support
+		}
+		localization_key = buy_zhiyuanzhuangbei_text
+	}
+	text = {
+		trigger = {
+			NOT = { has_tech = tech_support }
+		}
+		localization_key = cantbuy_zhiyuanzhuangbei_text
+	}
+}
+defined_text = {
+	name = check_buy_kache
+	text = {
+		trigger = {
+			has_tech = motorised_infantry
+		}
+		localization_key = buy_kache_text
+	}
+	text = {
+		trigger = {
+			NOT = { has_tech = motorised_infantry }
+		}
+		localization_key = cantbuy_kache_text
+	}
+}
+defined_text = {
+	name = check_buy_buqiang
+	text = {
+		trigger = {
+			AND = {
+				date < 1939.1.1
+				has_tech = infantry_weapons1
+			}
+		}
+		localization_key = buy_36buqiang_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date < 1939.1.1
+				NOT = { has_tech = infantry_weapons1 }
+			}
+		}
+		localization_key = cantbuy_36buqiang_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1938.12.30
+				date < 1942.1.1
+				has_tech = improved_infantry_weapons
+			}
+		}
+		localization_key = buy_39buqiang_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1938.12.30
+				date < 1942.1.1
+				NOT = { has_tech = improved_infantry_weapons }
+			}
+		}
+		localization_key = cantbuy_39buqiang_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1941.12.30
+				has_tech = advanced_infantry_weapons
+			}
+		}
+		localization_key = buy_42buqiang_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1941.12.30
+				NOT = { has_tech = advanced_infantry_weapons }
+			}
+		}
+		localization_key = cantbuy_42buqiang_text
+	}
+}
+defined_text = {
+	name = check_buy_huopao
+	text = {
+		trigger = {
+			AND = {
+				date < 1939.1.1
+				has_tech = gw_artillery
+			}
+		}
+		localization_key = buy_36huopao_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date < 1939.1.1
+				NOT = { has_tech = gw_artillery }
+			}
+		}
+		localization_key = cantbuy_36huopao_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1938.12.30
+				date < 1942.1.1
+				has_tech = artillery1
+			}
+		}
+		localization_key = buy_39huopao_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1938.12.30
+				date < 1942.1.1
+				NOT = { has_tech = artillery1 }
+			}
+		}
+		localization_key = cantbuy_39huopao_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1941.12.30
+				has_tech = artillery4
+			}
+		}
+		localization_key = buy_42huopao_text
+	}
+	text = {
+		trigger = {
+			AND = {
+				date > 1941.12.30
+				NOT = { has_tech = artillery4 }
+			}
+		}
+		localization_key = cantbuy_42huopao_text
+	}
+}
+defined_text = {
+	name = check_buy_tank
+	text = {
+		trigger = {
+			AND = {
+				has_tech = basic_train 
+			}
+		}
+		localization_key = buy_34tank_text
+	}
+	text = {
+		trigger = {
+			NOT = { has_tech = basic_train  }
+		}
+		localization_key = cantbuy_34tank_text
+	}
+}
+defined_text = {
+	name = check_wz_2000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 2000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_2000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 2000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_2000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_2500
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 2500
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_2500
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 2500
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_2500_blocked
+	}
+}
+defined_text = {
+	name = check_wz_3000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 3000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_3000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 3000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_3000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_6000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 6000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_6000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 6000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_6000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_8000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 8000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_8000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 8000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_8000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_10000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 10000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_10000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 10000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_10000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_12500
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 12500
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_12500
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 12500
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_12500_blocked
+	}
+}
+defined_text = {
+	name = check_wz_13000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 13000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_13000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 13000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_13000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_15000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 15000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_15000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 15000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_15000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_20000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 20000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_20000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 20000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_20000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_24000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 24000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_24000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 24000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_24000_blocked
+	}
+}
+defined_text = {
+	name = check_wz_25000
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 25000
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = wz_shuliang_25000
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 25000
+				compare = less_than
+			}
+		}
+		localization_key = wz_shuliang_25000_blocked
+	}
+}
+defined_text = {
+	name = wuzifenpei_checkshengyu
+	text = {
+		trigger = {
+			check_variable = {
+				guojishengyu_value > 0
+			}
+		}
+		localization_key = wuzifenpei_guojishengyu
+	}
+	
+}
+defined_text = {
+	name = wuzifenpei_checkmajor
+	text = {
+		trigger = {
+			is_major = NO
+		}
+		localization_key = wuzifenpei_ruoguobuzhu
+	}
+	
+}
+defined_text = {
+	name = wuzifenpei_checkshuliang
+	text = {
+		trigger = {
+			check_variable = {
+				temp_shuiqianwuzifenpei < 10000
+			}
+		}
+		localization_key = wuzifenpei_juankuan
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable = {
+					temp_shuiqianwuzifenpei > 9999
+				}
+				check_variable = {
+					temp_shuiqianwuzifenpei < 30000
+				}
+			}
+			
+		}
+		localization_key = wuzifenpei_kongbai
+	}
+	text = {
+		check_variable = {
+			temp_shuiqianwuzifenpei > 29999
+		}
+		localization_key = wuzifenpei_tanwu
+	}
+	
+}
+defined_text = {
+	name = DH1_tiyitongshuai
+	text = { 
+		trigger = {
+			has_country_flag = tongshuai_yingrui
+		}
+		localization_key = tongshuai_yingrui
+	}
+	text = { 
+		trigger = {
+			has_country_flag = tongshuai_pinghai
+		}
+		localization_key = tongshuai_pinghai
+	}
+	text = { 
+		trigger = {
+			has_country_flag = tongshuai_haerbin
+		}
+		localization_key = tongshuai_haerbin
+	}
+}
+defined_text = {
+	name = DH1_xinrenjingtidu
+	text = { 
+		trigger = {
+			check_variable = {
+				var = DOH.xinrenjingtidu_value
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = DH1_xinren_text
+	}
+	text = { 
+		trigger = {
+			check_variable = {
+				var = DOH.xinrenjingtidu_value
+				value = 0
+				compare = less_than
+			}
+		}
+		localization_key = DH1_jingti_text
+	}
+}

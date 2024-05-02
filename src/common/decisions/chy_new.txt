@@ -1,0 +1,153 @@
+CHY_xindeshenzhiyuan_decision = {
+
+	CHY_donggong_decision = {
+		icon = GFX_decision_xingdong
+
+		visible = {
+        tag = CHY
+		}
+
+		allowed = {
+			tag = CHY
+		}
+
+		available = {
+		num_of_civilian_factories > 5
+		has_full_control_of_state = FROM
+		
+		}
+        state_target = yes
+        fire_only_once = yes
+	    targets = { 282 }
+		cost = 100
+		target_trigger = {
+				has_completed_focus = CHY_jianniangmendeshenzhiyuan
+			FROM = {
+				is_owned_by = CHY
+				}
+			}
+
+		ai_will_do = {
+			base = 200
+		}
+
+		days_remove = 100
+
+		modifier = {
+		civilian_factory_use = 5
+		}
+
+		complete_effect = {
+		
+		add_manpower = 1000
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 533
+						state = 282
+						state = 534
+						state = 532
+						state = 535
+						state = 531
+						state = 529
+						state = 530
+						state = 528
+						state = 536
+						
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = xinyangzhidi
+				}
+			}
+			
+		}
+
+			
+		}
+}
+
+#CHY_lueduozhanlingqu_decision = {
+#	
+#	lueduo_decision = {
+#		
+#		icon = xingdong
+#		state_target = yes
+#		on_map_mode = map_and_decisions_view
+#		target_array = controlled_states
+#		highlight_color_while_active = 1
+#		fire_only_once = yes
+#		days_remove = 30
+#		cost = 50
+#		
+#		target_trigger = {
+#			FROM = {
+#				always = yes
+#			}
+#		}
+#		
+#		visible = {
+#			FROM = { 
+#				AND = {
+#					is_controlled_by = ROOT
+#					NOT = { is_core_of = ROOT }
+#				}
+#			}
+#		}
+#		
+#		available = {
+#		has_ideas = CHY_czyl_1
+#			FROM = {
+#				is_controlled_by = ROOT
+#				
+#			}
+#		NOT = { 
+#		has_country_flag = chy_lueduozhong
+#			
+#		}
+#		}
+#		target_root_trigger = {
+#			has_completed_focus = CHY_weileguojia
+#		}
+#		
+#		complete_effect = {
+#			set_country_flag = chy_lueduozhong
+#		}
+#		remove_effect = {
+#		clr_country_flag = chy_lueduozhong
+#		modify_timed_idea = {
+#		 if = {
+#			limit = {
+#			has_idea = CHY_czyl_1
+#			}
+#			modify_timed_idea = {
+#					idea = CHY_czyl_1
+#					days = -100
+#			}
+#			}				
+#			
+#			FROM = {
+#			remove_building = { type = arms_factory level = 10 }
+#			remove_building = { type = industrial_complex level = 10 }
+#			remove_building = { type = dockyard level = 10 }
+#			remove_building = { type = infrastructure level = 10 }
+#			remove_building = { type = synthetic_refinery level = 10 }
+#			remove_building = { type = anti_air_building level = 5 }
+#			remove_building = { type = radar_station level = 10 }
+#			remove_building = { type = rocket_site level = 5 }
+#			remove_building = { type = nuclear_reactor level = 1 }
+#			remove_building = { type = air_base level = 10 }
+#			add_manpower = -11579
+#			add_dynamic_modifier = { modifier = dead_silence }
+#			}
+#			}
+#		}
+#		
+#		ai_will_do = {
+#			factor = 100
+#			modifier = {
+#				factor = 0
+#			}
+#		}
+#	}
+#}

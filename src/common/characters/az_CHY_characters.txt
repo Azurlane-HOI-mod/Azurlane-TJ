@@ -1,0 +1,1183 @@
+characters={
+	CHY_changmen = {
+		name = CHY_changmen
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/changmen.png"
+				small="gfx/interface/ideas/idea_changmen.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = changmen
+			traits = { trait_changmen }
+
+			available = {
+				not = {
+					has_country_flag = CHY_purge_2
+					}
+				}
+			ai_will_do = {
+				factor = 200
+			}
+		}
+
+		country_leader={
+			ideology = despotism
+			
+			expire="2000.1.1.1"
+		}
+
+		country_leader={
+			ideology = fascism_ideology
+			
+			expire="2000.1.1.1"
+		}
+		
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07001
+			traits = { politically_connected zhanlie_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	CHY_tiancheng = {
+		name = CHY_tiancheng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/tiancheng.png"
+				small="gfx/interface/ideas/idea_tiancheng.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = tiancheng
+			available = {
+				if = {
+					limit = { tag = CHY }
+					has_completed_focus = CHY_sumi
+				}
+
+			}
+			traits = { trait_renmingongpu }
+
+			ai_will_do = {
+				factor = 200
+			}
+		}
+
+		country_leader={
+			ideology = marxism
+			traits = {
+				ycql
+			}
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology = liberalism
+			traits = {
+				ycql
+			}
+			expire="2000.1.1.1"
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07002
+			traits = { bearer_of_artillery brilliant_strategist zhanlie_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	CHY_mingshi = {
+		name = CHY_mingshi
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/mingshi.png"
+				small="gfx/interface/ideas/idea_mingshi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = mingshi
+			available = {
+				if = {
+					limit = { tag = CHY }
+					has_completed_focus = CHY_mingshidexiaomaipu
+					not = { has_completed_focus = CHY_caifagaizao }
+				}
+
+			}
+			traits = { trait_mingshi }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	CHY_haohaoxianshengmingshi = {
+		name = CHY_haohaoxianshengmingshi
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/mingshi.png"
+				small="gfx/interface/ideas/idea_mingshi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = haohaoxianshengmingshi
+			available = {
+				if = {
+					limit = { tag = CHY }
+					has_completed_focus = CHY_caifagaizao
+				}
+
+			}
+			traits = { trait_renmingongxiaoshe }
+
+			ai_will_do = {
+				factor = 200
+			}
+		}
+	}
+	
+	CHY_chicheng = {
+		name = CHY_chicheng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/chicheng.png"
+				small="gfx/interface/ideas/idea_chicheng.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief 
+			idea_token = chicheng
+			traits = { trait_chicheng }
+        available = {
+				not = {
+					has_country_flag = CHY_purge_1
+					}
+				}
+
+		
+			ai_will_do = {
+				factor = 5
+			}
+			desc = trait_chicheng_desc
+		}
+		country_leader={
+			ideology = fascism_ideology
+			traits = {
+				hzxq
+				qsld
+			}
+			expire="2000.1.1.1"
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07003
+			traits = { offensive_doctrine armor_officer hangmu_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 4
+		}
+	}
+
+	CHY_jiahe = {
+		name = CHY_jiahe
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/jiahe.png"
+				small="gfx/interface/ideas/idea_jiahe.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = jiahe
+			traits = { trait_jiahe }
+        available = {
+				not = {
+					has_country_flag = CHY_purge_1
+					}
+				}
+
+			ai_will_do = {
+				factor = 200
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07004
+			traits = { trickster career_officer infantry_officer hangmu_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+	}
+	CHY_dafeng = {
+		name = CHY_dafeng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/dafeng.png"
+				small="gfx/interface/ideas/idea_dafeng.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07005
+			traits = { urban_assault_specialist naval_invader hangmu_army }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = dafeng
+
+			traits = { trait_dafeng	}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	CHY_aidang = {
+		name = CHY_aidang
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/aidang.png"
+				small="gfx/interface/ideas/idea_aidang.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = aidang
+			
+			
+			traits = { trait_aidang }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07006
+			traits = { career_officer trait_engineer xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	CHY_gaoxiong = {
+		name = CHY_gaoxiong
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/gaoxiong.png"
+				small="gfx/interface/ideas/idea_gaoxiong.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief 
+			idea_token = gaoxiong
+			traits = { trait_gaoxiong }
+
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07007
+			traits = { career_officer infantry_officer xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	CHY_jingang = {
+		name = CHY_jingang
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/jingang.png"
+				small="gfx/interface/ideas/idea_jingang.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07008
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	CHY_birui= {
+		name = CHY_birui
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/birui.png"
+				small="gfx/interface/ideas/idea_birui.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07009
+			picture = "birui.jpg"
+			traits = { zhanlie_army trait_cautious }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	CHY_tuzuo = {
+		name = CHY_tuzuo
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/tuzuo.png"
+				small="gfx/interface/ideas/idea_tuzuo.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = tuzuo
+			traits = { trait_tuzuo }
+
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07010
+			traits = { trickster harsh_leader zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	CHY_xianghe = {
+		name = CHY_xianghe
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/xianghe.png"
+				small="gfx/interface/ideas/idea_xianghe.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = xianghe
+			
+			
+			traits = { trait_xianghe }
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07011
+			traits = { trickster skilled_staffer hangmu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	CHY_ruihe = {
+		name = CHY_ruihe
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/ruihe.png"
+				small="gfx/interface/ideas/idea_ruihe.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07012
+			traits = { trait_engineer hangmu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	CHY_sanli = {
+		name = CHY_sanli
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/sanli.png"
+				small="gfx/interface/ideas/idea_sanli.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = sanli
+			traits = { trait_sanli }
+
+			ai_will_do = {
+				factor = 200
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07013
+			traits = { battleship_adherent zhanlie_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
+	CHY_shentong = {
+		name = CHY_shentong
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/shentong.png"
+				small="gfx/interface/ideas/idea_shentong.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07014
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	CHY_shiyu = {
+		name = CHY_shiyu
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/shiyu.png"
+				small="gfx/interface/ideas/idea_shiyu.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07015
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	CHY_guinu = {
+		name = CHY_guinu
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/guinu.png"
+				small="gfx/interface/ideas/idea_guinu.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07016
+			traits = { xunyang_army harsh_leader }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	CHY_chuixue = {
+		name = CHY_chuixue
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/chuixue.png"
+				small="gfx/interface/ideas/idea_chuixue.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07017
+			traits = { quzhu_army trait_reckless }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	CHY_jiangfeng = {
+		name = CHY_jiangfeng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/jiangfeng.png"
+				small="gfx/interface/ideas/idea_jiangfeng.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07018
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	CHY_fengxiang = {
+		name = CHY_fengxiang
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/fengxiang.png"
+				small="gfx/interface/ideas/idea_fengxiang.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07019
+			traits = { infantry_officer hangmu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	CHY_longfeng = {
+		name = CHY_longfeng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/longfeng.png"
+				small="gfx/interface/ideas/idea_longfeng.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = longfeng
+			
+			
+			traits = { trait_longfeng }
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07020
+			traits = { aviation_enthusiast bold naval_lineage fly_swatter air_controller flight_deck_manager hangmu_navy }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	CHY_junhe = {
+		name = CHY_junhe
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/junhe.png"
+				small="gfx/interface/ideas/idea_junhe.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07021
+			traits = { ironside battleship_adherent zhanlie_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
+	CHY_lingbo = {
+		name = CHY_lingbo
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/lingbo.png"
+				small="gfx/interface/ideas/idea_lingbo.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07022
+			traits = { bold superior_tactician spotter quzhu_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
+	CHY_niaohai = {
+		name = CHY_niaohai
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/niaohai.png"
+				small="gfx/interface/ideas/idea_niaohai.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07023
+			traits = { spotter xunyang_navy }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	CHY_xuefeng = {
+		name = CHY_xuefeng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/xuefeng.png"
+				small="gfx/interface/ideas/idea_xuefeng.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = xuefeng
+			traits = { trait_xuefeng }
+
+			ai_will_do = {
+				factor = 200
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07025
+			traits = { fleet_protector fly_swatter blockade_runner quzhu_navy }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	CHY_xili = {
+		name = CHY_xili
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/xili.png"
+				small="gfx/interface/ideas/idea_xili.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = xili
+			traits = { trait_xili }
+
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07026
+			traits = { battleship_adherent naval_lineage fly_swatter quzhu_navy }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	CHY_yi13 = {
+		name = CHY_yi13
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/yi13.png"
+				small="gfx/interface/ideas/idea_yi13.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07027
+			traits = { qianting_navy seawolf }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+	CHY_yi19 = {
+		name = CHY_yi19
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/yi19.png"
+				small="gfx/interface/ideas/idea_yi19.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 07028
+			traits = { qianting_navy seawolf }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+	CHY_chuyun = {
+		name = CHY_chuyun
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/chuyun.png"
+				small="gfx/interface/ideas/idea_chuyun.png"
+			}
+		}	
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}	
+	}
+	CHY_yichui = {
+		name = CHY_yichui
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/yichui.png"
+				small="gfx/interface/ideas/idea_yichui.png"
+			}
+		}	
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}		
+	}
+	CHY_xinnong = {
+		name = CHY_xinnong
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/xinnong.png"
+				small="gfx/interface/ideas/idea_xinnong.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 2
+		}	
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = xinnong
+			traits = { trait_xinnong }
+
+			ai_will_do = {
+				factor = 200
+			}
+		}
+	}
+	CHY_daofeng = {
+		name = CHY_daofeng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/daofeng.png"
+				small="gfx/interface/ideas/idea_daofeng.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}	
+	}
+	CHY_bailong = {
+		name = CHY_bailong
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/bailong.png"
+				small="gfx/interface/ideas/idea_bailong.png"
+			}
+		}
+        advisor = {
+			cost = 100
+			slot = navy_chief 
+			idea_token = chicheng
+			traits = { trait_bailong }
+            available = {
+			if = {
+					limit = { tag = CHY }
+					has_completed_focus = CHY_sumi
+					not = { has_completed_focus = CHY_caifagaizao }
+				}
+
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}	
+	}
+	CHY_beifeng = {
+		name = CHY_beifeng
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/beifeng.png"
+				small="gfx/interface/ideas/idea_beifeng.png"
+			}
+		}	
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}	
+	}
+	CHY_wuzang = {
+		name = CHY_wuzang
+		portraits={
+			army = {
+			    large="gfx/leaders/CHY/wuzang.png"
+				small="gfx/interface/ideas/idea_wuzang.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = wuzang
+			traits = { trait_wuzang }
+
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	CHY_wuqi = {
+		name = CHY_wuqi
+		portraits={
+			army = {
+			    large="gfx/leaders/CHY/wuqi.png"
+				small="gfx/interface/ideas/idea_wuqi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = wuqi
+			traits = { trait_wuqi }
+
+			ai_will_do = {
+				factor = 50
+			}
+		}
+	}
+	CHY_nengdai = {
+		name = CHY_nengdai
+		portraits={
+			army = {
+			    large="gfx/leaders/CHY/nengdai.png"
+				small="gfx/interface/ideas/idea_nengdai.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = nengdai
+			traits = { trait_nengdai }
+
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	CHY_siwanshi = {
+		name = CHY_siwanshi
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/siwanshi.png"
+				small="gfx/interface/ideas/idea_siwanshi.png"
+			}
+		}	
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}	
+	}
+}

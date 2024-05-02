@@ -1,0 +1,544 @@
+﻿add_namespace = HUJ_event
+country_event = {
+	id = HUJ_event.1
+	title = HUJ_event.1.t
+	desc = HUJ_event.1.d
+	picture = GFX_aze_guanghui
+	trigger = {
+		AND = {	
+			has_country_flag = HUJ_denglubuliedian
+			has_war_with = SIR
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = HUJ_event.1.a
+		ai_chance = {
+			factor = 5
+		}
+		load_oob = "HUJ_denglubuliedian1"
+	}
+	option = {
+		name = HUJ_event.1.b
+		ai_chance = {
+			factor = 0
+		}
+		load_oob = "HUJ_denglubuliedian2"
+	}
+}
+country_event = {
+	id = HUJ_event.2
+	title = HUJ_event.2.t
+	desc = HUJ_event.2.d
+	picture = GFX_aze_guanghui
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.2.a
+		ai_chance = {
+			factor = 5
+		}
+		add_timed_idea = { idea = HUJ_gfjs days = 175 } 
+	}
+
+}
+country_event = {
+	id = HUJ_event.3
+	title = HUJ_event.3.t
+	desc = HUJ_event.3.d
+	picture = GFX_aze_guanghui
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.3.a
+		ai_chance = {
+			factor = 4
+		}
+		
+	}
+	option = {
+		name = HUJ_event.3.b
+		ai_chance = {
+			factor = 6
+		}
+		HUJ = { 
+			country_event = {
+				id = HUJ_event.4 
+				days = 14
+			}
+		}
+	}
+}
+country_event = {
+	id = HUJ_event.4
+	title = HUJ_event.4.t
+	desc = HUJ_event.4.d
+	picture = GFX_aze_guanghui
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.4.a
+		ai_chance = {
+			factor = 4
+		}
+		NOR = { leave_faction = yes }
+		FIN = { leave_faction = yes }
+		SWE = {
+			declare_war_on = { target = HUJ type = take_claimed_state }
+			
+		}
+
+		hidden_effect = {
+			division_template = {
+				name = "北方维稳师"
+				#is_locked = yes
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+				}
+			}
+			
+			138 = {
+				create_unit = {
+					division = "name = \"北方维稳师\" division_template = \"北方维稳师\" start_experience_factor = 0.5"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"北方维稳师\" division_template = \"北方维稳师\" start_experience_factor = 0.5"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"北方维稳师\" division_template = \"北方维稳师\" start_experience_factor = 0.5"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"北方维稳师\" division_template = \"北方维稳师\" start_experience_factor = 0.5"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"北方维稳师\" division_template = \"北方维稳师\" start_experience_factor = 0.5"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"北方维稳师\" division_template = \"北方维稳师\" start_experience_factor = 0.5"
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+}
+country_event = {
+	id = HUJ_event.5
+	title = HUJ_event.5.t
+	desc = HUJ_event.5.d
+	picture = GFX_aze_guanghui
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.5.a
+		ai_chance = {
+			factor = 0
+		}
+		declare_war_on = { target = TIX type = take_state }
+		add_war_support = 0.1
+	}
+	option = {
+		name = HUJ_event.5.b
+		ai_chance = {
+			factor = 5
+		}
+		
+	}
+}
+
+country_event = {
+	id = HUJ_event.6
+	title = "HUJ_event.6.t"
+	desc = "HUJ_event.6.d"
+	picture = GFX_aze_guanghui
+	is_triggered_only = yes
+	option = {
+		name = "HUJ_event.6.a"
+		annex_country = {
+			target = CAN
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = CAN
+			}
+			add_core_of = HUJ
+		}
+		every_state = {
+			limit = {
+				is_core_of = SAF
+			}
+			add_core_of = HUJ
+		}
+		annex_country = {
+			target = SAF
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = RAJ
+			}
+			add_core_of = HUJ
+		}
+		annex_country = {
+				target = RAJ
+				transfer_troops = yes
+		}
+		annex_country = {
+			target = AST
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = AST
+			}
+			add_core_of = HUJ
+		}
+		annex_country = {
+			target = NZL
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = NZL
+			}
+			add_core_of = HUJ
+		}
+		every_state = {
+			limit = {
+				is_core_of = MAL
+			}
+			add_core_of = HUJ
+		}
+		annex_country = {
+			target = MAL
+			transfer_troops = yes
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	
+	}
+	option = {
+		name = "HUJ_event.6.b"
+		CAN = {
+			every_unit_leader = {
+				set_nationality = HUJ
+			}
+		}
+		annex_country = {
+			target = CAN
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = CAN
+			}
+			add_core_of = HUJ
+		}
+		every_state = {
+			limit = {
+				is_core_of = SAF
+			}
+			add_core_of = HUJ
+		}
+		SAF = {
+			every_unit_leader = {
+				set_nationality = HUJ
+			}
+		}
+		annex_country = {
+			target = SAF
+			transfer_troops = yes
+		}
+		RAJ = {
+				every_unit_leader = {
+					set_nationality = HUJ
+				}
+			}
+		every_state = {
+			limit = {
+				is_core_of = RAJ
+			}
+			add_core_of = HUJ
+		}
+		annex_country = {
+				target = RAJ
+				transfer_troops = yes
+		}
+		AST = {
+		every_unit_leader = {
+				set_nationality = HUJ
+			}
+		}
+		annex_country = {
+			target = AST
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = AST
+			}
+			add_core_of = HUJ
+		}
+		NZL = {
+			every_unit_leader = {
+				set_nationality = HUJ
+			}
+		}
+		annex_country = {
+			target = NZL
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = NZL
+			}
+			add_core_of = HUJ
+		}
+		every_state = {
+			limit = {
+				is_core_of = MAL
+			}
+			add_core_of = HUJ
+		}
+		MAL = {
+			every_unit_leader = {
+				set_nationality = HUJ
+			}
+		}
+		annex_country = {
+			target = MAL
+			transfer_troops = yes
+		}
+	
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = HUJ_event.7
+	title = "HUJ_event.7.t"
+	desc = "HUJ_event.7.d"
+	picture = GFX_aze_guanghui
+	trigger = {
+		date > 1936.1.3
+		tag = HUJ
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	fire_only_once = yes
+	option = {
+		name = "HUJ_event.7.a"
+		IRQ = { give_resource_rights = { receiver = HUJ state = 291 }
+		        give_resource_rights = { receiver = HUJ state = 676 } }
+		MEX = { give_resource_rights = { receiver = HUJ state = 477 }
+		        give_resource_rights = { receiver = HUJ state = 476 } }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = HUJ_event.8
+	title = HUJ_event.8.t
+	desc = HUJ_event.8.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.8.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+
+}
+country_event = {
+	id = HUJ_event.9
+	title = HUJ_event.9.t
+	desc = HUJ_event.9.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.9.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		add_stability = -0.15
+	}
+}
+country_event = {
+	id = HUJ_event.10
+	title = HUJ_event.10.t
+	desc = HUJ_event.10.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.10.a
+		ai_chance = {
+			factor = 5
+		}
+		remove_ideas = HUJ_yilishabainvwang
+		hidden_effect = {
+			HUJ_yilishabai = {
+				set_nationality = MAL
+			}
+		}
+		set_autonomy = {
+			target = MAL
+			autonomy_state = autonomy_dominion
+		}
+		MAL = {
+			hidden_effect = {
+				set_politics = {
+					ruling_party = neutrality
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+			}
+			country_event = { id = HUJ_event.1001 days = 5 }
+		}
+			
+	}
+	option = {
+		name = HUJ_event.10.b
+		ai_chance = {
+			factor = 5
+		}
+		remove_ideas = HUJ_yilishabainvwang
+		add_ideas = HUJ_yilishabainvwang_sading
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+	option = {
+		name = HUJ_event.10.c
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.25
+		}
+		remove_ideas = HUJ_yilishabainvwang
+		add_ideas = HUJ_yilishabainvwang_shumin
+		add_stability = 0.2
+		add_war_support = 0.25
+		add_political_power = 150
+		guojishengyu_up_5 = yes
+	}
+}
+
+country_event = {
+	id = HUJ_event.1001
+	title = HUJ_event.1001.t
+	desc = HUJ_event.1001.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1001.d
+		ai_chance = {
+			factor = 5
+		}
+		add_country_leader_role = {
+			character = HUJ_yilishabai
+			promote_leader = yes
+			country_leader = {
+				ideology = despotism
+				expire = "1965.1.1.1"
+				traits = { }
+			}
+		}
+		promote_character = {
+			character = HUJ_yilishabai
+			ideology = despotism
+		}
+		annex_country = {
+			target = RAJ
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = RAJ
+			}
+			add_core_of = MAL
+		}
+		set_party_name = { 
+			ideology = communism
+			long_name = HUJ_nvwangzhimindi_party_name
+			name = HUJ_nvwangzhimindi_party_name
+		}
+		add_ideas = HUJ_yilishabainvwang
+		set_cosmetic_tag = HUJ_nvwangzhimindi_tag_name
+	}
+}
+country_event = {
+	id = HUJ_event.11
+	title = HUJ_event.11.t
+	desc = HUJ_event.11.d
+	picture = GFX_aze_chaijun_nice
+	trigger = {
+		tag = DOH
+		OR = {
+			AND = {
+				has_war_with = CHY
+				NOT = { has_war_with = HUJ }
+				surrender_progress > 0.1
+			}
+			AND = {
+				is_ai = no
+				has_war = yes
+				NOT = { has_war_with = HUJ }
+				date > 1941.6.1
+			}
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = HUJ_event.11.a
+		ai_chance = {
+			factor = 5
+		}
+		HUJ = {
+			HUJ_ouruola = {
+				set_nationality = DOH
+			}
+			HUJ_ouruola = {
+				set_character_name = HUJ_ouruola_name1
+			}
+		}
+		
+	}
+	option = {
+		name = HUJ_event.11.b
+		ai_chance = {
+			factor = 0
+		}
+		HUJ = {
+			HUJ_ouruola = {
+				set_nationality = DOH
+			}
+		}
+		add_political_power = 25
+	}
+}

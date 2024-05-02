@@ -1,0 +1,682 @@
+add_namespace = XGE
+add_namespace = XGE_News
+
+country_event = {
+	id = XGE.001
+	title = XGE.001.title
+	desc = XGE.001.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = {
+		hidden_effect = {
+			152 = {
+				add_core_of = XGE
+				transfer_state_to = XGE
+			}
+			every_state = {
+				limit = {
+					is_core_of = AUS
+					NOT = { is_core_of = XGE }
+				}
+				add_core_of = XGE
+			}
+			XGE = {
+				division_template = {
+					name = "Infanterie-Division"
+					# = XGE_Inf_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+					}
+				}
+				division_template = {
+					name = "Panzer-Division"
+					# = XGE_Arm_01
+					regiments = {
+						light_armor = { x = 0 y = 0 }
+						light_armor = { x = 0 y = 1 }
+						light_armor = { x = 0 y = 2 }
+						light_armor = { x = 0 y = 3 }
+						light_armor = { x = 1 y = 0 }
+						light_armor = { x = 1 y = 1 }
+						light_armor = { x = 1 y = 2 }
+						light_armor = { x = 1 y = 3 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 3 y = 0 }
+						motorized = { x = 3 y = 1 }
+						motorized = { x = 3 y = 2 }
+						motorized = { x = 3 y = 3 }
+					}
+					support = {
+						mot_recon = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "Infanterie-Division (mot.)"	# Used to be SS division -> New system for SS. Also messed up the civil war by refusing to move to the fascists, and immersion-breaking to have them around as royalists
+					# = XGE_MOT_02
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+					}
+					support = {
+						mot_recon = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "德意志帝国装甲师"	
+					is_locked = yes
+					regiments = {
+						mechanized = { x = 0 y = 0 }
+						mechanized = { x = 0 y = 1 }
+						mechanized = { x = 0 y = 2 }
+						mechanized = { x = 0 y = 3 }
+						mechanized = { x = 1 y = 0 }
+						mechanized = { x = 1 y = 1 }
+						mechanized = { x = 1 y = 2 }
+						mechanized = { x = 1 y = 3 }
+						medium_armor = { x = 2 y = 0 }
+						medium_armor = { x = 2 y = 1 }
+						medium_armor = { x = 2 y = 2 }
+						medium_armor = { x = 2 y = 3 }
+						medium_armor = { x = 3 y = 0 }
+						medium_armor = { x = 3 y = 1 }
+						medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 } 	# (semi-mot) Engineer bn
+						light_tank_recon = { x = 0 y = 1 }
+						medium_flame_tank = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						anti_air = { x = 0 y = 4 }
+					}
+				}
+				create_equipment_variant = {
+					name = "B2喷火坦克" 
+					type = medium_tank_flame_chassis_3
+					parent_version = 0
+					modules = {
+						main_armament_slot = flamethrower
+						turret_type_slot = tank_light_two_man_tank_turret
+						suspension_type_slot = tank_bogie_suspension
+						armor_type_slot = tank_riveted_armor
+						engine_type_slot = tank_gasoline_engine
+						special_type_slot_1 = additional_machine_guns
+						special_type_slot_2 = dozer_blade
+						special_type_slot_3 = additional_machine_guns
+						special_type_slot_4 = additional_machine_guns
+					}
+					upgrades = {
+						tank_nsb_engine_upgrade = 0
+						tank_nsb_armor_upgrade = 0
+					}
+				}
+				create_equipment_variant = {
+					name = "追猎者坦克歼击车"
+					type = medium_tank_destroyer_chassis_3
+					modules = {
+						main_armament_slot = tank_heavy_cannon_3
+						turret_type_slot = tank_medium_fixed_superstructure_turret
+						suspension_type_slot = tank_christie_suspension
+						armor_type_slot = tank_riveted_armor
+						engine_type_slot = tank_gasoline_engine
+						special_type_slot_1 = secondary_turret_small_cannon
+						special_type_slot_2 = secondary_turret_small_cannon
+						special_type_slot_3 = easy_maintenance
+						special_type_slot_4 = extra_ammo_storage
+					}
+					upgrades = {
+						tank_nsb_engine_upgrade = 0
+						tank_nsb_armor_upgrade = 0
+					}
+				}
+				create_equipment_variant = {
+					name = "豹2" 
+					type = medium_tank_chassis_3
+					parent_version = 0
+					modules = {
+						main_armament_slot = tank_medium_cannon_2
+						turret_type_slot = tank_medium_three_man_tank_turret
+						suspension_type_slot = tank_torsion_bar_suspension
+						armor_type_slot = tank_welded_armor
+						engine_type_slot = tank_diesel_engine
+						special_type_slot_1 = tank_radio_3
+						special_type_slot_2 = dozer_blade
+						special_type_slot_3 = secondary_turret_small_cannon
+						special_type_slot_4 = secondary_turret_small_cannon
+					}
+					upgrades = {
+						tank_nsb_engine_upgrade = 4
+						tank_nsb_armor_upgrade = 14
+					}
+				}
+				every_military_industrial_organization = {
+					limit = { owner = XGE }
+					add_mio_funds = 300
+					add_mio_size = 10
+				}
+			}
+		}
+	}
+	option = {
+		name = XGE.001.a
+		XGE = {
+			change_tag_from = ROOT
+		}
+		XGE = {
+			country_event = {
+				id = XGE.002
+				days = 2
+			}
+			declare_war_on = { target = AUS type = annex_everything }
+			hidden_effect = {
+				152 = {
+					create_unit = {
+						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 1"
+						owner = XGE
+						count = 40
+					}
+					create_unit = {
+						division = "name = \"Panzer-Division\" division_template = \"Panzer-Division\" start_experience_factor = 1"
+						owner = XGE
+						count = 10
+					}
+					create_unit = {
+						division = "name = \"Infanterie-Division (mot.)\" division_template = \"Infanterie-Division (mot.)\" start_experience_factor = 1"
+						owner = XGE
+						count = 15
+					}
+					create_unit = {
+						division = "name = \"德意志帝国装甲师\" division_template = \"德意志帝国装甲师\" start_experience_factor = 1"
+						owner = XGE
+						count = 24
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = XGE_News.001
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = XGE.001.b
+		XGE = {
+			declare_war_on = { target = AUS type = annex_everything }
+			hidden_effect = {
+				152 = {
+					create_unit = {
+						division = "name = \"Infanterie-Division\" division_template = \"Infanterie-Division\" start_experience_factor = 1"
+						owner = XGE
+						count = 40
+					}
+					create_unit = {
+						division = "name = \"Panzer-Division\" division_template = \"Panzer-Division\" start_experience_factor = 1"
+						owner = XGE
+						count = 10
+					}
+					create_unit = {
+						division = "name = \"Infanterie-Division (mot.)\" division_template = \"Infanterie-Division (mot.)\" start_experience_factor = 1"
+						owner = XGE
+						count = 15
+					}
+					create_unit = {
+						division = "name = \"德意志帝国装甲师\" division_template = \"德意志帝国装甲师\" start_experience_factor = 1"
+						owner = XGE
+						count = 24
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = XGE_News.001
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.002
+	title = XGE.002.title
+	desc = XGE.002.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = XGE.002.a
+		country_event = {
+			id = XGE.003
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.003
+	title = XGE.003.title
+	desc = XGE.003.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = XGE.003.a
+		country_event = {
+			id = XGE.004
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.004
+	title = XGE.004.title
+	desc = XGE.004.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = XGE.004.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.007
+	title = XGE.007.title
+	desc = XGE.007.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = XGE.007.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.008
+	title = XGE.008.title
+	desc = XGE.008.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = XGE.008.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.009
+	title = XGE.009.title
+	desc = XGE.009.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = XGE.009.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.010
+	title = XGE.010.title
+	desc = XGE.010.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = XGE.010.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.011
+	title = XGE.011.title
+	desc = XGE.011.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = XGE.011.a
+		create_country_leader = {
+			name = "阿道夫·莉莎"
+			desc = ""
+			picture = "gfx/leaders/XGE/lisha_new.dds"
+			expire = "1985.1.1"
+			ideology = nazism
+			traits = { ZHISHANG_YUANSHOU }
+		}
+		hidden_effect = {
+			country_event = {
+				id = XGE.014
+				days = 7
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.012
+	title = XGE.012.title
+	desc = XGE.012.desc
+	#is_triggered_only = yes
+	trigger = {
+		tag = GER
+		all_country = {
+			or = {
+				tag = GER
+				is_subject_of = GER
+			}
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = XGE.012.a
+		country_event = {
+			id = XGE.013
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.013
+	title = XGE.013.title
+	desc = XGE.013.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = XGE.013.a
+		custom_effect_tooltip = meme_is_over
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.014
+	title = XGE.014.title
+	desc = XGE.014.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = XGE.014.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XGE.2010
+	title = XGE.2008.title
+	desc = XGE.2008.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = XGE.2008.a
+		set_cosmetic_tag = GERMANIA_EMPER
+	}
+	option = {
+		name = XGE.2008.b
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = meme_start
+					option = yes
+				}
+			}
+			country_event = {
+				id = XGE.001
+				days = 2
+			}
+		}
+	}
+	option = {
+		name = XGE.2008.b
+		set_province_name = {
+			id = 6521
+			name = "日耳曼妮娅"
+		}
+		set_victory_points = {
+			province = 6521
+			value = 100
+		}
+	}
+	option = {
+		name = XGE.2008.c
+		every_state = {
+			limit = {
+				or = {
+					region = 1
+					region = 2
+					region = 3
+					region = 4
+				}
+			}
+			add_core_of = GEG
+		}
+		GEG = {
+			set_state_controller = 131
+			set_politics = {
+				ruling_party = fascism
+				last_election = "1936.1.1"
+				elections_allowed = no
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = "纳粹党不列颠支部"
+				name = "纳粹党不列颠支部"
+			}
+			set_popularities = {
+				fascism = 100
+			}
+			inherit_technology = ROOT
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 4000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 100
+			}
+			add_manpower = 40000
+			set_cosmetic_tag = Project_Sea_Lion_Landing_Zone_Command
+		}
+		set_autonomy = {
+			target = GEG
+			autonomy_state = autonomy_reichskommissariat
+		}
+		HUJ = { declare_war_on = { target = GEG type = annex_everything } }
+		GEG = {
+			ROOT = {
+				if = {
+					limit = {
+						has_character = GER_maiye
+						GER_maiye = {
+							not = {
+								has_character_flag = has_been_a_governor
+							}
+							is_country_leader = no
+						}
+					}
+					PREV = {
+						create_country_leader = {
+							name = "赫尔曼·迈耶"
+							desc = ""
+							picture = "gfx/leaders/XGE/GER_maiye.dds"
+							expire = "1985.1.1"
+							ideology = nazism
+							traits = {
+							}
+						}
+					}
+					GER_maiye = {
+						set_character_flag = has_been_a_governor
+					}
+				}
+				else = { GER_get_a_governor_to_PREV = yes }
+			}
+		}
+	}
+}
+
+#布劳瑙的异象
+news_event = {
+	id = XGE_News.001
+	title = XGE_News.001.t
+	picture = GFX_event_xier_in_power
+	desc = XGE_News.001.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = XGE_News.001.a
+		trigger = {
+			tag = XGE
+		}
+	}
+	option = {
+		name = XGE_News.001.b
+		trigger = {
+			not = {
+				tag = XGE
+			}
+		}
+	}
+}
+
+#德意志统一战争
+news_event = {
+	id = XGE_News.002
+	title = XGE_News.002.t
+	picture = GFX_new_event_ger_win_civil_war
+	desc = XGE_News.002.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = XGE_News.002.a
+		trigger = {
+			tag = XGE
+		}
+	}
+	option = {
+		name = XGE_News.002.b
+		trigger = {
+			not = {
+				tag = XGE
+			}
+		}
+	}
+}
+
+#终焉将至
+news_event = {
+	id = XGE_News.003
+	title = XGE_News.003.t
+	picture = GFX_new_death_of_ger
+	desc = XGE_News.003.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = XGE_News.003.a
+		trigger = {
+			tag = XGE
+		}
+	}
+	option = {
+		name = XGE_News.003.b
+		trigger = {
+			not = {
+				tag = XGE
+			}
+		}
+	}
+}
+
+#奥地利政变
+news_event = {
+	id = XGE_News.004
+	title = XGE_News.004.t
+	picture = GFX_event_xier_in_power
+	desc = XGE_News.004.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = XGE_News.004.a
+		trigger = {
+			tag = XGE
+		}
+	}
+	option = {
+		name = XGE_News.004.b
+		trigger = {
+			not = {
+				tag = XGE
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+SIR_historical = {
+	name = "SIR_historical"
+	desc = "SIR_historical_desc"
+
+	allowed = {
+		original_tag = SIR
+	}
+	enable = {
+		AND = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = SIR_ai_behavior
+				option = DEFAULT
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = SIR_kaifaxinlintu
+	}
+
+	ai_national_focuses = {
+		#1936
+		SIR_haishangxianjing #49
+		SIR_wanshansairenjiao  #70
+		SIR_kuxingjiaotiao #70
+		SIR_nulijiaotiao #70
+		SIR_lueduozhuyi #70
+		SIR_shengzhijiaotiao #70
+		#1937
+		SIR_gaomiduzhufang #70
+		SIR_xueshijiaotiao #70
+		SIR_chunjiexinyang #70
+		SIR_yongshichuancheng #70
+		SIR_jiuyuanshuishou #49
+		SIR_chuanzhihuishou #35
+		#1938
+		SIR_shenmiyiwu #14
+		SIR_chuanjiaohuodong #70
+		SIR_chuanjiaojiandui #56
+		SIR_chuanjiao_jialebi #70
+		SIR_chuanjiao_nanmei #70
+		SIR_chuanjiao_baiying #49
+		#1939
+		SIR_kaifaxinlintu #70
+		
+	}
+
+	research = {
+		cat_heavy_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+

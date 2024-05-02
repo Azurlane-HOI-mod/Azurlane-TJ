@@ -1,0 +1,184 @@
+sub_units = {
+	fight_shipgirl_tuji = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_shipgirl
+			category_all_infantry
+		}
+		combat_width = 0
+		
+		#基础属性
+		max_strength = 3
+		max_organisation = 20
+		default_morale = 0.2
+		manpower = 100
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.05
+		can_be_parachuted = yes
+		soft_attack = -0.6
+		hard_attack = -0.6
+		breakthrough = -0.6
+		defense = -0.6
+		air_attack = -0.25
+		
+		forest = {
+			movement = 0.10
+		}
+		hills = {
+			movement = 0.10
+		}
+		mountain = {
+			movement = 0.10
+		}
+		jungle = {
+			movement = 0.10
+		}
+		marsh = {
+			movement = 0.30
+		}
+		plains = {
+			movement = 0.10
+		}
+		desert = {
+			movement = 0.10
+		}
+		river = {
+			movement = 0.50
+		}
+		fort = {
+			movement = 0.10
+		}
+		amphibious = {
+			movement = 0.50
+		}
+		urban = {
+			movement = 0.10
+		}
+		
+		need = {
+			quzhupao_equipment = 10
+		}
+	}
+	fight_shipgirl_fankong = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+	    affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_all_armor
+			category_shipgirl
+		}
+		combat_width = 0
+		
+		#基础属性
+		max_strength = 2
+		max_organisation = 0
+		default_morale = 0.1
+		manpower = 1000
+		training_time = 120
+
+		#Misc Abilities
+		weight = 1.0
+		supply_consumption = 0.2
+		can_be_parachuted = yes
+		soft_attack = -0.6
+		hard_attack = -0.6
+		breakthrough = -0.6
+		defense = -0.6
+		air_attack = -0.25
+		
+
+		marsh = {
+			attack = 0.10
+		}
+		river = {
+			attack = 0.20
+		}
+		fort = {
+			attack = 0.10
+		}
+		amphibious = {
+			attack = 0.20
+		}
+		urban = {
+			attack = 0.10
+		}
+		
+		need = {
+			zhanliepao_equipment = 10
+		}
+	}
+	command_shipgirl = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			support
+			infantry
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_all_infantry
+			category_shipgirl
+		}
+		combat_width = 0
+		
+		#基础属性
+		max_strength = 1
+		max_organisation = 50	
+		default_morale = 1.0
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.05
+		can_be_parachuted = yes
+		recon = 0.5
+		reliability_factor = 0.01
+		
+		
+		need = {
+			support_equipment = 50
+		}
+	}
+}

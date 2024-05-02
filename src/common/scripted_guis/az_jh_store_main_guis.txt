@@ -1,0 +1,1333 @@
+scripted_gui = {
+	
+	
+	jh_store_main_window = {
+		context_type = player_context
+
+		window_name = "jh_store_main_window"
+
+		visible = {
+			has_country_flag = open_jh_store_main_window
+		}
+
+		effects = {
+			jh_store_main_window_close_button_click = {
+				clr_country_flag = open_jh_store_main_window
+			}
+			sell_100_pp_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 1000
+				}
+				add_political_power = -100 
+			}
+			sell_50_cp_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 1000
+				}
+				add_command_power = -100 
+			}
+			autosell_button_click = {
+				if = {
+					limit = { 
+						NOT = { has_country_flag = autosell_command_on } 
+					}
+					set_country_flag = autosell_command_on
+				}
+				else_if = {
+					limit = { 
+						has_country_flag = autosell_command_on 
+					}
+					clr_country_flag = autosell_command_on
+				}
+			}
+			sell_1_slot_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 6000
+				}
+				country_event = { id = junhuo.16 days = 180 }
+				add_research_slot = -1
+				set_country_flag = junhuo_zhengzaiwaipaikeyanzu
+			}
+			sell_2_slot_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 15000
+				}
+				country_event = { id = junhuo.17 days = 180 }
+				add_research_slot = -2
+				set_country_flag = junhuo_zhengzaiwaipaikeyanzu
+			}
+			sell_3_slot_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 30000
+				}
+				country_event = { id = junhuo.18 days = 180 }
+				add_research_slot = -3
+				set_country_flag = junhuo_zhengzaiwaipaikeyanzu
+			}
+			sell_army_xp_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 4000
+				}
+				army_experience = -100
+			}
+			sell_air_xp_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 3000
+				}
+				air_experience = -100
+			}
+			sell_navy_xp_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = 2000
+				}
+				navy_experience = -100
+			}
+			buy_kache_button_1_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -3000
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 1000
+					producer = ROOT
+				}
+				
+			}
+			buy_kache_button_2_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -8000
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 3000
+					producer = ROOT
+				}
+				
+			}
+			buy_kache_button_3_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -15000
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 7500
+					producer = ROOT
+				}
+				
+			}
+			
+			buy_zhiyuanzhuangbei_button_1_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -2500
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 500
+					producer = ROOT
+				}
+				
+			}
+			buy_zhiyuanzhuangbei_button_2_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -6000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 1500
+					producer = ROOT
+				}
+				
+			}
+			buy_zhiyuanzhuangbei_button_3_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -12500
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 3200
+					producer = ROOT
+				}
+				
+			}
+			buy_zhanji_button_1_click = {
+				if = {
+					limit = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 10
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 10
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_2
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_2
+						amount = 10
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_3
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_3
+						amount = 10
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = modern_small_airframe
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_4
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = modern_small_airframe
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_4
+						amount = 10
+						producer = ROOT
+					}
+				}
+			}
+			buy_zhanji_button_2_click = {
+				if = {
+					limit = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 50
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 50
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_2
+						amount = 500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_2
+						amount = 50
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_3
+						amount = 500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_3
+						amount = 50
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = modern_small_airframe
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_4
+						amount = 500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = modern_small_airframe
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -13000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_4
+						amount = 50
+						producer = ROOT
+					}
+				}
+			}
+			buy_zhanji_button_3_click = {
+				if = {
+					limit = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 1000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 1000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_2
+						amount = 1000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_2
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_3
+						amount = 1000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_3
+						amount = 100
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = modern_small_airframe
+						NOT = { has_global_flag = xianzhikongjun_on }
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_4
+						amount = 1000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_tech = modern_small_airframe
+						has_global_flag = xianzhikongjun_on
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -24000
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_4
+						amount = 100
+						producer = ROOT
+					}
+				}
+			}
+			buy_buqiang_button_1_click = {
+				if = {
+					limit = {
+						date < 1939.1.1
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 5000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							date > 1938.12.30
+							date < 1942.1.1
+						}
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_2
+						amount = 5000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						date > 1941.12.30
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -3000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_3
+						amount = 5000
+						producer = ROOT
+					}
+				}
+			}
+			
+			buy_buqiang_button_2_click = {
+				if = {
+					limit = {
+						date < 1939.1.1
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 20000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							date > 1938.12.30
+							date < 1942.1.1
+						}
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_2
+						amount = 20000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						date > 1941.12.30
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -10000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_3
+						amount = 20000
+						producer = ROOT
+					}
+				}
+			}
+			
+			buy_buqiang_button_3_click = {
+				if = {
+					limit = {
+						date < 1939.1.1
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -25000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 60000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							date > 1938.12.30
+							date < 1942.1.1
+						}
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -25000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_2
+						amount = 60000
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						date > 1941.12.30
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -25000
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_3
+						amount = 60000
+						producer = ROOT
+					}
+				}
+			}
+			
+			buy_huopao_button_1_click = {
+				if = {
+					limit = {
+						date < 1939.1.1
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -2000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_1
+						amount = 500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							date > 1938.12.30
+							date < 1942.1.1
+						}
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -2000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_2
+						amount = 500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						date > 1941.12.30
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -2000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_3
+						amount = 500
+						producer = ROOT
+					}
+				}
+			}
+			buy_huopao_button_2_click = {
+				if = {
+					limit = {
+						date < 1939.1.1
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -8000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_1
+						amount = 2500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							date > 1938.12.30
+							date < 1942.1.1
+						}
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -8000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_2
+						amount = 2500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						date > 1941.12.30
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -8000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_3
+						amount = 5500
+						producer = ROOT
+					}
+				}
+			}
+			buy_huopao_button_3_click = {
+				if = {
+					limit = {
+						date < 1939.1.1
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -15000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_1
+						amount = 5500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							date > 1938.12.30
+							date < 1942.1.1
+						}
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -15000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_2
+						amount = 5500
+						producer = ROOT
+					}
+				}
+				if = {
+					limit = {
+						date > 1941.12.30
+					}
+					add_to_variable = {
+						var = wz_sl
+						value = -15000
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_3
+						amount = 5500
+						producer = ROOT
+					}
+				}
+			}
+			buy_tank_button_1_click = {
+
+				add_to_variable = {
+					var = wz_sl
+					value = -3000
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 32
+					producer = ROOT
+				}
+		
+			}
+			buy_tank_button_2_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -10000
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 120
+					producer = ROOT
+				}
+			}
+			buy_tank_button_3_click = {
+				add_to_variable = {
+					var = wz_sl
+					value = -20000
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 280
+					producer = ROOT
+				}
+			}
+		}
+		triggers = {
+			jh_store_main_window_close_button_click_enabled = {
+				always = yes
+			}
+			sell_1_slot_visible = {
+				NOT = { has_country_flag = junhuo_zhengzaiwaipaikeyanzu }
+			}
+			sell_2_slot_visible = {
+				NOT = { has_country_flag = junhuo_zhengzaiwaipaikeyanzu }
+			}
+			sell_3_slot_visible = {
+				NOT = { has_country_flag = junhuo_zhengzaiwaipaikeyanzu }
+			}
+			buy_zhiyuanzhuangbei_button_1_visible = {
+				has_tech = tech_support
+			}
+			buy_zhiyuanzhuangbei_button_2_visible = {
+				has_tech = tech_support
+			}
+			buy_zhiyuanzhuangbei_button_3_visible = {
+				has_tech = tech_support
+			}
+			buy_kache_button_1_visible = {
+				has_tech = motorised_infantry 
+			}
+			buy_kache_button_2_visible = {
+				has_tech = motorised_infantry 
+			}
+			buy_kache_button_3_visible = {
+				has_tech = motorised_infantry 
+			}
+			buy_zhanji_button_1_visible = {
+				OR = {
+					AND = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+					}
+					AND = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+					}
+					AND = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+					}
+					AND = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+					}
+					AND = {
+						has_tech = modern_small_airframe
+					}
+				}
+			}
+			buy_zhanji_button_2_visible = {
+				OR = {
+					AND = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+					}
+					AND = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+					}
+					AND = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+					}
+					AND = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+					}
+					AND = {
+						has_tech = modern_small_airframe
+					}
+				}
+			}
+			buy_zhanji_button_3_visible = {
+				OR = {
+					AND = {
+						has_tech = iw_small_airframe
+						NOT = { has_tech = basic_small_airframe }
+					}
+					AND = {
+						has_tech = basic_small_airframe
+						NOT = { has_tech = improved_small_airframe }
+					}
+					AND = {
+						has_tech = improved_small_airframe
+						NOT = { has_tech = advanced_small_airframe }
+					}
+					AND = {
+						has_tech = advanced_small_airframe
+						NOT = { has_tech = modern_small_airframe }
+					}
+					AND = {
+						has_tech = modern_small_airframe
+					}
+				}
+			}
+			buy_buqiang_button_1_visible = {
+				OR = {
+					AND = {
+						date < 1939.1.1
+						has_tech = infantry_weapons1
+					}
+					AND = {
+						date > 1938.12.30
+						date < 1942.1.1
+						has_tech = improved_infantry_weapons
+					}
+					AND = {
+						date > 1941.12.30
+						has_tech = advanced_infantry_weapons
+					}
+				}
+			}
+			buy_buqiang_button_2_visible = {
+				OR = {
+					AND = {
+						date < 1939.1.1
+						has_tech = infantry_weapons1
+					}
+					AND = {
+						date > 1938.12.30
+						date < 1942.1.1
+						has_tech = improved_infantry_weapons
+					}
+					AND = {
+						date > 1941.12.30
+						has_tech = advanced_infantry_weapons
+					}
+				}
+			}
+			buy_buqiang_button_3_visible = {
+				OR = {
+					AND = {
+						date < 1939.1.1
+						has_tech = infantry_weapons1
+					}
+					AND = {
+						date > 1938.12.30
+						date < 1942.1.1
+						has_tech = improved_infantry_weapons
+					}
+					AND = {
+						date > 1941.12.30
+						has_tech = advanced_infantry_weapons
+					}
+				}
+			}
+			buy_huopao_button_1_visible = {
+				OR = {
+					AND = {
+						date < 1939.1.1
+						has_tech = gw_artillery
+					}
+					AND = {
+						date > 1938.12.30
+						date < 1942.1.1
+						has_tech = artillery1
+					}
+					AND = {
+						date > 1941.12.30
+						has_tech = artillery4
+					}
+				}
+			}
+			buy_huopao_button_2_visible = {
+				OR = {
+					AND = {
+						date < 1939.1.1
+						has_tech = gw_artillery
+					}
+					AND = {
+						date > 1938.12.30
+						date < 1942.1.1
+						has_tech = artillery1
+					}
+					AND = {
+						date > 1941.12.30
+						has_tech = artillery4
+					}
+				}
+			}
+			buy_huopao_button_3_visible = {
+				OR = {
+					AND = {
+						date < 1939.1.1
+						has_tech = gw_artillery
+					}
+					AND = {
+						date > 1938.12.30
+						date < 1942.1.1
+						has_tech = artillery1
+					}
+					AND = {
+						date > 1941.12.30
+						has_tech = artillery4
+					}
+				}
+			}
+			buy_tank_button_1_visible = {
+				has_tech = basic_train
+			}
+			buy_tank_button_2_visible = {
+				has_tech = basic_train
+			}
+			buy_tank_button_3_visible = {
+				has_tech = basic_train
+			}
+			sell_army_xp_click_enabled = {
+				has_army_experience > 99
+			}
+			sell_navy_xp_click_enabled = {
+				has_navy_experience > 99
+			}
+			sell_air_xp_click_enabled = {
+				has_air_experience > 99
+			}
+			
+			buy_kache_button_1_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 3000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_kache_button_2_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 8000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_kache_button_3_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 15000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_zhiyuanzhuangbei_button_1_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 2500
+					compare = greater_than_or_equals
+				}
+			}
+			buy_zhiyuanzhuangbei_button_2_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 6000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_zhiyuanzhuangbei_button_3_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 12500
+					compare = greater_than_or_equals
+				}
+			}
+			buy_zhanji_button_1_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 3000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_zhanji_button_2_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 13000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_zhanji_button_3_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 24000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_buqiang_button_1_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 3000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_buqiang_button_2_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_buqiang_button_3_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 25000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_huopao_button_1_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 2000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_huopao_button_2_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 8000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_huopao_button_3_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 15000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_tank_button_1_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 3000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_tank_button_2_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+			buy_tank_button_3_click_enabled = {
+				check_variable = {
+					var = wz_sl
+					value = 20000
+					compare = greater_than_or_equals
+				}
+			}
+			sell_1_slot_click_enabled = {
+				amount_research_slots > 1
+			}
+			sell_2_slot_click_enabled = {
+				amount_research_slots > 2
+			}
+			sell_3_slot_click_enabled = {
+				amount_research_slots > 3
+			}
+			sell_50_cp_click_enabled = {
+				command_power > 99
+			}
+			sell_100_pp_click_enabled = {
+				has_political_power > 99
+			}
+		}
+	}
+	
+}
+

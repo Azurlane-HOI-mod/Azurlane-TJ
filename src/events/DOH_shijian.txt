@@ -1,0 +1,1192 @@
+﻿add_namespace = DOH_event
+country_event = {
+	id = DOH_event.1
+	title = DOH_event.1.t
+	desc = DOH_event.1.d
+	picture = GFX_aze_anshan
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.1.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				check_variable = {
+					var = affect_from_bfl
+					value = affect_from_huj
+					compare = greater_than
+				}
+				add = 100
+			}
+			modifier = {
+				has_game_rule = {
+					rule = DOH_ai_behavior
+					option = DOH_red_focus_1
+				}
+				add = 10000
+			}
+		}
+		set_country_flag = DOH_anshanqu
+		hidden_effect = { country_event = { id = DOH_event.2 days = 30 } }
+	}
+	option = {
+		name = DOH_event.1.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				check_variable = {
+					var = affect_from_huj
+					value = affect_from_bfl
+					compare = greater_than
+				}
+				add = 100
+			}
+			modifier = {
+				has_game_rule = {
+					rule = DOH_ai_behavior
+					option = DOH_red_focus_2
+				}
+				add = 10000
+			}
+			modifier = {
+				has_game_rule = {
+					rule = DOH_ai_behavior
+					option = DOH_blue_focus
+				}
+				add = 10000
+			}
+		}
+		set_country_flag = DOH_yixianqu
+		hidden_effect = { country_event = { id = DOH_event.2 days = 30 } }
+	}
+}
+country_event = {
+	id = DOH_event.2
+	title = DOH_event.2.t
+	desc = DOH_event.2.d
+	picture = GFX_aze_dhcy
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.2.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				has_game_rule = {
+					rule = DOH_ai_behavior
+					option = DOH_red_focus_2
+				}
+				add = 10000
+			}
+		}
+		add_popularity = { ideology = communism popularity = 0.1 }
+		set_country_flag = DOH_qubeilian
+		if = {
+			limit = { has_country_flag = DOH_anshanqu }
+			hidden_effect = { country_event = { id = DOH_event.3 days = 50 } }
+		}
+		if = {
+			limit = { has_country_flag = DOH_yixianqu }
+			hidden_effect = { country_event = { id = DOH_event.4 days = 50 } }
+		}
+	}
+	option = {
+		name = DOH_event.2.b
+		trigger = {
+			has_country_flag = DOH_yixianqu
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_game_rule = {
+					rule = DOH_ai_behavior
+					option = DOH_blue_focus
+				}
+				add = 10000
+			}
+		}
+		set_country_flag = DOH_quhuangjia
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		if = {
+			limit = { has_country_flag = DOH_anshanqu }
+			hidden_effect = { country_event = { id = DOH_event.5 days = 50 } }
+		}
+	}
+}
+country_event = {
+	id = DOH_event.3
+	title = DOH_event.3.t
+	desc = DOH_event.3.d
+	picture = GFX_aze_anshan
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.3.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = { ideology = communism popularity = 0.1 }
+		add_country_leader_role = {
+			Character = DOH_anshan
+			Promote_leader = yes
+			Country_leader = {
+				ideology = leninism
+				expire = "2000.1.1.1"
+				traits = {
+					yfz
+				}
+			}
+		}
+		DOH_anshan = {
+			set_portraits = {
+				civilian = {
+					large="gfx/leaders/DOH/leader_anshan.png"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = DOH_event.4
+	title = DOH_event.4.t
+	desc = DOH_event.4.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.4.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = { ideology = communism popularity = 0.1 }
+		add_country_leader_role = {
+			Character = DOH_yixian
+			Promote_leader = yes
+			Country_leader = {
+				ideology = leninism
+				expire = "2000.1.1.1"
+				traits = {
+					dhzh
+					rmdyx
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = DOH_event.5
+	title = DOH_event.5.t
+	desc = DOH_event.5.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.5.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = { ideology = democratic popularity = 0.1 }
+
+	}
+}
+country_event = {
+	id = DOH_event.6
+	title = DOH_event.6.t
+	desc = DOH_event.6.d
+	picture = GFX_aze_pinghaininghai
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.6.a
+		ai_chance = {
+			factor = 5
+		}
+		add_tech_bonus = {
+			name = "全方面合作"
+			bonus = 1
+			uses = 2
+			category = land_doctrine
+			category = infantry_weapons
+		}
+	}
+}
+country_event = {
+	id = DOH_event.7
+	title = DOH_event.7.t
+	desc = DOH_event.7.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.7.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					tag = TIB
+					tag = SIK
+					tag = XSM
+				}
+				add = 7
+			}
+		}
+		DOH = { country_event = DOH_event.8 } 
+	}
+	option = {
+		name = DOH_event.7.b
+		ai_chance = {
+			base = 3
+			modifier = {
+				OR = {
+					tag = YUN
+					tag = GXC
+					tag = SHX
+				}
+				add = 10
+			}
+		}
+		DOH = { country_event = DOH_event.9 }
+		declare_war_on = {
+			target = DOH
+			type = annex_everything
+		}
+		division_template = {
+			name = "军阀壮丁"
+			is_locked = yes
+			division_names_group = CHI_INF_01
+
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+			}
+ 
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.2"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.2"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.2"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.2"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.2"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.1"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.1"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.1"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.1"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"军阀壮丁\" division_template = \"军阀壮丁\" start_experience_factor = 0 start_equipment_factor = 0.1"
+				owner = ROOT
+			}
+		}
+		
+
+	}
+}
+country_event = {
+	id = DOH_event.8
+	title = DOH_event.8.t
+	desc = DOH_event.8.d
+	picture = GFX_aze_pinghaininghai
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.8.a
+		ai_chance = {
+			factor = 8
+		}
+		DOH = { annex_country = { target = FROM transfer_troops = yes } }
+	}
+}
+country_event = {
+	id = DOH_event.9
+	title = DOH_event.9.t
+	desc = DOH_event.9.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.9.a
+		ai_chance = {
+			factor = 8
+		}
+	}
+}
+country_event = {
+	id = DOH_event.10
+	title = DOH_event.10.t
+	desc = DOH_event.10.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.10.a
+		ai_chance = {
+			factor = 9
+		}
+		DOH = { country_event = DOH_event.11 }
+	}
+	option = {
+		name = DOH_event.10.b
+		ai_chance = {
+			factor = 1
+		}
+		DOH = { country_event = DOH_event.12 }
+	}
+}
+country_event = {
+	id = DOH_event.11
+	title = DOH_event.11.t
+	desc = DOH_event.11.d
+	picture = GFX_aze_start
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.11.a
+		ai_chance = {
+			factor = 9
+		}
+		transfer_state = 326
+		transfer_state = 729
+	}
+}
+country_event = {
+	id = DOH_event.12
+	title = DOH_event.12.t
+	desc = DOH_event.12.d
+	picture = GFX_aze_start
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.12.a
+		ai_chance = {
+			factor = 9
+		}
+		create_wargoal = { target = HUJ type = take_state_focus }
+		create_wargoal = { target = POR type = take_state_focus }
+	}
+}
+country_event = {
+	id = DOH_event.13
+	title = DOH_event.13.t
+	desc = DOH_event.13.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.13.a
+		ai_chance = {
+			factor = 1
+		}
+		DOH = { country_event = DOH_event.14 }
+	}
+	option = {
+		name = DOH_event.13.b
+		ai_chance = {
+			factor = 4
+		}
+		DOH = { country_event = DOH_event.15 }
+	}
+	option = {
+		name = DOH_event.13.c
+		ai_chance = {
+			factor = 2
+		}
+		DOH = { country_event = DOH_event.16 }
+	}
+}
+country_event = {
+	id = DOH_event.14
+	title = DOH_event.14.t
+	desc = DOH_event.14.d
+	picture = GFX_aze_start
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.14.a
+		ai_chance = {
+			factor = 9
+		}
+		transfer_state = 671
+		transfer_state = 728
+		transfer_state = 670
+		transfer_state = 741
+		transfer_state = 286
+	}
+}
+country_event = {
+	id = DOH_event.15
+	title = DOH_event.15.t
+	desc = DOH_event.15.d
+	picture = GFX_aze_start
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.15.a
+		ai_chance = {
+			factor = 9
+		}
+		transfer_state = 728
+	}
+	option = {
+		name = DOH_event.15.b
+		ai_chance = {
+			factor = 9
+		}
+		create_wargoal = { target = YUW type = take_state_focus }
+	}
+}
+country_event = {
+	id = DOH_event.16
+	title = DOH_event.16.t
+	desc = DOH_event.16.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.16.a
+		ai_chance = {
+			factor = 9
+		}
+		create_wargoal = { target = YUW type = take_state_focus }
+
+	}
+}
+country_event = {
+	id = DOH_event.17
+	title = DOH_event.17.t
+	desc = DOH_event.17.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.17.a
+		ai_chance = {
+			factor = 9
+		}
+		DOH = { country_event = DOH_event.18 }
+	}
+	option = {
+		name = DOH_event.17.b
+		ai_chance = {
+			factor = 1
+		}
+		DOH = { country_event = DOH_event.19 }
+	}
+}
+country_event = {
+	id = DOH_event.18
+	title = DOH_event.18.t
+	desc = DOH_event.18.d
+	picture = GFX_aze_start
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.18.a
+		ai_chance = {
+			factor = 9
+		}
+		transfer_state = 609
+		transfer_state = 611
+		transfer_state = 610
+		transfer_state = 612
+		transfer_state = 715
+		transfer_state = 716
+		transfer_state = 745
+		transfer_state = 328
+		transfer_state = 717
+		transfer_state = 714
+		transfer_state = 761
+		transfer_state = 524
+		transfer_state = 527
+		transfer_state = 525
+		white_peace = CHY
+		CHY = {
+			country_event = CHY_new1_shijian.1301
+		}
+	}
+}
+country_event = {
+	id = DOH_event.19
+	title = DOH_event.19.t
+	desc = DOH_event.19.d
+	picture = GFX_aze_daqingxi
+	is_triggered_only = yes	
+	option = {
+		name = DOH_event.19.a
+		ai_chance = {
+			factor = 9
+		}
+		add_war_support = 0.15
+	}
+}
+country_event = {
+	id = DOH_event.20 
+	title = DOH_event.20.t
+	desc = DOH_event.20.d
+	picture = GFX_aze_pinghaininghai
+	is_triggered_only = yes	
+	immediate = {
+		
+	}
+	option = {
+		name = DOH_event.20.a
+		ai_chance = {
+			factor = 9
+		}
+		create_faction = "东亚反暴政联盟"
+		add_war_support = 0.2
+		set_autonomy = {
+			target = NEP
+			autonomy_state = autonomy_reichsprotectorate
+		}
+		set_autonomy = {
+			target = BHU
+			autonomy_state = autonomy_reichsprotectorate
+		}
+
+			
+		if = {
+			limit = {
+				XSM = { exists = yes }
+			}
+			DOH = { annex_country = { target = XSM transfer_troops = yes } }
+			XSM = { 
+				DOH = { 
+					country_event = DOH_event.29 
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		SHX = {
+			if = {
+				limit = {
+					exists = yes
+				}
+				DOH = {
+					annex_country = { target = SHX transfer_troops = yes } 
+					country_event = DOH_event.29 
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				SIK = { exists = yes }
+			}
+			DOH = { annex_country = { target = SIK transfer_troops = yes } }
+			SIK = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				YUN = { exists = yes }
+			}
+			annex_country = { target = YUN transfer_troops = yes }
+			YUN = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				GXC = { exists = yes }
+			}
+			annex_country = { target = GXC transfer_troops = yes }
+			GXC = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				TIB = { exists = yes }
+			}
+			annex_country = { target = TIB transfer_troops = yes }
+			TIB = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		
+	}
+
+}
+country_event = {
+	id = DOH_event.21
+	title = DOH_event.21.t
+	desc = DOH_event.21.d
+	picture = GFX_aze_dhjj
+	fire_only_once = yes
+	trigger = {
+		tag = DOH
+		NOT = { controls_state = 608 }
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = DOH_event.21.a
+		ai_chance = {
+			factor = 9
+		}
+		add_war_support = -0.1
+		DOH_baojiaweiguo_dengji = yes
+	}
+}
+country_event = {
+	id = DOH_event.22
+	title = DOH_event.22.t
+	desc = DOH_event.22.d
+	picture = GFX_aze_dhjj
+	fire_only_once = yes
+	trigger = {
+		tag = DOH
+		NOT = { controls_state = 613 }
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = DOH_event.22.a
+		ai_chance = {
+			factor = 9
+		}
+		add_war_support = -0.1
+		DOH_baojiaweiguo_dengji = yes
+	}
+}
+country_event = {
+	id = DOH_event.23
+	title = DOH_event.23.t
+	desc = DOH_event.23.d
+	picture = GFX_aze_dhjj
+	fire_only_once = yes
+	trigger = {
+		tag = DOH
+		NOT = { controls_state = 597 }
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = DOH_event.23.a
+		ai_chance = {
+			factor = 9
+		}
+		add_war_support = -0.05
+		DOH_baojiaweiguo_dengji = yes
+	}
+}
+country_event = {
+	id = DOH_event.24
+	title = DOH_event.24.t
+	desc = DOH_event.24.d
+	picture = GFX_aze_dhjj
+	fire_only_once = yes
+	trigger = {
+		tag = DOH
+		NOT = { controls_state = 620 }
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = DOH_event.24.a
+		ai_chance = {
+			factor = 9
+		}
+		add_war_support = -0.05
+		DOH_baojiaweiguo_dengji = yes
+		custom_effect_tooltip = "一些群众自愿武装起来保家卫国！"
+		for_loop_effect = { 
+					start = 0
+					end = 10
+					add = 1 
+
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"民兵团\" division_template = \"军团\" start_experience_factor = 0.3 start_equipment_factor = 1"
+							owner = ROOT
+						}	
+					}
+		}
+	}
+}
+country_event = {
+	id = DOH_event.25
+	title = DOH_event.25.t
+	desc = DOH_event.25.d
+	picture = GFX_aze_dhjj
+	fire_only_once = yes
+	trigger = {
+		tag = DOH
+		NOT = { controls_state = 744 }
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = DOH_event.25.a
+		ai_chance = {
+			factor = 9
+		}
+		add_war_support = -0.05
+		DOH_baojiaweiguo_dengji = yes
+		set_autonomy = {
+			target = NEP
+			autonomy_state = doh_xiaodi
+		}
+		set_autonomy = {
+			target = BHU
+			autonomy_state = doh_xiaodi
+		}
+		every_state = {
+		limit = {
+		is_core_of = DOH
+		is_controlled_by = DOH
+		}
+		add_dynamic_modifier = {
+			modifier = BFL_sandachengfangxian_state
+		}
+		}
+		custom_effect_tooltip = "一些群众自愿武装起来保家卫国！"
+		for_loop_effect = { 
+					start = 0
+					end = 20
+					add = 1 
+
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"民兵团\" division_template = \"军团\" start_experience_factor = 0.3 start_equipment_factor = 1"
+							owner = ROOT
+						}	
+					}
+		}
+	}
+}
+country_event = {
+	id = DOH_event.26
+	title = DOH_event.26.t
+	desc = DOH_event.26.d
+	picture = GFX_aze_dhjj
+	fire_only_once = yes
+	trigger = {
+		tag = DOH
+		NOT = { controls_state = 605 }
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = DOH_event.26.a
+		ai_chance = {
+			factor = 9
+		}
+		add_war_support = -0.1
+		DOH_baojiaweiguo_dengji = yes
+		custom_effect_tooltip = "一些群众自愿武装起来保家卫国！"
+		for_loop_effect = { 
+					start = 0
+					end = 20
+					add = 1 
+
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "name = \"民兵团\" division_template = \"军团\" start_experience_factor = 0.3 start_equipment_factor = 1"
+							owner = ROOT
+						}	
+					}
+		}
+		DOH_neibufenqi_jiazhong_effect = yes
+	}
+}
+country_event = {
+	id = DOH_event.27
+	title = DOH_event.27.t
+	desc = DOH_event.27.d
+	picture = GFX_aze_pinghaininghai
+	is_triggered_only = yes
+	option = {
+		name = DOH_event.27.a
+		ai_chance = {
+			factor = 9
+		}
+		add_ideas = DOH_dhzztx
+		every_unit_leader = {
+			add_skill_level = 1
+		}
+	}
+}
+country_event = {
+	id = DOH_event.28
+	title = DOH_event.28.t
+	desc = DOH_event.28.d
+	picture = GFX_aze_pinghaininghai
+	is_triggered_only = yes
+	option = {
+		name = DOH_event.28.a
+		ai_chance = {
+			factor = 9
+		}
+		army_experience = 25
+		add_political_power = 100
+		every_army_leader = {
+			gain_xp = 300
+		}
+	}
+}
+country_event = {
+	id = DOH_event.29
+	title = DOH_event.29.t
+	desc = DOH_event.29.d
+	picture = GFX_aze_pinghaininghai
+	is_triggered_only = yes
+	option = {
+		name = DOH_event.29.a
+		ai_chance = {
+			factor = 9
+		}
+		add_political_power = var:tunbingjunfa_costpp
+		if = {
+			limit = { 
+				check_variable = {tunbingjunfa_shuliang > 2 } 
+				check_variable = {tunbingjunfa_shuliang < 6 } 
+			}
+
+			add_stability = -0.15
+			add_war_support = -0.3
+		}
+		if = {
+			limit = { 
+				check_variable = {tunbingjunfa_shuliang = 6 } 
+			}
+
+			add_stability = -0.3
+			add_war_support = -0.6
+		}
+	}
+}
+country_event = {
+	id = DOH_event.30
+	title = DOH_event.30.t
+	desc = DOH_event.30.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = DOH_event.30.a
+		ai_chance = {
+			factor = 9
+		}
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = gelideli
+		set_country_flag = DOH_yaoqinggelideli
+		hidden_effect = {
+			country_event = { id = DOH_event.3001 days = 90 }
+		}
+	}
+}
+country_event = {
+	id = DOH_event.3001
+	title = DOH_event.3001.t
+	desc = DOH_event.3001.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = DOH_event.3001.a
+		ai_chance = {
+			factor = 9
+		}
+		add_offsite_building = { type = industrial_complex level = 5 }
+	}
+}
+
+add_namespace = DOH_loong_event
+country_event = {
+	id = DOH_loong_event.1001
+	title = DOH_loong_event.1001.t
+	desc = DOH_loong_event.1001.d
+	is_triggered_only = yes
+	option = {
+		name = DOH_loong_event.1001.a
+		ai_chance = {
+			factor = 9
+		}
+		custom_effect_tooltip = DOH_loong_event.1001.at
+		add_timed_idea = {
+			idea = TY_msgj
+			days = 120
+		}
+		add_stability = 0.05
+		add_to_variable = {
+			var = wz_sl
+			value = 10000
+		}
+		add_cic = 1000
+		DOH_neibufenqi_jianqin_effect = yes
+		custom_effect_tooltip = DOH_tongyizhanxian_tooltip_2
+		hidden_effect = {
+			if = {
+				limit = { has_completed_focus = DOH_renminwansui }
+				add_timed_idea = {
+					idea = DOH_tongyizhanxian_c_idea
+					days = 180
+				}
+			}
+			if = {
+				limit = { has_completed_focus = DOH_yinruwaizi }
+				add_timed_idea = {
+					idea = DOH_tongyizhanxian_d_idea
+					days = 180
+				}
+			}
+			if = {
+				limit = { has_completed_focus = DOH_kuodayixianquanli }
+				add_timed_idea = {
+					idea = DOH_tongyizhanxian_f_idea
+					days = 180
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = DOH_loong_event.1002
+	title = DOH_loong_event.1002.t
+	desc = DOH_loong_event.1002.d
+	is_triggered_only = yes
+	option = {
+		name = DOH_loong_event.1002.a
+		ai_chance = {
+			factor = 9
+		}
+		custom_effect_tooltip = DOH_loong_event.1002.at
+		add_stability = -0.05
+		DOH_neibufenqi_jiazhong_effect = yes
+	}
+}
+country_event = {
+	id = DOH_loong_event.2002
+	title = DOH_loong_event.2002.t
+	desc = DOH_loong_event.2002.d
+	is_triggered_only = yes
+	option = {
+		name = DOH_loong_event.2002.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				strength_ratio = {
+					tag = DOH
+					ratio > 3
+				}
+				add = 1000
+			}
+		}
+		declare_war_on = {
+			target = DOH
+			type = annex_everything
+		}
+		hidden_effect = {
+			DOH = {
+				country_event = DOH_loong_event.2003
+			}
+			PREV = {
+				clr_country_flag = DOH_shuchu_civ_target_flag
+				remove_dynamic_modifier = {
+					modifier = az_DOH_shuchu_target_modifier
+					scope = DOH
+				}
+			}
+			d_DOH_self_duiwaishuchu_init = yes
+		}
+	}
+	option = {
+		name = DOH_loong_event.2002.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				naval_strength_ratio = {
+					tag = DOH
+					ratio < 0.3
+				}
+				add = 5
+			}
+			modifier = {
+				DOH = {
+					has_completed_focus = DOH_chaogongzhidu
+				}
+				add = 5
+			}
+			modifier = {
+				naval_strength_ratio = {
+					tag = DOH
+					ratio < 1
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = DOH
+					ratio < 0.33
+				}
+				add = 10
+			}
+		}
+		effect_tooltip = {
+			DOH = {
+				puppet = PREV
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					country_exists = DH1
+				}
+				DOH = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = doh_fanshu
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						country_exists = DH1
+					}
+				}
+				DOH = {
+					puppet = PREV
+				}
+			}
+			PREV = {
+				clr_country_flag = DOH_shuchu_civ_target_flag
+				remove_dynamic_modifier = {
+					modifier = az_DOH_shuchu_target_modifier
+					scope = DOH
+				}
+			}
+			d_DOH_self_duiwaishuchu_init = yes
+		}
+	}
+}
+country_event = {
+	id = DOH_loong_event.2003
+	title = DOH_loong_event.2003.t
+	desc = DOH_loong_event.2003.d
+	is_triggered_only = yes
+	option = {
+		name = DOH_loong_event.2003.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+country_event = {
+	id = DOH_loong_event.3001
+	title = DOH_loong_event.3001.t
+	desc = DOH_loong_event.3001.d
+	is_triggered_only = yes
+	option = {
+		name = DOH_loong_event.3001.a
+		trigger = {
+			CHY = {
+				has_focus_tree = chongying_new_focus
+				OR = {
+					has_completed_focus = CHY_chichen1
+					is_debug = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+
+		custom_effect_tooltip = doh_chongying_focus
+		custom_effect_tooltip = "对重樱进行和平改造。"
+		hidden_effect = {
+			CHY = {
+				uncomplete_national_focus = {
+					focus = CHY_chichen1
+					uncomplete_children = yes
+					refund_political_power = yes
+				}
+				complete_national_focus = CHY_changmen1
+				unlock_national_focus = CHY_hepinshouhuzhe
+			}
+			remove_opinion_modifier = {
+				target = DOH
+				modifier = CHY_dhtiaoxin
+			}
+			remove_opinion_modifier = {
+				target = CHY
+				modifier = CHY_dhtiaoxin
+			}
+			CHY = {
+				complete_national_focus = CHY_duidonghuangyouhao
+				complete_national_focus = CHY_donghuangyouhao
+				unlock_national_focus = CHY_guihuanzhimindi
+				remove_ideas = CHY_kuangredekuozhangzhuyi_buff
+				remove_ideas = CHY_qinlvejihua
+				remove_ideas = chy_wushidaojinshen_buff
+				remove_ideas = CHY_sanyuezhanzhenglun
+				remove_ideas = CHY_dohwar_buff_1
+				remove_ideas = CHY_dohwar_buff_2
+				remove_ideas = CHY_dohwar_buff_3
+			}
+		}
+	}
+	option = {
+		name = DOH_loong_event.3001.b
+
+		ai_chance = {
+			base = 10
+		}
+
+		custom_effect_tooltip = doh_chongying_focus
+		hidden_effect = {
+			remove_opinion_modifier = {
+				target = DOH
+				modifier = CHY_dhtiaoxin
+			}
+			remove_opinion_modifier = {
+				target = CHY
+				modifier = CHY_dhtiaoxin
+			}
+			CHY = {
+				complete_national_focus = CHY_duidonghuangyouhao
+				complete_national_focus = CHY_donghuangyouhao
+				unlock_national_focus = CHY_guihuanzhimindi
+			}
+		}
+	}
+}
+# country_event = {
+# 	id = DOH_loong_event.1003
+# 	hidden = yes
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		add_dynamic_modifier = {
+# 			modifier = DOH_nciv_to_ship_dynamic_modifier
+# 		}
+# 		add_equipment_to_stockpile = {
+# 			type = doh_civ_naval_equipment_1
+# 			amount = FROM.num_nciv_equipment_clr
+# 		}
+# 	}
+# 	option = {
+
+# 	}
+# }

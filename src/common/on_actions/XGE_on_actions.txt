@@ -1,0 +1,79 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_state = {
+				add_to_array = {
+					global.ah_formables_states_array = THIS.id
+				}
+			}
+			every_state = {
+				limit = {
+					or = {
+						is_core_of = AUS
+						is_core_of = TIX
+						state = 912
+						state = 99
+						state = 911
+						state = 37
+						state = 8
+						state = 28
+						state = 69
+						state = 9
+						state = 74
+						state = 75
+						state = 72
+						state = 762
+						state = 85
+						state = 807
+						state = 86
+						state = 87
+						state = 98
+						state = 97
+						state = 39
+						state = 850
+						state = 102
+						state = 853
+						state = 736
+						state = 852
+					}
+				}
+				set_state_flag = Great_Germany_Area
+			}
+			XGE = {
+			}
+			AUS = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = meme_start
+							option = yes
+						}
+					}
+					country_event = {
+						id = XGE.001
+						days = 2
+					}
+				}
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = XGE
+					}
+					FROM = {
+						tag = AUS
+					}
+				}
+				XGE = {
+					news_event = {
+						id = XGE_News.004
+					}
+				}
+			}
+		}
+	}
+}

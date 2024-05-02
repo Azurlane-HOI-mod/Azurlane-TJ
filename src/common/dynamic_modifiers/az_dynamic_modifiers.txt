@@ -1,0 +1,57 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+az_ziyuanzhuanhua_amount = {
+	enable = { always = yes }
+	country_resource_steel = az_ziyuanzhuanhua_tie
+	country_resource_tungsten = az_ziyuanzhuanhua_wu
+	country_resource_chromium = az_ziyuanzhuanhua_ge
+	country_resource_aluminium = az_ziyuanzhuanhua_lv
+}
+az_jianniangxiujia_modifier = {
+	enable = { 
+		always = yes
+    }
+	command_power_gain_mult = xiujia_leader_modifier_cm_gain_var
+	max_command_power = xiujia_leader_modifier_cm_max_var
+	political_power_factor = xiujia_leader_modifier_pp_var
+}
+az_caijun = {
+	enable = { 
+		always = yes
+    } 
+	conscription_factor = az_caijun_shiyi_factor
+	conscription = az_caijun_shiyi 
+	custom_modifier_tooltip = az_caijun_tt
+	custom_modifier_tooltip = az_hidden_ideas
+	custom_modifier_tooltip = az_kexiaochu_ideas
+}
+az_kaicaimofangkuang_modifier = {
+	enable = { 
+		always = yes
+    }
+	civilian_factory_use = az_kaicaimofangkuang_modifier_var
+}

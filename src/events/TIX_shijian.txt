@@ -1,0 +1,312 @@
+﻿add_namespace = TIX_event
+country_event = {
+	id = TIX_event.1
+	title = TIX_event.1.t
+	desc = TIX_event.1.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.1.a
+		ai_chance = {
+			factor = 5
+		}
+		add_war_support = 0.05
+	}
+}
+country_event = {
+	id = TIX_event.2
+	title = TIX_event.2.t
+	desc = TIX_event.2.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.2.a
+		ai_chance = {
+			factor = 5
+		}
+		army_experience = 20
+	}
+}
+country_event = {
+	id = TIX_event.3
+	title = TIX_event.3.t
+	desc = TIX_event.3.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.3.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+	}
+}
+country_event = {
+	id = TIX_event.4
+	title = TIX_event.4.t
+	desc = TIX_event.4.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.4.a
+		ai_chance = {
+			factor = 5
+		}
+		TIX = { add_to_faction = BFL }
+	}
+	option = {
+		name = TIX_event.4.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = TIX_event.5
+	title = TIX_event.5.t
+	desc = TIX_event.5.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.5.a
+		ai_chance = {
+			factor = 0
+		}
+		set_global_flag = TIX_duibeilianyouhao
+	}
+	option = {
+		name = TIX_event.5.b
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = TIX_event.6
+	title = TIX_event.6.t
+	desc = TIX_event.6.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.6.a
+		ai_chance = {
+			factor = 1
+		}
+		add_ideas = TIX_bsmdfk
+	}
+}
+country_event = {
+	id = TIX_event.7
+	title = TIX_event.7.t
+	desc = TIX_event.7.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.7.a
+		trigger = { tag = TIX }
+		ai_chance = {
+			factor = 1
+		}
+		TIX = { 
+			add_ideas = TIX_jkblzy 
+			capital_scope = {	
+				add_resource = {
+					type = steel
+					amount = 40
+				}
+				add_resource = {
+					type = chromium
+					amount = 36
+				}
+				add_resource = {
+					type = aluminium
+					amount = 24
+				}
+			}
+			give_guarantee = BFL
+		}
+	}
+	option = {
+		name = TIX_event.7.b
+		trigger = { tag = BFL }
+		ai_chance = {
+			factor = 1
+		}
+		BFL = { 
+			add_political_power = 200 
+			add_tech_bonus = {
+				name = "铁血的帮助"
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+		}
+		give_guarantee = TIX
+	}
+}
+country_event = {
+	id = TIX_event.8
+	title = TIX_event.8.t
+	desc = TIX_event.8.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.8.a
+		ai_chance = {
+			factor = 0
+		}
+		remove_unit_leader = 201
+		add_political_power = 300
+		remove_ideas = TIX_bsmdfk
+		set_country_flag = qingxibisimai
+		custom_effect_tooltip = TIX_event.8_tooltip
+	}
+	option = {
+		name = TIX_event.8.b 
+		ai_chance = {
+			factor = 5
+		}
+		remove_ideas = TIX_bsmdfk
+	}
+}
+country_event = {
+	id = TIX_event.9
+	title = TIX_event.9.t
+	desc = TIX_event.9.d
+	picture = GFX_aze_hxftl
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.9.a
+		ai_chance = {
+			factor = 100
+		}
+		create_country_leader = {
+			name = "腓特烈大帝"
+			picture = "leader_feitelie.jpg"
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				tywh
+			}
+		}
+		news_event = aznews.36
+	}
+	option = {
+		name = TIX_event.9.b 
+		ai_chance = {
+			factor = 0
+		}
+		add_ideas = TIX_tywh
+	}
+}
+country_event = {
+	id = TIX_event.10
+	title = TIX_event.10.t
+	desc = TIX_event.10.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.10.a
+		ai_chance = {
+			factor = 4
+		}
+		create_faction = "鸢尾防御联盟"
+		add_to_faction = BEL
+		add_to_faction = HOL
+		add_to_faction = LUX
+	}
+	option = {
+		name = "关我屁事"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = TIX_event.11
+	title = TIX_event.11.t
+	desc = TIX_event.11.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.11.a
+		ai_chance = {
+			factor = 4
+		}
+		add_to_faction = YUW
+	}
+	option = {
+		name = "我们不关心鸢尾"
+		ai_chance = {
+			factor = 0
+		}
+		add_to_faction = YUW
+	}
+}
+country_event = {
+	id = TIX_event.12
+	title = TIX_event.12.t
+	desc = TIX_event.12.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.12.a
+		ai_chance = {
+			factor = 4
+		}
+		create_faction = "中欧防御联盟"
+		add_to_faction = CZE
+	}
+}
+country_event = {
+	id = TIX_event.13
+	title = TIX_event.13.t
+	desc = TIX_event.13.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.13.a
+		ai_chance = {
+			factor = 0
+		}
+		TIX = { country_event = TIX_event.14 }
+	}
+	option = {
+		name = TIX_event.13.b
+		ai_chance = {
+			factor = 5
+		}
+		TIX = { country_event = TIX_event.15 }
+	}
+}
+country_event = {
+	id = TIX_event.14
+	title = TIX_event.14.t
+	desc = TIX_event.14.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.14.a
+		ai_chance = {
+			factor = 4
+		}
+		set_autonomy = {
+			target = HUN
+			autonomous_state = autonomy_integrated_puppet
+		}
+	}
+}
+country_event = {
+	id = TIX_event.15
+	title = TIX_event.15.t
+	desc = TIX_event.15.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = TIX_event.15.a
+		ai_chance = {
+			factor = 4
+		}
+		create_wargoal = { target = HUN type = take_state_focus }
+	}
+}

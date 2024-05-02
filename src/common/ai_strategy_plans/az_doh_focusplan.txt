@@ -1,0 +1,346 @@
+DOH_historical = {
+	name = "DOH_historical"
+	desc = "DOH_historical_desc"
+
+	allowed = {
+		original_tag = DOH
+	}
+	enable = {
+	has_global_flag = MOD_azurlane_tianjiangjianniang
+		or = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_historical_focus
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = DOH_baochiweishe
+	}
+
+	ai_national_focuses = {
+		DOH_junshigaige
+		DOH_weishejunfa
+		DOH_xuanxuezhaohuanshu
+		DOH_lujunsilingtiba
+		DOH_zhengyankaishijie
+		DOH_shiyichangji
+		DOH_guguozhihui
+		DOH_kuodayixianquanli
+		DOH_xianzibingfa
+		DOH_ducuyixian
+		DOH_zhangkongsanjun
+		DOH_yixianwansui
+		DOH_fangfanjinlin
+		DOH_beijingfangxian
+		DOH_haianfangshou
+		DOH_nanhaiqundaojianshe
+		DOH_nanhaiziyuankaifa
+		DOH_chenglikeyanzu
+		DOH_xuexichongying
+		DOH_xuexihuangjia
+		DOH_xuexitiexue
+		DOH_xuexibaiying
+		DOH_dongfangdexiaoxuesheng
+		DOH_dulizizhudejungong
+		
+		DOH_dongfangliming
+		DOH_xiandaihuazhimeng
+		DOH_rencaiyinjin
+		DOH_tongyizhanxian
+		DOH_heqinghaiyan
+		DOH_heqinghaiyan
+		DOH_jinjigaige
+		DOH_ziligengsheng
+		DOH_shehuibaozhang
+		DOH_donghuanggongyetixi
+		
+		DOH_huanxingjulong
+		DOH_weilenvhuang
+		DOH_xianchuyiqie
+		DOH_gaodengxuefu
+		DOH_minzhikaiqi
+
+		DOH_faxiantianranqi
+		DOH_nanhaishiyougongsi
+		DOH_jianshedaolian
+
+		DOH_haijunjianshe
+		DOH_zaochuanjishugexin
+
+		DOH_nanhaidezhuren
+		DOH_jingbingqiangjiang
+		DOH_lujunxinlilun
+		DOH_liluntupo
+		DOH_tiexueguwen
+		DOH_huangjiaguwen
+
+		DOH_donghuangdeshidai
+		DOH_dashanghai
+		DOH_tianfuzhiguo
+		DOH_qianniandidu
+		DOH_heijinsansheng
+		DOH_sichouzhilu
+
+		DOH_yuanyanghaijun
+		DOH_yunshujiandui
+		
+		DOH_aoranzili
+		DOH_baochiweishe
+		# #1936
+		# DOH_junshigaige #49
+		# DOH_weishejunfa #49
+		# DOH_xuanxuezhaohuanshu #49
+		# DOH_lujunsilingtiba #49
+		# DOH_zhengyankaishijie #49
+		# DOH_shiyichangji #35
+		# DOH_guguozhihui #49
+		# DOH_baohuyixian #35
+		# DOH_fangfanjinlin #35
+		# #1937
+		# DOH_beijingfangxian #49
+		# DOH_haianfangshou #35
+		# DOH_kuodayixianquanli #70
+		# DOH_ducuyixian #70
+		# DOH_zhangkongsanjun #49
+		# DOH_xianzibingfa #49
+		# DOH_xieyibenzizhuan #49
+		# #1938
+		# DOH_yixianwansui #70
+		# DOH_huanxingjulong #35
+		# DOH_qingqiuwaiguobangzhu #35
+		# DOH_chenglikeyanzu #35
+		# DOH_xuexichongying #35 by_pass
+		# DOH_xuexihuangjia #35
+		# DOH_xuexitiexue #35
+		# DOH_xuexibaiying #35
+		# DOH_dongfangdexiaoxuesheng #70
+		# #1939
+		# DOH_dulizizhudejungong #49
+		# DOH_jingbingqiangjiang #49
+		# DOH_lujunxinlilun #49
+		# DOH_liluntupo #49
+		# DOH_aoranzili #49
+		# DOH_donghuangdeshidai #35
+		# DOH_ziguyilai #35
+		# DOH_neibujianshe #35
+		# #1940
+		# DOH_jiachangbanshi #49
+		# DOH_shikejingjie #70
+	}
+
+	research = {
+		cat_medium_armor = 50.0	
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+DOH_red = {
+	name = "DOH_red"
+	desc = "DOH_red_desc"
+
+	allowed = {
+		original_tag = DOH
+	}
+	enable = {
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+		OR = {
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_red_focus_1
+			}
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_red_focus_2
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = DOH_shikejingjie
+	}
+
+	ai_national_focuses = {
+		DOH_junshigaige
+		DOH_weishejunfa
+		DOH_xuanxuezhaohuanshu
+		DOH_lujunsilingtiba
+		DOH_zhengyankaishijie
+		DOH_shiyichangji
+		DOH_xuexizhilv
+		DOH_renminwansui
+		DOH_xindonghuang
+		DOH_yindaoyuzhichi
+		DOH_fangfanjinlin
+		DOH_beijingfangxian
+		DOH_haianfangshou
+		DOH_nanhaiqundaojianshe
+		DOH_nanhaiziyuankaifa
+		DOH_chenglikeyanzu
+		DOH_xuexichongying
+		DOH_xuexihuangjia
+		DOH_xuexitiexue
+		DOH_xuexibaiying
+		DOH_dongfangdexiaoxuesheng
+		DOH_dulizizhudejungong
+		
+		DOH_dongfangliming
+		DOH_xiandaihuazhimeng
+		DOH_rencaiyinjin
+		DOH_tongyizhanxian
+		DOH_heqinghaiyan
+		DOH_heqinghaiyan
+		DOH_jinjigaige
+		DOH_ziligengsheng
+		DOH_shehuibaozhang
+		DOH_donghuanggongyetixi
+		
+		DOH_huanxingjulong
+		DOH_weilenvhuang
+		DOH_xianchuyiqie
+		DOH_gaodengxuefu
+		DOH_minzhikaiqi
+
+		DOH_faxiantianranqi
+		DOH_nanhaishiyougongsi
+		DOH_jianshedaolian
+
+		DOH_haijunjianshe
+		DOH_zaochuanjishugexin
+
+		DOH_nanhaidezhuren
+		DOH_jingbingqiangjiang
+		DOH_lujunxinlilun
+		DOH_liluntupo
+		DOH_tiexueguwen
+		DOH_huangjiaguwen
+
+		DOH_donghuangdeshidai
+		DOH_dashanghai
+		DOH_tianfuzhiguo
+		DOH_qianniandidu
+		DOH_heijinsansheng
+		DOH_sichouzhilu
+
+		DOH_yuanyanghaijun
+		DOH_yunshujiandui
+
+	}
+
+	research = {
+		cat_medium_armor = 50.0	
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+DOH_red = {
+	name = "DOH_blue"
+	desc = "DOH_blue_desc"
+
+	allowed = {
+		original_tag = DOH
+	}
+	enable = {
+	has_global_flag = MOD_azurlane_tianjiangjianniang
+	has_game_rule = {
+		rule = DOH_ai_behavior
+		option = DOH_blue_focus
+	}
+	}
+	abort = {
+		has_completed_focus = DOH_shikejingjie
+	}
+
+	ai_national_focuses = {
+		DOH_junshigaige
+		DOH_weishejunfa
+		DOH_xuanxuezhaohuanshu
+		DOH_lujunsilingtiba
+		DOH_zhengyankaishijie
+		DOH_shiyichangji
+		DOH_xuexizhilv
+		DOH_yinruwaizi
+		DOH_xindonghuang
+		DOH_zhuanzhuchukou
+		DOH_fangfanjinlin
+		DOH_beijingfangxian
+		DOH_haianfangshou
+		DOH_nanhaiqundaojianshe
+		DOH_nanhaiziyuankaifa
+		DOH_chenglikeyanzu
+		DOH_xuexichongying
+		DOH_xuexihuangjia
+		DOH_xuexitiexue
+		DOH_xuexibaiying
+		DOH_dongfangdexiaoxuesheng
+		DOH_dulizizhudejungong
+		
+		DOH_dongfangliming
+		DOH_xiandaihuazhimeng
+		DOH_rencaiyinjin
+		DOH_tongyizhanxian
+		DOH_heqinghaiyan
+		DOH_heqinghaiyan
+		DOH_jinjigaige
+		DOH_ziligengsheng
+		DOH_shehuibaozhang
+		DOH_donghuanggongyetixi
+		
+		DOH_huanxingjulong
+		DOH_weilenvhuang
+		DOH_xianchuyiqie
+		DOH_gaodengxuefu
+		DOH_minzhikaiqi
+
+		DOH_faxiantianranqi
+		DOH_nanhaishiyougongsi
+		DOH_jianshedaolian
+
+		DOH_haijunjianshe
+		DOH_zaochuanjishugexin
+
+		DOH_nanhaidezhuren
+		DOH_jingbingqiangjiang
+		DOH_lujunxinlilun
+		DOH_liluntupo
+		DOH_tiexueguwen
+		DOH_huangjiaguwen
+
+		DOH_donghuangdeshidai
+		DOH_dashanghai
+		DOH_tianfuzhiguo
+		DOH_qianniandidu
+		DOH_heijinsansheng
+		DOH_sichouzhilu
+
+		DOH_yuanyanghaijun
+		DOH_yunshujiandui
+	}
+
+	research = {
+		cat_medium_armor = 50.0	
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 0.2
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

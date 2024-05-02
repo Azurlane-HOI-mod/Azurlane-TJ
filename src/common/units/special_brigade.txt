@@ -1,0 +1,350 @@
+sub_units = {
+	siren_ludiyaosai_1 = {
+		sprite = infantry
+		map_icon_category = infantry
+		active = no
+
+		priority = 5000
+		ai_priority = 0
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 1
+		
+		#基础属性
+		max_strength = 1000
+		max_organisation = 250
+		default_morale = 2
+		manpower = 10000
+		#Misc Abilities
+		training_time = 10
+		suppression = 1
+		weight = 10000
+		supply_consumption = 0.05
+		need = {
+			siren_equipment = 100
+		}
+		amphibious = {
+			defence = 1
+		}
+	}
+	TIX_fanzhonglibudui = {
+		sprite = infantry
+		map_icon_category = infantry
+		active = no
+
+		priority = 800
+		ai_priority = 0
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		#基础属性
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 1000
+		#Misc Abilities
+		training_time = 150
+		suppression = 0.1
+		weight = 1
+		supply_consumption = 0.1
+		need = {
+			TIX_siren_equipment = 100
+		}
+	}
+	donglizhuangjia = {
+		sprite = infantry
+		map_icon_category = infantry
+		active = no
+
+		priority = 1000
+		ai_priority = 0
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		#基础属性
+		max_strength = 40
+		max_organisation = 35
+		default_morale = 0.2
+		manpower = 500
+		#Misc Abilities
+		training_time = 300
+		suppression = 0.8
+		weight = 2
+		supply_consumption = 0.4
+		need = {
+			donglizhuangjia_equipment = 10
+		}
+		marsh = {
+			movement = -0.3
+		}
+
+		fort = {
+			attack = 0.1
+		}
+
+		river = {
+			movement = -0.3
+		}
+
+		amphibious = {
+			movement = -0.3
+		}
+	}
+	jupao_he = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1198
+		ai_priority = 100
+		active = no
+		combat_width = 3
+		type = {
+			artillery
+			infantry 
+		}
+		
+		group = infantry
+
+		categories = {
+			category_army
+			category_line_artillery
+			category_artillery
+		}
+		manpower = 1000
+		need = {
+			jupao_he_equipment = 20
+		}
+		
+		max_strength = 0.4
+		max_organisation = 0
+		default_morale = 0.1
+		training_time = 200
+		weight = 0.75
+		supply_consumption = 0.5
+		forest = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		hills = {
+			movement = -0.05
+		}
+
+		mountain = {
+			movement = -0.2
+		}
+
+		jungle = {
+			attack = -0.25
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.3
+		}
+
+		fort = {
+			attack = 0.3
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+	jupao_he_support = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+
+		combat_width = 0
+
+		need = {
+			jupao_he_equipment = 10
+		}
+		manpower = 300
+		training_time = 200
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.2
+		weight = 0.1
+		
+		supply_consumption = 0.2
+
+		# Support nerfs to combat abilities
+		defense = -0.45
+		breakthrough = -0.45
+		soft_attack = -0.45
+		hard_attack = -0.45
+
+
+		can_be_parachuted = yes
+	}
+	jupao_ap = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1198
+		ai_priority = 100
+		active = no
+		combat_width = 3
+		type = {
+			artillery
+			infantry 
+		}
+		
+		group = infantry
+
+		categories = {
+			category_army
+			category_line_artillery
+			category_artillery
+		}
+		manpower = 1000
+		need = {
+			jupao_ap_equipment = 20
+		}
+		
+		max_strength = 0.4
+		max_organisation = 0
+		default_morale = 0.1
+		training_time = 200
+		weight = 0.75
+		supply_consumption = 0.5
+		forest = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		hills = {
+			movement = -0.05
+		}
+
+		mountain = {
+			movement = -0.2
+		}
+
+		jungle = {
+			attack = -0.25
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.3
+		}
+
+		fort = {
+			attack = 0.1
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+	jupao_ap_support = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+
+		combat_width = 0
+
+		need = {
+			jupao_ap_equipment = 10
+		}
+		manpower = 300
+		training_time = 200
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.2
+		weight = 0.1
+		
+		supply_consumption = 0.2
+
+		# Support nerfs to combat abilities
+		defense = -0.45
+		breakthrough = -0.45
+		soft_attack = -0.45
+		hard_attack = -0.45
+
+
+		can_be_parachuted = yes
+	}
+}

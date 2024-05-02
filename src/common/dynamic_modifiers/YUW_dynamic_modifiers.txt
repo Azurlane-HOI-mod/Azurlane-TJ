@@ -1,0 +1,119 @@
+###### STATE MODIFIERS #####
+
+YUW_youjidui_state = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_generic_resistance
+	remove_trigger = {
+		or = {
+		not = { country_exists = YUW }
+		ROOT = {
+			has_state_flag = TIX_dikangyibeizhenya
+		}
+		controller = {
+		tag = YUW
+		}
+		}
+	}
+	resistance_target = 0.5
+	resistance_growth = 1
+	resistance_activity = 1.5
+	required_garrison_factor = 0.5
+	resistance_damage_to_garrison = 0.5
+	resistance_decay = -0.5
+	compliance_growth = -0.2
+	local_building_slots_factor = -0.1
+	state_resources_factor = -0.3
+}
+
+BFL_youjidui_state = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_generic_resistance
+	remove_trigger = {
+		or = {
+		controller = {
+		not = { has_war_with = BFL }
+		not = { tag = TIX }
+		}
+		ROOT = {
+			has_state_flag = TIX_dikangyibeizhenya
+		}
+		}
+	}
+	resistance_target = 0.2
+	resistance_growth = 0.6
+	resistance_activity = 0.5
+	resistance_damage_to_garrison = 0.1
+	compliance_growth = -0.1
+	local_manpower = -0.5
+	local_building_slots_factor = -0.3
+	state_resources_factor = -0.3
+	local_non_core_supply_impact_factor = 0.15
+}
+
+BFL_sandachengfangxian_state = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_generic_defense
+	army_core_attack_factor = 0.4
+	army_core_defence_factor = 0.4
+	local_non_core_supply_impact_factor = 0.3
+}
+
+TIX_attackyuw_state = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_generic_military_plans
+	army_attack_factor = 0.3
+	army_defence_factor = 0.3
+}
+
+TIX_attackbfl_state = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_generic_military_plans
+	army_attack_factor = 0.4
+	army_defence_factor = 0.4
+	breakthrough_factor = 0.5
+}
+BFL_the_politburo_good_dynamic_modifier = {
+		icon = GFX_idea_SOV_system_decentralization
+		army_attack_factor = BFL_army_attack 
+		army_defence_factor = BFL_army_defence 
+		army_speed_factor = BFL_army_speed
+		army_org_factor = BFL_army_org
+		army_morale_factor = BFL_army_morale
+		org_loss_when_moving = BFL_org_loss
+		dig_in_speed_factor = EBFL_dig_in_speed
+		max_dig_in = BFL_max_dig_in
+		experience_loss_factor = BFL_experience_loss
+		planning_speed = BFL_planning_speed
+		max_planning = BFL_max_planning
+		land_reinforce_rate = BFL_land_reinforce_rate  #增援率 
+		coordination_bonus = BFL_coordination_bonus  #协同性
+		land_doctrine_cost_factor = BFL_land_doctrine_cost #陆军学说花费
+		experience_gain_factor =BFL_experience_gain #将领经验增长
+		
+		drift_defence_factor = BFL_the_politburo_drift_defence_factor #0.05
+		defensive_war_stability_factor = BFL_the_politburo_defensive_war_stability_factor #-0.25 -> Socialism in One Country
+		communism_drift = 0.05
+		political_power_factor = BFL_the_politburo_political_power_factor #0.05 -> The Stalin Constitution
+		economy_cost_factor = BFL_the_politburo_economy_cost_factor #0.2 -> Secure the Administration
+		trade_laws_cost_factor = BFL_the_politburo_trade_laws_cost_factor #-0.2 -> Secure the Administration
+		mobilization_laws_cost_factor = BFL_the_politburo_mobilization_laws_cost_factor #-0.2 -> Secure the Administration
+		consumer_goods_factor = BFL_the_politburo_good_consumer_goods_factor #0.05 -> Collectivization Process
+		production_speed_buildings_factor = BFL_the_politburo_production_speed_buildings_factor #0.05 -> Collectivization Process
+		global_building_slots_factor = BFL_the_politburo_global_building_slots_factor #0.1 -> Collectivization Process
+		max_surrender_limit_offset = BFL_the_politburo_max_surrender_limit_offset #0.05 -> The Workers Dictatorship
+		max_command_power = BFL_the_politburo_max_command_power # 20 -> Organization, Centralization, Discipline
+		mobilization_speed = BFL_the_politburo_mobilization_speed # 0.1 -> Organization, Centralization, Discipline
+		operative_slot = BFL_the_politburo_operative_slot # 1 -> Behead the Snake
+		political_advisor_cost_factor = BFL_the_politburo_political_advisor_cost_factor #-0.15 -> Freedom of Debate, Unity of Action
+		opinion_gain_monthly_same_ideology_factor = BFL_the_politburo_opinion_gain_monthly_same_ideology_factor #0.25 -> The Construction of Communism
+	}

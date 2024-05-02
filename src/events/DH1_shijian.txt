@@ -1,0 +1,727 @@
+﻿add_namespace = DH1_event
+country_event = {
+	id = DH1_event.999
+	title = DH1_event.999.t
+	desc = DH1_event.999.d
+	picture = GFX_aze_hit
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.999.a
+		ai_chance = {
+			factor = 0
+		}
+		DOH = {
+			annex_country = {
+				target = DH1
+			}
+		}
+	}
+	option = {
+		name = DH1_event.999.b
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+country_event = {
+	id = DH1_event.1
+	title = DH1_event.1.t
+	desc = DH1_event.1.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.1.a
+		ai_chance = {
+			factor = 1
+		}
+		country_event = { id = DH1_event.101 days = 10 }
+	}
+	option = {
+		name = DH1_event.1.b
+		ai_chance = {
+			factor = 1
+		}
+		country_event = { id = DH1_event.102 days = 10 }
+	}
+	option = {
+		name = DH1_event.1.c
+		ai_chance = {
+			factor = 1
+		}
+		country_event = { id = DH1_event.103 days = 10 }
+	}
+}
+country_event = {
+	id = DH1_event.101
+	title = DH1_event.101.t
+	desc = DH1_event.101.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.101.a
+		ai_chance = {
+			factor = 1
+		}
+		DOH = {
+			DOH_yingrui = {
+				set_nationality = DH1
+			}
+		}
+		DOH_yingrui = {
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = despotism
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = leninism
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = fascism_ideology
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = liberalism
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = DH1_event.102
+	title = DH1_event.102.t
+	desc = DH1_event.102.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.102.a
+		ai_chance = {
+			factor = 1
+		}
+		DOH = {
+			DOH_pinghai = {
+				set_nationality = DH1
+			}
+		}
+		DOH_pinghai = {
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = despotism
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = leninism
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = fascism_ideology
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = liberalism
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = DH1_event.103
+	title = DH1_event.103.t
+	desc = DH1_event.103.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.103.a
+		ai_chance = {
+			factor = 1
+		}
+		DOH = {
+			DOH_haerbin = {
+				set_nationality = DH1
+			}
+		}
+		DOH_haerbin = {
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = despotism
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = leninism
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = fascism_ideology
+				}
+				promote_leader = yes
+			}
+			add_country_leader_role = {
+				country_leader = {
+				expire = "1999.1.1"
+				ideology = liberalism
+				}
+				promote_leader = yes
+			}
+		}		
+	}
+}
+country_event = {
+	id = DH1_event.201
+	title = DH1_event.201.t
+	desc = DH1_event.201.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.1.a
+		ai_chance = {
+			factor = 1
+		}
+		DOH = { 
+			set_country_flag = tongshuai_yingrui 
+			country_event = { id = DH1_event.2 days = 7 }
+		}
+	}
+	option = {
+		name = DH1_event.1.b
+		ai_chance = {
+			factor = 1
+		}
+		DOH = { 
+			set_country_flag = tongshuai_pinghai 
+			country_event = { id = DH1_event.2 days = 7 }
+		}
+	}
+	option = {
+		name = DH1_event.1.c
+		ai_chance = {
+			factor = 1
+		}
+		DOH = { 
+			set_country_flag = tongshuai_haerbin
+			country_event = { id = DH1_event.2 days = 7 }
+		}
+	}
+}
+country_event = {
+	id = DH1_event.2
+	title = DH1_event.2.t
+	desc = DH1_event.2.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.1.a
+		ai_chance = {
+			factor = 1
+		}
+		DH1 = { country_event = { id = DH1_event.101 days = 10 } }
+	}
+	option = {
+		name = DH1_event.1.b
+		ai_chance = {
+			factor = 1
+		}
+		DH1 = { country_event = { id = DH1_event.102 days = 10 } }
+	}
+	option = {
+		name = DH1_event.1.c
+		ai_chance = {
+			factor = 1
+		}
+		DH1 = { country_event = { id = DH1_event.103 days = 10 } }
+	}
+}
+country_event = {
+	id = DH1_event.3
+	title = DH1_event.3.t
+	desc = DH1_event.3.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.3.a
+		ai_chance = {
+			factor = 0
+		}
+		DH1 = { country_event = DH1_event.301 }
+	}
+	option = {
+		name = DH1_event.3.b
+		ai_chance = {
+			factor = 8
+		}
+		add_political_power = -100
+		DH1 = { country_event = DH1_event.302 }
+	}
+	option = {
+		name = DH1_event.3.c
+		ai_chance = {
+			factor = 2
+		}
+		DH1 = { country_event = DH1_event.303 }
+		add_timed_idea = {
+			idea = DH1_idea_dohzhiyuandh1
+			days = 365
+		}
+	}
+}
+country_event = {
+	id = DH1_event.301
+	title = DH1_event.301.t
+	desc = DH1_event.301.d
+	picture = GFX_aze_qiye2
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.301.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 150
+	}
+}
+country_event = {
+	id = DH1_event.302
+	title = DH1_event.302.t
+	desc = DH1_event.302.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.302.a
+		ai_chance = {
+			factor = 1
+		}
+		add_manpower = 80000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 20000
+			producer = DOH
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 500
+			producer = DOH
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 1000
+			producer = DOH
+		}
+	}
+}
+country_event = {
+	id = DH1_event.303
+	title = DH1_event.303.t
+	desc = DH1_event.303.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.303.a
+		ai_chance = {
+			factor = 1
+		}
+		add_manpower = 150000
+		army_experience = 100
+		add_offsite_building = { type = arms_factory level = 2 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 50000
+			producer = DOH
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 2000
+			producer = DOH
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 3000
+			producer = DOH
+		}
+	}
+}
+country_event = {
+	id = DH1_event.4
+	title = DH1_event.4.t
+	desc = DH1_event.4.d
+	picture = GFX_aze_point
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.4.a
+		ai_chance = {
+			factor = 1
+		}
+		TAN = {
+			dingzhen = {
+				set_nationality = DH1
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = DH1_event.501
+	title = DH1_event.501.t
+	desc = DH1_event.501.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.501.a
+		ai_chance = {
+			factor = 1
+		}
+		add_manpower = 150000
+		add_stability = 0.05
+		add_war_support = 0.1
+		add_timed_idea = {
+			idea = DH1_idea_liangshigongji
+			days = 300
+		}
+	}
+}
+country_event = {
+	id = DH1_event.502
+	title = DH1_event.502.t
+	desc = DH1_event.502.d
+	picture = GFX_aze_start
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.502.a
+		ai_chance = {
+			factor = 1
+		}
+		add_manpower = 100000
+		add_timed_idea = {
+			idea = DH1_idea_liangshigongji
+			days = 300
+		}
+		
+	}
+} 
+country_event = {
+	id = DH1_event.503
+	title = DH1_event.503.t
+	desc = DH1_event.503.d
+	picture = GFX_aze_hit
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.503.a
+		ai_chance = {
+			factor = 1
+		}
+		add_manpower = 50000
+		add_timed_idea = {
+			idea = DH1_idea_liangshigongji
+			days = 180
+		}
+	}
+}
+country_event = {
+	id = DH1_event.6
+	title = DH1_event.6.t
+	desc = DH1_event.6.d
+	picture = GFX_aze_hit
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.6.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -50
+	}
+}
+country_event = {
+	id = DH1_event.7
+	title = DH1_event.7.t
+	desc = DH1_event.7.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = DH1_event.7.aa
+		trigger = {
+			DH1 = {
+				controls_state = 640
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 640
+			}
+		}
+		hidden_effect = {
+			set_victory_points = {
+				province = 1492
+				value = 20
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.ab
+		trigger = {
+			DH1 = {
+				controls_state = 439
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 439
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.ac
+		trigger = {
+			DH1 = {
+				controls_state = 289
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 289
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.next
+		country_event = DH1_event.72
+	}
+}
+country_event = {
+	id = DH1_event.72
+	title = DH1_event.7.t
+	desc = DH1_event.7.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	
+	option = {
+		name = DH1_event.7.ad
+		trigger = {
+			DH1 = {
+				controls_state = 286
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 286
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.ae
+		trigger = {
+			DH1 = {
+				controls_state = 671
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 671
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.af
+		trigger = {
+			DH1 = {
+				controls_state = 327
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 327
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.next
+		country_event = DH1_event.73
+	}
+}
+country_event = {
+	id = DH1_event.73
+	title = DH1_event.7.t
+	desc = DH1_event.7.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	
+	option = {
+		name = DH1_event.7.ag
+		trigger = {
+			DH1 = {
+				controls_state = 525
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 525
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.ah
+		trigger = {
+			DH1 = {
+				controls_state = 333
+			}
+		}
+		DH1 = {
+			set_capital = {
+				state = 333
+			}
+		}
+		hidden_effect = {
+			set_victory_points = {
+				province = 7371
+				value = 20
+			}
+		}
+	}
+	option = {
+		name = DH1_event.7.next
+		country_event = DH1_event.7
+	}
+}
+country_event = {
+	id = DH1_event.777
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		name = DH1_event.777.a
+		every_other_country = {
+			add_ai_strategy = {
+				type = diplo_action_desire
+				id = ROOT
+				target = market_access_rights
+				value = 99999
+			}
+			add_ai_strategy = {
+				type = diplo_action_acceptance
+				id = ROOT
+				target = market_access_rights
+				value = 99999
+			}
+		}
+	}
+}
+country_event = {
+	id = DH1_event.778
+	title = DH1_event.778.t
+	desc = DH1_event.778.d
+	picture = GFX_aze_hit
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.778.a
+		ai_chance = {
+			base = 5
+		}
+		set_country_flag = DH1_jieshoushouling
+	}
+}
+country_event = {
+	id = DH1_event.779
+	title = DH1_event.779.t
+	desc = DH1_event.779.d
+	picture = GFX_aze_hit
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.779.a
+		ai_chance = {
+			base = 5
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = DH1
+				value = 50
+			}
+			DH1 = {
+				add_ai_strategy = {
+					type = prepare_for_war
+					id = DOH
+					value = 50
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = DH1_event.701
+	title = DH1_event.701.t
+	desc = DH1_event.701.d
+	picture = aze_qiye2
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.701.a
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+country_event = {
+	id = DH1_event.8
+	title = DH1_event.8.t
+	desc = DH1_event.8.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.8.a
+		ai_chance = {
+			factor = 10
+		}
+		leave_faction = yes
+		every_other_country = {
+			limit = { has_war_with = DH1 }
+			white_peace = FROM
+		}
+		
+	}
+	option = {
+		name = DH1_event.8.b
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = 0.1
+	}
+}
+country_event = {
+	id = DH1_event.9
+	title = DH1_event.9.t
+	desc = DH1_event.9.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes	
+	option = {
+		name = DH1_event.9.a
+		ai_chance = {
+			factor = 10
+		}
+		add_to_faction = DH1
+	}
+}

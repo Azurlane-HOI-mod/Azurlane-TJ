@@ -1,0 +1,137 @@
+affect_doh_decision_category = {
+	TIX_zengsongtanketuzhi = {
+		icon = generic_tank
+		
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			tag = TIX
+			has_government = fascism
+		}
+		
+		complete_effect = {  
+			DOH = {
+				country_event = affect_DOH_event.1
+				add_to_variable = {
+					var = affect_from_tix
+					value = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	TIX_yaoqingcanguan = {
+		icon = generic_form_nation
+		
+		cost = 100
+		fire_only_once = yes
+		visible = {
+			tag = TIX
+			has_government = fascism
+		}
+		
+		complete_effect = {  
+			DOH = {
+				add_to_variable = {
+					var = affect_from_tix
+					value = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	HUJ_zengsongyunshuchuan = {
+		icon = generic_naval
+		
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			tag = HUJ
+			has_government = democratic
+		}
+		
+		complete_effect = {  
+			DOH = {
+				country_event = affect_DOH_event.2
+				add_to_variable = {
+					var = affect_from_huj
+					value = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	HUJ_yaoqingcanguan = {
+		icon = generic_form_nation
+		
+		cost = 100
+		fire_only_once = yes
+		visible = {
+			tag = HUJ
+			has_government = democratic
+		}
+		
+		complete_effect = {  
+			DOH = {
+				add_to_variable = {
+					var = affect_from_huj
+					value = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	BFL_panqianzhiyuanzhe = {
+		icon = generic_speech
+		
+		cost = 50
+		fire_only_once = yes
+		visible = {
+			tag = BFL
+			has_government = communism
+		}
+		
+		complete_effect = {  
+			DOH = {
+				country_event = affect_DOH_event.3
+				add_to_variable = {
+					var = affect_from_bfl
+					value = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	BFL_yaoqingcanguan = {
+		icon = generic_form_nation
+		
+		cost = 100
+		fire_only_once = yes
+		visible = {
+			tag = BFL
+			has_government = communism
+		}
+		
+		complete_effect = {  
+			DOH = {
+				add_to_variable = {
+					var = affect_from_huj
+					value = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,3243 @@
+﻿add_namespace = azevent
+
+country_event = {
+	id = azevent.1
+	title = azevent.1.t
+	desc = azevent.1.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.1.a
+		HUJ = {
+			add_to_faction = ROOT
+		}	
+	}
+}
+country_event = {
+	id = azevent.2
+	title = azevent.2.t
+	desc = azevent.2.d
+	picture = GFX_aze_hit
+	is_triggered_only = yes	
+	option = {
+		name = azevent.2.a
+		add_manpower = -50
+	}
+}
+country_event = {
+	id = azevent.3
+	title = azevent.3.t
+	desc = azevent.3.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = azevent.3.a
+		if = {
+			limit = {
+				date < 1938.1.1
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 1
+				max = 4
+			}
+			round_temp_variable = temp_level
+		}
+		else_if = {
+			limit = {
+				AND = {
+					date > 1937.12.31
+					date < 1940.1.1
+				}
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 4
+				max = 6
+			}
+			round_temp_variable = temp_level
+		}		
+		else_if = {
+			limit = {
+				date > 1939.12.31
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 5
+				max = 7
+			}
+			round_temp_variable = temp_level
+		}
+		randomize_temp_variable = {
+			var = temp_shuxing1
+			distribution = uniform
+			min = 3
+			max = 6
+		}
+		round_temp_variable = temp_shuxing1
+		randomize_temp_variable = {
+			var = temp_shuxing2
+			distribution = uniform
+			min = 3
+			max = 6
+		}
+		round_temp_variable = temp_shuxing2
+		randomize_temp_variable = {
+			var = temp_shuxing3
+			distribution = uniform
+			min = 1
+			max = 5
+		}
+		round_temp_variable = temp_shuxing3
+		randomize_temp_variable = {
+			var = temp_shuxing4
+			distribution = uniform
+			min = 1
+			max = 5
+		}
+		round_temp_variable = temp_shuxing4
+		
+		meta_effect = {
+			text = {
+				create_corps_commander = {
+					name = "小净化者"
+					gfx = GFX_leader_xiaojinghuazhe
+					traits = { organizer trait_reckless trickster siren }
+					skill = [level]
+					attack_skill = [shuxing1]
+					defense_skill = [shuxing2]
+					planning_skill = [shuxing3]
+					logistics_skill = [shuxing4]
+				}
+			}
+			level = temp_level
+			shuxing1 = temp_shuxing1
+			shuxing2 = temp_shuxing2
+			shuxing3 = temp_shuxing3
+			shuxing4 = temp_shuxing4
+		}
+		
+		
+	}
+}
+country_event = { 
+	id = azevent.4
+	title = azevent.4.t
+	desc = azevent.4.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = azevent.4.a
+		if = {
+			limit = {
+				date < 1938.1.1
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 1
+				max = 4
+			}
+			round_temp_variable = temp_level
+		}
+		else_if = {
+			limit = {
+				AND = {
+					date > 1937.12.31
+					date < 1940.1.1
+				}
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 4
+				max = 6
+			}
+			round_temp_variable = temp_level
+		}		
+		else_if = {
+			limit = {
+				date > 1939.12.31
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 5
+				max = 7
+			}
+			round_temp_variable = temp_level
+		}
+		randomize_temp_variable = {
+			var = temp_shuxing1
+			distribution = uniform
+			min = 3
+			max = 6
+		}
+		round_temp_variable = temp_shuxing1
+		randomize_temp_variable = {
+			var = temp_shuxing2
+			distribution = uniform
+			min = 3
+			max = 6
+		}
+		round_temp_variable = temp_shuxing2
+		randomize_temp_variable = {
+			var = temp_shuxing3
+			distribution = uniform
+			min = 1
+			max = 5
+		}
+		round_temp_variable = temp_shuxing3
+		randomize_temp_variable = {
+			var = temp_shuxing4
+			distribution = uniform
+			min = 1
+			max = 5
+		}
+		round_temp_variable = temp_shuxing4
+		meta_effect = {
+			text = {
+				create_corps_commander = {
+					name = "小塞壬"
+					gfx = GFX_leader_xiaosairen
+					traits = { brilliant_strategist trait_reckless trickster siren }
+					skill = [level]
+					attack_skill = [shuxing1]
+					defense_skill = [shuxing2]
+					planning_skill = [shuxing3]
+					logistics_skill = [shuxing4]
+				}
+			}
+			level = temp_level
+			shuxing1 = temp_shuxing1
+			shuxing2 = temp_shuxing2
+			shuxing3 = temp_shuxing3
+			shuxing4 = temp_shuxing4
+		}
+	}
+}
+country_event = {
+	id = azevent.5
+	title = azevent.5.t
+	desc = azevent.5.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = azevent.5.a
+		if = {
+			limit = {
+				date < 1938.1.1
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 1
+				max = 4
+			}
+			round_temp_variable = temp_level
+		}
+		else_if = {
+			limit = {
+				AND = {
+					date > 1937.12.31
+					date < 1940.1.1
+				}
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 4
+				max = 6
+			}
+			round_temp_variable = temp_level
+		}		
+		else_if = {
+			limit = {
+				date > 1939.12.31
+			}
+			randomize_temp_variable = {
+				var = temp_level
+				distribution = uniform
+				min = 5
+				max = 7
+			}
+			round_temp_variable = temp_level
+		}
+		randomize_temp_variable = {
+			var = temp_shuxing1
+			distribution = uniform
+			min = 3
+			max = 6
+		}
+		round_temp_variable = temp_shuxing1
+		randomize_temp_variable = {
+			var = temp_shuxing2
+			distribution = uniform
+			min = 3
+			max = 6
+		}
+		round_temp_variable = temp_shuxing2
+		randomize_temp_variable = {
+			var = temp_shuxing3
+			distribution = uniform
+			min = 1
+			max = 5
+		}
+		round_temp_variable = temp_shuxing3
+		randomize_temp_variable = {
+			var = temp_shuxing4
+			distribution = uniform
+			min = 1
+			max = 5
+		}
+		round_temp_variable = temp_shuxing4
+		
+		meta_effect = {
+			text = {
+				create_corps_commander = {
+					name = "小仲裁者"
+					gfx = GFX_leader_xiaozhongcaizhe
+					traits = { inflexible_strategist career_officer trickster siren }
+					skill = [level]
+					attack_skill = [shuxing1]
+					defense_skill = [shuxing2]
+					planning_skill = [shuxing3]
+					logistics_skill = [shuxing4]
+				}
+			}
+			level = temp_level
+			shuxing1 = temp_shuxing1
+			shuxing2 = temp_shuxing2
+			shuxing3 = temp_shuxing3
+			shuxing4 = temp_shuxing4
+		}
+
+	}
+}
+country_event = {
+	id = azevent.6
+	title = azevent.6.t
+	desc = azevent.6.d
+	picture = GFX_aze_qiye2
+	is_triggered_only = yes	
+	option = {
+		name = azevent.6.a
+		random_list = {
+			50 = { army_experience = 50 }
+			50 = { navy_experience = 50 }
+		}
+	}
+}
+country_event = {
+	id = azevent.7
+	title = azevent.7.t
+	desc = azevent.7.d
+	picture = GFX_aze_xiaotiancheng_nice
+	is_triggered_only = yes	
+	immediate = {
+		set_country_flag = dalizhuasairen_cg
+	}
+	option = {
+		name = azevent.7.a
+
+		randomize_temp_variable = {
+			var = temp_level
+			distribution = uniform
+			min = 4
+			max = 8
+		}
+		round_temp_variable = temp_level
+
+		
+		randomize_temp_variable = {
+			var = temp_shuxing1
+			distribution = uniform
+			min = 3
+			max = 8
+		}
+		round_temp_variable = temp_shuxing1
+		randomize_temp_variable = {
+			var = temp_shuxing2
+			distribution = uniform
+			min = 3
+			max = 8
+		}
+		round_temp_variable = temp_shuxing2
+		randomize_temp_variable = {
+			var = temp_shuxing3
+			distribution = uniform
+			min = 5
+			max = 9
+		}
+		round_temp_variable = temp_shuxing3
+		randomize_temp_variable = {
+			var = temp_shuxing4
+			distribution = uniform
+			min = 5
+			max = 9
+		}
+		round_temp_variable = temp_shuxing4
+	
+		meta_effect = {
+			text = {
+				create_corps_commander = {
+					name = "小观察者"
+					gfx = GFX_leader_xiaoguanchazhe
+					traits = { siren }
+					skill = [level]
+					attack_skill = [shuxing1]
+					defense_skill = [shuxing2]
+					planning_skill = [shuxing3]
+					logistics_skill = [shuxing4]
+				}
+			}
+			level = temp_level
+			shuxing1 = temp_shuxing1
+			shuxing2 = temp_shuxing2
+			shuxing3 = temp_shuxing3
+			shuxing4 = temp_shuxing4
+		}
+	}
+}
+country_event = {
+	id = azevent.8
+	title = azevent.8.t
+	desc = azevent.8.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.8.a
+	}
+}
+country_event = {
+	id = azevent.9
+	title = azevent.9.t
+	desc = azevent.9.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.9.a
+		random_list = {
+			25 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 3000
+				}
+			}
+			25 = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 350
+				}
+			}
+			25 = {
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 600
+				}
+			}
+			25 = {
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 350
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = azevent.10
+	title = azevent.10.t
+	desc = azevent.10.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes	
+	option = {
+		name = azevent.10.a
+		add_manpower = -500
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+}
+country_event = {
+	id = azevent.11
+	title = azevent.11.t
+	desc = azevent.11.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.11.a
+		add_offsite_building = { type = arms_factory level = 1 }
+	}
+}
+country_event = {
+	id = azevent.12
+	title = azevent.12.t
+	desc = azevent.12.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.12.a
+		add_timed_idea = { idea = TY_msgj days = 90 }
+	}
+}
+country_event = {
+	id = azevent.13
+	title = azevent.13.t
+	desc = azevent.13.d
+	picture = GFX_aze_txd2
+	is_triggered_only = yes	
+	option = {
+		name = azevent.13.a
+		add_manpower = -1000
+		add_political_power = -50
+	}
+}
+country_event = {
+	id = azevent.14
+	title = azevent.14.t
+	desc = azevent.14.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.14.a
+		add_manpower = 150000
+		add_stability = 0.05
+	}
+}
+country_event = {
+	id = azevent.15
+	title = azevent.15.t
+	desc = azevent.15.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes	
+	option = {
+		name = azevent.15.a
+		army_experience = 50
+		navy_experience = 30
+		air_experience = 20
+	}
+}
+country_event = {
+	id = azevent.16
+	title = azevent.16.t
+	desc = azevent.16.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.16.a
+		custom_effect_tooltip = "获得了三个心智魔方"
+		add_to_variable = {
+			var = xzmf_sl
+			value = 3
+		}
+	}
+}
+country_event = {
+	id = azevent.17
+	title = azevent.17.t
+	desc = azevent.17.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.17.a
+		custom_effect_tooltip = "偷到了一个心智魔方"
+		add_to_variable = {
+			var = xzmf_sl
+			value = 1
+		}
+	}
+	option = {
+		name = azevent.17.b
+		random_list = {
+			50 = { country_event = azevent.18 }
+			50 = { country_event = azevent.19 }
+		}
+	}
+}
+country_event = {
+	id = azevent.18
+	title = azevent.18.t
+	desc = azevent.18.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes	
+	option = {
+		name = azevent.18.a
+		custom_effect_tooltip = "抢到了五个心智魔方"
+		add_to_variable = {
+			var = xzmf_sl
+			value = 5
+		}
+	}
+}
+country_event = {
+	id = azevent.19
+	title = azevent.19.t
+	desc = azevent.19.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.19.a
+		army_experience = 20
+	}
+}
+country_event = {
+	id = azevent.20
+	title = azevent.20.t
+	desc = azevent.20.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.20.a
+		unlock_decision_tooltip = kaicai_mfk
+	}
+	option = {
+		name = azevent.20.b
+		trigger = {
+			num_of_civilian_factories_available_for_projects > 9
+		}
+		unlock_decision_tooltip = kaicai_mfk
+		activate_decision = kaicai_mfk
+	}
+}
+country_event = {
+	id = azevent.21
+	title = azevent.21.t
+	desc = azevent.21.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes	
+	option = {
+		name = azevent.21.a
+		custom_effect_tooltip = az_ziyuanzhuanhua_tie_tooltip
+		add_to_variable = { az_ziyuanzhuanhua_tie = 120 }
+		force_update_dynamic_modifier = yes
+	}
+	option = {
+		name = azevent.21.b
+		custom_effect_tooltip = az_ziyuanzhuanhua_wu_tooltip
+		add_to_variable = { az_ziyuanzhuanhua_wu = 50 }
+		force_update_dynamic_modifier = yes
+	}
+	option = {
+		name = azevent.21.c	
+		custom_effect_tooltip = az_ziyuanzhuanhua_lv_tooltip
+		add_to_variable = { az_ziyuanzhuanhua_lv = 70 }
+		force_update_dynamic_modifier = yes
+	}
+	option = {
+		name = azevent.21.e
+		custom_effect_tooltip = az_ziyuanzhuanhua_ge_tooltip
+		add_to_variable = { az_ziyuanzhuanhua_ge = 40 }
+		force_update_dynamic_modifier = yes
+	}
+}
+country_event = {
+	id = azevent.22
+	title = azevent.22.t
+	desc = azevent.22.d
+	picture = GFX_aze_putongmiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.22.a
+		add_stability = 0.002
+		add_war_support = 0.001
+	}
+}
+country_event = {
+	id = azevent.23
+	title = azevent.23.t
+	desc = azevent.23.d
+	picture = GFX_aze_fulimiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.23.a
+		add_political_power = 25
+	}
+	option = {
+		name = azevent.23.b
+		army_experience = 5
+		navy_experience = 10
+	}
+}
+country_event = {
+	id = azevent.24
+	title = azevent.24.t
+	desc = azevent.24.d
+	picture = GFX_aze_hankemiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.24.a
+		add_political_power = 25
+	}
+	option = {
+		name = azevent.24.b
+		army_experience = 5
+		navy_experience = 10
+	}
+}
+country_event = {
+	id = azevent.25
+	title = azevent.25.t
+	desc = azevent.25.d
+	picture = GFX_aze_patemiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.25.a
+		add_political_power = 25
+	}
+	option = {
+		name = azevent.25.b
+		army_experience = 5
+		navy_experience = 10
+	}
+}
+country_event = {
+	id = azevent.26
+	title = azevent.26.t
+	desc = azevent.26.d
+	picture = GFX_aze_xiaojiwan
+	is_triggered_only = yes	
+	option = {
+		name = azevent.26.a
+		
+		add_political_power = 25
+	}
+	option = {
+		name = azevent.26.b
+		
+		army_experience = 5
+		navy_experience = 10
+	}
+}
+country_event = {
+	id = azevent.27
+	title = azevent.27.t
+	desc = azevent.27.d
+	picture = GFX_aze_aogumiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.27.a
+	}
+}
+country_event = {
+	id = azevent.28
+	title = azevent.28.t
+	desc = azevent.28.d
+	picture = GFX_aze_bokemiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.28.a
+	}
+}
+country_event = {
+	id = azevent.29
+	title = azevent.29.t
+	desc = azevent.29.d
+	picture = GFX_aze_keleimiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.29.a
+	}
+}
+country_event = {
+	id = azevent.30
+	title = azevent.30.t
+	desc = azevent.30.d
+	picture = GFX_aze_lindemiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.30.a
+	}
+}
+country_event = {
+	id = azevent.31
+	title = azevent.31.t
+	desc = azevent.31.d
+	picture = GFX_aze_pangdemiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.31.a
+	}
+}
+country_event = {
+	id = azevent.32
+	title = azevent.32.t
+	desc = azevent.32.d
+	picture = GFX_aze_pishawan
+	is_triggered_only = yes	
+	option = {
+		name = azevent.32.a
+	}
+}
+country_event = {
+	id = azevent.33
+	title = azevent.33.t
+	desc = azevent.33.d
+	picture = GFX_aze_xiaozhuwan
+	is_triggered_only = yes	
+	option = {
+		name = azevent.33.a
+	}
+}
+country_event = {
+	id = azevent.34
+	title = azevent.34.t
+	desc = azevent.34.d
+	picture = GFX_aze_yuehanmiao
+	is_triggered_only = yes	
+	option = {
+		name = azevent.34.a
+	}
+}
+country_event = {
+	id = azevent.35
+	title = azevent.35.t
+	desc = azevent.35.d
+	picture = GFX_aze_chaijun_gif
+	immediate = {
+		set_country_flag = maomanweihuan
+		hidden_effect = { scoped_sound_effect = az_wumiao }
+	}
+	trigger = {
+		NOT = { has_country_flag = maomanweihuan }
+		AND = {
+			has_country_flag = zhm_aogumiao_get
+			has_country_flag = zhm_bokemiao_get
+			has_country_flag = zhm_keleimiao_get
+			has_country_flag = zhm_lindemiao_get
+			has_country_flag = zhm_pangdemiao_get
+			has_country_flag = zhm_pishawan_get
+			has_country_flag = zhm_xiaozhuwan_get
+			has_country_flag = zhm_yuehanmiao_get
+		}
+	}
+	option = {
+		name = azevent.35.a
+		add_ideas = TY_mmwh
+	}
+} 
+country_event = {
+	id = azevent.36
+	title = azevent.36.t
+	desc = azevent.36.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_lujunkuaisufazhan
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_lujunkuaisufazhan }
+		AND = {
+			has_idea = fazhanlujun
+			has_idea = lujunkuobian
+		}
+	}
+	option = {
+		name = azevent.36.a
+		add_ideas = TY_lujunkuaisufazhan
+	}
+}
+country_event = {
+	id = azevent.37
+	title = azevent.37.t
+	desc = azevent.37.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_lujunkuaisufazhan
+	}
+	trigger = {	
+		has_country_flag = fzfz_lujunkuaisufazhan 
+		NOT = {
+			AND = {
+				has_idea = fazhanlujun
+				has_idea = lujunkuobian
+			}
+		}
+	}
+	option = {
+		name = azevent.37.a
+		remove_ideas = TY_lujunkuaisufazhan
+	}
+}
+country_event = {
+	id = azevent.38
+	title = azevent.38.t
+	desc = azevent.38.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_haijunkuaisufazhan
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_haijunkuaisufazhan }
+		AND = {
+			has_idea = fazhanhaijun
+			has_idea = haijundajian
+		}
+	}
+	option = {
+		name = azevent.38.a
+		add_ideas = TY_haijunkuaisufazhan
+	}
+}
+country_event = {
+	id = azevent.39
+	title = azevent.39.t
+	desc = azevent.39.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_haijunkuaisufazhan
+	}
+	trigger = {	
+		has_country_flag = fzfz_haijunkuaisufazhan 
+		NOT = {
+			AND = {
+				has_idea = fazhanhaijun
+				has_idea = haijundajian
+			}
+		}
+	}
+	option = {
+		name = azevent.39.a
+		remove_ideas = TY_haijunkuaisufazhan
+	}
+}
+country_event = {
+	id = azevent.40
+	title = azevent.40.t
+	desc = azevent.40.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_sanjunfazhan
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_sanjunfazhan }
+		AND = {
+			has_idea = zengjiajunfei
+			has_idea = keyancezhong_junshi
+		}
+	}
+	option = {
+		name = azevent.40.a
+		add_ideas = TY_sanjunfazhan
+	}
+}
+country_event = {
+	id = azevent.41
+	title = azevent.41.t
+	desc = azevent.41.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_sanjunfazhan
+	}
+	trigger = {	
+		has_country_flag = fzfz_sanjunfazhan 
+		NOT = {
+			AND = {
+				has_idea = zengjiajunfei
+				has_idea = keyancezhong_junshi
+			}
+		}
+	}
+	option = {
+		name = azevent.41.a
+		remove_ideas = TY_sanjunfazhan
+	}
+}
+country_event = {
+	id = azevent.42
+	title = azevent.42.t
+	desc = azevent.42.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_zhongshiminsheng
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_zhongshiminsheng }
+		AND = {
+			has_idea = zhongshikeyan
+			has_idea = dalikaifaziyuan
+			has_idea = gongyejianshe
+		}
+	}
+	option = {
+		name = azevent.42.a
+		add_ideas = TY_zhongshiminsheng
+	}
+}
+country_event = {
+	id = azevent.43
+	title = azevent.43.t
+	desc = azevent.43.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_zhongshiminsheng
+	}
+	trigger = {	
+		has_country_flag = fzfz_zhongshiminsheng 
+		NOT = {
+			AND = {
+				has_idea = zhongshikeyan
+				has_idea = dalikaifaziyuan
+				has_idea = gongyejianshe
+			}
+		}
+	}
+	option = {
+		name = azevent.43.a
+		remove_ideas = TY_zhongshiminsheng
+	}
+}
+country_event = {
+	id = azevent.44
+	title = azevent.44.t
+	desc = azevent.44.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_lujunkeji
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_lujunkeji }
+		AND = {
+			has_idea = zhongshikeyan
+			has_idea = fazhanlujun
+		}
+	}
+	option = {
+		name = azevent.44.a
+		add_ideas = TY_lujunkeji
+	}
+}
+country_event = {
+	id = azevent.45
+	title = azevent.45.t
+	desc = azevent.45.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_lujunkeji
+	}
+	trigger = {	
+		has_country_flag = fzfz_lujunkeji 
+		NOT = {
+			AND = {
+			has_idea = zhongshikeyan
+			has_idea = fazhanlujun
+			}
+		}
+	}
+	option = {
+		name = azevent.45.a
+		remove_ideas = TY_lujunkeji
+	}
+}
+country_event = {
+	id = azevent.46
+	title = azevent.46.t
+	desc = azevent.46.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_haijunkeji
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_haijunkeji }
+		AND = {
+			has_idea = zhongshikeyan
+			has_idea = fazhanhaijun
+		}
+	}
+	option = {
+		name = azevent.46.a
+		add_ideas = TY_haijunkeji
+	}
+}
+country_event = {
+	id = azevent.47
+	title = azevent.47.t
+	desc = azevent.47.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_haijunkeji
+	}
+	trigger = {	
+		has_country_flag = fzfz_haijunkeji 
+		NOT = {
+			AND = {
+			has_idea = zhongshikeyan
+			has_idea = fazhanhaijun
+			}
+		}
+	}
+	option = {
+		name = azevent.47.a
+		remove_ideas = TY_haijunkeji
+	}
+}
+country_event = {
+	id = azevent.48
+	title = azevent.48.t
+	desc = azevent.48.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_kongjunkeji
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_kongjunkeji }
+		AND = {
+			has_idea = zhongshikeyan
+			has_idea = fazhankongjun
+		}
+	}
+	option = {
+		name = azevent.48.a
+		add_ideas = TY_kongjunkeji
+	}
+}
+country_event = {
+	id = azevent.49
+	title = azevent.49.t
+	desc = azevent.49.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_kongjunkeji
+	}
+	trigger = {	
+		has_country_flag = fzfz_kongjunkeji 
+		NOT = {
+			AND = {
+			has_idea = zhongshikeyan
+			has_idea = fazhankongjun
+			}
+		}
+	}
+	option = {
+		name = azevent.49.a
+		remove_ideas = TY_kongjunkeji
+	}
+}
+country_event = {
+	id = azevent.4901
+	title = azevent.4901.t
+	desc = azevent.4901.d
+	picture = GFX_aze_point
+	immediate = {
+		set_country_flag = fzfz_zhandoulizengqiang
+	}
+	trigger = {	
+		NOT = { has_country_flag = fzfz_zhandoulizengqiang }
+		AND = {
+			has_idea = fazhanlujun
+			has_idea = lujunkuobian
+			has_idea = junshicanmou
+		}
+	}
+	option = {
+		name = azevent.4901.a
+		add_ideas = TY_zhandoulizengqiang
+	}
+}
+country_event = {
+	id = azevent.4902
+	title = azevent.4902.t
+	desc = azevent.4902.d
+	picture = GFX_aze_diannao
+	immediate = {
+		clr_country_flag = fzfz_zhandoulizengqiang
+	}
+	trigger = {	
+		has_country_flag = fzfz_zhandoulizengqiang 
+		NOT = {
+			AND = {
+				has_idea = fazhanlujun
+				has_idea = lujunkuobian
+				has_idea = junshicanmou
+			}
+		}
+	}
+	option = {
+		name = azevent.4902.a
+		remove_ideas = TY_zhandoulizengqiang
+	}
+}
+country_event = {
+	id = azevent.50
+	title = azevent.50.t
+	desc = azevent.50.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.50.a
+		every_state = {		
+			limit = {		
+				AND = {
+					is_controlled_by = ROOT
+					is_owned_by = SIR
+				}
+			}
+			ROOT = { transfer_state = PREV }		
+		}
+	
+	}
+}
+country_event = {
+	id = azevent.51
+	title = azevent.51.t
+	desc = azevent.51.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.51.a
+		annex_country = { target = SIR transfer_troops = no }
+	}
+}
+country_event = {
+	id = azevent.52
+	title = azevent.52.t
+	desc = azevent.52.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.52.a
+		every_state = {		
+			limit = {		
+				AND = {
+					is_controlled_by = ROOT
+					is_owned_by = SR1
+				}
+			}
+			ROOT = { transfer_state = PREV }		
+		}
+	}
+}
+country_event = {
+	id = azevent.53
+	title = azevent.53.t
+	desc = azevent.53.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.53.a
+		annex_country = { target = SR1 transfer_troops = no }
+	}
+}
+country_event = {
+	id = azevent.54
+	title = azevent.54.t
+	desc = azevent.54.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.54.a
+		every_state = {		
+			limit = {		
+				AND = {
+					is_controlled_by = ROOT
+					is_owned_by = SR2
+				}
+			}
+			ROOT = { transfer_state = PREV }		
+		}
+	}
+}
+country_event = {
+	id = azevent.55
+	title = azevent.55.t
+	desc = azevent.55.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.55.a
+		annex_country = { target = SR2 transfer_troops = no }
+	}
+}
+country_event = {
+	id = azevent.56
+	title = azevent.56.t
+	desc = azevent.56.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.56.a
+		every_state = {		
+			limit = {		
+				AND = {
+					is_controlled_by = ROOT
+					is_owned_by = SR3
+				}
+			}
+			ROOT = { transfer_state = PREV }		
+		}
+	}
+}
+country_event = {
+	id = azevent.57
+	title = azevent.57.t
+	desc = azevent.57.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.57.a
+		annex_country = { target = SR3 transfer_troops = no }
+	}
+}
+country_event = {
+	id = azevent.58
+	title = azevent.58.t
+	desc = azevent.58.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.58.a
+		every_state = {		
+			limit = {		
+				AND = {
+					is_controlled_by = ROOT
+					is_owned_by = SR4
+				}
+			}
+			ROOT = { transfer_state = PREV }		
+		}
+	}
+}
+country_event = {
+	id = azevent.59
+	title = azevent.59.t
+	desc = azevent.59.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	option = {
+		name = azevent.59.a
+		annex_country = { target = SR4 transfer_troops = no }
+	}
+}
+country_event = {
+	id = azevent.66
+	title = azevent.66.t
+	desc = azevent.66.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	
+	option = {
+		name = azevent.66.a
+		ai_chance = {
+			BASE = 1
+			modifier = {
+				FROM = { 
+					OR = {
+						has_government = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+				factor = 100
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.7
+				}
+				
+				factor = 100
+			}
+			modifier = {
+				has_global_flag = MOD_azurlane_sairenzhizai
+				is_ai = yes
+				add = 1000
+			}
+		}
+		FROM = {
+			transfer_state = FROM.FROM
+		}
+		remove_state_core = FROM.FROM
+		
+		guojishengyu_up_1 = yes
+	}
+	option = {
+		name = azevent.66.b
+		guojishengyu_down_3 = yes
+		ai_chance = {
+			BASE = 10
+			
+		}
+		FROM = {
+			country_event = { id = azevent.67 hours = 12 }
+			if = {
+				limit = { is_ai = yes }
+				add_to_variable = { yaoqiuguihuanhexinlingtu_AIbeijujuecishu = 1 }
+			}
+		}
+	}
+}
+country_event = {
+	id = azevent.67
+	title = azevent.67.t
+	desc = azevent.67.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	
+	option = {
+		name = azevent.67.a
+		ai_chance = {
+			factor = 0
+		}
+		create_wargoal = { target = FROM type = take_claimed_state expire = 90 }
+	}
+	option = {
+		name = azevent.67.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				AND = {
+					check_variable = {
+						var = yaoqiuguihuanhexinlingtu_AIbeijujuecishu
+						value = 3
+						compare = less_than_or_equals
+					}
+					FROM = { is_ai = NO }
+				}
+				add = 10
+			}
+		}
+		 
+	}
+	option = {
+		name = azevent.67.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FROM = { is_ai = yes }
+				factor = 10
+			}
+		}
+		add_political_power = -50
+		FROM.FROM.FROM = {
+			set_state_flag = shouhuihexinlingtu_doing
+		}
+	}
+}
+country_event = {
+	id = azevent.67
+	title = azevent.67.t
+	desc = azevent.67.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	
+	option = {
+		name = azevent.67.a
+		ai_chance = {
+			factor = 0
+		}
+		create_wargoal = { target = FROM type = take_claimed_state expire = 90 }
+	}
+	option = {
+		name = azevent.67.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				AND = {
+					check_variable = {
+						var = yaoqiuguihuanhexinlingtu_AIbeijujuecishu
+						value = 3
+						compare = less_than_or_equals
+					}
+					FROM = { is_ai = NO }
+				}
+				add = 10
+			}
+		}
+		 
+	}
+	option = {
+		name = azevent.67.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FROM = { is_ai = yes }
+				factor = 10
+			}
+		}
+		add_political_power = -50
+		FROM.FROM.FROM = {
+			set_state_flag = shouhuihexinlingtu_doing
+		}
+	}
+}
+country_event = {
+	id = azevent.68
+	title = azevent.68.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SIR 
+			NOT = {
+				controls_state = 64
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.6801 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			64 = {
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.6801
+	title = azevent.6801.t
+	desc = azevent.6801.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.69
+	title = azevent.69.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SIR 
+			NOT = {
+				AND = {
+					controls_state = 172
+					controls_state = 166
+					controls_state = 794
+					controls_state = 165
+				}
+				
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.6901 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			random_controlled_state = {
+				limit = {
+					is_controlled_by = SIR
+					OR = {
+						state = 172
+						state = 166
+						state = 794
+						state = 165
+					}
+				}
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.6901
+	title = azevent.6901.t
+	desc = azevent.6901.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.70
+	title = azevent.70.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SIR 
+			NOT = {
+				controls_state = 797
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.7001 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			797 = {
+				random_neighbor_state = {
+					limit = {
+						OR = {
+							is_controlled_by = ROOT
+							is_controlled_by = SR2
+						}
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.7001
+	title = azevent.7001.t
+	desc = azevent.7001.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.71
+	title = azevent.71.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SIR 
+			NOT = {
+				controls_state = 219
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.7101 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			219 = {
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.7101
+	title = azevent.7101.t
+	desc = azevent.7101.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.72
+	title = azevent.72.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SIR 
+			NOT = {
+				controls_state = 369
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.7201 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			369 = {
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.7201
+	title = azevent.7201.t
+	desc = azevent.7201.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.73
+	title = azevent.73.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SIR 
+			NOT = {
+				AND = {
+					controls_state = 377
+					controls_state = 380
+					controls_state = 387
+					controls_state = 379	
+				}
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.7301 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			random_controlled_state = {
+				limit = {
+					is_controlled_by = SIR
+					OR = {
+						state = 377
+						state = 380
+						state = 387
+						state = 379
+					}
+				}
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.7301
+	title = azevent.7301.t
+	desc = azevent.7301.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.74
+	title = azevent.74.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SR1
+			NOT = {
+				AND = {
+					controls_state = 490
+					controls_state = 491
+					controls_state = 495
+					controls_state = 494
+					controls_state = 280
+					controls_state = 487	
+				}
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.7401 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			random_controlled_state= {
+				limit = {
+					is_controlled_by = SR1
+					OR = {
+						state = 490
+						state = 491
+						state = 495
+						state = 494
+						state = 280
+						state = 487
+					}
+				}
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.7401
+	title = azevent.7401.t
+	desc = azevent.7401.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.75
+	title = azevent.75.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SR2
+			NOT = {
+				AND = {
+					controls_state = 447
+					controls_state = 446
+					controls_state = 453
+					controls_state = 454	
+				}
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.7501 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			random_controlled_state= {
+				limit = {
+					is_controlled_by = SR2
+					OR = {
+						state = 447
+						state = 446
+						state = 453
+						state = 454
+					}
+				}
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.7501
+	title = azevent.7501.t
+	desc = azevent.7501.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = azevent.6801.a
+	}
+}
+country_event = {
+	id = azevent.76
+	title = azevent.76.t 
+	desc = azevent.68.d
+	picture = GFX_aze_sr1
+	fire_only_once = yes
+	trigger = {
+		AND = {
+			TAG = SR3
+			NOT = {
+				AND = {
+					controls_state = 323
+					controls_state = 324
+					controls_state = 757
+					controls_state = 758	
+					controls_state = 441
+					controls_state = 322
+					controls_state = 604
+					controls_state = 601				
+				}
+			}
+			#NOT = { has_global_flag = x_jinjifangwei_get }
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		
+	}
+	immediate = {
+		every_enemy_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+			}
+			country_event = { id = azevent.7601 hours = 6 }
+		}
+		if = {
+			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
+			division_template = {
+				name = "塞壬紧急防卫队"
+				is_locked = yes
+				division_names_group = SIR_INF_01
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+				}
+			}
+		}
+		set_temp_variable = { temp_fangweidui_cichu = canzhanguo_sl }
+		multiply_temp_variable = { temp_fangweidui_cichu = 5 }
+		clamp_temp_variable = {
+			var = temp_fangweidui_cichu
+			min = 15
+			max = 60
+		}
+		for_loop_effect = {
+			start = 0 
+			end = var:temp_fangweidui_cichu
+			add = 1 
+			random_controlled_state= {
+				limit = {
+					is_controlled_by = SR3
+					OR = {
+						state = 323
+						state = 324
+						state = 757
+						state = 758	
+						state = 441
+						state = 322
+						state = 604
+						state = 601
+					}
+				}
+				random_neighbor_state = {
+					limit = {
+						is_controlled_by = ROOT
+					}
+					create_unit = {
+						division = "name = \"塞壬紧急防卫队\" division_template = \"塞壬紧急防卫队\" start_experience_factor = 0 start_equipment_factor = 0.4"
+						owner = ROOT
+					}	
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.68.a
+	}
+}
+country_event = {
+	id = azevent.77
+	title = azevent.77.t
+	desc = azevent.77.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	immediate = {
+		randomize_variable = {
+			var = putongmanghe_chance1
+			distribution = uniform
+			min = 0  
+			max = 100     
+		}
+		round_variable = putongmanghe_chance1
+		randomize_variable = {
+			var = putongmanghe_chance2
+			distribution = uniform
+			min = 0  
+			max = 100     
+		}
+		round_variable = putongmanghe_chance2 
+		randomize_variable = {
+			var = xiyoumanghe_chance
+			distribution = uniform
+			min = 0  
+			max = 100     
+		}
+		round_variable = xiyoumanghe_chance
+		randomize_variable = {
+			var = putongmanghe_pp
+			distribution = uniform
+			min = 150
+			max = 400     
+		}
+		
+		round_variable = putongmanghe_pp
+		randomize_variable = {
+			var = putongmanghe_xp
+			distribution = uniform
+			min = 50
+			max = 120     
+		}
+		round_variable = putongmanghe_xp
+		randomize_variable = {
+			var = xiyoumanghe_qiang
+			distribution = uniform
+			min = 5000
+			max = 10000     
+		}
+		round_variable = xiyoumanghe_qiang
+		randomize_variable = {
+			var = xiyoumanghe_pao
+			distribution = uniform
+			min = 200
+			max = 500     
+		}
+		round_variable = xiyoumanghe_pao
+		randomize_variable = {
+			var = supermanghe_chance
+			distribution = uniform
+			min = 0
+			max = 100     
+		}
+		round_variable = supermanghe_chance
+		if = {
+			limit = { 
+				has_global_flag = hushikv1_get 
+				NOT = { has_global_flag = diyumaoju_get }
+			}
+			clamp_variable = {
+				var = supermanghe_chance
+				min = 50
+				max = 100
+			}
+		}
+		if = {
+			limit = { 
+				has_global_flag = diyumaoju_get
+				NOT = { has_global_flag = hushikv1_get }
+			}
+			clamp_variable = {
+				var = supermanghe_chance
+				min = 0
+				max = 49
+			}
+		}
+		set_temp_variable = {
+			putong_chance_base_var = 70
+		}
+		set_temp_variable = {
+			putong_chance_add_var = chushou_xzmf
+		}
+		multiply_temp_variable = {
+			putong_chance_add_var = 3
+		}
+		add_to_temp_variable = {
+			putong_chance_base_var = putong_chance_add_var
+		}
+		hidden_effect = {
+			random_list = {
+				putong_chance_base_var = {
+					set_country_flag = putongmanghe_get
+				}
+				20 = {
+					set_country_flag = xiyoumanghe_get
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						OR = {
+							AND = {
+								has_global_flag = hushikv1_get
+								has_global_flag = diyumaoju_get
+							}
+							is_ai = yes
+						}
+					}
+					set_country_flag = supermanghe_get
+				}
+				0.5 = {
+					set_country_flag = realsupermanghe_get
+				}
+			}
+		}
+		
+	} 
+	option = {
+		name = azevent.77.putong
+		trigger = {
+			has_country_flag = putongmanghe_get
+		}
+		clr_country_flag = putongmanghe_get
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance1 > 1 }
+				check_variable = { putongmanghe_chance1 < 20 }
+			}
+			add_political_power = var:putongmanghe_pp
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance1 > 19 }
+				check_variable = { putongmanghe_chance1 < 40 }
+			}
+			army_experience = var:putongmanghe_xp
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance1 > 39 }
+				check_variable = { putongmanghe_chance1 < 60 }
+			}
+			add_offsite_building = { type = industrial_complex level = 1 }
+			
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance1 > 59 }
+				check_variable = { putongmanghe_chance1 < 80 }
+			}
+	
+			add_offsite_building = { type = arms_factory level = 2 }
+
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance1 > 79 }
+				check_variable = { putongmanghe_chance1 < 101 }
+			}
+			add_tech_bonus = {
+				name = "盲盒"
+				bonus = 0.5
+				uses = 1
+				category = industry
+				category = electronics
+				category = nuclear
+				category = rocketry
+				category = infantry_weapons
+				category = support_tech 
+				category = armor
+				category = air_equipment
+				category = naval_equipment
+			}
+
+		}
+	}
+	option = {
+		name = azevent.77.putong
+		trigger = {
+			has_country_flag = putongmanghe_get
+		}
+		clr_country_flag = putongmanghe_get
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance2 > 0 }
+				check_variable = { putongmanghe_chance2 < 20 }
+			}
+			add_political_power = var:putongmanghe_pp
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance2 > 19 }
+				check_variable = { putongmanghe_chance2 < 40 }
+			}
+			army_experience = var:putongmanghe_xp
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance2 > 39 }
+				check_variable = { putongmanghe_chance2 < 60 }
+			}
+
+			add_offsite_building = { type = industrial_complex level = 1 }
+
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance2 > 59 }
+				check_variable = { putongmanghe_chance2 < 80 }
+			}
+			add_offsite_building = { type = arms_factory level = 2 }
+
+		}
+		if = {
+			limit = {
+				check_variable = { putongmanghe_chance2 > 79 }
+				check_variable = { putongmanghe_chance2 < 100 }
+			}
+			add_tech_bonus = {
+				name = "盲盒"
+				bonus = 0.5
+				uses = 1
+				category = industry
+				category = electronics
+				category = nuclear
+				category = rocketry
+				category = infantry_weapons
+				category = support_tech 
+				category = armor
+				category = air_equipment
+				category = naval_equipment
+			}
+
+		}
+		
+	}
+	option = {
+		name = azevent.77.xiyou
+		trigger = {
+			has_country_flag = xiyoumanghe_get
+		}
+		clr_country_flag = xiyoumanghe_get
+		if = {
+			limit = { 
+				check_variable = { xiyoumanghe_chance > 66 } 
+			}
+			custom_effect_tooltip = xiyoumanghe_tt1
+			meta_effect = {
+				text = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = [xiyoumanghe_qiang]
+					}
+					add_equipment_to_stockpile = {
+						type = artillery_equipment
+						amount = [xiyoumanghe_pao]
+					}
+				}
+				xiyoumanghe_qiang = "[?xiyoumanghe_qiang]"
+				xiyoumanghe_pao = "[?xiyoumanghe_pao]"
+			}
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment
+				amount = 50
+			}
+		}
+		if = {
+			limit = { 
+				check_variable = { xiyoumanghe_chance > 33 } 
+				check_variable = { xiyoumanghe_chance < 67 } 
+			}
+			custom_effect_tooltip = xiyoumanghe_tt1
+			add_tech_bonus = {
+				name = tp_bonus
+				bonus = 3.0
+				ahead_reduction = 1.5
+				uses = 1
+				category = infantry_weapons
+				category = support_tech
+				category = artillery
+				category = armor
+				category = motorized_equipment
+				category = air_equipment
+			}
+		}
+		
+		if = {
+			limit = { 
+				check_variable = { xiyoumanghe_chance < 34 } 
+			}
+			custom_effect_tooltip = xiyoumanghe_tt2
+			if = {
+				limit = {
+					has_tech = shipgirltech_quzhupao_1 
+				}
+				add_equipment_to_stockpile = {
+					type = quzhupao_equipment
+					amount = 200
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = shipgirltech_quzhupao_1 }
+				}
+				set_technology = { shipgirltech_quzhupao_1 = 1 }
+			}
+			if = {
+				limit = {
+					has_tech = shipgirltech_xunyangpao_1 
+				}
+				add_equipment_to_stockpile = {
+					type = xunyangpao_equipment
+					amount = 100
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = shipgirltech_xunyangpao_1 }
+				}
+				set_technology = { shipgirltech_xunyangpao_1 = 1 }
+			}
+			if = {
+				limit = {
+					has_tech = shipgirltech_zhanliepao_1 
+				}
+				add_equipment_to_stockpile = {
+					type = zhanliepao_equipment
+					amount = 60
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = shipgirltech_zhanliepao_1 }
+				}
+				set_technology = { shipgirltech_zhanliepao_1 = 1 }
+			}
+		}
+		
+	}
+	option = {
+		name = azevent.77.super
+		trigger = {
+			has_country_flag = supermanghe_get
+		}
+		clr_country_flag = supermanghe_get
+		custom_effect_tooltip = supermanghe_tt
+		if = {
+			limit = { 
+				check_variable = { supermanghe_chance <50 } 
+				is_ai = no
+			}
+			add_equipment_to_stockpile = {
+				type = heavy_tank_chassis
+				amount = 2000
+			}
+			custom_effect_tooltip = "招募到两个奇怪的陆军将领"
+			hidden_effect = {
+				set_global_flag = hushikv1_get
+				TAN = {
+					hushi = {
+						set_nationality = ROOT
+					}
+					kv = {
+						set_nationality = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				check_variable = { supermanghe_chance >49 } 
+				is_ai = no
+			}
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis
+				amount = 5000
+			}
+			custom_effect_tooltip = "招募到两个奇怪的陆军将领"
+			hidden_effect = {
+				set_global_flag = diyumaoju_get
+				TAN = {
+					diyumao = {
+						set_nationality = ROOT
+					}
+					ju = {
+						set_nationality = ROOT
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = azevent.77.realsuper
+		trigger = {
+			has_country_flag = realsupermanghe_get
+		}
+		clr_country_flag = realsupermanghe_get
+		custom_effect_tooltip = realsupermanghe_tt
+		add_tech_bonus = {
+			name = tp_bonus
+			bonus = 2.0
+			ahead_reduction = 1
+			uses = 3
+			category = infantry_weapons
+			category = support_tech
+			category = artillery
+			category = armor
+			category = motorized_equipment
+			category = air_equipment
+		}
+		meta_effect = {
+			text = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = [xiyoumanghe_qiang]
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = [xiyoumanghe_pao]
+				}
+			}
+			xiyoumanghe_qiang = "[?xiyoumanghe_qiang]"
+			xiyoumanghe_pao = "[?xiyoumanghe_pao]"
+		}
+		add_equipment_to_stockpile = {
+			type = transport_plane_equipment
+			amount = 50
+		}
+		add_offsite_building = { type = industrial_complex level = 3 }
+		add_offsite_building = { type = arms_factory level = 5 }
+	}
+}
+country_event = {
+	id = azevent.7700
+	title = azevent.7700.t
+	desc = azevent.7700.d
+	picture = GFX_aze_txd
+	trigger = {
+		check_variable = {
+			chushou_xzmf > 0
+		}
+	}
+	hidden = yes
+	immediate = {
+		country_event = { id = azevent.7701 days = 30 random_days = 120 }
+
+	}
+	option = {
+		name = azevent.100.a
+		
+	}
+}
+country_event = {
+	id = azevent.7701
+	title = azevent.7701.t
+	desc = azevent.7701.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		randomize_temp_variable = {
+			var = chushou_xzmf_remove
+			distribution = uniform
+			min = 1  
+			max = 2     
+		}
+		round_temp_variable = chushou_xzmf_remove
+		subtract_from_variable = {
+			chushou_xzmf = chushou_xzmf_remove
+		}
+		add_to_variable = { global.guojichushou_xzmf = chushou_xzmf_remove }
+		clamp_variable = {
+			var = chushou_xzmf
+			min = 0
+		}
+	}
+	option = {
+		name = azevent.100.a
+		
+	}
+}
+country_event = {
+	id = azevent.78
+	title = azevent.78.t
+	desc = azevent.78.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = azevent.78.a
+		if = { limit = { date < 1939.9.1 }
+		add_to_variable = {
+			wz_sl = 40000
+		}
+		add_to_variable = {
+			zs_sl = 200
+		}
+		custom_effect_tooltip = azevent_78_1939_tooltip
+		}
+		if = { limit = { 
+		date > 1939.9.1
+        date < 1941.7.1
+		}
+		add_to_variable = {
+			wz_sl = 80000
+		}
+		add_to_variable = {
+			zs_sl = 400
+		}
+		custom_effect_tooltip = azevent_78_1941_tooltip
+		}
+		if = { limit = { 
+		date > 1941.7.1 
+		date < 1943.7.1 
+		}
+		add_to_variable = {
+			wz_sl = 120000
+		}
+		add_to_variable = {
+			zs_sl = 600
+		}
+		custom_effect_tooltip = azevent_78_1943_tooltip
+		}
+		if = { limit = { 
+		date > 1943.7.1 
+		date < 1945.7.1 }
+		add_to_variable = {
+			wz_sl = 160000
+		}
+		add_to_variable = {
+			zs_sl = 800
+		}
+		custom_effect_tooltip = azevent_78_1945_tooltip
+		}
+		if = { limit = { 
+		date > 1945.7.1 
+		}
+		add_to_variable = {
+			wz_sl = 200000
+		}
+		add_to_variable = {
+			zs_sl = 1000
+		}
+		custom_effect_tooltip = azevent_78_1945plus_tooltip
+		}
+		
+
+		
+	}
+}
+##################
+country_event = {
+	id = azevent.100
+	title = azevent.100.t
+	desc = azevent.100.d
+	picture = GFX_aze_txd
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = az_xmp_zhongxiangjiao_doing
+	}
+	option = {
+		name = azevent.100.a
+		capital_scope = {
+				add_resource = {
+					type = rubber
+					amount = 30
+				}
+			}
+	}
+}
+
+country_event = {
+	id = azevent.101 
+	title = azevent.101.t
+	desc = azevent.101.d
+	picture = GFX_aze_mingshi2
+	is_triggered_only = yes
+	immediate = {
+		set_temp_variable = { temp_wuzijieyu = wz_sl }
+		randomize_temp_variable = {
+			var = temp_lilv
+			distribution = uniform
+			min = 10
+			max = 60 
+		}
+		round_temp_variable = temp_lilv
+		set_temp_variable = { temp_lilv_xianshi = temp_lilv }
+		divide_temp_variable = { temp_lilv_xianshi = 10 }
+		divide_temp_variable = { temp_lilv = 1000 }
+		multiply_temp_variable = { temp_wuzijieyu = temp_lilv }
+		set_temp_variable = { temp_lixi = temp_wuzijieyu }
+		round_temp_variable = temp_lixi
+		
+
+		set_temp_variable = { temp_guojishengyu = guojishengyu_value }
+		set_temp_variable = { temp_kongzhitudi = num_controlled_states }
+		set_temp_variable = { temp_mingongshu = num_of_civilian_factories }
+		set_temp_variable = { temp_jungongshu = num_of_military_factories }
+
+		
+
+		
+		if = {
+			limit = { ROOT = { is_major = no } }
+			set_temp_variable = { temp_ruoguobuzhu = 5000 }
+		}
+		else_if = {
+			limit = { ROOT = { is_major = yes } }
+			set_temp_variable = { temp_ruoguobuzhu = 0 }
+		}
+		#########
+		multiply_temp_variable = { temp_guojishengyu = 1000 }
+		clamp_temp_variable = {
+			var = temp_guojishengyu
+			min = 0
+			max = 50000
+		}
+		multiply_temp_variable = { temp_kongzhitudi = 50 }
+
+		multiply_temp_variable = { temp_mingongshu = 200 }
+		multiply_temp_variable = { temp_jungongshu = 50 }
+		add_to_temp_variable = { temp_gongchangshu = temp_mingongshu }
+		add_to_temp_variable = { temp_gongchangshu = temp_jungongshu }
+		#########
+		
+		add_to_temp_variable = { temp_wuzifenpei = temp_kongzhitudi }
+		add_to_temp_variable = { temp_wuzifenpei = temp_gongchangshu }
+		
+		#########
+		set_temp_variable = {
+			temp_shuiqianwuzifenpei = temp_wuzifenpei
+		}
+		#########
+		
+		if = {
+			limit = {
+				check_variable = { temp_shuiqianwuzifenpei < 10000 }
+			}
+			randomize_temp_variable = {
+				var = temp_juankuan
+				distribution = binomial
+				min = 2000
+				max = 4000 
+			} 
+			round_temp_variable = temp_juankuan
+			add_to_temp_variable = { temp_wuzifenpei = temp_juankuan }
+		}
+		else_if = {
+			limit = {
+				AND = {
+					
+					check_variable = { temp_shuiqianwuzifenpei > 30000 }
+					check_variable = { temp_shuiqianwuzifenpei < 50000 }
+
+				}
+			}
+			
+			set_temp_variable = { temp_tanwu_wuzifenpei = temp_wuzifenpei }
+			multiply_temp_variable = { temp_tanwu_wuzifenpei = 0.1 }
+			set_temp_variable = { temp_tanwuxianshi = temp_tanwu_wuzifenpei }
+			multiply_temp_variable = { temp_wuzifenpei = 0.9 }
+		}
+		else_if = {
+			limit = {
+				AND = {
+					
+					check_variable = { temp_shuiqianwuzifenpei > 49999 }
+					check_variable = { temp_shuiqianwuzifenpei < 100000 }
+
+				}
+			}
+			
+			set_temp_variable = { temp_tanwu_wuzifenpei = temp_wuzifenpei }
+			multiply_temp_variable = { temp_tanwu_wuzifenpei = 0.2 }
+			set_temp_variable = { temp_tanwuxianshi = temp_tanwu_wuzifenpei }
+			multiply_temp_variable = { temp_wuzifenpei = 0.8 }
+		}
+		else_if = {
+			limit = {
+				AND = {
+					
+					check_variable = { temp_shuiqianwuzifenpei > 99999 }
+					
+				}
+			}
+			
+			set_temp_variable = { temp_tanwu_wuzifenpei = temp_wuzifenpei }
+			multiply_temp_variable = { temp_tanwu_wuzifenpei = 0.35 }
+			set_temp_variable = { temp_tanwuxianshi = temp_tanwu_wuzifenpei }
+			multiply_temp_variable = { temp_wuzifenpei = 0.65 }
+		}
+		else = {
+			multiply_temp_variable = { temp_wuzifenpei = 1 }
+		}
+		#########
+		add_to_temp_variable = { temp_wuzifenpei = temp_lixi }
+		add_to_temp_variable = { temp_wuzifenpei = temp_ruoguobuzhu }
+		add_to_temp_variable = { temp_wuzifenpei = temp_guojishengyu }
+		
+		set_variable = {
+			wuzifenpei_xianshi = temp_wuzifenpei
+		}
+		add_to_variable = {
+			var = wz_sl
+			value = temp_wuzifenpei
+		}
+		
+
+	} 
+	option = {
+		name = azevent.101.a
+		custom_effect_tooltip = wuzifenpendaihui_option_tooltip
+		
+	}
+}
+country_event = {
+	id = azevent.10101 
+	title = azevent.10101.t
+	desc = azevent.10101.d
+	picture = GFX_aze_kan
+	trigger = {
+		check_variable = { wz_sl > 1200000 }
+	}
+	immediate = {
+
+	}
+	option = {
+		name = azevent.10101.a
+		set_variable = {
+			wz_sl = 1
+		}
+		add_stability = 0.5
+		add_war_support = 0.5
+	}
+}
+country_event = {
+	id = azevent.102 
+	title = azevent.102.t
+	desc = azevent.102.d
+	picture = GFX_aze_txd
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		ROOT = {
+			country_event = azevent.101	
+			country_event = { id = azevent.101 days = 365 }
+			country_event = { id = azevent.101 days = 730 }
+			country_event = { id = azevent.101 days = 1095 }
+			country_event = { id = azevent.101 days = 1460 }
+			country_event = { id = azevent.101 days = 1825 }
+			country_event = { id = azevent.101 days = 2190 }
+			country_event = { id = azevent.101 days = 2555 }
+			country_event = { id = azevent.101 days = 2920 }
+			country_event = { id = azevent.101 days = 3285 }
+			country_event = { id = azevent.101 days = 3650 }
+			country_event = { id = azevent.101 days = 4015 }
+			country_event = { id = azevent.101 days = 4380 }
+			country_event = { id = azevent.101 days = 4745 }
+			country_event = { id = azevent.101 days = 5110 }
+			country_event = { id = azevent.101 days = 5475 }
+			country_event = { id = azevent.101 days = 5840 }
+			country_event = { id = azevent.101 days = 6205 }
+			country_event = { id = azevent.101 days = 6570 }
+			country_event = { id = azevent.101 days = 6935 }
+			country_event = { id = azevent.101 days = 7300 }
+			country_event = { id = azevent.101 days = 7665 }
+			country_event = { id = azevent.101 days = 8030 }
+			country_event = { id = azevent.101 days = 8395 }
+			country_event = { id = azevent.101 days = 8760 }
+			country_event = { id = azevent.101 days = 9125 }
+			country_event = { id = azevent.101 days = 9490 }
+			country_event = { id = azevent.101 days = 9855 }
+			country_event = { id = azevent.101 days = 10220 }
+			country_event = { id = azevent.101 days = 10585 }
+			country_event = { id = azevent.101 days = 10950 }
+			country_event = { id = azevent.101 days = 11315 }
+			country_event = { id = azevent.101 days = 11680 }
+			country_event = { id = azevent.101 days = 12045 }
+			country_event = { id = azevent.101 days = 12410 }
+		}
+		
+	}
+}
+country_event = {
+	id = azevent.10301
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = az_autooption_automofang_on
+			NOT = { has_country_flag = xunzhao_mfk_doing } 
+			NOT = { has_country_flag = faxianmofangkuang } 
+		}
+		
+	}
+	immediate = {
+		ROOT = { activate_decision = xunzhao_mfk  }
+	}
+}
+country_event = {
+	id = azevent.10302
+	hidden = yes
+	trigger = {
+		AND = {
+			num_of_civilian_factories_available_for_projects > var:az_kaicaimofangkuang_modifier_var
+			has_country_flag = az_autooption_automofang_on
+			has_country_flag = faxianmofangkuang	
+			NOT = { has_country_flag = kaicai_mfk_doing }
+			NOT = { has_country_flag = kaicaimofangkuang }
+		}
+		
+	}
+	immediate = {
+		ROOT = { activate_decision = kaicai_mfk  }
+	}
+}
+country_event = {
+	id = azevent.10303
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = az_autooption_automofang_on
+			has_country_flag = kaicaimofangkuang
+		}
+		
+	}
+	immediate = {
+		ROOT = { activate_decision = zhuru_mfk  }
+	}
+}
+country_event = {
+	id = azevent.104
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = az_autooption_autotansuodui1_on
+			NOT = { has_country_flag = tansuodui_doing }
+			#has_country_flag = kaicaimofangkuang
+			has_political_power > 0
+			#NOT = { has_decision = tansuodui1 }
+		}
+		
+	}
+	immediate = {
+		ROOT = { activate_decision = tansuodui }
+	}
+}
+country_event = {
+	id = azevent.105
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = az_autooption_autotansuodui2_on
+			NOT = { has_country_flag = tansuodui2_doing }
+			#has_country_flag = kaicaimofangkuang
+			has_political_power > 0
+			#NOT = { has_decision = tansuodui2 }
+		}
+		
+	}
+	immediate = {
+		ROOT = { activate_decision = tansuodui2 }
+	}
+}
+country_event = {
+	id = azevent.106
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = az_autooption_mofangjiexi_on
+			NOT = { has_idea = TY_mofangjiexi }
+			check_variable = {
+				xzmf_sl > 1
+			}
+		}
+	}
+	immediate = {
+		ROOT = { activate_decision = mf_mofangjiexi }
+	}
+}
+country_event = {
+	id = azevent.107
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = az_autooption_mofangjichuang_on
+			NOT = { has_idea = TY_mfjichuang }
+			check_variable = {
+				xzmf_sl > 2
+			}
+		}
+	}
+	immediate = {
+		ROOT = { activate_decision = mf_mofangjichuang }
+	}
+}
+country_event = {
+	id = azevent.108
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = az_autooption_mofangzaochuan_on
+			NOT = { has_country_flag = mf_mofangjianzaojianchuan_doing }
+			check_variable = {
+				xzmf_sl > 2
+			}
+		}
+	}
+	immediate = {
+		ROOT = { 
+			activate_decision = mf_mofangjianzaojianchuan
+			
+		}
+	}
+}
+

@@ -1,0 +1,512 @@
+scripted_gui = {
+	az_photowindow_open = {
+		window_name = "az_photowindow_open"
+		context_type = player_context
+		visible = {
+			
+		}
+		
+		effects = {
+	        az_photowindow_open_button_click = {
+	        	set_country_flag = az_photowindow_open
+	        	if = {
+	        		limit = {
+	        		  not = {
+	        			OR = {
+	        				has_country_flag = az_photowindow_1
+	        				has_country_flag = az_photowindow_2
+	        				has_country_flag = az_photowindow_3
+	        				has_country_flag = az_photowindow_4
+	        				has_country_flag = az_photowindow_5
+	        				has_country_flag = az_photowindow_6
+							has_country_flag = az_photowindow_7
+							has_country_flag = az_photowindow_8
+							has_country_flag = az_photowindow_9
+							has_country_flag = az_photowindow_10
+	        			}
+	        		  }
+	        		}
+	        		set_country_flag = az_photowindow_1
+	        	}				
+	        }
+       }
+	}
+	az_al_photowindow = {
+		window_name = "az_photowindow"
+		context_type = player_context
+		visible = {
+			has_country_flag = az_photowindow_open
+		}
+		
+		effects = {
+			az_pt_goto_1_click = {
+				set_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_1_alt_shift_right_click = {
+				set_country_flag = az_PT_1_000
+				set_country_flag = az_PT_1_001
+				set_country_flag = az_PT_1_002
+				set_country_flag = az_PT_1_003
+				set_country_flag = az_PT_1_004
+				set_country_flag = az_PT_1_005
+				set_country_flag = az_PT_1_006
+				set_country_flag = az_PT_1_007
+				set_country_flag = az_PT_1_008
+				set_country_flag = az_PT_1_009
+				set_country_flag = az_PT_1_010
+				set_country_flag = az_PT_1_011
+				set_country_flag = az_PT_1_012
+				set_country_flag = az_PT_1_013
+				set_country_flag = az_PT_1_014
+
+			}
+			 
+			az_pt_goto_2_click = { 
+				set_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_3_click = {
+				set_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_4_click = {
+				set_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_5_click = {
+				set_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_6_click = {
+				set_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_7_click = {
+				set_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_8_click = {
+				set_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_9_click = {
+				set_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_1
+				clr_country_flag = az_photowindow_10
+			}
+			az_pt_goto_10_click = {
+				set_country_flag = az_photowindow_10
+				clr_country_flag = az_photowindow_2
+				clr_country_flag = az_photowindow_3
+				clr_country_flag = az_photowindow_4
+				clr_country_flag = az_photowindow_5
+				clr_country_flag = az_photowindow_6
+				clr_country_flag = az_photowindow_7
+				clr_country_flag = az_photowindow_8
+				clr_country_flag = az_photowindow_9
+				clr_country_flag = az_photowindow_1
+			}
+			az_pt_page_up_click = {
+				az_pt_page_up = yes
+			}
+			az_pt_page_down_click = {
+				az_pt_page_down = yes
+			}
+			az_pt_photowindow_close_click = {
+				clr_country_flag = az_photowindow_open
+			}
+			az_pt_photo_finish_click = {
+				az_photo_finish = yes
+			}
+		}
+		triggers = {
+            az_pt_photo_finish_click_enabled = {
+				custom_trigger_tooltip = {
+					tooltip = all_photo_finish_tishi
+					az_photo_finish_triggers = yes
+				}
+			}
+			az_pt_photo_finish_visible = {
+				az_photo_no_finish_triggers = yes
+			}
+            az_pt_page_up_visible = {
+				NOT = { has_country_flag = az_photowindow_1 }
+			}
+			az_pt_page_down_visible = {
+				NOT = { has_country_flag = az_photowindow_10 }
+			}
+			az_PT_1_visible = {
+				az_photo_1_finish_triggers = yes
+			}
+		}
+
+
+		properties = {
+			az_pt_000 = {
+				image = "[az_pt_000]"
+			}
+			az_pt_001 = {
+				image = "[az_pt_001]"
+			}
+			az_pt_002 = {
+				image = "[az_pt_002]"
+			}
+			az_pt_003 = {
+				image = "[az_pt_003]"
+			}
+			az_pt_004 = {
+				image = "[az_pt_004]"
+			}
+			az_pt_005 = {
+				image = "[az_pt_005]"
+			}
+			az_pt_006 = {
+				image = "[az_pt_006]"
+			}
+			az_pt_007 = {
+				image = "[az_pt_007]"
+			}
+			az_pt_008 = {
+				image = "[az_pt_008]"
+			}
+			az_pt_009 = {
+				image = "[az_pt_009]"
+			}
+			az_pt_010 = {
+				image = "[az_pt_010]"
+			}
+			az_pt_011 = {
+				image = "[az_pt_011]"
+			}
+			az_pt_012 = {
+				image = "[az_pt_012]"
+			}
+			az_pt_013 = {
+				image = "[az_pt_013]"
+			}
+			az_pt_014 = {
+				image = "[az_pt_014]"
+			}
+			az_pt_015 = {
+				image = "[az_pt_015]"
+			}
+		}
+
+	}
+
+    #寻找类
+	az_pt_1_000_f = { 
+		window_name = "az_pt_1_000_f"
+		context_type = player_context
+		parent_window_token = top_bar
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_000
+			}
+		}		
+		effects = {
+			az_pt_1_000_f_click = {
+				country_event = az_pt_1_event.1
+			}
+	    }
+	}
+	az_pt_1_001_f = {
+		window_name = "az_pt_1_001_f"
+		context_type = player_context
+		parent_window_token = selected_state_view
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_001
+			}
+		}		
+		effects = {
+			az_pt_1_001_f_click = {
+				country_event = az_pt_1_event.2
+			}
+		}
+	}
+	az_pt_1_002_f = {
+		window_name = "az_pt_1_002_f"
+		context_type = player_context
+		parent_window_token = tech_support_folder
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_002
+			}
+			has_tech = tech_support
+		}		
+		effects = {
+			az_pt_1_002_f_click = {
+				country_event = az_pt_1_event.3
+			}
+		}
+	}
+	az_pt_1_003_f = {
+		window_name = "az_pt_1_003_f"
+		context_type = player_context
+		parent_window_token = trade_tab
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_003
+			}
+		}		
+		effects = {
+			az_pt_1_003_f_click = {
+				country_event = az_pt_1_event.4
+			}
+		}
+	}
+	az_pt_1_004_f = {
+		window_name = "az_pt_1_004_f"
+		context_type = player_context
+		parent_window_token = navy_ledger
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_004
+			}
+		}		
+		effects = {
+			az_pt_1_004_f_click = {
+				country_event = az_pt_1_event.5
+			}
+		}
+	}
+	az_pt_1_005_f = {
+		window_name = "az_pt_1_005_f"
+		context_type = player_context
+		parent_window_token = production_tab
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_005
+			}
+		}		
+		effects = {
+			az_pt_1_005_f_click = {
+				country_event = az_pt_1_event.6
+			}
+		}
+	}
+	az_pt_1_006_f = {
+		window_name = "az_pt_1_006_f"
+		context_type = player_context
+		parent_window_token = national_focus
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_006
+			}
+		}		
+		effects = {
+			az_pt_1_006_f_click = {
+				country_event = az_pt_1_event.7
+			}
+		}
+	}
+	az_pt_1_007_f = {
+		window_name = "az_pt_1_007_f"
+		context_type = player_context
+		parent_window_token = selected_country_view_diplomacy
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_007
+			}
+		}		
+		effects = {
+			az_pt_1_007_f_click = {
+				country_event = az_pt_1_event.8
+			}
+		}
+	}
+	az_pt_1_008_f = {
+		window_name = "az_pt_1_008_f"
+		context_type = player_context
+		parent_window_name = "az_leadermenu_shaixuan_window"
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_008
+			}
+			has_country_flag = az_leadermenu_shaixuan_window_show
+		}		
+		effects = {
+			az_pt_1_008_f_click = {
+				country_event = az_pt_1_event.9
+			}
+		}
+	}
+	az_pt_1_009_f = {
+		window_name = "az_pt_1_009_f"
+		context_type = player_context
+		parent_window_token = politics_tab
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_009
+			}
+		}		
+		effects = {
+			az_pt_1_009_f_click = {
+				country_event = az_pt_1_event.10
+			}
+		}
+	}
+	az_pt_1_010_f = {
+		window_name = "az_pt_1_010_f"
+		context_type = player_context
+		parent_window_token = decision_tab
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_010
+			}
+		}		
+		effects = {
+			az_pt_1_010_f_click = {
+				country_event = az_pt_1_event.11
+			}
+		}
+	}
+	az_pt_1_011_f = {
+		window_name = "az_pt_1_011_f"
+		context_type = player_context
+		parent_window_token = diplomacy_tab
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_011
+			}
+		}		
+		effects = {
+			az_pt_1_011_f_click = {
+				country_event = az_pt_1_event.12
+			}
+		}
+	}
+	az_pt_1_012_f = {
+		window_name = "az_pt_1_012_f"
+		context_type = player_context
+		parent_window_token = tech_artillery_folder
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_012
+			}
+		}		
+		effects = {
+			az_pt_1_012_f_click = {
+				country_event = az_pt_1_event.13
+			}
+		}
+	}
+	az_pt_1_013_f = {
+		window_name = "az_pt_1_013_f"
+		context_type = player_context
+		parent_window_name = "az_photowindow"
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_013
+			}
+			has_country_flag = az_photowindow_open
+			has_country_flag = az_photowindow_10
+		}		
+		effects = {
+			az_pt_1_013_f_click = {
+				country_event = az_pt_1_event.14
+			}
+		}
+	}
+	az_pt_1_014_f = {
+		window_name = "az_pt_1_014_f"
+		context_type = player_context
+		parent_window_name = "az_xmp_main_window"
+		visible = {
+			not = {
+				has_country_flag = az_PT_1_014
+			}
+			has_country_flag = xmpwindow3_open
+			has_country_flag = open_az_xmp_main_window		    
+		}		
+		effects = {
+			az_pt_1_014_f_click = {
+				country_event = az_pt_1_event.15
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+	
+}

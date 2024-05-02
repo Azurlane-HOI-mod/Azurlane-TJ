@@ -1,0 +1,1222 @@
+characters={
+	TIX_bisimai = {
+		name = TIX_bisimai
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/bisimai.png"
+				small="gfx/interface/ideas/idea_bisimai.png"
+			}
+			civilian = {
+				large="gfx/leaders/TIX/bisimai.png"
+			}
+		}
+		
+		country_leader={
+			ideology= nazism
+			traits={ txyz }
+			expire="2000.1.1.1"
+		}
+		country_leader = {
+			expire="2000.1.1.1"
+			ideology = conservatism
+			traits = {
+				txyz
+			}
+		}
+		country_leader = {
+			expire="2000.1.1.1"
+			ideology = stalinism
+			traits = {
+				txyz
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = bisimai
+			available = { 
+				if = {
+					limit = { tag = TIX }
+					OR = {
+						NOT = {
+							has_completed_focus = TIX_chongjiandayihui
+						}
+						has_completed_focus = TIX_chongxinqiyongbisimai
+						has_completed_focus = TIX_gonggulingdaodiwei
+					}
+					
+				}
+			}
+			traits = { trait_bisimai }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03001
+			traits = { offensive_doctrine brilliant_strategist trait_cautious urban_assault_specialist zhanlie_army }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+	TIX_tierpici = {
+		name = TIX_tierpici
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/tizi.png"
+				small="gfx/interface/ideas/idea_tizi.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03002
+			traits = { trickster trait_reckless winter_specialist swamp_fox zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_xipeiershangjiang = {
+		name = TIX_xipeiershangjiang
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/xipeiershangjiang.png"
+				small="gfx/interface/ideas/idea_xipeiershangjiang.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03003
+			traits = { panzer_leader xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	TIX_deyizhi = {
+		name = TIX_deyizhi
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/deyizhi.png"
+				small="gfx/interface/ideas/idea_deyizhi.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03004
+			traits = { armor_officer xunyang_army }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_kelong = {
+		name = TIX_kelong
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/kelong.png"
+				small="gfx/interface/ideas/idea_kelong.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { career_officer xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+
+	}
+	TIX_ougenqinwang = {
+		name = TIX_ougenqinwang
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/ougenqinwang.png"
+				small="gfx/interface/ideas/idea_ougenqinwang.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = ougenqinwang
+
+			traits = { trait_ougenqinwang }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		country_leader = {
+			expire="2000.1.1.1"
+			ideology = despotism
+			traits = {
+				
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03005
+			traits = { inflexible_strategist armor_officer career_officer xunyang_army }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	TIX_shaenhuosite = {
+		name = TIX_shaenhuosite
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/shaenhuosite.png"
+				small="gfx/interface/ideas/idea_shaenhuosite.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03006
+			traits = {  trait_cautious politically_connected zhanlie_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_genaisennao = {
+		name = TIX_genaisennao
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/genaisennao.png"
+				small="gfx/interface/ideas/idea_genaisennao.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03007
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_laibixi = {
+		name = TIX_laibixi
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/laibixi.png"
+				small="gfx/interface/ideas/idea_laibixi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			available = { 
+				if = {
+					limit = { tag = TIX }
+					OR = {
+						has_completed_focus = TIX_tiexuededaolu
+						has_completed_focus = TIX_wudidejundui
+					}
+				}
+			}
+			idea_token = laibixi
+			traits = { trait_laibixi }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03008
+			traits = { defensive_doctrine xunyang_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_sipei = {
+		name = TIX_sipei
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/sipei.png"
+				small="gfx/interface/ideas/idea_sipei.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03009
+			traits = { politically_connected xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	TIX_qibolin = {
+		name = TIX_qibolin
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/qibolin.png"
+				small="gfx/interface/ideas/idea_qibolin.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = qibolin
+			traits = { trait_qibolin }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03010
+			traits = { politically_connected trickster hangmu_army }
+			skill = 4
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_u81 = {
+		name = TIX_u81
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/u81.png"
+				small="gfx/interface/ideas/idea_u81.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = u81
+			traits = { trait_u81 }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03011
+			traits = { seawolf qianting_navy }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	TIX_z46 = {
+		name = TIX_z46
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/z46.png"
+				small="gfx/interface/ideas/idea_z46.png"
+			}
+		}
+        advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = z46
+			
+			
+			traits = { trait_z46 }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03015
+			traits = { quzhu_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	TIX_z23 = {
+		name = TIX_z23
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/z23.png"
+				small="gfx/interface/ideas/idea_z23.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = z23
+			available = {
+				if = {
+					limit = { tag = TIX }
+					OR = {
+						has_completed_focus = TIX_jinburenshi
+						has_completed_focus = TIX_chenglihansijituan
+					}
+				}
+			}
+			traits = { trait_z23 }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		country_leader = {
+			expire="2000.1.1.1"
+			ideology = communism
+			traits = {
+				
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03016
+			traits = { bold quzhu_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+	}
+	TIX_weixi = {
+		name = TIX_weixi
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/weixi.png"
+				small="gfx/interface/ideas/idea_weixi.png"
+			}
+		}
+		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03018
+			traits = { air_controller hangmu_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+	TIX_bide = {
+		name = TIX_bide
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/bide.png"
+				small="gfx/interface/ideas/idea_bide.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03019
+			traits = { trait_cautious harsh_leader hangmu_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = bide
+
+			traits = { trait_bide			}
+			ai_will_do = {
+				factor = 50
+			}
+		}
+	}
+	TIX_haiyinlixi = {
+		name = TIX_haiyinlixi
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/haiyinlixi.png"
+				small="gfx/interface/ideas/idea_haiyinlixi.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03020
+			traits = { trait_reckless bearer_of_artillery xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_niulunbao = {
+		name = TIX_niulunbao
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/niulunbao.png"
+				small="gfx/interface/ideas/idea_niulunbao.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 03021
+			traits = { defensive_doctrine xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	TIX_luoen = {
+		name = TIX_luoen
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/luoen.png"
+				small="gfx/interface/ideas/idea_luoen.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = luoen
+			traits = { trait_luoen }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	TIX_feitelie = {
+		name = TIX_feitelie
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/feitelie.png"
+				small="gfx/interface/ideas/idea_feitelie.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = feitelie
+			traits = { trait_feitelie }
+			available = { 
+				if = {
+					limit = { tag = TIX }
+						has_completed_focus = TIX_huanxingfeitelie
+				}
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	TIX_adaerbote = {
+		name = TIX_adaerbote
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/adaerbote.png"
+				small="gfx/interface/ideas/idea_adaerbote.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_aijier = {
+		name = TIX_aijier
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/aijier.png"
+				small="gfx/interface/ideas/idea_aijier.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = aijier
+			traits = { trait_aijier }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { armor_officer panzer_leader xunyang_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	TIX_aoding = {
+		name = TIX_aoding
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/aoding.png"
+				small="gfx/interface/ideas/idea_aoding.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_aogusite = {
+		name = TIX_aogusite
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/aogusite.png"
+				small="gfx/interface/ideas/idea_aogusite.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = aogusite
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			traits = { trait_aogusite }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { brilliant_strategist harsh_leader hangmu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_huteng = {
+		name = TIX_huteng
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/huteng.png"
+				small="gfx/interface/ideas/idea_huteng.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = huteng
+			
+			
+			traits = { trait_huteng }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { bearer_of_artillery zhanlie_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	TIX_magedebao = {
+		name = TIX_magedebao
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/magedebao.png"
+				small="gfx/interface/ideas/idea_magedebao.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	TIX_meiyinci = {
+		name = TIX_meiyinci
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/meiyinci.png"
+				small="gfx/interface/ideas/idea_meiyinci.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { old_guard xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_yibei = {
+		name = TIX_yibei
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/yibei.png"
+				small="gfx/interface/ideas/idea_yibei.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = yibei
+			
+			
+			traits = { trait_yibei }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { trickster hangmu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	TIX_z1 = {
+		name = TIX_z1
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/z1.png"
+				small="gfx/interface/ideas/idea_z1.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_saidelici = {
+		name = TIX_saidelici
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/saidelici.png"
+				small="gfx/interface/ideas/idea_saidelici.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_aierbin = {
+		name = TIX_aierbin
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/aierbin.png"
+				small="gfx/interface/ideas/idea_aierbin.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_lvzuofu = {
+		name = TIX_lvzuofu
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/lvzuofu.png"
+				small="gfx/interface/ideas/idea_lvzuofu.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = lvzuofu
+			
+			
+			traits = { trait_lvzuofu }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_aimudeng = {
+		name = TIX_aimudeng
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/aimudeng.png"
+				small="gfx/interface/ideas/idea_aimudeng.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_tulingen = {
+		name = TIX_tulingen
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/tulingen.png"
+				small="gfx/interface/ideas/idea_tulingen.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_yueke = {
+		name = TIX_yueke
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/yueke.png"
+				small="gfx/interface/ideas/idea_yueke.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_leipuxitele = {
+		name = TIX_leipuxitele
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/leipuxitele.png"
+				small="gfx/interface/ideas/idea_leipuxitele.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = leipuxitele
+			traits = { trait_leipuxitele }
+			ai_will_do = {
+				factor = 15
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	TIX_bulunxierde = {
+		name = TIX_bulunxierde
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/bulunxierde.png"
+				small="gfx/interface/ideas/idea_bulunxierde.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { infantry_officer zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_bulvxieer = {
+		name = TIX_bulvxieer
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/bulvxieer.png"
+				small="gfx/interface/ideas/idea_bulvxieer.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { war_hero career_officer media_personality xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	TIX_xingdengbao = {
+		name = TIX_xingdengbao
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/xingdengbao.png"
+				small="gfx/interface/ideas/idea_xingdengbao.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	TIX_feilikesishuerci = {
+		name = TIX_feilikesishuerci
+		portraits={
+			army = {
+				large="gfx/leaders/TIX/feilikesishuerci.png"
+				small="gfx/interface/ideas/idea_feilikesishuerci.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}

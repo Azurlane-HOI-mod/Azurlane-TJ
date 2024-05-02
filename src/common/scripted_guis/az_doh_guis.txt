@@ -1,0 +1,390 @@
+scripted_gui = {
+	az_doh_gui_decision_window_guis = {  
+		context_type = decision_category
+
+		window_name = "az_doh_gui_decision_window"
+
+		visible = {
+			always = yes
+		}
+		triggers = {
+			az_doh_gui_touzi_add_one_click_enabled = {
+				has_completed_focus = DOH_jinjigaige
+				num_of_civilian_factories_available_for_projects > 5
+			}
+			az_doh_gui_touzi_add_5_click_enabled = {
+				has_completed_focus = DOH_jinjigaige
+				num_of_civilian_factories_available_for_projects > 15
+			}
+			az_doh_gui_touzi_subtract_one_click_enabled = {
+				has_completed_focus = DOH_jinjigaige
+				check_variable = {
+					var:DOH_touzi > 0
+				}
+			}
+			az_doh_gui_touzi_subtract_5_click_enabled = {
+				has_completed_focus = DOH_jinjigaige
+				check_variable = {
+					var:DOH_touzi > 4
+				}
+			}
+			
+			az_doh_gui_gonggongkaizhi_add_one_click_enabled = {
+				has_completed_focus = DOH_shehuibaozhang
+				num_of_civilian_factories_available_for_projects > 5
+			}
+			az_doh_gui_gonggongkaizhi_add_5_click_enabled = {
+				has_completed_focus = DOH_shehuibaozhang
+				num_of_civilian_factories_available_for_projects > 15
+			}
+			az_doh_gui_gonggongkaizhi_subtract_one_click_enabled = {
+				has_completed_focus = DOH_shehuibaozhang
+				check_variable = {
+					var:DOH_gonggongkaizhi > 0
+				}
+			}
+			az_doh_gui_gonggongkaizhi_subtract_5_click_enabled = {
+				has_completed_focus = DOH_shehuibaozhang
+				check_variable = {
+					var:DOH_gonggongkaizhi > 4
+				}
+			}
+
+			az_doh_gui_keyanjinfei_add_one_click_enabled = {
+				has_completed_focus = DOH_rencaiyinjin
+				num_of_civilian_factories_available_for_projects > 5
+				check_variable = {
+					var:DOH_keyanjinfei < 30
+				}
+			}
+			az_doh_gui_keyanjinfei_add_5_click_enabled = {
+				has_completed_focus = DOH_rencaiyinjin
+				num_of_civilian_factories_available_for_projects > 15
+				check_variable = {
+					var:DOH_keyanjinfei < 26
+				}
+			}
+			az_doh_gui_keyanjinfei_subtract_one_click_enabled = {
+				has_completed_focus = DOH_rencaiyinjin
+				check_variable = {
+					var:DOH_keyanjinfei > 0
+				}
+			}
+			az_doh_gui_keyanjinfei_subtract_5_click_enabled = {
+				has_completed_focus = DOH_rencaiyinjin
+				check_variable = {
+					var:DOH_keyanjinfei > 4
+				}
+			}
+
+			az_doh_gui_junshijinfei_add_one_click_enabled = {
+				has_completed_focus = DOH_donghuanggongyetixi
+				num_of_civilian_factories_available_for_projects > 5
+			}
+			az_doh_gui_junshijinfei_add_5_click_enabled = {
+				has_completed_focus = DOH_donghuanggongyetixi
+				num_of_civilian_factories_available_for_projects > 15
+			}
+			az_doh_gui_junshijinfei_subtract_one_click_enabled = {
+				has_completed_focus = DOH_donghuanggongyetixi
+				check_variable = {
+					var:DOH_junshijinfei > 0
+				}
+			}
+			az_doh_gui_junshijinfei_subtract_5_click_enabled = {
+				has_completed_focus = DOH_donghuanggongyetixi
+				check_variable = {
+					var:DOH_junshijinfei > 4
+				}
+			}
+
+			az_doh_gui_shichang_add_one_click_enabled = {
+				check_variable = {
+					var:DOH_shichang < 15
+				}
+				has_completed_focus = DOH_shichanghuanjishu
+			}
+			az_doh_gui_shichang_add_5_click_enabled = {
+				has_completed_focus = DOH_jinjigaige
+				check_variable = {
+					var:DOH_shichang < 10
+				}
+				has_completed_focus = DOH_shichanghuanjishu
+			}
+			az_doh_gui_shichang_subtract_one_click_enabled = {
+				has_completed_focus = DOH_shichanghuanjishu
+				check_variable = {
+					var:DOH_shichang > 0
+				}
+			}
+			az_doh_gui_shichang_subtract_5_click_enabled = {
+				has_completed_focus = DOH_shichanghuanjishu
+				check_variable = {
+					var:DOH_shichang > 4
+				}
+			}
+
+			az_doh_gui_gexinshengchanli_subtract_one_click_enabled = {
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+				check_variable = {
+					var:DOH_gexinshengchanli > 0
+				}
+			}
+			az_doh_gui_gexinshengchanli_subtract_5_click_enabled = {
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+				check_variable = {
+					var:DOH_shichang > 4
+				}
+			}
+
+			az_doh_gui_gexinshengchanli_add_one_click_enabled = {
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+				DOH = {
+					amount_research_slots > 1
+				}
+			}
+			az_doh_gui_gexinshengchanli_add_5_click_enabled = {
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+				DOH = {
+					amount_research_slots > 6
+				}
+			}
+		}
+		effects = {
+			az_doh_gui_touzi_add_one_click = {
+				add_to_variable = {
+					var:DOH_touzi = 1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_touzi_add_5_click = {
+				add_to_variable = {
+					var:DOH_touzi = 5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_touzi_subtract_one_click = {
+				add_to_variable = {
+					var:DOH_touzi = -1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_touzi_subtract_5_click = {
+				add_to_variable = {
+					var:DOH_touzi = -5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+
+			az_doh_gui_gonggongkaizhi_add_one_click = {
+				add_to_variable = {
+					var:DOH_gonggongkaizhi = 1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_gonggongkaizhi_add_5_click = {
+				add_to_variable = {
+					var:DOH_gonggongkaizhi = 5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_gonggongkaizhi_subtract_one_click = {
+				add_to_variable = {
+					var:DOH_gonggongkaizhi = -1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_gonggongkaizhi_subtract_5_click = {
+				add_to_variable = {
+					var:DOH_gonggongkaizhi = -5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+
+			az_doh_gui_keyanjinfei_add_one_click = {
+				add_to_variable = {
+					var:DOH_keyanjinfei = 1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_keyanjinfei_add_5_click = {
+				add_to_variable = {
+					var:DOH_keyanjinfei = 5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_keyanjinfei_subtract_one_click = {
+				add_to_variable = {
+					var:DOH_keyanjinfei = -1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_keyanjinfei_subtract_5_click = {
+				add_to_variable = {
+					var:DOH_keyanjinfei = -5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+
+			az_doh_gui_junshijinfei_add_one_click = {
+				add_to_variable = {
+					var:DOH_junshijinfei = 1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_junshijinfei_add_5_click = {
+				add_to_variable = {
+					var:DOH_junshijinfei = 5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_junshijinfei_subtract_one_click = {
+				add_to_variable = {
+					var:DOH_junshijinfei = -1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_junshijinfei_subtract_5_click = {
+				add_to_variable = {
+					var:DOH_junshijinfei = -5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+
+			az_doh_gui_shichang_add_one_click = {
+				add_to_variable = {
+					var:DOH_shichang = 1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_shichang_add_5_click = {
+				add_to_variable = {
+					var:DOH_shichang = 5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_shichang_subtract_one_click = {
+				add_to_variable = {
+					var:DOH_shichang = -1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_shichang_subtract_5_click = {
+				add_to_variable = {
+					var:DOH_shichang = -5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+
+			az_doh_gui_gexinshengchanli_add_one_click = {
+				add_to_variable = {
+					var:DOH_gexinshengchanli = 1
+				}
+				DOH = {
+					add_research_slot = -1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_gexinshengchanli_add_5_click = {
+				add_to_variable = {
+					var:DOH_gexinshengchanli = 5
+				}
+				DOH = {
+					add_research_slot = -5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_gexinshengchanli_subtract_one_click = {
+				add_to_variable = {
+					var:DOH_gexinshengchanli = -1
+				}
+				DOH = {
+					add_research_slot = 1
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+			az_doh_gui_gexinshengchanli_subtract_5_click = {
+				add_to_variable = {
+					var:DOH_gexinshengchanli = -5
+				}
+				DOH = {
+					add_research_slot = 5
+				}
+				DOH_mofifier_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+				DOH_zhichilvchengfa_effect = yes
+			}
+		}
+	}
+	
+}

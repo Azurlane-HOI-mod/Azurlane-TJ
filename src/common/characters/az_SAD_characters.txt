@@ -1,0 +1,768 @@
+characters={
+	SAD_weineituo = {
+		name = SAD_weineituo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/weineituo.png"
+				small="gfx/interface/ideas/idea_weineituo.png"
+			}
+		}
+		country_leader={
+			ideology = despotism
+			traits = {
+				sddwg
+				xszm
+			}
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology = stalinism
+			traits = {
+				sddwg
+				xszm
+			}
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology = fascism_ideology
+			traits = {
+				sddwg
+				xszm
+			}
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology = liberalism
+			traits = {
+				sddwg
+				xszm
+			}
+			expire="2000.1.1.1"
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = weineituo
+			
+			
+			traits = { trait_weineituo }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04010
+			traits = { trait_cautious inflexible_strategist career_officer zhanlie_army }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	SAD_lituoliao = {
+		name = SAD_lituoliao
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/lituoliao.png"
+				small="gfx/interface/ideas/idea_lituoliao.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = lituoliao
+			traits = { jcdmg }
+
+			ai_will_do = {
+				factor = 11
+				modifier = {
+					has_completed_focus = SAD_yindaoguomin
+					factor = 50
+				}
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04001
+			traits = { trait_reckless media_personality inspirational_leader career_officer zhanlie_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	SAD_zhala = {
+		name = SAD_zhala
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/zhala.png"
+				small="gfx/interface/ideas/idea_zhala.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = zhala
+			traits = { trait_zhala }
+
+			ai_will_do = {
+				factor = 11
+				
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04002
+			traits = { trickster brilliant_strategist xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SAD_zhuliaokaisa = {
+		name = SAD_zhuliaokaisa
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/zhuliaokaisa.png"
+				small="gfx/interface/ideas/idea_zhuliaokaisa.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = zhuliaokaisa
+			traits = { trait_psh_diwangweiya }
+
+			ai_will_do = {
+				factor = 8
+				
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04003
+			traits = { politically_connected war_hero zhanlie_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 4
+		}
+	}
+	SAD_jiafuer = {
+		name = SAD_jiafuer
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/jiafuer.png"
+				small="gfx/interface/ideas/idea_jiafuer.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = jiafuer
+			traits = { trait_jiafuer }
+
+			ai_will_do = {
+				factor = 19
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04004
+			traits = { trait_cautious inflexible_strategist zhanlie_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	SAD_teluntuo = {
+		name = SAD_teluntuo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/teluntuo.png"
+				small="gfx/interface/ideas/idea_teluntuo.png"
+			}
+		}
+
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04005
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	SAD_longqibing = {
+		name = SAD_longqibing
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/longqibing.png"
+				small="gfx/interface/ideas/idea_longqibing.png"
+			}
+		}
+
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04006
+			skill = 3
+			traits = { bold quzhu_navy }
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	SAD_wenqinzuo = {
+		name = SAD_wenqinzuo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/wenqinzuo.png"
+				small="gfx/interface/ideas/idea_wenqinzuo.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04007
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+		}
+	}
+	SAD_bola = {
+		name = SAD_bola
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/bola.png"
+				small="gfx/interface/ideas/idea_bola.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = bola
+			traits = { trait_psh_nufangzhizi }
+
+			ai_will_do = {
+				factor = 8
+				
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04008
+			traits = { trait_engineer inflexible_strategist xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	SAD_tuolichaili = {
+		name = SAD_tuolichaili
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/tuolichaili.png"
+				small="gfx/interface/ideas/idea_tuolichaili.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = tuolichaili
+			traits = { trait_tuolichaili }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04009
+			traits = { qianting_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	SAD_abuluqi = {
+		name = SAD_abuluqi
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/abuluqi.png"
+				small="gfx/interface/ideas/idea_abuluqi.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 04011
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	SAD_makeboluo = {
+		name = SAD_makeboluo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/makeboluo.png"
+				small="gfx/interface/ideas/idea_makeboluo.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = makeboluo
+			traits = { trait_makeboluo }
+
+			ai_will_do = {
+				factor = 11
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SAD_diguo = {
+		name = SAD_diguo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/diguo.png"
+				small="gfx/interface/ideas/idea_diguo.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = diguo 
+		    research_bonus = {
+		    rocketry = 0.50
+		    }
+			traits = { trait_diguo  }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	SAD_daleike = {
+		name = SAD_daleike
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/daleike.png"
+				small="gfx/interface/ideas/idea_daleike.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = daleike
+			traits = { trait_daleike }
+
+			ai_will_do = {
+				factor = 11
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SAD_pangpeimagenuo = {
+		name = SAD_pangpeimagenuo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/pangpeimagenuo.png"
+				small="gfx/interface/ideas/idea_pangpeimagenuo.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SAD_diliyasite = {
+		name = SAD_diliyasite
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/diliyasite.png"
+				small="gfx/interface/ideas/idea_diliyasite.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = diliyasite
+			traits = { trait_diliyasite }
+
+			ai_will_do = {
+				factor = 11
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SAD_aerfuleiduo = {
+		name = SAD_aerfuleiduo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/aerfuleiduo.png"
+				small="gfx/interface/ideas/idea_aerfuleiduo.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	SAD_aimannuaier = {
+		name = SAD_aimannuaier
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/aimannuaier.png"
+				small="gfx/interface/ideas/idea_aimannuaier.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_navy }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+	SAD_dafenqi = {
+		name = SAD_dafenqi
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/dafenqi.png"
+				small="gfx/interface/ideas/idea_dafenqi.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { qianting_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	SAD_luoma = {
+		name = SAD_luoma
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/luoma.png"
+				small="gfx/interface/ideas/idea_luoma.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = luoma
+			
+			
+			traits = { trait_luoma }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	SAD_zhusaipei = {
+		name = SAD_zhusaipei
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/zhusaipei.png"
+				small="gfx/interface/ideas/idea_zhusaipei.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = zhusaipei
+			research_bonus = {
+		    rocketry = 0.25
+			nuclear = 0.25
+		    }
+			traits = { trait_zhusaipei }
+			ai_will_do = {
+				factor = 8
+				
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	SAD_tianying = {
+		name = SAD_tianying
+		portraits={
+			army = {
+			    large="gfx/leaders/SAD/tianying.png"
+				small="gfx/interface/ideas/idea_tianying.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = tianying
+			
+			
+			traits = { trait_tianying }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	SAD_xibeifeng = {
+		name = SAD_xibeifeng
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/xibeifeng.png"
+				small="gfx/interface/ideas/idea_xibeifeng.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SAD_xinanfeng = {
+		name = SAD_xinanfeng
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/xinanfeng.png"
+				small="gfx/interface/ideas/idea_xinanfeng.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+}

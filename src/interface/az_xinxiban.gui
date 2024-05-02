@@ -1,0 +1,113 @@
+guiTypes = {
+ 
+	containerWindowType = {
+		name = "az_xinxiban_open_button_window" 
+		Orientation = UPPER_RIGHT
+		position = { x = -480 y = 37 }
+		   
+		moveable = yes
+		buttonType = {
+			name = "az_xinxiban_open_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_xiajiantou"
+			 
+			pdx_tooltip = "az_xinxiban_open_button_window_tooltip"
+			clicksound = click_default
+		}
+	}
+
+	containerWindowType = {
+		name = "az_xinxiban_window"
+		Orientation = UPPER_RIGHT
+		position = { x = -540 y = 32 } 
+		fade_time = 800
+		fade_type = linear   
+		size = { width = 190 height = 156 } 
+		moveable = yes
+		
+		background = { 
+			name = "az_xinxiban_window_background"		
+			quadTextureSprite ="GFX_az_xxb_window_bg"
+		}
+		buttonType = {
+			name = "az_xinxiban_openstartwindow"
+			orientation = UPPER_RIGHT
+			position = { x = -60 y = 10 }  
+			quadTextureSprite = "GFX_az_openstart_button"
+			 
+			pdx_tooltip = "az_openstart_button_tooltip"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "az_xinxiban_close_button"
+		
+			position = { x = 58 y = 85 }  
+			quadTextureSprite = "GFX_az_shangjiantou"
+			 
+			pdx_tooltip = "az_xinxiban_close_button_window_tooltip"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "az_xmp_xinxiban_button"
+			position = { x = 10 y = 120 } 
+			quadTextureSprite ="GFX_az_smallbutton2" 
+			
+			buttonFont = "vic_18"
+			buttonText = "az_xmp_decision_button_text"
+			pdx_tooltip = "az_xmp_decision_button_tooltip"
+			clicksound = click_default
+		}
+		
+		buttonType = { 
+			name = "az_jhd_xinxiban_button"
+			position = { x = 94 y = 120 }  
+			quadTextureSprite ="GFX_az_smallbutton2" 
+			
+			buttonFont = "vic_18"
+			buttonText = "az_jhd_decision_button_text"
+			pdx_tooltip = "az_jhd_decision_button_tooltip"
+			clicksound = click_default
+		}
+
+
+		instantTextboxType = {
+			name = "mf_number_text0"
+			position = { x = 50 y = 13 }  
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 120 y = 5 }
+			text = "mf_number_text0"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "mf_number_tooltip"
+		}
+		instantTextboxType = {
+			name = "wz_number_text0"
+			position = { x = 75 y = 45 } 
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "wz_number_text0"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "wz_number_tooltip"
+		}
+		instantTextboxType = {
+			name = "zs_number_text0"
+			position = { x = 115 y = 78 } 
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "zs_number_text0"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "zs_number_tooltip"
+		}
+		
+	}
+}

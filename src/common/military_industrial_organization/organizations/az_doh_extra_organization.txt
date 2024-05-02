@@ -1,0 +1,603 @@
+az_DOH_railway_organization = {
+	icon = GFX_idea_generic_railroads
+	allowed = {
+		tag = DOH
+	}
+	available = {
+		DOH = {
+			has_completed_focus = DOH_donghuanggongyetixi
+		}
+	}
+	equipment_type = {
+		transport_plane_equipment
+		train_equipment
+		railway_gun_equipment
+		az_equipment_liechepao
+		support_equipment
+		doh_civ_equipment
+		convoy
+	}
+	research_bonus = 0.30
+	research_categories = {
+		train_tech
+	}
+	tree_header_text = {
+		text = DOH_donghuangyunshuchuandui_title
+		x = 0
+	}
+	tree_header_text = {
+		text = DOH_donghuangminyonggongye_title
+		x = 2
+	}
+	tree_header_text = {
+		text = DOH_donghuangshengfei
+		x = 6
+	}
+	tree_header_text = {
+		text = DOH_donghuangzhongche_title
+		x = 9
+	}
+	initial_trait = {
+		token = DOH_train_init
+		name = DOH_train_init
+		equipment_bonus = {
+			build_cost_ic = -0.05
+			reliability = 0.15
+		}
+		limit_to_equipment_type = {
+			train_equipment
+			railway_gun_equipment
+			az_equipment_liechepao
+		}
+		production_bonus = {
+			production_resource_need_factor = -0.5
+			production_resource_penalty_factor = -0.5
+		}
+	}
+	trait = {
+		token = DOH_wuzhuangyunshuchuan_trait
+		name = DOH_wuzhuangyunshuchuan_trait
+		position = { x = 0 y = 0 }
+		icon = GFX_generic_mio_trait_icon_lg_attack
+		limit_to_equipment_type = {
+			convoy
+		}
+		equipment_bonus = {
+			naval_speed = 0.20
+			surface_visibility = -0.25
+			lg_attack = 1
+			anti_air_attack = 1
+		}
+		available = {
+			DOH = {
+				has_completed_focus = DOH_yunshujiandui
+			}
+		}
+	}
+	trait = {
+		token = DOH_yunshujiandui_trait
+		name = DOH_yunshujiandui_trait
+		parent = {
+			traits = { DOH_wuzhuangyunshuchuan_trait }
+		}
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		relative_position_id = DOH_wuzhuangyunshuchuan_trait
+		position = { x = 0 y = 1}
+		limit_to_equipment_type = {
+			convoy
+		}
+		production_bonus = {
+			production_cost_factor = -0.1
+		}
+	}
+	trait = {
+		token = DOH_minyonggongye_trait_1
+		name = DOH_minyonggongye_trait_1
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		position = { x = 1 y = 0 }
+		limit_to_equipment_type = {
+			doh_civ_equipment
+		}
+		available = {
+			DOH = {
+				has_completed_focus = DOH_junmingronghe_jishugaijing
+			}
+			
+		}
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+	trait = {
+		token = DOH_minyonggongye_trait_2
+		name = DOH_minyonggongye_trait_2
+		icon = GFX_generic_mio_trait_icon_resources
+		position = { x = 3 y = 0 }
+		limit_to_equipment_type = {
+			doh_civ_equipment
+		}
+		available = {
+			DOH = {
+				has_completed_focus = DOH_junmingronghe_jishugaijing
+			}
+			
+		}
+		production_bonus = {
+			production_resource_need_factor = -0.75
+		}
+	}
+	trait = {
+		token = DOH_zhiyuanzhuangbei_trait
+		name = DOH_zhiyuanzhuangbei_trait
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		position = { x = 2 y = 1 }
+		limit_to_equipment_type = {
+			support_equipment
+		}
+		parent = {
+			traits = {
+				DOH_minyonggongye_trait_1
+				DOH_minyonggongye_trait_2
+			}
+			num_parents_needed = 2
+		}
+		available = {
+			
+		}
+		production_bonus = {
+			production_cost_factor = -0.1
+			production_resource_need_factor = -1
+		}
+	}
+
+	# trait = {
+	# 	token = DOH_zhiyuanzhuangbei_less_cost_trait
+	# 	name = DOH_zhiyuanzhuangbei_trait
+	# 	icon = GFX_generic_mio_trait_icon_build_cost_ic
+	# 	relative_position_id = DOH_zhiyuanzhuangbei_trait
+	# 	position = { x = 1 y = 1 }
+	# 	limit_to_equipment_type = {
+	# 		support_equipment
+	# 	}
+	# 	mutually_exclusive = {
+	# 		DOH_zhiyuanzhuangbei_baozhanghouqin_trait
+	# 	}
+	# 	parent = {
+	# 		traits = {
+	# 			DOH_zhiyuanzhuangbei_trait
+	# 		}
+	# 	}
+	# 	available = {
+	# 		
+	# 	}
+	# 	production_bonus = {
+	# 		production_cost_factor = -0.1
+	# 		production_resource_need_factor = -1
+	# 	}
+	# }
+	# trait = {
+	# 	token = DOH_zhiyuanzhuangbei_baozhanghouqin_trait
+	# 	name = DOH_zhiyuanzhuangbei_baozhanghouqin_trait
+	# 	icon = GFX_generic_mio_trait_icon_build_cost_ic
+	# 	relative_position_id = DOH_zhiyuanzhuangbei_trait
+	# 	position = { x = -1 y = 1 }
+	# 	limit_to_equipment_type = {
+	# 		support_equipment
+	# 	}
+	# 	parent = {
+	# 		traits = {
+	# 			DOH_zhiyuanzhuangbei_trait
+	# 		}
+	# 	}
+	# 	mutually_exclusive = {
+	# 		DOH_zhiyuanzhuangbei_less_cost_trait
+	# 	}
+	# 	available = {
+	# 		
+	# 	}
+	# 	equipment_bonus = {
+	# 		build_cost_ic = 0.5
+	# 		recon = 1
+	# 		entrenchment = 1
+	# 		reliability_factor = 0.2
+	# 	}
+	# }
+
+	trait = {
+		token = DOH_cic_plane_A_1
+		name = DOH_cic_plane_A
+		position = { x = 5 y = 0 }
+		icon = GFX_generic_mio_trait_icon_naval_range
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		mutually_exclusive = {
+			DOH_cic_plane_B_1
+		}
+		available = {
+			DOH = {
+				has_completed_focus = DOH_tieyuan
+			}
+		}
+		equipment_bonus = {
+			air_range = 0.1
+		}
+	}
+	trait = {
+		token = DOH_cic_plane_B_1
+		name = DOH_cic_plane_B
+		position = { x = 7 y = 0 }
+		mutually_exclusive = {
+			DOH_cic_plane_A_1
+		}
+		icon = GFX_generic_mio_trait_icon_air_agility
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		available = {
+			DOH = {
+				has_completed_focus = DOH_tieyuan
+			}
+		}
+		equipment_bonus = {
+			air_defence = 0.1
+		}
+	}
+
+	trait = {
+		token = DOH_cic_plane_A_2
+		name = DOH_cic_plane_A
+		position = { x = 5 y = 1 }
+		icon = GFX_generic_mio_trait_icon_naval_range
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_1
+				DOH_cic_plane_B_1
+			}
+		}
+		mutually_exclusive = {
+			DOH_cic_plane_B_2
+		}
+		available = {
+			DOH = {
+				num_of_factories > 800
+			}
+			
+		}
+		equipment_bonus = {
+			air_range = 0.1
+		}
+	}
+	trait = {
+		token = DOH_cic_plane_B_2
+		name = DOH_cic_plane_B
+		position = { x = 7 y = 1 }
+		mutually_exclusive = {
+			DOH_cic_plane_A_2
+		}
+		icon = GFX_generic_mio_trait_icon_air_agility
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_1
+				DOH_cic_plane_B_1
+			}
+		}
+		available = {
+			DOH = {
+				num_of_factories > 800
+			}
+			
+		}
+		equipment_bonus = {
+			air_defence = 0.1
+		}
+	}
+	
+	trait = {
+		token = DOH_cic_plane_A_3
+		name = DOH_cic_plane_A
+		position = { x = 5 y = 2 }
+		icon = GFX_generic_mio_trait_icon_naval_range
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_2
+				DOH_cic_plane_B_2
+			}
+		}
+		mutually_exclusive = {
+			DOH_cic_plane_B_3
+		}
+		available = {
+			DOH = {
+				num_of_factories > 1000
+			}
+			
+		}
+		equipment_bonus = {
+			air_range = 0.1
+		}
+	}
+	trait = {
+		token = DOH_cic_plane_B_3
+		name = DOH_cic_plane_B
+		position = { x = 7 y = 2 }
+		mutually_exclusive = {
+			DOH_cic_plane_A_3
+		}
+		icon = GFX_generic_mio_trait_icon_air_agility
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_2
+				DOH_cic_plane_B_2
+			}
+		}
+		available = {
+			DOH = {
+				num_of_factories > 1000
+			}
+			
+		}
+		equipment_bonus = {
+			air_defence = 0.1
+		}
+	}
+
+	trait = {
+		token = DOH_cic_plane_A_4
+		name = DOH_cic_plane_A
+		position = { x = 5 y = 3 }
+		icon = GFX_generic_mio_trait_icon_naval_range
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_3
+				DOH_cic_plane_B_3
+			}
+		}
+		mutually_exclusive = {
+			DOH_cic_plane_B_4
+		}
+		available = {
+			DOH = {
+				num_of_factories > 1600
+			}
+			
+		}
+		equipment_bonus = {
+			air_range = 0.1
+		}
+	}
+	trait = {
+		token = DOH_cic_plane_B_4
+		name = DOH_cic_plane_B
+		position = { x = 7 y = 3 }
+		mutually_exclusive = {
+			DOH_cic_plane_A_4
+		}
+		icon = GFX_generic_mio_trait_icon_air_agility
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_3
+				DOH_cic_plane_B_3
+			}
+		}
+		available = {
+			DOH = {
+				num_of_factories > 1600
+			}
+			
+		}
+		equipment_bonus = {
+			air_defence = 0.1
+		}
+	}
+	trait = {
+		token = DOH_cic_plane_A_5
+		name = DOH_cic_plane_A
+		position = { x = 5 y = 4 }
+		icon = GFX_generic_mio_trait_icon_naval_range
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_4
+				DOH_cic_plane_B_4
+			}
+		}
+		mutually_exclusive = {
+			DOH_cic_plane_B_5
+		}
+		available = {
+			DOH = {
+				has_tech = jet_engines
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+			}
+		}
+		equipment_bonus = {
+			air_range = 0.4
+		}
+	}
+
+	trait = {
+		token = DOH_cic_plane_B_5
+		name = DOH_cic_plane_B
+		position = { x = 7 y = 4 }
+		mutually_exclusive = {
+			DOH_cic_plane_A_5
+		}
+		icon = GFX_generic_mio_trait_icon_air_agility
+		limit_to_equipment_type = {
+			transport_plane_equipment
+		}
+		available = {
+			DOH = {
+				has_tech = jet_engines
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+			}
+		}
+		parent = {
+			traits = {
+				DOH_cic_plane_A_4
+				DOH_cic_plane_B_4
+			}
+		}
+		equipment_bonus = {
+			air_defence = 0.4
+		}
+	}
+
+	trait = {
+		token = DOH_train_speed_1
+		name = DOH_train_speed_1
+		position = { x = 9 y = 0 }
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		limit_to_equipment_type = {
+			train_equipment
+			railway_gun_equipment
+			az_equipment_liechepao
+		}
+		available = {
+			DOH = {
+				num_of_factories > 600
+				has_completed_focus = DOH_tiedaogongye
+			}
+			
+		}
+		equipment_bonus = {
+			maximum_speed = 1.5
+			armor_value = 0.5
+			air_attack = 0.5
+		}
+		on_complete = {
+			DOH = {
+				remove_ideas = DOH_donghuangzhongche_idea_0
+				add_ideas = DOH_donghuangzhongche_idea_1
+			}
+		}
+	}
+	trait = {
+		token = DOH_train_speed_2
+		name = DOH_train_speed_2
+		position = { x = 0 y = 1 }
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		parent = {
+			traits = {
+				DOH_train_speed_1
+			}
+		}
+		limit_to_equipment_type = {
+			train_equipment
+			railway_gun_equipment
+			az_equipment_liechepao
+		}
+		relative_position_id = DOH_train_speed_1
+		available = {
+			DOH = {
+				num_of_factories > 800
+			}
+			
+		}
+		equipment_bonus = {
+			maximum_speed = 1
+			armor_value = 0.5
+			air_attack = 0.5
+		}
+		on_complete = {
+			DOH = {
+				remove_ideas = DOH_donghuangzhongche_idea_1
+				add_ideas = DOH_donghuangzhongche_idea_2
+			}
+		}
+	}
+	trait = {
+		token = DOH_train_speed_3
+		name = DOH_train_speed_3
+		position = { x = 0 y = 1 }
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		relative_position_id = DOH_train_speed_2
+		limit_to_equipment_type = {
+			train_equipment
+			railway_gun_equipment
+			az_equipment_liechepao
+		}
+		parent = {
+			traits = {
+				DOH_train_speed_2
+			}
+		}
+		available = {
+			DOH = {
+				num_of_factories > 1000
+			}
+			
+		}
+		equipment_bonus = {
+			maximum_speed = 2
+			armor_value = 0.5
+			air_attack = 0.5
+		}
+		on_complete = {
+			DOH = {
+				remove_ideas = DOH_donghuangzhongche_idea_2
+				add_ideas = DOH_donghuangzhongche_idea_3
+			}
+		}
+	}
+	trait = {
+		token = DOH_train_speed_4
+		name = DOH_train_speed_4
+		position = { x = 0 y = 1 }
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		relative_position_id = DOH_train_speed_3
+		limit_to_equipment_type = {
+			train_equipment
+			railway_gun_equipment
+			az_equipment_liechepao
+		}
+		parent = {
+			traits = {
+				DOH_train_speed_3
+			}
+		}
+		available = {
+			DOH = {
+				num_of_factories > 1600
+				has_completed_focus = DOH_hailufuhe
+			}
+			
+		}
+		equipment_bonus = {
+			maximum_speed = 3
+			armor_value = 0.5
+			air_attack = 0.5
+		}
+		on_complete = {
+			DOH = {
+				remove_ideas = DOH_donghuangzhongche_idea_3
+				swap_ideas = {
+					remove_idea = DOH_dhgytx_1
+					add_idea = DOH_dhgytx_2
+				}
+			}
+		}
+	}
+}

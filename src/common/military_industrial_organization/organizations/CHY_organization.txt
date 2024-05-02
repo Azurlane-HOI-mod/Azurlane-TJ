@@ -1,0 +1,876 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+CHY_osaka_army_arsenal_organization = {
+	include = generic_tank_organization
+	icon = GFX_idea_osaka_army_arsenal
+	allowed = {	
+		tag = CHY
+	}
+	available = {
+		FROM = {
+			OR = {
+				original_tag= CHY
+				OR = {
+					is_ally_with = CHY
+					has_country_flag = chy_jungongyuanzhu_flag
+				}
+			}
+		}
+	}
+	add_trait = {
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=8 y=0 }  
+
+		available = {
+			FROM = { 
+				OR = {
+					has_completed_focus =  CHY_gongyejituan 
+					OR = {
+						is_ally_with = CHY
+						has_country_flag = chy_jungongyuanzhu_flag
+					}
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+} 
+
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+
+CHY_kure_naval_arsenal_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_kure_naval_arsenal
+	allowed = {
+		tag = CHY
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = { has_completed_focus =  CHY_gongyejituan }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+CHY_yokosuka_naval_arsenal_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_yokosuka_naval_arsenal
+	allowed = {
+		tag = CHY
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = { has_completed_focus =  CHY_gongyejituan }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+CHY_maizuru_naval_arsenal_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_maizuru_naval_arsenal
+	
+	allowed = {
+		tag = CHY
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0}  
+
+		available = {
+			FROM = { has_completed_focus =  CHY_gongyejituan }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+CHY_sasebo_naval_arsenal_organization = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_sasebo_naval_arsenal
+	allowed = {
+		tag = CHY
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = { has_completed_focus =  CHY_gongyejituan }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+
+CHY_mitsubishi_organization = {
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_idea_mitsubishi
+	
+	allowed = {
+		tag = CHY
+	}
+	available = {
+		owner = {
+		OR = {
+			original_tag= CHY
+			OR = {
+				is_ally_with = CHY
+				has_country_flag = chy_jungongyuanzhu_flag
+			}
+		}
+	}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus =  CHY_gongyejituan
+					OR = {
+						is_ally_with = CHY
+						has_country_flag = chy_jungongyuanzhu_flag
+					}
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+
+	equipment_type = {
+		mio_cat_eq_all_small_plane
+	}
+} 
+
+CHY_aichi_organization = {
+	include = generic_range_focused_aircraft_organization
+	icon = GFX_idea_aichi
+	allowed = {
+		tag = CHY
+	}
+	available = {
+		owner = {
+		OR = {
+			original_tag= CHY
+			OR = {
+				is_ally_with = CHY
+				has_country_flag = chy_jungongyuanzhu_flag
+			}
+		}
+	}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=3 }  
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus =  CHY_gongyejituan
+					OR = {
+						is_ally_with = CHY
+						has_country_flag = chy_jungongyuanzhu_flag
+					}
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+CHY_nakajima_organization = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_idea_nakajima
+	allowed = {
+		tag = CHY
+	}
+	available = {
+		owner = {
+		OR = {
+			original_tag= CHY
+			OR = {
+				is_ally_with = CHY
+				has_country_flag = chy_jungongyuanzhu_flag
+			}
+		}
+	}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus =  CHY_gongyejituan
+					OR = {
+						is_ally_with = CHY
+						has_country_flag = chy_jungongyuanzhu_flag
+					}
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+CHY_yokosuka_organization = {
+	include = generic_naval_aircraft_organization 
+	icon = GFX_idea_yokosuka
+	allowed = {
+		tag = CHY
+	}
+	available = {
+		owner = {
+		OR = {
+			original_tag= CHY
+			OR = {
+				is_ally_with = CHY
+				has_country_flag = chy_jungongyuanzhu_flag
+			}
+		}
+	}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus =  CHY_gongyejituan
+					OR = {
+						is_ally_with = CHY
+						has_country_flag = chy_jungongyuanzhu_flag
+					}
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+CHY_tokyo_arsenal_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_tokyo_arsenal
+	allowed = {
+		tag = CHY
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = { has_completed_focus =  CHY_gongyejituan }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+CHY_osaka_army_arsenal_artillery_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_osaka_army_arsenal
+	allowed = {
+		tag = CHY
+	}
+	available = {
+		owner = {
+		OR = {
+			original_tag= CHY
+			OR = {
+				is_ally_with = CHY
+				has_country_flag = chy_jungongyuanzhu_flag
+			}
+		}
+	}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus =  CHY_gongyejituan
+					OR = {
+						is_ally_with = CHY
+						has_country_flag = chy_jungongyuanzhu_flag
+					}
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+} 
+
+CHY_nissan_organization = {
+	include = generic_motorized_mechanized_organization 
+	icon = GFX_idea_nissan
+	allowed = {
+		tag = CHY
+	}
+	available = {
+		FROM = {
+			OR = {
+				original_tag= CHY
+				OR = {
+					is_ally_with = CHY
+					has_country_flag = chy_jungongyuanzhu_flag
+				}
+			}
+		}
+	}
+	add_trait = {  
+		token = gongyejituan
+		name = gongyejituan
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus =  CHY_gongyejituan
+					OR = {
+						is_ally_with = CHY
+						has_country_flag = chy_jungongyuanzhu_flag
+					}
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+      	}
+
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_capacity_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}

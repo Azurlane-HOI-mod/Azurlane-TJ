@@ -1,0 +1,562 @@
+﻿add_namespace = BLI_event
+
+country_event = {
+	id = BLI_event.2
+	title = BLI_event.2.t
+	desc = BLI_event.2.d
+	picture = GFX_aze_buli
+	is_triggered_only = yes
+	
+	option = {
+		name = BLI_event.2.a
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { has_country_flag = buligongyi1_get }
+		}
+		set_country_flag = buligongyi1_get
+	}
+	
+	option = {
+		name = BLI_event.2.b
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { has_country_flag = buligongyi2_get }
+		}
+		set_country_flag = buligongyi2_get
+	}
+}
+
+country_event = {
+	id = BLI_event.3
+	title = BLI_event.3.t
+	desc = BLI_event.3.d
+	picture = GFX_aze_buli
+	is_triggered_only = yes
+
+	option = {
+		name = BLI_event.3.a
+		ai_chance = {
+			factor = 5
+		}
+		custom_effect_tooltip = BLI_event.3_effect_tooltip
+		add_to_variable = { wz_sl = 8888 }
+	}
+}
+country_event = {
+	id = BLI_event.4
+	title = BLI_event.4.t
+	desc = BLI_event.4.d
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+
+	option = {
+		name = BLI_event.4.a
+		ai_chance = {
+			factor = 5
+		}
+		random_country = {
+			limit = {
+				is_subject = no
+				is_in_faction = no
+				has_capitulated = no
+				OR = {
+					tag = ECU
+					tag = COL
+					tag = PRU
+					tag = BOL
+					tag = BRA
+					tag = CHL
+					tag = ARG
+					tag = URG
+					tag = PAR
+					tag = VEN
+				}
+			}
+			create_faction = "南美反布里联盟"
+			declare_war_on = { target = ROOT type = puppet_wargoal_focus }
+			every_country = {
+				limit = {
+					is_subject = no
+					is_in_faction = no
+					has_capitulated = no
+					NOT = { tag = PREV }
+					OR = {
+						tag = ECU
+						tag = COL
+						tag = PRU
+						tag = BOL
+						tag = BRA
+						tag = CHL
+						tag = ARG
+						tag = URG
+						tag = PAR
+						tag = VEN
+					}
+				}
+				PREV = { add_to_faction = PREV.THIS }
+		
+				declare_war_on = { target = ROOT type = puppet_wargoal_focus }
+			}
+		}
+	}
+}
+country_event = {
+	id = BLI_event.5
+	title = BLI_event.5.t
+	desc = BLI_event.5.d
+	picture = GFX_aze_buli
+	is_triggered_only = yes
+	option = {
+		name = "BLI_event.5.a"
+		BLI = {
+		annex_country = { target = ROOT transfer_troops = yes }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "BLI_event.5.b"
+		ROOT = {
+		declare_war_on = {
+			target = BLI
+			type = annex_everything
+		}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = BLI_event.6
+	title = BLI_event.6.t
+	desc = BLI_event.6.d
+	picture = GFX_aze_buli
+	is_triggered_only = yes
+	option = {
+		name = "BLI_event.6.a"
+		BLI = {
+		transfer_state = 687
+		transfer_state = 691
+		}
+		126 = {
+		add_resource = {
+            type = aluminium
+            amount = 48
+          }
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+			has_war = yes
+			factor = 100
+			}
+		}
+	}
+	option = {
+		name = "BLI_event.6.b"
+		BLI = {
+		country_event = BLI_event.11
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+			not = { has_war = yes }
+			factor = 100
+			}
+		}
+	}
+}
+country_event = {
+	id = BLI_event.7
+	title = BLI_event.7.t
+	desc = BLI_event.7.d
+	picture = GFX_aze_buli
+	is_triggered_only = yes
+	option = {
+		name = "BLI_event.7.a"
+		BLI = {
+		transfer_state = 310
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+			has_war = yes
+			factor = 100
+			}
+		}
+	}
+	option = {
+		name = "BLI_event.7.b"
+		BLI = {
+		country_event = BLI_event.12
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+			not = { has_war = yes }
+			factor = 100
+			}
+		}
+	}
+}
+country_event = {
+	id = BLI_event.8
+	title = BLI_event.8.t
+	desc = BLI_event.8.d
+	picture = GFX_aze_buli
+	is_triggered_only = yes
+	option = {
+		name = "BLI_event.8.a"
+		BLI = {
+		transfer_state = 685
+		transfer_state = 686
+		}
+		HAI = { country_event = BLI_event.5 }
+		CUB = { country_event = BLI_event.5 }
+		DOM = { country_event = BLI_event.5 }
+		MEX = { country_event = BLI_event.5 }
+		GUA = { country_event = BLI_event.5 }
+		HON = { country_event = BLI_event.5 }
+		ELS = { country_event = BLI_event.5 }
+		NIC = { country_event = BLI_event.5 }
+		COS = { country_event = BLI_event.5 }
+		PAN = { country_event = BLI_event.5 }
+		ai_chance = {
+			base = 1
+			modifier = {
+			has_war = yes
+			factor = 100
+			}
+		}
+	}
+	option = {
+		name = "BLI_event.8.b"
+		BYG = {
+		declare_war_on = {
+			target = BLI
+			type = annex_everything
+		}
+		annex_country = { target = MEX transfer_troops = yes }
+		annex_country = { target = GUA transfer_troops = yes }
+		annex_country = { target = ELS transfer_troops = yes }
+		annex_country = { target = HON transfer_troops = yes }
+		annex_country = { target = NIC transfer_troops = yes }
+		annex_country = { target = COS transfer_troops = yes }
+		annex_country = { target = PAN transfer_troops = yes }
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+			not = { has_war = yes }
+			factor = 100
+			}
+		}
+	}
+}
+country_event = {
+	id = BLI_event.9
+	title = BLI_event.9.t
+	desc = BLI_event.9.d
+	picture = aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "BLI_event.9.a"
+		BLI = {
+		declare_war_on = {
+			target = SIR
+			type = annex_everything
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "BLI_event.9.b"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = BLI_event.10
+	title = BLI_event.10.t
+	desc = BLI_event.10.d
+	picture = aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "BLI_event.10.a"
+		white_peace = { 
+			tag = SIR
+		}
+		BLI = {
+		annex_country = { target = SIR transfer_troops = no }
+		}
+		add_ideas = BLI_kejironghe
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = BLI_event.11
+	title = BLI_event.11.t
+	desc = BLI_event.11.d
+	picture = aze_gangkou
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "BLI_event.11.a"
+		BLI = {
+		transfer_state = 687
+		transfer_state = 691
+		}
+		126 = {
+		add_resource = {
+            type = aluminium
+            amount = 48
+          }
+		}
+		add_political_power = -50
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "BLI_event.11.b"
+		BLI = {
+		declare_war_on = {
+			target = HUJ
+			type = annex_everything
+		}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "BLI_event.11.c"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = BLI_event.12
+	title = BLI_event.12.t
+	desc = BLI_event.12.d
+	picture = aze_gangkou
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "BLI_event.12.a"
+		BLI = {
+		transfer_state = 310
+		}
+		add_political_power = -50
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "BLI_event.12.b"
+		BLI = {
+		declare_war_on = {
+			target = YUW
+			type = annex_everything
+		}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "BLI_event.12.c"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = BLI_event.13
+	title = BLI_event.13.t
+	desc = BLI_event.13.desc
+	picture = GFX_aze_buli
+	is_triggered_only = yes
+	option = {
+		name = "BLI_event.13.a"
+		BLI = { set_capital = { state = 278 }  }
+		278 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "BLI_event.13.b"
+		BLI = { set_capital = { state = 500 } }
+		500 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "BLI_event.13.c"
+		BLI = { set_capital = { state = 279 } }
+		279 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "BLI_event.13.d"
+		BLI = { set_capital = { state = 300 } }
+		300 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "BLI_event.13.e"
+		BLI = { set_capital = { state = 303 } }
+		303 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}

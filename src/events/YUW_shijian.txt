@@ -1,0 +1,3088 @@
+﻿add_namespace = YUW_event
+
+country_event = {
+	id = YUW_event.45
+	title = "恭喜你发现了彩蛋！"
+	desc = YUW_event.45.d 
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+	has_country_flag =  yuw_caidantank
+	is_ai = no
+	date > 1944.1.1
+	controls_state = 64
+	controls_state = 16
+	controls_state = 2
+	or = {
+	controls_state = 219
+	controls_state = 126
+	}
+	}
+	fire_only_once = yes
+	option = {
+		name = "给我也整一个！"
+		add_to_variable = {
+				var = zs_sl
+				value = -300
+			}
+		hidden_effect = {
+		load_oob = AZ_caidan
+		}
+		custom_effect_tooltip = YUW_caidanfangkuai
+			add_to_variable = {
+				var = xzmf_sl
+				value = 6
+			}
+		set_technology = { super_heavy_tank_chassis = 1}
+		create_equipment_variant = {
+			name = "杨大屌超重型坦克" 
+			type = super_heavy_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_super_heavy_cannon
+				turret_type_slot = tank_super_heavy_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_3
+				special_type_slot_2 = dozer_blade
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = additional_machine_guns
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 14
+				tank_nsb_armor_upgrade = 14
+			}
+			icon = "gfx/interface/technologies/GER_basic_main_tank.dds"
+		}
+	}
+	option = {
+		name = "这年头谁还用超重啊？"
+		
+	}
+}
+
+country_event = {
+	id = YUW_event.44
+	title = "打扰一下！"
+	desc = "广告时间！觉得塞壬的AI后期强度不够？那你可以来试试由下划线人_制作的战双帕弥什MOD，绝对打得爽，后期更有挑战！创意工坊搜素”战双“就能搜到噢！"
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+	is_ai = no
+	has_war = no
+	date > 1937.6.1
+	or = {
+	tag = YUW
+	is_in_faction_with = YUW
+	}
+	}
+	fire_only_once = yes
+	option = {
+		name = "啊好好好"
+		add_political_power = 20
+	}
+	option = {
+		name = "还会有广告出现吗？"
+		add_war_support = 0.05
+		custom_effect_tooltip = yuw_guanggaoshijian
+	}
+	option = {
+		name = "其实我早就玩过你的MOD啦"
+		set_country_flag = yuw_caidantank
+		army_experience = 10
+	}
+}
+
+news_event = {
+	id = YUW_event.43
+	title = YUW_event.43.t
+	desc = YUW_event.43.d
+	picture = GFX_az_yw1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = YUW_event.43.a
+		create_wargoal = { target = TIX type = take_state_focus }
+		trigger = { 
+		OR = {
+		tag = YUW 
+		}
+		}
+	}
+	option = {
+		name = YUW_event.43.b
+		trigger = {
+			not = {tag = YUW }
+		}
+	}
+}
+
+news_event = {
+	id = YUW_event.42
+	title = YUW_event.42.t
+	desc = YUW_event.42.d
+	picture = GFX_az_tx1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = YUW_event.42.a
+		trigger = { 
+		OR = {
+		tag = YUW 
+		tag = TIX
+		}
+		}
+	}
+	option = {
+		name = YUW_event.42.b
+		trigger = {
+			not = {tag = YUW }
+			not = {tag = TIX }
+		}
+	}
+}
+
+news_event = {
+	id = YUW_event.41
+	title = YUW_event.41.t
+	desc = YUW_event.41.d
+	picture = GFX_az_yw3
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = YUW_event.41.a
+		trigger = { 
+		OR = {
+		tag = YUW 
+		tag = TIX
+		tag = SAD
+		}
+		}
+	}
+	option = {
+		name = YUW_event.41.c
+		trigger = { tag = HUJ }
+	}
+	option = {
+		name = YUW_event.41.b
+		trigger = {
+			not = {tag = YUW }
+			not = {tag = TIX }
+			not = {tag = SAD }
+			not = {tag = HUJ }
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.40
+	title = "第二次波尔多会议"
+	desc = "鸢尾告诉我们，她们最近策反了一些皇家的殖民地，这些殖民地会主动加入其他国家....希望皇家不要发现自己的领土少了几块。"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "分我一点！"
+		SAD = {
+		add_war_support = 0.2
+		transfer_state = 269
+		transfer_state = 183
+		transfer_state = 116
+		transfer_state = 659
+		}
+		YUW = {
+		transfer_state = 700
+		transfer_state = 701
+		transfer_state = 274
+		transfer_state = 558
+		transfer_state = 454
+		transfer_state = 455
+		transfer_state = 453
+		transfer_state = 298
+		transfer_state = 900
+		transfer_state = 901
+		transfer_state = 902
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.39
+	title = "瓜分瑞士"
+	desc = "鸢尾最近对装准备对瑞士采取行动，她们暗示我们可以获得部分地区......."
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "好耶"
+		YUW = {
+		add_stability = 0.05
+		army_experience = 25
+		transfer_state = 845
+		transfer_state = 847
+		transfer_state = 3
+		}
+		SAD = {
+		transfer_state = 846
+		transfer_state = 151
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.38
+	title = "来自鸢尾的邀请"
+	desc = "鸢尾希望我们加入她们的阵营，虽然她们也是尚武政体，但维希与铁血是敌对的，她们邀请我们的目的也是对抗重樱。为了表达诚意，她们将归还租借地。"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "我们很乐意加入"
+		transfer_state = 728
+		transfer_state = 729
+		add_political_power = 100
+		YUW = {
+				add_to_faction = DOH
+			}
+		ai_chance = {
+			factor = 80
+		}
+	}
+	option = {
+		name = "达咩达咩，达咩哟~"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.37
+	title = "鸢尾赠送装备给我们"
+	desc = "我们和新生的维希教廷在亚洲有共同的敌人重樱，因此鸢尾给我们送了大量装备来援助我们的抗战事业。"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "红豆泥阿里嘎多"
+		add_equipment_to_stockpile = { 
+				type = infantry_equipment
+				amount = 5000 
+				}
+		add_equipment_to_stockpile = { 
+				type = support_equipment 
+				amount = 1000 
+				}
+		add_equipment_to_stockpile = { 
+				type =  artillery_equipment 
+				amount = 1000 
+				}
+		add_war_support = 0.2
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.36
+	title = "莱茵兰或战争"
+	desc = "鸢尾要求我们恢复莱茵兰和摩泽兰的非军事区并削减军备，她们真是疯了！维希教廷那群人不会真以为她们打得过我们吧？"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "那个敦刻尔克，还有那个让巴尔嗷，等我到巴黎，必须把你舰装拆掉，必须打你脸"
+		add_war_support = 0.3
+		YUW = {
+		add_state_claim = 51
+		add_state_claim = 42
+		add_war_support = 0.2
+		}
+		hidden_effect = {
+		news_event = { id = YUW_event.43 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "你说是那就是，没办法的嘛，打不过能怎么办嘛"
+		add_political_power = -200
+		add_war_support = -0.5
+		add_ideas = disarmed_nation
+		add_ideas = civilian_economy
+		51 = {
+			set_demilitarized_zone = yes
+		}
+		42 = {
+			set_demilitarized_zone = yes
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.35
+	title = "鸢尾交给我们的领土有些奇怪"
+	desc = "你真确定鸢尾给了？"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "我不到啊"
+		create_wargoal = { target = YUW type = take_state_focus }
+		add_war_support = 0.5
+		hidden_effect = {
+		HOL = {
+		declare_war_on = { target = TIX type = annex_everything }
+		}
+		BEL = {
+		declare_war_on = { target = TIX type = annex_everything }
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.34
+	title = "鸢尾没有给我们任何土地！"
+	desc = "鸢尾出尔反尔，没有给我们任何土地，我们必须教训教训她们！"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "等我到巴黎，看我摘你头套打你脸！"
+		create_wargoal = { target = YUW type = take_state_focus }
+		add_war_support = 0.5
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.33
+	title = "弟弟三国的命运"
+	desc = "在我们和铁血的共同施压下，现在弟弟三国已经无力抵抗我们了，我们可以决定她们的命运。不过可惜的是，我们和铁血都不能吞并荷属东印度。"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "履行承诺，给铁血她们应得的土地"
+		add_stability = 0.1
+		army_experience = 50
+		transfer_state = 6
+		transfer_state = 35
+		transfer_state = 309
+		transfer_state = 695
+		annex_country = { target = LUX transfer_troops = no }
+		TIX = {
+		add_stability = 0.1
+		transfer_state = 7
+		transfer_state = 36
+		transfer_state = 295
+		transfer_state = 538
+		transfer_state = 718
+		transfer_state = 888
+		transfer_state = 889
+		transfer_state = 890
+		transfer_state = 768
+		transfer_state = 769
+		}
+		hidden_effect = {
+		news_event = { id = YUW_event.42 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "俾斯麦，我日你先人！"
+		add_political_power = -100
+		transfer_state = 6
+		transfer_state = 35
+		transfer_state = 309
+		transfer_state = 695
+		transfer_state = 7
+		transfer_state = 36
+		transfer_state = 295
+		transfer_state = 538
+		transfer_state = 718
+		annex_country = { target = LUX transfer_troops = no }
+		TIX = {
+		country_event = { id = YUW_event.34 days = 1}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "啊哈哈哈哈哈土地来咯！"
+		add_political_power = -200
+		annex_country = { target = LUX transfer_troops = no }
+		TIX = {
+		country_event = { id = YUW_event.35 days = 1}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.32
+	title = "铁血接受了我们的提案"
+	desc = "铁血已经接受了我们的提案，她们将获得比利时的殖民地与荷兰北部，而我们将吞并剩下的领土。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "整挺好"
+		add_political_power = 100
+		add_war_support = 0.3
+		set_country_flag = yuw_dycbedhytg
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.31
+	title = "第一次波尔多会议"
+	desc = YUW_event.31.d
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "这种好事有什么拒绝的必要呢？"
+		add_political_power = 150
+		add_war_support = 0.3
+		add_state_claim = 295
+		add_state_claim = 538
+		add_state_claim = 718
+		YUW = {
+		country_event = { id = YUW_event.32 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们日后甚至可以在皇家不介入的情况下直接从荷兰绕过马奇诺防线"
+		add_political_power = 150
+		add_war_support = 0.3
+		add_state_claim = 295
+		add_state_claim = 538
+		add_state_claim = 718
+		YUW = {
+		country_event = { id = YUW_event.32 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.30
+	title = "皇家介入！"
+	desc = "皇家介入了我们的索取行动，她们保障了比利时的独立！这代表我们的后续行动也无法进行了！"
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "我超，别！"
+		create_wargoal = { target = HOL type = take_state_focus }
+		create_wargoal = { target = BEL type = take_state_focus }
+		create_wargoal = { target = LUX type = take_state_focus }
+		set_country_flag = huangjiajieru_yuw
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.29
+	title = "皇家选择不介入"
+	desc = "皇家并没有介入，我们可以直接占领瓦隆地区了。"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = "好耶"
+		army_experience = 50
+		add_stability = 0.2
+		add_war_support = 0.2
+		transfer_state = 34
+		hidden_effect = {
+		news_event = { id = YUW_event.41 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.28
+	title = "奥尔良协定"
+	desc = "鸢尾要求获得瓦隆地区，我们该不该介入呢？"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "她们要瓦隆管我啥事？"
+		add_political_power = 100
+		add_war_support = -0.1
+		YUW = {
+		country_event = { id = YUW_event.29 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "达咩！瓦隆是比利时的！"
+		add_political_power = -100
+		add_stability = -0.1
+		add_war_support = 0.5
+		give_guarantee = BEL
+		give_guarantee = HOL
+		give_guarantee = LUX
+		YUW = {
+		country_event = { id = YUW_event.30 days = 1}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+
+country_event = {
+	id = YUW_event.27
+	title = "来自鸢尾的最后通牒"
+	desc = "鸢尾要求我们全面并入对方，我们应该怎么办？"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "我莫得选择，因为我只是个小几把路人国家。"
+		YUW = {
+		annex_country = { target = ROOT transfer_troops = no }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.26
+	title = "占领加泰罗尼亚"
+	desc = "在占领加泰罗尼亚的过程中，西班牙果然没有任何抵抗，她们自己都忙不过来了。因此我们顺便占领了西班牙的非洲殖民地。"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "哟西"
+		add_political_power = 50
+		add_stability = 0.1
+		add_war_support = 0.1
+		transfer_state = 165
+		transfer_state = 290
+		transfer_state = 699
+		transfer_state = 783
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.25
+	title = "捐款结果"
+	desc = "我们本以为富人会捐款，结果来捐的反而全是本就困难的穷人....."
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "该对某些人重拳出击了"
+		add_political_power = -50
+		add_stability = -0.1
+		swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_jjhmhf
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "鸢尾虽然穷，但是军事实力还是有那么一点的"
+		add_political_power = -50
+		add_stability = -0.1
+		swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_jjhmhf
+		}
+	}
+	option = {
+		name = "呀哒哟，我们还需要那些富人的支持！"
+		custom_effect_tooltip = YUW_tip9
+		add_political_power = -50
+		add_stability = -0.1
+		swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_jjhmhf
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.24
+	title = "国民觉醒"
+	desc = "如果鸢尾拥有更大的土地，那我们还会这么缺资源缺钱吗？"
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = "我不好说"
+		swap_ideas = {
+			remove_idea = YUW_jjhmhf
+			add_idea = YUW_wddjj
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "但我可以告诉你怎么做"
+		swap_ideas = {
+			remove_idea = YUW_jjhmhf
+			add_idea = YUW_wddjj
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.23
+	title = "大会结束"
+	desc = "会议完美结束！"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "好的"
+		add_stability = 0.05
+	}
+}
+
+country_event = {
+	id = YUW_event.22
+	title = "大会开始"
+	desc = "大会开始了，选择你想要的发展方针吧~"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "好的"
+		custom_effect_tooltip = YUW_tip7
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.21
+	title = "和平演变"
+	desc = "由于我们选择了太多资本主义经济体系，导致我们现在又回到民主政体了...."
+	picture = GFX_aze_lisailiu2
+	trigger = {
+	tag = YUW
+	has_government = communism
+	has_completed_focus = YUC_gaigechengguo
+	democratic > 0.5
+	}
+	fire_only_once = yes
+	option = {
+		name = "绕了一大圈啊！"
+		set_politics = {
+			ruling_party = democratic
+			}
+			load_focus_tree = yuanwei_focus
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = YUW_event.20
+	title = "经济改革结果"
+	desc = "我们经济改革失败了，只能让经济随着时间慢慢恢复了....."
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "我的错"
+		hidden_effect = {
+		remove_ideas = YUW_jjbk
+		remove_ideas = YUW_jjxt
+		add_timed_idea = { idea = YUW_jjbk days = 730 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = YUW_event.19
+	title = "经济改革结果"
+	desc = "虽然中间出了点问题，但我们的经济还是恢复了！"
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "好！"
+		custom_effect_tooltip = YUW_jjggcg
+		hidden_effect = {
+		remove_ideas = YUW_jjhmhf
+		remove_ideas = YUW_jjqywd
+		add_ideas = YUW_wddjj
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = YUW_event.18
+	title = "末日"
+	desc = "我们的动作不够快，这样疯狂的行为现在已经不被人民所支持了！"
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "操！"
+		add_popularity = { ideology = democratic popularity = 0.35 }
+		start_civil_war = {
+			ruling_party = fascism
+			ideology = democratic
+			size = 0.5
+			only_own_territory = no
+			keep_unit_leaders = {02002 02003 02004 02005 02006 02007 } 
+			}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = YUW_event.17
+	title = "强迫抉择"
+	desc = "在我们的猛烈宣传攻势下，维希派最终选择了妥协，现在鸢尾是一个共产主义国家了！"
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "好耶！"
+		set_politics = {
+			ruling_party = communism
+			}
+		complete_national_focus = YUC_gailiang
+		YUW_hldzf_dengji = yes
+		add_popularity = { ideology = communism popularity = 0.3 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = YUW_event.16
+	title = "闪击鸢尾！"
+	desc = "鸢尾战争准备不足，我们可以通过快速拿下巴黎结束这场战争！"
+	picture = GFX_aze_txbsm
+	fire_only_once = yes
+	trigger = {
+	tag = TIX
+	has_war_with = YUW
+	YUW = {
+	has_government = democratic
+	not = {
+	has_country_leader = { ruling_only = yes name = "霞飞" }
+	}
+	}
+	date < 1941.1.1
+	}
+	option = {
+		name = "环法自行车赛！"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = YUW_event.15
+	title = "战争准备不足！"
+	desc = "战争来得太快了，我们根本没有做好准备！"
+	picture = GFX_aze_start
+	fire_only_once = yes
+	trigger = {
+	tag = YUW
+	has_government = democratic
+	has_war_with = TIX
+	not = {
+	 has_country_leader = { ruling_only = yes name = "霞飞" }
+	}
+	not = { has_completed_focus = YUW_shenshengshiming }
+	not = { has_completed_focus = YUW_chedijingjigaige }
+	date < 1941.1.1
+	}
+	option = {
+		name = "他妈的，国家怎么成了这个样子！"
+		ai_chance = {
+			factor = 100
+		}
+		add_ideas = YUW_zbbz
+	}
+}
+country_event = {
+	id = YUW_event.14
+	title = "维希派发起了内战！"
+	desc = "就在今日，黎塞留宣布彻底改组政府，并且向北联靠拢。内战不可避免。由于没有事先宣传团结的思想，政府方失去了许多将领。"
+	picture = GFX_aze_lisailiu2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "无所谓，来吧！"
+		hidden_effect = {
+		news_event = { hours = 24 id = azspnews.29 }
+		complete_national_focus = YUC_geming
+		}
+		ai_chance = {
+			factor = 100
+		}
+		
+	}
+}
+country_event = {
+	id = YUW_event.13
+	title = "被控制的维希教廷"
+	desc = "维希教廷只是在我们的控制之下的一个傀儡。"
+	picture = GFX_aze_lisailiu2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "很好"
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+		news_event = { hours = 30 id = azspnews.19 }
+		country_event = { id = az_tianjiang.239 days = 3 }
+		WEX = {
+		transfer_state = 26
+		transfer_state = 21
+		transfer_state = 32
+		transfer_state = 22
+		transfer_state = 31
+		transfer_state = 25
+		transfer_state = 20
+		transfer_state = 33
+		transfer_state = 459
+		transfer_state = 460
+		transfer_state = 513
+		transfer_state = 461
+		transfer_state = 462
+		transfer_state = 514
+		
+		add_state_core = 21
+		add_state_core = 32
+		add_state_core = 22
+		add_state_core = 31
+		add_state_core = 25
+		add_state_core = 20
+		add_state_core = 33
+		add_state_core = 459
+		add_state_core = 460
+		add_state_core = 513
+		add_state_core = 461
+		add_state_core = 462
+		add_state_core = 514
+		
+		}
+		YUW = {
+		add_state_core = 543
+		add_state_core = 26
+		}
+		set_autonomy = {
+		target = WEX
+		autonomy_state = autonomy_reichskommissariat
+		}
+		give_guarantee = WEX
+		SAD = {
+			give_guarantee = WEX
+		}
+		}
+	}
+}
+
+
+country_event = {
+	id = YUW_event.999
+	title = YUW_event.999.t
+	desc = YUW_event.999.d 
+	trigger = {
+	tag = YUW
+	has_country_flag =  YUW_nishibushiainie
+	is_ai = no
+	}
+	fire_only_once = yes
+	option = {
+		name = YUW_event.999.a
+		custom_effect_tooltip = YUW_chengshi
+		add_political_power = -2000
+		add_stability = -0.5
+		add_war_support = -0.5
+		remove_ideas = YUW_fkAIbuff
+		remove_ideas = TY_fengkuangAI
+	}
+	option = {
+		name = YUW_event.999.b
+		custom_effect_tooltip = YUW_shuohuang
+		country_event = YUW_event.998
+	}
+}
+
+country_event = {
+	id = YUW_event.998
+	title = YUW_event.998.t
+	desc = YUW_event.998.d 
+	is_triggered_only = yes
+	option = {
+		name = YUW_event.998.a
+		custom_effect_tooltip = YUW_shuohuang
+		country_event = YUW_event.997
+	}
+	option = {
+		name = YUW_event.998.b
+		add_political_power = -2000
+		add_stability = -0.5
+		add_war_support = -0.5
+		remove_ideas = YUW_fkAIbuff
+		remove_ideas = TY_fengkuangAI
+	}
+}
+
+country_event = {
+	id = YUW_event.997
+	title = YUW_event.997.t
+	desc = YUW_event.997.d 
+	is_triggered_only = yes
+	option = {
+		name = YUW_event.997.a
+		set_politics = {
+			ruling_party = 
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.12
+	title = "在鸢尾的胜利"
+	desc = "鸢尾国的厌战情绪很重，他们其中一部分人要求与我们议和，是否要成立一个傀儡鸢尾帮我们管理部分土地？同时他们还能提供一批旧鸢尾军队为我们所用，而且我们也不会损失多少占领区工业。"
+	picture = GFX_aze_txbsm
+	fire_only_once = yes
+	trigger = {
+	tag = TIX
+	has_government = fascism
+	has_war_with = YUW
+	YUW = {
+	not = {
+	has_government = fascism 
+	}
+	has_idea = YUW_zbbz
+	has_capitulated = yes
+	}
+	is_in_faction_with = SAD
+	controls_state = 16
+	}
+	option = {
+		name = "成立傀儡维希教廷。"
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+		YUW = { 
+		set_cosmetic_tag = YUW_free #自由法国
+		release = WEX
+		}
+		}
+		country_event = { id =YUW_event.13}
+		TIX = {
+		add_stability = 0.1
+		add_war_support = 0.1
+		set_state_controller = 806
+		set_state_controller = 19
+		set_state_controller = 23
+		set_state_controller = 30
+		set_state_controller = 14
+		set_state_controller = 15
+		set_state_controller = 16
+		set_state_controller = 24
+		set_state_controller = 27
+		set_state_controller = 18
+		set_state_controller = 17
+		set_state_controller = 28
+		set_state_controller = 785
+		set_state_controller = 29
+		}
+		SAD = {
+		add_war_support = 0.1
+		set_state_controller = 735
+		set_state_controller = 1
+		set_state_controller = 458
+		set_state_controller = 665
+		set_state_controller = 851
+		add_state_core = 735
+		add_state_core = 851
+		add_state_core = 1
+		add_state_core = 458
+		add_state_core = 665
+		}
+	}
+	option = {
+		name = "所有土地都属于铁血！"
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -0.1
+		add_war_support = 0.1
+		every_state = {
+		limit = {
+		is_core_of = YUW
+		is_controlled_by = TIX
+		}
+		add_compliance = -80
+		add_resistance = 40 
+		}
+		custom_effect_tooltip = TIX_bsmmanyidu_xiajiang
+		add_to_variable = {
+			var = tix_bsmmanyiduzhi
+			value = -3
+		}
+		}
+	}
+country_event = {
+	id = YUW_event.11
+	title = "黎塞留的选择"
+	desc = YUW_event.11.d
+	picture = GFX_aze_lisailiu2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "看来我在浪费时间。"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect=  {
+		complete_national_focus = YUW_zhengfugaige
+		}
+	}
+	option = {
+		name = "她说得对，我们必须现在就开始变革！"
+		ai_chance = {
+			factor = 0
+		}
+		add_ideas = YUW_geming
+		YUW_lisailiu = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = marxism
+					traits = {
+						hyzj
+					}
+				}
+				promote_leader = yes
+				}
+			}
+		}
+	option = {
+		name = "虽然我认同她的说法，但这太不现实了，我们得慢慢来。"
+		ai_chance = {
+			factor = 100
+		}
+		set_party_name = { ideology = communism long_name = "自由鸢尾-黎塞留派" name = "自由鸢尾-黎塞留派" }
+		add_ideas = YUW_biange
+		YUW_lisailiu = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = marxism
+					traits = {
+						hyzj
+					}
+				}
+				promote_leader = yes
+				}
+			}
+	}
+}
+country_event = {
+	id = YUW_event.10
+	title = "一封密信"
+	desc = YUW_event.10.d
+	picture = GFX_aze_lisailiu2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "到此为止了，这是封挑拨离间的信。"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+		complete_national_focus = YUW_jiuciweizhiderongren
+		}
+	}
+	option = {
+		name = "神是存在的，祈祷会在未来某天得到回应。"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+		complete_national_focus = YUW_zhengfugaige
+		}
+	}
+	option = {
+		name = "有点意思，继续看下去。"
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+		country_event = { id =YUW_event.11}
+		}
+	}
+}
+country_event = {
+	id = YUW_event.9
+	title = "一封密信"
+	desc = "今日，一封神秘的信被送到了黎塞留的办公室。送信员说这封信是突然出现的，并且维系派成员很想阻止信被送到这里，这封信里会有什么呢？"
+	picture = GFX_aze_lisailiu2
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "够了！这肯定又是恶作剧，让巴尔的小把戏罢了"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+		complete_national_focus = YUW_jiuciweizhiderongren
+		}
+	}
+	option = {
+		name = "我没有时间看这封来历不明的信。"
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+		complete_national_focus = YUW_zhengfugaige
+		}
+	}
+	option = {
+		name = "还是看一眼吧。"
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+		country_event = { id =YUW_event.10}
+		}
+	}
+}
+country_event = {
+	id = YUW_event.8
+	title = "感谢你游玩鸢尾！"
+	desc = "鸢尾新国策树由群友_(QQ1720819221)制作。感谢你游玩我制作的国策~如果有什么建议和想法欢迎来群内交流。"
+	picture = GFX_aze_start
+	fire_only_once = yes
+	trigger = {
+		tag = YUW
+		date > 1936.2.5
+	}
+	option = {
+		name = "谢谢你，下划线人。"
+		ai_chance = {
+			factor = 100
+		}
+
+	}
+}
+news_event = {
+		id = YUW_event.7
+		title = "鸢尾国大选"
+		desc = YUW_event.7.d
+		picture = GFX_az_yw2
+		major = yes
+		is_triggered_only = yes
+		option = {
+			name = "鸢尾真爱选举。"
+			trigger = {
+				NOT = {
+				 TAG = YUW
+				 is_in_faction_with = YUW
+				}
+			}
+		}
+		
+		option = {
+			name = "可真别吓我！"
+			trigger = {
+				is_in_faction_with = YUW
+				NOT = {
+				 TAG = YUW
+				}
+			}
+		}
+		
+		option = {
+			name ="我们的命运会怎样呢。"
+			trigger = {
+				TAG = YUW
+			}
+		}
+}
+country_event = {
+	id = YUW_event.6
+	title = "大选结果"
+	desc = "大选结果"
+	picture = GFX_aze_lisailiu
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+			name = "我们会怎样？"
+	if = {
+			limit = {
+					democratic>0.6
+				}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			complete_national_focus = YUW_chongxinshenshiwaijiaozhengce
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			remove_ideas = { YUW_mzp }
+			remove_ideas = { YUW_fdp }
+		}
+	if = {
+			limit = {
+					fascism>0.6
+				}
+			
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			complete_national_focus = YUW_chongxinshenshiwaijiaozhengce
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			remove_ideas = { YUW_mzp }
+			remove_ideas = { YUW_fdp }
+		
+	}
+	if = {
+			limit = {
+					fascism<0.6
+					democratic<0.6
+				}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = { ideology = neutrality popularity = 0.4 }
+			complete_national_focus = YUW_chongxinshenshiwaijiaozhengce	
+			remove_ideas = { YUW_mzp }
+			remove_ideas = { YUW_fdp }
+		
+	
+		
+		
+		}
+	
+
+	
+	}
+}
+
+country_event = {
+	id = YUW_event.100
+	title = YUW_event.100.t
+	desc = YUW_event.100.d
+	picture = GFX_aze_lisailiu
+	trigger = {
+	tag = YUW
+	or = {
+	has_completed_focus = YUW_tuanjieweixixingdong
+	has_completed_focus = YUW_jinjunbali
+	has_completed_focus = YUW_tingshinuhou
+	}
+	is_ai = yes
+	arms_factory < 301
+	or = {
+	TIX = {
+	is_ai = no
+	}
+	BFL = {
+	is_ai = no
+	}
+	}
+	}
+	mean_time_to_happen = {
+		days = 200
+	}
+	option = {
+		name = YUW_event.100.a
+		add_equipment_to_stockpile = { 
+				type = infantry_equipment
+				amount = 20000 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type = support_equipment 
+				amount = 1000 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type =  artillery_equipment 
+				amount = 2000 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type =  anti_tank_equipment 
+				amount = 1000 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type =  anti_air_equipment 
+				amount = 1000 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type =  medium_tank_chassis_2 
+				amount = 4000 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type =  light_tank_chassis_2 
+				amount = 500 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type =  motorized_equipment
+				amount = 1000 
+				producer = YUW
+				}
+		add_equipment_to_stockpile = { 
+				type =  gw_armored_car_equipment
+				amount = 500 
+				producer = YUW
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.4
+	title = "大选将至"
+	desc = "如今我们的政府与经济都已稳定，大选将决定我们的政府由谁掌控！"
+	picture = GFX_aze_lisailiu
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = YUW_jingjigaige
+		not = {has_completed_focus = YUW_rangbaerdemingling}
+		has_idea = YUW_hldzf4
+		has_idea = YUW_wddjj
+		date > 1938.12.1
+		not = { has_country_flag = yiwai_daxuanwufajinxing }
+	}
+	option = {
+		name = "为什么会有选举啊！"
+		ai_chance = {
+			factor = 100
+		}
+		complete_national_focus = YUW_daxuan
+		country_event = { id =YUW_event.5}
+
+	}
+}
+
+country_event = {
+	id = YUW_event.5
+	title = "大选将至"
+	desc = "您将站在哪一边呢？请注意，在您选择完派系后，反对派马上就会开始行动。"
+	picture = GFX_aze_lisailiu
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "自由鸢尾！"
+		ai_chance = {
+			factor = 0
+			modifier = {
+			 has_completed_focus = YUW_hanweiminzhu
+			add = 100
+			}
+		}
+			add_ideas = YUW_mzp
+		hidden_effect = {
+			news_event = { hours = 24 id = YUW_event.7 }
+		}
+	}
+	option = {
+		name = "维希教廷！"
+		ai_chance = {
+			factor = 0
+			modifier = {
+			 has_completed_focus = YUW_weixixingdong1
+			add = 100
+			}
+		}
+		add_ideas = YUW_fdp
+			hidden_effect = {
+			news_event = { hours = 24 id = YUW_event.7 }
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.1
+	title = YUW_event.1.t
+	desc = YUW_event.1.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = yes
+	trigger = {
+		check_variable = {
+			var = yuw_weixi
+			value = 150
+			compare = greater_than_or_equals
+		}
+	}
+	option = {
+		name = YUW_event.1.a
+		ai_chance = {
+			factor = 5
+		}
+		create_country_leader = {
+			name = "让巴尔"
+			picture = "leader_rangbaer.jpg"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				hdzh
+			}
+		}
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = fascism
+			size = 0.5
+			only_own_territory = no
+			capital = 114
+			states = { 
+				114 116 182
+			}
+		}
+	}
+}
+country_event = {
+	id = YUW_event.3
+	title = YUW_event.3.t
+	desc = YUW_event.3.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = yes
+	trigger = {
+		check_variable = {
+			var = yuw_ziyou
+			value = 150
+			compare = greater_than_or_equals
+		}
+	}
+	option = {
+		name = YUW_event.3.a
+		ai_chance = {
+			factor = 5
+		}
+		create_country_leader = {
+			name = "让巴尔"
+			picture = "leader_rangbaer.jpg"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				hdzh
+			}
+		}
+		start_civil_war = {
+			ruling_party =fascism
+			ideology = democratic
+			size = 0.5
+			only_own_territory = no
+			capital = 114
+			states = { 
+				114 116 182
+			}
+		}
+	}
+}
+country_event = {
+	id = YUW_event.2
+	title = YUW_event.2.t
+	desc = YUW_event.2.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes	
+	option = {
+		name = YUW_event.2.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = { ideology = democratic popularity = 0.1 }
+	}
+	option = {
+		name = YUW_event.2.b
+		ai_chance = {
+			factor = 0
+		}
+		add_popularity = { ideology = fascism popularity = 0.1 }
+	}
+}
+
+country_event = {
+	id = YUW_event.46
+	title = "鸢尾邀请我们加入她们所在的阵营"
+	desc = "由于此前我们与鸢尾的友好互动，鸢尾现在邀请我们加入她们目前所在的阵营。"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes	
+	option = {
+		name = "我来力！"
+		add_ai_strategy = {
+			type = antagonize
+			id = "TIX"			
+			value = 500
+		}
+		TIX = {
+		add_ai_strategy = {
+			type = antagonize
+			id = "ROOT"			
+			value = 500
+		}
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = YUW			
+			value = 70
+			}
+		add_ai_strategy = {
+			type = alliance
+			id = "YUW"			
+			value = 200
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = HUJ			
+			value = 50
+			}
+		add_ai_strategy = {
+			type = alliance
+			id = "HUJ"			
+			value = 50
+		}
+		YUW = {
+		add_ai_strategy = {
+			type = befriend
+			id = SAD
+			value = 70
+			}
+		add_ai_strategy = {
+			type = alliance
+			id = "SAD"			
+			value = 200
+		}
+		}
+		HUJ = {
+		add_ai_strategy = {
+			type = befriend
+			id = SAD
+			value = 50
+			}
+		add_ai_strategy = {
+			type = alliance
+			id = "SAD"			
+			value = 100
+		}
+		}
+		HUJ = {
+		add_to_faction = ROOT
+		}
+		YUW = {
+		add_to_faction = ROOT
+		}
+		YUW = {
+		country_event = { id = YUW_event.47 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "让鸢尾爬！"
+		YUW = {
+		country_event = { id = YUW_event.48 days = 1}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.47
+	title = "对方同意了我们的请求"
+	desc = "对方已经同意了我们的要求，她们将加入我们所在的阵营。"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = "好耶！"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.48
+	title = "对方拒绝了我们的请求"
+	desc = "对方已经拒绝了我们的要求，她们并不想加入我们的阵营。"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = "呜呜呜"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.49
+	title = "鸢尾希望租借罗马城"
+	desc = "鸢尾如今抛弃了教廷的身份，但是她们想在罗马新建一个教廷。虽然租出去整个罗马对我们来说很痛苦，但我们或许可以和她们协商一下。不过最好不要选择提会让她们生气的那些条件..."
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "把梵蒂冈租出去如何？这样我们可以保留罗马城"
+		YUW = {
+		country_event = { id = YUW_event.50 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "让鸢尾用萨伏伊和科西嘉来换罗马吧！"
+		YUW = {
+		country_event = { id = YUW_event.51 days = 1}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "租牛魔酬宾"
+		YUW = {
+		country_event = { id = YUW_event.51  }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.50
+	title = "撒丁的答复"
+	desc = "撒丁不太忍心租出去整个罗马城，因此她们提议可以租借小城梵蒂冈给我们，我们的答复是？"
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = "成交！"
+		add_ideas = YUW_jtjh
+		SAD = {
+		add_ideas = SAD_shengdishouhuzhe_idea
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "撒丁是讨打！"
+		custom_effect_tooltip = yuw_tips_buyaopohuaishengdi
+		add_political_power = -1000
+		add_war_support = -2
+		add_stability = -1
+		declare_war_on = { target = SAD type = annex_everything }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.51
+	title = "撒丁的答复"
+	desc = "撒丁提出了过分的要求，这让大家十分愤怒，虽然可能会破坏圣地，但我们只能武力夺取新教廷了。"
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = "希望不会破坏圣地！"
+		declare_war_on = { target = SAD type = annex_everything }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.52
+	title = "宣布提前选举"
+	desc = "黎塞留已经向公众宣布了提前选举的消息，选举大概会在37年到来之前结束，时间紧迫。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "我们必须尽快行动！"
+		add_stability = 0.05
+		hidden_effect = {
+		country_event = { id = YUW_event.54 days = 10 }
+		news_event = { id = az_tianjiang.182 days = 1 }
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.53
+	title = "危机重重"
+	desc = "提前选举消息的发布并没有缓和鸢尾国内的紧张局势，鸢尾已经陷入了最危急的时刻！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "我们需要先解决这些麻烦"
+		add_stability = -0.1
+		add_political_power = -300
+		activate_mission = YUW_jinjunbali_time
+		activate_mission = YUW_neizhanweiji_time
+		activate_mission = YUW_dunkeerkezhengbain_time
+		activate_mission = YUW_rangbaerdeyanjiang_time
+		activate_mission = YUW_gengduomanjiujiarubuqu_time
+		set_country_flag = yuwzuipaineizhan_kaishi
+		set_country_flag = dunkeerkezhengbian_kaishi
+		YUW_edu = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				 trait_psh_xingfenzhidu
+				 trait_psh_daiduotianshi
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		hidden_effect = {
+		country_event = { id = YUW_event.76 days = 3 }
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.54
+	title = "不同骑士之间的地位与关系"
+	desc = "鸢尾是唯一的神权舰娘国，所有骑士团都聚集在鸢尾，如果要建立一个骑士团国，就需要平衡好各骑士团之间的关系。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "路易九世的圣殿骑士团拥有最高发言权"
+		add_stability = 0.2
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.55 days = 20 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "守护我们的教廷骑士享受最高待遇"
+		set_country_flag = yuw_lalongchenggongtiaojian_1
+		add_stability = 0.1
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.55 days = 20 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "大家应该平等相处"
+		add_stability = 0.2
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 30
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.55 days = 20 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "也许一些小小的恩惠会更管用？"
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 15
+		}
+		add_stability = 0.1
+		add_political_power = -50
+		hidden_effect = {
+		country_event = { id = YUW_event.55 days = 20 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.55
+	title = "维希派与自由派"
+	desc = "鸢尾国内最大的两个派系就是以让巴尔为首的维希派，和以黎塞留为首的自由派，我们在行动中应该更倾向于哪一派？由于路易九世自己是自由派舰娘，因此偏向维希派会导致部分人的不满。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "自由派虽然犯了很多错，但她们是值得信任的"
+		add_stability = 0.2
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 20
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.56 days = 15 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我们应该缓和与维希派的关系"
+		set_country_flag = yuw_lalongchenggongtiaojian_2
+		add_stability = -0.2
+		add_political_power = -100
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.56 days = 15 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们不会倾向于任何一方"
+		add_stability = 0.1
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 5
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.56 days = 15 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "向两派都伸出橄榄枝"
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 15
+		}
+		add_stability = -0.1
+		add_political_power = -50
+		hidden_effect = {
+		country_event = { id = YUW_event.56 days = 15 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.56
+	title = "对黎塞留的看法"
+	desc = "黎塞留此前一直作为自由派的代表领导着我们，但近年来鸢尾的混乱形势也与黎塞留脱不了干系，我们应该如何看待黎姐？"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "我们可以再次相信黎塞留，但这次我们要指导她"
+		add_stability = 0.2
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 5
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.57 days = 15 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "黎塞留犯了太多错，她必须下台！"
+		add_war_support = 0.2
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.57 days = 15 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我不发表任何看法"
+		add_political_power = -200
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 15
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.57 days = 15 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.57
+	title = "君主制的可能"
+	desc = "有人提出了危险的提议：路易九世可以凭借自己的出身，建立一个君主制鸢尾。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "这太疯狂了，但神权共和制也该到头了"
+		add_stability = 0.2
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.58 days = 10 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "鸢尾的神权共和制应该得到延续"
+		add_stability = 0.2
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.58 days = 10 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = YUW_event.57.c
+		set_country_flag = yuw_jianlijunzhuzhiyuwzhunbei
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.58 days = 10 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.58
+	title = "霞飞之外的选择"
+	desc = "我们拉拢霞飞的计划出现了挫折，我们需要尽快决定在拉拢霞飞失败的情况下，我们应该选择谁作为我们的盟友。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "另一位审判官，维希派的拉·加利索尼埃"
+		custom_effect_tooltip = yuw_tips_lalomngshibaijiuggg
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		country_event = { id = YUW_event.59 days = 7 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "敦刻尔克跟教廷骑士们关系也很好"
+		custom_effect_tooltip = yuw_tips_lalomngshibaijiuggg
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		country_event = { id = YUW_event.59 days = 7 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "有没有说服贞德的可能呢？"
+		custom_effect_tooltip = yuw_tips_lalomngshibaijiuggg
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = -100
+		}
+		country_event = { id = YUW_event.59 days = 7 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我们只能选择霞飞"
+		set_country_flag = yuw_lalongchenggongtiaojian_3
+		custom_effect_tooltip = yuw_tips_lalomngshibaijiuggg
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		country_event = { id = YUW_event.59 days = 7 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.59
+	title = "拉拢霞飞的最终结果"
+	desc = " "
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "我们成功拉拢了霞飞！"
+		set_country_flag = yuw_chengonglalongtiaofei_yes
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.61 days = 80 }
+		}
+		trigger = { 
+		has_country_flag = yuw_lalongchenggongtiaojian_1
+		has_country_flag = yuw_lalongchenggongtiaojian_2
+		has_country_flag = yuw_lalongchenggongtiaojian_3
+		check_variable = {
+			var = yuw_qstcgl
+			value = 50
+			compare = greater_than_or_equals
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们成功拉拢了其他盟友！"
+		set_country_flag = yuw_chengonglalongtiaofei_no
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.61 days = 80 }
+		}
+		trigger = { 
+		not = { has_country_flag = yuw_lalongchenggongtiaojian_3 }
+		check_variable = {
+			var = yuw_qstcgl
+			value = 50
+			compare = greater_than_or_equals
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们没有拉拢到任何盟友，计划破产了！"
+		set_country_flag = yuw_jihuapochan
+		add_power_balance_value = {
+			id = YUW_balance
+			value = 2
+		}
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = -100
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.60
+	title = "政府拒绝交出权力！"
+	desc = "我们为自由鸢尾政府清除了所有的敌人，但她们却拒绝了权力交接，还好路易九世已经提前做好了其他的计划。"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "准备行动"
+		set_political_power = 300
+		swap_ideas = {
+		remove_idea = YUW_hldzf1
+		add_idea = YUW_hldzf5
+		}
+		remove_power_balance = { id = YUW_balance }
+		remove_ideas = YUW_daxuanqiandejingzheng
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.61
+	title = "政府解决了海盗问题"
+	desc = "在我们帮助黎塞留政府解决搞事的家伙们时，她们竟然快速解决了海盗问题，我们似乎低估她们了。"
+	picture = GFX_aze_lisailiu
+	is_triggered_only = yes
+	option = {
+		name = "太恐怖"
+		remove_ideas = YUW_hddqr
+		complete_national_focus = YUW_jichujianshe
+		if = {
+		limit = {
+		is_ai = yes
+		}
+		swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_wddjj
+		}
+		add_ideas = YUW_jjfs
+		add_ideas = YUW_jgyfs
+		custom_effect_tooltip = wanjiujingji_gongyejidakuozhang
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes 
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+				is_controlled_by = YUW
+				is_core_of = YUW
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes 
+				}
+			}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.62
+	title = "黎塞留的错误"
+	desc = "都是因为自由鸢尾这群虫豸，教廷才会变成这个样子，许多人希望审判黎塞留。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "暴力是达咩的，这解决不了根本问题"
+		set_country_flag = yuw_lalongchenggongtiaojian_4
+		add_stability = 0.2
+		add_political_power = -300
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 20
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.63 days = 3 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "对黎姐进行无情图图！"
+		add_war_support = 0.2
+		add_political_power = -100
+		set_country_flag = yuw_lisailiuchongjianjiaotingtiaojian_yes
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.63 days = 3 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "黎姐没有错，错的是这个世界！"
+		add_stability = 0.5
+		add_political_power = -500
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 20
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.63 days = 3 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.63
+	title = "让巴尔的罪行"
+	desc = "黎塞留的妹妹让巴尔虽然是维希派的领袖，但在国内动乱时期一直在想办法加重国内的混乱局势。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "你说得对"
+		add_stability = 0.3
+		add_political_power = -100
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.64 days = 5 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我觉得还能接受"
+		set_country_flag = yuw_lalongchenggongtiaojian_5
+		add_war_support = -0.3
+		add_political_power = -100
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.64 days = 5 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "可我们不也是这么做的吗？"
+		add_stability = -0.5
+		add_political_power = -500
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = -30
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.64 days = 5 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.64
+	title = "圣女贞德的地位"
+	desc = "圣女贞德在我们的各种事务中一直保持中立，我们该如何处理她？"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "让她继续保持中立就好了"
+		set_country_flag = yuw_lalongchenggongtiaojian_6
+		add_stability = 0.3
+		add_political_power = -300
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.65 days = 5 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "她应该是自由派那边的，别管了"
+		add_war_support = 0.3
+		add_political_power = -100
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 10
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.65 days = 5 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "强迫她帮助我们！"
+		add_stability = -1
+		add_political_power = 1500
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = -200
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.65 days = 5 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.65
+	title = "粉碎维希派？"
+	desc = "我们目前已经做好了一切准备，最后该和维希派再谈谈了，当然，我们也可以尝试消灭维希派，但注意了，我们的很多盟友也是维希派舰娘...."
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "没什么好谈的"
+		hidden_effect = {
+		country_event = { id = YUW_event.66 days = 5 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "粉碎维希派"
+		add_war_support = 0.5
+		add_political_power = 500
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = -100
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.66 days = 5 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "联合维希派"
+		set_country_flag = yuw_lianheweixipai_yes
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 30
+		}
+		hidden_effect = {
+		country_event = { id = YUW_event.66 days = 5 }
+		}
+		trigger = { 
+		has_country_flag = yuw_lalongchenggongtiaojian_1
+		has_country_flag = yuw_lalongchenggongtiaojian_2
+		has_country_flag = yuw_lalongchenggongtiaojian_5
+		has_country_flag = yuw_lalongchenggongtiaojian_6
+		check_variable = {
+			var = yuw_qstcgl
+			value = 110
+			compare = greater_than_or_equals
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.66
+	title = "粉碎自由派？"
+	desc = "黎塞留那边似乎认为我们还有谈判的余地，但我们也可以直接采取行动..."
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "直接采取行动"
+		add_political_power = 100
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "与自由派妥协，同意她们的部分条件，但鸢尾必须焕然一新"
+		add_political_power = -500
+		add_to_variable = {
+			var = yuw_qstcgl
+			value = 50
+		}
+		trigger = { 
+		has_country_flag = yuw_lalongchenggongtiaojian_4
+		has_country_flag = yuw_lalongchenggongtiaojian_3
+		has_country_flag = yuw_lalongchenggongtiaojian_5
+		has_country_flag = yuw_lalongchenggongtiaojian_6
+		check_variable = {
+			var = yuw_qstcgl
+			value = 110
+			compare = greater_than_or_equals
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.67
+	title = "自由派的胜利"
+	desc = "我们的谈判与军事行动都失败了，现在黎塞留稳固了权利！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "寄"
+		set_political_power = 0
+		complete_national_focus = YUW_hanweiminzhu
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.68
+	title = "圣女贞德进行调和"
+	desc = "我们和自由派的支持不相上下，另一场内战迫在眉睫，此时圣女贞德终于发言了。在经过调解后，鸢尾将保持教廷政体，不过以后在对外政策上鸢尾将遵从我们的路线。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "行吧"
+		set_party_name = { ideology = neutrality long_name = "自由鸢尾" name = "自由鸢尾" }
+		set_political_power = 600
+		YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = liberalism
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+		}
+		swap_ideas = {
+			remove_idea = YUW_jjbk
+			add_idea = YUW_wddjj
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.69
+	title = "路易九世的胜利"
+	desc = "我们成功了！在我们舰娘盟友的帮助下，自由派不得不屈服于我们，现在路易九世已经完全掌控了国家，骑士团国可以正式建立了！不过我们还剩下最后一个问题，由谁来出任国家领袖呢？"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "路易九世将成为国王！"
+		set_country_flag = lyjs_fubiwangguo
+		complete_national_focus = YUW_womingyouwo
+		set_party_name = { ideology = neutrality long_name = "鸢尾保王党" name = "鸢尾保王党" }
+		add_popularity = { ideology = neutrality popularity = 0.2 }
+		set_politics = {
+			ruling_party = neutrality
+		}
+		YUW_6194 = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = despotism
+					traits = {
+						 trait_psh_huafudeshengqishi
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		YUW_rangbaer = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						 hdzh
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		set_political_power = 500
+		trigger = { 
+			has_country_flag = yuw_jianlijunzhuzhiyuwzhunbei
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "路易九世将领导国家！"
+		set_cosmetic_tag = YUWqishituanguo
+		set_party_name = { ideology = democratic long_name = "维希教廷-霞飞派" name = "维希教廷-霞飞派" }
+		set_party_name = { ideology = neutrality long_name = "自由鸢尾-路易九世派" name = "自由鸢尾-路易九世派" }
+		set_party_name = { ideology = fascism long_name = "维希教廷-让巴尔派" name = "维希教廷-让巴尔派" }
+		set_party_name = { ideology = communism long_name = "鸢尾共产党/自由鸢尾" name = "鸢尾共产党/自由鸢尾" }
+		add_popularity = { ideology = neutrality popularity = 0.5 }
+		set_politics = {
+			ruling_party = neutrality
+		}
+		YUW_6194 = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = despotism
+					traits = {
+						 trait_psh_huafudeshengqishi
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		YUW_xiafei = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = xiafeizhidu
+					traits = {
+						trait_psh_shenpanguan
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		YUW_rangbaer = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						 hdzh
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		if = {
+		limit = {
+		is_ai = yes
+		}
+		set_political_power = 1000
+		}
+		if = {
+		limit = {
+		is_ai = no
+		}
+		set_political_power = 900
+		}
+		trigger = { 
+		not = { has_country_flag = yuw_jianlijunzhuzhiyuwzhunbei }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "霞飞的声望更高"
+		set_cosmetic_tag = YUWqishituanguo
+		set_party_name = { ideology = democratic long_name = "维希教廷-霞飞派" name = "维希教廷-霞飞派" }
+		set_party_name = { ideology = neutrality long_name = "自由鸢尾-路易九世派" name = "自由鸢尾-路易九世派" }
+		set_party_name = { ideology = fascism long_name = "维希教廷-让巴尔派" name = "维希教廷-让巴尔派" }
+		set_party_name = { ideology = communism long_name = "鸢尾共产党/自由鸢尾" name = "鸢尾共产党/自由鸢尾" }
+		add_popularity = { ideology = democratic popularity = 0.5 }
+		YUW_xiafei = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = xiafeizhidu
+					traits = {
+						trait_psh_shenpanguan
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		if = {
+		limit = {
+		is_ai = yes
+		}
+		set_political_power = 1000
+		}
+		if = {
+		limit = {
+		is_ai = no
+		}
+		set_political_power = 800
+		}
+		YUW_6194 = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = despotism
+					traits = {
+						 trait_psh_huafudeshengqishi
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		YUW_rangbaer = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						 hdzh
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		trigger = { 
+		has_country_flag = yuw_chengonglalongtiaofei_yes
+		has_country_flag = yuw_lianheweixipai_yes
+		has_country_flag = yuw_lalongchenggongtiaojian_6
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "邀请拉·加利索尼埃成为明面上的领袖！"
+		set_cosmetic_tag = YUWqishituanguo
+		set_party_name = { ideology = democratic long_name = "维希教廷-霞飞派" name = "维希教廷-霞飞派" }
+		set_party_name = { ideology = neutrality long_name = "自由鸢尾-路易九世派" name = "自由鸢尾-路易九世派" }
+		set_party_name = { ideology = fascism long_name = "维希教廷-让巴尔派" name = "维希教廷-让巴尔派" }
+		set_party_name = { ideology = communism long_name = "鸢尾共产党/自由鸢尾" name = "鸢尾共产党/自由鸢尾" }
+		add_popularity = { ideology = neutrality popularity = 0.5 }
+		set_politics = {
+			ruling_party = neutrality
+		}
+		YUW_xiafei = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = xiafeizhidu
+					traits = {
+						trait_psh_shenpanguan
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		set_political_power = 600
+		YUW_jialisuoniai = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = despotism
+					traits = {
+						 trait_psh_shenpanguan
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		YUW_rangbaer = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						 hdzh
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		trigger = { 
+		has_country_flag = yuw_chengonglalongtiaofei_no
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "敦刻尔克是位可靠的盟友"
+		#set_cosmetic_tag = YUWqishituanguo
+		country_event = { id = YUW_event.70 }
+		trigger = { 
+		has_country_flag = yuw_chengonglalongtiaofei_no
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = YUW_event.69.a
+		#set_cosmetic_tag = YUWqishituanguo
+		country_event = { id = YUW_event.71 }
+		set_country_flag = lyjs_fubibeituifan
+		trigger = { 
+		has_country_flag = yuw_chengonglalongtiaofei_no
+		has_country_flag = yuw_lisailiuchongjianjiaotingtiaojian_yes
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+
+country_event = {
+	id = YUW_event.70
+	title = "真十字军"
+	desc = YUW_event.70.d
+	picture = GFX_aze_txluoen2
+	is_triggered_only = yes
+	option = {
+		name = "路易九世是对的，我们就按她说的来"
+		set_political_power = 600
+		set_cosmetic_tag = YUWqishituanguo
+		set_party_name = { ideology = democratic long_name = "维希教廷-霞飞派" name = "维希教廷-霞飞派" }
+		set_party_name = { ideology = neutrality long_name = "自由鸢尾-路易九世派" name = "自由鸢尾-路易九世派" }
+		set_party_name = { ideology = fascism long_name = "维希教廷-让巴尔派" name = "维希教廷-让巴尔派" }
+		set_party_name = { ideology = communism long_name = "鸢尾共产党/自由鸢尾" name = "鸢尾共产党/自由鸢尾" }
+		add_popularity = { ideology = neutrality popularity = 0.5 }
+		set_politics = {
+			ruling_party = neutrality
+		}
+		YUW_dunkerque = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = despotism
+			traits = {
+				zhdrg
+			}
+			}
+			promote_leader = yes
+			}
+		}
+		YUW_xiafei = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = xiafeizhidu
+					traits = {
+						trait_psh_shenpanguan
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		YUW_rangbaer = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						 hdzh
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "维希教廷的时代来临了！"
+		set_political_power = 1000
+		complete_national_focus = YUW_buliuxuedeneizhan
+		YUW_dunkerque = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				tdybp
+			}
+			}
+			promote_leader = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.71
+	title = "红衣主教归来"
+	desc = YUW_event.71.d
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "这是整个鸢尾的胜利！"
+		set_political_power = 0
+		complete_national_focus = YUW_shenglikaixuan
+		complete_national_focus = YUW_xingfenzhidu
+		add_ideas = YUW_jjggA1
+		add_ideas = YUW_zymygg
+		add_ideas = YUW_gr
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.72
+	title = "宗教的地位"
+	desc = "现在路易九世成为了国王，她可以随意处理宗教问题了。"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "宗教什么的一边去，国王说的才算数！"
+		add_political_power = 200
+		custom_effect_tooltip = fanchacngjudong_yuw
+		set_country_flag = lyjsfanchangdu_1
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "维持现状"
+		add_political_power = 100
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.73
+	title = "处理反对派"
+	desc = "现在我们夺取了权利，之前反对我们的自由派和现在反对我们的维希派应该如何处置？"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "抓到了就全部图图！"
+		add_political_power = 200
+		add_war_support = 0.3
+		custom_effect_tooltip = fanchacngjudong_yuw
+		set_country_flag = lyjsfanchangdu_2
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "别管她们"
+		add_political_power = 100
+		add_stability = 0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.74
+	title = "路易九世被推翻了"
+	desc = "由于路易九世此前的种种不合常理的行为，维希派与自由派已经联合起来，推翻了路易九世的统治。但由于教廷体系已经被破坏，她们只能建立鸢尾共和国。"
+	picture = GFX_aze_lisailiu2
+	is_triggered_only = yes
+	option = {
+		name = "新的开始！"
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = { ideology = democratic popularity = 0.5 }
+		set_political_power = 500
+		#set_country_flag = lyjs_fubibeituifan
+		complete_national_focus = YUW_gongheguojianli
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.75
+	title = "分封贵族？"
+	desc = "一个王国理应拥有许多贵族，但由于大部分的舰娘都反对我们，我们只能把爵位分封给蛮啾。"
+	picture = GFX_aze_xiaotiancheng_nice
+	is_triggered_only = yes
+	option = {
+		name = "好，开始给黄鸡们封爵吧！"
+		add_popularity = { ideology = neutrality popularity = 0.2 }
+		custom_effect_tooltip = fanchacngjudong_yuw
+		set_country_flag = lyjsfanchangdu_3
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "不要这么做"
+		add_stability = 0.2
+		add_popularity = { ideology = neutrality popularity = -0.1 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.76
+	title = "教廷骑士们的请愿"
+	desc = "由于政客最近一直在打压教廷骑士，因此她们请求路易九世代表圣殿骑士给予教廷骑士声援。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "现在不是正面对抗政府的最佳时机"
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我会提供帮助的"
+		add_political_power = -300
+		set_country_flag = yuw_geijtqstigongyuanzhu
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

@@ -1,0 +1,629 @@
+add_namespace = AZ_siren
+country_event = {
+	id = AZ_siren.1
+	picture = GFX_az_anqiubi
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_tech = interwar_antitank }
+			}
+			set_technology = { interwar_antitank = 1 }
+		}
+		division_template = {
+			name = "塞壬机动兵团"
+			is_locked = yes
+			division_names_group = SIR_MOT_01
+			regiments = {
+				motorized = { x = 0 y = 0 }
+				motorized = { x = 0 y = 1 }
+				motorized = { x = 0 y = 2 }
+				motorized = { x = 0 y = 3 }
+				#motorized = { x = 0 y = 4 }
+				#motorized = { x = 1 y = 0 }
+				#motorized = { x = 1 y = 1 }
+				#motorized = { x = 1 y = 2 }
+				#motorized = { x = 1 y = 3 }
+				#motorized = { x = 1 y = 4 }
+				#mot_anti_tank_brigade = { x = 2 y = 0 }
+			}
+			support = {
+				mot_recon = { x = 0 y = 1 }
+				engineer = { x = 0 y = 0 }
+				#artillery = { x = 0 y = 2 }
+			}
+		}
+		division_template = {
+			name = "塞壬步兵兵团"
+			is_locked = yes
+			division_names_group = SIR_Inf_01
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				#infantry = { x = 0 y = 4 }
+				#infantry = { x = 1 y = 0 }
+				#infantry = { x = 1 y = 1 }
+				#infantry = { x = 1 y = 2 }
+				#infantry = { x = 1 y = 3 }
+				#artillery_brigade = { x = 1 y = 4 }
+			}
+			support = {
+				recon = { x = 0 y = 1 }
+				engineer = { x = 0 y = 0 }
+				#artillery = { x = 0 y = 2 }
+				#anti_air = { x = 0 y = 3 }
+				#anti_tank = { x = 0 y = 4 }
+			}
+		}
+	}
+	option = {
+		name = SIR
+	}
+}
+country_event = {
+	id = AZ_siren.2
+	picture = GFX_az_anqiubi
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_tech = interwar_artillery }
+			}
+			set_technology = { interwar_artillery = 1 }
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = basic_light_tank_chassis }
+			}
+			set_technology = { basic_light_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = radio }
+			}
+			set_technology = { radio = 1 }
+		}
+		division_template = {
+			name = "塞壬轻装甲兵团"
+			is_locked = yes
+			division_names_group = SIR_LTARM_01
+			regiments = {
+				motorized = { x = 0 y = 0 }
+				motorized = { x = 0 y = 1 }
+				motorized = { x = 0 y = 2 }
+				#motorized = { x = 0 y = 3 }
+				#motorized = { x = 0 y = 4 }
+				light_armor = { x = 1 y = 0 }
+				light_armor = { x = 1 y = 1 }
+				light_armor = { x = 1 y = 2 }
+				#light_armor = { x = 1 y = 3 }
+				#light_armor = { x = 1 y = 4 }
+				#motorized = { x = 2 y = 0 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				#anti_tank = { x = 0 y = 1 }
+				light_tank_recon = { x = 0 y = 2 }
+			}
+		}
+		create_equipment_variant = {
+			name = "Siren LT-1"
+			type = light_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_close_support_gun
+				turret_type_slot = tank_light_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = additional_machine_guns
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = additional_machine_guns
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 7
+				tank_nsb_armor_upgrade = 0
+			}
+			icon = "gfx/interface/technologies/improved_light_tank.dds"
+		}
+	}
+	option = {
+		name = SIR
+	}
+}
+country_event = {
+	id = AZ_siren.3
+	picture = GFX_az_anqiubi
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { 
+				NOT = { has_tech = improved_medium_tank_chassis } 
+			}
+			set_technology = { improved_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = { 
+				NOT = { has_tech = engine_tech_3 } 
+			}
+			set_technology = { engine_tech_3 = 1 }
+		}
+		if = {
+			limit = { 
+				NOT = { has_tech = armor_tech_3 } 
+			}
+			set_technology = { armor_tech_3 = 1 }
+		}
+		if = {
+			limit = { 
+				NOT = { has_tech = artillery1 } 
+			}
+			set_technology = { artillery1 = 1 }
+		}
+		if = {
+			limit = { 
+				NOT = { has_tech = antitank1 } 
+			}
+			set_technology = { antitank1 = 1 }
+		}
+		if = {
+			limit = { 
+				NOT = { has_tech = decimetric_radar } 
+			}
+			set_technology = { decimetric_radar = 1 }
+		}
+		if = {
+			limit = { 
+				NOT = { has_tech = tech_engineers2 } 
+			}
+			set_technology = { tech_engineers2 = 1 }
+		}
+		division_template = {
+			name = "塞壬中装甲兵团"
+			is_locked = yes
+			division_names_group = SIR_ARM_01
+			regiments = {
+				motorized = { x = 0 y = 0 }
+				motorized = { x = 0 y = 1 }
+				motorized = { x = 0 y = 2 }
+				motorized = { x = 0 y = 3 }
+				motorized = { x = 0 y = 4 }
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				#medium_armor = { x = 1 y = 3 }
+				#medium_armor = { x = 1 y = 4 }
+				#medium_armor = { x = 2 y = 0 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				anti_air = { x = 0 y = 4 }
+			}
+		}
+		division_template = {
+			name = "塞壬反坦克兵团"
+			is_locked = yes
+			division_names_group = SIR_ARM_01
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				infantry = { x = 0 y = 4 }
+				medium_tank_destroyer_brigade = { x = 1 y = 0 }
+				medium_tank_destroyer_brigade = { x = 1 y = 1 }
+				medium_tank_destroyer_brigade = { x = 1 y = 2 }
+				#medium_tank_destroyer_brigade = { x = 1 y = 3 }
+				#medium_tank_destroyer_brigade = { x = 1 y = 4 }
+				#medium_tank_destroyer_brigade = { x = 2 y = 0 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+				#artillery = { x = 0 y = 2 }
+				#logistics_company = { x = 0 y = 3 }
+				#anti_air = { x = 0 y = 4 }
+			}
+		}
+		create_equipment_variant = {
+			name = "Siren TD-1"
+			type = medium_tank_destroyer_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_cannon
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = squeezebore_adaptor
+				special_type_slot_2 = dozer_blade
+				special_type_slot_3 = sloped_armor
+				special_type_slot_4 = additional_machine_guns
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 14
+				tank_nsb_armor_upgrade = 8
+			}
+			icon = "gfx/interface/equipmentdesigner/tanks/designer/generic/generic_medium_BCA.dds"
+		}
+		create_equipment_variant = {
+			name = "Siren MT-1"
+			type = medium_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_howitzer
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_2
+				special_type_slot_2 = sloped_armor
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = additional_machine_guns
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 10
+				tank_nsb_armor_upgrade = 0
+			}
+			icon = "gfx/interface/equipmentdesigner/tanks/designer/generic/generic_medium_BCA.dds"
+		}
+	}
+	option = {
+		name = SIR
+	}
+}
+country_event = {
+	id = AZ_siren.4
+	picture = GFX_az_anqiubi
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_technology = { advanced_heavy_tank_chassis = 1 }
+		set_technology = { advanced_medium_tank_chassis = 1 }
+		set_technology = { armor_tech_4 = 1 }
+		set_technology = { engine_tech_4 = 1 }
+		set_technology = { artillery3 = 1 }
+		set_technology = { antiair5 = 1 }
+		set_technology = { antitank5 = 1 }
+		set_technology = { artillery5 = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { mechanised_infantry = 1 }
+		set_technology = { centimetric_radar = 1 }
+		division_template = {
+			name = "塞壬机械化兵团"
+			is_locked = yes
+			division_names_group = SIR_MEC_01
+			regiments = {
+				mechanized = { x = 0 y = 0 }
+				mechanized = { x = 0 y = 1 }
+				mechanized = { x = 0 y = 2 }
+				mechanized = { x = 0 y = 3 }
+				mechanized = { x = 0 y = 4 }
+				mechanized = { x = 1 y = 0 }
+				mechanized = { x = 1 y = 1 }
+				mechanized = { x = 1 y = 2 }
+				mechanized = { x = 1 y = 3 }
+				mechanized = { x = 1 y = 4 }
+				mot_artillery_brigade = { x = 2 y = 0 }
+				mot_artillery_brigade = { x = 2 y = 1 }
+				mot_artillery_brigade = { x = 2 y = 2 }
+				mot_artillery_brigade = { x = 2 y = 3 }
+				mechanized = { x = 3 y = 0 }
+				mechanized = { x = 3 y = 1 }
+				mechanized = { x = 3 y = 2 }
+				mechanized = { x = 3 y = 3 }
+				mot_anti_tank_brigade = { x = 4 y = 0 }
+				mot_anti_tank_brigade = { x = 4 y = 1 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				anti_air = { x = 0 y = 4 }
+			}
+		}
+		division_template = {
+			name = "塞壬中装甲兵团（后期）"
+			is_locked = yes
+			division_names_group = SIR_ARM_01
+			regiments = {
+				motorized = { x = 0 y = 0 }
+				motorized = { x = 0 y = 1 }
+				motorized = { x = 0 y = 2 }
+				motorized = { x = 0 y = 3 }
+				mot_anti_tank_brigade = { x = 0 y = 4 }
+				medium_armor = { x = 1 y = 0 }
+				medium_armor = { x = 1 y = 1 }
+				medium_armor = { x = 1 y = 2 }
+				medium_armor = { x = 1 y = 3 }
+				medium_armor = { x = 1 y = 4 }
+				motorized = { x = 2 y = 0 }
+				motorized = { x = 2 y = 1 }
+				motorized = { x = 2 y = 2 }
+				motorized = { x = 2 y = 3 }
+				mot_anti_tank_brigade = { x = 2 y = 4 }
+				medium_armor = { x = 3 y = 0 }
+				medium_armor = { x = 3 y = 1 }
+				medium_armor = { x = 3 y = 2 }
+				medium_armor = { x = 3 y = 3 }
+				medium_armor = { x = 3 y = 4 }
+				medium_armor = { x = 4 y = 0 }
+				medium_armor = { x = 4 y = 1 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				anti_air = { x = 0 y = 4 }
+			}
+		}
+		division_template = {
+			name = "塞壬大型步兵兵团"
+			is_locked = yes
+			division_names_group = SIR_Inf_01
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				infantry = { x = 0 y = 4 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 1 y = 3 }
+				infantry = { x = 1 y = 4 }
+				artillery_brigade = { x = 2 y = 0 }
+				artillery_brigade = { x = 2 y = 1 }
+				artillery_brigade = { x = 2 y = 2 }
+				anti_tank_brigade = { x = 2 y = 3 }
+				anti_tank_brigade = { x = 2 y = 4 }
+				infantry = { x = 3 y = 0 }
+				infantry = { x = 3 y = 1 }
+				infantry = { x = 3 y = 2 }
+				infantry = { x = 3 y = 3 }
+				anti_tank_brigade = { x = 4 y = 0 }
+				anti_tank_brigade = { x = 4 y = 1 }
+				anti_tank_brigade = { x = 4 y = 2 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+				logistics_company = { x = 0 y = 2 }
+				anti_air = { x = 0 y = 3 }
+				anti_tank = { x = 0 y = 4 }
+			}
+		}
+
+		division_template = {
+			name = "塞壬精锐装甲兵团"
+			is_locked = yes
+			division_names_group = SIR_HVARM_01
+			regiments = {
+				mechanized = { x = 0 y = 0 }
+				mechanized = { x = 0 y = 1 }
+				mechanized = { x = 0 y = 2 }
+				mechanized = { x = 0 y = 3 }
+				mechanized = { x = 0 y = 4 }
+				mechanized = { x = 1 y = 0 }
+				mechanized = { x = 1 y = 1 }
+				mechanized = { x = 1 y = 2 }
+				mechanized = { x = 1 y = 3 }
+				mechanized = { x = 1 y = 4 }
+				heavy_armor = { x = 2 y = 0 }
+				heavy_armor = { x = 2 y = 1 }
+				heavy_armor = { x = 2 y = 2 }
+				heavy_armor = { x = 2 y = 3 }
+				heavy_armor = { x = 2 y = 4 }
+				heavy_armor = { x = 3 y = 0 }
+				heavy_armor = { x = 3 y = 1 }
+				heavy_armor = { x = 3 y = 2 }
+				heavy_armor = { x = 3 y = 3 }
+				heavy_armor = { x = 3 y = 4 }
+				mechanized = { x = 4 y = 0 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				anti_air = { x = 0 y = 4 }
+			}
+		}
+		division_template = {
+			name = "塞壬重装甲兵团"
+			is_locked = yes
+			division_names_group = SIR_HVARM_01
+			regiments = {
+				mechanized = { x = 0 y = 0 }
+				mechanized = { x = 0 y = 1 }
+				mechanized = { x = 0 y = 2 }
+				mechanized = { x = 0 y = 3 }
+				mechanized = { x = 0 y = 4 }
+				heavy_tank_destroyer_brigade = { x = 1 y = 0 }
+				heavy_tank_destroyer_brigade = { x = 1 y = 1 }
+				heavy_tank_destroyer_brigade = { x = 1 y = 2 }
+				heavy_tank_destroyer_brigade = { x = 1 y = 3 }
+				heavy_tank_destroyer_brigade = { x = 1 y = 4 }
+				heavy_sp_artillery_brigade = { x = 2 y = 0 }
+				heavy_sp_artillery_brigade = { x = 2 y = 1 }
+				heavy_sp_artillery_brigade = { x = 2 y = 2 }
+				heavy_sp_artillery_brigade = { x = 2 y = 3 }
+				heavy_sp_artillery_brigade = { x = 2 y = 4 }
+				heavy_sp_artillery_brigade = { x = 3 y = 0 }
+				mechanized = { x = 4 y = 0 }
+				mechanized = { x = 4 y = 1 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				maintenance_company  = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				anti_air = { x = 0 y = 4 }
+			}
+		}
+		create_equipment_variant = {
+			name = "Siren HT-1"
+			type = heavy_tank_chassis_3
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_cannon_3
+				turret_type_slot = tank_heavy_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = tank_radio_3
+				special_type_slot_2 = auto_loader
+				special_type_slot_3 = sloped_armor
+				special_type_slot_4 = wet_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 17
+				tank_nsb_armor_upgrade = 4
+			}
+			icon = "gfx/interface/equipmentdesigner/tanks/designer/generic/generic_heavy_ABA.dds"
+		}
+		create_equipment_variant = {
+			name = "Siren HTD-1"
+			type = heavy_tank_destroyer_chassis_3
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_super_heavy_cannon
+				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = auto_loader
+				special_type_slot_3 = sloped_armor
+				special_type_slot_4 = easy_maintenance
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 8
+				tank_nsb_armor_upgrade = 10
+			}
+			icon = "gfx/interface/equipmentdesigner/tanks/designer/generic/generic_heavy_CBA.dds"
+		}
+		create_equipment_variant = {
+			name = "Siren HSPG-1"
+			type = heavy_tank_artillery_chassis_3
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_howitzer
+				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = auto_loader
+				special_type_slot_3 = sloped_armor
+				special_type_slot_4 = easy_maintenance
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 8
+				tank_nsb_armor_upgrade = 10
+			}
+			icon = "gfx/interface/equipmentdesigner/tanks/designer/generic/generic_heavy_CAB.dds"
+		}
+		create_equipment_variant = {
+			name = "Siren MT-2"
+			type = medium_tank_chassis_3
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_howitzer_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_3
+				special_type_slot_2 = sloped_armor
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = additional_machine_guns
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 13
+				tank_nsb_armor_upgrade = 7
+			}
+			icon = "gfx/interface/equipmentdesigner/tanks/designer/generic/generic_medium_BCA.dds"
+		}
+	}
+	option = {
+		name = SIR
+	}
+}
+country_event = {
+	id = AZ_siren.5
+	picture = GFX_az_anqiubi
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_technology = { super_heavy_tank_chassis = 1 }
+		division_template = {
+			name = "塞壬陆上要塞装甲兵团"
+			is_locked = yes
+			division_names_group = SIR_HVARM_01
+			regiments = {
+				mechanized = { x = 0 y = 0 }
+				mechanized = { x = 0 y = 1 }
+				mechanized = { x = 0 y = 2 }
+				mechanized = { x = 1 y = 0 }
+				mechanized = { x = 1 y = 1 }
+				heavy_sp_artillery_brigade = { x = 2 y = 0 }
+				heavy_sp_artillery_brigade = { x = 2 y = 1 }
+				heavy_sp_artillery_brigade = { x = 2 y = 2 }
+				heavy_sp_artillery_brigade = { x = 2 y = 3 }
+				super_heavy_armor = { x = 3 y = 0 }
+				super_heavy_armor = { x = 3 y = 1 }
+				super_heavy_armor = { x = 3 y = 2 }
+				super_heavy_armor = { x = 3 y = 3 }
+				super_heavy_armor = { x = 3 y = 4 }
+				super_heavy_armor = { x = 4 y = 0 }
+				super_heavy_armor = { x = 4 y = 1 }
+				super_heavy_armor = { x = 4 y = 2 }
+				super_heavy_armor = { x = 4 y = 3 }
+				super_heavy_armor = { x = 4 y = 4 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				mot_recon = { x = 0 y = 1 }
+				maintenance_company = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				anti_air = { x = 0 y = 4 }
+			}
+		}
+		create_equipment_variant = {
+			name = "Siren SHT-1"
+			type = super_heavy_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_super_heavy_cannon
+				turret_type_slot = tank_super_heavy_four_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = wet_ammo_storage
+				special_type_slot_2 = auto_loader
+				special_type_slot_3 = sloped_armor
+				special_type_slot_4 = easy_maintenance
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 20
+				tank_nsb_armor_upgrade = 12
+			}
+			icon = "gfx/interface/equipmentdesigner/tanks/designer/generic/generic_heavy_ACA.dds"
+		}
+	}
+	option = {
+		name = SIR
+	}
+}

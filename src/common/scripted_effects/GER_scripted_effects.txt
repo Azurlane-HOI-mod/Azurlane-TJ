@@ -1,0 +1,413 @@
+AUS_set_pubilcity_slot = {
+	if = {
+		limit = {
+			check_variable = {
+				AUS_pub_slot_A = 0
+			}
+		}
+		set_variable = {
+			AUS_pub_slot_A = AUS_pub_temp
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					AUS_pub_slot_B = 0
+				}
+			}
+			set_variable = {
+				AUS_pub_slot_B = AUS_pub_temp
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						AUS_pub_slot_C = 0
+					}
+				}
+				set_variable = {
+					AUS_pub_slot_C = AUS_pub_temp
+				}
+			}
+		}
+	}
+}
+
+AUS_clr_pubilcity_slot = {
+	if = {
+		limit = {
+			check_variable = {
+				AUS_pub_slot_A = AUS_pub_temp
+			}
+		}
+		set_variable = {
+			AUS_pub_slot_A = 0
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					AUS_pub_slot_B = AUS_pub_temp
+				}
+			}
+			set_variable = {
+				AUS_pub_slot_B = 0
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						AUS_pub_slot_C = AUS_pub_temp
+					}
+				}
+				set_variable = {
+					AUS_pub_slot_C = 0
+				}
+			}
+		}
+	}
+}
+GER_get_a_governor_to_PREV = {
+	if = {
+		limit = {
+			has_character = KMS_Bismarck
+			KMS_Bismarck = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "俾斯麦"
+				desc = ""
+				picture = "gfx/leaders/XGE/Konrad_Adenauer.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		KMS_Bismarck = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_gerd_von_rundstedt
+			GER_gerd_von_rundstedt = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "格尔德·冯·伦德斯泰特"
+				desc = ""
+				picture = "gfx/leaders/XGE/Portrait_Germany_Gerd_von_Rundstedt.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_gerd_von_rundstedt = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			not = {
+				has_idea = GER_xier_idea
+			}
+			has_character = GER_xier
+			GER_xier = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "希尔"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_xier.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_xier = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_maiye
+			GER_maiye = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "赫尔曼·迈耶"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_maiye.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_maiye = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_Tanya
+			GER_Tanya = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "谭雅·提古雷查夫"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_Tanya.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_Tanya = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_ailika
+			GER_ailika = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "逸见艾丽卡"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_Erika_13.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_ailika = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_zhensui
+			GER_zhensui = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "西住真穗"
+				desc = ""
+				picture = "gfx/leaders/XGE/zhensui.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_zhensui = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_gunther_von_kluge
+			GER_gunther_von_kluge = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "君特·冯·克鲁格"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_gunther_von_kluge.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_gunther_von_kluge = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_erwin_rommel
+			GER_erwin_rommel = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "埃尔温·隆美尔"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_erwin_rommel.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_erwin_rommel = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_erich_von_manstein
+			GER_erich_von_manstein = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "埃里希·冯·曼施坦因"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_erich_von_manstein.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_erich_von_manstein = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_speer
+			GER_speer = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "阿尔伯特·施佩尔"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_speer.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_speer = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+	else_if = {
+		limit = {
+			has_character = GER_friedrich_paulus
+			GER_friedrich_paulus = {
+				not = {
+					has_character_flag = has_been_a_governor
+				}
+				is_country_leader = no
+			}
+		}
+		PREV = {
+			create_country_leader = {
+				name = "弗里德里希·保卢斯"
+				desc = ""
+				picture = "gfx/leaders/XGE/GER_friedrich_paulus.dds"
+				expire = "1985.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		GER_friedrich_paulus = {
+			set_character_flag = has_been_a_governor
+		}
+	}
+}
+
+XGE_LISHA_EFFECT = {
+	if  = {
+		limit = {
+			check_variable = { Lisa_resurrection_progress_var > 0 }
+			not = { has_country_flag = Lisa_resurrection_progress_var_event_1 }
+		}
+		country_event = {
+			id = XGE.007
+		}
+		set_country_flag = Lisa_resurrection_progress_var_event_1
+	}
+	if  = {
+		limit = {
+			check_variable = { Lisa_resurrection_progress_var > 50 }
+			not = { has_country_flag = Lisa_resurrection_progress_var_event_2 }
+		}
+		country_event = {
+			id = XGE.009
+		}
+		set_country_flag = Lisa_resurrection_progress_var_event_2
+	}
+	if  = {
+		limit = {
+			check_variable = { Lisa_resurrection_progress_var > 80 }
+			not = { has_country_flag = Lisa_resurrection_progress_var_event_3 }
+		}
+		country_event = {
+			id = XGE.010
+		}
+		set_country_flag = Lisa_resurrection_progress_var_event_3
+	}
+	if  = {
+		limit = {
+			check_variable = { Lisa_resurrection_progress_var = 100 }
+			not = { has_country_flag = Lisa_resurrection_progress_var_event_4 }
+		}
+		country_event = {
+			id = XGE.011
+		}
+		set_country_flag = Lisa_resurrection_progress_var_event_4
+	}
+}

@@ -1,0 +1,133 @@
+chy_miewangonghuang_category = {
+	chy_sanyuewanghualun = {
+		icon = ger_military_buildup
+		available = {
+			OR = {
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+			}
+		}
+		visible = {
+			tag = CHY
+		}
+		activation = {                    
+			has_country_flag = CHY_xuanzhan_DOH
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 90
+		timeout_effect = { 
+			country_event = CHY_event.24
+			clr_country_flag = CHY_xuanzhan_DOH
+			set_country_flag = CHY_xuanzhan_DOH_2
+		}
+		complete_effect = { 
+			country_event = CHY_event.26
+			clr_country_flag = CHY_xuanzhan_DOH
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_rxdlj2
+					CHY_rxdlj3
+					CHY_rxdlj4
+				}
+			}
+		}
+	}
+	chy_quanmianjingong = {
+		icon = ger_military_buildup
+		available = {
+			OR = {
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+			}
+		}
+		visible = {
+			tag = CHY
+		}
+		activation = {                    
+			has_country_flag = CHY_xuanzhan_DOH_2
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 380
+		timeout_effect = { 
+			country_event = CHY_event.25
+			clr_country_flag = CHY_xuanzhan_DOH_2
+			set_country_flag = CHY_xuanzhan_DOH_3
+		}
+		complete_effect = { 
+			country_event = CHY_event.26
+			clr_country_flag = CHY_xuanzhan_DOH_2
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_rxdlj2
+					CHY_rxdlj3
+					CHY_rxdlj4
+				}
+			}
+		}
+	}
+	chy_xuangaoshengli = {
+		icon = ger_military_buildup
+		visible = {
+			tag = CHY
+			has_country_flag = CHY_xuanzhan_DOH_3
+		}
+		available = {
+			OR = {
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			country_event = CHY_event.26
+			clr_country_flag = CHY_xuanzhan_DOH_3
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_rxdlj2
+					CHY_rxdlj3
+					CHY_rxdlj4
+				}
+			}
+		}
+	}
+	chy_tuichuzhanzheng = {
+		icon = ger_military_buildup
+		visible = {
+			tag = CHY
+			has_country_flag = CHY_xuanzhan_DOH_3
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				CHY = {
+					NOT = { controls_state = 328 }
+					NOT = { controls_state = 609 }
+					NOT = { controls_state = 716 }
+				}
+				add = 100
+			}
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			DOH = { country_event = CHY_event.27 }
+			clr_country_flag = CHY_xuanzhan_DOH_3
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_rxdlj2
+					CHY_rxdlj3
+					CHY_rxdlj4
+				}
+			}
+		}
+	}
+}

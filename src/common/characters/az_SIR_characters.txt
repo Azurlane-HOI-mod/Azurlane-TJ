@@ -1,0 +1,444 @@
+characters={
+	SIR_sairenjiaojisi = {
+		name = SIR_sairenjiaojisi
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/youlingsha.png"
+				small="gfx/interface/ideas/idea_youlingsha.png"
+			}
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = despotism
+			traits = {
+				
+			}
+			desc = SIR_sairenjiaojisi_desc
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = siren_ideology
+			traits = {
+				sairenshenxuanzhe
+			}
+			desc = SIR_sairenjiaojisi_desc
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = sairenjiaojisi
+			traits = { trait_yishijisi }
+			
+			desc = SIR_sairenjiaojisi_advisor_desc
+			ai_will_do = {
+				factor = 30
+			}
+		}
+		
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			skill = 3
+			traits = { skilled_staffer trait_cautious old_guard }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+	SIR_guanchazhe = {
+		name = SIR_guanchazhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/guanchazhe.png"
+				small="gfx/interface/ideas/idea_guanchazhe.png"
+			}
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = siren_ideology
+			traits = {
+				zgjsr
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+	}
+	SR1_ceshizhe = {
+		name = SR1_ceshizhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/ceshizhe.png"
+				small="gfx/interface/ideas/idea_ceshizhe.png"
+			}
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = siren_ideology
+			traits = {
+				gjsr
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+	}
+
+	SR2_jinghuazhe = {
+		name = SR2_jinghuazhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/jinghuazhe.png"
+				small="gfx/interface/ideas/idea_jinghuazhe.png"
+			}
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = siren_ideology
+			traits = {
+				gjsr
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+	}
+	SR3_jinghuazhe = {
+		name = SR3_jinghuazhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/jinghuazhe.png"
+				small="gfx/interface/ideas/idea_jinghuazhe.png"
+			}
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = siren_ideology
+			traits = {
+				gjsr
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+	}
+	SR4_ceshizhe = {
+		name = SR4_ceshizhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/ceshizhe.png"
+				small="gfx/interface/ideas/idea_ceshizhe.png"
+			}
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = siren_ideology
+			traits = {
+				gjsr
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+	}
+	SIR_xiaojinghuazhe = {
+		name = SIR_xiaojinghuazhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/xiaojinghuazhe.png"
+				small="gfx/interface/ideas/idea_xiaojinghuazhe.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { organizer trait_reckless trickster siren }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = xiaojinghuazhe
+			traits = { trait_xiaojinghuazhe }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+	}
+	SIR_xiaosairen = {
+		name = SIR_xiaosairen
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/xiaosairen.png"
+				small="gfx/interface/ideas/idea_xiaosairen.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { brilliant_strategist trait_reckless trickster siren }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = xiaosairen
+			traits = { trait_xiaosairen }
+			
+			ai_will_do = {
+				factor = 30
+			}
+		}
+	}
+	SIR_xiaozhongcaizhe = {
+		name = SIR_xiaozhongcaizhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/xiaozhongcaizhe.png"
+				small="gfx/interface/ideas/idea_xiaozhongcaizhe.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { inflexible_strategist career_officer trickster siren }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = xiaozhongcaizhe
+			traits = { trait_xiaozhongcaizhe }
+			
+			ai_will_do = {
+				factor = 30
+			}
+		}
+	}
+	SIR_xiaoguanchazhe = {
+		name = SIR_xiaoguanchazhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/xiaoguanchazhe.png"
+				small="gfx/interface/ideas/idea_xiaoguanchazhe.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { inflexible_strategist brilliant_strategist siren }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = xiaoguanchazhe
+			traits = { trait_xiaoguanchazhe }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+	}
+	SR1_guanchazhe = {
+		name = SR1_guanchazhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/guanchazhe.png"
+				small="gfx/interface/ideas/idea_guanchazhe.png"
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { inflexible_strategist brilliant_strategist siren }
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = guanchazhe
+			traits = { trait_guanchazhe }
+
+			ai_will_do = {
+				factor = 16
+			}
+		}
+	}
+	SIR_ceshizhe = {
+		name = SIR_ceshizhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/ceshizhe.png"
+				small="gfx/interface/ideas/idea_ceshizhe.png"
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { siren }
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = ceshizhe
+			traits = { trait_ceshizhe }
+			
+			ai_will_do = {
+				factor = 16
+			}
+		}
+	}
+
+	SIR_jinghuazhe = {
+		name = SIR_jinghuazhe
+		portraits={
+			army = {
+				large="gfx/leaders/SIR/jinghuazhe.png"
+				small="gfx/interface/ideas/idea_jinghuazhe.png"
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { siren }
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 5
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = jinghuazhe
+			traits = { trait_jinghuazhe }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+	}
+}

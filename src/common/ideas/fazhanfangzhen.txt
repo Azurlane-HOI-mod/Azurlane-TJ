@@ -1,0 +1,532 @@
+ideas = {
+	fangzhen = {
+		zengjiajunfei = {
+			cost = 300
+			removal_cost = 0
+			picture = NOR_printing_money
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+				factor = 300
+				OR = {
+				    tag = YUW
+				    tag = BFL
+				    tag = TIX
+				    tag = BYG
+				    tag = DOH
+					}
+				has_war = yes
+				}
+				modifier = {
+					factor = 300
+					OR = {
+						tag = CHY
+						}
+					has_war_with = BYG
+				}
+			} 
+			modifier = {
+				political_power_cost = 0.5
+				military_industrial_organization_funds_gain = 1
+				land_doctrine_cost_factor = -0.15
+				air_doctrine_cost_factor = -0.15
+				naval_doctrine_cost_factor = -0.15
+				materiel_manufacturer_cost_factor = -0.75
+				tank_manufacturer_cost_factor = -0.75
+				naval_manufacturer_cost_factor = -0.75
+				aircraft_manufacturer_cost_factor = -0.75
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		fazhanlujun = {
+			cost = 300
+			removal_cost = 0
+			picture = generic_infantry_equipment_manufacturer_2
+			available = { always = no }
+			visible = { always = no  }
+			ai_will_do = {
+				factor = 1
+				modifier = {
+				factor = 300
+				OR = {
+				    tag = YUW
+				    tag = BFL
+				    tag = TIX
+				    tag = BYG
+				    tag = DOH
+					}
+				has_war = yes
+				}
+				modifier = {
+					factor = 300
+					OR = {
+						tag = CHY
+						}
+					has_war_with = BYG
+				}
+			} 
+			
+			
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			modifier = {
+				land_doctrine_cost_factor = -0.15
+				experience_gain_army = 0.4
+				materiel_manufacturer_cost_factor = -0.15
+				tank_manufacturer_cost_factor = -0.15
+				
+			}
+		}
+		fazhanhaijun = {
+			cost = 300
+			removal_cost = 0
+			picture = generic_naval_manufacturer_1
+			available = { always = no }
+			visible = { always = no  }
+			ai_will_do = {
+				factor = 1
+				
+				modifier = {
+				factor = 300
+				OR = {
+				tag = BYG
+				tag = SAD
+				tag = HUJ
+					}
+				has_war = yes
+				}
+				modifier = {
+					factor = 300
+					OR = {
+						tag = CHY
+						}
+					has_war_with = BYG
+				}
+
+			} 
+		
+			equipment_bonus = {
+				ship_hull_light = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				ship_hull_submarine = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				naval_doctrine_cost_factor = -0.15
+				experience_gain_navy = 0.6
+				naval_manufacturer_cost_factor = -0.25
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		#
+		fazhankongjun = {
+			cost = 300
+			removal_cost = 0
+			picture = generic_air_manufacturer_1
+			available = { always = no }
+			visible = { always = no  }
+			ai_will_do = {
+				factor = 1
+				
+				modifier = {
+				factor = 300
+				OR = {
+				tag = SAD
+				tag = HUJ
+					}
+				has_war = yes
+				}
+
+				
+			} 
+			research_bonus = {
+				air_equipment = 0.1
+			}
+			
+			modifier = {
+				air_doctrine_cost_factor = -0.15
+				experience_gain_air = 0.4
+				aircraft_manufacturer_cost_factor = -0.2
+			}
+			
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				cv_small_plane_cas_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				small_plane_naval_bomber_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				cv_small_plane_naval_bomber_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				medium_plane_fighter_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				medium_plane_scout_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				large_plane_maritime_patrol_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				transport_plane_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				jizaijianniang_equipment_airframe = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		gongyejianshe = {
+			cost = 300
+			removal_cost = 0
+			picture = man_five_year_plan_industry
+			
+			ai_will_do = {
+				factor = 1
+				
+				modifier = {
+				factor = 0
+				OR = {
+				tag = BYG
+				tag = CHY
+					}
+				has_war = yes
+				}
+				
+				modifier = {
+				factor = 300
+				not = {
+				OR = {
+				tag = BYG
+				tag = CHY
+					}
+				}	
+				has_war = yes
+				}
+				
+				modifier = {
+				factor = 300	
+				has_war = no
+				}
+				
+			} 
+			research_bonus = {
+				industry = 0.1
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				industrial_concern_cost_factor = -0.2
+			}
+		}
+		dalikaifaziyuan = {
+			cost = 300
+			removal_cost = 0
+			picture = generic_exploit_mines
+			
+			ai_will_do = {
+				factor = 1
+				
+				modifier = {
+				factor = 300
+				OR = {
+				not = { tag = BYG }
+				not = { tag = DOH }
+				not = { tag = HUJ }
+				not = { tag = SAD }
+				not = { tag = TIX }
+				not = { tag = BFL }
+				not = { tag = YUW }
+				not = { tag = CHY }
+				}
+				}
+				
+				modifier = {
+				factor = -300
+				OR = {
+				tag = BYG 
+				tag = DOH 
+				tag = HUJ 
+				tag = SAD 
+				tag = TIX 
+				tag = BFL 
+				tag = YUW 
+				tag = CHY 
+				}
+				}
+				}
+			 
+			research_bonus = {
+				excavation_tech = 0.25
+			}
+			modifier = {
+				local_resources_factor = 0.5
+				industrial_concern_cost_factor = -0.1
+				political_power_cost = 0.75
+			}
+		}
+		zhongshikeyan = {
+			cost = 300
+			removal_cost = 0
+			picture = generic_research_bonus
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+				factor = 300
+				has_war = no
+				}
+
+				modifier = {
+				factor = 300
+				not = {
+				OR = {
+				tag = BYG 
+				tag = DOH 
+				tag = HUJ 
+				tag = SAD 
+				tag = TIX 
+				tag = BFL 
+				tag = YUW 
+				tag = CHY 
+				}
+				}
+				has_war = yes
+				}
+				
+			} 
+			research_bonus = {
+				electronics = 0.15
+			}
+			modifier = {
+				research_speed_factor = 0.1
+				theorist_cost_factor = -0.25
+			}
+		}
+		haijundajian = {
+			cost = 300
+			removal_cost = 0
+			picture = generic_coastal_defense_ships
+			
+			ai_will_do = {
+				factor = 0
+			} 
+			equipment_bonus = {
+				ship_hull_heavy = {
+					build_cost_ic = -0.4
+					instant = yes
+				}
+				ship_hull_carrier = {
+					build_cost_ic = -0.4
+					instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.3
+					instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.3
+					instant = yes
+				}
+				ship_hull_submarine = {
+					build_cost_ic = -0.3
+					instant = yes
+				}
+			}
+			
+			modifier = {
+				hidden_modifier = {
+					production_speed_arms_factory_factor = -0.9
+					production_speed_industrial_complex_factor = -0.9
+					production_speed_air_base_factor = -0.9
+					production_speed_anti_air_building_factor = -0.9
+					production_speed_infrastructure_factor = -0.9
+					production_speed_synthetic_refinery_factor = -0.9
+					production_speed_bunker_factor = -0.9
+					production_speed_nuclear_reactor_factor = -0.9
+					production_speed_radar_station_factor = -0.9
+					production_speed_rocket_site_factor = -0.9
+					production_speed_fuel_silo_factor = -0.9
+					production_speed_coastal_bunker_factor = -0.9
+				}
+				custom_modifier_tooltip = haijundajian_modifer_tooltip
+				consumer_goods_factor = 0.75
+				industrial_capacity_dockyard = 1.5
+				industrial_capacity_factory = -1
+			}
+		}
+		lujunkuobian = {
+			cost = 300
+			removal_cost = 0
+			picture = ast_volunteer_defence_corps
+			
+			ai_will_do = {
+				factor = 1
+				
+				modifier = {
+				factor = 300
+				OR = {
+				tag = YUW
+				tag = BFL
+				tag = TIX
+				tag = BYG
+				tag = DOH
+				}
+				has_war = yes
+				}
+				modifier = {
+					factor = 300
+					OR = {
+						tag = CHY
+						}
+					has_war_with = BYG
+				}
+
+			} 
+			modifier = {
+				war_support_factor = 0.2
+				mobilization_speed = 1
+				conscription_factor = 0.25
+				training_time_army_factor = -0.5
+			}
+		}
+		xingzhenggongzuo = {
+			cost = 300
+			removal_cost = 0
+			picture = generic_pp_unity_bonus
+			
+			ai_will_do = {
+				factor = 1
+
+				modifier = {
+				factor = 100
+				OR = {
+				tag = BYG 
+				tag = DOH 
+				tag = HUJ 
+				tag = SAD 
+				tag = TIX 
+				tag = BFL 
+				tag = YUW 
+				tag = CHY 
+				}
+				has_war = no
+				}
+			} 
+			modifier = {
+				political_power_gain = 1
+				political_advisor_cost_factor = -0.33
+			}
+		}
+		junshicanmou = {
+			cost = 300
+			removal_cost = 0
+			picture = german_advisors
+			
+			ai_will_do = {
+				factor = 0
+			} 
+			modifier = {
+				experience_gain_air = 0.2
+				experience_gain_army = 0.2
+				experience_gain_navy = 0.2
+				planning_speed = 0.3
+				max_planning = 0.1
+				army_chief_cost_factor = -0.2
+				navy_chief_cost_factor = -0.2
+				air_chief_cost_factor = -0.2
+				high_command_cost_factor = -0.33
+			}
+		}
+	}
+}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

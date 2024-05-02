@@ -1,0 +1,1391 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+
+HUJ_ally_BYG = {
+    allowed = { 
+	original_tag = HUJ
+	}
+	
+	enable = {
+		date > 1936.1.1
+	}
+	
+	abort = {
+	has_war_with = BYG
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "BYG"			
+		value = 300
+	}
+	ai_strategy = {
+		type = send_volunteers_desire	#志愿军
+		id = "BYG"			
+		value = 300
+	}
+}
+
+
+HUJ_unit_production_air = {
+    allowed = { 
+	original_tag = HUJ
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+	
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cv_naval_bomber
+		value = 1
+	}	
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cv_fighter
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 150
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 10
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cv_fighter
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cv_naval_bomber
+		value = 1
+	}
+    
+}	
+
+HUJ_unit_prodction_at_sairen = {
+	allowed = { 
+		original_tag =  HUJ 
+	}
+	enable = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		NOT = {
+			has_idea = TY_dingzhenai
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 200
+	}
+}
+
+HUJ_unit_production_at_week = {
+    
+    allowed = {
+		original_tag = HUJ
+	}
+    
+	enable = {
+		num_of_military_factories < 150
+		NOT = {
+			has_idea = TY_dingzhenai
+		}
+	}
+	abort = {
+		or = {
+		num_of_military_factories > 150
+		date > 1940.1.1	
+			has_idea = TY_dingzhenai
+    }
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = cavalry
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 800
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1
+	}
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+	
+	ai_strategy = {
+        type = force_build_armies
+        value = 100
+    }
+}
+
+HUJ_unit_production_at_strong = {
+    allowed = {
+		original_tag = HUJ
+	}
+    
+	enable = {
+		or = {
+		num_of_military_factories > 150
+		date > 1940.1.1	
+    }
+	NOT = {
+		has_idea = TY_dingzhenai
+	}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = infantry
+		value = 200
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = infantry
+		value = 200
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = armor
+		value = 800
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = armor
+		value = 800
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1
+	}
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+	
+	ai_strategy = {
+        type = force_build_armies
+        value = 100
+    }
+}
+
+HUJ_template_design = {
+    allowed = {
+		original_tag = HUJ
+	}
+	  
+	enable = {
+		always = yes			
+	}
+	abort = { 
+		always = no
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 0
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 0
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = 0
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = 0
+	}
+}
+
+HUJ_naval_role_ratios_historical = {
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_dlc = "Man the Guns"
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bc
+		value = -100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = -10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 150
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 30
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = -15
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cv_naval_bomber
+		value = 1
+	}	
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cv_fighter
+		value = 1
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cv_fighter
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cv_naval_bomber
+		value = 1
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 1
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 1
+	}
+}
+
+HUJ_lifeline_of_the_empire = {
+    allowed = {
+		original_tag = HUJ
+	}
+    
+	enable = {
+		or = {
+		has_war_with = TIX
+		has_war_with = BYG
+		has_war_with = BFL
+		has_war_with = CHY
+		has_war_with = SAD
+		has_war_with = DOH
+		has_war_with = YUW
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = suez
+		value = 30 # this is extra on top of 50 base
+	}
+}
+
+
+HUJ_BYG_focus_on_europe = {
+    allowed = {
+        or = {
+		original_tag = HUJ
+		original_tag = BYG
+		}
+	}
+	
+	enable = {
+		has_war = yes
+		date > 1940.6.1
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+
+		area = europe
+		
+		value = 1000
+	}
+}
+
+HUJ_time_to_ditch_FRA = {
+	allowed = {
+		original_tag = HUJ
+	}
+	
+	enable = {
+		YUW = {
+			has_capitulated = no
+		}
+		not = { country_exists = WEX }
+		not = { is_in_faction_with = BYG }
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = YUW
+		value = 100
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = BEL
+		value = 200
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = HOL
+		value = 200
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = LUX
+		value = 200
+	}
+}
+
+HUJ_gang_up_TIX_with_BYG = {
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		YUW = {
+			OR = {
+				has_capitulated = yes
+				exists = no
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+	# after YUW falls, both HUJ and BYG will try to help in europe and africa
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 100
+		target = europe
+	}
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 100
+		target = africa
+	}
+}
+
+
+HUJ_in_for_the_long_haul_bruv = {
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_government = democratic
+		date < 1939.1.1
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 10000
+	}
+	ai_strategy = {
+		type = air_factory_balance
+		value = 20
+	} 
+}
+
+HUJ_if_the_best_arrangements_are_made_as_they_are_being_made = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		date > 1940.1.1
+		has_war_with = TIX
+		num_of_military_factories < 250
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 50
+	}
+}
+
+HUJ_the_best_arrangements_are_made = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		date > 1940.1.1
+		has_war_with = TIX
+		num_of_military_factories > 250
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 20
+	}
+}
+
+HUJ_industry_we_on_an_island_bruv = {
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_government = democratic
+		has_war = no
+		date > 1939.1.1
+	}
+	abort_when_not_enabled = yes
+
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 55
+	}
+    ai_strategy = {
+		type = naval_avoid_region
+		id = 9 #northern baltic
+		value = 600
+	}
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 206 #central baltic
+		value = 600
+	}
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 207 #danish belts
+		value = 600
+	}	
+}
+
+HUJ_growing_confidence_in_the_air = {
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war = yes
+		has_government = democratic
+		date > 1938.1.1
+	}
+	abort_when_not_enabled = yes
+ 
+	ai_strategy = {
+		type = air_factory_balance
+		value = 120
+	} 
+}
+
+HUJ_accept_BYG_access = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		tag = HUJ
+		date > 1940.9.9
+		BYG = {
+			is_ai = yes
+			NOT = {
+				OR = {
+					is_in_faction_with = HUJ
+					has_military_access_to = HUJ
+				}
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = BYG
+		target = military_access
+		value = 1000
+	}
+}
+
+
+HUJ_wushibfl = {
+    allowed = {
+		original_tag = HUJ
+	}
+
+	enable = {
+		or = { 
+		has_war_with = CHY
+		has_war_with = SAD
+		has_war_with = YUW
+		has_war_with = BYG
+		has_war_with = TIX
+		has_war_with = DOH
+		}
+	}
+	
+	abort = {
+	has_war_with = BFL
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "BFL"			
+		value = 500
+	}
+}
+
+HUJ_wushitix = {
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		or = { 
+		has_war_with = CHY
+		has_war_with = SAD
+		has_war_with = YUW
+		has_war_with = BYG
+		has_war_with = BFL
+		has_war_with = DOH
+		}
+	}
+	abort = {
+	has_war_with = TIX
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "TIX"			
+		value = 250
+	}
+}
+
+
+HUJ_war_with_sad = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = SAD
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade		#入侵
+		id = "SAD"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		#征服
+		id = "SAD"			
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = front_unit_request #前线部队
+		tag = SAD
+		value = 200 # lets put more units, should be safe
+	}
+}
+
+HUJ_war_with_TIX = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = TIX
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade		#入侵
+		id = "TIX"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		#征服
+		id = "TIX"			
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = front_unit_request #前线部队
+		tag = TIX
+		value = 200 # lets put more units, should be safe
+	}
+}
+
+HUJ_war_with_BFL = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = BFL
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade		#入侵
+		id = "BFL"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		#征服
+		id = "BFL"			
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BFL
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = front_unit_request #前线部队
+		tag = BFL
+		value = 200 # lets put more units, should be safe
+	}
+}
+
+HUJ_war_with_DOH = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = DOH
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade		#入侵
+		id = "DOH"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		#征服
+		id = "DOH"			
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = DOH
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = front_unit_request #前线部队
+		tag = DOH
+		value = 200 # lets put more units, should be safe
+	}
+}
+
+HUJ_war_with_CHY = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = CHY
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade		#入侵
+		id = "CHY"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		#征服
+		id = "CHY"			
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = CHY
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = front_unit_request #前线部队
+		tag = CHY
+		value = 20 # lets put more units, should be safe
+	}
+	
+}
+
+HUJ_war_with_YUW = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = YUW
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invade		#入侵
+		id = "YUW"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		#征服
+		id = "YUW"			
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = YUW
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = front_unit_request #前线部队
+		tag = YUW
+		value = 200 # lets put more units, should be safe
+	}
+}
+
+HUJ_defend_Britain = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		or = { 
+		has_war_with = CHY
+		has_war_with = SAD
+		has_war_with = YUW
+		has_war_with = BYG
+		has_war_with = BFL
+		has_war_with = DOH
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = put_unit_buffers
+
+		order_id = 2
+
+		# south england
+		states = {
+			125
+			126
+			127
+			128
+			129
+			338
+			123
+			122
+			132
+			130
+			131
+			121
+			133
+			136
+			120
+		}
+
+		ratio = 0.20
+
+		area = europe
+
+		subtract_invasions_from_need = no
+	}
+	
+}
+
+HUJ_convoy_raids_TIX_SAD_convoys = {
+	allowed = {
+		original_tag = HUJ
+	}
+
+	enable = {
+		OR = {
+			has_war_with = TIX
+			has_war_with = SAD
+		}
+		YUW = {
+			OR = {
+				has_capitulated = yes
+				exists = no
+			}
+		}
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 18 
+		value = 200
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 43 
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 16 
+		value = 200
+	}
+}
+
+HUJ_place_for_build_factory = {
+
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+    
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  126
+        value = 600
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  121
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  133
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  130
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  132
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  129
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  123
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  128
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  338
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  125
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  127
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  113
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  134
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  135
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  136
+        value = 400
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  131
+        value = 400
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  122
+        value = 400
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  120
+        value = 300
+    }
+	
+}
+
+HUJ_baohu_EGY = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		is_in_faction_with = EGY
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "EGY"
+		value = 1000
+	}
+}
+
+HUJ_protect_bentu_ore = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war = yes
+		126 = { is_fully_controlled_by = ROOT }
+	}
+	abort_when_not_enabled = yes
+
+	 ai_strategy = {
+	 	type = put_unit_buffers
+
+		# ratio of total armeis in country to be buffered
+	 	ratio = 0.4
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+	 	order_id = 1
+
+	 	# states to put garrison orders (if no state is friendly, strat is invalid)
+	 	states = {
+	 		126
+	 		127
+	 		123
+			125
+			338
+			122
+			129
+			130
+			132
+			131
+			133
+			121
+			119
+			113
+			135
+	 	} 
+
+		# ai areas that the orders will use these buffers in
+	 	area = europe
+	 }
+	
+}
+
+HUJ_protect_asia_ore = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war = yes
+		country_exists = CHY
+	}
+	abort_when_not_enabled = yes
+
+	 ai_strategy = {
+	 	type = put_unit_buffers
+
+		# ratio of total armeis in country to be buffered
+	 	ratio = 0.1
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+	 	order_id = 1
+
+	 	# states to put garrison orders (if no state is friendly, strat is invalid)
+	 	states = {
+	 		336
+			333
+			640
+			288
+	 	} 
+
+		# ai areas that the orders will use these buffers in
+	 	area = asia
+	 }
+	
+}
+
+HUJ_protect_africa_ore = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war = yes
+		country_exists = SAD
+	}
+	abort_when_not_enabled = yes
+
+	 ai_strategy = {
+	 	type = put_unit_buffers
+
+		# ratio of total armeis in country to be buffered
+	 	ratio = 0.1
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+	 	order_id = 1
+
+	 	# states to put garrison orders (if no state is friendly, strat is invalid)
+	 	states = {
+	 		452
+			447
+			907
+			446
+	 	} 
+
+		# ai areas that the orders will use these buffers in
+	 	area = africa
+	 }
+	
+}
+
+HUJ_dengguanbi_sad = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = SAD
+		date < 1941.6.1
+		is_historical_focus_on = yes
+		SAD = { is_ai = yes }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = SAD
+		value = -200
+	}
+
+}
+
+HUJ_dengluqidong_sad = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = SAD
+		or = {
+		date > 1941.1.1
+		SAD = { is_ai = no }
+		}
+		or = {
+		is_historical_focus_on = yes
+		SAD = { is_ai = no }
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = SAD
+		value = 20
+	}
+
+}
+
+HUJ_dengguanbi_tix= {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = TIX
+		date < 1942.1.1
+		is_historical_focus_on = yes
+		TIX = { is_ai = yes }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = TIX
+		value = -200
+	}
+
+}
+
+HUJ_dengluqidong_tix = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = TIX
+		or = {
+		date > 1942.6.1
+		TIX = { is_ai = no }
+		}
+		or = {
+		is_historical_focus_on = yes
+		TIX = { is_ai = no }
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = TIX
+		value = 10
+	}
+
+}
+
+HUJ_dengguanbi_wex= {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = WEX
+		date < 1942.6.1
+		is_historical_focus_on = yes
+		WEX = { is_ai = yes }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = WEX
+		value = -200
+	}
+
+}
+
+HUJ_dengluqidong_wex = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = WEX
+		or = {
+		date > 1942.6.1
+		WEX = { is_ai = no }
+		}
+		or = {
+		is_historical_focus_on = yes
+		WEX = { is_ai = no }
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = WEX
+		value = 10
+	}
+
+}
+
+HUJ_dengguanbi_rom = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_war_with = ROM
+		date < 1942.6.1
+		is_historical_focus_on = yes
+		ROM = { is_ai = yes }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = ROM
+		value = -200
+	}
+
+}

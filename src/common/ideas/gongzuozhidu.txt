@@ -1,0 +1,194 @@
+ideas = {
+	gongzuozhidu = {
+		use_list_view = yes
+
+		law = yes
+		 
+		gongzuozhidu_1 = {
+			cost = 150
+			removal_cost = -1
+			picture = generic_prisoner
+			cancel_if_invalid = no
+			available = {
+				if = {
+					limit = {
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+					AND = {
+						has_war_support > 1.5
+						has_stability > 1
+					}
+					
+				}
+			}
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					OR = {
+						tag = CHY
+						tag = TIX
+						tag = SAD
+					}
+					OR = {
+						has_war_with = BYG
+						has_war_with = BFL
+					}
+				}
+				modifier = {
+					add = -10
+					has_stability < 1
+				}
+			} 
+			
+			modifier = {
+				industrial_capacity_factory = 0.3
+				industrial_capacity_dockyard = 0.3
+				research_speed_factor = -0.35
+				production_speed_buildings_factor = 0.3
+				production_factory_efficiency_gain_factor = -0.25
+				stability_factor = -0.5
+				stability_weekly = -0.035
+			}
+		}
+		gongzuozhidu_2 = {
+			cost = 150
+			removal_cost = -1
+			picture = SPR_international_brigades
+			cancel_if_invalid = no
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					OR = {
+						tag = BFL
+						tag = CHY
+						tag = YUW
+						}
+					OR = {
+						has_war_with = TIX
+						has_war_with = CHY
+					}
+				}
+				modifier = {
+					add = -10
+					has_stability < 0.75
+				}
+			} 
+			
+			modifier = {
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				research_speed_factor = -0.2
+				production_speed_buildings_factor = 0.15
+				production_factory_efficiency_gain_factor = -0.1
+				stability_factor = -0.3
+				stability_weekly = -0.005
+			}
+		}
+		gongzuozhidu_3 = {
+			cost = 150
+			removal_cost = -1
+			picture = hol_aloof_neutrality
+			default = yes
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 1
+			} 
+			
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		gongzuozhidu_4 = {
+			cost = 150
+			removal_cost = -1
+			picture = SWE_all_cards_on_deck
+			cancel_if_invalid = no
+			ai_will_do = {
+				base = 0
+				modifier = {
+					has_war = no
+					add = 1
+				}
+			} 
+			
+			modifier = {
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+				research_speed_factor = 0.15
+				production_speed_buildings_factor = -0.15
+				production_factory_efficiency_gain_factor = 0.2
+				line_change_production_efficiency_factor = 0.1
+				stability_factor = 0.2
+				stability_weekly = 0.01
+			}
+		}
+		gongzuozhidu_5 = {
+			cost = 150
+			removal_cost = -1
+			cancel_if_invalid = no
+			picture = SOV_third_five_year_plan_civilian
+			available = {
+					num_of_factories > 499
+					num_researched_technologies > 150
+					amount_research_slots > 5
+				
+			}
+			ai_will_do = {
+				factor = 0
+			} 
+			
+			modifier = {
+				research_speed_factor = 0.4
+				production_factory_efficiency_gain_factor = -0.8
+				line_change_production_efficiency_factor = -1
+				consumer_goods_factor = 0.25
+				stability_weekly = 0.03
+				conscription = 0.01
+			}
+		}
+		#
+	}
+}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

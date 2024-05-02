@@ -1,0 +1,1569 @@
+ideas = {
+	economy = {
+		law = yes
+		DOH_gongtongfuyu_economy = {
+			picture = DOH_economy
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+		
+			modifier = {
+				consumer_goods_expected_value = 0.15
+				production_speed_arms_factory_factor = 0.3
+				production_speed_industrial_complex_factor = 0.3
+				conversion_cost_civ_to_mil_factor= -0.9
+				conversion_cost_mil_to_civ_factor = -0.9
+				fuel_gain_factor = 0.4
+				production_factory_start_efficiency_factor = 0.15
+			}
+
+			allowed_to_remove = {
+				always = no
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+	trade_laws = { 
+		law = yes
+		DOH_teseshichangjinji = {
+			picture = new_economic_policy
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			rule = {
+				can_access_market = yes
+			}
+			modifier = {
+				min_export = 0.1
+				local_resources_factor = 0.3
+				
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.05
+
+				civilian_intel_to_others = 10.0
+				navy_intel_to_others = 5
+				cic_construction_boost = 0.35
+				convoy_escort_efficiency = 0.3
+				attrition = -0.1
+				
+				#license_subject_master_purchase_cost = -1
+			}
+
+			allowed_to_remove = {
+				always = no
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+	
+	hidden_ideas = {
+		DOH_stop_cic = {
+			modifier = {
+				cic_construction_boost_factor = -2
+			}
+		}
+		DOH_jiuquanshiyanjidi = {
+			modifier = {
+				civilian_factory_use = 12
+				research_speed_factor = -0.05
+			}
+		}
+		DOH_zhgjxz = {
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				max_command_power = -30
+				command_power_gain_mult = -0.5	
+				training_time_army_factor = 0.2
+				civilian_factory_use = 12
+			}
+		}
+		DOH_gddgzsc = {
+			modifier = {
+				stability_factor = -0.3
+				war_support_factor = -0.4
+				training_time_army_factor = -0.1
+				industrial_capacity_factory = 0.25
+				production_speed_buildings_factor = 0.2
+				custom_modifier_tooltip = az_hidden_ideas
+			}
+		}
+		DOH_jgjcsehy = {
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				training_time_army_factor = -0.15
+				industrial_capacity_factory = 0.3
+				industrial_capacity_dockyard = 0.3
+				production_speed_buildings_factor = 0.3
+				research_speed_factor = 0.1
+				custom_modifier_tooltip = az_hidden_ideas
+			}
+		}
+	}
+	country = {
+		DOH_dongfeng_idea_0 = {
+			picture = rockets_DOH
+			modifier = {
+				static_anti_air_hit_chance_factor = 0.5
+				static_anti_air_damage_factor = 0.5
+			}
+			equipment_bonus = {
+				guided_missile_equipment = {
+					air_range = 0.5
+					air_defence = 0.5
+					air_agility = 1
+				}
+				rocket_artillery_equipment = {
+					soft_attack = 0.10
+					maximum_speed = 0.5
+				}
+				motorized_rocket_equipment = {
+					soft_attack = 0.20
+					maximum_speed = 0.5
+					fuel_consumption_factor = -0.1
+				}
+			}
+		}
+		DOH_dongfeng_idea_1 = {
+			picture = rockets_DOH
+			modifier = {
+				air_power_projection_factor = 0.1
+				static_anti_air_hit_chance_factor = 1
+				static_anti_air_damage_factor = 1
+			}
+			equipment_bonus = {
+				guided_missile_equipment = {
+					air_range = 1
+					air_agility = 3
+					maximum_speed = 5
+					air_defence = 2
+				}
+				rocket_artillery_equipment = {
+					soft_attack = 0.20
+					maximum_speed = 0.5
+				}
+				motorized_rocket_equipment = {
+					soft_attack = 0.30
+					maximum_speed = 0.5
+					fuel_consumption_factor = -0.2
+				}
+			}
+		}
+		DOH_donghuangzhongche_idea_0 = {
+			picture = generic_railroads
+			modifier = {
+				supply_node_range = 0.1
+				repair_speed_rail_way_factor = 0.3
+			}
+		}
+		DOH_donghuangzhongche_idea_1 = {
+			picture = generic_railroads
+			modifier = {
+				supply_node_range = 0.2
+				repair_speed_rail_way_factor = 0.5
+			}
+		}
+		DOH_donghuangzhongche_idea_2 = {
+			picture = generic_railroads
+			modifier = {
+				supply_node_range = 0.25
+				repair_speed_rail_way_factor = 0.8
+				supply_consumption_factor = -0.05
+			}
+		}
+		DOH_donghuangzhongche_idea_3 = {
+			picture = generic_railroads
+			modifier = {
+				supply_node_range = 0.3
+				repair_speed_rail_way_factor = 1.0
+				supply_consumption_factor = -0.10
+			}
+		}
+		DOH_donghuangzhongche_idea_4 = {
+			picture = generic_railroads
+			modifier = {
+				supply_node_range = 0.32
+				repair_speed_rail_way_factor = 1.0
+				supply_consumption_factor = -0.15
+			}
+		}
+		
+		DOH_feitianmeng_idea = {
+			picture = GFX_experimental_rockets_medium
+			modifier = {
+				civilian_intel_factor = 5
+				army_intel_factor = 5
+				navy_intel_factor = 5
+				air_intel_factor = 5
+				naval_detection = 1
+				navy_submarine_detection_factor = 0.05
+				air_detection = 1
+			}
+		}
+		DOH_chijiaoyisheng_idea = {
+			picture = prc_the_long_march
+			modifier = {
+				monthly_population = 0.005
+			}
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.25
+					reliability = -0.10
+				}
+			}
+		}
+		DOH_donghuangyikedaxue_idea = {
+			picture = jap_supremacy_of_technology
+			modifier = {
+				monthly_population = 0.010
+				research_speed_factor = -0.10
+				experience_loss_factor = -0.50
+			}
+		}
+		DOH_ziligengsheng_idea = {
+			picture = closed_economy
+			modifier = {
+				min_export = -0.4
+				political_power_factor = 0.25
+			}
+		}
+		DOH_tongyizhanxian_c_idea = {
+			picture = home_of_revolution
+			modifier = {
+				communism_drift = 0.03
+				democratic_drift = -0.01
+				fascism_drift = -0.01
+				neutrality_drift = -0.01
+				stability_weekly = 0.001
+			}
+		}
+		DOH_tongyizhanxian_d_idea = {
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				communism_drift = -0.01
+				democratic_drift = 0.03
+				fascism_drift = -0.01
+				neutrality_drift = -0.01
+				stability_weekly = 0.001
+			}
+		}
+		DOH_tongyizhanxian_f_idea = {
+			picture = ast_abandon_the_westminster_system_fascism
+			modifier = {
+				communism_drift = -0.01
+				democratic_drift = -0.01
+				fascism_drift = 0.03
+				neutrality_drift = -0.01
+				stability_weekly = 0.001
+			}
+		}
+		DOH_sirenjingbeidui = {
+			picture = saf_ossewabrandwag
+			modifier = {
+				fascism_drift = 0.02
+				enemy_operative_detection_chance_factor = 0.2
+				enemy_operative_capture_chance_factor = 0.2
+				operative_slot = 1
+			}
+		}
+		DOH_dhzztx = {
+			picture = FRA_national_mobilization_focus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				experience_gain_army = 0.15
+				experience_gain_navy = 0.15
+				experience_gain_air = 0.15
+				war_support_factor = 0.3
+				research_speed_factor = 0.15
+				training_time_army_factor = -0.2
+			}
+		}
+		DOH_tcsg = {
+			picture = hol_aloof_neutrality
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				#stability_weekly = 0.005
+				war_support_weekly = 0.005
+				#drift_defence_factor = 1
+				political_power_factor = 0.15
+				local_resources_factor = 0.25
+				global_building_slots_factor = 0.25
+				research_speed_factor = 0.2
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05		
+			}
+		}
+
+		DOH_tcsg_jdws = {
+			picture = hol_aloof_neutrality
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				war_support_weekly = 0.005
+				political_power_factor = 0.15
+				local_resources_factor = 0.4
+				global_building_slots_factor = 0.25
+				research_speed_factor = 0.3
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.15
+
+				stability_factor = 0.25
+			}
+		}
+		DOH_tcsg_wlzs = {
+			picture = hol_aloof_neutrality
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				war_support_weekly = 0.005
+				political_power_factor = 0.15
+				local_resources_factor = 0.25
+				global_building_slots_factor = 0.25
+				research_speed_factor = 0.2
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+				
+				justify_war_goal_time = -0.5
+				war_support_factor = 0.5
+				mobilization_speed = 0.25
+				required_garrison_factor = 0.25
+				resistance_growth = -0.35
+				compliance_growth = 0.25
+			}
+		}
+		DOH_jsgc = {
+			picture = generic_production_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				production_speed_buildings_factor = 0.25
+				political_power_cost = 0.75
+			}
+		}
+		DOH_zyck = {
+			picture = generic_economic_increase
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.4
+				min_export = 0.2
+				
+			}
+		}
+		DOH_bjwg1 = { 
+			picture = chi_chinese_support
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				defensive_war_stability_factor = 0.2
+				war_support_factor = 0.1
+			}
+		}
+		DOH_bjwg2 = {
+			picture = chi_chinese_support
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				defensive_war_stability_factor = 0.3
+				army_core_defence_factor = 0.05
+				war_support_factor = 0.3
+			}
+		}
+		DOH_bjwg3 = {
+			picture = chi_chinese_support
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				defensive_war_stability_factor = 0.4
+				army_core_defence_factor = 0.1
+				war_support_factor = 0.5
+			}
+		}
+		DOH_bjwg4 = {
+			picture = chi_chinese_support
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				defensive_war_stability_factor = 0.5
+				army_core_defence_factor = 0.2
+				local_org_regain = 0.1
+				army_org_factor = 0.1
+				war_support_factor = 0.7
+			}
+		}
+		DOH_bjwg5 = {
+			picture = chi_chinese_support
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				defensive_war_stability_factor = 0.6
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.5
+				training_time_army_factor = -0.05
+				surrender_limit = 0.05
+				local_org_regain = 0.3
+				army_org_factor = 0.3
+				war_support_factor = 0.85
+				
+			}
+		}
+		DOH_bjwg6 = {
+			picture = chi_chinese_support
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				defensive_war_stability_factor = 0.8
+				army_core_attack_factor = 1
+				army_core_defence_factor = 1
+				training_time_army_factor = -0.1
+				surrender_limit = 0.1
+				army_org_factor = 0.5
+				local_org_regain = 0.5
+				war_support_factor = 1
+			}
+		}
+		DOH_bjwg7 = {
+			picture = chi_chinese_support
+
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				defensive_war_stability_factor = 1
+				army_core_attack_factor =1
+				army_core_defence_factor = 1.5
+				training_time_army_factor = -0.15
+				surrender_limit = 0.15
+				local_org_regain = 0.8
+				army_org_factor = 0.8
+				war_support_factor = 1.5
+			}
+		}
+		DOH_qiansedezhuiyi = {
+			picture = DOH_guomuyixian
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_org_regain = 0.5
+				army_org_factor = 0.5
+				army_attack_factor = 0.1
+				army_defence_factor = 0.15
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 1
+				defensive_war_stability_factor = 2
+				experience_gain_army_unit_factor = 0.2
+				experience_loss_factor = -0.25
+			}
+		}
+		DOH_qiansedezhuiyi_1 = {
+			picture = DOH_guomuyixian
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_org_regain = 0.5
+				army_org_factor = 0.75
+				army_attack_factor = 0.1
+				army_defence_factor = 0.15
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 1
+				defensive_war_stability_factor = 2
+				experience_gain_army_unit_factor = 0.2
+				experience_loss_factor = -0.25
+				
+				experience_gain_army_factor = 0.15
+				max_planning = 0.1
+			}
+		}
+		
+		DOH_fffb = {
+			picture = generic_army_war_college
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				political_power_factor = 0.25
+				consumer_goods_factor = -0.4
+			}
+		}
+		DOH_jdws = {
+			picture = generic_fortify_the_borders
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				stability_factor = 0.25
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.1
+				local_resources_factor = 0.15
+			}
+		}
+		DOH_wlzs = {
+			picture = generic_fortify_the_borders
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				justify_war_goal_time = -0.5
+				war_support_factor = 0.5
+				mobilization_speed = 0.25
+				required_garrison_factor = 0.25
+				resistance_growth = -0.35
+				compliance_growth = 0.25
+			}
+		}
+		DOH_tgyh = {
+			picture = hol_aloof_neutrality
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+				ai_join_ally_desire_factor = -100
+				ai_get_ally_desire_factor = -500
+			}
+		}
+		DOH_dfcy = {
+			picture = generic_intel_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = CHY
+				defense_bonus_against = 0.2
+			}
+			modifier = {
+				army_core_defence_factor = 0.2
+			}
+		}
+		DOH_xfzr = {
+			picture = generic_intel_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = CHY
+				attack_bonus_against = 0.1
+			}
+			modifier = {
+				army_speed_factor = 0.1
+				army_core_attack_factor = 0.1
+			}
+		}
+		DOH_qytd = {
+			picture = generic_intel_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = {
+				tag = XSM
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = {
+				tag = SIK
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = {
+				tag = YUN
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.25
+			}
+		}
+		DOH_dfgg1 = {
+			picture = man_low_legitimacy
+
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				industry = -0.5
+				motorized_equipment = -1		
+				artillery = -0.5
+				air_equipment = -1.5
+				naval_equipment = -1.5
+				armor = -1.5
+				nuclear = -5
+				rocketry = -5
+				electronics = -1.5
+			}
+			modifier = {
+				research_speed_factor = -0.25
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		DOH_dfgg2 = {
+			picture = man_low_legitimacy2
+
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				industry = -0.25
+				air_equipment = -1
+				naval_equipment = -1
+				armor = -1
+				nuclear = -5
+				rocketry = -5
+				electronics = -1.5
+			}
+			modifier = {
+				research_speed_factor = -0.1
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		DOH_dfgg3 = {
+			picture = man_low_legitimacy3
+
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				air_equipment = -0.3
+				naval_equipment = -0.3
+				armor = -0.3
+				nuclear = -0.25
+				rocketry = -0.25
+			}
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
+		DOH_dfgg4 = {
+			picture = man_low_legitimacy4
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				research_speed_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.05
+				industrial_capacity_factory = 0.05
+				army_org_factor = 0.07
+				army_morale_factor = 0.07
+			}
+		}
+		DOH_dfgg5 = {
+			picture = man_low_legitimacy5
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				research_speed_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				political_power_factor = 0.1
+				industrial_capacity_factory = 0.1
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
+			}
+		}
+		DOH_ggkf = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				global_building_slots_factor = 0.35
+			}
+		}
+		DOH_ggkf_1 = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.3
+				global_building_slots_factor = 0.75
+				production_speed_infrastructure_factor = 0.3
+			}
+		}
+		DOH_idea_jishushengji = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.5
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.25
+			}
+		}
+		DOH_fsfz = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.5
+				global_building_slots_factor = 0.85
+				industrial_capacity_factory = 0.15
+				production_factory_max_efficiency_factor = 0.15
+				local_resources_factor = 0.2
+				line_change_production_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				production_speed_infrastructure_factor = 0.3
+			}
+		}
+		DOH_kddpfcj = {
+			picture = ROM_carol_emptied_accounts
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.25
+				conscription_factor = -0.025
+				monthly_population = -0.33
+			}
+		}
+		DOH_ffcl = {
+			picture = generic_constitutional_guarantee
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_factor = -0.75
+				
+			}
+		}
+		DOH_bldzjyz = {
+			picture = generic_production_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.15
+				production_speed_buildings_factor = 0.25
+			}
+		}
+		DOH_lzdfdlxs = {
+			picture = jap_supremacy_of_technology
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		DOH_fbksmy = {
+			picture = chi_hyper_inflation2
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.4
+				political_power_factor = -0.35
+			}
+		}
+		DOH_rmws = {
+			picture = ast_abandon_the_westminster_system_communism
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.3
+				army_org_factor = 0.15
+				conscription = 0.025
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		DOH_xdh = {
+			picture = DOH_xdh
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.15
+				surrender_limit = 0.1
+				opinion_gain_monthly_factor = 0.35
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+			}
+		}
+		DOH_xdh_people = {
+			picture = DOH_xdh
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.3
+				army_org_factor = 0.15
+				conscription = 0.025
+				production_speed_buildings_factor = 0.15
+				research_speed_factor = 0.15
+				surrender_limit = 0.1
+				opinion_gain_monthly_factor = 0.35
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+			}
+		}
+		DOH_crdhj = {
+			picture = generic_sea_focused_navy
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_dockyard = -0.25
+				navy_screen_attack_factor = -0.1
+				navy_screen_defence_factor = -0.1
+				navy_capital_ship_attack_factor = -0.1
+				navy_capital_ship_defence_factor = -0.1
+			}
+		}
+		DOH_dfqq = {
+			picture = man_low_legitimacy5
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_factor = 0.1
+				opinion_gain_monthly_factor = 0.25
+				research_speed_factor = 0.13
+				justify_war_goal_time = -0.5
+				stability_weekly = 0.015
+				war_support_weekly = 0.02
+			}
+		}
+		DOH_xxxx = {
+			picture = jap_supremacy_of_will
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.06
+			}
+		}
+		DOH_qxfdp = {
+			picture = generic_secret_police
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = -0.015
+				political_power_factor = -0.5
+			}
+		}	
+		DOH_dhgm = {
+			picture = FRA_national_mobilization_focus
+
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.1
+				conscription = 0.01
+			}
+		}
+		DOH_gmyx = {
+			picture = FRA_national_mobilization_focus
+
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.2
+				conscription = 0.025
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+			}
+		}
+		DOH_yxdyjzh = {
+			picture = FRA_national_mobilization_focus
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				army_morale_factor = 0.08
+				land_reinforce_rate = 0.1
+				planning_speed = 0.1
+				max_planning = -0.15
+				command_power_gain_mult = -0.2
+			}
+		}
+		DOH_yxdymzh = {
+			picture = FRA_national_mobilization_focus
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				land_reinforce_rate = 0.1
+				planning_speed = 0.15
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+		DOH_dhgytx = {
+			picture = man_five_year_plan_industry
+			allowed_civil_war = {
+				always = no
+			}
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				
+			}
+		}
+
+		DOH_dhgytx_1 = {
+			picture = man_five_year_plan_industry
+			allowed_civil_war = {
+				always = no
+			}
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.3
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1				
+			}
+		}
+
+		DOH_dhgytx_2 = {
+			picture = man_five_year_plan_industry
+			allowed_civil_war = {
+				always = no
+			}
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.3
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+
+				supply_node_range = 0.32
+				repair_speed_rail_way_factor = 1.0
+				supply_consumption_factor = -0.15
+			}
+		}
+
+		DOH_zzyf = {
+			picture = generic_war_preparation
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				armor = 0.1
+				infantry_weapons = 0.1
+				artillery = 0.1
+				motorized_equipment = 0.1
+				air_equipment = 0.1
+				naval_equipment = 0.1
+			}
+			modifier = {
+				
+			}
+		}
+		DOH_txjszd = {
+			picture = general_staff
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_army_factor = 0.15
+				max_planning = 0.1
+			}
+		}
+		DOH_rkqy = {
+			picture = SPR_international_brigades
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				monthly_population = 0.25
+			}
+		}
+		DOH_hailufuhe_idea_0 = {
+			picture = generic_coastal_navy
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				
+			}
+		}
+		DOH_hailufuhe_idea_1 = {
+			picture = generic_coastal_navy
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				convoy_escort_efficiency = 0.1
+				air_escort_efficiency = 0.1
+				convoy_retreat_speed = 0.2
+				transport_capacity = -0.5
+			}
+		}
+		DOH_hailufuhe_idea_2 = {
+			picture = generic_coastal_navy
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				air_escort_efficiency = 0.1
+				convoy_escort_efficiency = 0.1
+				convoy_retreat_speed = 0.2
+				navy_max_range_factor = 0.25
+				transport_capacity = -0.5
+				navy_org_factor = 0.20
+				navy_fuel_consumption_factor = -0.1
+			}
+		}
+		DOH_hailufuhe_idea_3 = {
+			picture = generic_coastal_navy
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				air_escort_efficiency = 0.1
+				convoy_escort_efficiency = 0.1
+				convoy_retreat_speed = 0.2
+				navy_max_range_factor = 0.25
+				transport_capacity = -0.5
+				navy_org_factor = 0.20
+				navy_fuel_consumption_factor = -0.1
+				navy_visibility = -0.1
+			}
+		}
+		# DOH_yyhj = {
+		# 	picture = eng_steady_as_she_goes
+		# 	allowed_civil_war = {
+		# 		always = yes
+		# 	}
+		# 	modifier = {
+		# 		navy_max_range_factor = 0.25
+		# 		navy_org_factor = 0.20
+		# 	}
+		# }
+		# DOH_ysjd = {
+		# 	picture = generic_coastal_navy
+		# 	allowed_civil_war = {
+		# 		always = yes
+		# 	}
+		# 	# equipment_bonus = {
+		# 	# 	convoy = {
+		# 	# 		build_cost_ic = -0.25
+		# 	# 		instant = yes
+		# 	# 		maximum_speed = 0.20
+		# 	# 		surface_visibility = -0.25
+		# 	# 		lg_attack = 1
+		# 	# 		anti_air_attack = 1
+		# 	# 	}
+		# 	# }
+		# 	modifier = {
+		# 		air_escort_efficiency = 0.1
+		# 		convoy_retreat_speed = 0.2
+		# 	}
+		# }
+		DOH_dhzcc = {
+			picture = newport_news_shipbuilding
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				
+			}
+		}
+		DOH_ndhhsygs = {
+			picture = usa_tank_destroyer_board
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				min_export = 0.1
+				trade_opinion_factor = 0.5
+				local_resources_factor = 0.15
+			}
+		}
+		DOH_jfzz = {
+			picture = generic_morale_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				army_core_attack_factor = 0.3
+				army_core_defence_factor = 0.15
+			}
+		}
+		DOH_mzkq = {
+			picture = jap_supremacy_of_will
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				research_speed_factor = 0.16
+				political_power_factor = 0.12
+				command_power_gain = 1
+			}
+			research_bonus = {
+				armor = 0.1
+				infantry_weapons = 0.1
+				artillery = 0.1
+				motorized_equipment = 0.1
+				air_equipment = 0.1
+				naval_equipment = 0.1
+			}
+		}
+		DOH_nbjs = {
+			picture = generic_build_infrastructure
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				global_building_slots_factor = 0.4
+				production_speed_buildings_factor = 0.15
+				production_speed_infrastructure_factor = 0.3
+			}
+		}
+		DOH_mzzy = {
+			picture = SPA_la_division_azul
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				stability_weekly = 0.01
+				war_support_weekly = 0.02
+				#drift_defence_factor = 0.15
+				conscription = 0.015
+			}
+		}
+		DOH_kyxzgzz = {
+			picture = jap_supremacy_of_technology
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+		DOH_ygxl = {
+			picture = generic_manpower_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				army_org_factor = 0.15
+				experience_gain_army_unit_factor = 0.2
+				experience_loss_factor = -0.25
+			}
+		}
+		DOH_czdswgy = {
+			picture = generic_agrarian_reform
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				no_supply_grace = 24
+				consumer_goods_factor = -0.15
+			}
+		}
+		DOH_gfgt = {
+			picture = generic_reserve_divisions
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				offensive_war_stability_factor = 0.5
+			    mobilization_speed = 0.5
+				army_attack_factor = 0.05
+				army_speed_factor = 0.05
+				breakthrough_factor = 0.05
+			}
+		}
+	}
+
+	political_advisor = {
+	
+	}	
+
+	army_chief = {
+
+	}
+
+	air_chief = {
+
+	}
+	
+	navy_chief = {
+
+	}
+
+	high_command = {
+
+	}
+	
+	
+
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		jiangnan_shipyard_group = {
+			picture = generic_naval_manufacturer_3
+
+			
+			allowed = {
+				tag = DOH
+			}
+
+			available = {
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			cost = 25
+						
+			traits = { coastal_defence_naval_manufacturer }
+			
+		}
+
+		dagu_shipyard = {
+			picture = generic_naval_manufacturer_3
+
+			
+			allowed = {
+				tag = DOH
+			}
+			available = {
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			cost = 25
+						
+			traits = { raiding_fleet_naval_manufacturer }
+			
+		}
+	}
+
+	materiel_manufacturer = { 
+		
+		designer = yes
+		
+		CHI_taiyuan_arsenal = {
+			picture = generic_artillery_manufacturer_1
+
+			
+			allowed = {
+				tag = DOH
+			}
+
+			available = {
+				controls_state = 615
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			cost = 25
+						
+			traits = { artillery_manufacturer }
+			
+		}
+
+		CHI_liaoning_arsenal = {
+			picture = generic_motorized_equipment_manufacturer_1
+			
+			allowed = {
+				tag = DOH
+			}
+
+			available = {
+				controls_state = 715
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+				
+			cost = 25
+				
+			traits = { motorized_equipment_manufacturer }
+			
+		}
+
+		CHI_hanyan_arsenal = {
+			picture = generic_infantry_equipment_manufacturer_1
+
+			
+			allowed = {
+				tag = DOH
+			}
+
+			available = {
+				controls_state = 620
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 25
+			
+			traits = { infantry_equipment_manufacturer }
+			
+		}
+		CHI_mukden_arsenal = {
+			picture = generic_infantry_equipment_manufacturer_2
+
+			
+			allowed = {
+				tag = DOH
+			}
+
+			available = {
+				controls_state = 716
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+
+			cost = 25	
+
+			traits = { infantry_equipment_manufacturer }
+			
+		}
+	
+	}
+
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		TIX_DOH_tank_designer = {
+
+			picture = porsche
+			
+			allowed = {
+				tag = DOH
+			}
+			
+			available = {
+				has_completed_focus = DOH_xuexitiexue
+				has_completed_focus = DOH_tiexueguwen
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			
+			cost = 25
+			removal_cost = 10
+			
+			research_bonus = {
+				armor = 0.25
+			}
+			
+			
+		}
+	}
+	
+	aircraft_manufacturer = { #
+			
+		designer = yes		
+
+		CHI_camco_3 = {
+
+			picture = CHI_camco
+
+
+			allowed = {
+				tag = DOH
+			}
+			available = {
+				has_completed_focus = DOH_dulizizhudejungong
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = {
+				light_aircraft_manufacturer
+				medium_aircraft_manufacturer
+			}
+			
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+	industrial_concern = {
+	
+		CHI_mining_commission = {
+
+			picture = generic_industrial_concern_3		
+
+			allowed = {
+				tag = DOH
+			}
+
+			cost = 150
+			
+			ai_will_do = {
+				factor = 1
+			}
+
+			modifier = {
+				local_resources_factor = 0.1
+			}
+		}
+	}
+}

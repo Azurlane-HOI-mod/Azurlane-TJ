@@ -1,0 +1,223 @@
+guiTypes = {
+	containerWindowType = {
+		name = "az_autooption_decision_window"
+		buttonType = {
+			name = "az_autooption_decision_button"
+			position = { x = 420 y = -30 }
+			quadTextureSprite ="GFX_az_smallbutton2" 
+			buttonFont = "vic_18"
+			buttonText = "az_autooption_decision_button_text"
+			pdx_tooltip = "az_autooption_decision_button_tooltip"
+			clicksound = click_default
+		}
+		
+	}
+	containerWindowType = {
+		name = "az_autooption_window"
+		orientation = LOWER_LEFT
+		position = { x = 0 y = -180 } 
+		show_position = { x = 540 y = -180 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated   
+		moveable = no
+		animation_time = 300
+		show_sound = open_sub_window
+		verticalScrollbar = "right_vertical_slider"
+		size = { width = 270 height = 150 } 
+		
+		background = {
+			name = "az_autooption_bg"		
+			quadTextureSprite ="GFX_tiled_plain_bg"
+		}
+		buttonType = {
+			name = "az_autooption_close_btn"
+			position = { x = -54 y = 4 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		instantTextboxType = {
+			name = "az_autooption_1_txt"
+			orientation = UPPER_LEFT
+			position = { x = 10 y = 20 }  
+			font = "hoi_20b"
+			text = "az_autooption_1_txt"
+			maxWidth = 180
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_autooption_1_tt"
+		}
+		buttonType = {
+			name = "az_autooption_1_on_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 20 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_on_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 1
+		}
+		buttonType = {
+			name = "az_autooption_1_off_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 20 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_off_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 2
+		}
+		instantTextboxType = {
+			name = "az_autooption_2_txt"
+			orientation = UPPER_LEFT
+			position = { x = 10 y = 50 }  
+			font = "hoi_20b"
+			text = "az_autooption_2_txt"
+			maxWidth = 180
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_autooption_2_tt"
+		}
+		buttonType = {
+			name = "az_autooption_2_on_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 50 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_on_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 1
+		}
+		buttonType = {
+			name = "az_autooption_2_off_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 50 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_off_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 2
+		}
+		instantTextboxType = {
+			name = "az_autooption_3_txt"
+			orientation = UPPER_LEFT
+			position = { x = 10 y = 80 }  
+			font = "hoi_20b"
+			text = "az_autooption_3_txt"
+			maxWidth = 180
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_autooption_3_tt"
+		}
+		buttonType = {
+			name = "az_autooption_3_on_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 80 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_on_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 1
+		}
+		buttonType = {
+			name = "az_autooption_3_off_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 80 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_off_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 2
+		}
+		instantTextboxType = {
+			name = "az_autooption_4_txt"
+			orientation = UPPER_LEFT
+			position = { x = 10 y = 110 }  
+			font = "hoi_20b"
+			text = "az_autooption_4_txt"
+			maxWidth = 180
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_autooption_4_tt"
+		}
+		buttonType = {
+			name = "az_autooption_4_on_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 110 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_on_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 1
+		}
+		buttonType = {
+			name = "az_autooption_4_off_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 110 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_off_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 2
+		}
+		instantTextboxType = {
+			name = "az_autooption_5_txt"
+			orientation = UPPER_LEFT
+			position = { x = 10 y = 140 }  
+			font = "hoi_20b"
+			text = "az_autooption_5_txt"
+			maxWidth = 180
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_autooption_5_tt"
+		}
+		buttonType = {
+			name = "az_autooption_5_on_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 140 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_on_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 1
+		}
+		buttonType = {
+			name = "az_autooption_5_off_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 140 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_off_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 2
+		}
+		instantTextboxType = {
+			name = "az_autooption_6_txt"
+			orientation = UPPER_LEFT
+			position = { x = 10 y = 170 }  
+			font = "hoi_20b"
+			text = "az_autooption_6_txt"
+			maxWidth = 180
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_autooption_6_tt"
+		}
+		buttonType = {
+			name = "az_autooption_6_on_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 170 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_on_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 1
+		}
+		buttonType = {
+			name = "az_autooption_6_off_btn"
+			orientation = UPPER_LEFT
+			position = { x = 180 y = 170 }  
+			quadTextureSprite = "GFX_checkbox_small4"
+			pdx_tooltip = "az_autooption_off_btn_tt"
+			clicksound = decisions_ui_button
+			frame = 2
+		}
+	} 
+}

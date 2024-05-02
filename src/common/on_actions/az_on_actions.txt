@@ -1,0 +1,788 @@
+on_actions = {
+	on_startup = { 
+		effect = { 
+			#开局音效
+			CHY = {
+				scoped_sound_effect = CHY_start_sound
+			}
+			DOH = {
+				scoped_sound_effect = DOH_start_sound
+			}
+			BLI = {
+				scoped_sound_effect = BLI_start_sound
+			}
+			BFL = {
+				scoped_sound_effect = BFL_start_sound
+			}
+			YUW = {
+				scoped_sound_effect = YUW_start_sound
+			}
+			SAD = {
+				scoped_sound_effect = SAD_start_sound
+			}
+			TIX = {
+				scoped_sound_effect = TIX_start_sound
+			}
+			HUJ = {
+				scoped_sound_effect = HUJ_start_sound
+			}
+			BYG = {
+				scoped_sound_effect = BYG_start_sound
+			}
+			#塞壬名字
+			SIR = {
+				if = {
+					limit = {
+						is_ai = NO
+					}
+					country_event = SIR_event.101
+					SIR_sairenjiaojisi = {
+						set_character_name = SIR_sairenjiaojisi2
+						set_portraits = { 
+							army = {
+								large="gfx/leaders/SIR/youlingsha2.png"
+								small="gfx/interface/ideas/idea_youlingsha2.png"
+							}
+						}
+					}
+				}
+				
+			}
+			#招魂术
+			TAN = { 
+				#META
+				recruit_character = meta_huangjiafangzhou
+				recruit_character = meta_feilong
+				recruit_character = meta_canglong
+				recruit_character = meta_hailunna
+				recruit_character = meta_feiying
+				recruit_character = meta_fusang
+				recruit_character = meta_genaisennao
+				#指挥官
+				recruit_character = zhg_gudelian
+				recruit_character = zhg_maikease
+				recruit_character = zhg_menggemali
+				recruit_character = zhg_nimici
+				recruit_character = zhg_longmeier
+				recruit_character = zhg_dengnici
+				recruit_character = zhg_dongpingxiangbalang
+				#学院
+				recruit_character = kaqiusha
+				recruit_character = nongna
+				recruit_character = kaiyi
+				recruit_character = xijuandai
+				recruit_character = futian
+				recruit_character = dajiling
+				recruit_character = mali
+				recruit_character = yatian
+				recruit_character = anteng
+				recruit_character = xizhuzhensui
+				recruit_character = meisui
+				#东煌国策
+				recruit_character = DOH_79shi
+				recruit_character = DH1_79shi
+				recruit_character = DOH_97shi
+				recruit_character = DOH_JS9
+				recruit_character = DOH_NZ75
+				recruit_character = DOH_QBU88
+				#recruit_character = DOH_naerxun
+				recruit_character = DOH_xifeng
+				recruit_character = DOH_beifeng
+				recruit_character = DOH_chy_advisor
+				#魔王
+				recruit_character = ailier
+				recruit_character = biexibu
+				recruit_character = dajiaxi
+				recruit_character = xiaojiaxi
+				recruit_character = maou
+				recruit_character = peikela
+				recruit_character = sataniya
+				recruit_character = xieshenjiang
+				#灰烬战线
+				recruit_character = hushi
+				recruit_character = diyumao
+				recruit_character = ju
+				recruit_character = kv
+				#萝莉
+				recruit_character = xiaotiancheng
+				recruit_character = xiaoshengwang
+				recruit_character = xiaoqiye
+				recruit_character = xiaoqibolin
+				recruit_character = xiaokelifulan
+				recruit_character = xiaohailunna
+				recruit_character = xiaoguanghui
+				recruit_character = xiaobirui
+				recruit_character = xiaobeifa
+				recruit_character = xiaoshengdiyage
+				#其他
+				recruit_character = dingzhen
+			}
+			#科研经费侧重
+			every_country = {
+				add_ideas = keyancezhong_none
+			}
+			#工作制度
+			every_country = {
+				add_ideas = gongzuozhidu_3
+			}
+			#魔方挖矿基础工厂数量
+			every_country = {
+				set_variable = {
+					az_kaicaimofangkuang_modifier_var = 10
+				}
+			}
+			
+			every_country = {
+				#舰娘筛选条件
+				set_country_flag = leader_shaixuan_lujunjiangling
+				set_country_flag = leader_shaixuan_haijunjiangling
+				set_country_flag = leader_shaixuan_zhanlie
+				set_country_flag = leader_shaixuan_hangmu
+				set_country_flag = leader_shaixuan_xunyang
+				set_country_flag = leader_shaixuan_quzhu
+				set_country_flag = leader_shaixuan_qianting 
+
+				#资源转化动态变量
+				add_dynamic_modifier = {
+					modifier = az_ziyuanzhuanhua_amount
+				}
+				
+				#舰娘休假
+				add_dynamic_modifier = {
+					modifier = az_jianniangxiujia_modifier
+				}
+				if = {
+					limit = { 
+						is_ai = NO 
+					}
+					#开始界面窗口
+					set_country_flag = az_startwindow_open
+					set_country_flag = az_start_gengxinshuoming_window_open
+					
+				}
+				
+				if = {
+					limit = { 
+						shijianniangguojia_trigger = yes
+					}
+					#舰娘国海军加速
+					add_ideas = TY_haijunkeyan
+					#初始舰娘角色标记
+					every_character = {
+						set_character_flag = chushijianniang
+					}
+					#物资大会
+					country_event = {
+						id = azevent.102
+						days = 60
+					}
+					#特殊编制科技
+					set_technology = {
+						penal_infantry = 1
+						camelry = 1
+						bicycle_infantry = 1
+						popup = no
+					}
+				}
+				#禁止合作政府
+				#if = {
+				#	limit = { 
+				#		OR = {
+				#			shijianniangguojia_trigger = yes
+				#			shisairen_trigger = yes
+				#		}
+				#	}
+				#	set_rule = {
+				#		can_create_collaboration_government = no
+				#	}
+				#}
+
+			}
+		} 
+	}
+
+	on_monthly  = {
+		effect = {
+
+			if = {
+				limit = {
+					shijianniangguojia_trigger = yes
+					has_global_flag = BLI_bulijianzaomofangkuangjing
+					controls_state = 270
+				}
+							
+
+				add_to_variable = {
+					var = xzmf_sl
+					value = 1
+				}
+				
+			}
+			
+
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						ROOT = {
+							
+							shijianniangguojia_trigger = yes
+							
+							NOT = { has_country_flag = jianniangyibeifuhuo }
+						}
+						FROM = {
+							
+							shijianniangguojia_trigger = yes
+							
+						}
+					}
+				}
+
+				FROM = {
+					country_event = { id = getzhg_event.11 hours = 16 }
+				}
+				
+					
+			}
+		}
+	}
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						ROOT = {
+							shijianniangguojia_trigger = yes
+							NOT = { has_country_flag = jianniangyibeifuhuo }
+						}
+						FROM = {
+							shijianniangguojia_trigger = yes
+						}
+					}
+				}
+
+				FROM = {
+					country_event = getzhg_event.11
+				}
+				
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						FROM = {
+							shijianniangguojia_trigger = yes
+							NOT = { has_country_flag = jianniangyibeifuhuo }
+						}
+						ROOT = {
+							shijianniangguojia_trigger = yes
+						}
+					}
+				}
+
+				ROOT = {
+	
+					country_event = getzhg_event.1101
+				}
+			
+				
+					
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = modoption_fengkuangai_on
+					AND = {
+						ROOT = {
+							NOT = { has_country_flag = beilueduo }
+							shijianniangguojia_trigger = yes
+						}
+						FROM = {
+							is_ai = no
+						}
+					}
+				}
+				ROOT = {
+					set_country_flag = beilueduo 
+				}
+				FROM = {
+					country_event = { id = azevent.78 hours = 2 }
+				}
+				
+					
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = modoption_fengkuangai_on
+					AND = {
+						FROM = {
+							NOT = { has_country_flag = beilueduo }
+							shijianniangguojia_trigger = yes
+						}
+						ROOT = {
+							is_ai = no
+						}
+					}
+				}
+				
+				ROOT = {
+					country_event = { id = azevent.78 hours = 2 }
+				}
+				
+					
+			}
+		}
+	}
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = modoption_fengkuangai_on
+					ROOT = {
+						NOT = { has_country_flag = beilueduo }
+						shijianniangguojia_trigger = yes
+					}
+					FROM = {
+						is_ai = no
+					}
+				}
+				ROOT = {
+					set_country_flag = beilueduo 
+				}
+				FROM = {
+					country_event = { id = azevent.78 hours = 2 }
+				}
+				
+					
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+					    has_global_flag = MOD_azurlane_sairenzhizai
+						has_game_rule = {
+							rule = AZ_generic_toudisairen
+							option = AZ_generic_toudisairen_on
+						}
+						ROOT = {
+							shijianniangguojia_trigger = yes
+							NOT = { has_country_flag = toudisairen_get }
+						}
+						FROM = {
+							shisairen_trigger = yes
+						}
+					}
+				}
+				ROOT = {
+					news_event = aznews.41
+					set_country_flag = toudisairen_get
+					add_Ideas = SIR_srkzg
+					if = {
+						limit = {
+							tag = BYG
+						}
+						create_country_leader = {
+							name = "企业"
+							picture = "gfx/leaders/zhihuiguan/siren_qiye.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = BFL
+						}
+						create_country_leader = {
+							name = "罗西亚"
+							picture = "gfx/leaders/zhihuiguan/siren_luoxiya.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = CHY
+						}
+						create_country_leader = {
+							name = "赤城"
+							picture = "gfx/leaders/zhihuiguan/siren_chicheng.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = DOH
+						}
+						create_country_leader = {
+							name = "逸仙"
+							picture = "gfx/leaders/zhihuiguan/siren_yixian.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = HUJ
+						}
+						create_country_leader = {
+							name = "胡德"
+							picture = "gfx/leaders/zhihuiguan/siren_hude.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = SAD
+						}
+						create_country_leader = {
+							name = "维内托"
+							picture = "gfx/leaders/zhihuiguan/siren_weineituo.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = TIX
+						}
+						create_country_leader = {
+							name = "俾斯麦"
+							picture = "gfx/leaders/zhihuiguan/siren_bisimai.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = YUW
+						}
+						create_country_leader = {
+							name = "让·巴尔"
+							picture = "gfx/leaders/zhihuiguan/siren_rangbaer.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+				}
+				FROM = {
+					white_peace = ROOT
+					
+					puppet = ROOT
+				}
+			}
+		}
+	}
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+					    has_global_flag = MOD_azurlane_sairenzhizai
+						ROOT = {
+							shijianniangguojia_trigger = yes
+							NOT = { has_country_flag = toudisairen_get }
+						}
+						FROM = {
+							shisairen_trigger = yes
+						}
+					}
+				}
+				ROOT = {
+					news_event = aznews.41
+					set_country_flag = toudisairen_get
+					add_Ideas = SIR_srkzg
+					if = {
+						limit = {
+							tag = BYG
+						}
+						create_country_leader = {
+							name = "企业"
+							picture = "gfx/leaders/zhihuiguan/siren_qiye.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = BFL
+						}
+						create_country_leader = {
+							name = "罗西亚"
+							picture = "gfx/leaders/zhihuiguan/siren_luoxiya.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = CHY
+						}
+						create_country_leader = {
+							name = "赤城"
+							picture = "gfx/leaders/zhihuiguan/siren_chicheng.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = DOH
+						}
+						create_country_leader = {
+							name = "逸仙"
+							picture = "gfx/leaders/zhihuiguan/siren_yixian.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = HUJ
+						}
+						create_country_leader = {
+							name = "胡德"
+							picture = "gfx/leaders/zhihuiguan/siren_hude.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = SAD
+						}
+						create_country_leader = {
+							name = "维内托"
+							picture = "gfx/leaders/zhihuiguan/siren_weineituo.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = TIX
+						}
+						create_country_leader = {
+							name = "俾斯麦"
+							picture = "gfx/leaders/zhihuiguan/siren_bisimai.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+					if = {
+						limit = {
+							tag = YUW
+						}
+						create_country_leader = {
+							name = "让·巴尔"
+							picture = "gfx/leaders/zhihuiguan/siren_rangbaer.jpg"
+							expire = "1965.1.1"
+							ideology = siren_ideology
+							traits = {
+								# bsrkz
+							}
+						}
+					}
+				}
+				
+			}
+		}
+	}
+	on_unit_leader_level_up = {
+		effect = {
+			#驱逐
+			if = {
+				limit = {
+					skill > 5
+					OR = {
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+					}
+					NOT = { has_character_flag = level_6_count_get }
+				}
+				unit_leader_event = getzhg_event.20
+				set_character_flag = level_6_count_get
+			}
+			if = {
+				limit = {
+					skill > 7
+					OR = {
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+					}
+					NOT = { has_character_flag = level_8_count_get }
+				}
+				unit_leader_event = getzhg_event.2001
+				set_character_flag = level_8_count_get
+			}
+			#巡洋
+			if = { 
+				limit = {
+					skill > 5
+					OR = {
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+					}
+					NOT = { has_character_flag = level_6_count_get }
+				}
+				unit_leader_event = getzhg_event.21
+				set_character_flag = level_6_count_get
+			}
+			if = {
+				limit = {
+					skill > 7
+					OR = {
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+					}
+					NOT = { has_character_flag = level_8_count_get }
+				}
+				unit_leader_event = getzhg_event.2101
+				set_character_flag = level_8_count_get
+			}
+			#巡洋
+			if = { 
+				limit = {
+					skill > 5
+					OR = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+					}
+					NOT = { has_character_flag = level_6_count_get }
+				}
+				unit_leader_event = getzhg_event.22
+				set_character_flag = level_6_count_get
+			}
+			if = {
+				limit = {
+					skill > 7
+					OR = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+					}
+					NOT = { has_character_flag = level_8_count_get }
+				}
+				unit_leader_event = getzhg_event.2201
+				set_character_flag = level_8_count_get
+			}
+			#航母
+			if = {
+				limit = {
+					skill > 5
+					OR = {
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+					}
+					NOT = { has_character_flag = level_6_count_get }
+				}
+				unit_leader_event = getzhg_event.23
+				set_character_flag = level_6_count_get
+			}
+			if = {
+				limit = { 
+					skill > 7
+					OR = {
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+					}
+					NOT = { has_character_flag = level_8_count_get }
+				}
+				unit_leader_event = getzhg_event.2301
+				set_character_flag = level_8_count_get
+			}
+		}  
+	}
+	#舰娘升级改造事件
+	on_unit_leader_level_up = {
+		effect = {
+			#约克城
+			if = {
+				limit = {
+					is_character = BYG_yuekecheng
+					skill > 4
+					skill < 6
+				}
+				set_portraits = { 
+					army = { large ="gfx/leaders/BYG/yuekecheng2.png"} 
+					civilian = { large ="gfx/leaders/BYG/yuekecheng2.png" } 
+				}
+				unit_leader_event = getzhg_event.2701
+			}
+			#哈曼
+			if = {
+				limit = {
+					is_character = BYG_haman
+					skill > 4
+					skill < 6
+				}
+				set_portraits = { 
+					army = { large ="gfx/leaders/BYG/haman2.png"} 
+					civilian = { large ="gfx/leaders/BYG/haman2.png" } 
+				}
+				unit_leader_event = getzhg_event.2702
+			}
+		}  
+	}
+}

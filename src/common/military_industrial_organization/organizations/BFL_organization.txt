@@ -1,0 +1,1414 @@
+##################
+#### CONSTANTS ###
+##################
+# Used for the Merge Plant traits for easier maintenance
+
+### TANKS
+#POSITION
+@tank_1_X = 9
+@tank_1_Y = 2
+@tank_2_X = 9
+@tank_2_Y = 3
+@tank_3_X = 9
+@tank_3_Y = 4
+#BONUSES
+@tank_max_speed = 0.05
+@tank_production_capacity_factor = 0.05
+@tank_soft_attack = 0.05
+
+
+### SHIPS
+#POISTION
+@ship_1_X = 9
+@ship_1_Y = 3
+@ship_2_X = 9
+@ship_2_Y = 4
+@ship_3_X = 8
+@ship_3_Y = 4
+#BONUSES
+@ship_cruiser_production_cost_factor = -0.1
+@ship_destroyer_production_cost_factor = -0.1
+@ship_submarine_production_cost_factor = -0.1
+@ship_production_capacity_factor = -0.15
+@ship_mines_sweeping = 0.1
+@ship_mines_planting = 0.1
+
+### AIRCRAFT
+#POSITION
+@aircraft_1_X = 9
+@aircraft_1_Y = 2
+@aircraft_2_X = 9
+@aircraft_2_Y = 3
+@aircraft_3_X = 9
+@aircraft_3_Y = 4
+#BONUSES
+@aircraft_production_cost_factor = -0.1
+@aircraft_air_agility = 0.05
+@aircraft_air_defence = 0.1
+@aircraft_surface_detection = 0.15
+@aircraft_sub_detection = 0.15
+
+### MATERIEL
+#POSITION
+@materiel_1_X = 9
+@materiel_1_Y = 2
+@materiel_2_X = 9
+@materiel_2_Y = 3
+@materiel_3_X = 9
+@materiel_3_Y = 4
+#BONUSES
+@artillery_production_cost_factor = -0.1
+@infantry_equipment_production_cost_factor = -0.1
+@motorized_production_cost_factor = -0.1
+@materiel_production_efficiency_cap_factor = 0.1
+@materiel_production_capacity_factor = 0.1
+
+
+########    ###    ##    ## ##    ##  ######  
+   ##      ## ##   ###   ## ##   ##  ##    ## 
+   ##     ##   ##  ####  ## ##  ##   ##       
+   ##    ##     ## ## ## ## #####     ######  
+   ##    ######### ##  #### ##  ##         ## 
+   ##    ##     ## ##   ### ##   ##  ##    ## 
+   ##    ##     ## ##    ## ##    ##  ######  
+
+
+BFL_morozov_design_bureau_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_morozov_design_bureau
+	
+	allowed = {	
+		tag = BFL
+	}
+
+	add_trait = { 
+		token = BFL_morozov_design_bureau_organization_up
+		name = BFL_morozov_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_morozov_design_bureau
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_junshiqiyeshenji
+			}
+		}
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			maximum_speed = 0.10
+			reliability = 0.05
+			armor_value = 0.05
+			build_cost_ic = -0.10
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			army_fuel_consumption_factor = -0.1
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_daguimoshengchan_2
+		name = BFL_mio_daguimoshengchan
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+		special_trait_background = yes
+
+		position = { x=0 y=2 }  
+		relative_position_id = BFL_morozov_design_bureau_organization_up
+
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_gangtiehongliu
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.15
+			production_efficiency_gain_factor = 0.1
+			production_resource_need_factor = -0.15
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+}
+
+BFL_astrov_design_bureau_organization = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_astrov_design_bureau
+	
+	allowed = {	
+		tag = BFL
+	}
+
+	add_trait = { 
+		token = BFL_astrov_design_bureau_organization_up
+		name = BFL_astrov_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_astrov_design_bureau
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_junshiqiyeshenji
+			}
+		}
+
+		equipment_bonus = {
+				soft_attack = 0.05
+				hard_attack = 0.05
+				maximum_speed = 0.10
+				reliability = 0.05
+				armor_value = 0.05
+				build_cost_ic = -0.10
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			army_fuel_consumption_factor = -0.1
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_daguimoshengchan_3
+		name = BFL_mio_daguimoshengchan
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+		special_trait_background = yes
+
+		position = { x=0 y=2 }  
+		relative_position_id = BFL_astrov_design_bureau_organization_up
+
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_gangtiehongliu
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.15
+			production_efficiency_gain_factor = 0.1
+			production_resource_need_factor = -0.15
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+}
+
+BFL_okmo_organization = {
+	include = generic_infantry_tank_organization
+	icon = GFX_idea_okmo
+	
+	allowed = {	
+		tag = BFL
+	}
+
+	add_trait = { 
+		token = BFL_okmo_organization_up
+		name = BFL_okmo_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_okmo
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_junshiqiyeshenji
+			}
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			maximum_speed = 0.10
+			reliability = 0.05
+			armor_value = 0.05
+			build_cost_ic = -0.10
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			army_fuel_consumption_factor = -0.1
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_daguimoshengchan_1
+		name = BFL_mio_daguimoshengchan
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+		special_trait_background = yes
+
+		position = { x=0 y=2 }  
+		relative_position_id = BFL_okmo_organization_up
+
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_gangtiehongliu
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.15
+			production_efficiency_gain_factor = 0.1
+			production_resource_need_factor = -0.15
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	
+}
+
+BFL_mytishchy_machine_building_plant_organization = {
+	include = generic_tank_refurbishment_plant_organization
+	icon = GFX_idea_SOV_mytishchy_machine_building_plant
+	
+	allowed = {	
+		tag = BFL
+	}
+
+	add_trait = { 
+		token = BFL_mytishchy_machine_building_plant_organization_up
+		name = BFL_mytishchy_machine_building_plant_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_SOV_mytishchy_machine_building_plant
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+		    FROM = {
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			maximum_speed = 0.10
+			reliability = 0.05
+			armor_value = 0.05
+			build_cost_ic = -0.10
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			army_fuel_consumption_factor = -0.1
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_daguimoshengchan_4
+		name = BFL_mio_daguimoshengchan
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+		special_trait_background = yes
+
+		position = { x=0 y=2 }  
+		relative_position_id = BFL_mytishchy_machine_building_plant_organization_up
+
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_gangtiehongliu
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.15
+			production_efficiency_gain_factor = 0.1
+			production_resource_need_factor = -0.15
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+BFL_kirov_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_SOV_kirov
+	
+	allowed = {	
+		original_tag = BFL
+	}
+
+	override_trait = {
+		token = generic_mio_trait_wide_tracks
+
+		position = { x=0 y=0 }
+	}
+
+	add_trait = { 
+		token = BFL_kirov_organization_up
+		name = BFL_kirov_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_SOV_kirov
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+		    FROM = {
+			has_completed_focus = BFL_junshiqiyeshenji
+		}
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+					hard_attack = 0.05
+					maximum_speed = 0.10
+					reliability = 0.05
+					armor_value = 0.05
+					build_cost_ic = -0.10
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			army_fuel_consumption_factor = -0.1
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_daguimoshengchan_5
+		name = BFL_mio_daguimoshengchan
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+		special_trait_background = yes
+
+		position = { x=0 y=2 }  
+		relative_position_id = BFL_kirov_organization_up
+
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = BFL_gangtiehongliu
+			}
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = -0.15
+			production_efficiency_gain_factor = 0.1
+			production_resource_need_factor = -0.15
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+
+
+
+
+ ######  ##     ## #### ########   ######  
+##    ## ##     ##  ##  ##     ## ##    ## 
+##       ##     ##  ##  ##     ## ##       
+ ######  #########  ##  ########   ######  
+      ## ##     ##  ##  ##              ## 
+##    ## ##     ##  ##  ##        ##    ## 
+ ######  ##     ## #### ##         ######  
+
+BFL_nevskoye_design_bureau_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_nevskoye_design_bureau
+	
+	allowed = {	
+		tag = BFL 
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	add_trait = { #MTG version
+		token = BFL_nevskoye_design_bureau_organization_up
+		name = BFL_nevskoye_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_nevskoye_design_bureau
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_battleship mio_cat_eq_all_destroyer }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			    lg_attack = 0.15
+				hg_attack = 0.15
+				anti_air_attack = 0.15
+				armor_value = 0.15
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			navy_fuel_consumption_factor = -0.1
+		}
+	}
+}
+
+BFL_rubin_design_bureau_organization = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_SOV_rubin_design_bureau
+	
+	allowed = {	
+		tag = BFL 
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	add_trait = { #MTG version
+		token = BFL_rubin_design_bureau_organization_up
+		name = BFL_rubin_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_SOV_rubin_design_bureau
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_destroyer ship_hull_submarine mio_cat_eq_all_battleship mio_cat_eq_all_carrier }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			carrier_size = 1 
+			lg_attack = 0.15
+			sub_detection = 0.25
+			naval_range = 0.25
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			navy_fuel_consumption_factor = -0.1
+		}
+	}
+}
+
+BFL_black_sea_shipyard_organization = {
+	include = generic_black_sea_fleet_organization
+	icon = GFX_idea_SOV_black_sea_shipyard
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	allowed = {	
+		tag = BFL 
+	}
+
+	tree_header_text = {
+		text = mio_header_systems
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_weapons
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_production
+		x = 7
+	}
+
+	override_trait = {
+		token = generic_mio_advanced_periscope
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_anti_air_defense
+	}
+
+	override_trait = {
+		token = generic_mio_trait_state_sponsored_growth
+
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_anti_air_defense
+	}
+
+	add_trait = { #MTG version
+		token = BFL_black_sea_shipyard_organization_up
+		name = BFL_black_sea_shipyard_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_SOV_black_sea_shipyard
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_destroyer ship_hull_submarine }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			lg_attack = 0.15
+			naval_speed = 0.1
+			sub_detection = 0.25
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			navy_fuel_consumption_factor = -0.1
+		}
+	}
+}
+
+BFL_sevastopol_marine_plant_organization = {
+	include = generic_refurbishment_repair_organization
+	icon = GFX_idea_SOV_sevastopol_marine_plant
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=4 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=5 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+	allowed = {	
+		original_tag = BFL
+	}
+
+	tree_header_text = {
+		text = mio_header_protection
+		x = 3
+	}
+
+	tree_header_text = {
+		text = mio_header_weapons
+		x = 7
+	}
+
+	override_trait = {
+		token = generic_mio_trait_foam_fire_extinguishers
+		
+		position = { x=4 y=0 }
+		relative_position_id = generic_mio_trait_heavy_armored_hull
+	}
+
+	override_trait = {
+		token = generic_mio_trait_counter_flooding_system
+		
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_isolated_firemains
+	}
+
+	add_trait = { #MTG version
+		token = BFL_sevastopol_marine_plant_organization_up
+		name = BFL_sevastopol_marine_plant_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_SOV_sevastopol_marine_plant
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_destroyer ship_hull_submarine mio_cat_eq_all_battleship mio_cat_eq_all_carrier }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			naval_speed = 0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			navy_fuel_consumption_factor = -0.1
+			naval_accidents_chance = -0.30
+			repair_speed_factor = 0.2
+			refit_ic_cost = -0.2
+			refit_speed = 0.2
+		}
+
+	}
+}
+
+
+
+
+########  ##          ###    ##    ## ########  ######  
+##     ## ##         ## ##   ###   ## ##       ##    ## 
+##     ## ##        ##   ##  ####  ## ##       ##       
+########  ##       ##     ## ## ## ## ######    ######  
+##        ##       ######### ##  #### ##             ## 
+##        ##       ##     ## ##   ### ##       ##    ## 
+##        ######## ##     ## ##    ## ########  ######  
+
+BFL_mig_design_bureau_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_mig_design_bureau
+	
+	allowed = {	
+			tag = BFL
+	}
+
+	equipment_type = {
+		mio_cat_eq_all_small_plane
+	}
+	
+	add_trait = { 
+		token = BFL_mig_design_bureau_organization_up
+		name = BFL_mig_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_mig_design_bureau
+		special_trait_background = yes
+
+		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
+
+		equipment_bonus = {
+			air_attack = 0.1
+			air_defence = 0.1
+			air_range = 0.2
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			air_fuel_consumption_factor = -0.1
+		}
+	}
+
+}
+
+BFL_ilyushin_design_bureau_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_ilyushin_design_bureau
+	
+	allowed = {	
+		tag = BFL
+    }
+
+	add_trait = { 
+		token = BFL_ilyushin_design_bureau_organization_up
+		name = BFL_ilyushin_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_ilyushin_design_bureau
+		special_trait_background = yes
+
+		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
+
+		equipment_bonus = {
+			air_attack = 0.1
+		    air_defence = 0.1
+			air_range = 0.2
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			air_fuel_consumption_factor = -0.1
+		}
+	}
+}
+
+BFL_yakovlev_design_bureau_organization = {
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_yakovlev_design_bureau
+	
+	allowed = {	
+		tag = BFL
+    }
+
+	add_trait = { 
+		token = BFL_yakovlev_design_bureau_organization_up
+		name = BFL_yakovlev_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_yakovlev_design_bureau
+		special_trait_background = yes
+
+		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft }
+
+		equipment_bonus = {
+			air_attack = 0.1
+		    air_defence = 0.1
+			air_range = 0.2
+			naval_strike_attack = 0.1
+		    naval_strike_targetting = 0.1
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			air_fuel_consumption_factor = -0.1
+		}
+	}
+
+}
+
+BFL_tupolev_design_bureau_organization = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_idea_tupolev_design_bureau
+	allowed = {	
+		original_tag = BFL
+	}
+
+	tree_header_text = {
+		text = mio_header_design_department
+		x = 2
+	}
+
+	tree_header_text = {
+		text = mio_header_operational_department
+		x = 7
+	}
+
+	override_trait = {
+		token = generic_mio_trait_pressurized_cockpit
+		
+		position = { x=2 y=1 }
+		relative_position_id = generic_mio_trait_reinforced_frames
+	}
+
+	override_trait = {
+		token = generic_mio_trait_extended_rear_fuselage
+		
+		position = { x=5 y=0 }
+		relative_position_id = generic_mio_trait_reinforced_frames
+	}
+
+	add_trait = { 
+		token = BFL_tupolev_design_bureau_organization_up
+		name = BFL_tupolev_design_bureau_up
+		icon = GFX_idea_tupolev_design_bureau
+		special_trait_background = yes
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_pressurized_cockpit
+
+		any_parent = { generic_mio_trait_pressurized_cockpit }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_large_plane }
+
+		equipment_bonus = {
+			air_bombing = 0.1
+		    air_defence = 0.1
+			air_range = 0.2
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			air_fuel_consumption_factor = -0.1
+		}
+	}
+}
+
+
+
+
+
+
+##     ##    ###    ######## ######## ########  #### ######## ##       
+###   ###   ## ##      ##    ##       ##     ##  ##  ##       ##       
+#### ####  ##   ##     ##    ##       ##     ##  ##  ##       ##       
+## ### ## ##     ##    ##    ######   ########   ##  ######   ##       
+##     ## #########    ##    ##       ##   ##    ##  ##       ##       
+##     ## ##     ##    ##    ##       ##    ##   ##  ##       ##       
+##     ## ##     ##    ##    ######## ##     ## #### ######## ######## 
+
+
+
+BFL_grabin_design_bureau_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_grabin_design_bureau
+	
+	allowed = {	
+		original_tag = BFL
+	}
+
+	add_trait = { 
+		token = BFL_grabin_design_bureau_organization_up
+		name = BFL_grabin_design_bureau_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_grabin_design_bureau
+		special_trait_background = yes
+
+		position = { x=@materiel_1_X y=@materiel_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		limit_to_equipment_type = { artillery_equipment armor anti_tank_equipment anti_air_equipment motorized_rocket_equipment }
+
+
+		equipment_bonus = {
+			soft_attack = 0.15
+			hard_attack = 0.15
+			ap_attack = 0.15
+			reliability = 0.1
+			air_attack = 0.2
+			build_cost_ic = -0.15
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+}
+
+BFL_tula_arms_plant_organization = {
+	include = generic_infantry_equipment_organization	
+	icon = GFX_idea_tula_arms_plant
+	
+	allowed = {	
+		original_tag = BFL
+	}
+
+	tree_header_text = {
+		text = mio_header_design_and_production
+		x = 2.5
+	}
+
+	tree_header_text = {
+		text = mio_header_anti_tank
+		x = 7
+	}
+
+	override_trait = {
+		token = generic_mio_trait_armor_piercing_rounds
+		
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_quality_materials
+	}
+
+	override_trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+		
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+	}
+
+	override_trait = {
+		token = generic_mio_trait_reinforced_stocks
+		
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+	}
+
+	add_trait = { 
+		token = BFL_tula_arms_plant_organization_up
+		name = BFL_tula_arms_plant_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_tula_arms_plant
+		special_trait_background = yes
+
+		position = { x=@materiel_1_X y=@materiel_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		limit_to_equipment_type = { infantry_equipment support_equipment }
+
+		equipment_bonus = {
+				soft_attack = 0.1
+				reliability = 0.1
+				build_cost_ic = -0.2
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_wuweizhuangjia
+		name = BFL_mio_wuweizhuangjia
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+		special_trait_background = yes
+
+		position = { x=0 y=-2 }  
+		relative_position_id = BFL_tula_arms_plant_organization_up
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+		available = {
+			FROM = { has_completed_focus = BFL_yingxiongzhuyi }
+		}
+		limit_to_equipment_type = {
+			infantry_equipment
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.1
+		}
+		equipment_bonus = {
+			breakthrough = 0.15
+			defense = 0.1
+		}
+		production_bonus = {
+			production_cost_factor = 0.15
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_xiaoxingcibaoxianquan
+		name = BFL_mio_xiaoxingcibaoxianquan
+		icon = GFX_generic_mio_department_icon_infantry_quality
+		special_trait_background = yes
+
+		position = { x=0 y=-1 }  
+		relative_position_id = BFL_tula_arms_plant_organization_up
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+		available = {
+			FROM = { has_completed_focus = BFL_junduizhengwei }
+		}
+		limit_to_equipment_type = {
+			infantry_equipment
+		}
+		equipment_bonus = {
+			soft_attack = 0.1
+			hard_attack = 0.05
+			ap_attack = 0.5
+		}
+		production_bonus = {
+			production_cost_factor = 0.05
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+}
+
+BFL_gaz_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_gaz
+	
+	allowed = {	
+		original_tag = BFL
+	}
+
+	add_trait = { 
+		token = BFL_gaz_organization_up
+		name = BFL_gaz_up
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_idea_gaz
+		special_trait_background = yes
+
+		position = { x=@materiel_1_X y=@materiel_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			FROM = { has_completed_focus = BFL_junshiqiyeshenji }
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			navy_fuel_consumption_factor = -0.2
+			army_fuel_consumption_factor = -0.2
+			air_fuel_consumption_factor = -0.2
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.1
+			reliability = 0.1
+			build_cost_ic = -0.2
+	}
+	}
+}

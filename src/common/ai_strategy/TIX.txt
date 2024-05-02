@@ -1,0 +1,1905 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+# building_target
+
+TIX_wants_civ = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		date < 1937.9.1
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 10000
+	}
+}
+
+TIX_prio_military_even_at_peace = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		date > 1937.9.1
+	}
+	abort = {
+		has_war_with = BFL
+	}
+	
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 10000
+	}
+}
+
+TIX_place_for_build_factory = {
+
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+    
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  153
+        value = 500
+    }
+
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  152
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  4
+        value = 500
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  64
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  55
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  54
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  57
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  69
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  74
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  51
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  42
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  50
+        value = 300
+    }
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  52
+        value = 300
+    }
+
+    ai_strategy = {
+        type = factory_build_score_factor
+        target =  65
+        value = 300
+    }
+
+    ai_strategy = {
+        type = factory_build_score_factor
+        target =  60
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  65
+        value = 300
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  848
+        value = 300
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  68
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  66
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  67
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  53
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  59
+        value = 300
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  56
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  58
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  61
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  62
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  63
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  5
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  763
+        value = 200
+    }
+	
+	ai_strategy = {
+        type = factory_build_score_factor
+        target =  188
+        value = 200
+    }
+
+}
+
+TIX_unit_production = {
+	allowed = { 
+		original_tag =  TIX 
+	}
+	enable = {
+		NOT = {
+			has_idea = TY_dingzhenai
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = infantry
+		value = 50
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = infantry
+		value = 100
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = armor
+		value = 1000
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = armor
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories	#装备倾向
+		id = infantry	
+		value = 1
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories	#装备倾向
+		id = mechanized_equipment	
+		value = 1
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = train
+		value = 200
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1
+	}
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+	
+	ai_strategy = {
+        type = force_build_armies
+        value = 100
+    }
+}
+
+TIX_template_design = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+	
+	ai_strategy = {
+		type = railway_gun_divisions_ratio
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = artillery
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = -10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = modern_armor
+		value = 0
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -100
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -10
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = 0
+	}
+}
+
+TIX_unit_production_expect_air = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 150
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 5
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 0
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 1
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 5
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 150
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 1
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = 1
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = 1
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 1
+	}
+
+}
+
+TIX_naval_role_ratios_historical = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_dlc = "Man the Guns"
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bc
+		value = -100
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = -10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = -30
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 150
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 30
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = -15
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 1
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 1
+	}
+}
+
+TIX_start = {
+    allowed = {
+			original_tag = TIX
+	}
+	enable = {
+		tag = TIX
+	}
+	ai_strategy = {
+		type = send_volunteers_desire	#志愿军
+		id = "CSA"			
+		value = 300
+	}
+
+}
+
+TIX_bubangzhusading = {
+    allowed = {
+			original_tag = TIX
+	}
+	enable = {
+		date < 1939.1.1
+	}
+	abort = {
+		date > 1939.1.1
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "SAD"
+		value = 200
+	}
+	ai_strategy = {
+		type = dont_join_wars_with
+		id = "SAD"
+		value = 200
+	}
+}
+
+TIX_war_with_BFL = {
+    allowed = {
+			original_tag = TIX
+	}
+	enable = {
+		has_completed_focus = TIX_feixuzhixia
+		country_exists = BFL
+	}
+	abort = {
+	    BFL = { has_capitulated = yes }
+	}
+	
+	ai_strategy = {
+		type = front_armor_score #部署坦克
+		id = BFL
+		value = 300
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "BFL"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = "BFL"
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = "BFL"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		tag = BFL		
+		value = 200
+	}
+
+}
+
+TIX_strike_BFL = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_completed_focus = TIX_qifujuxiong
+		date < 1942.7.1
+		BFL = { is_ai = no }
+	}
+	abort = {
+	    date > 1942.7.1
+	}
+
+    ai_strategy = {
+		type = front_control
+
+		tag = BFL
+
+		ratio = 0.5
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+TIX_strike_BFL_aivsai = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_completed_focus = TIX_qifujuxiong
+		date < 1942.1.1
+		BFL = { is_ai = yes }
+	}
+	abort = {
+	    date > 1942.1.1
+	}
+
+    ai_strategy = {
+		type = front_control
+
+		tag = BFL
+
+		ratio = 0.5
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+TIX_strike_BFL_crazyaivsai = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_completed_focus = TIX_qifujuxiong
+		date < 1941.8.1
+		BFL = { is_ai = yes }
+		BFL = { or = {
+			has_idea = TY_fengkuangai
+			has_idea = TY_fengkuangai2
+			has_idea = TY_fengkuangai3
+		}
+	}
+	}
+	abort = {
+	    date > 1941.8.1
+	}
+
+    ai_strategy = {
+		type = front_control
+
+		tag = BFL
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+BFL_ally = {
+    allowed = {
+			original_tag = TIX
+	}
+	enable = {
+		has_completed_focus = TIX_jiaohaojuxiong
+		country_exists = BFL
+	}
+	abort = {
+		NOT = { country_exists = BFL }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "BFL"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "BFL"			
+		value = 200
+	}	
+}
+
+SAD_ally = {
+    allowed = {
+			original_tag = TIX
+	}
+	enable = {
+		country_exists = SAD
+	}
+	abort = {
+		NOT = { country_exists = SAD }
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "SAD"			
+		value = 80
+	}	
+}
+
+TIX_area_priority = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		date > 1941.3.1
+	}
+	abort = {
+		or = {
+		not = { country_exists = BFL }
+		BFL = { is_subject = yes }
+		is_in_faction_with = BFL
+		}
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = mainland_europe
+		value = 300 #more focus here
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = scandinavia
+		value = 100
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = north_america
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = south_america
+		value = 75
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = asia
+		value = 75
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = middle_east
+		value = -10000
+	}
+	ai_strategy = {
+		type = area_priority
+		id = suez
+		value = -10000
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = -10000
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = pacific
+		value = -10000 #less focus here
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = oceania
+		value = -10000
+	}
+}
+
+make_sure_poland_is_ganked_before_we_move = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+        has_completed_focus = TIX_sudetiaoyue
+		OR = {
+		    POL = { has_capitulated = no }
+			country_exists = POL 
+		}
+	}
+	abort = {
+		date > 1940.1.1
+	}
+
+	ai_strategy = {
+		type = front_control
+
+		tag = POL
+
+		ratio = 0.1
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+
+		state = 28 # close up maginot line
+
+		ratio = 0.1
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+	}
+}
+
+TIX_war_YUW = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+	    has_war_with = YUW
+		if = {
+			limit = {
+				has_completed_focus = TIX_yihuigaige
+			}
+			has_completed_focus = TIX_didigongshi
+		}
+		YUW = { is_ai = yes }
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = prepare_for_war
+		id = "YUW"
+		value = 200
+	}
+	ai_strategy = {
+		type = front_armor_score #部署坦克
+		id = HOL
+		value = 200
+	}
+	ai_strategy = {
+		type = front_armor_score #部署坦克
+		id = BEL
+		value = 200
+	}
+    ai_strategy = {
+		type = declare_war
+		id = "YUW"			
+		value = 2000 
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = YUW			
+		value = 200
+	}
+	ai_strategy = {
+		type = front_control
+
+		tag = HOL
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = front_control
+
+		tag = YUW
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+TIX_war_YUW_no_ai = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_war_with = YUW
+		YUW = { is_ai = no }
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_armor_score #部署坦克
+		id = YUW
+		value = 300
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = YUW			
+		value = 300
+	}
+	ai_strategy = {
+		type = front_control
+
+		state = 28 # close up maginot line
+
+		ratio = 0.25
+
+		priority = 300
+		ordertype = front
+		execution_type = careful
+	}
+}
+
+TIX_war_maginot_line = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		if = {
+			limit = {
+				has_completed_focus = TIX_yihuigaige
+			}
+			has_war_with = YUW
+			OR = {
+				POL = { has_capitulated = yes }
+				not = { country_exists = POL }
+		}			
+		}
+	}
+	abort = { 
+		OR = {
+			has_completed_focus = TIX_didigongshi 
+			has_war_with = HOL
+			has_war_with = LUX
+			has_war_with = BEL
+		}
+	} 
+	ai_strategy = {
+		type = front_unit_request
+		tag = YUW			
+		value = 300
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "BEL"
+		value = 2000
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "HOL"
+		value = 2000
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "LUX"
+		value = 2000
+	}
+	ai_strategy = {
+		type = conquer		
+		id = "BEL"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		
+		id = "HOL"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		
+		id = "LUX"			
+		value = 100
+	}
+    ai_strategy = {
+		type = declare_war
+		id = "HOL"			
+		value = 2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "BEL"
+		value = 2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "LUX"
+		value = 2000 
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = HOL			
+		value = 3000
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = BEL			
+		value = 3000
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = LUX			
+		value = 3000
+	}
+	ai_strategy = {
+		type = front_control
+
+		state = 28 # close up maginot line
+
+		ratio = 0.25
+
+		priority = 300
+		ordertype = front
+		execution_type = careful
+	}
+}
+
+TIX_war_Low_Countries = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		OR = {
+		has_war_with = BEL
+		has_war_with = HOL
+		has_war_with = LUX
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = prepare_for_war
+		id = "BEL"
+		value = 200
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "HOL"
+		value = 200
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = "LUX"
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer		
+		id = "BEL"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		
+		id = "HOL"			
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer		
+		id = "LUX"			
+		value = 100
+	}
+    ai_strategy = {
+		type = declare_war
+		id = "HOL"			
+		value = 2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "BEL"
+		value = 2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "LUX"
+		value = 2000 
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = HOL	
+		value = 200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = BEL		
+		value = 200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = LUX		
+		value = 200
+	}	
+	ai_strategy = {
+		type = front_control
+
+		tag = HOL
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+
+		tag = BEL
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = front_control
+
+		tag = LUX
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+TIX_invade_HUJ = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_war_with = HUJ
+	}
+	abort = {
+	    HUJ = { has_capitulated = yes }
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = HUJ		
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "HUJ"			
+		value = 200
+	}
+	
+}
+
+TIX_war_SWI = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_completed_focus = TIX_shengdanshuxingdong
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = SWI		
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = "SWI"			
+		value = 2000 
+	}
+	ai_strategy = {
+		type = front_control
+
+		tag = SWI
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
+TIX_invade_BYG = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+	    has_war_with = BYG
+		HUJ = { has_capitulated = yes }
+	}
+	abort = {
+	    BYG = { has_capitulated = yes }
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = BYG		
+		value = 200
+	}
+	ai_strategy = {
+		type = invade
+		id = "BYG"			
+		value = 200
+	}
+}
+
+axis_stay_away_from_the_royal_navy = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_war_with = HUJ
+		date < 1942.1.1
+		
+		OR = {
+			TIX = {
+				naval_strength_ratio = {
+					tag = HUJ 
+  					ratio < 0.5
+  				}
+  			}
+		}		
+	}
+	abort = {
+	    OR = {
+			TIX = {
+				naval_strength_ratio = {
+					tag = HUJ 
+  					ratio > 0.5
+  				}
+  			}
+			divisions_in_state = { state = 127 size > 1 }
+			divisions_in_state = { state = 126 size > 1 }
+			divisions_in_state = { state = 125 size > 1 }
+			divisions_in_state = { state = 129 size > 1 }
+			divisions_in_state = { state = 130 size > 1 }
+			divisions_in_state = { state = 131 size > 1 }
+			divisions_in_state = { state = 123 size > 1 }
+			divisions_in_state = { state = 122 size > 1 }
+			divisions_in_state = { state = 132 size > 1 }
+			divisions_in_state = { state = 121 size > 1 }
+			divisions_in_state = { state = 136 size > 1 }
+			divisions_in_state = { state = 120 size > 1 }
+			divisions_in_state = { state = 133 size > 1 }
+		}
+	}
+	
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 18 #english channel
+		value = 600 # avoid doing missions as well
+	}
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 16 #around UK
+		value = 100
+	}
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 43 #around UK
+		value = 100
+	}
+}
+
+axis_dont_mess_with_volunteers = {
+    allowed = {
+			OR = {
+			original_tag = TIX
+			original_tag = SAD
+		}	
+	}
+	enable = {
+		date < 1941.6.1
+	}
+	abort = {
+		date > 1941.6.1
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = CHY
+		value = -500
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = DOH
+		value = -500 #sorry buds
+	}
+
+}
+
+spain_scw_support_TIX_resistance = {
+    allowed = {
+			original_tag = TIX
+	}
+	enable = {
+		tag = TIX
+		has_government = fascism
+		country_exists = SPA
+		has_dlc = "La Resistance"
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = SPA }
+			SPA = { has_completed_focus = SPA_join_the_allies }
+		}
+	}
+	
+	ai_strategy = {
+		type = support
+		id = "SPA"
+		value = 100
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "SPA"
+		value = 100
+	}	
+}
+
+TIX_my_precisioussss = {
+	allowed = {
+		tag = TIX
+	}
+
+	enable = {
+		tag = TIX
+		OR = {
+			date < 1942.6.1
+			has_war = yes
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SLO
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = MAN
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = DOH
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = YUN
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SHX
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = XSM
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SIK
+		value = -999
+	}
+    ai_strategy = {
+		type = send_lend_lease_desire
+		id = HUN
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = ROM
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = TUR
+		value = -999
+	}
+    ai_strategy = {
+		type = send_lend_lease_desire
+		id = SWE
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SPR
+		value = -999
+	}	
+}
+
+TIX_let_SAD_handle_french_front_alone = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_in_faction_with = SAD
+		OR = {
+			AND = {
+				has_war_together_with = SAD
+				has_war_with = YUW
+			}
+		}
+		YUW = { has_capitulated = no } # Abort when France is out of the equation
+		date < 1940.8.1
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "SAD"
+		value = 100
+	}
+}
+
+TIX_dont_help_SAD_in_africa_after_SAD_control_Cairo = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_in_faction_with = SAD
+		SAD = { controls_state = 2 }
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		value = 5000
+		id = "SAD"
+	}
+}
+
+TIX_help_ally_in_europe = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 10000
+		target = mainland_europe
+	}
+}
+
+TIX_ignore_little_country = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		or = {
+		has_war_with = BFL
+		has_war_with = SAD
+		has_war_with = HUJ
+		has_war_with = YUW
+		has_war_with = CHY
+		has_war_with = DOH
+		has_war_with = BYG
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = ignore
+		id = "IRQ"
+		value = 10000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "TUR"
+		value = 10000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "SAU"
+		value = 10000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "SPR"
+		value = 10000
+	}
+}
+
+TIX_dont_do_so_many_naval_invasions_please = {	#我求你啦不要让我再看见历史国策默认难度皇家被登陆死了
+	allowed = { original_tag = TIX }
+
+	enable = {
+		is_historical_focus_on = yes
+		HUJ = {
+		is_ai = yes
+		}
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = HUJ
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BYG
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = YUW
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BFL
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = RAJ
+		value = -200
+	}
+}
+
+TIX_xp_upgrade_spending_land = {
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		date < 1941.6.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = upgrade_xp_cutoff
+		value = 150
+	}
+}
+
+spain_help_TIX = {
+    allowed = {
+		original_tag = SPA
+	}
+	enable = {
+		original_tag = SPA
+		has_government = fascism
+		country_exists = TIX
+		TIX = {
+		has_war_with = BFL
+		}
+	}
+	abort = {
+		OR = {
+			not = { 
+			TIX = { has_government = fascism }
+			}
+			SPA = { has_completed_focus = SPA_join_the_allies }
+		}
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "TIX"
+		value = 200
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "ROM"
+		value = 200
+	}
+}
+
+#TIX_naval_invasions_NOR = {	
+#	allowed = { original_tag = TIX }
+#
+#	enable = {
+#		has_war_with = NOR
+#		NOR = { has_civil_war = no }
+#	}
+#
+#	abort_when_not_enabled = yes
+#
+#	ai_strategy = {
+#		type = invasion_unit_request
+#		tag = NOR
+#		value = 20
+#	}
+#	ai_strategy = {
+#		type = invasion_unit_request
+#		tag = DEN
+#		value = 10
+#	}
+#}
+
+TIX_naval_invasions_DEN = {	
+	allowed = { original_tag = TIX }
+
+	enable = {
+		has_war_with = DEN
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = DEN
+		value = 10
+	}
+}
+
+TIX_we_dont_fight_pathetic_sweden = { # :O
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_historical_focus_on = no
+		has_government = fascism
+		SWE = {
+			has_idea = neutrality_idea
+		}
+	}
+	abort = {
+		SWE = {
+			not = { has_idea = neutrality_idea }
+		}
+	}
+	ai_strategy = {
+		type = antagonize
+		id = SWE
+		value = -200 #keep the iron coming and no one gets hurt
+	}
+	ai_strategy = {
+		type = protect
+		id = SWE
+		value = 100 #keep the iron coming and no one gets hurt
+	}
+}
+
+TIX_we_dont_fight_pathetic_sweden_on_historical = { # :O
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_government = fascism
+		SWE = {
+			has_idea = neutrality_idea
+		}
+	}
+	abort = {
+		SWE = {
+			not = { has_idea = neutrality_idea }
+		}
+	}
+	ai_strategy = {
+		type = antagonize
+		id = SWE
+		value = -50 #keep the iron coming and no one gets hurt
+	}
+	ai_strategy = {
+		type = protect
+		id = SWE
+		value = 50 #keep the iron coming and no one gets hurt
+	}
+}
+
+TIX_trade_with_sweden = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		# if we're not communist and they're not communist
+		NOT = { has_government = communism }
+		NOT = { SWE = { has_government = communism } }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = SWE
+		value = 60
+	}
+}
+
+SWE_trade_with_TIX = {
+	allowed = {
+		original_tag = SWE
+	}
+	enable = {
+		TIX = { has_war = no }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = TIX
+		value = 100  # We really like money
+	}
+}
+
+SWE_dont_go_HUJ = {	
+    allowed = {
+		original_tag = SWE
+	}
+	enable = {
+		country_exists = TIX
+		TIX = {
+		has_government = fascism
+		}
+	}
+	abort = {
+		NOT = {
+		TIX = {
+		has_government = fascism
+		}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "HUJ"			
+		value = 2000
+	}		
+}
+
+HUJ_dont_go_SWE = {	
+    allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		country_exists = TIX
+		TIX = {
+		has_government = fascism
+		}
+	}
+	abort = {
+		NOT = {
+		TIX = {
+		has_government = fascism
+		}
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "SWE"			
+		value = 2000
+	}		
+}
+
+TIX_protect_yuw_ore = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_war_with = BYG
+		has_war_with = HUJ
+ 		16 = { is_fully_controlled_by = ROOT }
+	}
+	abort_when_not_enabled = yes
+
+	 ai_strategy = {
+	 	type = put_unit_buffers
+
+		# ratio of total armeis in country to be buffered
+	 	ratio = 0.1
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+	 	order_id = 1
+
+	 	# states to put garrison orders (if no state is friendly, strat is invalid)
+	 	states = {
+	 		14
+	 		15
+	 		16
+	 		6
+			7
+			36
+	 	} 
+
+		# ai areas that the orders will use these buffers in
+	 	area = europe
+	 }
+	
+}
+
+TIX_donthelpnor = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		any_country = {
+		    is_major = yes 
+			has_war_with = TIX
+		}
+		country_exists = NOR
+		OR = {
+			has_war_with = NOR
+			has_war_with = D04
+		}
+	}
+	abort = { 
+		OR = {
+			has_war_with = BFL 
+			not = { country_exists = BFL }
+		}
+	
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "NOR"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "NOR"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "D04"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "D04"
+		value = 1000
+	}
+
+}
+
+
+TIX_hold_up_in_bfl = { #We got this far but there are bigger targets to worry about for a while
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		date > 1941.8.1
+		date < 1944.1.1
+		is_historical_focus_on = yes
+		BFL = { has_capitulated = no }
+		BFL = { is_ai = yes }
+		or = {
+		YUW = { is_ai = yes }
+		YUW = { has_capitulated = yes }
+		}
+		NOT = {
+			has_idea = TY_fengkuangai
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		tag = BFL
+
+		ratio = 0.1
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+	}
+
+}

@@ -1,0 +1,681 @@
+# leader_traits contain a list of UnitLeaderTrait with the following structure:
+# trait_key = {
+# 	type = all # or either of field_marshal, corps_commander, navy
+#	trait_type = basic_trait # or either of status_trait, personality_trait, assignable_trait, basic_terrain_trait, assignable_terrain_trait, exile
+#	attack_skill = 0 # integer
+#	defense_skill = 0 # integer
+#	logistics_skill = 0 # integer
+#	planning_skill = 0 # integer
+#	maneuvering_skill = 0 # integer
+#	coordination_skill = 0 # integer
+#	attack_skill_factor = 0.0 # decimal
+#	defense_skill_factor = 0.0 # decimal
+#	logistics_skill_factor = 0.0 # decimal
+#	planning_skill_factor = 0.0 # decimal
+#	maneuvering_skill_factor = 0.0 # decimal
+#	coordination_skill_factor = 0.0 # decimal
+#	show_in_combat = yes # boolean
+#	override_effect_tooltip = "" # loc key
+#	custom_effect_tooltip = "" # loc key
+#	custom_prerequisite_tooltip = "" # loc key
+#	custom_gain_xp_trigger_tooltip = "" # loc key
+#	mutually_exclusive = other_trait # trait key
+#	any_parent = other_trait # trait key
+#	num_any_parents_needed = -1 # integer, -1 means "all"
+#	gui_row = -1 # integer, starts at 0, -1 means auto
+#	gui_column = -1 # integer, starts at 0, -1 means auto
+#	allowed = trigger # scope is a unit leader
+#	prerequisites = trigger # scope is an unit leader
+#	gain_xp = trigger # scope is a combatant
+#	gain_xp_leader = trigger # scope is a unit leader. ROOT is country you are from and FROM is any target nationality for agents
+#	gain_xp_on_spotting = 0 # integer
+#	modifier = { } # list of modifiers
+#	non_shared_modifier = {} #
+#	corps_commander_modifier = {} #
+#	field_marshal_modifier = {} #
+#	sub_unit_modifiers = { # list of sub unit def
+#		# e.g.
+#		submarine {
+#			units = {} # list of adjusters
+#			# list of modifiers e.g.
+#			naval_visibility = -0.1
+#		}
+#	}
+#	trait_xp_factor = {} # list of trait_key/decimal
+#	on_add = effect # scope is an unit leader
+#	on_remove = effect # scope is an unit leader
+#	daily_effect = effect # scope is an unit leader
+#	cost = 1000 # integer
+#	ai_will_do = {} # weight
+#	new_commander_weight = {} # weight
+#	enable_ability = ability_key
+#}
+leader_traits = {
+	zhanlie_army = { 
+		type = land
+		#trait_type = personality_trait
+		modifier = {
+			army_artillery_attack_factor = 0.1
+			supply_consumption_factor = 0.05
+		}
+		corps_commander_modifier = {
+			max_commander_army_size = 4
+		}
+		field_marshal_modifier = {
+			max_army_group_size = -1
+		}
+		attack_skill = 1
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 18
+		gui_column = -1
+	}
+	zhanlie_army_gangtieyizhi = { 
+		prerequisites = {
+			OWNER = { has_tech = shipgirltech_zuozhanlilun_1 }
+		}
+		type = corps_commander
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 5
+		modifier = {
+			army_morale_factor = 0.1
+			army_org_Factor = 0.05
+			army_defence_factor = 0.15
+			army_core_defence_factor = 0.1
+			out_of_supply_factor = -0.2
+			no_supply_grace = 24
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		mutually_exclusive = zhanlie_army_zhuangjiajingying
+		gui_row = 18
+		gui_column = -1
+		trait_type = assignable_trait
+		any_parent = { zhanlie_army }
+		
+	}
+	zhanlie_army_zhuangjiajingying = { 
+		prerequisites = {
+			OWNER = { 
+				has_tech = shipgirltech_zuozhanlilun_3
+				has_tech = shipgirltech_zhanliepao_1
+			} 
+		}
+		type = corps_commander
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 5
+		modifier = {
+			army_armor_defence_factor = 0.15
+			army_armor_attack_factor = 0.05
+			army_armor_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		mutually_exclusive = zhanlie_army_gangtieyizhi
+		gui_row = 19
+		gui_column = -1
+		trait_type = assignable_trait
+		any_parent = { zhanlie_army }
+		
+	}
+
+	hangmu_army = { 
+		
+		type = land
+		#trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		modifier = {
+			special_forces_attack_factor = 0.1
+			special_forces_defence_factor = 0.1
+		}
+		corps_commander_modifier = {
+			max_commander_army_size = 8
+		}
+		field_marshal_modifier = {
+			#max_army_group_size = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 20
+		gui_column = -1
+	}
+	hangmu_army_tongshuaisanjun = { 
+		prerequisites = {
+			OWNER = { has_tech = shipgirltech_zuozhanlilun_3 }
+			not = { has_trait = luoli }
+		}
+		type = corps_commander
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 5000
+		modifier = {
+			max_planning = 0.1
+			air_superiority_bonus_in_combat = 0.1
+			shore_bombardment_bonus = 0.15
+		}
+		corps_commander_modifier = {
+			max_commander_army_size = 12
+		}
+		field_marshal_modifier = {
+			max_army_group_size = 3
+		}
+		enable_ability = faster_naval_invasion_planning
+		ai_will_do = {
+			factor = 1
+		}
+
+		mutually_exclusive = zhanlie_army_3
+		
+		trait_type = assignable_trait
+		any_parent = {hangmu_army}
+		gui_row = 20
+		gui_column = -1
+	}
+	
+	
+	xunyang_army = { 
+		type = land
+		#trait_type = personality_trait
+		modifier = {
+			org_loss_when_moving = -0.1
+			desert = {
+				movement = 0.03
+			}
+			hills = {
+				movement = 0.03
+			}
+			forest = {
+				movement = 0.03
+			}
+			mountain = {
+				movement = 0.03
+			}
+			plains = {
+				movement = 0.03
+			}
+			urban = {
+				movement = 0.03
+			}
+			jungle = {
+				movement = 0.03
+			}
+			marsh = {
+				movement = 0.03
+			}
+		}
+		corps_commander_modifier = {
+			#max_commander_army_size = -9
+		}
+		field_marshal_modifier = {
+			max_army_group_size = -3
+		}
+		override_effect_tooltip = xunyang_army_trait_tooltip
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 21
+		gui_column = -1
+	}
+	xunyang_army_junhengzhidao = { 
+		prerequisites = {
+			OWNER = { has_tech = shipgirltech_zuozhanlilun_3 }
+		}
+		type = corps_commander
+		attack_skill = 1
+		defense_skill = 1
+		logistics_skill = 1
+		planning_skill= 1
+		non_shared_modifier = {
+			experience_gain_factor = 0.25
+		}
+		modifier = {
+			army_defence_factor = 0.05
+			army_attack_factor = 0.05
+		}
+		
+	
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 21
+		gui_column = -1
+		trait_type = assignable_trait
+		any_parent = {xunyang_army}
+	}
+	
+	quzhu_army = { 
+		type = land
+		#trait_type = personality_trait
+		modifier = {
+			terrain_penalty_reduction = 0.05
+			desert = {
+				movement = 0.05
+			}
+			hills = {
+				movement = 0.05
+			}
+			forest = {
+				movement = 0.05
+			}
+			mountain = {
+				movement = 0.05
+			}
+			plains = {
+				movement = 0.05
+			}
+			urban = {
+				movement = 0.05
+			}
+			jungle = {
+				movement = 0.05
+			}
+			marsh = {
+				movement = 0.05
+			}
+		}
+		corps_commander_modifier = {
+			max_commander_army_size = -4
+		}
+		field_marshal_modifier = {
+			max_army_group_size = -4
+		}
+		override_effect_tooltip = quzhu_army_trait_tooltip
+		new_commander_weight = {
+			factor = 0
+		}
+		
+		gui_row = 22
+		gui_column = -1
+	}
+	quzhu_army_linghuozhihui = {
+		prerequisites = {
+			OWNER = { 
+				has_tech = shipgirltech_zuozhanlilun_3 
+			}
+		} 
+		type = corps_commander
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 5
+		modifier = {
+			planning_speed = 0.5
+			supply_consumption_factor = -0.4
+			desert = {
+				movement = 0.25
+			}
+			hills = {
+				movement = 0.25
+			}
+			forest = {
+				movement = 0.25
+			}
+			mountain = {
+				movement = 0.25
+			}
+			plains = {
+				movement = 0.25
+			}
+			urban = {
+				movement = 0.25
+			}
+			jungle = {
+				movement = 0.25
+			}
+			marsh = {
+				movement = 0.25
+			}
+		}
+		
+		override_effect_tooltip = quzhu_army_linghuozhihui_trait_tooltip
+		corps_commander_modifier = {
+			max_commander_army_size = -3
+		}
+		field_marshal_modifier = {
+			max_army_group_size = -1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+
+		
+		gui_row = 22
+		gui_column = -1
+		trait_type = assignable_trait
+		any_parent = {quzhu_army}
+		
+	}
+	quzhu_army_zhandigongjuniang = { 
+		prerequisites = {
+			OWNER = { has_tech = shipgirltech_jichulilun }
+		}
+		type = corps_commander
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 5
+		modifier = {
+			wounded_chance_factor = -0.75
+			sickness_chance = -0.75
+			supply_consumption_factor = -0.05
+			recon_factor = 0.1
+			max_dig_in_factor = 0.15
+			amphibious_invasion = 0.1
+			equipment_capture = 0.05
+			river = {
+				attack = 0.05
+			}
+		}
+		enable_ability = makeshift_bridges
+		enable_ability = siege_artillery
+		ai_will_do = {
+			factor = 1
+		}
+
+		
+		gui_row = 23
+		gui_column = -1
+		trait_type = assignable_trait
+		any_parent = {quzhu_army}
+		
+	}
+	zhanlie_navy = { 
+		type = navy
+		gain_xp = {
+			capital_ship > 0.0
+			opponent = {
+				capital_ship > 0.0
+			}
+			is_winning = yes
+			NOT = { has_trait = quzhu_navy }
+			NOT = { has_trait = xunyang_navy }
+			NOT = { has_trait = hangmu_navy }
+			NOT = { has_trait = zhanlie_navy }
+			NOT = { has_trait = qianting_navy }	
+		}
+		custom_gain_xp_trigger_tooltip = zhanlie_navy_gain_xp_tooltip
+		cost = 200
+		modifier = {
+			navy_capital_ship_attack_factor = 0.1
+			navy_capital_ship_defence_factor = 0.1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 16
+		gui_column = -1
+	}
+	hangmu_navy = { 
+		type = navy
+		gain_xp = {
+			NOT = { has_trait = quzhu_navy }
+			NOT = { has_trait = xunyang_navy }
+			NOT = { has_trait = hangmu_navy }
+			NOT = { has_trait = zhanlie_navy }
+			NOT = { has_trait = qianting_navy }	
+			OR = {
+				has_carrier_airwings_on_mission = yes
+				has_carrier_airwings_in_own_combat = yes
+				is_fighting_air_units = yes
+			}
+		}
+		custom_gain_xp_trigger_tooltip = hangmu_navy_gain_xp_tooltip
+		cost = 500
+		modifier = {
+			navy_carrier_air_attack_factor = 0.1
+			navy_carrier_air_targetting_factor = 0.05
+			 sortie_efficiency = 0.1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 17
+		gui_column = -1
+	}
+	hangmu_navy_jizaijianniangzhuanjia = { 
+		type = navy
+		prerequisites = {
+			owner = {
+				has_tech = shipgirltech_zuozhanlilun_2
+			}
+		}
+		modifier = {
+			wounded_chance_factor = 0.1
+		}
+		sub_unit_modifiers = {
+			jizaijianniang_fighter = {
+				air_attack_factor = 0.1
+				air_mission_efficiency = 0.15
+				air_agility_factor = 0.1
+			}
+			jizaijianniang_cas = {
+				naval_strike_attack_factor = 0.1
+				air_mission_efficiency = 0.15
+				air_agility_factor = 0.1
+			}
+			jizaijianniang_nb = {
+				naval_strike_attack_factor = 0.1
+				air_mission_efficiency = 0.15
+				air_agility_factor = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		trait_type = assignable_trait
+		any_parent = {hangmu_navy}
+		gui_row = 17
+		gui_column = 1
+	}
+	
+	xunyang_navy = { 
+		type = navy
+		gain_xp = {
+			NOT = { has_trait = quzhu_navy }
+			NOT = { has_trait = xunyang_navy }
+			NOT = { has_trait = hangmu_navy }
+			NOT = { has_trait = zhanlie_navy }
+			NOT = { has_trait = qianting_navy }	
+			screen_ship > 0.75
+			is_winning = yes
+		}
+		custom_gain_xp_trigger_tooltip = xunyang_navy_gain_xp_tooltip
+		cost = 500
+		modifier = {
+			naval_speed_factor = 0.03
+			naval_damage_factor = 0.05
+
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 18
+		gui_column = -1
+	}
+	quzhu_navy = { 
+		type = navy
+		gain_xp = {
+			NOT = { has_trait = quzhu_navy }
+			NOT = { has_trait = xunyang_navy }
+			NOT = { has_trait = hangmu_navy }
+			NOT = { has_trait = zhanlie_navy }
+			NOT = { has_trait = qianting_navy }	
+			screen_ship > 0.95
+		}
+		gain_xp_on_spotting = 20
+		custom_gain_xp_trigger_tooltip = quzhu_navy_gain_xp_tooltip
+		cost = 500
+		modifier = {
+			naval_speed_factor = 0.05
+			navy_visibility = -0.05
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 19
+		gui_column = -1
+	}
+	qianting_navy = { 
+		type = navy
+		gain_xp = {
+			NOT = { has_trait = quzhu_navy }
+			NOT = { has_trait = xunyang_navy }
+			NOT = { has_trait = hangmu_navy }
+			NOT = { has_trait = zhanlie_navy }
+			NOT = { has_trait = qianting_navy }	
+			submarine > 0.95
+			is_winning = yes
+		}
+		custom_gain_xp_trigger_tooltip = qianting_navy_gain_xp_tooltip
+		cost = 350
+		modifier = {
+			spotting_chance = 0.05
+			naval_speed_factor = 0.05
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		gui_row = 20
+		gui_column = -1
+	}
+	navy_haishangchuanqi = { 
+		type = navy
+		prerequisites = {
+			owner = {
+				has_tech = shipgirltech_zuozhanlilun_5
+			}
+			skill > 8
+		}
+		modifier = {
+			screening_efficiency = 0.15
+			positioning = 0.2
+			spotting_chance = 0.1
+			sortie_efficiency = 0.1
+			navy_visibility = -0.1
+		}
+		sub_unit_modifiers = {
+			destroyer = {
+				naval_damage_factor = 0.1
+			}
+			heavy_cruiser = {
+				naval_damage_factor = 0.1
+			}
+			light_cruiser = {
+				naval_damage_factor = 0.1
+			}
+			battleship = {
+				naval_damage_factor = 0.1
+			}
+			battlecruiser = {
+				naval_damage_factor = 0.1
+			}	
+		}
+		ai_will_do = {
+			factor = 2
+		}
+
+		trait_type = assignable_trait
+		any_parent = { hangmu_navy_jizaijianniangzhuanjia zhanlie_navy quzhu_navy xunyang_navy qianting_navy}
+		num_any_parents_needed = 1
+		gui_row = 18
+		gui_column = 2
+	}
+	siren = { 
+		type = land
+		trait_type = personality_trait
+		modifier = {
+			recon_factor = 0.7
+
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+	xuexixunsu = { 
+		type = land
+		trait_type = personality_trait
+		non_shared_modifier = {
+			experience_gain_factor = 1.5
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+	trait_yujin = { 
+		type = land
+		trait_type = personality_trait
+		attack_skill = 1
+		planning_skill = 1
+		defense_skill = 1
+		logistics_skill = 1
+		modifier = {
+			org_loss_when_moving = -0.30
+			planning_speed = 0.25
+			recon_factor = 0.4
+			terrain_penalty_reduction = 0.15
+			max_planning = 0.1
+			breakthrough_factor = 0.15
+			wounded_chance_factor = -0.9
+		}
+		corps_commander_modifier = {
+			max_commander_army_size = -14
+		}
+		field_marshal_modifier = {
+			#max_army_group_size = -3
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+	luoli = { 
+		type = land
+		trait_type = personality_trait
+		planning_skill = 1
+		logistics_skill = 2
+		modifier = {
+			
+		}
+		custom_effect_tooltip = luoli_tt
+		corps_commander_modifier = {
+			max_commander_army_size = -5
+			org_loss_when_moving = -0.75
+			army_morale_factor = 0.4
+			army_org_Factor = 0.1
+			supply_consumption_factor = -0.25
+			wounded_chance_factor = -1
+			terrain_penalty_reduction = 0.1
+		}
+		field_marshal_modifier = {
+			hidden_modifier = {
+				org_loss_when_moving = 0.75
+				army_morale_factor = -0.4
+				army_org_Factor = -0.1
+				supply_consumption_factor = 0.25
+				wounded_chance_factor = 1
+				terrain_penalty_reduction = -0.1
+			}
+			#max_army_group_size = -1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+		
+	}
+}

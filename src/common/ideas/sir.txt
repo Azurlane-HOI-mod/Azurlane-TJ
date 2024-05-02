@@ -1,0 +1,730 @@
+ideas = {
+	# Special ones that can be applied on other countries through focus system.
+	hidden_ideas = {
+		SIR_startbuff_1 = {
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 1.25
+				war_support_factor = 2
+				research_speed_factor = 0.25
+				global_building_slots_factor = 0.25
+				production_speed_buildings_factor = 0.2
+				industrial_capacity_factory = 0.2
+				training_time_army_factor = -0.2
+				attrition = -0.2
+				army_speed_factor = 0.1
+			}
+			
+		}
+		SIR_startbuff_2 = {
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 1.25
+				war_support_factor = 2
+				research_speed_factor = 0.5
+				global_building_slots_factor = 0.5
+				production_speed_buildings_factor = 0.4
+				industrial_capacity_factory = 0.4
+				training_time_army_factor = -0.2
+				attrition = -0.35
+				army_speed_factor = 0.2
+			}
+			
+		}
+		SIR_startbuff_3 = {
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 1.25
+				war_support_factor = 2
+				research_speed_factor = 1
+				global_building_slots_factor = 1
+				production_speed_buildings_factor = 0.8
+				industrial_capacity_factory = 0.8
+				training_time_army_factor = -0.2
+				attrition = -0.7
+				army_speed_factor = 0.4
+			}
+			
+		}
+	}
+	country = {
+		SIR_lueduozhuyi = {
+			picture = saf_history_of_segregation_2
+			
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			modifier = {
+				attrition = -0.1
+				army_morale_factor = -0.1
+				supply_consumption_factor = -0.25
+				no_supply_grace = 24
+				war_support_weekly = 0.008
+				compliance_growth = -0.05
+			}
+		}
+		
+		SIR_waijijiaoguan = {
+			picture = received_attache
+			
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			modifier = {
+				training_time_army_factor = -0.15
+				experience_gain_army = 0.2
+				experience_gain_army_factor = 0.05
+				army_org_factor = 0.05
+				planning_speed = 0.2
+			}
+		}
+		
+		SIR_sairenshihuopao = {
+			picture = generic_artillery_regiments
+			
+			allowed_civil_war = {
+				always = yes
+			}
+	        equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.4
+					reliability = -0.05
+					soft_attack = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				army_artillery_attack_factor = 0.1
+				army_artillery_defence_factor = 0.1
+			}
+		}
+		
+		SIR_zhongxingtanke = {
+			picture = generic_armor
+			allowed_civil_war = {
+				always = yes
+			}			
+			equipment_bonus = {
+				heavy_tank_chassis =  {
+					build_cost_ic = 0.05
+					armor_value = 0.15
+					soft_attack = 0.075
+					hard_attack = 0.075
+					ap_attack = 0.075
+					reliability_factor = 0.05
+					instant = yes
+				}
+				super_heavy_tank_chassis = {
+					build_cost_ic = 0.075
+					armor_value = 0.2
+					soft_attack = 0.1
+					hard_attack = 0.15
+					ap_attack = 0.2
+					reliability_factor = 0.075
+					instant = yes
+				}
+				modern_tank_chassis = {
+					build_cost_ic = 0.1
+					armor_value = 0.25
+					soft_attack = 0.15
+					hard_attack = 0.25
+					ap_attack = 0.3
+					reliability_factor = 0.1
+					instant = yes
+				}
+			}
+		}
+		SIR_kzpz = {
+		
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_air_bonus
+
+			modifier = {
+			    air_agility_factor = 0.1
+			    ace_effectiveness_factor = 0.25
+				air_ace_generation_chance_factor = 0.1
+				air_attack_factor = 0.2
+				air_wing_xp_loss_when_killed_factor = 0.05
+		        air_accidents_factor = 0.1
+			}
+		}
+		SIR_sairendehaishangliliang = {
+			picture = generic_navy_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+			    naval_speed_factor = 0.15
+				screening_efficiency = 0.1
+			    navy_screen_defence_factor = 0.2
+		        navy_capital_ship_defence_factor = 0.2
+			}	
+		}
+		SIR_sairenlujun = {
+			picture = generic_manpower_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				experience_loss_factor = 0.25
+				army_attack_factor = 0.1
+			}
+		}
+		SIR_sairendehangkongmujian = {
+			picture = generic_navy_carrier_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			modifier = {
+				sortie_efficiency = 0.1
+				navy_carrier_air_attack_factor = 0.05
+		        navy_carrier_air_targetting_factor = 0.05
+			}
+		}
+		SIR_gailiangdeyunshuji = {
+			picture = saf_history_of_segregation_2
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				transport_plane_equipment = {
+					instant = yes
+					air_range = 0.75
+				}
+				
+			}
+			modifier = {
+				custom_modifier_tooltip = az_hidden_ideas
+			}
+		}
+		SIR_jiaotiaokuxing = {
+			picture = saf_history_of_segregation_2
+			cancel = {
+				AND = {
+					NOT = { has_country_flag = SIR_jiaotiaokuxing_yongjiu }
+					ROOT = { num_of_civilian_factories > 50 }
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.8
+			}
+		}
+		SIR_jiaotiaonulizhi = {
+			picture = saf_history_of_segregation_2
+			cancel = {
+				AND = {
+					NOT = { has_country_flag = SIR_jiaotiaonulizhi_yongjiu }
+					OR = {
+						has_STABILITY < 0.3
+						has_war_support < 0.4
+					}
+					
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.75
+				industrial_capacity_dockyard = 1
+				production_factory_max_efficiency_factor = 1
+				production_factory_efficiency_gain_factor = -0.25
+				stability_factor = -0.25
+				war_support_factor = 0.3
+				political_power_gain = 3
+				conscription = 0.1
+			}
+		}
+		SIR_jiaotiaogulishengyu = {
+			picture = saf_history_of_segregation_2
+			cancel = {
+				AND = {
+					NOT = { has_country_flag = SIR_jiaotiaogulishengyu_yongjiu }
+					has_STABILITY < 0.15
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				monthly_population = 8
+				consumer_goods_factor = 0.2
+			}
+		}
+		SIR_jiaotiaotuichongkexue = {
+			picture = saf_history_of_segregation_2
+			cancel = {
+				AND = {
+					NOT = { has_country_flag = SIR_jiaotiaogulishengyu_yongjiu }
+					amount_research_slots > 4
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 2.5
+			}
+		}
+		SIR_duoyuanhuaxinyang = {
+			picture = saf_history_of_segregation_2
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.5
+				political_power_factor = 0.25
+				political_power_gain = 1.5
+				siren_drift = -0.5
+			}
+		}
+		#塞壬的统治
+		SIR_srdtz = {
+			picture = saf_history_of_segregation_2
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				compliance_growth = -1
+				resistance_decay = 0.5
+				resistance_growth = -0.75
+				monthly_population = -0.99
+				drift_defence_factor = 10
+			}
+		}
+		SIR_srdld = {
+			picture = generic_purge
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				min_export = -1
+				production_lack_of_resource_penalty_factor = -1
+				consumer_goods_factor = -0.9
+			}
+		}
+		SIR_srdqz = {
+			picture = prc_low_popular_support2
+
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				
+			}
+			modifier = {				
+				non_core_manpower = 1
+				army_org_factor = -0.25
+				experience_loss_factor = 0.75
+				experience_gain_army_factor = -0.25
+				army_defence_factor = -0.5
+			}
+		}
+		SIR_srhkj = {
+			picture = maizuru_naval_arsenal
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				navy_fuel_consumption_factor = -1
+				army_fuel_consumption_factor = -1
+				air_fuel_consumption_factor = -1
+				industrial_capacity_dockyard = 0.15
+				naval_speed_factor = 0.15
+				spotting_chance = 1
+				navy_max_range_factor = 5
+				ai_focus_naval_factor = 0.5
+			}
+		}
+		SIR_buff1 = {
+			picture = SIR_darksiren
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				surrender_limit = 0.33
+				war_support_weekly = 0.01
+				command_power_gain = 1
+				max_command_power = 100
+				industrial_capacity_dockyard = 0.3
+				army_morale_factor = 0.1
+				army_org_factor = 0.15
+				research_speed_factor = 0.33
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				training_time_army_factor = -0.1
+				attrition = -0.1
+				supply_consumption_factor = -0.2
+			}
+			on_add = {
+				country_event = AZ_siren.2
+			}
+		}
+		SIR_buff2 = {
+			picture = SIR_darksiren
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				surrender_limit = 0.66
+				war_support_weekly = 0.02
+				command_power_gain = 2
+				max_command_power = 100
+				industrial_capacity_dockyard = 0.6
+				army_morale_factor = 0.25
+				army_org_factor = 0.25
+				research_speed_factor = 0.66
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+				training_time_army_factor = -0.2
+				attrition = -0.2
+				supply_consumption_factor = -0.35
+			}
+			on_add = {
+				country_event = AZ_siren.3
+			}
+		}
+		SIR_buff3 = {
+			picture = SIR_darksiren
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				surrender_limit = 0.99
+				war_support_weekly = 0.03
+				command_power_gain = 3
+				max_command_power = 100
+				industrial_capacity_dockyard = 1
+				army_morale_factor = 0.35
+				army_org_factor = 0.5
+				army_speed_factor = 0.1
+				naval_speed_factor = 0.25
+				research_speed_factor = 1.5
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+				training_time_army_factor = -0.3
+				attrition = -0.3
+				supply_consumption_factor = -0.5
+			}
+			on_add = {
+				country_event = AZ_siren.4
+			}
+		}
+		SIR_buff4 = {
+			picture = SIR_darksiren
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				non_core_manpower = 1
+				surrender_limit = 0.99
+				war_support_weekly = 0.05
+				command_power_gain = 4
+				max_command_power = 100
+				industrial_capacity_dockyard = 1.5
+				army_morale_factor = 1
+				army_org_factor = 0.8
+				army_speed_factor = 0.2
+				naval_speed_factor = 0.5
+				navy_org = 30
+				#positioning = 0.15
+				spotting_chance = 0.5
+				research_speed_factor = 2.5
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				training_time_army_factor = -0.4
+				attrition = -0.4
+				supply_consumption_factor = -0.65
+			}
+			on_add = {
+				country_event = AZ_siren.5
+			}
+		}
+		SIR_buff5 = {
+			picture = SIR_darksiren
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				surrender_limit = 0.99
+				war_support_weekly = 0.05
+				command_power_gain = 5
+				max_command_power = 150
+				industrial_capacity_dockyard = 2
+				army_morale_factor = 1.5
+				army_org_factor = 1.25
+				army_speed_factor = 0.3
+				naval_speed_factor = 0.75
+				navy_org = 60
+				navy_screen_attack_factor = 0.25
+				navy_capital_ship_attack_factor = 0.25
+				navy_capital_ship_defence_factor = 0.25
+				#positioning = 0.25
+				spotting_chance = 1
+				sortie_efficiency = 0.25
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+				army_attack_factor = 0.3
+				army_defence_factor = 0.3
+				research_speed_factor = 4.5
+				training_time_army_factor = -0.5
+				attrition = -0.5
+				supply_consumption_factor = -0.8
+			}
+		}
+		SIR_buff_max = {
+			picture = SIR_darksiren
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				surrender_limit = 0.99
+				war_support_factor = 2
+				stability_factor = 1.25
+				research_speed_factor = 10
+				conscription = 1
+				industrial_capacity_factory = 10
+				industrial_capacity_dockyard = 10
+				production_factory_efficiency_gain_factor = 10
+				army_attack_factor = 5
+				army_defence_factor = 5
+				army_speed_factor = 0.5
+				navy_screen_attack_factor = 5
+				navy_capital_ship_attack_factor = 5
+				naval_speed_factor = 1
+			}
+		}
+		SIR_srkzg = {
+			picture = SIR_darksiren
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				non_core_manpower = 1
+				monthly_population = -0.85
+				conscription = 1
+				fascism_drift = -0.1
+				democratic_drift = -0.1
+				communism_drift = -0.1
+				neutrality_drift = -0.1
+				drift_defence_factor = 0.5
+			}
+		}
+		SIR_tesejungongye = {
+			picture = generic_armor
+			allowed_civil_war = {
+				always = yes
+			}			
+			equipment_bonus = {
+				armor =  {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				small_plane_airframe = {
+				    instant = yes
+				    build_cost_ic = -0.10
+				    air_superiority = 0.1
+			    }
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}	
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.10
+			}
+		}
+		SIR_kejironghe = {
+			picture = air_war_plans_division_focus
+			allowed_civil_war = {
+				always = yes
+			}		
+            equipment_bonus = {
+				heavy_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					ap_attack = 0.15
+					armor_value = 0.1
+				}
+				super_heavy_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					ap_attack = 0.15
+					armor_value = 0.1
+				}
+				modern_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					ap_attack = 0.15
+					armor_value = 0.1
+				}
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					ap_attack = 0.15
+					armor_value = 0.1
+				}
+				large_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = 0.1
+				}
+				medium_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = 0.1
+				}
+				medium_plane_fighter_airframe = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = 0.1
+				}
+			}			
+			modifier = {
+				supply_consumption_factor = -0.5
+				no_supply_grace = 168
+			}
+		}
+		
+		SIR_mijijianzhu = {
+			picture = man_five_year_plan_industry
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				global_building_slots_factor = 0.2
+				production_speed_buildings_factor = 0.2
+			}
+		}
+	}
+	
+	political_advisor = {
+		
+	}
+		
+	
+
+	# TECHNOLOGY
+	tank_manufacturer = { 
+	
+		designer = yes
+	}
+	
+	naval_manufacturer = { 
+	
+		designer = yes
+	
+		
+	}
+
+	aircraft_manufacturer = { 
+	
+		designer = yes
+	
+		
+	}
+
+	industrial_concern = {
+		SIR_zuozhanshiyanshi = {
+			allowed = { 
+				always = yes
+			}
+			visible = {
+				has_government = siren
+			}
+			traits = { trait_zuozhanshiyanshi }
+			research_bonus = {
+				electronics = 0.05
+				nuclear = 0.1
+				rocketry = 0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+	}
+
+	materiel_manufacturer = {
+	
+		designer = yes
+	
+		
+	}
+
+	political_advisor = {
+
+		
+	}
+
+	army_chief = {
+		
+		
+	}
+
+	air_chief = {
+
+	}
+
+	high_command = {
+
+		
+	}
+
+	theorist = {
+
+	}
+}
+
+

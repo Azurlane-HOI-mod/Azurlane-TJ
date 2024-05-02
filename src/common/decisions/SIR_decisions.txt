@@ -1,0 +1,269 @@
+#购买武器(1政治点=15的IC产能） 1军工满效率每天5IC产出 10把步枪（净生产量+三分之一） 1.42火炮（净生产量+五分之一） 2卡车（净生产量+四分之一）
+SIR_chuanbo_category = {
+	
+
+	SIR_sairenjiaochuanbo = {
+		on_map_mode = map_and_decisions_view
+		priority = var:FROM.sir_fushi_ratio
+		icon = yujin
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+	  	}	 
+		available = {
+			if = { 
+				limit = {
+					FROM = {
+						shijianniangguojia_trigger = yes
+					}
+				}
+				set_temp_variable = {
+					chuanjiao_cost_pp = 60
+				} 
+			}
+			else = {
+				set_temp_variable = {
+					chuanjiao_cost_pp = 30
+				}
+			}
+			 
+			multiply_temp_variable = {
+				chuanjiao_cost_pp = FROM.sir_fushi_state
+			}
+			if = {
+				limit = {
+					FROM = {
+						shijianniangguojia_trigger = yes
+					}
+				}
+				clamp_temp_variable = {
+					var = chuanjiao_cost_pp
+					min = 60
+					max = 2000
+				}
+			}
+			else = {
+				clamp_temp_variable = {
+					var = chuanjiao_cost_pp
+					min = 30
+					max = 2000
+				}
+			}
+			
+			#if = {
+				#limit = {
+				#	check_variable = { FROM.sir_fushi_state }
+				#}
+			#}
+			FROM = {
+				
+				NOT = { has_war_with = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { is_puppet_of = ROOT }
+			
+				
+			}
+		}
+		cost = var:chuanjiao_cost_pp
+		visible = {
+		
+			FROM = {
+				
+				NOT = { has_war_with = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { is_puppet_of = ROOT }
+				
+			}
+			#has_country_flag = show_SIR_jianlimimijidi
+		}
+		remove_effect = { 
+			FROM = {
+				add_to_variable = { sir_fushi_state = 1 }
+				set_variable = { sir_fushi_ratio = sir_fushi_state }
+				divide_variable = { sir_fushi_ratio = num_core_states }
+				set_variable = { sir_fushi_ratio_show = sir_fushi_ratio}
+				multiply_variable = {
+					sir_fushi_ratio_show = 100
+				}
+				if = {
+					limit = {
+						check_variable = {
+							sir_fushi_ratio > 0.9
+						}
+					}
+					ROOT = { puppet = FROM }
+				}
+				
+			}
+		
+		}
+	}
+}
+siren_category = {
+	sir_xiunvdediyu = {                          
+		available = {                           
+			always = no
+		}
+		activation = {                       
+			has_country_flag = SIR_haishangxianjing_get         
+		}
+		is_good = yes                           
+		selectable_mission = no                
+		days_mission_timeout = 30
+		fixed_random_seed = no  
+		timeout_effect = {                  
+			custom_effect_tooltip = sir_xiunvdediyu_tt
+			add_manpower = 3000
+			hidden_effect = {
+				random_list = {
+					10 = { country_event = SIR_event.2 }      
+					10 = { country_event = SIR_event.3 }    
+					10 = { country_event = SIR_event.4 }    
+					10 = { country_event = SIR_event.5 }    
+					10 = { country_event = SIR_event.6 } 
+				}
+			}    
+		}
+		complete_effect = {                    
+			            
+		}
+	}
+}
+
+
+SIR_get_core = {
+
+	SIR_core_1 = {
+
+		name = SIR_core_1
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SIR
+		}
+
+		available = {
+			FROM = {
+				compliance > 40
+			}
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+
+		state_target = yes
+
+		on_map_mode = map_and_decisions_view
+
+		#targets = {  }
+
+		target_array = controlled_states
+
+		target_trigger = {
+			has_completed_focus = SIR_chuanjiaohuodong
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				compliance > 40
+			}
+		}
+
+		cost = 50
+
+
+		days_remove = 30
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		visible = {
+			tag = SIR
+			has_completed_focus = SIR_chuanjiaohuodong
+			always = yes
+		}
+
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	SIR_qiandu = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			capital_scope = {
+				state = 696
+			}
+			has_full_control_of_state = 278
+			has_full_control_of_state = 279
+			has_full_control_of_state = 500
+			has_full_control_of_state = 300
+			has_full_control_of_state = 303
+		}
+		visible = {
+			capital_scope = {
+				state = 696
+			}
+		}
+		complete_effect = {
+			country_event = { id = SIR_event.11 }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	SIR_jibaibuli = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			has_full_control_of_state = 279
+			has_full_control_of_state = 507
+			has_full_control_of_state = 506
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+			or = {
+				has_war_with = BLI
+				BLI = { is_puppet_of = SIR }
+				not = { country_exists = BLI }
+			}
+		}
+		visible = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		complete_effect = {
+			country_event = { id = SIR_event.10 }
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	SIR_hebulikaizhan = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			is_neighbor_of = BLI
+			date > 1939.1.1
+		}
+		visible = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		complete_effect = {
+			country_event = { id = SIR_event.12 }
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

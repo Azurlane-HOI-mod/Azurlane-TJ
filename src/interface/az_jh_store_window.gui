@@ -1,0 +1,826 @@
+guiTypes = {
+	
+	
+	
+	containerWindowType = {
+		name = "jh_store_main_window"
+		position = { x = -356 y = 80 }	
+		show_position = { x = 540 y = 80 }
+		moveable = yes
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		size = { width = 807 height = 600 } 
+		show_sound = open_sub_window
+		
+		############################################################
+		background = {
+			name = "jh_store_Background"		
+			quadTextureSprite ="GFX_tiled_plain_bg"
+		}
+		iconType ={
+			name ="jh_store_tittle_bg"
+			spriteType = "GFX_jh_store_tittle" 
+			moveable = yes 
+			position = { x= 5 y = 1 } 
+			Orientation = "UPPER_LEFT"
+		}
+		instantTextboxType = {
+			name = "jh_store_main_window_tittle"
+			position = { x = 300 y = 5 }
+			font = "hoi_36header"
+			text = "jh_store_main_window_text_1"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+		}
+		buttonType = {
+			name = "jh_store_main_window_close_button"
+			position = { x = -43 y = 4 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		instantTextboxType = {
+			name = "jh_zs_number_text"
+			position = { x = 20 y = 10 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "zs_number_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "zs_number_tooltip"
+		}
+		instantTextboxType = {
+			name = "jh_wz_number_text"
+			position = { x = 100 y = 10 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "wz_number_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "wz_number_tooltip"
+		}
+	
+		instantTextboxType = {
+			name = "jh_mf_number_text"
+			position = { x = 180 y = 10 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "mf_number_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "mf_number_tooltip"
+		}
+		############################################################
+		containerWindowType = {
+			name = "jh_store_main_window_inside"
+			position = { x = 0 y = 40 }
+			size = { width = 803 height = 600 }
+			verticalScrollbar = "right_vertical_slider"
+			background = {
+				name = "Background"		
+				quadTextureSprite ="GFX_tiled_plain_bg"
+			}
+			
+			iconType ={
+				name ="buzhihuo2"
+				spriteType = "GFX_aze_junhuodian2"
+				position = { x= 550 y = 1000 }
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "buzhihuo_icon_tooltip"
+			}
+			
+			instantTextboxType = {
+			name = "jh_text_0x1"
+			position = { x = 20 y = 88 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "[ROOT.check_buy_buqiang]"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x0"
+			position = { x = 225 y = 58 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "buy_buqiang_amount_5000_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_buqiang_button_1"
+			position = { x = 200 y = 80 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_3000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_2x0"
+			position = { x = 425 y = 58 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "buy_buqiang_amount_20000_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_buqiang_button_2"
+			position = { x = 400 y = 80 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_10000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_3x0"
+			position = { x = 620 y = 58 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 150 y = 0 }
+			text = "buy_buqiang_amount_60000_text" 
+			maxWidth = 100
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		ButtonType = {
+			name = "buy_buqiang_button_3"
+			position = { x = 600 y = 80 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_25000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+		
+		############################################################
+		
+		
+		instantTextboxType = {
+			name = "jh_text_0x2"
+			position = { x = 20 y = 168 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "[ROOT.check_buy_huopao]"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x2"
+			position = { x = 225 y = 138 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "buy_huopao_amount_500_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_huopao_button_1"
+			position = { x = 200 y = 160 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_2000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_2x2"
+			position = { x = 425 y = 138 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "buy_huopao_amount_2500_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_huopao_button_2"
+			position = { x = 400 y = 160 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_8000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_3x2"
+			position = { x = 620 y = 138 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 150 y = 0 }
+			text = "buy_huopao_amount_5500_text" 
+			maxWidth = 100
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		ButtonType = {
+			name = "buy_huopao_button_3"
+			position = { x = 600 y = 160 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_15000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+		
+		
+		############################################################
+		
+		
+		instantTextboxType = {
+			name = "jh_text_0x3"
+			position = { x = 20 y = 248 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "[ROOT.check_buy_tank]"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x3"
+			position = { x = 205 y = 218 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_tank_amount_320_text"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_tank_button_1"
+			position = { x = 200 y = 240 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_3000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_2x3"
+			position = { x = 405 y = 218 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_tank_amount_1200_text"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_tank_button_2"
+			position = { x = 400 y = 240 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_10000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_3x3"
+			position = { x = 600 y = 218 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_tank_amount_2800_text" 
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		ButtonType = {
+			name = "buy_tank_button_3"
+			position = { x = 600 y = 240 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_20000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+		
+		############################################################
+		
+		
+		instantTextboxType = {
+			name = "jh_text_0x4"
+			position = { x = 20 y = 328 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "[ROOT.check_buy_zhanji]"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x4"
+			position = { x = 205 y = 298 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "[ROOT.check_buy_zhanji_1]"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_zhanji_button_1"
+			position = { x = 200 y = 320 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_3000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_2x4"
+			position = { x = 405 y = 298 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "[ROOT.check_buy_zhanji_2]"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_zhanji_button_2"
+			position = { x = 400 y = 320 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_13000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_3x4"
+			position = { x = 600 y = 298 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "[ROOT.check_buy_zhanji_3]" 
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		ButtonType = {
+			name = "buy_zhanji_button_3"
+			position = { x = 600 y = 320 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_24000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+		
+		############################################################
+		
+		
+		instantTextboxType = {
+			name = "jh_text_0x5"
+			position = { x = 20 y = 408 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "[ROOT.check_buy_zhiyuanzhuangbei]"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x5"
+			position = { x = 205 y = 378 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_zhiyuanzhuangbei_amount_500_text"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_zhiyuanzhuangbei_button_1"
+			position = { x = 200 y = 400 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_2500]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_2x5"
+			position = { x = 405 y = 378 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_zhiyuanzhuangbei_amount_1500_text"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_zhiyuanzhuangbei_button_2"
+			position = { x = 400 y = 400 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_6000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_3x5"
+			position = { x = 600 y = 378 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_zhiyuanzhuangbei_amount_3200_text" 
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		ButtonType = {
+			name = "buy_zhiyuanzhuangbei_button_3"
+			position = { x = 600 y = 400 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_12500]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+		
+		############################################################
+		
+		
+		instantTextboxType = {
+			name = "jh_text_0x6"
+			position = { x = 20 y = 488 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "[ROOT.check_buy_kache]"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x6"
+			position = { x = 205 y = 458 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_kache_amount_1000_text"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_kache_button_1"
+			position = { x = 200 y = 480 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_3000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_2x6"
+			position = { x = 405 y = 458 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_kache_amount_3000_text"
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		
+		ButtonType = {
+			name = "buy_kache_button_2"
+			position = { x = 400 y = 480 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_8000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "jh_text_3x6"
+			position = { x = 600 y = 458 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "buy_kache_amount_7500_text" 
+			maxWidth = 150
+			maxHeight = 40
+			format = center
+			fixedsize=yes
+		}
+		ButtonType = {
+			name = "buy_kache_button_3"
+			position = { x = 600 y = 480 }
+			quadTextureSprite ="GFX_button_148x34"
+			buttonText = "[ROOT.check_wz_15000]"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+		
+		############################################################
+		
+		
+		instantTextboxType = {
+			name = "jh_text_0x7"
+			position = { x = 20 y = 560 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "jh_text_0x7_text" 
+			pdx_tooltip = "jh_text_sell_army_tooltip"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_0x8"
+			position = { x = 20 y = 590 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 0 y = 0 }
+			text = "jh_text_0x8_text"
+			pdx_tooltip = "jh_text_sell_army_tooltip"
+			maxWidth = 200
+			maxHeight = 200
+			format = left
+			fixedsize=yes
+		} 
+		
+		ButtonType = {
+			name = "sell_army_xp"
+			position = { x = 200 y = 570 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_army_xp_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		ButtonType = {
+			name = "sell_air_xp"
+			position = { x = 200 y = 620 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_air_xp_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		ButtonType = {
+			name = "sell_navy_xp"
+			position = { x = 200 y = 670 }  
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_navy_xp_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		 
+		############################################################
+		
+		instantTextboxType = {
+			name = "jh_text_1x7"
+			position = { x = 370 y = 560 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "[ROOT.check_sell_slot_text]"
+			pdx_tooltip = "jh_text_sell_slot_tooltip"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x8"
+			position = { x = 370 y = 590 }  
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 0 y = 0 }
+			text = "jh_text_1x8_text"
+			pdx_tooltip = "jh_text_sell_slot_tooltip"
+			maxWidth = 200
+			maxHeight = 200
+			format = left
+			fixedsize=yes
+		}
+		ButtonType = {
+			name = "sell_1_slot"
+			position = { x = 530 y = 570 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_1_slot_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		ButtonType = {
+			name = "sell_2_slot"
+			position = { x = 530 y = 620 }  
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_2_slot_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		ButtonType = {
+			name = "sell_3_slot"
+			position = { x = 530 y = 670 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_3_slot_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		
+		############################################################
+		
+		
+		############################################################
+		
+		instantTextboxType = {
+			name = "jh_text_0x9"
+			position = { x = 20 y = 750 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "jh_text_sell_command_power_text" 
+			pdx_tooltip = "jh_text_sell_command_power_tooltip"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_0x10"
+			position = { x = 20 y = 781 } 
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 0 y = 0 }
+			text = "jh_text_0x10_text"
+			pdx_tooltip = "jh_text_sell_command_power_tooltip"
+			maxWidth = 200
+			maxHeight = 200
+			format = left
+			fixedsize=yes
+		} 
+		ButtonType = {
+			name = "sell_50_cp"
+			position = { x = 200 y = 774 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_50_cp_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		ButtonType = {
+			name = "autosell_button"
+			position = { x = 200 y = 814 } 
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "autosell_button_text"
+			pdx_tooltip = "autosell_button_text_tooltip"
+			buttonFont = "Arial12"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+		
+		############################################################
+		
+		instantTextboxType = {
+			name = "jh_text_1x9"
+			position = { x = 370 y = 750 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_18"
+			#borderSize = { x = 0 y = 0 }
+			text = "jh_text_sell_political_power_text" 
+			pdx_tooltip = "jh_text_sell_political_power_tooltip"
+			maxWidth = 200
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+		}
+		instantTextboxType = {
+			name = "jh_text_1x10"
+			position = { x = 370 y = 781 } 
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 0 y = 0 }
+			text = "jh_text_1x10_text"
+			pdx_tooltip = "jh_text_sell_political_power_tooltip"
+			maxWidth = 200
+			maxHeight = 200
+			format = left
+			fixedsize=yes
+		} 
+		ButtonType = {
+			name = "sell_100_pp"
+			position = { x = 530 y = 774 }
+			quadTextureSprite ="GFX_button_123x34"
+			buttonText = "sell_100_pp_button_text"
+			buttonFont = "hoi_20bs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		############################################################
+			
+		}
+		
+		
+		
+		
+		############################################################
+		
+		
+		
+	}
+	
+}

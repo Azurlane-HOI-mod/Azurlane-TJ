@@ -1,0 +1,987 @@
+leader_traits = {
+	trait_yishijisi = { 
+		random = no
+		siren_drift = 1.5
+		political_power_gain = 0.5
+		war_support_weekly = 0.005
+		stability_weekly = 0.005
+	}
+	trait_BFL_zuozhanshiyanshi = {
+		random = no
+		research_speed_factor = 0.03
+		production_speed_buildings_factor = 0.05
+		production_factory_max_efficiency_factor = 0.2
+	}
+	trait_BYG_zuozhanshiyanshi = {
+		random = no
+		research_speed_factor = 0.1
+		stability_factor = 0.08
+		min_export = -0.05
+		trade_laws_cost_factor  = -0.1
+		economy_cost_factor = -0.1
+	}
+	trait_TIX_zuozhanshiyanshi = {
+		random = no
+		research_speed_factor = 0.03
+		war_support_factor = 0.1
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+	}
+	trait_DOH_zuozhanshiyanshi = {
+		random = no
+		research_speed_factor = 0.15
+	}
+	trait_SIR_zuozhanshiyanshi = {
+		random = no
+		hidden_modifier = {
+			research_speed_factor = 1
+		}
+		
+	}
+#白鹰联邦#
+	
+
+	trait_wuwei = { 
+		random = no
+		experience_gain_army = 0.2
+		army_speed_factor = 0.1
+		cat_mobile_warfare_cost_factor = -0.15
+	}
+
+	trait_xianggelila = { 
+		random = no
+		experience_gain_army = 0.2
+		army_bonus_air_superiority_factor = 0.1
+		max_planning = 0.05
+		cat_grand_battle_plan_cost_factor = -0.15
+	}
+
+	trait_tikangdeluojia = { 
+		random = no
+		experience_gain_army = 0.2
+		army_artillery_attack_factor = 0.1
+		army_armor_attack_factor = 0.1
+		cat_superior_firepower_cost_factor = -0.15
+	}
+
+	trait_aisaikesi = { 
+		random = no
+		cat_mass_assault_cost_factor = -0.15
+		experience_gain_army = 0.2
+		training_time_army_factor = -0.1
+		industrial_capacity_dockyard = 0.05
+		equipment_bonus = {
+			carrier = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+		}
+	}
+
+	trait_kasabulanka = { 
+		random = no
+		experience_gain_navy = 0.2
+		air_mission_efficiency = 0.1
+		cat_base_strike_cost_factor = -0.15
+	}
+
+	trait_sheshuiyu = { 
+		random = no
+		experience_gain_navy = 0.2
+		equipment_bonus = {
+			submarine = {
+				torpedo_attack = 0.3
+				instant = yes
+			}
+		}
+		
+	}
+
+	trait_huashengdun = {
+		random = no
+		experience_gain_navy = 0.2
+		navy_capital_ship_attack_factor = 0.2
+		navy_capital_ship_defence_factor = 0.1
+		cat_fleet_in_being_cost_factor = -0.15
+	}
+
+	trait_youqibing = {
+		random = no
+		experience_gain_air = 0.2
+		equipment_bonus = {
+			medium_plane_airframe = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+			cv_small_plane_airframe = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+			cv_small_plane_naval_bomber_airframe = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+		}
+		cat_operational_integrity_cost_factor = -0.15
+	}
+
+	trait_badan = {  
+		random = no
+		experience_gain_air = 0.2
+		equipment_bonus = {
+			small_plane_cas_airframe = {
+				air_ground_attack = 0.1
+				instant = yes
+			}
+			cv_small_plane_cas_airframe = {
+				air_ground_attack = 0.1
+				instant = yes
+			}
+		}
+		navy_anti_air_attack_factor = 0.2
+		sortie_efficiency = 0.05
+		cat_battlefield_support_cost_factor = -0.15
+	}
+
+	trait_dahuangfeng = {
+		random = no	
+		experience_gain_air = 0.2
+		equipment_bonus = {
+			large_plane_airframe = {
+				air_bombing = 0.1
+				instant = yes
+			}
+		}
+		air_strategic_bomber_attack_factor = 0.05
+		air_strategic_bomber_defence_factor = 0.05
+		air_strategic_bomber_agility_factor = 0.05
+		air_strategic_bomber_bombing_factor = 0.05
+		cat_strategic_destruction_cost_factor = -0.15
+	}
+
+	trait_shengluyisi  = {
+		random = no
+		local_resources_factor = 0.15
+		production_speed_buildings_factor = 0.1
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.1
+		consumer_goods_factor = 0.1
+	}
+
+	trait_yalisangna  = {
+		random = no  
+		war_support_factor = 0.2
+		conscription = 0.02
+		mobilization_speed = 0.5
+	}
+
+	trait_yinggelahan = {
+		random = no  
+		supply_consumption_factor = -0.05
+		industry_repair_factor = 0.15
+		production_speed_bunker_factor = 0.15
+		production_speed_air_base_factor = 0.2
+		production_speed_naval_base_factor = 0.2
+		production_speed_supply_node_factor = 0.2
+		production_speed_anti_air_building_factor = 0.2
+	}
+	
+	trait_jiujinshan = {
+		random = no  
+		non_core_manpower = 0.05
+		agency_upgrade_time = -0.25
+		operative_slot = 3
+		navy_max_range_factor = 0.2
+		navy_fuel_consumption_factor = -0.2
+		experience_loss_factor = -0.05
+	}
+
+	trait_binxifaniya = {
+		random = no
+		experience_gain_army = 0.3
+		army_artillery_attack_factor = 0.10
+		equipment_bonus = {
+			artillery_equipment = {
+				instant = yes
+				breakthrough = 0.1
+				soft_attack = 0.08
+				hard_attack = 0.15
+			}
+			light_tank_artillery_chassis = {
+					build_cost_ic = -0.1
+					soft_attack = 0.15
+					breakthrough = 0.1
+					defense = 0.1
+					instant = yes
+				}
+			medium_tank_artillery_chassis = {
+					build_cost_ic = -0.1
+					soft_attack = 0.15
+					breakthrough = 0.1
+					defense = 0.1
+					instant = yes
+				}
+			heavy_tank_artillery_chassis = {
+					build_cost_ic = -0.1
+					soft_attack = 0.15
+					breakthrough = 0.1
+					defense = 0.1
+					instant = yes
+				}
+			modern_tank_artillery_chassis = {
+					build_cost_ic = -0.1
+					soft_attack = 0.15
+					breakthrough = 0.1
+					defense = 0.1
+					instant = yes
+				}
+			
+		}
+	}
+
+	trait_baerdimo = {
+		random = no
+		experience_gain_army = 0.3
+		army_attack_factor = 0.05
+		army_defence_factor = 0.05
+		army_speed_factor = 0.05
+		org_loss_when_moving = -0.15
+	}
+	trait_botelan = {
+		random = no
+		experience_gain_army = 0.3
+		army_attack_factor = 0.05
+		army_defence_factor = 0.15
+		attrition = -0.1
+	}
+	trait_shengdiyage = {
+		random = no
+		experience_gain_air = 0.3
+		air_ace_generation_chance_factor = 0.1
+		air_superiority_efficiency = 0.15
+		air_intercept_efficiency = 0.2
+	}
+	trait_changdao = {
+		random = no
+		air_mission_efficiency = 0.12
+		equipment_bonus = {
+			small_plane_airframe = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_superiority = 0.1
+			}
+			cv_small_plane_airframe = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_superiority = 0.1
+			}
+			medium_plane_fighter_airframe = {
+				instant = yes
+				build_cost_ic = -0.1
+				air_superiority = 0.1
+			}
+		}	
+	}
+#北方联合#
+	trait_luoxiya = { 
+		random = no
+		experience_gain_army = 0.2
+		army_armor_attack_factor = 0.2
+		cat_mass_assault_cost_factor = -0.15
+	}
+	trait_afuleer = { 
+		random = no
+		production_speed_buildings_factor = 0.1
+		local_resources_factor = 0.1
+		industrial_capacity_factory = 0.05
+		communism_drift = 0.15
+	}
+	trait_kalangshitade = { 
+		random = no
+		operative_slot = 3
+		intel_network_gain_factor = 0.5
+		foreign_subversive_activites = -0.5
+	}
+	trait_leiming ={ 
+		random = no
+		navy_screen_attack_factor = 0.15
+		navy_screen_defence_factor = 0.15
+		cat_bass_strike_cost_factor =-0.15
+		naval_speed_factor = 0.1
+	}
+	trait_shensu = { 
+		random = no
+		army_speed_factor = 0.08
+		org_loss_when_moving = -0.15
+		breakthrough_factor = 0.05
+	}
+	
+	trait_jiluofu = { 
+		random = no	
+		experience_gain_air = 0.2
+		equipment_bonus = {
+			strat_bomber_equipment = {
+				air_bombing = 0.1
+				instant = yes
+			}
+		}
+		cat_strategic_destruction_cost_factor = -0.15
+	}
+	trait_sayousi = {
+		random = no	
+		drift_defence_factor = 0.5
+		stability_factor = 0.1
+		war_support_factor = 0.1
+		political_power_gain = 0.25
+	}
+	trait_shuixingjinian = {
+		random = no	
+		communism_drift = 0.15
+		political_power_factor = 0.15
+		army_morale_factor = 0.1
+		compliance_gain = 0.02
+	}
+	trait_beilaluosi = {
+		random = no	
+		experience_gain_army = 0.3
+		war_support_factor = 0.1
+		army_org_factor = 0.1
+		army_infantry_attack_factor = 0.2
+	}
+	trait_tashigan = {
+		random = no	
+		experience_gain_navy = 0.3
+		naval_speed_factor = 0.15
+        navy_visibility = -0.1
+	}	
+	trait_qikaluofu = {
+		random = no	
+		experience_gain_air = 0.3
+		air_mission_efficiency = 0.1
+		air_wing_xp_loss_when_killed_factor = -0.25
+		air_night_penalty = -0.3
+		air_accidents_factor = 0.1
+		air_range_factor = 0.5
+	}
+	trait_talin = {
+		random = no	
+		stability_factor = -0.1
+		enemy_operative_detection_chance = 10
+		enemy_operative_capture_chance_factor = 0.3
+		civilian_intel_to_others = -20
+		intel_network_gain_factor = 0.2
+	}
+	trait_gangute = {
+		random = no	
+		org_loss_at_low_org_factor = -0.15
+		army_defence_factor = 0.2
+		naval_retreat_speed = 0.2
+	}
+	
+	
+	#撒丁
+	trait_makeboluo = {
+		random = no	
+		drift_defence_factor = -0.5
+		political_power_gain = 0.35
+		stability_factor = -0.1
+	}
+	trait_jiafuer = {
+		random = no	
+		mobilization_laws_cost_factor = -0.25
+		economy_cost_factor = -0.25
+		political_advisor_cost_factor = -0.25
+		political_power_factor = 0.15
+	}
+	trait_tuolichaili = {
+		random = no	
+		operative_slot = 3
+		justify_war_goal_time = -0.5
+		drift_defence_factor = 0.75
+	}
+	trait_daleike = {
+		random = no	
+		experience_gain_navy = 0.3
+		naval_speed_factor = 0.08
+		navy_max_range_factor = 0.1
+		spotting_chance = 0.1
+	}
+	trait_diliyasite = {
+		random = no	
+		army_morale_factor = 0.08
+		supply_consumption_factor = -0.05
+		no_supply_grace = 12
+	}
+	trait_zhala = {
+		random = no	
+		experience_gain_army = 0.3
+		army_armor_attack_factor = 0.05
+		army_armor_defence_factor = 0.1
+		equipment_bonus = {
+			armor = {
+				armor_value = 0.15
+			}
+		}
+	}
+	trait_diguo = {
+		random = no	
+		experience_gain_air = 0.3
+		equipment_bonus = {
+			small_plane_cas_airframe = {
+			air_range = 0.2
+			air_ground_attack = 0.1
+			naval_strike_attack = 0.1
+			instant = yes
+			}
+			small_plane_naval_bomber_airframe = {
+				air_range = 0.2
+				air_ground_attack = 0.1
+				naval_strike_attack = 0.1
+				instant = yes
+			}
+			small_plane_airframe = {
+			air_range = 0.2
+			air_attack = 0.1
+			instant = yes
+			}
+            }
+		}
+	trait_zhusaipei = {
+		random = no	
+		recon_factor = 0.1
+		army_infantry_attack_factor = 0.2
+		army_infantry_defence_factor = 0.1
+	}
+    #东煌#
+	trait_anshan = { 
+		random = no
+		production_speed_buildings_factor = 0.1
+		local_resources_factor = 0.1
+		industrial_capacity_factory = 0.05
+	}
+	trait_yixian = {
+		random = no
+		political_power_factor = 0.05
+		mobilization_laws_cost_factor = -0.25
+		trade_laws_cost_factor = -0.25
+		economy_cost_factor = -0.25
+		political_advisor_cost_factor = -0.25
+		tank_manufacturer_cost_factor = -0.4
+		naval_manufacturer_cost_factor = -0.4
+		aircraft_manufacturer_cost_factor = -0.4
+		materiel_manufacturer_cost_factor = -0.4
+		industrial_concern_cost_factor = -0.4
+		theorist_cost_factor = -0.33
+		army_chief_cost_factor = -0.33
+		navy_chief_cost_factor = -0.33
+		air_chief_cost_factor = -0.33
+		high_command_cost_factor = -0.33
+	}
+	trait_zhenhai = {
+		random = no
+		planning_speed = 0.15
+		max_planning = 0.1
+		max_command_power = 50
+		command_power_gain_mult = 0.1
+	}
+	trait_ninghai = {
+		random = no
+		experience_gain_army = 0.3
+		army_attack_factor = 0.1
+		army_defence_factor = 0.1
+		breakthrough_factor = 0.1
+	}
+	trait_jiangjiang = {
+		random = no
+		experience_gain_air = 0.3
+		ace_effectiveness_factor = 0.5
+		air_ace_generation_chance_factor = 0.15
+		air_agility_factor = 0.15
+	}
+#重樱群岛#
+	trait_chicheng = {
+		random = no
+		experience_gain_navy = 0.3
+		sortie_efficiency = 0.15
+		naval_speed_factor = 0.03
+		navy_max_range_factor = 0.15
+		navy_carrier_air_attack_factor = 0.05
+		navy_carrier_air_targetting_factor = 0.05
+	}
+	trait_changmen = {
+		random = no
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.2
+		navy_org_factor = 0.1
+		navy_max_range_factor = 0.2
+		compliance_gain = 0.05
+	}
+	trait_mingshi = {
+		random = no
+		trade_opinion_factor = -0.1
+		economy_cost_factor = -0.25
+		consumer_goods_factor = -0.2
+	}
+	trait_jiahe = {
+		random = no
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		production_factory_efficiency_gain_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+	}
+	trait_xinnong = {
+		random = no
+		recon_factor = 0.05
+		spotting_chance = 0.05
+		political_power_gain = 0.25
+	}
+	trait_xuefeng = {
+		random = no
+		air_accidents = -0.3
+		screening_efficiency = 0.2
+		experience_loss_factor = -0.1
+		stability_factor = 0.15
+	}
+	trait_sanli = {
+		random = no
+		experience_gain_army_factor = 0.05
+		experience_gain_navy_factor = 0.05
+		experience_gain_air_factor = 0.05
+		experience_gain_navy = 0.2
+		experience_gain_army = 0.2
+		experience_gain_air = 0.2
+		max_planning = 0.05
+	}
+	trait_xili = {
+		random = no
+		experience_gain_navy = 0.3
+		navy_screen_attack_factor = 0.15
+		naval_speed_factor = 0.08
+		screening_efficiency = 0.05
+	}
+	trait_tuzuo = {
+		random = no
+		army_infantry_attack_factor = 0.25
+		army_core_attack_factor = 0.15
+		out_of_supply_factor = -0.25
+	}
+	trait_gaoxiong = {
+		random = no
+		experience_gain_army = 0.3
+		army_org_factor = 0.1
+		army_defence_factor = 0.2
+		breakthrough_factor = 0.1
+		attrition = -0.1
+	}
+	trait_dafeng = {
+		random = no
+		experience_gain_air = 0.3
+		air_attack_factor = 0.2
+		army_bonus_air_superiority_factor = 0.1
+		navy_submarine_detection_factor = -0.2
+	}
+	#皇家
+	trait_hude = {
+		random = no
+		political_power_factor = 0.10
+		war_support_weekly = 0.003
+		conscription = 0.02
+		experience_gain_navy_factor = 0.2
+	}
+	trait_beierfasite = {
+		random = no
+		political_power_gain = 0.5
+		research_speed_factor = 0.05
+	}
+	trait_deleike = {
+		random = no
+		local_resources_factor = 0.15
+		resistance_growth = -0.1
+		consumer_goods_factor = -0.2
+		army_speed_factor = 0.05
+		naval_speed_factor = 0.08
+	}
+	trait_nvjiang = {
+		random = no
+		training_time_army_factor = -0.15
+		experience_gain_army_factor = 0.1
+		experience_gain_navy_factor = 0.1
+		experience_gain_air_factor = 0.1
+	}
+	trait_lundun = {
+		random = no
+		global_building_slots_factor = 0.15
+		production_speed_buildings_factor = 0.2
+	}
+	trait_qianwei = {
+		random = no
+		motorized_attack_factor = 0.15
+		motorized_defence_factor = 0.15
+		mechanized_attack_factor = 0.1
+		mechanized_defence_factor = 0.1
+		army_org_factor = 0.08
+	}
+	trait_dujiaoshou = {
+		random = no
+		experience_gain_air = 0.3
+		attrition = -0.05
+		experience_loss_factor = -0.08
+		army_bonus_air_superiority_factor = 0.1
+		air_cas_present_factor = 0.05
+		air_escort_efficiency = 0.1
+	}
+	trait_naerxun = {
+		random = no
+		experience_gain_army = 0.3
+		army_org_factor = 0.05
+		org_loss_when_moving = -0.2
+	}
+	trait_yanzhan = {
+		random = no
+		experience_gain_navy = 0.3
+		army_artillery_attack_factor = 0.15
+		navy_capital_ship_attack_factor = 0.2
+	}
+	trait_yanzhan_nvwanghuweijun = {
+		random = no
+		fascism_drift = 0.2
+		conscription = 0.005
+		resistance_target = -0.1
+		required_garrison_factor = -0.25
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+	}
+	trait_qiaozhiwushi = {
+		random = no
+		neutrality_drift = 0.2
+		motorized_attack_factor = 0.1
+		motorized_defence_factor = 0.1
+		mechanized_attack_factor = 0.1
+		mechanized_defence_factor = 0.1
+		cavalry_attack_factor = 0.1
+		cavalry_defence_factor = 0.1
+		planning_speed = 0.15
+		max_planning = 0.1
+	}
+	trait_kewei = {
+		random = no
+		army_defence_factor = 0.05
+		navy_screen_defence_factor = 0.08
+		navy_capital_ship_defence_factor = 0.08
+		equipment_bonus = {
+			carrier = {
+				armor_value = 0.15
+				instant = yes
+			}
+		}
+	}
+	trait_weiershi = {
+		random = no
+        agency_upgrade_time = -0.5
+		operative_slot = 4
+		enemy_operative_detection_chance = -10
+		civilian_intel_to_others = 5
+		army_intel_to_others = 5
+		navy_intel_to_others = 5
+		airforce_intel_to_others = 5
+		}
+	
+	#铁血
+	trait_bisimai = {
+		random = no
+		stability_factor = 0.25
+		stability_weekly = 0.005
+		conscription = 0.02
+		army_armor_attack_factor = 0.15
+		consumer_goods_factor = -0.15
+	}
+	trait_feitelie = {
+		random = no
+		political_power_factor = 0.1
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.05
+		research_speed_factor = 0.05
+		production_speed_buildings_factor = 0.05
+	}
+	trait_laibixi = {
+		random = no
+		opinion_gain_monthly_factor = 0.2
+		political_power_gain = 0.25
+		war_support_weekly = 0.02
+		justify_war_goal_time = -0.33
+		army_chief_cost_factor = -0.25
+		navy_chief_cost_factor = -0.25
+		air_chief_cost_factor = -0.25
+		high_command_cost_factor = -0.15
+	}
+	trait_aogusite = {
+		random = no
+		air_equipment_upgrade_xp_cost = -0.2
+		air_doctrine_cost_factor = -0.1
+		production_speed_air_base_factor = 0.25
+		air_range_factor = 0.1
+		consumer_goods_factor = 0.1
+		equipment_bonus = {
+			small_plane_cas_airframe = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+			small_plane_airframe = {
+				instant = yes
+				build_cost_ic = -0.15
+			}
+			medium_plane_airframe = {
+				instant = yes
+				build_cost_ic = -0.15
+			}
+			large_plane_airframe = {
+				instant = yes
+				build_cost_ic = -0.2
+			}
+			jizaijianniang_equipment_airframe = {
+				instant = yes
+				build_cost_ic = -0.2
+			}
+		}
+	}
+	trait_z23 = {
+		random = no
+		research_speed_factor = 0.15
+	}
+	trait_ougenqinwang = {
+		random = no
+		experience_gain_army = 0.3
+		army_armor_defence_factor = 0.1
+		army_defence_factor = 0.05
+		equipment_bonus = {
+			armor = {
+				reliability = 0.1
+				maximum_speed = 0.08
+				instant = yes
+			}
+		}
+	}
+	trait_qibolin = {
+		random = no
+		sortie_efficiency = 0.05
+		air_cas_present_factor = 0.1
+		air_cas_efficiency = 0.1
+		equipment_bonus = {
+			large_plane_airframe = {
+				air_bombing = 0.15
+				instant = yes
+			}
+			medium_plane_airframe = {
+				air_ground_attack = 0.05
+				air_bombing = 0.05
+				instant = yes
+			}
+			small_plane_cas_airframe = {
+				air_ground_attack = 0.1
+				naval_strike_attack = 0.05
+				instant = yes
+			}
+			cv_small_plane_cas_airframe = {
+				air_ground_attack = 0.05
+				naval_strike_attack = 0.1
+				instant = yes
+			}
+		}
+	}
+	trait_u81 = {
+		random = no
+		experience_gain_navy = 0.3
+		equipment_bonus = {
+			submarine = {
+				naval_range = 0.25
+				instant = yes
+			}
+		}
+	}
+	trait_luoen = {
+		random = no
+		experience_gain_army = 0.3
+		army_org_factor = 0.15
+		planning_speed = 0.1
+		max_planning = 0.1
+	}
+	trait_aijier = {
+		random = no
+		breakthrough_factor = 0.1
+		recon_factor = 0.15
+		army_attack_factor = 0.05
+		army_defence_factor = 0.05
+		air_cas_present_factor = 0.05
+	}
+	trait_bide = {
+		random = no
+		experience_gain_air = 0.3
+		air_close_air_support_agility_factor = 0.1
+		air_cas_present_factor = 0.1
+		air_training_xp_gain_factor = 0.5
+		air_wing_xp_loss_when_killed_factor = -0.5
+		air_cas_efficiency = 0.25
+		equipment_bonus = {
+		small_plane_cas_airframe = {
+		build_cost_ic = 0.05
+		instant = yes
+		}
+		}
+	}
+	trait_leipuxitele = {
+		random = no
+		army_infantry_attack_factor = 0.25
+		army_infantry_defence_factor = 0.15
+		army_bonus_air_superiority_factor = 0.1
+		
+	}
+	#鸢尾
+	trait_6194 = {
+		random = no
+		required_garrison_factor = -0.35
+		production_speed_bunker_factor = 0.25
+		defensive_war_stability_factor = 0.5
+	}
+	trait_jiasikenie = {
+		random = no
+		research_speed_factor = 0.2
+		planning_speed = 0.25
+	}
+	trait_beiyaen = {
+		random = no
+		experience_gain_air_factor = 0.15
+		experience_gain_air = 0.4
+		air_wing_xp_loss_when_killed_factor = -0.1
+		air_training_xp_gain_factor = 0.1
+		navy_submarine_attack_factor = 0.2
+		navy_submarine_defence_factor = 0.15
+		air_mission_efficiency = -0.05
+		air_accidents_factor = 0.05
+	}
+#东煌#
+	trait_DOH_79shi = {
+		random = no
+		experience_gain_army_unit = 0.2
+		army_org_factor = 0.1
+		army_morale_factor = 0.05
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				breakthrough = 0.15 
+			}
+		}
+	}
+	trait_DOH_97shi = {
+		random = no
+		experience_gain_army = 0.2
+		army_defence_factor = 0.1
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				defense = 0.15
+				soft_attack = 0.15
+			}
+		}
+	}
+	trait_DOH_JS9 = {
+		random = no
+		experience_gain_army_unit = 0.2
+		org_loss_when_moving = -0.1
+		army_speed_factor = 0.1
+		recon_factor = 0.2
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+                maximum_speed = 0.5
+			}
+		}
+	}
+	trait_DOH_QBU88 = {
+		random = no
+		army_attack_factor = 0.1
+		experience_gain_army = 0.2
+	
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				hard_attack = 0.15
+				ap_attack = 0.1
+			}
+		}
+	}
+	trait_DOH_NZ75= {
+		random = no
+		experience_gain_army = 0.2
+        org_loss_at_low_org_factor = -0.3
+        army_strength_factor = 0.2
+		supply_consumption_factor = -0.05
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				reliability = 0.1
+				build_cost_ic = -0.15
+			}
+		}
+	}
+	
+	#白鹰联邦#
+	trait_qiye = {
+		random = no
+		experience_gain_navy = 0.3
+		navy_carrier_air_targetting_factor = 0.2
+        naval_strike_attack_factor = 0.1
+		naval_strike_agility_factor = 0.1
+        critical_receive_chance = -0.25
+		naval_torpedo_hit_chance_factor = -0.2
+	}
+	#鸢尾
+	trait_fuxu = {
+		random = no
+		experience_gain_navy = 0.3
+		war_support_factor = 0.1
+		communism_drift = -0.01
+		naval_speed_factor = -0.05
+		navy_screen_defence_factor = 0.15
+		navy_capital_ship_defence_factor = 0.2
+		equipment_bonus = {
+			carrier = {
+				armor_value = 0.2
+				instant = yes
+			}
+		}
+	}
+    #东煌#	
+	trait_haitian = {
+		random = no
+		experience_gain_navy = 0.3
+		monthly_population = 0.01
+		navy_org_factor = 0.05
+		naval_strike_agility_factor = 0.05
+		naval_speed_factor = 0.1
+		naval_light_gun_hit_chance_factor = 0.05
+		naval_heavy_gun_hit_chance_factor = 0.05
+		navy_capital_ship_defence_factor = -0.1
+		equipment_bonus = {
+			carrier = {
+				armor_value = -0.1
+				instant = yes
+			}
+		}
+	}
+	trait_dingzhen = {
+		random = no
+		opinion_gain_monthly_factor = 0.25
+		trade_opinion_factor = 0.25
+		mobilization_laws_cost_factor = -0.5
+		stability_factor = 0.1
+		political_power_factor = 0.05
+	}
+	trait_gelideli = {
+		random = no
+		opinion_gain_monthly_factor = 0.25
+		trade_opinion_factor = 0.2
+		army_speed_factor = 0.05
+		naval_speed_factor = 0.05
+		political_power_factor = 0.05
+	}
+}

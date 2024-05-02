@@ -1,0 +1,297 @@
+CHY_historical = {
+	name = "CHY_historical"
+	desc = "CHY_historical_desc"
+
+	allowed = {
+		original_tag = CHY
+	}
+	enable = {
+	has_global_flag = MOD_azurlane_tianjiangjianniang
+		or = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = CHY_ai_behavior
+				option = CHY_historical_focus
+			}
+		}
+	    not = {
+		has_game_rule = {
+		rule = CHY_ai_behavior
+		option = CHY_changmen_line_focus
+		}
+	} 
+	}
+	abort = {
+		OR = {
+			has_completed_focus = CHY_zuiqiangzhiqiangwudi
+			has_completed_focus = CHY_kongjun1
+		}
+		
+	}
+
+	ai_national_focuses = {
+		#1936
+		CHY_xuanzexinqijian #35
+		CHY_chongyingweixin #49
+		CHY_taidao #21
+		CHY_kuozhangjihua #35
+		CHY_shendaojiao #49
+		CHY_weileguojia #35
+		CHY_zhuanyiluohouchanye #21
+		CHY_xiuyangshengxi #35
+		CHY_chongyingfuxingjihua #56
+		CHY_xingtong #21
+		CHY_duibaiyingyouhao #7
+		CHY_tiaoxindonghuang #21
+		#1937
+		CHY_lujunjingshenzhuru #21
+        CHY_ruoxiaodelingju #35
+		CHY_zhunbeijingong #49
+		CHY_dongyazhanzhengbuju #56
+		CHY_pijiushibian #35###581
+		CHY_zuozhanfangshichuangxin_lujun #42
+		CHY_lujungaige #70
+		CHY_jiaoyuxiaoxuesheng #56
+		#1938
+		CHY_pujijiaoyu #70
+		CHY_kuojianhaijun #49
+		CHY_chongyingtese #35
+		CHY_xiaoxingzhuangbei #49
+		CHY_jidonghua #49
+		CHY_zhuangjiaxianfeng #70
+		CHY_chongyingtesezhihui #49
+		CHY_zhanshuchuangxin #49
+		#1939
+		CHY_mingshidexiaomaipu #49
+		CHY_mofanggongchang #49
+		CHY_buzhihuodejunhuodian #49
+		CHY_jiadatouzi #49
+		CHY_junhuolaoban #70
+		CHY_chongyingmaoyigongsi #70
+		#1940
+		CHY_badao #70
+		CHY_tianxiabuwu #49
+		CHY_beijinlun #35
+		CHY_yizhideshengli #49
+		CHY_nanjinlun #35
+		CHY_youren #35
+		CHY_jianniangmendeshenzhiyuan #28
+		CHY_fanzhazhongxin #49
+		#1941
+		CHY_chengxinjiaoyi #70
+		CHY_kuochongjundui #70
+		CHY_zhibodanjingshen #49
+		CHY_qundaotielu #70
+		CHY_ziyuankaicai #49
+		CHY_xiangtaipingyangjingjun #35
+		#1942
+		CHY_xijinanyangziyuanqu #35
+		CHY_beifangdepengyou #35
+        CHY_zuozhanfangshichuangxin_haijun #42
+		CHY_haijunxunlian #35
+		CHY_kongmupai #49
+		CHY_haijunxinlilun #70
+		CHY_zuozhanfangshichuangxin_kongjun #42
+		CHY_lantianfeixingdui #49
+		CHY_lujunhangkongbing #35
+		#1943
+		CHY_haijunhangkongbing #35
+		CHY_dulikongjun #70
+		CHY_sidachuangqi #70
+		CHY_chaojizhanjian #84
+		CHY_zuiqianghangmu #84
+	    #1944
+		CHY_chaojixunyangjian #84
+		CHY_zuisuquzhu #84
+		CHY_zuiqiangzhiqiangwudi #70
+
+		#CHY NEW
+		#1936
+		CHY_jianshejihua #56
+		CHY_gulixiaozuofang #28
+		CHY_minggong_1 #28
+		CHY_jungong_1 #28
+		CHY_chongyindeweilai #35
+		CHY_chichen1 #35
+		CHY_kuozhangzhunbei #35
+		CHY_dalishenchan #35
+		CHY_chichengdezhunbei #35
+		CHY_chongyinshendaojiao #35
+		#1937
+		CHY_wushidaojinshen #35
+		CHY_kuangredekuozhangzhuyi #35
+		CHY_yazhoufangxiang #35
+		CHY_dongyajunduikuobian #35
+		CHY_houqinzhunbei #35
+		CHY_duidonghuangxuanzhan #28
+		CHY_lujun #35
+		CHY_bubinzhanshugaige #49
+		CHY_huopaozhuangbei1 #35
+		CHY_huopaozhuangbei2 #49
+		#1938
+		CHY_bubinzhuangbei1 #35
+		CHY_bubinzhuangbei2 #49
+		CHY_zhongshibubin #70
+		CHY_sakulajundui #70
+		CHY_hangmujianniang #70
+		CHY_jianzhujishugaijin #70
+		#1939
+		CHY_shenchanjishu #35
+		CHY_gongyejishu #70
+		CHY_gongyejituan #70
+		CHY_bentukaifa #35
+		CHY_haijunchuanwu_1 #35
+		CHY_chongyingzaochuanshu #35
+		CHY_haijunxiajiaozi #35
+		CHY_chichenghangmu #35
+		#1940
+		CHY_haijun #35
+		CHY_hangmu #35
+		CHY_taipinyangfangxiang #35
+		CHY_fashudongya #35
+		CHY_xianluo #35
+		CHY_hangmu_buff #35
+		CHY_haijun_buff #70
+		CHY_zhanliejian #35
+		CHY_zhanliejian_buff #35
+		CHY_xunyangjian #35
+		#1941
+		CHY_quzhujian #35
+		CHY_pinweijian_buff #35
+		CHY_haijunluzhandui #35
+		CHY_haijunluzhandui1 #35
+		CHY_haijunluzhandui2 #35
+		CHY_kongjun #35
+		CHY_navalbomb1 #35
+		CHY_navalbomb2 #35
+		CHY_chichengkongzhan #35
+		CHY_feilvbin #35
+		CHY_malaixiya #35
+		#1942~
+		CHY_xiaohuashenliguoshi #70
+		CHY_dongbeikuangchankaijue #35
+		CHY_yuandongchenshitouzi  #140
+		CHY_menguwenti #35
+		CHY_dianziguan #35
+		CHY_jisuanji #35
+		CHY_kexuejiaup #70
+		CHY_menguwenti #35
+		CHY_feijiyanjiu #35
+		CHY_kongzhanbuff #35
+		CHY_dafeijiyanjiu #35
+		CHY_hongzhabuff #35
+		CHY_kongjun1 #70
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+CHY_changmen_line_historical = {
+	name = "CHY_changmen_line_historical"
+	desc = "CHY_changmen_line_historical_desc"
+
+	allowed = {
+		original_tag = CHY
+	}
+	enable = {
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+		has_game_rule = {
+		rule = CHY_ai_behavior
+		option = CHY_changmen_line_focus
+		}
+	}
+	abort = {
+		OR = {
+			has_completed_focus = CHY_hangmu_buff
+		}
+		
+	}
+
+	ai_national_focuses = {
+		#CHY_changmen_line
+		#1936
+		CHY_jianshejihua #56
+		CHY_gulixiaozuofang #28
+		CHY_minggong_1 #28
+		CHY_jianzhujishugaijin
+		CHY_gongyejituan
+		CHY_bentukaifa
+		CHY_jungong_1 #28
+		CHY_shenchanjishu
+		CHY_gongyejishu
+		CHY_chongyindeweilai #35
+		CHY_changmen1
+		CHY_changmenminggong
+		CHY_zhongshiminshen
+		CHY_kuojianshenzhiyuan
+		CHY_chongyinshendaojiao
+		CHY_shouhu
+		CHY_zhujianweili #35
+		CHY_hepinyindao #35
+		CHY_changmenhuopao #35
+		CHY_changmentanke #35
+		CHY_changmenzhanlie #35
+		CHY_zhanliejianniang #35
+		CHY_hepinshouhuzhe 
+		CHY_duidonghuangyouhao #35
+		CHY_guihuanzhimindi 
+		CHY_yuanzhudonghuang #35
+		CHY_keyanhezuo_doh 
+		CHY_ziyuankaifahezuo_doh #35
+		CHY_yaoqindonghuang 
+		CHY_duibeilianyouhao 
+		CHY_kaifayuandong
+		CHY_keyanhezuo_bfl
+		CHY_duibaiyinyouhao 
+		CHY_keyanhezuo_byg 
+		CHY_duihuangjiayouhao 
+		CHY_keyanhezuo_huj 
+		CHY_lujun
+		CHY_jixiehuagaige
+		CHY_zhuangjia1
+		CHY_zhuangjia2
+		CHY_jixiehuazhuangbei1
+		CHY_jixiehuazhuangbei2
+		CHY_zhongshijixiehua
+		CHY_sakulajundui
+		CHY_haijun
+		CHY_zhanliejian
+		CHY_zhanliejian_buff
+		CHY_haijun_buff
+		CHY_hangmu
+		CHY_hangmu_buff
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}

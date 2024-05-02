@@ -1,0 +1,37 @@
+peace_ai_desires = {
+
+psh_mission = {
+        peace_action_type = take_states
+        enable = {
+            ROOT = { 
+				or = {
+				tag = CHY
+				tag = SAD
+				tag = TIX
+				tag = YUW
+				}
+			}
+        }
+
+        ai_desire = 1000
+    }
+
+psh_mission_2 = {
+        peace_action_type = { force_government liberate puppet }
+        enable = {
+            ROOT = { 
+				or = {
+				tag = CHY
+				tag = SAD
+				tag = TIX
+				tag = YUW
+				}
+			}
+        }
+
+        ai_desire = -1000
+    }
+	
+
+
+}

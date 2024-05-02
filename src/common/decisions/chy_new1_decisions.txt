@@ -1,0 +1,660 @@
+CHY_bentukaifa_decision = {
+
+    CHY_touzijijian = {
+		icon = generic_merge_plant_materiel
+		cost = 300
+		visible = {
+		has_completed_focus = CHY_bentukaifa
+		}
+		days_remove = 90
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 100
+		        date > 1939.1.1
+			}
+		}
+		available = {
+			any_owned_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+				building = infrastructure
+				size > 1
+				include_locked = yes
+			}
+		}
+		}
+		days_re_enable = 90
+		complete_effect = {
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 300
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+	}
+    CHY_touzimingong = {
+		icon = generic_factory
+		cost = 300
+		visible = {
+		has_completed_focus = CHY_bentukaifa
+		}
+		days_remove = 90
+		days_re_enable = 90
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 9990
+		        date > 1939.1.1
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 300
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+					building = industrial_complex
+					size > 2
+					include_locked = yes
+				}
+				}
+				add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+					building = industrial_complex
+					size > 2
+					include_locked = yes
+				}
+				}
+				add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	CHY_touzijungong = {
+		icon = generic_construction
+		cost = 300
+		visible = {
+		has_completed_focus = CHY_bentukaifa
+		}
+		days_remove = 90
+		days_re_enable = 90
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 9990
+		        date > 1939.1.1
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 300
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+					building = arms_factory
+					size > 2
+					include_locked = yes
+				}
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+					building = arms_factory
+					size > 2
+					include_locked = yes
+				}
+				}
+				add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	CHY_touzichuanwu = {
+		icon = generic_naval
+		cost = 300
+		visible = {
+		has_completed_focus = CHY_bentukaifa
+		}
+		days_remove = 90
+		days_re_enable = 90
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 9990
+		        date > 1939.1.1
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 300
+			}
+			
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+					building = dockyard
+					size > 3
+					include_locked = yes
+				}
+				}
+				add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+					building = dockyard
+					size > 3
+					include_locked = yes
+				}
+				}
+				add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	CHY_zhuanyimingong = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			any_state = {
+				is_core_of = ROOT
+				industrial_complex > 2
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 200
+			}
+			
+		}
+		days_remove = 30
+		days_re_enable = 90
+		cost = 200
+		remove_effect = {
+			random_owned_controlled_state = {
+			    limit = {
+					is_core_of = ROOT
+					industrial_complex > 2
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	CHY_zhuanyijungong = {
+		icon = generic_factory
+		priority = 4
+		available = {
+			any_state = {
+				is_core_of = ROOT
+				arms_factory > 2
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 200
+			}
+			
+		}
+		days_remove = 30
+		days_re_enable = 90
+		cost = 200
+		remove_effect = {
+			random_owned_controlled_state = {
+			    limit = {
+					is_core_of = ROOT
+					arms_factory > 2
+				}
+				remove_building = {
+					type = arms_factory
+					level = 2
+				}
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	CHY_genqiangdejianzhushu = {
+		icon = generic_factory
+		priority = 4
+		available = {
+			has_tech = construction4
+		}
+		days_remove = 30
+		fire_only_once = yes
+		cost = 200
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = CHY_building_plus
+			    add_idea = CHY_building_plus_up
+			}
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 200
+			}
+		} 
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+}
+
+CHY_duidonghuangzuozhan_category = {
+	chy_war1 = {
+		icon = ger_military_buildup
+		available = {
+			OR = {
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+				DOH = { is_subject_of = CHY }
+			}
+		}
+		visible = {
+			tag = CHY
+			has_country_flag = CHY_dohwar_1
+		}
+		activation = { 
+			has_country_flag = CHY_dohwar_1
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 90
+		timeout_effect = { 
+			country_event = CHY_new1_shijian.14
+			clr_country_flag = CHY_dohwar_1
+			set_country_flag = CHY_dohwar_2
+		}
+		complete_effect = { 
+			country_event = CHY_new1_shijian.12
+			clr_country_flag = CHY_dohwar_1
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_dohwar_buff_1
+					CHY_dohwar_buff_2
+					CHY_dohwar_buff_3
+					CHY_qinlvejihua
+				}
+			}
+		}
+	}
+	chy_war2 = {
+		icon = ger_military_buildup
+		available = {
+			OR = {
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+				DOH = { is_subject_of = CHY }
+			}
+			has_country_flag = CHY_dohwar_2
+		}
+		visible = {
+			tag = CHY
+			has_country_flag = CHY_dohwar_2
+		}
+		activation = {                    
+			has_country_flag = CHY_dohwar_2
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 370
+		timeout_effect = { 
+			country_event = CHY_new1_shijian.15
+			clr_country_flag = CHY_dohwar_2
+			set_country_flag = CHY_dohwar_3
+		}
+		complete_effect = { 
+			country_event = CHY_new1_shijian.12
+			clr_country_flag = CHY_dohwar_2
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_dohwar_buff_1
+					CHY_dohwar_buff_2
+					CHY_dohwar_buff_3
+					CHY_qinlvejihua
+				}
+			}
+		}
+	}
+	chy_win = {
+		icon = ger_military_buildup
+		visible = {
+			tag = CHY
+			has_country_flag = CHY_dohwar_3
+		}
+		available = {
+			OR = {
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+				DOH = { is_subject_of = CHY }
+			}
+			has_country_flag = CHY_dohwar_3
+		}
+		ai_will_do = {
+			factor = 10
+			
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			country_event = CHY_new1_shijian.12
+			clr_country_flag = CHY_dohwar_3
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_dohwar_buff_1
+					CHY_dohwar_buff_2
+					CHY_dohwar_buff_3
+					CHY_qinlvejihua
+				}
+			}
+		}
+	}
+	chy_lose = {
+		icon = ger_military_buildup
+		visible = {
+			tag = CHY
+			has_country_flag = CHY_dohwar_3
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				CHY = {
+					NOT = { controls_state = 328 }
+					NOT = { controls_state = 609 }
+					NOT = { controls_state = 716 }
+				}
+				add = 100
+			}
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			DOH = { country_event = CHY_new1_shijian.13 }
+			clr_country_flag = CHY_dohwar_3
+			custom_effect_tooltip = "移除所有对东煌宣战获得的BUFF"
+			hidden_effect = {
+				remove_ideas = {
+					CHY_dohwar_buff_1
+					CHY_dohwar_buff_2
+					CHY_dohwar_buff_3
+					CHY_qinlvejihua
+				}
+			}
+		}
+	}
+	chy_final_attack = {
+		icon = generic_prepare_civil_war
+		visible = {
+			tag = CHY
+			has_war_with = DOH
+		}
+		available = {
+			DOH = { surrender_progress > 0.95 }
+			OR = {
+				country_exists = DOH 
+				DOH = { has_capitulated = no }
+			}
+			has_war_with = DOH
+		}
+		days_remove = 90
+		targeted_modifier = {
+			tag = DOH
+			attack_bonus_against = 1.1
+			defense_bonus_against = 1.1
+		}
+		modifier = {
+			war_support_weekly = 0.005
+			weekly_casualties_war_support = 0.001
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
+
+CHY_taipinyangzhanzhen_category = {
+	chy_war_byg_1 = {
+		icon = ger_military_buildup
+		available = {
+			controls_state = 629
+			controls_state = 284 
+			controls_state = 285 
+			controls_state = 517 
+			controls_state = 335 
+			controls_state = 327 
+			controls_state = 423
+		}
+		visible = {
+			tag = CHY
+			has_country_flag = CHY_bygwar_1
+		}
+		activation = { 
+			has_country_flag = CHY_bygwar_1
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 720
+		timeout_effect = { 
+			add_war_support = -0.1
+			clr_country_flag = CHY_bygwar_1
+			set_country_flag = CHY_bygwar_2
+		}
+		complete_effect = { 
+			add_political_power = 500
+		}
+	}
+	chy_war_byg_win = {
+		icon = ger_military_buildup
+		visible = {
+			tag = CHY
+			has_war_with = BYG
+			has_war_with = HUJ
+		}
+		available = {
+		    controls_state = 629 
+			controls_state = 284 
+			controls_state = 285 
+			controls_state = 517 
+			controls_state = 335 
+			controls_state = 327 
+			controls_state = 423
+            BYG = { is_in_faction_with = HUJ }
+			OR = { 
+				has_country_flag = CHY_bygwar_1
+				has_country_flag = CHY_bygwar_2 
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			HUJ = { country_event = CHY_new1_shijian.23 }			
+			clr_country_flag = CHY_bygwar_2
+			clr_country_flag = CHY_bygwar_1
+		}
+	}
+}
+
+CHY_hepinshouhuzhe_category = {
+	chy_hepinshouhu = {
+		
+		priority = 10
+		icon = jian
+		target_trigger = {
+			FROM = {
+			    has_added_tension_amount > 20
+				has_offensive_war = yes
+				not = { has_country_flag = chy_junshixindong }
+				not = { has_war_with = CHY }
+			}
+		}
+		visible = {
+			country_exists = FROM 
+		}
+		available = {
+			CHY = {
+				is_subject = no
+			}
+			FROM = { 
+				has_added_tension_amount > 20
+				has_offensive_war = yes
+				not = { has_country_flag = chy_junshixindong }
+				not = { has_war_with = CHY }
+			}
+		}
+		visible = {
+			CHY = { has_completed_focus = CHY_hepinshouhuzhe } 
+		}
+		
+		ai_will_do = {
+			base = 5
+			modifier = {
+				FROM = { 
+					is_ai = no
+				}
+				factor = 100000
+			}
+			modifier = {
+				FROM = { 
+					tag = TIX
+					has_government = fascism
+					is_ai = yes
+				}
+				CHY = { 
+					has_government = fascism
+				}
+				factor = 0
+			}
+		}
+	 
+		days_remove = 30
+		cost = 200
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			FROM = {
+				set_country_flag = chy_junshixindong
+				country_event = CHY_new1_shijian.31
+			}
+		}
+		
+	}
+}
+

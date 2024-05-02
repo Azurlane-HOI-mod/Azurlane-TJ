@@ -1,0 +1,576 @@
+﻿add_namespace = SIR_event
+country_event = {
+	id = SIR_event.101
+	title = SIR_event.101.t
+	desc = SIR_event.101.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = SIR_event.101.a
+		ai_chance = {
+			factor = 5
+		}
+		capital_scope = {
+			add_extra_state_shared_building_slots = 6
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes 
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes 
+			}
+		}
+	}
+}
+country_event = {
+	id = SIR_event.1
+	title = SIR_event.1.t
+	desc = SIR_event.1.desc
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = SIR_event.1.a
+		ai_chance = {
+			factor = 100
+		}
+		set_country_flag = SIR_jiaotiaokuxing_yongjiu
+		if = {
+			limit = {
+				not = { has_idea = SIR_jiaotiaokuxing }
+			}
+			add_ideas = SIR_jiaotiaokuxing
+		}
+	}
+	option = {
+		name = SIR_event.1.b
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = SIR_jiaotiaogulishengyu_yongjiu
+		if = {
+			limit = {
+				not = { has_idea = SIR_jiaotiaogulishengyu }
+			}
+			add_ideas = SIR_jiaotiaogulishengyu
+		}
+	}
+	option = {
+		name = SIR_event.1.c
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = SIR_jiaotiaonulizhi_yongjiu
+		if = {
+			limit = {
+				not = { has_idea = SIR_jiaotiaonulizhi }
+			}
+			add_ideas = SIR_jiaotiaonulizhi
+		}
+		
+	}
+	option = {
+		name = SIR_event.1.d
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = SIR_jiaotiaotuichongkexue_yongjiu
+		if = {
+			limit = {
+				not = { has_idea = SIR_jiaotiaotuichongkexue }
+			}
+			add_ideas = SIR_jiaotiaotuichongkexue
+		}
+	}
+}
+country_event = {
+	id = SIR_event.2
+	title = SIR_event.2.t
+	desc = SIR_event.2.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	immediate = {
+		randomize_variable = {
+			var = random_qiangjie_wz
+			distribution = uniform
+			min = 5000
+			max = 30000
+		}
+		round_variable = random_qiangjie_wz
+	}
+	option = {
+		name = SIR_event.2.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = SIR_dachuan_get
+		add_to_variable = { wz_sl = random_qiangjie_wz }
+	}
+}
+country_event = {
+	id = SIR_event.3
+	title = SIR_event.3.t 
+	desc = SIR_event.3.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	immediate = {
+		randomize_variable = {
+			var = random_qiangjie_zs
+			distribution = uniform
+			min = 50
+			max = 300
+		}
+		round_variable = random_qiangjie_zs
+	}
+	option = {
+		name = SIR_event.3.a
+		ai_chance = {
+			factor = 5
+		}
+		add_to_variable = { wz_sl = 4000 }
+		add_to_variable = { zs_sl = random_qiangjie_zs }
+	}
+}
+country_event = {
+	id = SIR_event.4
+	title = SIR_event.4.t
+	desc = SIR_event.4.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	immediate = {
+		randomize_variable = {
+			var = random_buqiang
+			distribution = uniform
+			min = 20000
+			max = 50000
+		}
+		randomize_variable = {
+			var = random_zhiyuan
+			distribution = uniform
+			min = -2000
+			max = 2000
+		}
+		clamp_variable = {
+			var = random_zhiyuan
+			min = 0
+			max = 2000
+		}
+		randomize_variable = {
+			var = random_huopao
+			distribution = uniform
+			min = 0
+			max = 2000
+		}
+		randomize_variable = {
+			var = random_kache
+			distribution = uniform
+			min = -5000
+			max = 5000
+		}
+		clamp_variable = {
+			var = random_kache
+			min = 0
+			max = 5000
+		}
+		round_variable = random_buqiang
+		round_variable = random_kache
+		round_variable = random_huopao
+		round_variable = random_zhiyuan
+	}
+	option = {
+		name = SIR_event.4.a
+		ai_chance = {
+			factor = 5
+		}
+		
+		meta_effect = {
+			text = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = [random_buqiang]
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = [random_zhiyuan]
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = [random_huopao]
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = [random_kache]
+				}
+			}
+			
+			random_huopao = "[?random_huopao]"
+			random_buqiang = "[?random_buqiang]"
+			random_zhiyuan = "[?random_zhiyuan]"
+			random_kache = "[?motorized_equipment]"
+		}
+		
+	}
+}
+country_event = {
+	id = SIR_event.5
+	title = SIR_event.5.t
+	desc = SIR_event.5.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	immediate = {
+		randomize_variable = {
+			var = random_mingong
+			distribution = uniform
+			min = -10
+			max = 10
+		}
+		clamp_variable = {
+			var = random_mingong
+			min = 0
+			max = 10
+		}
+		randomize_variable = {
+			var = random_jungong
+			distribution = uniform
+			min = 1
+			max = 10
+		}
+		round_variable = random_mingong
+		round_variable = random_jungong
+
+	}
+	option = {
+		name = SIR_event.5.a
+		ai_chance = {
+			factor = 5
+		}
+
+		
+		meta_effect = {
+			text = {
+				add_offsite_building = { type = industrial_complex level = [random_mingong] }
+				add_offsite_building = { type = arms_factory level = [random_jungong] }
+			}
+			random_mingong = "[?random_mingong]"
+			random_jungong = "[?random_jungong]"
+		}
+		
+	}
+}
+country_event = {
+	id = SIR_event.6
+	title = SIR_event.6.t
+	desc = SIR_event.6.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = SIR_event.6.a 
+		ai_chance = {
+			factor = 5
+		}
+
+		add_equipment_to_stockpile = {
+			type = convoy
+			amount = 5
+		}
+		add_manpower = 500
+		
+	}
+}
+country_event = {
+	id = SIR_event.7
+	title = SIR_event.7.t
+	desc = SIR_event.7.d
+	picture = aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = "SIR_event.7.a"
+		SIR = {
+		annex_country = { target = ROOT transfer_troops = yes }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "SIR_event.7.b"
+		ROOT = {
+		declare_war_on = {
+			target = SIR
+			type = annex_everything
+		}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = SIR_event.8
+	title = SIR_event.8.t
+	desc = SIR_event.8.d
+	picture = aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = "SIR_event.8.a"
+		SIR = {
+		transfer_state = 687
+		transfer_state = 691
+		}
+		126 = {
+		add_resource = {
+            type = aluminium
+            amount = 48
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+country_event = {
+	id = SIR_event.9
+	title = SIR_event.9.t
+	desc = SIR_event.9.d
+	picture = aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = "SIR_event.9.a"
+		SIR = {
+		transfer_state = 310
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+country_event = {
+	id = SIR_event.10
+	title = SIR_event.10.t
+	desc = SIR_event.10.d
+	picture = aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "SIR_event.10.a"
+		white_peace = { 
+			tag = BLI
+		}
+		SIR = {
+		annex_country = { target = BLI transfer_troops = no }
+		}
+		add_ideas = SIR_kejironghe
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = SIR_event.11
+	title = SIR_event.11.t
+	desc = SIR_event.11.desc
+	picture = aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = "SIR_event.11.a"
+		SIR = { set_capital = { state = 278 }  }
+		278 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "SIR_event.11.b"
+		SIR = { set_capital = { state = 500 } }
+		500 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "SIR_event.11.c"
+		SIR = { set_capital = { state = 279 } }
+		279 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "SIR_event.11.d"
+		SIR = { set_capital = { state = 300 } }
+		300 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = "SIR_event.11.e"
+		SIR = { set_capital = { state = 303 } }
+		303 = {
+        add_resource = {
+            type = tungsten
+            amount = 300
+          } 
+        add_resource = {
+            type = chromium
+            amount = 300
+          }
+        add_resource = {
+            type = oil
+            amount = 300
+          }
+        add_resource = {
+            type = rubber
+            amount = 300
+          }
+		add_resource = {
+            type = steel
+            amount = 300
+          }
+		add_resource = {
+            type = aluminium
+            amount = 300
+          }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = SIR_event.12
+	title = SIR_event.12.t
+	desc = SIR_event.12.d
+	picture = aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "SIR_event.12.a"
+		SIR = {
+		declare_war_on = {
+			target = BLI
+			type = annex_everything
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "SIR_event.12.b"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

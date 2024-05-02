@@ -1,0 +1,59 @@
+scripted_gui = {
+
+	az_xinxiban_open = {
+		window_name = "az_xinxiban_open_button_window"
+		context_type = player_context
+		visible = {
+			NOT = { has_country_flag = open_az_xinxiban_window }
+		}
+		effects = {
+			az_xinxiban_open_button_click = {
+
+				set_country_flag = open_az_xinxiban_window
+				
+				 
+					
+			}
+		}
+	}
+	az_xinxiban_window_guis = {
+		window_name = "az_xinxiban_window"
+		context_type = player_context
+		visible = {
+			has_country_flag = open_az_xinxiban_window
+		}
+		effects = {
+			az_xinxiban_close_button_click = { 
+				clr_country_flag = open_az_xinxiban_window
+				
+			}
+			az_xinxiban_openstartwindow_click = {
+				set_country_flag = az_startwindow_open
+			}
+			az_xmp_xinxiban_button_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_az_xmp_main_window }
+					}
+					set_country_flag = open_az_xmp_main_window
+				}
+				else = {
+					clr_country_flag = open_az_xmp_main_window
+				}
+			}
+			az_jhd_xinxiban_button_click = {	
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_jh_store_main_window }
+					}
+					set_country_flag = open_jh_store_main_window
+				}
+				else = {
+					clr_country_flag = open_jh_store_main_window
+				}
+			}
+			
+		}
+	}
+	
+}

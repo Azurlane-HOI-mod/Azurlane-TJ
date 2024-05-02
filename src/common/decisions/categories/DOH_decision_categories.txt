@@ -1,0 +1,110 @@
+DOH_decision_category = {
+	icon = category_gre_faction_management
+	#picture = GFX_focus_chi_one_china_policy
+	scripted_gui = az_doh_gui_decision_window_guis 
+	priority = 1000
+	visible = {
+		tag = DOH
+	}
+	allowed = {
+		tag = DOH
+	}
+	available = {
+		
+	}
+}
+DOH_decision_debug_category = {
+	icon = category_gre_faction_management
+	#picture = GFX_focus_chi_one_china_policy
+	priority = 997
+	visible = {
+		tag = DOH
+		is_debug = yes
+	}
+	allowed = {
+		tag = DOH
+	}
+	available = {
+		
+	}
+}
+DOH_industry_decision_category = {
+	icon = category_gre_faction_management
+	picture = GFX_doh_civ_equipment_medium
+	priority = 999
+	visible = {
+		OR = {
+			AND = {
+				tag = DOH
+				is_debug = yes
+			}
+			has_completed_focus = DOH_junmingronghe
+			has_equipment = {
+				doh_civ_equipment > 0
+			}
+			# has_equipment = {
+			# 	doh_civ_naval_equipment_1 > 1
+			# }
+		}
+	}
+	allowed = {
+		
+	}
+	available = {
+		
+	}
+}
+DOH_duiwaitouzi_decision_category = {
+	icon = category_gre_faction_management
+	priority = 998
+	visible = {
+		tag = DOH
+		OR = {
+			has_completed_focus = DOH_junmingronghe_duiwaishuchu
+			is_debug = yes
+		}
+	}
+	allowed = {
+
+	}
+	available = {
+		
+	}
+}
+
+DOH_chaogong_decision_category = {
+	icon = category_gre_faction_management
+	priority = 997
+	visible = {
+		OR = {
+			tag = DOH
+			AND = {
+				has_autonomy_state = doh_fanshu
+				DOH = {
+					has_completed_focus = DOH_chongyingdechaogong
+				}
+			}
+		}
+	}
+	allowed = {
+
+	}
+	available = {
+		
+	}
+}
+
+# DOH_xianjinjianniangdebifenggang_decision_category = {
+# 	icon = category_gre_faction_management
+# 	priority = 996
+# 	visible = {
+# 		tag = DOH
+# 		has_completed_focus = DOH_hongsedengta
+# 	}
+# 	allowed = {
+		
+# 	}
+# 	available = {
+		
+# 	}
+# }

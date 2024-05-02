@@ -1,0 +1,436 @@
+guiTypes = {
+    containerWindowType = {
+		name = "az_photowindow_open" 
+		Orientation = UPPER_RIGHT
+		position = { x = -560 y = 4 } 
+    
+		buttonType = {
+			name = "az_photowindow_open_button"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_smallbutton3" 
+			buttonFont = "hoi_18" 
+			buttonText = az_photowindow_text 
+			pdx_tooltip = az_photowindow_tooltip
+			clicksound = click_default   
+		}
+	} 
+	containerWindowType = {
+        name = "az_photowindow"
+		position = { x = -600 y = -370 }
+		size = { width = 1200 height = 800 }
+		moveable = yes
+		orientation = CENTER
+ 
+		background = {
+			name = "GFX_az_pt_start_bigwindow_bg"
+			spriteType = GFX_az_pt_start_bigwindow_bg
+		}
+		buttonType = {
+			name = "az_pt_goto_1"
+			position = { x = 110 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "1"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_2"
+			position = { x = 140 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "2"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_3"
+			position = { x = 170 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "3"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_4"
+			position = { x = 200 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "4"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_5"
+			position = { x = 230 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "5"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_6"
+			position = { x = 260 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "6"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_7"
+			position = { x = 290 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "7"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_8"
+			position = { x = 320 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "8"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_9"
+			position = { x = 350 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "9"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_goto_10" 
+			position = { x = 380 y = 5 } 
+			quadTextureSprite ="GFX_az_pt_button_shuzikuang"
+			buttonText = "10"
+			buttonFont = "hoi_24header" 
+			Orientation = UPPER_LEFT     
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_page_up"
+			position = { x = 17 y = -700 } 
+			quadTextureSprite ="GFX_az_pt_button_pageup"
+			buttonFont = "Main_14_black"
+			Orientation = LOWER_LEFT 
+			clicksound = click_close		
+		} 
+		buttonType = {
+			name = "az_pt_page_down"
+			position = { x = 17 y = -550 } 
+			quadTextureSprite ="GFX_az_pt_button_pagedown"
+			buttonFont = "Main_14_black"
+			Orientation = LOWER_LEFT 
+			clicksound = click_close		
+		}
+		buttonType = {
+			name = "az_pt_photowindow_close"
+			position = { x = 23 y = -760 }
+			quadTextureSprite ="GFX_az_close_button1"
+			shortcut = "ESCAPE"
+			Orientation = LOWER_LEFT  
+			clicksound = click_close
+			
+		}
+		buttonType = {
+			name = "az_pt_photo_finish"
+			position = { x = -50 y = 300 } 
+			quadTextureSprite ="GFX_az_pt_photo_finish"
+			buttonFont = "Main_14_black"
+			Orientation = CENTER 
+			clicksound = click_close		
+		}
+		instantTextboxType = {
+			name = "az_pt_page"
+			position = { x = -90 y = 45 }  
+			Orientation = UPPER_RIGHT
+			font = "hoi_20b"
+			text = "az_pt_page"
+			maxWidth = 50
+			maxHeight = 50
+			format = left
+			fixedsize=yes
+		}
+
+
+
+        #####图像部分#####
+		iconType = {
+			name = "az_PT_1"   
+			position = { x= 110 y = 70 }
+			spriteType = "GFX_az_PT_1"   
+			Orientation = UPPER_CENTER
+			 
+		}
+		iconType = {
+			name = "az_pt_000"   
+			position = { x= -490 y = -330 }			 
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_000_tooltip" 
+		}
+        iconType = {
+			name = "az_pt_001"   
+			position = { x= -290 y = -330 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_001_tooltip" 
+		}
+        iconType = {
+			name = "az_pt_002"   
+			position = { x= -90 y = -330 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_002_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_003"   
+			position = { x= 110 y = -330 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_003_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_004"   
+			position = { x= 310 y = -330 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_004_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_005"   
+			position = { x= -490 y = -130 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_005_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_006"   
+			position = { x= -290 y = -130 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_006_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_007"   
+			position = { x= -90 y = -130 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_007_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_008"   
+			position = { x= 110 y = -130 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_008_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_009"   
+			position = { x= 310 y = -130 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_009_tooltip" 
+		}
+        iconType = {
+			name = "az_pt_010"   
+			position = { x= -490 y = 70 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_010_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_011"   
+			position = { x= -290 y = 70 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_011_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_012"   
+			position = { x= -90 y = 70 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_012_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_013"   
+			position = { x= 110 y = 70 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_013_tooltip" 
+		}
+		iconType = {
+			name = "az_pt_014"   
+			position = { x= 310 y = 70 }
+			Orientation = CENTER
+			pdx_tooltip = "az_pt_014_tooltip" 
+		}
+		
+	}
+	#寻找类
+    containerWindowType = {
+		name = "az_pt_1_000_f" 
+		Orientation = UPPER_RIGHT
+		position = { x = -590 y = 8 } 		
+		buttonType = {
+			name = "az_pt_1_000_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_001_f" 
+		Orientation = LOWER_LEFT
+		position = { x = 0 y = 0 } 		
+		buttonType = {
+			name = "az_pt_1_001_f"
+			position = { x = 80 y = -158 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_002_f" 
+		Orientation = UPPER_LEFT
+		position = { x = 135 y = 146 } 		
+		buttonType = {
+			name = "az_pt_1_002_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_003_f" 
+		Orientation = UPPER_LEFT
+		position = { x = 90 y = 50 } 		
+		buttonType = {
+			name = "az_pt_1_003_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_004_f" 
+		Orientation = CENTER_UP
+		position = { x = -15 y = 50 } 		
+		buttonType = {
+			name = "az_pt_1_004_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_005_f" 
+		Orientation = LOWER_RIGHT
+		position = { x = 0 y = 0 } 		
+		buttonType = {
+			name = "az_pt_1_005_f"
+			position = { x = -26 y = -35 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_006_f" 
+		Orientation = CENTER
+		position = { x = 50 y = 985 } 		
+		buttonType = {
+			name = "az_pt_1_006_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_007_f" 
+		Orientation = CENTER_DOWN
+		position = { x = -60 y = -40 } 		
+		buttonType = {
+			name = "az_pt_1_007_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_008_f" 
+		Orientation = CENTER_UP
+		position = { x = 10 y = 10 } 		
+		buttonType = {
+			name = "az_pt_1_008_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_009_f" 
+		Orientation = UPPER_LEFT
+		position = { x = 190 y = 260 } 		
+		buttonType = {
+			name = "az_pt_1_009_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_010_f" 
+		Orientation = UPPER_RIGHT
+		position = { x = -26 y = 45 } 		
+		buttonType = {
+			name = "az_pt_1_010_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_011_f" 
+		Orientation = UPPER_LEFT
+		position = { x = 18 y = 167 } 		
+		buttonType = {
+			name = "az_pt_1_011_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_012_f" 
+		Orientation = CENTER
+		position = { x = 145 y = 63 } 		
+		buttonType = {
+			name = "az_pt_1_012_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_013_f" 
+		Orientation = UPPER_LEFT
+		position = { x = 200 y = 0 } 		
+		buttonType = {
+			name = "az_pt_1_013_f"
+			position = { x = -120 y = 40 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+	containerWindowType = {
+		name = "az_pt_1_014_f"
+		Orientation = CENTER
+		position = { x = 225 y = -10 } 		
+		buttonType = {
+			name = "az_pt_1_014_f"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_az_slider_button" 
+			buttonFont = "hoi_18" 			  
+		}
+	} 
+
+
+
+
+	
+}

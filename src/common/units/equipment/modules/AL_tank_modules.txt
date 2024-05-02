@@ -1,0 +1,155 @@
+equipment_modules = {
+
+### Engine Types
+    #天启坦克引擎（高可靠加速度但高耗油，提供部分buff）
+	tank_apocalypse_engine = {
+		abbreviation = "ape"
+		category = tank_engine_type
+		sfx = sfx_ui_sd_module_engine
+
+		add_stats = {
+			build_cost_ic = 2.5 
+			fuel_consumption = 6
+			reliability = 0.35
+			maximum_speed = 1.5
+		}
+		multiply_stats = { 
+            breakthrough = 0.05
+			defense = 0.05
+			maximum_speed = 0.05
+		}
+
+	}
+
+
+	###Armor Types
+    #天启坦克装甲(加成高
+	
+	tank_apocalypse_armor = {
+		abbreviation = "apa"
+		category = tank_armor_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+		    defense = 5
+			breakthrough = 5
+			armor_value = 10
+		}
+		xp_cost = 10
+
+		multiply_stats = {
+			build_cost_ic = 0.05
+			armor_value = 0.70
+			hardness = 0.10
+		}
+		build_cost_resources = {
+			steel = 16
+		}
+	}
+
+
+	###Suspension Types
+    #天启坦克悬挂(贵一点但加稳定
+	tank_apocalypse_suspension = {
+		abbreviation = "aps"
+		category = tank_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+			build_cost_ic = 3.0
+			reliability = 0.40
+			breakthrough = 2
+		}
+		multiply_stats = {
+			
+		}
+
+		build_cost_resources = {
+			tungsten = 2
+			chromium = 2
+			steel = 4
+		}
+	}
+
+
+	###Turret Types - light
+	### turrets are split by chassis to make it easier to control which guns they can mount
+    #天启坦克炮台(贵一点但加稳定
+	tank_apocalypse_turret = {
+		abbreviation = "apt"
+		category = tank_heavy_turret_type
+		sfx = sfx_ui_sd_module_turret
+		forbid_equipment_type = anti_air
+
+		allowed_module_categories = {
+			main_armament_slot = {
+				tank_medium_main_armament
+				tank_heavy_main_armament
+				tank_super_heavy_main_armament
+			}
+		}
+
+		xp_cost = 5
+		add_stats = {
+			build_cost_ic = 8
+			reliability = 0.35
+			breakthrough = 15
+			defense = 5
+		}
+
+		multiply_stats = {
+			breakthrough = 0.05
+			defense = 0.05
+		}
+
+		build_cost_resources = {
+			tungsten = 2
+			chromium = 2
+			steel = 5
+		}
+
+	}
+
+
+
+	###Weapons
+
+	tank_apocalypse_heavy_cannon = {
+		abbreviation = "apc"
+		category = tank_super_heavy_main_armament
+		sfx = sfx_ui_sd_module_turret
+		allow_equipment_type = anti_tank
+		allow_equipment_type = artillery
+
+		add_stats = {
+			soft_attack = 135
+			hard_attack = 95
+			ap_attack = 375
+			air_attack = 15
+			breakthrough = 45
+			defense = 20
+			build_cost_ic = 25
+			maximum_speed = -2.0
+			reliability = -1.10
+		}
+		multiply_stats = {
+			soft_attack = 0.10
+			hard_attack = 0.05
+			breakthrough = 0.15
+			defense = 0.15
+		}
+
+		xp_cost = 20
+		build_cost_resources = {
+			tungsten = 6
+			chromium = 4
+			steel = 10
+			aluminium = 2
+		}
+	}
+
+
+	###Special Modules
+
+
+}

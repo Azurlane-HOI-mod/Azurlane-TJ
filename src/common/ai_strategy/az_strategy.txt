@@ -1,0 +1,92 @@
+
+az_ai_jianniangshi = {
+	enable = {
+		OR = {
+			tag = YUW
+		}
+		date > 1938.1.1
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 8
+	}
+
+}
+az_ai_highered_armored_production0 = {
+	enable = {
+		AND = {
+			OR = {
+				tag = WEX
+			}
+			num_of_military_factories > 55
+			
+		}
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 25
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 10 
+	} 
+}
+az_ai_highered_armored_production1 = {
+	enable = {
+		AND = {
+			OR = {
+				tag = WEX
+			}
+			num_of_military_factories > 109
+			
+		}
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 50 
+	} 
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -30
+	}
+}
+az_ai_highered_armored_production2 = {
+	enable = {
+		AND = {
+			OR = {
+				tag = WEX
+			}
+			num_of_military_factories > 209
+			
+		}
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 70
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 100 
+	} 
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -80
+	}
+}

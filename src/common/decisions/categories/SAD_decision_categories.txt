@@ -1,0 +1,22 @@
+sadkeyanhezuo_category = {
+	icon = category_generic
+	priority = 100
+	visible = {
+		has_global_flag = SAD_hezuoyanfa_on
+		OR = {
+			tag = SAD
+			tag = TIX
+		}
+	}
+}
+sad_guofangjianshe_category = {
+	icon = category_generic
+	picture = GFX_decision_saddecision
+	priority = 101
+	visible = {
+		AND = {	
+			tag = SAD
+			has_completed_focus = SAD_zhengzhijundui
+		}
+	}
+}

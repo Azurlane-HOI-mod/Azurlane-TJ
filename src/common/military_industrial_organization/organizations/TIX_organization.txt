@@ -1,0 +1,651 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+
+TIX_porsche_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_porsche
+	
+	allowed = {	
+		tag = TIX 
+	}
+	
+	add_trait = { 
+		token = TIX_mio_tiexuezhuangjiagongzao
+		name = TIX_mio_tiexuezhuangjiagongzao
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_technology
+		special_trait_background = yes
+
+		position = { x=-1 y=1 }  
+		relative_position_id = generic_mio_trait_wide_tracks
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = TIX_fazhanzhuangjia
+			}
+		}
+		
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			armor_value = 0.05
+			maximum_speed = 0.05
+			reliability = 0.15
+			breakthrough = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+}
+
+TIX_henschel_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_henschel
+	
+	allowed = {	
+		tag = TIX 
+	}
+	
+	add_trait = { 
+		token = TIX_mio_tiexuezhuangjiagongzao_2
+		name = TIX_mio_tiexuezhuangjiagongzao
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_technology
+		special_trait_background = yes
+
+		position = { x=1 y=1 }  
+		relative_position_id = generic_mio_armor_hardening_process
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = TIX_fazhanzhuangjia
+			}
+		}
+		
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			armor_value = 0.05
+			maximum_speed = 0.05
+			reliability = 0.15
+			breakthrough = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+	
+	add_trait = { 
+		token = TIX_mio_danbingchaoshikongzhuangzhi
+		name = TIX_mio_danbingchaoshikongzhuangzhi
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_quality
+		special_trait_background = yes
+
+		position = { x=0 y=1 }  
+		relative_position_id = TIX_mio_tiexuezhuangjiagongzao_2
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				or = {
+				has_completed_focus = TIX_sairenjiehe
+				has_completed_focus = TIX_wanquansairen
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			armor_value = 0.15
+			maximum_speed = 0.5
+			reliability = -0.1
+		}
+		production_bonus = {
+			production_cost_factor = 0.25
+		}
+		ai_will_do = {
+			base = 0
+		}
+	}
+}
+
+TIX_man_organization = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_GER_MAN
+	
+	allowed = {	
+	    tag = TIX 
+	}
+	
+	add_trait = { 
+		token = TIX_mio_tiexuezhuangjiagongzao_3
+		name = TIX_mio_tiexuezhuangjiagongzao
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_technology
+		special_trait_background = yes
+
+		position = { x=0 y=2 }  
+		relative_position_id = generic_mio_trait_improved_suspension
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = TIX_fazhanzhuangjia
+			}
+		}
+		
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			armor_value = 0.05
+			maximum_speed = 0.05
+			reliability = 0.15
+			breakthrough = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+#Benz 
+TIX_daimler_benz_organization = {
+	include = generic_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_2 # TODO change
+	
+	allowed = {	
+		tag = TIX 
+	}
+
+	tree_header_text = {
+		text = mio_header_tank_construction
+		x = 3
+	}
+
+	tree_header_text = {
+		text = mio_header_equipment_and_specialization
+		x = 7
+	}
+
+	tree_header_text = {
+		text = mio_header_armor
+		x = 9
+	}
+	initial_trait = {
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+	}
+
+	add_trait = {  
+		token = TIX_mio_trait_hotrolled_armor
+		name = TIX_mio_trait_hotrolled_armor
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+		special_trait_background = yes
+
+		limit_to_equipment_type = { light_tank_chassis medium_tank_chassis }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+		}
+
+		position = { x=9 y=0 }  
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 1.5
+				date > 1937.1.1
+			}
+		}
+	}
+
+	add_trait = {
+		token = TIX_mio_trait_multilayer_armour
+		name = TIX_mio_trait_multilayer_armour
+		icon = GFX_generic_mio_trait_icon_armor_value
+		special_trait_background = yes
+
+		any_parent = { TIX_mio_trait_hotrolled_armor }
+		limit_to_equipment_type = { light_tank_chassis medium_tank_chassis }
+		equipment_bonus = {
+			armor_value = 0.1
+		} 
+
+		position = { x=9 y=2 }  
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 1.5
+				date > 1937.1.1
+			}
+		}
+	}
+	
+	add_trait = { 
+		token = TIX_mio_tiexuezhuangjiagongzao_4
+		name = TIX_mio_tiexuezhuangjiagongzao
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_technology
+		special_trait_background = yes
+
+		position = { x=0 y=1 }  
+		relative_position_id = TIX_mio_trait_multilayer_armour
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = TIX_fazhanzhuangjia
+			}
+		}
+		
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			armor_value = 0.05
+			maximum_speed = 0.05
+			reliability = 0.15
+			breakthrough = 0.05
+		}
+		production_bonus = {
+			production_cost_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+TIX_germaniawerft_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_germaniawerft
+	
+	allowed = {	
+		tag = TIX 
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+}
+
+TIX_blohm_und_voss_organization = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_blohm_und_voss
+	
+	allowed = {	
+		tag = TIX 
+	}
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=9 y=4 }  
+
+		available = {
+			FROM = { OR = { tag = BLI has_country_flag =  buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+TIX_messerschmitt_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_messerschmitt
+	
+	allowed = {	
+		tag = TIX
+	}
+
+	equipment_type = {
+		mio_cat_eq_all_small_plane
+	}
+
+	add_trait = {
+		token = TIX_mio_trait_maintenance_first_design
+		name = TIX_mio_trait_maintenance_first_design
+
+		icon = GFX_generic_mio_department_icon_plane_fighter_line_efficiency
+		special_trait_background = yes
+		
+		position = { x=-2 y=1 }
+		relative_position_id = generic_mio_trait_expanded_production_facilities
+
+		all_parents = { generic_mio_trait_expanded_production_facilities }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	add_trait = {
+		token = TIX_mio_trait_fuselage_based_weapons
+		name = TIX_mio_trait_fuselage_based_weapons
+
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+		special_trait_background = yes
+		
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_gun_pods
+
+		any_parent = { generic_mio_trait_heavier_airframe generic_mio_trait_maximum_wing_loads generic_mio_trait_gun_pods }
+
+		equipment_bonus = {
+			air_attack = 0.05
+			air_agility = 0.05
+		} 
+	}
+}
+
+TIX_junkers_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_junkers
+	
+	allowed = {	 
+		tag = TIX 
+	}
+
+	add_trait = {
+		token = TIX_mio_trait_psychological_warfare
+		name = TIX_mio_trait_psychological_warfare
+
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+		special_trait_background = yes
+		
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_reinforced_wings
+
+		equipment_bonus = {
+			fuel_consumption = -0.05
+		} 
+	}
+
+}
+
+TIX_focke_wulf_organization = {
+	include = generic_multi_role_aircraft_organization
+	icon = GFX_idea_focke_wulf
+	
+	allowed = {	
+		tag = TIX 
+	}
+}
+
+TIX_heinkel_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_heinkel
+	
+	allowed = {	
+		tag = TIX 
+	}
+}
+
+TIX_dornier_organization = {
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_dornier
+	
+	allowed = {	
+		tag = TIX 
+	}
+}
+
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+TIX_rheinmetall_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_rheinmetall
+	
+	allowed = {	
+		tag = TIX 
+	}
+}
+
+TIX_mauser_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_mauser
+	
+	allowed = {	 
+		tag = TIX 
+	}
+	add_trait = { 
+		token = TIX_mio_guanglengwuqi
+		name = TIX_mio_guanglengwuqi
+		icon = GFX_generic_mio_department_icon_infantry_quality
+		special_trait_background = yes
+
+		position = { x=-1 y=1 }  
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = TIX_tiexuebubingban
+			}
+		}
+		
+		equipment_bonus = {
+			soft_attack = 0.15
+			hard_attack = 0.05
+			breakthrough = 0.15
+		}
+		production_bonus = {
+			production_cost_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+TIX_opel_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_opel
+	
+	allowed = {	
+		tag = TIX
+	}
+
+	add_trait = { 
+		token = TIX_engine_up
+		name = TIX_engine_up
+		icon = GFX_generic_mio_department_icon_motorized_mechanized_production
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+		
+		organization_modifier = {
+			navy_fuel_consumption_factor = -0.25
+			army_fuel_consumption_factor = -0.25
+			air_fuel_consumption_factor = -0.25
+		}
+
+	}
+}

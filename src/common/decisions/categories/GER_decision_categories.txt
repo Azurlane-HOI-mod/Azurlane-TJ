@@ -1,0 +1,53 @@
+AUS_pl_cat = {
+	icon = generic_research
+	priority = 100
+	allowed = {
+		original_tag = XGE
+	}
+	visible = {
+		#has_country_flag = AUS_pl_cat
+	}
+	scripted_gui = AUS_pl_cat_gui
+}
+
+GER_special_tank = {
+	priority = 90
+	icon = GFX_science_decision
+	allowed = {
+		tag = XGE
+	}
+	visible = {
+	}
+}
+
+GER_LIVE_SPARE = {
+	priority = 150
+	icon = GFX_decision_category_gre_faction_management
+	allowed = {
+		tag = XGE
+	}
+	visible = {
+	}
+}
+
+GER_war_plan = {
+	priority = 200
+	icon = GFX_decision_category_saf_anti_colonialist_crusade
+	allowed = {
+		tag = XGE
+	}
+	visible = {
+		has_completed_focus = XGE_For_the_Motherland_For_the_Lisha
+	}
+}
+#重生之眼
+GER_Eye_of_Rebirth_Project = {
+	priority = 999
+	allowed = {
+		tag = XGE
+	}
+	visible = {
+		has_completed_focus = XGE_She_will_return
+	}
+	scripted_gui = GER_Eye_of_Rebirth_Project_window
+}

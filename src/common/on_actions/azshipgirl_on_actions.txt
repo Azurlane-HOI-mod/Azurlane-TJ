@@ -1,0 +1,315 @@
+on_actions = {
+	on_startup = { 
+		effect = { 
+			set_global_flag = MOD_azurlane_tianjiangjianniang
+			#替换小国国策
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = AZ_generic_guocetihuan
+						option = AZ_generic_guocetihuan_on
+					}
+				}
+				# every_country = {
+				# 	if = {
+				# 		limit = { is_ai = NO }
+				# 		country_event = { id = azstartevent.8 days = 2 }
+				# 	}
+				# }
+				every_country = {
+					limit = {
+						is_ai = yes
+						not_shijianniangguojia_trigger = yes
+					}
+						
+					load_focus_tree = generic_focus	
+					
+				}
+			}
+			#AI造民工 #买不到资源可以通过强制AI开自贸解决
+			every_country = {
+				limit = {
+					is_ai = yes
+					not_shijianniangguojia_trigger = yes
+				}
+				
+				add_ai_strategy = {
+					type = building_target
+					id = industrial_complex
+					value = 100
+				}	
+				add_ai_strategy = {
+					type = building_target
+					id = arms_factory
+					value = 100
+				}
+				
+			}
+			every_country = {
+				limit = { 
+					shijianniangguojia_trigger = yes
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
+			if = {
+				limit = { 
+					DH1 = { is_ai = yes } 
+					DOH = { is_ai = no } 
+				}
+				DOH = { 
+					country_event = { id = DH1_event.999 days = 7 }
+				
+				}
+			}
+		} 
+	}
+	 
+	on_monthly_TIX = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+
+	on_monthly_BFL = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+
+	on_monthly_BYG = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+
+	on_monthly_HUJ = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+
+	on_monthly_CHY = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+
+	on_monthly_DOH = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+	on_monthly_SAD = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+	on_monthly_YUW = {
+		effect = { 
+			if = {
+				limit = {
+					AND = {
+						NOT = { has_global_flag = bilanlianheguojiesan }
+						is_ai = yes
+					}
+				}
+				add_to_variable = {
+					var = wz_sl
+					value = 900
+				}
+			}
+		}
+	}
+	on_declare_war = { 
+		effect = { 
+			if = { 
+				limit = { 
+					ROOT = { tag = CHY } 
+					FROM = { tag = DOH }
+					CHY = {
+						NOT = { has_country_flag = CHY_xuanzhan_DOH }
+						has_completed_focus = CHY_xuanzexinqijian
+					}
+				}
+				DOH = { 
+					country_event = { id = DOH_event.20 days = 5 }
+					add_ideas = DOH_bjwg1
+				}	
+				CHY = {
+					set_country_flag = CHY_xuanzhan_DOH
+				}
+			}
+		} 
+	}
+	on_declare_war = { 
+		effect = { 
+			if = { 
+				limit = { 
+					ROOT = { tag = CHY } 
+					FROM = { tag = DOH }
+					CHY = {
+						NOT = { has_country_flag = CHY_dohwar_1 }
+						has_completed_focus = CHY_chongyindeweilai
+					}
+				}
+				DOH = { 
+					country_event = { id = DOH_event.20 days = 5 }
+					add_ideas = DOH_bjwg1
+				}	
+				CHY = {
+					set_country_flag = CHY_dohwar_1
+				}
+			}
+		} 
+	}
+	on_declare_war = { 
+		effect = { 
+			if = { 
+				limit = { 
+					ROOT = { tag = CHY } 
+					FROM = { tag = BYG }
+					CHY = {
+						NOT = { has_country_flag = CHY_bygwar_1 }
+						has_completed_focus = CHY_chongyindeweilai
+					}
+				}
+				BYG = { 
+					country_event = { id = az_tianjiang.43 days = 5 }
+				}	
+				CHY = {
+					set_country_flag = CHY_bygwar_1
+				}
+			}
+		} 
+	}
+	on_declare_war = { 
+		effect = { 
+			if = { 
+				limit = { 
+					ROOT = { tag = TIX } 
+					FROM = { 
+						OR = {
+							tag = BEL 
+							tag = HOL
+							tag = LUX
+							
+						}
+					}
+					NOT = { has_global_flag = TIX_jingongdidisangong }
+
+				}
+				set_global_flag = TIX_jingongdidisangong
+				HUJ = { 
+					country_event = { id = HUJ_event.5 days = 2 }
+				}	
+				
+			}
+		} 
+	}	
+	on_annex = {
+		effect = { 
+			if = {
+				limit = {
+					ROOT = {
+						tag = DOH
+						has_country_flag = DOH_weishejunfa
+						not = {
+							has_war_with = CHY
+						}
+					}
+					FROM = {
+						OR = {
+							tag = SIK
+							tag = SHX
+							tag = GXC
+							tag = YUN
+							tag = XSM
+							tag = TIB
+						}
+					}
+				}
+				ROOT = {
+					country_event = DOH_event.28
+				}
+			}
+		}
+	}
+
+}

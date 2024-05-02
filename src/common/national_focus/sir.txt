@@ -1,0 +1,1981 @@
+focus_tree = {
+	id = sir_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 15
+			tag = SIR
+		}
+
+	}
+	
+	default = no
+	focus = {
+		id = SIR_wanshansairenjiao
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 23
+		y = 0
+		cost = 10
+
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = {
+				ideology = siren
+				popularity = 0.2
+			}
+			add_political_power = 250
+		} 
+	}
+	focus = {
+		id = SIR_shengzhijiaotiao
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = SIR_wanshansairenjiao
+		prerequisite = { focus = SIR_wanshansairenjiao }  
+		ai_will_do = {
+			factor = 11
+		}
+
+		available = {
+			if = {
+				limit = { is_ai = no }
+				has_STABILITY > 0.5
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_jiaotiaogulishengyu
+			custom_effect_tooltip = SIR_shengzhijiaotiao_tt
+		} 
+	}
+	focus = {
+		id = SIR_gaomiduzhufang
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = SIR_shengzhijiaotiao
+		prerequisite = { focus = SIR_shengzhijiaotiao }  
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "高密度住房"
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = construction_tech
+			}
+			capital_scope = {
+				set_state_category = large_city
+			}
+			add_ideas = SIR_mijijianzhu
+		} 
+	}
+	focus = {
+		id = SIR_nulijiaotiao
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = SIR_wanshansairenjiao
+		prerequisite = { focus = SIR_wanshansairenjiao }  
+		ai_will_do = {
+			factor = 11
+		}
+ 
+		available = {
+			if = {
+				limit = { is_ai = no }
+				has_war_support > 1
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_jiaotiaonulizhi
+			custom_effect_tooltip = SIR_nulijiaotiao_tt
+		}
+	}
+	focus = {
+		id = SIR_lueduozhuyi
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = SIR_nulijiaotiao
+		prerequisite = { focus = SIR_nulijiaotiao }  
+		ai_will_do = {
+			factor = 11
+		}
+ 
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_lueduozhuyi
+		}
+	}
+	focus = {
+		id = SIR_kuxingjiaotiao
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -3
+		y = 1
+		cost = 10
+		relative_position_id = SIR_wanshansairenjiao
+		prerequisite = { focus = SIR_wanshansairenjiao }  
+		ai_will_do = {
+			factor = 11
+		}
+ 
+		available = {
+			ROOT = { num_of_civilian_factories < 30 }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_jiaotiaokuxing
+			custom_effect_tooltip = SIR_kuxingjiaotiao_tt
+		}
+	}
+	focus = {
+		id = SIR_xueshijiaotiao
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 3
+		y = 1
+		cost = 10
+		relative_position_id = SIR_wanshansairenjiao
+		prerequisite = { focus = SIR_wanshansairenjiao }  
+		ai_will_do = {
+			factor = 11
+		}
+ 
+		available = {
+			if = {
+				limit = { is_ai = no }
+				num_of_factories > 29
+			    amount_research_slots < 6 
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_jiaotiaotuichongkexue
+			custom_effect_tooltip = SIR_xueshijiaotiao_tt
+		}
+	}
+	focus = {
+		id = SIR_jianlimowangxueyuan
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = SIR_xueshijiaotiao
+		prerequisite = { focus = SIR_xueshijiaotiao }  
+		ai_will_do = {
+			factor = 10
+		}
+ 
+		available = {
+			has_completed_focus = SIR_diyicizhaohuan
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = SIR_chunjiexinyang
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 2
+		y = 3
+		cost = 10
+		relative_position_id = SIR_wanshansairenjiao
+		prerequisite = { focus = SIR_wanshansairenjiao }  
+		mutually_exclusive = { focus = SIR_duoyuanwenhua }
+		ai_will_do = {
+			factor = 15
+		}
+ 
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 300
+			add_war_support = 0.25
+		}
+	}
+	focus = {
+		id = SIR_yongshichuancheng
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = SIR_chunjiexinyang
+		prerequisite = { focus = SIR_chunjiexinyang }  
+		ai_will_do = {
+			factor = 15
+		}
+ 
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = SIR_yongshichuancheng_tt
+			country_event = SIR_event.1
+		}
+	}
+	focus = {
+		id = SIR_duoyuanwenhua
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -2
+		y = 3
+		cost = 10
+		relative_position_id = SIR_wanshansairenjiao
+		prerequisite = { focus = SIR_wanshansairenjiao }  
+		mutually_exclusive = { focus = SIR_chunjiexinyang }
+		ai_will_do = {
+			factor = 11
+		}
+ 
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.3
+		}
+	}
+	focus = {
+		id = SIR_baihuaqifang
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = SIR_duoyuanwenhua
+		prerequisite = { focus = SIR_duoyuanwenhua }  
+		ai_will_do = {
+			factor = 11
+		}
+ 
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_duoyuanhuaxinyang
+		}
+	}
+	focus = {
+		id = SIR_shenmiyiwu
+		icon = GFX_focus_generic_strike_at_democracy2
+		relative_position_id = SIR_chuanzhihuishou
+		prerequisite = { focus = SIR_chuanzhihuishou }  
+		x = 0
+		y = 1
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			if = {
+				limit = { is_ai = no }
+				ships_in_area = { area = 93 size > 0 } 
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_country_leader_trait = sairenshenxuanzhe
+		}
+	}
+	
+	focus = {
+		id = SIR_haishangxianjing
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 2
+		y = 0
+		cost = 3
+
+		ai_will_do = {
+			factor = 30
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = -150
+			custom_effect_tooltip = SIR_haishangxianjing_tt
+			set_country_flag = SIR_haishangxianjing_get
+		}
+	}
+	focus = {
+		id = SIR_jiuyuanshuishou
+		icon = GFX_goal_generic_major_alliance
+		x = -1
+		y = 1
+		cost = 7
+		relative_position_id = SIR_haishangxianjing
+		prerequisite = { focus = SIR_haishangxianjing }  
+		mutually_exclusive = { focus = SIR_nuyishuishou }
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+		}
+	}
+	
+	focus = {
+		id = SIR_nuyishuishou
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = 1
+		y = 1
+		cost = 7
+		relative_position_id = SIR_haishangxianjing
+		prerequisite = { focus = SIR_haishangxianjing }  
+		mutually_exclusive = { focus = SIR_jiuyuanshuishou }
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.45
+		}
+	}
+	
+	focus = {
+		id = SIR_chuanzhihuishou
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -3
+		y = 2
+		cost = 5
+		relative_position_id = SIR_haishangxianjing
+		prerequisite = { focus = SIR_haishangxianjing }  
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			has_country_flag = SIR_dachuan_get
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_equipment_variant = {
+				name = "巨型商船改造航母"
+				type = ship_hull_carrier_conversion_bb
+				parent_version = 0
+				modules = {
+					fixed_ship_deck_slot_1 = ship_deck_space
+					fixed_ship_deck_slot_2 = ship_deck_space
+					fixed_ship_anti_air_slot = empty
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = heavy_ship_engine_2
+					fixed_ship_secondaries_slot = empty
+					mid_1_custom_slot = empty
+				}
+			}
+			hidden_effect = {
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_carrier_conversion_bb
+						creator = ROOT 
+						version_name = "巨型商船改造航母"
+					}
+					name = "幽灵鲨号" 
+					requested_factories = 10
+					progress = 0.9
+					amount = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIR_yinyoujunjian
+		icon = GFX_goal_generic_navy_battleship
+		x = 3
+		y = 2
+		cost = 4
+		relative_position_id = SIR_haishangxianjing
+		prerequisite = { focus = SIR_haishangxianjing }  
+		ai_will_do = {
+			factor = 11
+		}
+
+		available = {
+			has_completed_focus = SIR_diyicizhaohuan
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = -200
+			custom_effect_tooltip =	SIR_yinyoujunjian_tt
+		}
+	}
+	focus = {
+		id = SIR_jianzhuangyanjiu
+		icon = GFX_goal_generic_production
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = SIR_yinyoujunjian
+		prerequisite = { focus = SIR_yinyoujunjian }  
+		ai_will_do = {
+			factor = 11
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "舰装研究"
+				bonus = 2
+				uses = 10
+				category = naval_equipment
+			}
+		}
+	}
+	focus = {
+		id = SIR_xianjinchuanti
+		icon = GFX_goal_generic_navy_carrier
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = SIR_jianzhuangyanjiu
+		prerequisite = { focus = SIR_jianzhuangyanjiu }  
+		ai_will_do = {
+			factor = 15
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "先进船体"
+				bonus = 5
+				ahead_reduction = 4
+				uses = 4
+				category = dd_tech
+				category = ca_tech
+				category = cv_tech
+				category = bb_tech
+				category = ss_tech
+			}
+		}
+	}
+	focus = { 
+		id = SIR_sairendeliliang
+		icon = GFX_fflag_SIR
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = SIR_yinyoujunjian
+		prerequisite = { focus = SIR_yinyoujunjian }  
+		ai_will_do = {
+			factor = 11
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			navy_experience = 500
+		}
+	}
+	focus = {
+		id = SIR_sairenheikeji
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = SIR_xianjinchuanti
+		prerequisite = { focus = SIR_xianjinchuanti }  
+		prerequisite = { focus = SIR_sairendeliliang }  
+		ai_will_do = {
+			factor = 11
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIR_sairenheikeji_trigger_tt
+				if = {
+					limit = {
+						is_ai = no
+					}
+					check_variable = {
+						xzmf_sl > 9
+					}
+				}
+				
+			}
+		}
+
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_srhkj
+			add_to_variable = {
+				var = xzmf_sl
+				value = -10
+			}
+		}
+	}
+	focus = {
+		id = SIR_wuzhuangziwei
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 33
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			army_experience = 50
+			navy_experience = 50
+			air_experience = 50
+		}
+	}
+	focus = {
+		id = SIR_pinqingwaijijiaoguan
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		relative_position_id = SIR_wuzhuangziwei
+		prerequisite = { focus = SIR_wuzhuangziwei }  
+		cost = 5
+		ai_will_do = {
+			factor = 20
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_waijijiaoguan
+		}
+	}
+	focus = {
+		id = SIR_buqiangyanjiu
+		icon = GFX_focus_rifle
+		x = -3
+		y = 1
+		relative_position_id = SIR_pinqingwaijijiaoguan
+		prerequisite = { focus = SIR_pinqingwaijijiaoguan }
+	
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				name = "步枪研究"
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+				ahead_reduction = 1
+			}
+		}
+	}
+	focus = {
+		id = SIR_xinshihuopao
+		icon = GFX_goal_generic_army_artillery2
+		x = 0
+		y = 1
+		relative_position_id = SIR_buqiangyanjiu
+		prerequisite = { focus = SIR_buqiangyanjiu }
+	
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "新式火炮"
+				bonus = 1.5
+				uses = 1
+				category = artillery
+				ahead_reduction = 1.5
+			}
+			add_ideas = SIR_sairenshihuopao
+		}
+	}
+	focus = {
+		id = SIR_genhaodechuanjiaogongju
+		icon = GFX_goal_generic_army_motorized
+		x = -1
+		y = 1
+	
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = SIR_pinqingwaijijiaoguan }
+		relative_position_id = SIR_pinqingwaijijiaoguan
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "传教工具"
+				bonus = 1
+				uses = 2
+				category = motorized_equipment
+			}
+		}
+	}
+	focus = {
+		id = SIR_womendetanke
+		icon = GFX_goal_generic_army_tanks
+		x = 0
+		y = 1
+	
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+		prerequisite = { focus = SIR_genhaodechuanjiaogongju }
+		relative_position_id = SIR_genhaodechuanjiaogongju
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					not = {
+						has_tech = basic_heavy_tank_chassis 
+					}
+					
+				}
+				set_technology = {
+					basic_heavy_tank_chassis = 1
+				}
+			}
+			if = { limit = { has_tech = advanced_heavy_tank_chassis }
+            add_doctrine_cost_reduction = {
+				name = "装甲科技"
+				bonus = 2
+				uses = 1
+				category = armor
+				ahead_reduction = 2
+			}
+			}
+			else_if = {
+			add_tech_bonus = {
+				name = "重型坦克"
+				bonus = 2.5
+				uses = 1
+				category = cat_heavy_armor
+				ahead_reduction = 2
+			}
+			}
+			add_ideas = SIR_zhongxingtanke
+		}
+	}
+	focus = {
+		id = SIR_qiangdadelujun
+		icon = GFX_goal_generic_army_doctrines
+		x = 1
+		y = 1
+		prerequisite = { focus = SIR_xinshihuopao }
+		prerequisite = { focus = SIR_womendetanke }
+		relative_position_id = SIR_xinshihuopao
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_sairenlujun
+			TY_lujunliluntupo = yes
+		}
+	}
+	focus = {
+		id = SIR_kongzhongxintu
+		icon = GFX_goal_generic_air_fighter
+		x = 1
+		y = 1
+		relative_position_id = SIR_pinqingwaijijiaoguan
+		prerequisite = { focus = SIR_pinqingwaijijiaoguan }
+		cost = 5
+		ai_will_do = {
+			factor = 6
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					not = {
+						has_tech = iw_small_airframe 
+					}
+					
+				}
+				set_technology = {
+					iw_small_airframe = 1
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+				name = "空中信徒"
+				bonus = 2.5
+				uses = 1
+				category = light_air
+				ahead_reduction = 1
+			    }
+			}
+			if = {
+				limit = {
+					not = { has_dlc = "By Blood Alone" }
+				}
+				add_tech_bonus = {
+				name = "空中信徒"
+				bonus = 2.5
+				uses = 1
+				category = light_fighter
+				ahead_reduction = 1
+			    }
+			}	
+		}
+	}
+	focus = {
+		id = SIR_kongzhongpinzhang
+		icon = GFX_goal_generic_air_fighter2
+		x = 0
+		y = 1
+		relative_position_id = SIR_kongzhongxintu
+		prerequisite = { focus = SIR_kongzhongxintu }
+	
+		cost = 10
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+				name = "空中屏障"
+				bonus = 1.5
+				uses = 1
+				category = light_air
+				ahead_reduction = 1.5
+			    }
+			}
+			if = {
+				limit = {
+					not = { has_dlc = "By Blood Alone" }
+				}
+				add_tech_bonus = {
+				name = "空中屏障"
+				bonus = 1.5
+				uses = 1
+				category = light_fighter
+				ahead_reduction = 1.5
+			    }
+			}
+            add_doctrine_cost_reduction = {
+				name = "空中屏障"
+				cost_reduction = 0.5
+				uses = 4
+				category = air_doctrine
+			}
+			add_ideas = SIR_kzpz
+			TY_kongjunliluntupo = yes
+		}
+	}
+	focus = {
+		id = SIR_fazhanhaijun
+		icon = GFX_goal_generic_navy_battleship
+		x = 3
+		y = 1
+		relative_position_id = SIR_pinqingwaijijiaoguan
+		prerequisite = { focus = SIR_pinqingwaijijiaoguan }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "发展海军"
+				bonus = 1
+				ahead_reduction = 0.5
+				uses = 2
+				category = dd_tech
+				category = ca_tech
+				category = cv_tech
+				category = bb_tech
+				category = ss_tech
+			}
+		}
+	}
+	focus = {
+		id = SIR_sairenhaijun
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		prerequisite = { focus = SIR_fazhanhaijun }
+		prerequisite = { focus = SIR_fazhanhaijun}
+		relative_position_id = SIR_fazhanhaijun
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			TY_haijunliluntupo = yes
+			add_tech_bonus = {
+				name = "塞壬海军"
+				bonus = 2
+				ahead_reduction = 1
+				uses = 2
+				category = dd_tech
+				category = ca_tech
+				category = cv_tech
+				category = bb_tech
+				category = ss_tech
+			}
+			add_doctrine_cost_reduction = {
+				name = "塞壬海军"
+				cost_reduction = 0.5
+				uses = 4
+				category = naval_doctrine
+			}
+			add_ideas = SIR_sairendehaishangliliang
+		}
+	}
+	focus = {
+		id = SIR_sairenhangmu
+		icon = GFX_goal_generic_navy_carrier
+		x = 1
+		y = 1
+		prerequisite = { focus = SIR_kongzhongpinzhang }
+		prerequisite = { focus = SIR_sairenhaijun }
+		relative_position_id = SIR_kongzhongpinzhang
+		cost = 10
+
+		ai_will_do = {
+			factor = 8
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_sairendehangkongmujian
+		}
+	}
+	focus = {
+		id = SIR_chuanjiaohuodong
+		icon = GFX_fflag_SIR
+		x = 13
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 40
+		}
+
+		available = {
+			SIR_sairenjiaojisi = {
+				has_trait = sairenshenxuanzhe
+			}
+			or = {
+				has_completed_focus = SIR_baihuaqifang
+				has_completed_focus = SIR_yongshichuancheng
+			}
+			has_idea = SIR_jiaotiaokuxing
+			has_idea = SIR_jiaotiaonulizhi
+			has_idea = SIR_lueduozhuyi
+			has_idea = SIR_jiaotiaogulishengyu
+			has_idea = SIR_mijijianzhu
+			has_idea = SIR_jiaotiaotuichongkexue
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.15
+			add_popularity = { ideology = siren popularity = 0.1 }
+			custom_effect_tooltip = SIR_chuanjiaohuodong_effect_tooltip
+		}
+	}
+
+	focus = {
+		id = SIR_chuanjiaojiandui
+		icon = GFX_goal_generic_build_airforce
+		x = -3
+		y = 1
+		relative_position_id = SIR_chuanjiaohuodong
+		prerequisite = { focus = SIR_chuanjiaohuodong }  
+
+		cost = 8
+		available = {
+			or = {
+			has_game_rule = {
+			rule = AZ_jinzhi_sirbilkuozhang_rule
+			option =  AZ_jinzhi_sirbilkuozhang_rule_on
+			}
+			is_ai = no
+			BLI = { is_ai = no }
+			}
+		}
+		ai_will_do = {
+			factor = 40
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 400
+				producer = ROOT
+			}
+		}
+	}
+	focus = {
+		id = SIR_feijichuanjiao
+		icon = GFX_fflag_SIR
+		x = 3
+		y = 1
+		relative_position_id = SIR_chuanjiaohuodong
+		prerequisite = { focus = SIR_chuanjiaohuodong }  
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment
+				amount = 80
+				producer = ROOT
+			}
+			
+		}
+	}
+	focus = {
+		id = SIR_gailiangdeyunshuji
+		icon = GFX_goal_generic_air_production
+		x = -1
+		y = 1
+		relative_position_id = SIR_feijichuanjiao
+		prerequisite = { focus = SIR_feijichuanjiao }  
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_gailiangdeyunshuji
+		}
+	}
+	focus = {
+		id = SIR_yunshujijiazhadan
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 1
+		y = 1
+		relative_position_id = SIR_feijichuanjiao
+		prerequisite = { focus = SIR_feijichuanjiao }  
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					not = {
+						has_tech = iw_large_airframe 
+					}
+					
+				}
+				set_technology = {
+					iw_large_airframe = 1
+				}
+			}
+			add_tech_bonus = {
+				name = "运输机+炸弹"
+				bonus = 2
+				ahead_reduction = 1
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+	focus = {
+		id = SIR_chuanjiao_baiying
+		icon = GFX_fflag_BYG
+		x = -2
+		y = 1
+		relative_position_id = SIR_chuanjiaojiandui
+		prerequisite = { focus = SIR_chuanjiaojiandui }  
+		cost = 7
+
+		ai_will_do = {
+			factor = 11
+		}
+
+		available = {
+			if = {
+				limit = { is_ai = no }
+				ships_in_area = { area = 54 size > 2 } 
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			BYG = {
+				add_popularity = { ideology = siren popularity = 0.08 }
+			}
+			add_political_power = 100
+			add_manpower = 6000
+		}
+	}
+	focus = {
+		id = SIR_daoqugongyejishu
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = SIR_chuanjiao_baiying
+		prerequisite = { focus = SIR_chuanjiao_baiying }  
+		cost = 10
+
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "盗取工业"
+				bonus = 4.0
+				ahead_reduction = 5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = SIR_daoqudianzijishu
+		icon = GFX_goal_generic_radar
+		x = 0
+		y = 1
+		relative_position_id = SIR_daoqugongyejishu
+		prerequisite = { focus = SIR_daoqugongyejishu }  
+		cost = 10
+
+		ai_will_do = {
+			factor = 11
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "盗取电子"
+				bonus = 4.0
+				ahead_reduction = 5
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = SIR_chuanjiao_jialebi
+		icon = GFX_fflag_BYG
+		x = 2
+		y = 1
+		relative_position_id = SIR_chuanjiaojiandui
+		prerequisite = { focus = SIR_chuanjiaojiandui }  
+		cost = 10
+
+		ai_will_do = {
+			factor = 40
+		}
+
+		available = {
+			if = {
+				limit = { is_ai = no }
+				ships_in_area = { area = 53 size > 2 } 
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			HAI = { country_event = SIR_event.7 }
+			CUB = { country_event = SIR_event.7 }
+			DOM = { country_event = SIR_event.7 }
+			transfer_state = 692
+			transfer_state = 694
+			transfer_state = 308
+			transfer_state = 689
+			transfer_state = 693
+			transfer_state = 690
+			transfer_state = 686
+			add_political_power = 75
+			add_manpower = 10000
+		}
+	}
+	focus = {
+		id = SIR_chuanjiao_nanmei
+		icon = GFX_fflag_BYG
+		x = 0
+		y = 1
+		relative_position_id = SIR_chuanjiaojiandui
+		prerequisite = { focus = SIR_chuanjiaojiandui }  
+		cost = 10
+
+		ai_will_do = {
+			factor = 40
+		}
+
+		available = {
+			if = {
+				limit = { is_ai = no }
+				ships_in_area = { area = 66 size > 2 } 
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			BRA = { country_event = SIR_event.7 }
+			COL = { country_event = SIR_event.7 }
+			VEN = { country_event = SIR_event.7 }
+			transfer_state = 309
+			transfer_state = 695
+			YUW = { country_event = SIR_event.9 }
+			HUJ = { country_event = SIR_event.8 }
+			add_political_power = 50
+			add_manpower = 18000
+		}
+	}
+	focus = {
+		id = SIR_chuanjiao_shenxiadenanmei
+		icon = GFX_goal_generic_territory_or_war
+		x = 1
+		y = 1
+		prerequisite = { focus = SIR_chuanjiao_nanmei }
+		prerequisite = { focus = SIR_chuanjiao_jialebi }
+		relative_position_id = SIR_chuanjiao_nanmei
+		cost = 20
+		bypass = {
+			or = {
+			not = {country_exists = ECU}
+			not = {country_exists = PRU}
+			not = {country_exists = BOL}
+			not = {country_exists = PAR}
+			not = {country_exists = URG}
+			not = {country_exists = ARG}
+			not = {country_exists = CHL}
+            }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			ECU = { country_event = SIR_event.7 }
+			PRU = { country_event = SIR_event.7 }
+			PAR = { country_event = SIR_event.7 }
+			URG = { country_event = SIR_event.7 }
+			ARG = { country_event = SIR_event.7 }
+			CHL = { country_event = SIR_event.7 }
+			BOL = { country_event = SIR_event.7 }
+		}
+	}
+	focus = {
+		id = SIR_xinyangzhanshi
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 3
+		relative_position_id = SIR_chuanjiaohuodong
+		prerequisite = { focus = SIR_chuanjiao_nanmei }
+		prerequisite = { focus = SIR_chuanjiao_jialebi }
+		prerequisite = { focus = SIR_feijichuanjiao }
+		cost = 10
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+			has_completed_focus = SIR_wuzhuangziwei
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = SIR_xinyangzhanshi_tt
+			hidden_effect = {
+				division_template = {
+					name = "信仰战士"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						infantry = { x = 2 y = 4 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+						infantry = { x = 3 y = 4 }
+					}
+					
+				}
+				for_loop_effect = { 
+					start = 0
+					end = 10
+					add = 1 
+	
+					capital_scope = {
+						create_unit = {
+							division = "name = \"塞壬教死士\" division_template = \"信仰战士\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+							owner = SIR
+						}	
+					}
+				}
+			}
+			
+		}
+	}
+	focus = {
+		id = SIR_sairenjiaomimijidi
+		icon = GFX_focus_generic_military_mission
+		x = 0
+		y = 1
+		relative_position_id = SIR_diyicizhaohuan
+		prerequisite = { focus = SIR_diyicizhaohuan }
+		cost = 7
+
+		ai_will_do = {
+			factor = 0
+		}
+
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = SIR_sairenjiaomimijidi_tt
+		}
+	}
+	focus = {
+		id = SIR_denglunanfei
+		icon = GFX_focus_generic_africa_liberation
+		x = 0
+		y = 1
+		relative_position_id = SIR_sairenjiaomimijidi
+		prerequisite = { focus = SIR_sairenjiaomimijidi }
+		cost = 7
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			transfer_state = 893
+		}
+	}
+	focus = {
+		id = SIR_shamobianyuan
+		icon = GFX_focus_generic_africa_liberation
+		x = 0
+		y = 1
+		relative_position_id = SIR_denglunanfei
+		prerequisite = { focus = SIR_denglunanfei }
+		cost = 7
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			transfer_state = 681
+		}
+	}
+	focus = {
+		id = SIR_diyicizhaohuan
+		icon = GFX_fflag_SIR
+		x = 1
+		y = 1
+		relative_position_id = SIR_chuanjiao_shenxiadenanmei
+		prerequisite = { focus = SIR_xinyangzhanshi }
+		prerequisite = { focus = SIR_chuanjiao_shenxiadenanmei }
+		cost = 10
+
+		ai_will_do = {
+			factor = 11
+		}
+
+		available = {
+			siren > 0.2
+			or = {
+                not = { country_exists = BLI }
+				not = { has_war_with = BLI }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = "获得塞壬的庇佑"
+			set_politics = {
+				ruling_party = siren
+			}
+			set_cosmetic_tag = SIR_siren
+			set_country_flag = SIR_sairendebiyou_get
+			news_event = aznews.44
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	# focus = {
+	# 	id = SIR_diercizhaohuan
+	# 	icon = GFX_fflag_SIR
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = SIR_sairenjiaomimijidi
+	# 	prerequisite = { focus = SIR_sairenjiaomimijidi }
+
+	# 	cost = 10
+
+	# 	ai_will_do = {
+	# 		factor = 11
+	# 	}
+	# 	# allow_branch = {
+	# 	# 	has_completed_focus = SIR_diyicizhaohuan
+	# 	# }
+	# 	available = {
+	# 		SIR_sairenjiaojisi = {
+	# 			has_trait = sairenshenxuanzhe
+	# 		}
+	# 		siren > 0.2
+	# 	}
+
+	# 	cancel_if_invalid = yes
+	# 	continue_if_invalid = no
+	# 	available_if_capitulated = no
+
+	# 	#search_filters = { FOCUS_FILTER_STABILITY }
+	# 	completion_reward = {
+			
+	# 	}
+	# }
+	focus = {
+		id = SIR_kaifaxinlintu
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 40
+		y = 0
+		cost = 10
+
+		available = {
+			has_completed_focus = SIR_chuanjiao_shenxiadenanmei
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIR_gaodianjungong
+		relative_position_id = SIR_kaifaxinlintu
+		prerequisite = { focus = SIR_kaifaxinlintu }  
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory 
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory 
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory 
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIR_gaodianchuanwu
+		relative_position_id = SIR_kaifaxinlintu
+		prerequisite = { focus = SIR_kaifaxinlintu }  
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard 
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard 
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard 
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 3
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIR_gaijinshenchanjishu
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = SIR_gaodianjungong
+		prerequisite = { focus = SIR_gaodianjungong } 
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "生产技术突破"
+				bonus = 3
+				uses = 2
+				category = dispersed_industry_category
+				category = concentrated_industry_category
+				ahead_reduction = 3
+			}
+		}
+	}
+	focus = {
+		id = SIR_jianzaojishu
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 0
+		y = 1
+		relative_position_id = SIR_gaijinshenchanjishu
+		prerequisite = { focus = SIR_gaijinshenchanjishu } 
+		cost = 8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "建造技术"
+				bonus = 2.5
+				uses = 2
+				ahead_reduction = 3
+				category = construction_tech
+			}
+		}
+	}
+	focus = {
+		id = SIR_kaifaziyuan
+		icon = GFX_goal_generic_construction2
+		x = 2
+		y = 1
+		relative_position_id = SIR_jianzaojishu
+		prerequisite = { focus = SIR_jianzaojishu } 
+		cost = 5 
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			496 = {
+                add_resource = {
+                type = steel
+                amount = 100
+                }
+			}
+			315 = {
+                add_resource = {
+                type = steel
+                amount = 100
+                }
+			}
+			498 = {
+                add_resource = {
+                type = tungsten
+                amount = 50
+                }
+			}
+		}
+	}
+	focus = {
+		id = SIR_sairentesejungongye
+		icon = GFX_focus_generic_tank_production
+		x = -2
+		y = 1
+		relative_position_id = SIR_jianzaojishu
+		prerequisite = { focus = SIR_jianzaojishu } 
+		cost = 5 
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			arms_factory > 49
+		}
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SIR_tesejungongye
+		}
+	}
+}

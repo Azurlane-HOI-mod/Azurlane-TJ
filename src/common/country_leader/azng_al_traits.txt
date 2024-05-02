@@ -1,0 +1,629 @@
+leader_traits = {
+    
+	AL_political_1 = {
+		random = no
+        political_power_factor = 0.10
+		political_power_gain = 0.05
+	}
+    AL_political_11 = {
+		random = no		
+		political_power_factor = 0.20
+        political_power_gain = 0.15
+	}
+	AL_political_111 = {
+		random = no
+		political_power_factor = 0.30
+        political_power_gain = 0.3
+	}
+    AL_political_2 = {
+		random = no		
+		stability_factor = 0.15
+		war_support_factor = 0.15
+	}
+    AL_political_22 = {
+		random = no		
+		stability_factor = 0.25
+		war_support_factor = 0.25
+		stability_weekly = 0.002
+		war_support_weekly = 0.002
+	}
+	AL_political_222 = {
+		random = no		
+		stability_factor = 0.35
+		war_support_factor = 0.35
+		stability_weekly = 0.005
+		war_support_weekly = 0.005
+	}
+    AL_political_3 = {
+		random = no		
+		political_advisor_cost_factor = -0.15
+	    surrender_limit = 0.1
+	}
+	AL_political_33 = {
+		random = no
+		political_advisor_cost_factor = -0.35
+        surrender_limit = 0.2
+	}
+	AL_political_333 = {
+		random = no
+		political_advisor_cost_factor = -0.70
+		surrender_limit = 0.3
+	}
+    
+	AL_construction_1 = {
+		random = no
+		production_speed_buildings_factor = 0.05
+		industrial_capacity_factory = 0.05
+		line_change_production_efficiency_factor = 0.05
+	}
+	AL_construction_11 = {
+		random = no		
+		production_speed_buildings_factor = 0.15
+		industrial_capacity_factory = 0.1
+		line_change_production_efficiency_factor = 0.1
+	}
+	AL_construction_111 = {
+		random = no
+		production_speed_buildings_factor = 0.3
+		industrial_capacity_factory = 0.15
+		line_change_production_efficiency_factor = 0.15
+	}
+	AL_construction_2 = {
+		random = no		
+		production_lack_of_resource_penalty_factor = -0.1 
+		local_resources_factor = 0.1
+	}
+	AL_construction_22 = {
+		random = no		
+		production_lack_of_resource_penalty_factor = -0.2 
+		local_resources_factor = 0.25
+	}
+	AL_construction_222 = {
+		random = no		
+		production_lack_of_resource_penalty_factor = -0.3 
+		local_resources_factor = 0.4
+	}
+	AL_construction_3 = {
+		random = no		
+		research_speed_factor = 0.1
+	}
+	AL_construction_33 = {
+		random = no
+		research_speed_factor = 0.2
+	}
+	AL_construction_333 = {
+		random = no
+		research_speed_factor = 0.35
+	}
+
+	AL_army_1 = {
+		random = no
+		army_org_factor = 0.05
+		breakthrough_factor = 0.05
+		conscription = 0.01
+	}
+	AL_army_11 = {
+		random = no		
+		army_org_factor = 0.1
+		breakthrough_factor = 0.1
+        conscription = 0.02
+	}
+	AL_army_111 = {
+		random = no		
+		army_org_factor = 0.15
+		breakthrough_factor = 0.15
+        conscription = 0.03
+	}
+	AL_army_2 = {
+		random = no		
+		carrier_capacity_penalty_reduction = -0.10
+		critical_receive_chance = -0.10
+		naval_accidents_chance = -0.10
+		naval_speed_factor = 0.05
+	}
+	AL_army_22 = {
+		random = no		
+		carrier_capacity_penalty_reduction = -0.25
+        critical_receive_chance = -0.25
+        naval_accidents_chance = -0.25
+        naval_speed_factor = 0.1
+	}
+	AL_army_222 = {
+		random = no		
+		carrier_capacity_penalty_reduction = -0.45
+        critical_receive_chance = -0.45
+        naval_accidents_chance = -0.45
+        naval_speed_factor = 0.15
+	}
+	AL_army_3 = {
+		random = no		
+		air_accidents_factor = -0.1
+		air_mission_xp_gain_factor = 0.1
+		air_fuel_consumption_factor = -0.10
+		air_night_penalty = -0.1
+	}
+	AL_army_33 = {
+		random = no
+		air_accidents_factor = -0.25
+		air_mission_xp_gain_factor = 0.2
+		air_fuel_consumption_factor = -0.25
+		air_night_penalty = -0.2
+	}
+	AL_army_333 = {
+		random = no
+		air_accidents_factor = -0.45
+		air_mission_xp_gain_factor = 0.3
+		air_fuel_consumption_factor = -0.4
+		air_night_penalty = -0.3
+	}
+
+
+
+
+
+
+
+
+
+
+
+	nuke_fire = {
+		random = no
+		political_power_cost = 0.5
+		industrial_capacity_factory = -0.20
+		custom_modifier_tooltip = nuke_get_daodan
+	}
+    AL_tank_all = {
+		random = no
+		equipment_bonus = {
+				armor = {
+					maximum_speed = 0.10    #5铁血设计
+					soft_attack = 0.10      #2白鹰设计
+					hard_attack = 0.05      #3撒丁设计
+					reliability = 0.15      #8东煌设计#8重樱设计 
+					armor_value = 0.10      #1鸢尾设计
+					ap_attack = 0.10        #7皇家设计
+					build_cost_ic = -0.1    #6北联设计
+					instant = yes
+				}
+		}
+	}
+	AL_tank_BFL = {
+		random = no
+			equipment_bonus = {
+				armor = { 
+					build_cost_ic = -0.1     
+                    instant = yes					
+				}
+			}		
+	}
+	AL_tank_BYG = {
+		random = no
+		equipment_bonus = {
+				armor = { 
+					soft_attack = 0.10      #2白鹰设计
+					instant = yes
+				}
+			}	
+	}
+	AL_tank_DOH = {
+		random = no
+			equipment_bonus = {
+				armor = { 
+					reliability = 0.05      #8东煌设计 
+					instant = yes
+				}
+			}		
+	}
+	AL_tank_SAD = {
+		random = no
+	    equipment_bonus = {
+				armor = { 
+					hard_attack = 0.05      #3撒丁设计
+					instant = yes
+				}
+			}	
+	}
+	AL_tank_YUW = {
+		random = no
+		equipment_bonus = {
+			armor = { 
+				armor_value = 0.10      #1鸢尾设计
+				instant = yes
+			}
+		}
+	}
+	AL_tank_TIX = {
+		random = no
+			equipment_bonus = {
+				armor = { 
+					maximum_speed = 0.10    #5铁血设计
+					instant = yes
+				}
+			}		
+	}
+	AL_tank_CHY = {
+		random = no
+		equipment_bonus = {
+				armor = { 
+					reliability = 0.1     #8重樱设计 
+					instant = yes
+				}
+			}
+	}
+	AL_tank_HUJ = {
+		random = no
+			equipment_bonus = {
+				armor = { 
+					ap_attack = 0.10        #7皇家设计
+					instant = yes
+				}
+			}				
+	}
+	AL_ship_all = {
+		random = no
+		industrial_capacity_dockyard = 0.15    #北联设计
+		navy_fuel_consumption_factor = -0.10   #重樱设计
+		experience_gain_navy_factor = 0.3      #重樱设计
+		navy_max_range_factor = 0.1           #白鹰设计
+		naval_coordination = 0.05            #皇家设计
+		equipment_bonus = {
+				ship_hull_light = {                #东煌设计
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				ship_hull_cruiser = {             #撒丁设计 
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				ship_hull_submarine = {           #铁血设计
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				ship_hull_heavy = {               #鸢尾设计
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				ship_hull_carrier = {             #白鹰设计
+					build_cost_ic = -0.05
+					instant = yes
+				}
+		}
+	}
+	AL_ship_BFL = {
+		random = no
+		industrial_capacity_dockyard = 0.15    #北联设计
+	}
+	AL_ship_BYG = {
+		random = no
+		navy_max_range_factor = 0.1           #白鹰设计
+			equipment_bonus = {
+				ship_hull_carrier = {             #白鹰设计
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}		
+	}
+	AL_ship_DOH = {
+		random = no
+			equipment_bonus = {
+				ship_hull_light = {                #东煌设计
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}		
+	}
+	AL_ship_SAD = {
+		random = no
+			equipment_bonus = {
+				ship_hull_cruiser = {             #撒丁设计 
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}		
+	}
+	AL_ship_YUW = {
+		random = no
+			equipment_bonus = {
+				ship_hull_heavy = {               #鸢尾设计
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}		
+	}
+	AL_ship_TIX = {
+		random = no
+		equipment_bonus = {			
+				ship_hull_submarine = {           #铁血设计
+					build_cost_ic = -0.15
+					instant = yes
+				}
+		}
+	}
+	AL_ship_CHY = {
+		random = no
+        navy_fuel_consumption_factor = -0.10   #重樱设计
+		experience_gain_navy_factor = 0.3      #重樱设计		
+	}
+	AL_ship_HUJ = {
+		random = no
+		naval_coordination = 0.05            #皇家设计
+	}
+	
+	AL_plane_all = {
+		random = no
+		air_mission_efficiency = 0.15               #撒丁设计
+		army_bonus_air_superiority_factor = 0.1    #鸢尾设计
+		air_weather_penalty = -0.2                 #北联设计
+		experience_gain_air_factor = 0.25          #东煌设计
+		air_range_factor = 0.15                    #白鹰设计
+		equipment_bonus = {
+			fighter_equipment = {       
+				instant = yes			
+				build_cost_ic = -0.05   #重樱设计
+				reliability = 0.05      #铁血设计
+			}
+			cv_fighter_equipment = {    
+				instant = yes			
+				build_cost_ic = -0.05   #重樱设计
+				reliability = 0.05      
+			}
+			heavy_fighter_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.1   #皇家设计
+				reliability = 0.05
+			}
+			strat_bomber_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.1    #皇家设计
+				reliability = 0.05      #铁血设计
+			}
+			CAS_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.05    #重樱设计
+				reliability = 0.05       #铁血设计
+			}
+			tac_bomber_equipment = {   
+				instant = yes
+				build_cost_ic = -0.1    #皇家设计
+				reliability = 0.05
+			}
+		}
+	}
+	AL_plane_BFL = {
+		random = no
+		air_weather_penalty = -0.2                 #北联设计
+	}
+	AL_plane_BYG = {
+		random = no
+		air_range_factor = 0.15                    #白鹰设计	
+	}
+	AL_plane_DOH = {
+		random = no
+		experience_gain_air_factor = 0.25          #东煌设计
+	}
+	AL_plane_SAD = {
+		random = no
+		air_mission_efficiency = 0.15               #撒丁设计
+	}
+	AL_plane_YUW = {
+		random = no
+		army_bonus_air_superiority_factor = 0.1    #鸢尾设计	
+	}
+	AL_plane_TIX = {
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {       
+				instant = yes			
+				reliability = 0.05
+			}
+			strat_bomber_equipment = {   
+				instant = yes				
+				reliability = 0.05
+			}
+			CAS_equipment = {   
+				instant = yes				
+				reliability = 0.05
+			}
+		}
+	}
+	AL_plane_CHY = {
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {       
+				instant = yes			
+				build_cost_ic = -0.05   #重樱设计
+			}
+			cv_fighter_equipment = {    
+				instant = yes			
+				build_cost_ic = -0.05   #重樱设计
+				reliability = 0.05      
+			}
+			CAS_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.05    #重樱设计
+			}
+		}
+	}
+	AL_plane_HUJ = {
+		random = no
+		equipment_bonus = {
+			heavy_fighter_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.1   #皇家设计
+				reliability = 0.05
+			}
+			strat_bomber_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.1    #皇家设计
+				reliability = 0.05
+			}
+			tac_bomber_equipment = {   
+				instant = yes
+				build_cost_ic = -0.1    #皇家设计
+				reliability = 0.05
+			}
+		}
+	}
+	
+	AL_junxu_all = {
+		random = no
+		experience_gain_army_factor = 0.25   #重樱设计
+		equipment_bonus = {
+			infantry_equipment = {       
+				instant = yes					
+				build_cost_ic = -0.15   #东煌设计
+				soft_attack = 0.1       #鸢尾设计
+				reliability = 0.05      #皇家设计
+			}
+			artillery_equipment = {    
+				instant = yes			
+				build_cost_ic = -0.05   #白鹰设计
+				soft_attack = 0.05      #白鹰设计
+				reliability = 0.05      #皇家设计
+			}
+			motorized_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.1    #铁血设计#撒丁设计
+				reliability = 0.05      #撒丁设计
+				maximum_speed = 0.05    #铁血设计
+			}
+			motorized_rocket_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.10    #北联设计
+				soft_attack = 0.05      #北联设计
+			}
+			
+		}
+	}
+	AL_junxu_BFL = {
+		random = no
+		equipment_bonus = {
+			motorized_rocket_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.1    #北联设计
+				soft_attack = 0.05      #北联设计
+			}
+			
+		}
+	}
+	AL_junxu_BYG = {
+		random = no
+		equipment_bonus = {
+			artillery_equipment = {    
+				instant = yes			
+				build_cost_ic = -0.05   #白鹰设计
+				soft_attack = 0.05      #白鹰设计
+			}			
+		}
+	}
+	AL_junxu_DOH = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {       
+				instant = yes					
+				build_cost_ic = -0.15   #东煌设计
+			}		
+		}
+	}
+	AL_junxu_SAD = {
+		random = no
+		equipment_bonus = {
+			motorized_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.05   #撒丁设计
+				reliability = 0.05      #撒丁设计
+			}
+		}
+	}
+	AL_junxu_YUW = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {       
+				instant = yes					
+				soft_attack = 0.1       #鸢尾设计
+			}		
+		}
+	}
+	AL_junxu_TIX = {
+		random = no
+		equipment_bonus = {
+			motorized_equipment = {   
+				instant = yes				
+				build_cost_ic = -0.05    #铁血设计
+				maximum_speed = 0.05    #铁血设计
+			}
+		}	
+	}
+	AL_junxu_CHY = {
+		random = no
+		experience_gain_army_factor = 0.25   #重樱设计
+		
+	}
+	AL_junxu_HUJ = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {       
+				instant = yes													
+				reliability = 0.05      #皇家设计
+			}
+			artillery_equipment = {    
+				instant = yes			
+				reliability = 0.05      #皇家设计
+			}			
+		}
+	}
+	
+	AL_gongye_all = {
+		random = no
+		economy_cost_factor = -0.75                          #重樱设计
+		production_lack_of_resource_penalty_factor = -0.75   #东煌设计
+		production_factory_start_efficiency_factor = 0.1    #铁血设计 
+		production_factory_efficiency_gain_factor = 0.1     #北联设计
+		industrial_capacity_factory = 0.2                   #铁血设计 #北联设计
+		production_speed_industrial_complex_factor = 0.15   #白鹰设计
+		consumer_goods_factor = -0.05                       #撒丁设计
+		production_speed_bunker_factor = 0.35                #鸢尾设计
+		production_speed_coastal_bunker_factor = 0.35        #皇家设计
+	}
+	AL_gongye_BFL = {
+		random = no
+		production_factory_efficiency_gain_factor = 0.1     #北联设计
+		industrial_capacity_factory = 0.1                   #北联设计
+
+	}
+	AL_gongye_BYG = {
+		random = no
+		production_speed_industrial_complex_factor = 0.15   #白鹰设计
+	}
+	AL_gongye_DOH = {
+		random = no
+		production_lack_of_resource_penalty_factor = -0.75   #东煌设计
+	}
+	AL_gongye_SAD = {
+		random = no
+		consumer_goods_factor = -0.05                       #撒丁设计
+
+	}
+	AL_gongye_YUW = {
+		random = no
+		production_speed_bunker_factor = 0.40                #鸢尾设计
+
+	}
+	AL_gongye_TIX = {
+		random = no
+		production_factory_start_efficiency_factor = 0.1    #铁血设计 
+		industrial_capacity_factory = 0.1                   #铁血设计 
+
+	}
+	AL_gongye_CHY = {
+		random = no
+		economy_cost_factor = -0.75                         #重樱设计
+	}
+	AL_gongye_HUJ = {
+		random = no
+		production_speed_coastal_bunker_factor = 0.40        #皇家设计
+
+	}
+	
+}

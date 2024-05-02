@@ -1,0 +1,286 @@
+HUJ_historical_new = {
+	name = "HUJ_historical_new"
+	desc = "HUJ_historical_new_desc"
+
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		or = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = HUJ_ai_behavior
+				option = HUJ_historical_new_focus
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = HUJ_qinjianjieyue
+	}
+
+	ai_national_focuses = {
+		#政治线
+		HUJ_jixuyihuizhi
+		HUJ_baochichuantong
+		HUJ_zhuanzhuyuzhimindishiwu
+		HUJ_weijiyishi
+		HUJ_jianshezhimindi
+		#女仆线
+		HUJ_nvpuxunlian
+		HUJ_neiwunvpu
+		HUJ_nvpucanting
+		HUJ_tegongnvpu
+		HUJ_tegongweizhu
+		#战争线
+		HUJ_zhunbeibukebimianzhizhan
+		HUJ_oulubaquanjueqi
+		HUJ_fangdumianjufaan
+		#军事线
+		HUJ_huangjiajihuabu
+		#工业线
+		HUJ_aierlangongye
+		HUJ_chongjiangongye
+		HUJ_jingjijianshe
+		HUJ_jungongqiye
+		HUJ_hongchagongying
+		HUJ_zhongzhichaye
+		HUJ_zhiyouhongcha
+		#战争线
+		HUJ_chongzhenghuangjialujun
+		HUJ_bentufangyu
+		#空军线
+		HUJ_tiankongqishi
+		HUJ_zhandoujiyanfa
+		HUJ_zhengyidejuedou
+		HUJ_dabingbao
+		HUJ_hongzhaxueshuo
+		HUJ_huangjialieying
+		#结束
+		HUJ_tongzhibabuliedianhuj
+		HUJ_youyakebushihuaping
+		HUJ_qinjianjieyue
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+
+HUJ_historical_new2 = {
+	name = "HUJ_historical_new"
+	desc = "HUJ_historical_new_desc"
+
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+			has_game_rule = {
+				rule = HUJ_ai_behavior
+				option = HUJ_historical_new2_focus
+			}
+	}
+	abort = {
+		has_completed_focus = HUJ_tongzhibabuliedianhuj
+	}
+
+	ai_national_focuses = {
+		#政治线
+		HUJ_zhuanzhuyuzhimindishiwu
+		HUJ_qinzishangzhen
+		HUJ_qinzishangzhen
+		HUJ_kaihuashiming
+		HUJ_weijiyishi
+		HUJ_nvwangrongguang
+		HUJ_jianshezhimindi
+		#女仆线
+		HUJ_nvpuxunlian
+		HUJ_neiwunvpu
+		HUJ_nvpucanting
+		HUJ_neiwuweizhu
+		HUJ_nvpukeyanzu
+		HUJ_tegongnvpu
+		#战争线
+		HUJ_zhunbeibukebimianzhizhan
+		HUJ_oulubaquanjueqi
+		HUJ_fangdumianjufaan
+		#军事线
+		HUJ_huangjiajihuabu
+		#工业线
+		HUJ_aierlangongye
+		HUJ_chongjiangongye
+		HUJ_jingjijianshe
+		HUJ_jungongqiye
+		HUJ_hongchagongying
+		HUJ_zhongzhichaye
+		HUJ_zhiyouhongcha
+		#战争线
+		HUJ_chongzhenghuangjialujun
+		HUJ_bentufangyu
+		#空军线
+		HUJ_tiankongqishi
+		HUJ_zhandoujiyanfa
+		HUJ_zhengyidejuedou
+		HUJ_dabingbao
+		HUJ_hongzhaxueshuo
+		HUJ_huangjialieying
+		#结束
+		HUJ_tongzhibabuliedianhuj
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+HUJ_historical = {
+	name = "HUJ_historical"
+	desc = "HUJ_historical_desc"
+
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+			has_game_rule = {
+				rule = HUJ_ai_behavior
+				option = HUJ_historical_focus
+			}
+	}
+	abort = {
+		has_completed_focus = HUJ_jingjijianshe
+	}
+
+	ai_national_focuses = {
+		#先点女仆线
+		HUJ_nvpuxunlian
+		HUJ_neiwunvpu
+		HUJ_nvpucanting
+		HUJ_neiwuweizhu
+		HUJ_nvpukeyanzu
+		#政治空军线
+		HUJ_jixuyihuizhi
+		HUJ_zhunbeibukebimianzhizhan
+		HUJ_tiankongqishi
+		HUJ_zhandoujiyanfa
+		HUJ_zhengyidejuedou
+		HUJ_dabingbao
+		HUJ_hongzhaxueshuo
+		HUJ_huangjialieying
+		HUJ_oulubaquanjueqi
+		HUJ_fangdumianjufaan
+		#陆海军
+		HUJ_huangjiajihuabu
+		HUJ_huangjiahaijun
+		HUJ_zhongchengdehuwei
+		HUJ_dajianpingweijian
+		HUJ_heiandeyitian
+		HUJ_chongzhenghuangjialujun
+		HUJ_bentufangyu
+		HUJ_tegongnvpu
+		#政治线
+		HUJ_youyakebushihuaping
+		HUJ_aierlangongye
+		HUJ_chongjiangongye
+		HUJ_jungongqiye
+		HUJ_guofangjianshe
+		HUJ_jingjijianshe
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+HUJ_daochexian = {
+	name = "HUJ_daochexian"
+	desc = "HUJ_daochexian_desc"
+
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+			has_game_rule = {
+				rule = HUJ_ai_behavior
+				option = HUJ_daochexian
+			}
+	}
+	abort = {
+		has_completed_focus = HUJ_junminpingdeng
+	}
+
+	ai_national_focuses = {
+		#先点女仆线
+		HUJ_nvpuxunlian
+		HUJ_neiwunvpu
+		HUJ_nvpucanting
+		HUJ_neiwuweizhu
+		HUJ_nvpukeyanzu
+		HUJ_tegongnvpu
+		#政治线
+		HUJ_daposhufu
+		HUJ_nvwanghuweijun
+		HUJ_gaizaoyanzhan
+		HUJ_zhongyonghuangshi
+		HUJ_huangjiadezhanshi
+		HUJ_nvwangqinzheng
+		HUJ_jinchidewang
+		HUJ_junminpingdeng
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}

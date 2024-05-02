@@ -1,0 +1,500 @@
+guiTypes = {
+	containerWindowType = {
+		name = "az_doh_gui_decision_window"
+		position = { x=-10 y=0 }
+		size = { width=510 height=720 }
+		containerWindowType = {
+			name = "az_doh_tesejinjixitong"
+			position = { x=0 y=0 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_tesejinjixitong_title"
+				orientation = UPPER_LEFT
+				position = { x = 0 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_tesejinjixitong_title_text"
+				maxWidth = 510
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = doh_dianshu_warning
+			}
+		}
+		containerWindowType = {
+			name = "az_doh_decision_touzi"
+			position = { x=0 y=60 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_touzi"
+				orientation = UPPER_LEFT
+				position = { x = 105 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_touzi_text"
+				maxWidth = 300
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_touzi_text_tt"
+			}
+			buttonType = {
+				name = "az_doh_gui_touzi_add_one"
+				position = { x = 410 y = 0 }
+				quadTextureSprite ="GFX_add_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_touzi_add_one_tooltip"
+				clicksound = click_default
+				pdx_disabled_tooltip = az_doh_gui_touzi_add_one_tooltip_disabled
+			}
+			buttonType = {
+				name = "az_doh_gui_touzi_add_5"
+				position = { x = 460 y = 0 }
+				quadTextureSprite ="GFX_add_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_disabled_tooltip = az_doh_gui_touzi_add_one_tooltip_disabled
+				pdx_tooltip = "az_doh_gui_touzi_add_one_tooltip"
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_touzi_subtract_one"
+				position = { x = 100 y = 0 }
+				quadTextureSprite ="GFX_subtract_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_touzi_subtract_one_tooltip"
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_touzi_subtract_5"
+				position = { x = 50 y = 0 }
+				quadTextureSprite ="GFX_subtract_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_touzi_subtract_one_tooltip"
+				clicksound = click_default
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_gonggongkaizhi"
+			position = { x=0 y=120 }
+			
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_gonggongkaizhi"
+				orientation = UPPER_LEFT
+				position = { x = 105 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_gonggongkaizhi_text"
+				maxWidth = 300
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_gonggongkaizhi_text_tt"
+			}
+			buttonType = {
+				name = "az_doh_gui_gonggongkaizhi_add_one"
+				position = { x = 410 y = 0 }
+				quadTextureSprite ="GFX_add_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_gonggongkaizhi_add_one_tooltip"
+				clicksound = click_default
+				pdx_disabled_tooltip = az_doh_gui_gonggongkaizhi_add_one_tooltip_disabled
+			}
+			buttonType = {
+				name = "az_doh_gui_gonggongkaizhi_add_5"
+				position = { x = 460 y = 0 }
+				quadTextureSprite ="GFX_add_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_gonggongkaizhi_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_gonggongkaizhi_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_gonggongkaizhi_subtract_one"
+				position = { x = 100 y = 0 }
+				quadTextureSprite ="GFX_subtract_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_gonggongkaizhi_subtract_one_tooltip"
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_gonggongkaizhi_subtract_5"
+				position = { x = 50 y = 0 }
+				quadTextureSprite ="GFX_subtract_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_gonggongkaizhi_subtract_one_tooltip"
+				clicksound = click_default
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_keyanjinfei"
+			position = { x=0 y=180 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_keyanjinfei"
+				orientation = UPPER_LEFT
+				position = { x = 105 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_keyanjinfei_text"
+				maxWidth = 300
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_keyanjinfei_text_tt"
+			}
+			buttonType = {
+				name = "az_doh_gui_keyanjinfei_add_one"
+				position = { x = 410 y = 0 }
+				quadTextureSprite ="GFX_add_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_keyanjinfei_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_keyanjinfei_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_keyanjinfei_add_5"
+				position = { x = 460 y = 0 }
+				quadTextureSprite ="GFX_add_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_keyanjinfei_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_keyanjinfei_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_keyanjinfei_subtract_one"
+				position = { x = 100 y = 0 }
+				quadTextureSprite ="GFX_subtract_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_keyanjinfei_subtract_one_tooltip"
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_keyanjinfei_subtract_5"
+				position = { x = 50 y = 0 }
+				quadTextureSprite ="GFX_subtract_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_keyanjinfei_subtract_one_tooltip"
+				clicksound = click_default
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_junshijinfei"
+			position = { x=0 y=240 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_junshijinfei"
+				orientation = UPPER_LEFT
+				position = { x = 105 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_junshijinfei_text"
+				maxWidth = 300
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_junshijinfei_text_tt"
+			}
+			buttonType = {
+				name = "az_doh_gui_junshijinfei_add_one"
+				position = { x = 410 y = 0 }
+				quadTextureSprite ="GFX_add_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_junshijinfei_add_one_tooltip"
+				clicksound = click_default
+				pdx_disabled_tooltip = az_doh_gui_junshijinfei_add_one_tooltip_disabled
+			}
+			buttonType = {
+				name = "az_doh_gui_junshijinfei_add_5"
+				position = { x = 460 y = 0 }
+				quadTextureSprite ="GFX_add_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_junshijinfei_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_junshijinfei_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_junshijinfei_subtract_one"
+				position = { x = 100 y = 0 }
+				quadTextureSprite ="GFX_subtract_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_junshijinfei_subtract_one_tooltip"
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_junshijinfei_subtract_5"
+				position = { x = 50 y = 0 }
+				quadTextureSprite ="GFX_subtract_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_junshijinfei_subtract_one_tooltip"
+				clicksound = click_default
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_shichang"
+			position = { x=0 y=300 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_shichang"
+				orientation = UPPER_LEFT
+				position = { x = 105 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_shichang_text"
+				maxWidth = 300
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_shichang_text_tt"
+			}
+			buttonType = {
+				name = "az_doh_gui_shichang_add_one"
+				position = { x = 410 y = 0 }
+				quadTextureSprite ="GFX_add_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_shichang_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_shichang_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_shichang_add_5"
+				position = { x = 460 y = 0 }
+				quadTextureSprite ="GFX_add_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_shichang_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_shichang_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_shichang_subtract_one"
+				position = { x = 100 y = 0 }
+				quadTextureSprite ="GFX_subtract_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_shichang_subtract_one_tooltip"
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_shichang_subtract_5"
+				position = { x = 50 y = 0 }
+				quadTextureSprite ="GFX_subtract_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_shichang_subtract_one_tooltip"
+				clicksound = click_default
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_gexinshengchanli"
+			position = { x=0 y=360 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_gexinshengchanli"
+				orientation = UPPER_LEFT
+				position = { x = 105 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_gexinshengchanli_text"
+				maxWidth = 300
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_gexinshengchanli_text_tt"
+			}
+			buttonType = {
+				name = "az_doh_gui_gexinshengchanli_add_one"
+				position = { x = 410 y = 0 }
+				quadTextureSprite ="GFX_add_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_gexinshengchanli_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_gexinshengchanli_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_gexinshengchanli_add_5"
+				position = { x = 460 y = 0 }
+				quadTextureSprite ="GFX_add_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button1_text"
+				pdx_tooltip = "az_doh_gui_gexinshengchanli_add_one_tooltip"
+				pdx_disabled_tooltip = az_doh_gui_gexinshengchanli_add_one_tooltip_disabled
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_gexinshengchanli_subtract_one"
+				position = { x = 100 y = 0 }
+				quadTextureSprite ="GFX_subtract_one" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_gexinshengchanli_subtract_one_tooltip"
+				clicksound = click_default
+			}
+			buttonType = {
+				name = "az_doh_gui_gexinshengchanli_subtract_5"
+				position = { x = 50 y = 0 }
+				quadTextureSprite ="GFX_subtract_5" 
+				buttonFont = "vic_18"
+				#buttonText = "az_doh_gui_button2_text"
+				pdx_tooltip = "az_doh_gui_gexinshengchanli_subtract_one_tooltip"
+				clicksound = click_default
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_zongjikaizhi"
+			position = { x=0 y=420 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_zongjikaizhi"
+				orientation = UPPER_LEFT
+				position = { x = 0 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_zongjikaizhi_text"
+				maxWidth = 255
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_zongjikaizhi_text_tt"
+			}
+			instantTextboxType = {
+				name = "az_doh_xiaofeipingyinxiang_factor"
+				orientation = UPPER_LEFT
+				position = { x = 255 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_xiaofeipingyinxiang_factor_text"
+				maxWidth = 255
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_xiaofeipingyinxiang_factor_text_tt"
+				pdx_tooltip_delayed = az_doh_xiaofeipingyinxiang_factor_text_delay_tt
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_guimoxiaoyin"
+			position = { x=0 y=480 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_guimoxiaoyin"
+				orientation = UPPER_LEFT
+				position = { x = 0 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_guimoxiaoyin_text"
+				maxWidth = 255
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_guimoxiaoyin_text_tt"
+			}
+			instantTextboxType = {
+				name = "az_doh_guimoxiaoyin_effect"
+				orientation = UPPER_LEFT
+				position = { x = 255 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_guimoxiaoyin_effect_text"
+				maxWidth = 255
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_guimoxiaoyin_effect_text_tt"
+				pdx_tooltip_delayed = az_doh_guimoxiaoyin_effect_text_tt_delay
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_decision_hegongye"
+			position = { x=0 y=540 }
+			size = { width=510 height=60 }
+			
+			iconType = {
+				name = "az_doh_nuclear_icon"
+				spriteType = "GFX_nuclear_reactor_medium"
+				frame = 0
+				position = { x=100 y=0 }
+				centerposition = yes
+			}
+			instantTextboxType = {
+				name = "az_doh_hedian_counter"
+				orientation = UPPER_LEFT
+				position = { x = 155 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_hedian_counter_text"
+				maxWidth = 200
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_hedian_counter_text_tt"
+				pdx_tooltip_delayed = az_doh_hedian_counter_text_tt_delay
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_tongyizhanxian_t"
+			position = { x=0 y=600 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_tongyizhanxian_title"
+				orientation = UPPER_LEFT
+				position = { x = 0 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_tongyizhanxian_title_text"
+				maxWidth = 510
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_tongyizhanxian_title_tt"
+			}
+		}
+
+		containerWindowType = {
+			name = "az_doh_zhichiduchengfa"
+			position = { x=0 y=660 }
+			size = { width=510 height=60 }
+			instantTextboxType = {
+				name = "az_doh_zhichiduchengfa"
+				orientation = UPPER_LEFT
+				position = { x = 0 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_zhichiduchengfa_text"
+				maxWidth = 255
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_zhichiduchengfa_tt"
+				pdx_tooltip_delayed = az_doh_zhichiduchengfa_tt_delay
+			}
+			instantTextboxType = {
+				name = "az_doh_extra_xiaofeiping"
+				orientation = UPPER_LEFT
+				position = { x = 255 y = 0 }
+				font = "hoi_20b"
+				text = "az_doh_extra_xiaofeiping_text"
+				maxWidth = 255
+				maxHeight = 60
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_doh_extra_xiaofeiping_tt"
+				pdx_tooltip_delayed = "az_doh_extra_xiaofeiping_tt_delay"
+			}
+		}
+
+	}
+}

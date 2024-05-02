@@ -1,0 +1,542 @@
+SIR_zaogongchang_focus_effect = {
+	add_offsite_building = { type = dockyard level = 20 }
+	every_controlled_state = {
+		limit = {
+			OR = {
+				has_state_category = metropolis
+				has_state_category = megalopolis
+			}
+		}
+		add_extra_state_shared_building_slots = 5
+		add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 3
+			instant_build = yes
+		}
+		add_building_construction = {
+			type = infrastructure
+			level = 2
+			instant_build = yes
+		}
+	}
+	every_controlled_state = {
+		limit = {
+			OR = {
+				has_state_category = large_city
+				
+			}
+		}
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}
+		add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+		add_building_construction = {
+			type = infrastructure
+			level = 1
+			instant_build = yes
+		}
+	}
+	every_controlled_state = {
+		limit = {
+			NOT = {
+				OR = {
+					has_state_category = large_city
+					
+					has_state_category = metropolis
+					has_state_category = megalopolis
+				}	
+			}
+			
+		}
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+			type = infrastructure
+			level = 1
+			instant_build = yes
+		}
+		
+	}
+}
+
+AZ_siren_reinforce_cd_setup = {
+	#此效果在开始游戏按钮点击后触发，用来设置不同塞壬刷兵决议的冷却时间。
+	#以下变量存储在国家域，开始游戏后也可以加减以改变不同阶段塞壬召唤不同种类支援的速率和数量
+	#siren_reinforce_1_cd 步兵/摩托化部队冷却时间
+	#siren_reinforce_2_cd 轻坦冷却时间
+	#siren_reinforce_3_cd 中坦冷却时间
+	#siren_reinforce_4_cd 重坦冷却时间
+	#siren_reinforce_5_cd 超重冷却时间
+	#siren_reinforce_1_factor 步兵/摩托化部队乘数
+	#siren_reinforce_2_factor 轻坦冷却乘数
+	#siren_reinforce_3_factor 中坦冷却乘数
+	#siren_reinforce_4_factor 重坦冷却乘数
+	#siren_reinforce_5_factor 超重冷却乘数
+	SIR = {
+		set_variable = { siren_reinforce_1_cd = 50 }
+		set_variable = { siren_reinforce_2_cd = 60 }
+		set_variable = { siren_reinforce_3_cd = 60 }
+		set_variable = { siren_reinforce_4_cd = 90 }
+		set_variable = { siren_reinforce_5_cd = 120 }
+		if = {
+			limit = {
+				has_global_flag = sirennandu1
+			}
+			set_variable = { siren_reinforce_1_factor = 7 }
+			set_variable = { siren_reinforce_2_factor = 7 }
+			set_variable = { siren_reinforce_3_factor = 6 }
+			set_variable = { siren_reinforce_4_factor = 12 }
+			set_variable = { siren_reinforce_5_factor = 10 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_global_flag = sirennandu2
+					has_global_flag = sirennandu3
+				}
+			}
+			set_variable = { siren_reinforce_1_factor = 10 }
+			set_variable = { siren_reinforce_2_factor = 10 }
+			set_variable = { siren_reinforce_3_factor = 8 }
+			set_variable = { siren_reinforce_4_factor = 15 }
+			set_variable = { siren_reinforce_5_factor = 10 }
+		}
+		else = {
+			set_variable = { siren_reinforce_1_factor = 5 }
+			set_variable = { siren_reinforce_2_factor = 5 }
+			set_variable = { siren_reinforce_3_factor = 4 }
+			set_variable = { siren_reinforce_4_factor = 7 }
+			set_variable = { siren_reinforce_5_factor = 10 }
+		}
+	}
+	SR1 = {
+		set_variable = { siren_reinforce_1_cd = 100 }
+		set_variable = { siren_reinforce_2_cd = 100 }
+		set_variable = { siren_reinforce_3_cd = 120 }
+		set_variable = { siren_reinforce_4_cd = 120 }
+		set_variable = { siren_reinforce_5_cd = 360 }
+		set_variable = { siren_reinforce_1_factor = 7 }
+		set_variable = { siren_reinforce_2_factor = 2 }
+		set_variable = { siren_reinforce_3_factor = 1 }
+		set_variable = { siren_reinforce_4_factor = 1 }
+		set_variable = { siren_reinforce_5_factor = 7 }
+	}
+	SR2 = {
+		set_variable = { siren_reinforce_1_cd = 80 }
+		set_variable = { siren_reinforce_2_cd = 80 }
+		set_variable = { siren_reinforce_3_cd = 100 }
+		set_variable = { siren_reinforce_4_cd = 100 }
+		set_variable = { siren_reinforce_5_cd = 360 }
+		set_variable = { siren_reinforce_1_factor = 7 }
+		set_variable = { siren_reinforce_2_factor = 6 }
+		set_variable = { siren_reinforce_3_factor = 5 }
+		set_variable = { siren_reinforce_4_factor = 5 }
+		set_variable = { siren_reinforce_5_factor = 7 }
+	}
+	SR3 = {
+		set_variable = { siren_reinforce_1_cd = 30 }
+		set_variable = { siren_reinforce_2_cd = 30 }
+		set_variable = { siren_reinforce_3_cd = 60 }
+		set_variable = { siren_reinforce_4_cd = 60 }
+		set_variable = { siren_reinforce_5_cd = 360 }
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = sirennandu2
+					has_global_flag = sirennandu3
+				}
+			}
+			set_variable = { siren_reinforce_1_factor = 6 }
+			set_variable = { siren_reinforce_2_factor = 6 }
+			set_variable = { siren_reinforce_3_factor = 4 }
+			set_variable = { siren_reinforce_4_factor = 4 }
+			set_variable = { siren_reinforce_5_factor = 7 }
+		}
+		else = {
+			set_variable = { siren_reinforce_1_factor = 4 }
+			set_variable = { siren_reinforce_2_factor = 3 }
+			set_variable = { siren_reinforce_3_factor = 1 }
+			set_variable = { siren_reinforce_4_factor = 1 }
+			set_variable = { siren_reinforce_5_factor = 7 }
+		}
+	}
+	SR4 = {
+		set_variable = { siren_reinforce_1_cd = 100 }
+		set_variable = { siren_reinforce_2_cd = 100 }
+		set_variable = { siren_reinforce_3_cd = 120 }
+		set_variable = { siren_reinforce_4_cd = 120 }
+		set_variable = { siren_reinforce_5_cd = 360 }
+		set_variable = { siren_reinforce_1_factor = 7 }
+		set_variable = { siren_reinforce_2_factor = 1 }
+		set_variable = { siren_reinforce_3_factor = 1 }
+		set_variable = { siren_reinforce_4_factor = 1 }
+		set_variable = { siren_reinforce_5_factor = 7 }
+	}
+}
+
+AZ_siren_difficulty_setup = {
+	#另 起 炉 灶
+	#游戏刚开始不允许塞壬刷兵
+	if = {
+		limit = {
+			has_global_flag = sirennandu1
+		}
+		set_variable = { global.AZ_siren_difficulty = 1 }
+		every_country = { 
+			limit = {
+				shisairen_trigger = yes
+			}
+			set_country_flag = { flag = siren_safe_time value = 1 days = 180 }
+			country_event = { id = AZ_siren.1 days = 1 }
+		}
+	}
+	else_if = {
+		limit = {
+			has_global_flag = sirennandu2
+		}
+		set_variable = { global.AZ_siren_difficulty = 2 }
+		every_country = {
+			limit = {
+				shisairen_trigger = yes
+			}
+			set_country_flag = { flag = siren_safe_time value = 1 days = 180 }
+			country_event = { id = AZ_siren.1 days = 1 }
+		}
+	}
+	else_if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		set_variable = { global.AZ_siren_difficulty = 3 }
+		every_country = {
+			limit = {
+				shisairen_trigger = yes
+			}
+			set_country_flag = { flag = siren_safe_time value = 1 days = 360 }
+			country_event = { id = AZ_siren.1 days = 1 }
+		}
+	}
+	else = {
+		set_variable = { global.AZ_siren_difficulty = 0 }
+		every_country = {
+			limit = {
+				OR = {
+					tag = SR1
+					tag = SR2
+					tag = SR3
+					tag = SR4
+				}
+			}
+			set_country_flag = { flag = siren_safe_time value = 1 days = 180 }
+			country_event = { id = AZ_siren.1 days = 1 }
+		}
+	}
+}
+
+SIR_reinforce_1_inf = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_1_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 15 } #对于孤勇者难度额外+15
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"蛮啾步兵师\" division_template = \"塞壬步兵兵团\" start_experience_factor = 0.1 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+	
+}
+SIR_reinforce_1_mot = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_1_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 10 } #对于孤勇者难度额外+10
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"蛮啾机动师\" division_template = \"塞壬机动兵团\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+	
+}
+SIR_reinforce_1_mec = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_1_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 10 } #对于孤勇者难度额外+10
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"蛮啾掷弹兵\" division_template = \"塞壬机械化兵团\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+	
+}
+SIR_reinforce_1_inf_big = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_1_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 15 } #对于孤勇者难度额外+15
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"蛮啾步兵师\" division_template = \"塞壬大型步兵兵团\" start_experience_factor = 0.1 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+	
+}
+
+SIR_reinforce_2_lt = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_2_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 5 } #对于孤勇者难度额外+10
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"塞壬轻装甲兵团\" division_template = \"塞壬轻装甲兵团\" start_experience_factor = 0 start_equipment_factor = 1 force_equipment_variants = { light_tank_chassis_1 = { version_name = \"Siren LT-1\"} }"
+				owner = ROOT
+			}
+		}
+	}
+	
+	#原数据 <2(10) 2-4(14) >4(22)
+}
+
+SIR_reinforce_3_mt = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_3_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 5 } #对于孤勇者难度额外+5
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"塞壬中装甲兵团\" division_template = \"塞壬中装甲兵团\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+}
+SIR_reinforce_3_td = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_3_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 5 } #对于孤勇者难度额外+5
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"塞壬反坦克兵团\" division_template = \"塞壬反坦克兵团\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+}
+SIR_reinforce_3_mt_late = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_3_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 5 } #对于孤勇者难度额外+5
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"塞壬中装甲兵团\" division_template = \"塞壬中装甲兵团（后期）\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+}
+
+SIR_reinforce_4_ht = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_4_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 5 } #对于孤勇者难度额外+5
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"塞壬精锐装甲兵团\" division_template = \"塞壬精锐装甲兵团\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+}
+SIR_reinforce_4_td = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_4_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 5 } #对于孤勇者难度额外+5
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"塞壬重装甲兵团\" division_template = \"塞壬重装甲兵团\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+}
+
+SIR_reinforce_5_sht = {
+	set_temp_variable = { num_enemies = 0 }
+	for_each_loop = {
+		array = enemies
+		add_to_temp_variable = { num_enemies = 1 }
+	}
+	set_temp_variable = { loop_num = siren_reinforce_5_factor } #这是基础乘数
+	multiply_temp_variable = { loop_num = num_enemies } #参战国数*基础乘数=刷兵数量
+
+	if = {
+		limit = {
+			has_global_flag = sirennandu3
+		}
+		add_to_temp_variable = { loop_num = 5 } #对于孤勇者难度额外+5
+	}
+	
+	for_loop_effect = {
+		end = loop_num
+		random_controlled_state = {
+			create_unit = {
+				division = "name = \"塞壬陆上要塞装甲兵团\" division_template = \"塞壬陆上要塞装甲兵团\" start_experience_factor = 0 start_equipment_factor = 1"
+				owner = ROOT
+			}
+		}
+	}
+}

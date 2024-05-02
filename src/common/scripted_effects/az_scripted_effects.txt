@@ -1,0 +1,986 @@
+getzhg_event_gerentezhi_se = {
+	custom_effect_tooltip = getzhg_event_gerentezhi_tt
+	if = {
+		limit = { is_navy_leader = yes }
+		add_random_trait = { 
+			search_pattern_expert
+			gentlemanly
+			gunnery_expert
+			cuts_corners
+			chief_engineer
+			bold
+			navy_career_officer
+			battleship_adherent
+			aviation_enthusiast
+			caustic_personality
+			craven
+			naval_lineage
+			navy_media_personality
+		}
+	}
+	else = {
+		add_random_trait = { 
+			substance_abuser
+			substance_addict
+			old_guard
+			brilliant_strategist
+			inflexible_strategist
+			politically_connected
+			war_hero 
+			career_officer
+			trait_cautious
+			trait_reckless
+			media_personality
+			harsh_leader 
+			bearer_of_artillery	
+			infantry_officer
+			cavalry_officer
+			armor_officer
+		}
+	}	
+}
+getzhg_event_xidetezhi_se = {
+	custom_effect_tooltip = getzhg_event_xidetezhi_tt
+	if = {
+		limit = { is_navy_leader = yes }
+		add_random_trait = { 
+			seawolf
+			fleet_protector
+			fly_swatter
+			superior_tactician
+			blockade_runner
+			spotter
+			air_controller
+			ironside
+		}
+	}
+	else = {
+		add_random_trait = { 
+			organizer
+			cavalry_leader
+			infantry_leader
+			skilled_staffer
+			trickster
+			trait_engineer
+			panzer_leader
+			commando
+			naval_invader
+		}
+	}	
+}
+getzhg_event_dixingtezhi_se = {
+	custom_effect_tooltip = getzhg_event_dixingtezhi_tt
+	if = {
+		limit = { is_navy_leader = yes }
+		add_random_trait = { 
+			inshore_fighter
+			green_water_expert
+			blue_water_expert
+			arctic_water_expert
+		}
+	}
+	else = {
+		add_random_trait = { 
+			desert_fox
+			swamp_fox
+			trait_mountaineer
+			hill_fighter
+			jungle_rat
+			ranger
+			urban_assault_specialist
+			winter_specialist
+		}
+	}	
+}
+SIR_buffshangsheng = {
+	custom_effect_tooltip = "BUFF加强"
+	if = {
+		limit = { has_idea = SIR_buff1 } 
+		swap_ideas = { 
+			add_idea = SIR_buff2
+			remove_idea = SIR_buff1
+		}
+	}
+	else_if = {
+		limit = { has_idea = SIR_buff2 } 
+		add_research_slot = 1
+		swap_ideas = { 
+			add_idea = SIR_buff3
+			remove_idea = SIR_buff2
+		}
+	}
+	else_if = {
+		limit = { has_idea = SIR_buff3 } 
+		add_research_slot = 1
+		add_manpower = 10000000
+		swap_ideas = { 
+			add_idea = SIR_buff4
+			remove_idea = SIR_buff3
+		}
+	}
+	else_if = {
+		limit = { has_idea = SIR_buff4 } 
+		add_research_slot = 1
+		remove_ideas = SIR_srdqz
+		swap_ideas = { 
+			add_idea = SIR_buff5
+			remove_idea = SIR_buff4
+		}
+	}
+	else_if = {
+		limit = { has_idea = SIR_buff5 } 
+		add_war_support = 1
+	}
+	else = { add_ideas = SIR_buff1 }
+}
+TIX_heikeji_dengji = {
+	custom_effect_tooltip = TIX_heikeji_dengji_tooltip
+	hidden_effect = {
+		if = {
+			limit = { has_idea = TIX_heikeji_1 }
+			swap_ideas = {
+				remove_idea = TIX_heikeji_1
+				add_idea = TIX_heikeji_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = TIX_heikeji_2 }
+			swap_ideas = {
+				remove_idea = TIX_heikeji_2
+				add_idea = TIX_heikeji_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = TIX_heikeji_3 }
+			swap_ideas = {
+				remove_idea = TIX_heikeji_3
+				add_idea = TIX_heikeji_4
+			}
+		}
+		else = { add_ideas = TIX_heikeji_1 }
+	}
+}
+BFL_lujunjianshe_dengji = {
+	custom_effect_tooltip = BFL_lujunjianshe_dengji_tooltip
+	hidden_effect = {
+		if = {
+			limit = { has_idea = BFL_hjdj1 }
+			swap_ideas = {
+				remove_idea = BFL_hjdj1
+				add_idea = BFL_hjdj2
+			}
+		}
+		else_if = {
+			limit = { has_idea = BFL_hjdj2 }
+			swap_ideas = {
+				remove_idea = BFL_hjdj2
+				add_idea = BFL_hjdj3
+			}
+		}
+		else_if = {
+			limit = { has_idea = BFL_hjdj3 }
+			swap_ideas = {
+				remove_idea = BFL_hjdj3
+				add_idea = BFL_hjdj4
+			}
+		}
+		else_if = {
+			limit = { has_idea = BFL_hjdj4 }
+			swap_ideas = {
+				remove_idea = BFL_hjdj4
+				add_idea = BFL_hjdj5
+			}
+		}
+		else = { add_ideas = BFL_hjdj1}
+	}
+}
+DOH_dongfangguguo_dengji = {
+	if = {
+		limit = { has_idea = DOH_dfgg1 }
+		swap_ideas = {
+			remove_idea = DOH_dfgg1
+			add_idea = DOH_dfgg2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_dfgg2 }
+		swap_ideas = {
+			remove_idea = DOH_dfgg2
+			add_idea = DOH_dfgg3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_dfgg3 }
+		swap_ideas = {
+			remove_idea = DOH_dfgg3
+			add_idea = DOH_dfgg4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_dfgg4 }
+		swap_ideas = {
+			remove_idea = DOH_dfgg4
+			add_idea = DOH_dfgg5
+		}
+	}
+	else = {
+		
+	}
+}
+DOH_baojiaweiguo_dengji = {
+	if = {
+		limit = { has_idea = DOH_bjwg1 }
+		swap_ideas = {
+			remove_idea = DOH_bjwg1
+			add_idea = DOH_bjwg2
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_bjwg2 }
+		swap_ideas = {
+			remove_idea = DOH_bjwg2
+			add_idea = DOH_bjwg3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_bjwg3 }
+		swap_ideas = {
+			remove_idea = DOH_bjwg3
+			add_idea = DOH_bjwg4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_bjwg4 }
+		swap_ideas = {
+			remove_idea = DOH_bjwg4
+			add_idea = DOH_bjwg5
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_bjwg5 }
+		swap_ideas = {
+			remove_idea = DOH_bjwg5
+			add_idea = DOH_bjwg6
+		}
+	}
+	else_if = {
+		limit = { has_idea = DOH_bjwg6 }
+		swap_ideas = {
+			remove_idea = DOH_bjwg6
+			add_idea = DOH_bjwg7
+		}
+	}
+	else = { add_war_support = 0.1 }
+}
+YUW_hldzf_dengji = {
+	if = {
+		limit = { has_idea = YUW_hldzf1 }
+		swap_ideas = {
+			remove_idea = YUW_hldzf1
+			add_idea = YUW_hldzf2
+		}
+	}
+	else_if = {
+		limit = { has_idea = YUW_hldzf2 }
+		swap_ideas = {
+			remove_idea = YUW_hldzf2
+			add_idea = YUW_hldzf3
+		}
+	}
+	else_if = {
+		limit = { has_idea = YUW_hldzf3 }
+		swap_ideas = {
+			remove_idea = YUW_hldzf3
+			add_idea = YUW_hldzf4
+		}
+	}
+	else_if = {
+		limit = { has_idea = YUW_hldzf4 }
+		swap_ideas = {
+			remove_idea = YUW_hldzf4
+			add_idea = YUW_hldzf5
+		}
+	}
+}
+YUW_gsjj_dengji = {
+	custom_effect_tooltip = YUW_gsjj_tooltip
+	hidden_effect = {
+		if = {
+			limit = { has_idea = YUW_jjbk }
+			swap_ideas = {
+				remove_idea = YUW_jjbk
+				add_idea = YUW_jjxt
+			}
+		}
+		else_if = {
+			limit = { has_idea = YUW_jjxt }
+			swap_ideas = {
+				remove_idea = YUW_jjxt
+				add_idea = YUW_jjhmhf
+			}
+		}
+		else_if = {
+			limit = { has_idea = YUW_jjhmhf }
+			swap_ideas = {
+				remove_idea = YUW_jjhmhf
+				add_idea = YUW_jjqywd
+			}
+		}
+		else_if = {
+			limit = { has_idea = YUW_jjqywd }
+			swap_ideas = {
+				remove_idea = YUW_jjqywd
+				add_idea = YUW_wddjj
+			}
+		}
+	}
+}
+YUW_gsjj1_dengji = {
+	custom_effect_tooltip = YUW_gsjj1_tooltip
+	hidden_effect = {
+		if = {
+			limit = { has_idea = YUW_wddjj }
+			swap_ideas = {
+				remove_idea = YUW_wddjj
+				add_idea = YUW_jjqywd
+			}
+		}
+		else_if = {
+			limit = { has_idea = YUW_jjqywd }
+			swap_ideas = {
+				remove_idea = YUW_jjqywd
+				add_idea = YUW_jjhmhf
+			}
+		}
+		else_if = {
+			limit = { has_idea = YUW_jjhmhf }
+			swap_ideas = {
+				remove_idea = YUW_jjhmhf
+				add_idea = YUW_jjxt
+			}
+		}
+		else_if = {
+			limit = { has_idea = YUW_jjxt }
+			swap_ideas = {
+				remove_idea = YUW_jjxt
+				add_idea = YUW_jjbk
+			}
+		}
+	}
+}
+SAD_junfei_army = {
+	if = {
+		limit = { has_idea = SAD_junfei_navy2 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_navy2
+			add_idea = SAD_junfei_navy1
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_navy1 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_navy1
+			add_idea = SAD_junfei_0
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_0 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_0
+			add_idea = SAD_junfei_army1
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_army1 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_army1
+			add_idea = SAD_junfei_army2
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_army2 }
+		army_experience = 50
+	}
+}
+SAD_junfei_navy = {
+	if = {
+		limit = { has_idea = SAD_junfei_army2 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_army2
+			add_idea = SAD_junfei_army1
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_army1 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_army1
+			add_idea = SAD_junfei_0
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_0 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_0
+			add_idea = SAD_junfei_navy1
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_navy1 }
+		swap_ideas = {
+			remove_idea = SAD_junfei_navy1
+			add_idea = SAD_junfei_navy2
+		}
+	}
+	else_if = {
+		limit = { has_idea = SAD_junfei_navy2 }
+		navy_experience = 75
+	}
+}
+DH1_xinrenjingtidu_up_1 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_up_1_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = 1
+	}
+}
+DH1_xinrenjingtidu_down_1 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_down_1_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = -1
+	}
+}
+DH1_xinrenjingtidu_up_3 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_up_3_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = 3
+	}
+}
+DH1_xinrenjingtidu_down_3 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_down_3_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = -3
+	}
+}
+DH1_xinrenjingtidu_up_5 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_up_5_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = 5
+	}
+}
+DH1_xinrenjingtidu_down_5 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_down_5_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = -5
+	}
+}
+DH1_xinrenjingtidu_up_10 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_up_10_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = 10
+	}
+}
+DH1_xinrenjingtidu_down_10 = {
+	custom_effect_tooltip = DH1_xinrenjingtidu_down_10_effect_tooltip
+	add_to_variable = {
+		DOH.xinrenjingtidu_value = -10
+	}
+}
+guojishengyu_up_1 = {
+	custom_effect_tooltip = guojishengyu_up_1_effect_tooltip
+	add_to_variable = {
+		guojishengyu_value = 1
+	}
+}
+guojishengyu_up_3 = {
+	custom_effect_tooltip = guojishengyu_up_3_effect_tooltip
+	add_to_variable = {
+		guojishengyu_value = 3
+	}
+}
+guojishengyu_up_5 = {
+	custom_effect_tooltip = guojishengyu_up_5_effect_tooltip
+	add_to_variable = {
+		guojishengyu_value = 5
+	}
+}
+guojishengyu_down_1 = {
+	custom_effect_tooltip = guojishengyu_down_1_effect_tooltip
+	subtract_from_variable = {
+		guojishengyu_value = 1
+	}
+}
+guojishengyu_down_3 = {
+	custom_effect_tooltip = guojishengyu_down_3_effect_tooltip
+	subtract_from_variable = {
+		guojishengyu_value = 3
+	}
+}
+guojishengyu_down_5 = {
+	custom_effect_tooltip = guojishengyu_down_5_effect_tooltip
+	subtract_from_variable = {
+		guojishengyu_value = 5
+	}
+}
+guojishengyu_down_10 = {
+	custom_effect_tooltip = guojishengyu_down_10_effect_tooltip
+	subtract_from_variable = {
+		guojishengyu_value = 10
+	}
+}
+
+guojishengyu_down_50 = {
+	custom_effect_tooltip = guojishengyu_down_50_effect_tooltip
+	subtract_from_variable = {
+		guojishengyu_value = 50
+	}
+}
+
+TY_lujunliluntupo = {
+	custom_effect_tooltip = TY_lujunliluntupo_effect_tooltip
+	set_country_flag = TY_army_liluntupo
+}	
+TY_haijunliluntupo = {
+	custom_effect_tooltip = TY_haijunliluntupo_effect_tooltip
+	set_country_flag = TY_navy_liluntupo
+}
+TY_kongjunliluntupo = {
+	custom_effect_tooltip = TY_kongjunliluntupo_effect_tooltip
+	set_country_flag = TY_air_liluntupo
+}		
+
+shaixuan_leader_seffect = {
+	clear_array = ROOT.az_leader_list_array
+	every_unit_leader = {
+		set_variable = { THIS.xiujia_leader_wuzi_cost = THIS.num_traits }
+		multiply_variable = { THIS.xiujia_leader_wuzi_cost = 200 }
+	}
+	if = {
+		limit = { has_country_flag = leader_shaixuan_lujunjiangling }
+		if = {
+			limit = { 
+				NOT = {
+					OR = {
+						has_country_flag = leader_shaixuan_zhanlie 
+						has_country_flag = leader_shaixuan_hangmu
+						has_country_flag = leader_shaixuan_xunyang 
+						has_country_flag = leader_shaixuan_quzhu
+						has_country_flag = leader_shaixuan_qianting 
+					}
+				}
+			}
+			every_army_leader = {
+				limit = {
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}	
+		if = {
+			limit = { has_country_flag = leader_shaixuan_zhanlie }
+			every_army_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = zhanlie_army
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_hangmu }
+			every_army_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = hangmu_army
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_xunyang }
+			every_army_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = xunyang_army
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_quzhu }
+			every_army_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = quzhu_army
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+	}
+	if = {
+		limit = { has_country_flag = leader_shaixuan_haijunjiangling }
+		if = {
+			limit = { 
+				NOT = {
+					OR = {
+						has_country_flag = leader_shaixuan_zhanlie 
+						has_country_flag = leader_shaixuan_hangmu
+						has_country_flag = leader_shaixuan_xunyang 
+						has_country_flag = leader_shaixuan_quzhu
+						has_country_flag = leader_shaixuan_qianting 
+					}
+				}
+			}
+			every_navy_leader = {
+				limit = {
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}	
+		if = {
+			limit = { has_country_flag = leader_shaixuan_zhanlie }
+			every_navy_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = zhanlie_navy
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_hangmu }
+			every_navy_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = hangmu_navy
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_xunyang }
+			every_navy_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = xunyang_navy
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_quzhu }
+			every_navy_leader = {
+				limit = { 
+					has_trait = quzhu_navy
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_qianting }
+			every_navy_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					has_trait = qianting_navy
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+	}
+	if = {
+		limit = { 
+			AND = {
+				NOT = { has_country_flag = leader_shaixuan_lujunjiangling }
+				NOT = { has_country_flag = leader_shaixuan_haijunjiangling }
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_zhanlie }
+			every_unit_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					OR = {
+						has_trait = zhanlie_navy
+						has_trait = zhanlie_army
+					}
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+					
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_hangmu }
+			every_unit_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					OR = {
+						has_trait = hangmu_navy
+						has_trait = hangmu_army
+					}
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_xunyang }
+			every_unit_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					OR = {
+						has_trait = xunyang_navy
+						has_trait = xunyang_army
+					}
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_quzhu }
+			every_unit_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					OR = {
+						has_trait = quzhu_navy
+						has_trait = quzhu_army
+					}
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = leader_shaixuan_qianting }
+			every_unit_leader = {
+				limit = { 
+					NOT = { has_trait = trait_yujin }
+					NOT = { has_character_flag = zhaopinzhihuiguan }
+					OR = {
+						has_trait = qianting_navy
+					}
+					or = {
+						has_trait = zhanlie_army
+						has_trait = zhanlie_navy
+						has_trait = hangmu_army
+						has_trait = hangmu_navy
+						has_trait = xunyang_army
+						has_trait = xunyang_navy
+						has_trait = quzhu_army
+						has_trait = quzhu_navy
+						has_trait = qianting_navy
+					}
+				}
+				add_to_array = {
+					ROOT.az_leader_list_array = THIS
+				}
+			}
+		}
+		
+	}
+}

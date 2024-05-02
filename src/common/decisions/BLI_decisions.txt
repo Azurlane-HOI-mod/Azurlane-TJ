@@ -1,0 +1,300 @@
+#购买武器(1政治点=15的IC产能） 1军工满效率每天5IC产出 10把步枪（净生产量+三分之一） 1.42火炮（净生产量+五分之一） 2卡车（净生产量+四分之一）
+BLI_decision_category = {
+	BLI_dishangsheshibanqian_jungong = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			
+			270 = {
+				arms_factory > 2
+			}
+		}
+		days_remove = 3
+		cost = 30
+		remove_effect = {
+			270 = {
+				remove_building = {
+					type = arms_factory
+					level = 3
+				}
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	BLI_dishangsheshibanqian_mingong = {
+		icon = generic_factory
+		priority = 4
+		available = {
+			
+			270 = {
+				industrial_complex > 2
+			}
+		}
+		days_remove = 3
+		cost = 30
+		remove_effect = {
+			270 = {
+				remove_building = {
+					type = industrial_complex
+					level = 3
+				}
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	BLI_dishangsheshibanqian_chuanwu = {
+		icon = generic_naval
+		priority = 4
+		available = {
+			
+			270 = {
+				dockyard > 2
+			}
+		}
+		days_remove = 3
+		cost = 30
+		remove_effect = {
+			270 = {
+				remove_building = {
+					type = dockyard
+					level = 3
+				}
+			}
+			add_offsite_building = {
+				type = dockyard
+				level = 3
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	BLI_dishangsheshibanqian_lianyouchang = {
+		icon = generic_research
+		priority = 4
+		available = {
+			
+			270 = {
+				synthetic_refinery > 2
+			}
+		}
+		days_remove = 3
+		cost = 30
+		remove_effect = {
+			270 = {
+				remove_building = {
+					type = synthetic_refinery
+					level = 3
+				}
+			}
+			add_offsite_building = {
+				type = synthetic_refinery
+				level = 3
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	BLI_dishangsheshibanqian_hesheshi = {
+		icon = generic_ignite_civil_war
+		priority = 4
+		available = {
+			
+			270 = {
+				nuclear_reactor > 0
+			}
+		}
+		days_remove = 3
+		cost = 30
+		remove_effect = {
+			270 = {
+				remove_building = {
+					type = nuclear_reactor
+					level = 1
+				}
+			}
+			add_offsite_building = {
+				type = nuclear_reactor
+				level = 1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	BLI_qiandu = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			capital_scope = {
+				state = 270
+			}
+			has_full_control_of_state = 278
+			has_full_control_of_state = 279
+			has_full_control_of_state = 500
+			has_full_control_of_state = 300
+			has_full_control_of_state = 303
+		}
+		visible = {
+			capital_scope = {
+				state = 270
+			}
+		}
+		complete_effect = {
+			country_event = { id = BLI_event.13 }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
+
+BLI_get_core = {
+
+	BLI_core_1 = {
+
+		name = BLI_core_1
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = BLI
+		}
+
+		available = {
+			FROM = {
+				compliance > 30
+			}
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+
+		state_target = yes
+
+		on_map_mode = map_and_decisions_view
+
+		#targets = {  }
+
+		target_array = controlled_states
+
+		target_trigger = {
+			has_completed_focus = BLI_xindalu
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				compliance > 30
+			}
+		}
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			political_power_gain = -0.05
+		}
+
+		visible = {
+			tag = BLI
+			has_completed_focus = BLI_xindalu
+			always = yes
+		}
+
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	BLI_hesairenkaizhan = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			is_neighbor_of = SIR
+			date > 1939.1.1
+		}
+		visible = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		complete_effect = {
+			country_event = { id = BLI_event.9 }
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	BLI_jibaisairen = {
+		icon = generic_construction
+		priority = 4
+		available = {
+			has_full_control_of_state = 307
+			has_full_control_of_state = 691
+			has_full_control_of_state = 695
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+			or = {
+				has_war_with = SIR
+				SIR = { is_puppet_of = BLI }
+				not = { country_exists = SIR }
+			}
+		}
+		visible = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		complete_effect = {
+			country_event = { id = BLI_event.10 }
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	BLI_zhanzhenzhunbei_d = {
+		priority = 4
+		available = {
+			OR = {
+		    any_country = {
+				is_major = yes
+				has_war_with = BLI
+			}
+			has_war_with = SIR
+		}
+		}
+		visible = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		complete_effect = {
+			add_ideas = BLI_zhanzhenzhunbei
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+}

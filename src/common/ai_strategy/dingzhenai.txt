@@ -1,0 +1,70 @@
+dingzhenai_unit_production = {
+	allowed = { 
+		OR = {
+			original_tag =  YUW 
+			original_tag =  HUJ 
+			original_tag =  BYG 
+			original_tag =  BFL 
+			original_tag =  SAD 
+			original_tag =  TIX 
+			original_tag =  CHY 
+			original_tag =  DOH 
+			original_tag =  BLI 
+			original_tag =  SIR 
+			original_tag =  DH1
+		}
+	}
+	enable = {
+		has_idea = TY_dingzhenai
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = infantry
+		value = 1000
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = infantry
+		value = 100
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = armor
+		value = 50
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = armor
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories	#装备倾向
+		id = infantry	
+		value = 1
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = train
+		value = 200
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1
+	}
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+	
+	ai_strategy = {
+        type = force_build_armies
+        value = 100
+    }
+}

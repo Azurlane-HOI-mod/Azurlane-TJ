@@ -1,0 +1,738 @@
+YUW_historical_new = {
+	name = "YUW_historical_new"
+	desc = "YUW_historical_new_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+		or = {
+			is_historical_focus_on = yes	#新版本鸢尾历史国策
+			
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_historical_focus_new
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = YUW_yongwangzhiqian
+	}
+
+	ai_national_focuses = {
+		#经济改革与部分工业线
+		YUW_tiqianxuanju
+		YUW_hanweiminzhu
+		YUW_gailiangjingji
+		YUW_shiyejiuji
+		YUW_ziyoumaoyigaige
+		YUW_caiyuangungun
+		YUW_gongrenquanyifaan
+		YUW_jienagcdr
+		YUW_zaiminzhuqizhixiatuanjie
+		YUW_gaigefanganA
+		YUW_junhengfazhan
+		YUW_jichujianshe
+		YUW_shutonghangxian
+		YUW_qingjiaohaidao
+		YUW_jingjigaige
+		#外交线
+		YUW_jiuciweizhiderongren
+		YUW_gongfangzhuanhuan
+		YUW_yanchangfangxian
+		YUW_jiaotingjiudi
+		#其他线路
+		YUW_chongzhengjunbei
+		YUW_lan
+		YUW_blhx
+		YUW_ouzhouxiongji
+		YUW_xinyang
+		YUW_yongwangzhiqian
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_historical = {
+	name = "YUW_historical"
+	desc = "YUW_historical_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+		or = {
+			#is_historical_focus_on = yes	#旧版本鸢尾历史国策
+			
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_historical_focus
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = YUW_yongwangzhiqian
+	}
+
+	ai_national_focuses = {
+		#经济改革与部分工业线
+		YUW_zhengfugaige
+		YUW_hanweiminzhu
+		YUW_gailiangjingji
+		YUW_shiyejiuji
+		YUW_ziyoumaoyigaige
+		YUW_caiyuangungun
+		YUW_gongrenquanyifaan
+		YUW_jienagcdr
+		YUW_zaiminzhuqizhixiatuanjie
+		YUW_gaigefanganA
+		YUW_junhengfazhan
+		YUW_jichujianshe
+		YUW_shutonghangxian
+		YUW_qingjiaohaidao
+		YUW_jingjigaige
+		#大选与部分战争线
+		YUW_jiuciweizhiderongren
+		YUW_gongfangzhuanhuan
+		YUW_yanchangfangxian
+		YUW_zhengquxuanpiao
+		YUW_jianniangminzhuniudai
+		YUW_zhengquzhendezhichi
+		YUW_xiangtidudanbao
+		YUW_gongrenyushimin
+		YUW_gongpiongxuanju
+		#部分外交线与其他线路
+		YUW_jiaotingjiudi
+		YUW_chongzhengjunbei
+		YUW_bai
+		YUW_blhx
+		YUW_xinyang
+		YUW_luolinshizi
+		YUW_yongwangzhiqian
+		
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_historical_lisailiu = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_historical_focus_lisailiu
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_xinyang
+	}
+
+	ai_national_focuses = {
+		#经济改革与部分工业线
+		YUW_zhengfugaige
+		YUW_hanweiminzhu
+		YUW_gailiangjingji
+		YUW_shiyejiuji
+		YUW_ziyoumaoyigaige
+		YUW_caiyuangungun
+		YUW_gongrenquanyifaan
+		YUW_jienagcdr
+		YUW_zaiminzhuqizhixiatuanjie
+		YUW_gaigefanganA
+		YUW_junhengfazhan
+		YUW_jichujianshe
+		YUW_shutonghangxian
+		YUW_qingjiaohaidao
+		YUW_jingjigaige
+		#大选与部分战争线
+		YUW_jiuciweizhiderongren
+		YUW_gongfangzhuanhuan
+		YUW_yanchangfangxian
+		YUW_zhengquxuanpiao
+		YUW_jianniangminzhuniudai
+		YUW_zhengquzhendezhichi
+		YUW_xiangtidudanbao
+		YUW_gongrenyushimin
+		YUW_gongpiongxuanju
+		#部分外交线与其他线路
+		YUW_jiaotingjiudi
+		YUW_chongzhengjunbei
+		YUW_lan
+		YUW_blhx
+		YUW_xinyang
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_yifengmixin_xinxueye = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_shijiegeming
+			}
+	}
+	abort = {
+		has_completed_focus = YUC_xinxueye
+	}
+
+	ai_national_focuses = {
+		#经济改革与换国策前的政治线
+		YUW_yifengmixin
+		YUW_xianshizhengzhi
+		YUW_shiyejiuji
+		YUW_ziyoumaoyigaige
+		YUW_caiyuangungun
+		YUW_gongrenquanyifaan
+		YUW_jienagcdr
+		YUW_zaiminzhuqizhixiatuanjie
+		YUW_zengqianghongsexuanchuan
+		YUW_bizui
+		YUW_qiangpojueze
+		#换国策后
+		YUC_wendingzhengfu
+		YUC_yidangzhuanzheng
+		YUC_wanchengjingjigaige
+		YUC_zhunbeidahui
+		YUC_yaoqingwaiguoyouren
+		YUC_yaoqingguoneidaibiao
+		YUC_huiyikaishi
+		YUC_zhezhongfangan
+		YUC_teshutian
+		YUC_xinxueye
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_yifengmixin_zhongshenzhuxi = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_weiyixuanze
+			}
+	}
+	abort = {
+		has_completed_focus = YUC_zhongshenzhuxi
+	}
+
+	ai_national_focuses = {
+		#经济改革与换国策前的政治线
+		YUW_yifengmixin
+		YUW_xianshizhengzhi
+		YUW_shiyejiuji
+		YUW_ziyoumaoyigaige
+		YUW_caiyuangungun
+		YUW_gongrenquanyifaan
+		YUW_jienagcdr
+		YUW_zaiminzhuqizhixiatuanjie
+		YUW_zengqianghongsexuanchuan
+		YUW_bizui
+		YUW_qiangpojueze
+		#换国策后
+		YUC_wendingzhengfu
+		YUC_yidangzhuanzheng
+		YUC_wanchengjingjigaige
+		YUC_zhunbeidahui
+		YUC_yaoqingwaiguoyouren
+		YUC_yaoqingguoneidaibiao
+		YUC_huiyikaishi
+		YUC_zhezhongfangan
+		YUC_weiyidexuanze
+		YUC_zhongshenzhuxi
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_yifengmixin_yixiangbudaoderen = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_yiwairenxuan
+			}
+	}
+	abort = {
+		has_completed_focus = YUC_yixiangbudaoderen
+	}
+
+	ai_national_focuses = {
+		#经济改革与换国策前的政治线
+		YUW_yifengmixin
+		YUW_xianshizhengzhi
+		YUW_shiyejiuji
+		YUW_ziyoumaoyigaige
+		YUW_caiyuangungun
+		YUW_gongrenquanyifaan
+		YUW_jienagcdr
+		YUW_zaiminzhuqizhixiatuanjie
+		YUW_zengqianghongsexuanchuan
+		YUW_bizui
+		YUW_qiangpojueze
+		#换国策后
+		YUC_wendingzhengfu
+		YUC_yidangzhuanzheng
+		YUC_wanchengjingjigaige
+		YUC_zhunbeidahui
+		YUC_yaoqingwaiguoyouren
+		YUC_yaoqingguoneidaibiao
+		YUC_huiyikaishi
+		YUC_zhezhongfangan
+		YUC_chongxinshenshiwaijiaozhengce
+		YUC_yixiangbudaoderen
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_rangbaerdemingling = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_jiaruchisezhongzhou1
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_jiaruchisezhongzhou
+	}
+
+	ai_national_focuses = {
+		#政治线与经济改革
+		YUW_zhidugeming
+		YUW_rangbaerdemingling
+		YUW_gailiangjingji
+		YUW_kuodazhengbing
+		YUW_boxuelaodongli
+		YUW_jingchaguojia
+		YUW_kongzhizhengfu
+		YUW_jungongyouxian
+		YUW_wuqishengchan
+		YUW_gaigefanganB
+		YUW_junshiguanzhijingji
+		YUW_jichujianshe
+		YUW_shutonghangxian
+		YUW_zhaoanhaidao
+		YUW_jingjigaige
+		YUW_qinzishangzhen
+		YUW_yulisailiuhejie
+		YUW_jieguanguojia
+		#外交线
+		YUW_jiaruchisezhongzhou
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_tuanjieweixixingdong = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_yuanweideziranbianjie1
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_laiyinlanhuozhanzheng
+	}
+
+	ai_national_focuses = {
+		#政治线与经济改革
+		YUW_zhidugeming
+		YUW_tuanjieweixixingdong
+		YUW_qiangpozibenjiajuankuan
+		YUW_lianheqilai
+		YUW_guominjuexing
+		YUW_buliuxuedeneizhan
+		YUW_yuanweideziranbianjie
+		YUW_jichujianshe
+		YUW_shutonghangxian
+		YUW_zhaoanhaidao
+		#外交线
+		YUW_guafenruishi
+		YUW_zainanmeidehuoban
+		YUW_jinjunjiatailuoniya
+		YUW_suoqufashuwalong
+		YUW_diyiciboerduohuiyi
+		YUW_zaiyazhoudeliyi
+		YUW_didisanguodemingyun
+		YUW_shentouhuangjiazhimindi
+		YUW_dierciboerduohuiyi
+		YUW_xuanchengjiaotingjiudi
+		YUW_laiyinlanhuozhanzheng
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+
+YUW_jinjunbali1 = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_jiuguoxingdongjinjunbali
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_tongjijuxiong
+	}
+
+	ai_national_focuses = {
+		#政治线与经济改革
+		YUW_jiuguoxingdong
+		YUW_jinjunbali
+		YUW_zhengjiuyuanweiminzhu
+		YUW_wanjiuwomendejingji
+		YUW_dayuanshuaiwlaile
+		YUW_yuanweikuozhangzhuyi
+		#鸢尾的自然边界
+		YUW_jinjunjiatailuoniya
+		YUW_zainanmeidehuoban
+		YUW_zaiyazhoudeliyi
+		YUW_guafenruishi
+		YUW_shentouhuangjiazhimindi
+		YUW_quebaohouhuayuananquan
+		YUW_xiaomieputaoya
+		YUW_xuanchengjiaotingjiudi
+		#工业线
+		YUW_zhudaojianshe
+		YUW_jungongchang
+		YUW_youhuashengchanlian
+		#军事线
+		YUW_lujunzhuangbei
+		YUW_jidonghuazhuangbei
+		YUW_zhuangjiakeji
+		YUW_lujunlilun
+		YUW_fangyuzhan
+		YUW_liluntupo
+		#一大片蓝
+		YUW_yidapianlan
+		YUW_zhengyipanguan
+		YUW_minzhushizijun
+		YUW_zongjiaoshehui
+		YUW_shenquanzhengzhi
+		YUW_laiyinlanhuozhanzheng
+		#科研线
+		YUW_keyanrencai
+		YUW_guojiakexueyuan
+		YUW_guominfuli
+		#远征北联
+		YUW_yuanzhengbeilian
+		YUW_dongouzhanzhengbuju
+		YUW_fenxibolibadebaiyin
+		YUW_tongjijuxiong
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_zhangkongjiaoting1 = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_jiuguoxingdongzhangkongjiaoting
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_yuanweikuozhangzhuyi
+	}
+
+	ai_national_focuses = {
+		#政治线与经济改革
+		YUW_jiuguoxingdong
+		YUW_zhangkongjiaoting
+		YUW_shishijunshiguanli
+		YUW_wanjiuwomendejingji
+		YUW_buqujishiyuanwei
+		YUW_yuanweikuozhangzhuyi
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_shenshengshiming_xiafei = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_shenshengshiming_xiafei
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_liluntupo
+	}
+
+	ai_national_focuses = {
+		#政治线
+		YUW_shenshengshiming
+		YUW_daibuzhengdi
+		YUW_tingzhiyaoyan
+		YUW_zhongzhijinjun
+		YUW_cuobaiyinmou
+		YUW_shengzhankaiumu
+		YUW_mitugaoyang
+		YUW_tongyixinyang
+		YUW_dongyuanqishi
+		YUW_qizongzui
+		YUW_weihuchuantong
+		YUW_rushensuoyuan
+		#战争线
+		YUW_qishituandedashengzhan
+		YUW_zhengxinyongheng
+		YUW_wuzhuangchaosheng
+		YUW_xindejiaoting
+		YUW_gongfangzhuanhuan
+		YUW_yanchangfangxian
+		YUW_jiaotingjiudi
+		YUW_ouzhouxiongji
+		YUW_renminzhenxian
+		#工业线
+		YUW_zhudaojianshe
+		YUW_jungongchang
+		YUW_youhuashengchanlian
+		#继续拿BUFF
+		YUW_xinyangshouhuzhe
+		YUW_zhongcheng
+		YUW_xinyang
+		YUW_yongwangzhiqian
+		YUW_yidapianlan
+		YUW_zhengyipanguan
+		YUW_zongjiaoshehui
+		YUW_minzhushizijun
+		YUW_shenquanzhengzhi
+		YUW_lujunzhuangbei
+		YUW_jidonghuazhuangbei
+		YUW_zhuangjiakeji
+		YUW_lujunlilun
+		YUW_fangyuzhan
+		YUW_liluntupo
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

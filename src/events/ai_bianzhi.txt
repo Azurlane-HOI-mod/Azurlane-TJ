@@ -1,0 +1,2429 @@
+add_namespace = ai_bianzhi
+
+country_event = {
+	id = ai_bianzhi.1
+	title = "ai_bianzhi.1.t"
+	desc = "ai_bianzhi.1.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = YUW
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.1.a"
+		set_technology = { tech_military_police = 1 }
+		set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+		mio:YUW_renault_organization = { add_mio_size = 20 }
+		mio:YUW_fcm_organization = { add_mio_size = 20 }
+		mio:YUW_aeb_organization = { add_mio_size = 20 }
+		mio:YUW_acl_organization = { add_mio_size = 20 }
+		mio:YUW_acf_organization = { add_mio_size = 20 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 1
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+			if = {  
+				limit = { NOT = { has_idea = TY_dingzhenai } }
+		        division_template = {
+					name = "鸢尾装甲师" 			
+					division_names_group = YUW_ARM_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						medium_armor = { x = 1 y = 3 }
+						medium_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+						mechanized = { x = 4 y = 2 }
+						mechanized = { x = 4 y = 3 }
+					}
+					support = {
+					engineer = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+					light_tank_recon = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+					anti_air = 	{ x = 0 y = 4 }
+				    }
+				}
+			}
+				if = {  
+					limit = { has_idea = TY_dingzhenai
+				 }
+				division_template = {
+					name = "鸢尾小型装甲师" 			
+					division_names_group = YUW_ARM_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+				division_template = {
+					name = "鸢尾小型步兵师" 			
+					division_names_group = YUW_INF_01					
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+			}
+				division_template = {
+					name = "鸢尾驻军" 			
+					division_names_group = YUW_CAV_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.2
+	title = "ai_bianzhi.2.t"
+	desc = "ai_bianzhi.2.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = HUJ
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.2.a"
+		set_technology = { tech_military_police = 1 }
+		set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+		mio:HUJ_vickers_armstrong_huj_organization = { add_mio_size = 20 }
+		mio:HUJ_supermarine_organization = { add_mio_size = 20 }
+		mio:HUJ_harland_wolff_organization = { add_mio_size = 20 }
+		mio:HUJ_cammell_laird_organization = { add_mio_size = 20 }
+		mio:HUJ_yarrow_shipbuilders_organization = { add_mio_size = 20 }
+		mio:HUJ_john_brown_organization = { add_mio_size = 20 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 1
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+			if = {  
+				limit = { NOT = { has_idea = TY_dingzhenai } }
+		division_template = {
+					name = "皇家装甲师" 			
+					division_names_group = HUJ_ARM_02					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						medium_armor = { x = 1 y = 3 }
+						medium_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+						mechanized = { x = 4 y = 2 }
+						mechanized = { x = 4 y = 3 }
+					}
+					support = {
+					engineer = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+				    }
+				}
+			division_template = {
+					name = "皇家两栖装甲师" 			
+					division_names_group = HUJ_MAR_01					
+					regiments = {
+						amphibious_medium_armor = { x = 0 y = 0 }
+						amphibious_medium_armor = { x = 0 y = 1 }
+						amphibious_medium_armor = { x = 0 y = 2 }
+						amphibious_medium_armor = { x = 0 y = 3 }
+						amphibious_medium_armor = { x = 1 y = 0 }
+						amphibious_medium_armor = { x = 1 y = 1 }
+						amphibious_medium_armor = { x = 1 y = 2 }
+						amphibious_medium_armor = { x = 1 y = 3 }
+						medium_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						amphibious_mechanized = { x = 3 y = 0 }
+						amphibious_mechanized = { x = 3 y = 1 }
+						amphibious_mechanized = { x = 3 y = 2 }
+						amphibious_mechanized = { x = 3 y = 3 }
+						amphibious_mechanized = { x = 4 y = 0 }
+						amphibious_mechanized = { x = 4 y = 1 }
+						amphibious_mechanized = { x = 4 y = 2 }
+						amphibious_mechanized = { x = 4 y = 3 }
+					}
+					support = {
+					engineer = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+				    }
+				}
+			}
+				if = {  
+					limit = { has_idea = TY_dingzhenai
+				 }
+				division_template = {
+					name = "皇家小型装甲师" 			
+					division_names_group = HUJ_ARM_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+				division_template = {
+					name = "皇家小型步兵师" 			
+					division_names_group = HUJ_INF_01					
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+			}
+			division_template = {
+					name = "皇家驻军" 			
+					division_names_group = HUJ_CAV_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.3
+	title = "ai_bianzhi.3.t"
+	desc = "ai_bianzhi.3.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = DOH
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.3.a"
+			set_technology = { tech_logistics_company = 1 } 
+			set_technology = { tech_military_police = 1 }
+			set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+			set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+			mio:DOH_jiangnan_shipyard_group_organization = { add_mio_size = 20 }
+			mio:DOH_dagu_shipyard_organization = { add_mio_size = 20 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 2
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+			if = {  
+				limit = { NOT = { has_idea = TY_dingzhenai } }
+			division_template = {
+					name = "东煌装甲师" 			
+					division_names_group = DOH_ARM_01							
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						medium_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+						infantry = { x = 3 y = 4 }
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+						infantry = { x = 4 y = 2 }
+						infantry = { x = 4 y = 3 }
+						infantry = { x = 4 y = 4 }
+					}
+					support = {
+					medium_flame_tank = { x = 0 y = 0 }
+					}
+					}
+					division_template = {
+					name = "东煌步兵师" 			
+					division_names_group = DOH_INF_01							
+					regiments = {
+						artillery_brigade = { x = 0 y = 0 }
+						artillery_brigade = { x = 0 y = 1 }
+						artillery_brigade = { x = 1 y = 0 }
+						artillery_brigade = { x = 1 y = 1 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+						infantry = { x = 4 y = 2 }
+					}
+					}
+				}
+					if = {  
+						limit = { has_idea = TY_dingzhenai
+					 }
+					division_template = {
+						name = "东煌小型步兵师" 			
+						division_names_group = DOH_INF_01							
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 0 y = 3 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 1 y = 3 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+							}
+						}
+						division_template = {
+							name = "东煌小型装甲师" 			
+							division_names_group = DOH_ARM_01					
+							regiments = {
+								medium_armor = { x = 0 y = 0 }
+								medium_armor = { x = 0 y = 1 }
+								medium_armor = { x = 0 y = 2 }
+								medium_armor = { x = 0 y = 3 }
+								medium_armor = { x = 1 y = 0 }
+								infantry = { x = 2 y = 0 }
+								infantry = { x = 2 y = 1 }
+								infantry = { x = 2 y = 2 }
+								infantry = { x = 2 y = 3 }
+								infantry = { x = 3 y = 0 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								light_tank_recon = { x = 0 y = 1 }
+								artillery = { x = 0 y = 2 }
+								anti_air= { x = 0 y = 3 }
+								logistics_company = { x = 0 y = 4 }
+							}
+						}
+		
+						division_template = {
+							name = "东煌小小型步兵师" 			
+							division_names_group = DOH_INF_01					
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 0 y = 3 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+								artillery_brigade = { x = 2 y = 0 }
+								artillery_brigade = { x = 2 y = 1 }
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								recon = { x = 0 y = 1 }
+								artillery = { x = 0 y = 2 }
+								anti_air= { x = 0 y = 3 }
+								logistics_company = { x = 0 y = 4 }
+							}
+						}
+					}
+					division_template = {
+					name = "东煌驻军" 			
+					division_names_group = DOH_CAV_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+				
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.4
+	title = "ai_bianzhi.4.t"
+	desc = "ai_bianzhi.4.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = BYG
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.4.a"
+		set_technology = { tech_logistics_company = 1 }
+		set_technology = { tech_military_police = 1 }
+		set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+		mio:BYG_detroit_arsenal_organization = { add_mio_size = 20 }
+		mio:BYG_north_american_aviation_organization = { add_mio_size = 20 }
+		mio:BYG_boeing_organization = { add_mio_size = 20 }
+		mio:BYG_norfolk_naval_yard_organization = { add_mio_size = 20 }
+		mio:BYG_electric_boat_company_organization = { add_mio_size = 20 }
+		mio:BYG_brooklyn_naval_yard_organization = { add_mio_size = 20 }
+		mio:BYG_newport_news_shipbuilding_organization = { add_mio_size = 20 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 2
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+			if = {  
+				limit = { NOT = { has_idea = TY_dingzhenai } }
+			division_template = {
+					name = "白鹰装甲师" 			
+					division_names_group = BYG_ARM_01			
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						mechanized = { x = 2 y = 0 }
+						mechanized = { x = 2 y = 1 }
+						mechanized = { x = 2 y = 2 }
+						mechanized = { x = 2 y = 3 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						medium_tank_destroyer_brigade = { x = 4 y = 0 }
+						medium_sp_artillery_brigade = { x = 4 y = 1 }
+						medium_sp_anti_air_brigade = { x = 4 y = 2 }
+					}
+					support = {
+					logistics_company = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+					}
+				}
+			}
+				if = {  
+					limit = { has_idea = TY_dingzhenai
+				 }
+				division_template = {
+					name = "白鹰小型装甲师" 			
+					division_names_group = BYG_ARM_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+				division_template = {
+					name = "白鹰小型步兵师" 			
+					division_names_group = BYG_INF_01					
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+			}
+				division_template = {
+					name = "白鹰两栖装甲师" 			
+					division_names_group = BYG_MAR_01					
+					regiments = {
+						amphibious_medium_armor = { x = 0 y = 0 }
+						amphibious_medium_armor = { x = 0 y = 1 }
+						amphibious_medium_armor = { x = 0 y = 2 }
+						amphibious_medium_armor = { x = 1 y = 0 }
+						amphibious_medium_armor = { x = 1 y = 1 }
+						amphibious_medium_armor = { x = 1 y = 2 }
+						amphibious_mechanized = { x = 1 y = 0 }
+						amphibious_mechanized = { x = 1 y = 1 }
+						amphibious_mechanized = { x = 1 y = 2 }
+						amphibious_mechanized = { x = 1 y = 3 }
+						amphibious_mechanized = { x = 2 y = 0 }
+						amphibious_mechanized = { x = 2 y = 1 }
+						amphibious_mechanized = { x = 2 y = 2 }
+						amphibious_mechanized = { x = 2 y = 3 }
+						medium_tank_destroyer_brigade = { x = 4 y = 0 }
+						medium_sp_artillery_brigade = { x = 4 y = 1 }
+						medium_sp_anti_air_brigade = { x = 4 y = 2 }
+					}
+					support = {
+					engineer = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+				    }
+				}
+				division_template = {
+					name = "白鹰驻军" 			
+					division_names_group = BYG_CAV_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+				create_equipment_variant = {
+					name = "圣路易斯级"
+					type = ship_hull_cruiser_2
+					name_group = USA_CL_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_medium_battery_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+						fixed_ship_radar_slot = ship_radar_1
+						fixed_ship_engine_slot = cruiser_ship_engine_2
+						fixed_ship_armor_slot = ship_armor_cruiser_2
+						fixed_ship_secondaries_slot = dp_ship_secondaries_2
+						rear_1_custom_slot = ship_light_medium_battery_2
+						mid_1_custom_slot = ship_torpedo_2
+						mid_2_custom_slot = ship_torpedo_2
+						front_1_custom_slot = ship_light_medium_battery_2
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.5
+	title = "ai_bianzhi.5.t"
+	desc = "ai_bianzhi.5.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = BFL
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.5.a"
+		set_technology = { tech_signal_company = 1 } 
+			set_technology = { tech_logistics_company = 1 }
+			set_technology = { motorized_rocket_unit = 1 } 
+			set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+			set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+			mio:BFL_okmo_organization = { add_mio_size = 20 }
+			mio:BFL_mig_design_bureau_organization = { add_mio_size = 20 }
+			mio:BFL_nevskoye_design_bureau_organization = { add_mio_size = 20 }
+			mio:BFL_rubin_design_bureau_organization = { add_mio_size = 20 }
+			mio:BFL_black_sea_shipyard_organization = { add_mio_size = 20 }
+			mio:BFL_sevastopol_marine_plant_organization = { add_mio_size = 20 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 1
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+			if = {  
+				limit = { NOT = { has_idea = TY_dingzhenai } }
+			division_template = {
+					name = "北联小型装甲师" 			
+					division_names_group = BFL_GTC_01			
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						anti_air_brigade = { x = 2 y = 0 }
+						medium_tank_destroyer_brigade = { x = 3 y = 1 }
+	
+					}
+					support = {
+					logistics_company = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+					}
+				}
+				division_template = {
+					name = "北联装甲师"			
+					division_names_group = BFL_GTC_01
+					regiments = {
+							medium_armor = { x = 0 y = 0 }
+							medium_armor = { x = 0 y = 1 }
+							medium_armor = { x = 0 y = 2 }
+							medium_armor = { x = 0 y = 3 }
+							medium_armor = { x = 1 y = 0 }
+							medium_armor = { x = 1 y = 1 }
+							medium_armor = { x = 1 y = 2 }
+							medium_armor = { x = 1 y = 3 }
+							medium_tank_destroyer_brigade = { x = 2 y = 0 }
+							medium_sp_anti_air_brigade = { x = 2 y = 1 }
+							infantry = { x = 3 y = 0 }
+							infantry = { x = 3 y = 1 }
+							infantry = { x = 3 y = 2 }
+							infantry = { x = 3 y = 3 }
+							infantry = { x = 3 y = 4 }
+							infantry = { x = 4 y = 0 }
+							infantry = { x = 4 y = 1 }
+							infantry = { x = 4 y = 2 }
+							infantry = { x = 4 y = 3 }
+							infantry = { x = 4 y = 4 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 } 	# (semi-mot) Engineer bn
+						medium_flame_tank = { x = 0 y = 1 }
+					}
+					}
+			}
+				if = {  
+					limit = { has_idea = TY_dingzhenai }
+				division_template = {
+					name = "北联小小型装甲师" 			
+					division_names_group = BFL_ARM_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						infantry = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+				division_template = {
+					name = "北联小小型步兵师" 			
+					division_names_group = BFL_INF_01					
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+			}
+				division_template = {
+					name = "北联驻军" 			
+					division_names_group = BFL_Cav_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.6
+	title = "ai_bianzhi.6.t"
+	desc = "ai_bianzhi.6.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = TIX
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.6.a"
+		set_technology = { tech_logistics_company = 1 }
+			set_technology = { tech_military_police = 1 }
+			set_technology = { tech_maintenance_company = 1 }
+		    set_technology = { tech_maintenance_company2 = 1 }
+			set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+			mio:TIX_daimler_benz_organization = { add_mio_size = 20 }
+			mio:TIX_messerschmitt_organization = { add_mio_size = 20 }
+			mio:TIX_focke_wulf_organization = { add_mio_size = 20 }
+			mio:TIX_germaniawerft_organization = { add_mio_size = 20 }
+			mio:TIX_blohm_und_voss_organization = { add_mio_size = 20 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 1
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+			if = {  
+				limit = { NOT = { has_idea = TY_dingzhenai } }
+			division_template = {
+					name = "铁血装甲师" 			
+					division_names_group = TIX_Arm_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						medium_armor = { x = 1 y = 3 }
+						medium_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+						mechanized = { x = 4 y = 2 }
+						mechanized = { x = 4 y = 3 }
+					}
+					support = {
+					medium_flame_tank = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "铁血小型装甲师" 			
+					division_names_group = TIX_Arm_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_tank_destroyer_brigade = { x = 1 y = 0 }
+						medium_sp_anti_air_brigade = { x = 1 y = 1 }
+						mechanized = { x = 2 y = 0 }
+						mechanized = { x = 2 y = 1 }
+						mechanized = { x = 2 y = 2 }
+						mechanized = { x = 2 y = 3 }
+					}
+				    support = {
+					medium_flame_tank = { x = 0 y = 0 }
+					}
+				}
+			}
+				if = {  
+					limit = { has_idea = TY_dingzhenai
+				 }
+				division_template = {
+					name = "铁血小小型装甲师" 			
+					division_names_group = TIX_ARM_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+				division_template = {
+					name = "铁血小型步兵师" 			
+					division_names_group = TIX_INF_01					
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+			}
+				division_template = {
+					name = "铁血驻军" 			
+					division_names_group = TIX_Cav_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.7
+	title = "ai_bianzhi.7.t"
+	desc = "ai_bianzhi.7.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = SAD
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.7.a"
+		set_technology = { tech_engineers2 = 1 }
+		set_technology = { tech_logistics_company = 1 }
+			set_technology = { tech_signal_company = 1 }
+			set_technology = { tech_military_police = 1 }
+            set_technology = { interwar_artillery = 1 }
+			set_technology = { interwar_antitank = 1 }
+			set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+			set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+		mio:SAD_macchi_organization = { add_mio_size = 20 } 
+		mio:SAD_fiat_aviazione_organization = { add_mio_size = 20 } 
+		mio:SAD_fiat_organization = { add_mio_size = 20 }
+		mio:SAD_crda_organization = { add_mio_size = 20 } 
+		mio:SAD_cantiere_oto_organization = { add_mio_size = 20 } 
+		mio:SAD_navalmeccanica_organization = { add_mio_size = 20 }
+		mio:SAD_cantiere_navale_di_ancona_organization = { add_mio_size = 20 } 
+		mio:SAD_cantieri_navali_tosi_organization = { add_mio_size = 20 } 
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 2
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+			set_technology = { tech_maintenance_company = 1 }
+			if = {  
+				limit = { NOT = { has_idea = TY_dingzhenai } }
+			division_template = {
+					name = "撒丁装甲师" 			
+					division_names_group = SAD_ARM_01					
+					regiments = {
+						light_armor = { x = 0 y = 0 }
+						light_armor = { x = 0 y = 1 }
+						light_armor = { x = 1 y = 0 }
+						light_armor = { x = 1 y = 1 }
+						light_armor = { x = 1 y = 2 }
+						light_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						light_sp_artillery_brigade = { x = 2 y = 2 }
+						light_sp_artillery_brigade = { x = 2 y = 3 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+						mechanized = { x = 4 y = 2 }
+						mechanized = { x = 4 y = 3 }
+
+					}
+					support = {
+					medium_flame_tank = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "撒丁小型装甲师" 			
+					division_names_group = SAD_ARM_01					
+					regiments = {
+						mechanized = { x = 0 y = 0 }
+						mechanized = { x = 0 y = 1 }
+						mechanized = { x = 0 y = 2 }
+						mechanized = { x = 0 y = 3 }
+						light_tank_destroyer_brigade = { x = 1 y = 0 }
+						light_armor = { x = 2 y = 0 }
+						light_armor = { x = 2 y = 1 }
+						light_armor = { x = 2 y = 2 }
+						light_armor = { x = 2 y = 3 }
+					}
+					support = {
+					medium_flame_tank = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "撒丁步兵师" 			
+					division_names_group = SAD_INF_01							
+					regiments = {
+						artillery_brigade = { x = 0 y = 0 }
+						artillery_brigade = { x = 0 y = 1 }
+						artillery_brigade = { x = 0 y = 2 }
+						anti_tank_brigade = { x = 1 y = 0 }
+						anti_air_brigade = { x = 1 y = 1 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+						infantry = { x = 4 y = 2 }
+						infantry = { x = 4 y = 3 }
+					}
+					}
+			}
+				division_template = {
+					name = "撒丁中坦" 			
+					division_names_group = SAD_ARM_01					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+					}
+					support = {
+					medium_flame_tank = { x = 0 y = 0 }
+					}
+				}
+				if = {  
+					limit = { has_idea = TY_dingzhenai
+				 }
+				division_template = {
+					name = "撒丁小小型装甲师" 			
+					division_names_group = SAD_ARM_01					
+					regiments = {
+						light_armor = { x = 0 y = 0 }
+						light_armor = { x = 0 y = 1 }
+						light_armor = { x = 0 y = 2 }
+						light_armor = { x = 0 y = 3 }
+						light_armor = { x = 1 y = 0 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+				division_template = {
+					name = "撒丁小型步兵师" 			
+					division_names_group = SAD_INF_01					
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+			}
+				division_template = {
+					name = "撒丁驻军" 			
+					division_names_group = SAD_CAV_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.8
+	title = "ai_bianzhi.8.t"
+	desc = "ai_bianzhi.8.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = CHY
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.8.a"
+		
+		set_technology = { amphibious_drive = 1 }
+		set_technology = { tech_engineers2 = 1 }
+		set_technology = { tech_logistics_company = 1 }
+		set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+		mio:CHY_osaka_army_arsenal_organization = { add_mio_size = 20 }
+		mio:CHY_mitsubishi_organization = { add_mio_size = 20 }
+		mio:CHY_aichi_organization = { add_mio_size = 20 }
+		mio:CHY_kure_naval_arsenal_organization = { add_mio_size = 20 }
+		mio:CHY_yokosuka_naval_arsenal_organization = { add_mio_size = 20 }
+		mio:CHY_maizuru_naval_arsenal_organization = { add_mio_size = 20 }
+		mio:CHY_sasebo_naval_arsenal_organization = { add_mio_size = 20 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+			add_tech_bonus = {
+				name = "装甲研究加成"
+				bonus = 100
+				uses = 2
+				ahead_reduction = 10
+				category = cat_medium_armor
+			}
+		set_technology = { interwar_antitank = 1 }
+		if = { 
+			limit = { NOT = { has_idea = TY_dingzhenai } }
+			division_template = {
+				name = "重樱机械化装甲师" 			
+				division_names_group = CHY_ARM_01					
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_tank_destroyer_brigade = { x = 2 y = 0 }
+					medium_sp_anti_air_brigade = { x = 2 y = 1 }
+					mechanized = { x = 3 y = 0 }
+					mechanized = { x = 3 y = 1 }
+					mechanized = { x = 3 y = 2 }
+					mechanized = { x = 3 y = 3 }
+					mechanized = { x = 4 y = 0 }
+					mechanized = { x = 4 y = 1 }
+					mechanized = { x = 4 y = 2 }
+					mechanized = { x = 4 y = 3 }
+				}
+				support = {
+				engineer = { x = 0 y = 0 }
+				medium_flame_tank = { x = 0 y = 1 }
+				}
+			}
+			division_template = {
+				name = "重樱装甲师" 			
+				division_names_group = CHY_ARM_01					
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_tank_destroyer_brigade = { x = 2 y = 0 }
+					medium_sp_anti_air_brigade = { x = 2 y = 1 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					infantry = { x = 3 y = 3 }
+					infantry = { x = 4 y = 0 }
+					infantry = { x = 4 y = 1 }
+					infantry = { x = 4 y = 2 }
+					infantry = { x = 4 y = 3 }
+				}
+				support = {
+				engineer = { x = 0 y = 0 }
+				medium_flame_tank = { x = 0 y = 1 }
+				}
+			}
+			division_template = {
+				name = "重樱两栖装甲师" 			
+				division_names_group = CHY_MAR_01					
+				regiments = {
+					amphibious_medium_armor = { x = 0 y = 0 }
+					amphibious_medium_armor = { x = 0 y = 1 }
+					amphibious_medium_armor = { x = 0 y = 2 }
+					amphibious_medium_armor = { x = 0 y = 3 }
+					amphibious_medium_armor = { x = 1 y = 0 }
+					amphibious_medium_armor = { x = 1 y = 1 }
+					amphibious_medium_armor = { x = 1 y = 2 }
+					amphibious_medium_armor = { x = 1 y = 3 }
+					medium_tank_destroyer_brigade = { x = 2 y = 0 }
+					medium_sp_anti_air_brigade = { x = 2 y = 1 }
+					marine = { x = 3 y = 0 }
+					marine = { x = 3 y = 1 }
+					marine = { x = 3 y = 2 }
+					marine = { x = 3 y = 3 }
+					marine = { x = 4 y = 0 }
+					marine = { x = 4 y = 1 }
+					marine = { x = 4 y = 2 }
+					marine = { x = 4 y = 3 }
+				}
+				support = {
+				engineer = { x = 0 y = 0 }
+				medium_flame_tank = { x = 0 y = 1 }
+				}
+			}
+			division_template = {
+				name = "重樱步兵师" 			
+				division_names_group = CHY_INF_01							
+				regiments = {
+					artillery_brigade = { x = 0 y = 0 }
+					artillery_brigade = { x = 0 y = 1 }
+					artillery_brigade = { x = 0 y = 2 }
+					artillery_brigade = { x = 0 y = 3 }
+					light_armor = { x = 1 y = 0 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					infantry = { x = 3 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					recon = { x = 0 y = 2 }
+					maintenance_company = { x = 0 y = 3 }
+					}
+				}
+				division_template = {
+					name = "重樱小型步兵师" 			
+					division_names_group = CHY_INF_01							
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						}
+					}
+			division_template = {
+				name = "重樱前期装甲师" 			
+				division_names_group = CHY_Arm_01					
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					light_armor = { x = 3 y = 0 }
+					light_armor = { x = 3 y = 1 }
+					light_armor = { x = 3 y = 2 }
+					light_armor = { x = 4 y = 0 }
+					light_armor = { x = 4 y = 1 }
+				}
+				support = {
+				engineer = { x = 0 y = 0 }
+				artillery = { x = 0 y = 1 }
+				recon = { x = 0 y = 2 }
+				logistics_company = { x = 0 y = 3 }
+				field_hospital = { x = 0 y = 4 }
+				}
+			}
+		 }
+		 if = {  
+			limit = { has_idea = TY_dingzhenai
+		 }
+		 division_template = {
+			name = "重樱小小型装甲师" 			
+			division_names_group = CHY_ARM_01					
+			regiments = {
+				medium_armor = { x = 0 y = 0 }
+				medium_armor = { x = 0 y = 1 }
+				medium_armor = { x = 0 y = 2 }
+				medium_armor = { x = 0 y = 3 }
+				medium_armor = { x = 1 y = 0 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 2 y = 2 }
+				infantry = { x = 2 y = 3 }
+				infantry = { x = 3 y = 0 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				light_tank_recon = { x = 0 y = 1 }
+				artillery = { x = 0 y = 2 }
+				anti_air= { x = 0 y = 3 }
+				logistics_company = { x = 0 y = 4 }
+			}
+		}
+
+		division_template = {
+			name = "重樱小型步兵师" 			
+			division_names_group = CHY_INF_01					
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				artillery_brigade = { x = 2 y = 0 }
+				artillery_brigade = { x = 2 y = 1 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				recon = { x = 0 y = 1 }
+				artillery = { x = 0 y = 2 }
+				anti_air= { x = 0 y = 3 }
+				logistics_company = { x = 0 y = 4 }
+			}
+		}
+		}
+				division_template = {
+					name = "重樱驻军" 			
+					division_names_group = CHY_Cav_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+				create_equipment_variant = {
+					name = "爱宕级"
+					type = ship_hull_cruiser_2
+					name_group = JAP_CL_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_medium_battery_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+						fixed_ship_radar_slot = ship_radar_1
+						fixed_ship_engine_slot = cruiser_ship_engine_2
+						fixed_ship_armor_slot = ship_armor_cruiser_2
+						fixed_ship_secondaries_slot = dp_ship_secondaries_2
+						rear_1_custom_slot = ship_light_medium_battery_2
+						mid_1_custom_slot = ship_torpedo_2
+						mid_2_custom_slot = ship_torpedo_2
+						front_1_custom_slot = ship_light_medium_battery_2
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.9
+	title = "ai_bianzhi.9.t"
+	desc = "ai_bianzhi.9.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = BLI
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.9.a"
+		set_technology = { tech_logistics_company = 1 }
+		set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+		if = {  
+			limit = { NOT = { has_idea = TY_dingzhenai } }
+			      division_template = {
+					name = "布里装甲师" 								
+					regiments = {
+						heavy_armor = { x = 0 y = 0 }
+						heavy_armor = { x = 0 y = 1 }
+						heavy_armor = { x = 0 y = 2 }
+						heavy_armor = { x = 0 y = 3 }
+						heavy_armor = { x = 1 y = 0 }
+						heavy_armor = { x = 1 y = 1 }
+						heavy_armor = { x = 1 y = 2 }
+						heavy_armor = { x = 1 y = 3 }
+						heavy_tank_destroyer_brigade = { x = 2 y = 0 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+						mechanized = { x = 4 y = 2 }
+						mechanized = { x = 4 y = 3 }
+					}
+					support = {
+					engineer = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+				    }
+				}
+			}
+				if = {  
+					limit = { has_idea = TY_dingzhenai
+				 }
+				division_template = {
+					name = "布里小小型装甲师" 					
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						light_tank_recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+
+				division_template = {
+					name = "布里小型步兵师" 							
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+						anti_air= { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+					}
+				}
+			}
+				division_template = {
+					name = "布里步兵师" 									
+					regiments = {
+						artillery_brigade = { x = 0 y = 0 }
+						artillery_brigade = { x = 0 y = 1 }
+						artillery_brigade = { x = 0 y = 2 }
+						artillery_brigade = { x = 1 y = 0 }
+						artillery_brigade = { x = 1 y = 1 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+					}
+					}
+				division_template = {
+					name = "布里驻军" 								
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = ai_bianzhi.10
+	title = "ai_bianzhi.10.t"
+	desc = "ai_bianzhi.10.d"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = SIR
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "ai_bianzhi.10.a"
+		set_technology = { tech_logistics_company = 1 }
+		set_technology = { tech_maintenance_company = 1 }
+		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { mechanised_infantry = 1 }
+		set_technology = { armored_train = 1 }
+		set_technology = { basic_fire_control_system = 1 }
+		set_technology = { improved_fire_control_system = 1 }
+		set_technology = { advanced_fire_control_system = 1 }
+		set_technology = { basic_battery = 1 }
+		set_technology = { basic_light_battery = 1 }
+		set_technology = { improved_light_battery = 1 }
+		set_technology = { advanced_light_battery = 1 }
+		set_technology = { basic_dp_light_battery = 1 }
+		set_technology = { improved_dp_light_battery = 1 }
+		set_technology = { advanced_dp_light_battery = 1 }
+		set_technology = { basic_medium_battery = 1 }
+		set_technology = { improved_medium_battery = 1 }
+		set_technology = { advanced_medium_battery = 1 }
+		set_technology = { basic_dp_medium_battery = 1 }
+		set_technology = { basic_heavy_battery = 1 }
+		set_technology = { improved_heavy_battery = 1 }
+		set_technology = { advanced_heavy_battery = 1 }
+		set_technology = { basic_torpedo = 1 }
+		set_technology = { improved_ship_torpedo_launcher = 1 }
+		set_technology = { advanced_ship_torpedo_launcher = 1 }
+		set_technology = { modern_ship_torpedo_launcher = 1 }
+		set_technology = { sonar = 1 }
+		set_technology = { improved_sonar = 1 }
+		set_technology = { basic_cruiser_armor_scheme = 1 }
+		set_technology = { basic_heavy_armor_scheme = 1 }
+		set_technology = { improved_heavy_armor_scheme = 1 }
+		set_technology = { basic_submarine_snorkel = 1 }
+		set_technology = { improved_submarine_snorkel = 1 }
+		set_technology = { early_bombs = 1 }
+		set_technology = { armor_piercing_bombs = 1 }
+		set_technology = { heavy_bombs = 1 }
+		set_technology = { aa_lmg = 1 }
+		set_technology = { photo_reconnaisance = 1 }
+		set_technology = { survivability_studies = 1 }
+		set_technology = { aa_hmg = 1 }
+		set_technology = { aa_cannon_1 = 1 }
+		set_technology = { aa_cannon_2 = 1 }
+		set_technology = { aa_cannon_3 = 1 }
+		set_technology = { air_torpedoe_1 = 1 }
+		set_technology = { air_torpedoe_2 = 1 }
+		set_technology = { air_torpedoe_3 = 1 }
+		set_technology = { aircraft_construction = 1 }
+		set_technology = { engines_1 = 1 }
+		set_technology = { range_improvements = 1 }
+		set_technology = { engines_2 = 1 }
+		set_technology = { engines_3 = 1 }
+		set_technology = { engines_4 = 1 }
+		set_technology = { rocket_artillery = 1 }
+		set_technology = { jet_engines = 1 }
+		add_equipment_to_stockpile = {
+			type = convoy 
+			amount = 2000
+		}
+		if = {  
+			limit = { NOT = { has_idea = TY_dingzhenai } }
+			      division_template = {
+					name = "塞壬装甲师" 			
+					division_names_group = SIR_HVARM_01					
+					regiments = {
+						heavy_armor = { x = 0 y = 0 }
+						heavy_armor = { x = 0 y = 1 }
+						heavy_armor = { x = 0 y = 2 }
+						heavy_armor = { x = 0 y = 3 }
+						heavy_armor = { x = 1 y = 0 }
+						heavy_armor = { x = 1 y = 1 }
+						heavy_armor = { x = 1 y = 2 }
+						heavy_armor = { x = 1 y = 3 }
+						heavy_tank_destroyer_brigade = { x = 2 y = 0 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+						mechanized = { x = 4 y = 2 }
+						mechanized = { x = 4 y = 3 }
+					}
+					support = {
+					engineer = { x = 0 y = 0 }
+					medium_flame_tank = { x = 0 y = 1 }
+				    }
+				}
+				division_template = {
+					name = "塞壬步兵师" 			
+					division_names_group = SIR_INF_01							
+					regiments = {
+						artillery_brigade = { x = 0 y = 0 }
+						artillery_brigade = { x = 0 y = 1 }
+						artillery_brigade = { x = 0 y = 2 }
+						artillery_brigade = { x = 1 y = 0 }
+						artillery_brigade = { x = 1 y = 1 }
+						artillery_brigade = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+					}
+				}
+					}
+					if = {  
+						limit = { has_idea = TY_dingzhenai
+					 }
+					division_template = {
+						name = "塞壬小小型装甲师" 			
+						division_names_group = SIR_ARM_01					
+						regiments = {
+							heavy_armor = { x = 0 y = 0 }
+							heavy_armor = { x = 0 y = 1 }
+							heavy_armor = { x = 0 y = 2 }
+							heavy_armor = { x = 0 y = 3 }
+							heavy_armor = { x = 1 y = 0 }
+							motorized = { x = 2 y = 0 }
+							motorized = { x = 2 y = 1 }
+							motorized = { x = 2 y = 2 }
+							motorized = { x = 2 y = 3 }
+							motorized = { x = 3 y = 0 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							light_tank_recon = { x = 0 y = 1 }
+							artillery = { x = 0 y = 2 }
+							anti_air= { x = 0 y = 3 }
+							logistics_company = { x = 0 y = 4 }
+						}
+					}
+	
+					division_template = {
+						name = "塞壬小型步兵师" 			
+						division_names_group = SIR_INF_01					
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 0 y = 3 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							artillery_brigade = { x = 2 y = 0 }
+							artillery_brigade = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+							artillery = { x = 0 y = 2 }
+							anti_air= { x = 0 y = 3 }
+							logistics_company = { x = 0 y = 4 }
+						}
+					}
+				}
+				division_template = {
+					name = "塞壬驻军" 			
+					division_names_group = SIR_Arm_01					
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+						cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+						cavalry = { x = 2 y = 3 }
+						cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 }
+						cavalry = { x = 3 y = 1 }
+						cavalry = { x = 3 y = 2 }
+						cavalry = { x = 3 y = 3 }
+						cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 }
+						cavalry = { x = 4 y = 1 }
+						cavalry = { x = 4 y = 2 }
+						cavalry = { x = 4 y = 3 }
+						cavalry = { x = 4 y = 4 }
+					}
+					support = {
+					military_police = { x = 0 y = 0 }
+					}
+				}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+

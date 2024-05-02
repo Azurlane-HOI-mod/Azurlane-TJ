@@ -1,0 +1,547 @@
+DOH_mofifier_effect = {
+	set_variable = {
+		var = DOH_zongjikaizhi
+		value = 0
+	}
+	set_variable = {
+		var = DOH_xiaofeipingyinxiang
+		value = 0
+	}
+	add_to_variable = { var:DOH_zongjikaizhi = var:DOH_touzi }
+	add_to_variable = { var:DOH_zongjikaizhi = var:DOH_keyanjinfei }
+	add_to_variable = { var:DOH_zongjikaizhi = var:DOH_junshijinfei }
+	add_to_variable = { var:DOH_zongjikaizhi = var:DOH_gonggongkaizhi }
+	set_variable = { var:DOH_xiaofeipingyinxiang = var:DOH_zongjikaizhi }
+	multiply_variable = { var:DOH_xiaofeipingyinxiang = var:DOH_xiaofeipingyinxiang_factor }
+	set_variable = { var:DOH_touzi_effect = var:DOH_touzi }
+	multiply_variable = { var:DOH_touzi_effect = 0.04 }
+	set_variable = { var:DOH_keyanjinfei_effect = var:DOH_keyanjinfei }
+	multiply_variable = { var:DOH_keyanjinfei_effect = 0.035 }
+	set_variable = { var:DOH_junshijinfei_effect = var:DOH_junshijinfei }
+	multiply_variable = { var:DOH_junshijinfei_effect = 0.035 }
+	set_variable = { var:DOH_gonggongkaizhi_effect = var:DOH_gonggongkaizhi }
+	multiply_variable = { var:DOH_gonggongkaizhi_effect = 0.05 }
+	set_variable = { var:DOH_gonggongkaizhi_effect_m = var:DOH_gonggongkaizhi_effect }
+	multiply_variable = { var:DOH_gonggongkaizhi_effect_m = -1 }
+	set_variable = { var:DOH_gonggongkaizhi_effect_2 = var:DOH_gonggongkaizhi }
+	multiply_variable = { var:DOH_gonggongkaizhi_effect_2 = 0.01 }
+	set_variable = { var:DOH_gonggongkaizhi_effect_3 = var:DOH_gonggongkaizhi }
+	multiply_variable = { var:DOH_gonggongkaizhi_effect_3 = 0.001 }
+	set_variable = { var:DOH_shichang_effect = var:DOH_shichang }
+	multiply_variable = { var:DOH_shichang_effect = 0.03 }
+	set_variable = { var:DOH_shichang_effect_m = var:DOH_shichang_effect }
+	multiply_variable = { var:DOH_shichang_effect_m = -1 }
+	set_variable = {
+		var = DOH_xiaofeipingyinxiang_factor
+		value = 0.08
+	}
+	set_variable = {
+		var:DOH_zhichiduchengfa_effect = DOH_zhichiduchengfa
+	}
+	multiply_variable = { var:DOH_zhichiduchengfa_effect = -0.01 }
+	if = {
+		limit = {
+			DOH = {
+				has_completed_focus = DOH_donghuanggongyetixi
+			}
+		}
+		set_variable = {
+			var = DOH_guimoxiaoyin
+			value = DOH.num_of_civilian_factories
+		}
+		multiply_variable = { var:DOH_guimoxiaoyin = 0.01 }
+		set_variable = {
+			var = DOH_guimoxiaoyin_effect
+			value = DOH_guimoxiaoyin
+		}
+		multiply_variable = { var:DOH_guimoxiaoyin_effect = 0.05 }
+		set_variable = {
+			var = DOH_guimoxiaoyin_effect_2
+			value = DOH_guimoxiaoyin
+		}
+		multiply_variable = { var:DOH_guimoxiaoyin_effect_2 = 0.006 }
+		if = {
+			limit = {
+				check_variable = {
+					DOH_guimoxiaoyin_effect_2 > 0.018 # 大于300民用厂
+				}
+			}
+			add_to_variable = {
+				var = DOH_xiaofeipingyinxiang_factor
+				value = DOH_guimoxiaoyin_effect_2
+			}
+			add_to_variable = {
+				var = DOH_xiaofeipingyinxiang_factor
+				value = -0.018
+			}
+		}
+		# 革新生产力
+		set_variable = {
+			DOH_keyansudu_all = 0
+		}
+		if = {
+			limit = {
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+			}
+			DOH_gexinshengchanli_effect = yes
+		}
+		multiply_variable = {
+			DOH_keyansudu_all = 0.2
+		}
+		add_to_variable = {
+			DOH_keyansudu_all = 1
+		}
+		divide_variable = {
+			DOH_xiaofeipingyinxiang_factor = DOH_keyansudu_all
+		}
+	}
+	if = {
+		limit = {
+			has_completed_focus = DOH_heqishengcai
+		}
+		set_variable = {
+			extra_xiaofeiping = DOH.stability
+		}
+		multiply_variable = {
+			extra_xiaofeiping = -0.2
+		}
+	}
+	## 工业目标
+	set_variable = {
+		var:DOH_gongyeguihua_doing_goal_display = 1.1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				DOH.num_of_factories < 450
+			}
+		}
+		set_variable = {
+			var:DOH_gongyeguihua_doing_goal_display = 450
+		}
+		subtract_from_variable = {
+			var:DOH_gongyeguihua_doing_goal_display = DOH.num_of_factories
+		}
+		multiply_variable = {
+			var:DOH_gongyeguihua_doing_goal_display = 0.001
+		}
+		add_to_variable = {
+			var:DOH_gongyeguihua_doing_goal_display = 1.1
+		}
+	}
+	multiply_variable = {
+		var:DOH_gongyeguihua_doing_goal_display = DOH.num_of_factories
+	}
+	round_variable = var:DOH_gongyeguihua_doing_goal_display
+	##核电站
+	DOH = {
+		every_owned_state = {
+			if = {
+				limit = {
+					nuclear_reactor > 0
+				}
+				add_dynamic_modifier = {
+					modifier = DOH_hedian_state_modifier
+				}
+			}
+		}
+	}
+	set_variable = {
+		var:DOH_hedian_counter = 0
+	}
+	if = {
+		limit = {
+			DOH = {
+				all_owned_state = {
+					if = {
+						limit = {
+							nuclear_reactor > 0
+						}
+						add_to_temp_variable = {
+							DOH_nu_counter = -0.02
+						}
+					}
+				}
+			}
+		}
+		set_variable = {
+			var:DOH_hedian_counter = DOH_nu_counter
+		}
+	}
+
+	if = {
+		limit = {
+			has_country_flag = DOH_auto_conv_com_arm
+			check_variable = {
+				var:num_equipment@doh_civ_equipment_1 > 0
+			}
+		}
+		set_temp_variable = {
+			temp_var:az_doh_clr_equ = var:num_equipment@doh_civ_equipment_1
+		}
+		divide_temp_variable = {
+			temp_var:az_doh_clr_equ = 180
+		}
+		round_temp_variable = temp_var:az_doh_clr_equ
+		set_temp_variable = {
+			temp_var:az_doh_factroies_add = temp_var:az_doh_clr_equ
+		}
+		multiply_temp_variable = {
+			temp_var:az_doh_clr_equ = -180
+		}
+		add_equipment_to_stockpile = {
+			type = doh_civ_equipment_1
+			amount = temp_var:az_doh_clr_equ
+		}
+		add_offsite_building = {
+			type = arms_factory
+			level = temp_var:az_doh_factroies_add
+		}
+		add_offsite_building = {
+			type = industrial_complex
+			level = temp_var:az_doh_factroies_add
+		}
+		add_timed_idea = {
+			idea = DOH_czdswgy
+			days = 10
+		}
+	}
+	#东煌矿业大学
+	if = {
+		limit = {
+			DOH = {
+				has_completed_focus = DOH_kuangyedaxue
+			}
+		}
+		set_variable = {
+			var:DOH_minyonggongchang_counter_1 = 0
+		}
+		if = {
+			limit = {
+				DOH = {
+					all_owned_state = {
+						if = {
+							limit = {
+								industrial_complex > 0
+							}
+							add_to_temp_variable = {
+								DOH_civ_counter = building_level@industrial_complex
+							}
+						}
+					}
+				}
+			}
+			set_variable = {
+				var:DOH_minyonggongchang_counter_1 = DOH_civ_counter
+			}
+		}
+
+		set_variable = {
+			var:DOH_hechenglianyouchang_counter_2 = 0
+		}
+		if = {
+			limit = {
+				DOH = {
+					all_owned_state = {
+						if = {
+							limit = {
+								synthetic_refinery > 0
+							}
+							add_to_temp_variable = { DOH_sr_counter = building_level@synthetic_refinery }
+							add_to_temp_variable = { DOH_sr_counter = building_level@synthetic_refinery }
+						}
+					}
+				}
+			}
+			set_variable = {
+				var:DOH_hechenglianyouchang_counter_2 = DOH_sr_counter
+			}
+		}
+	}
+
+	# if = {
+	# 	limit = {
+	# 		has_country_flag = DOH_auto_conv_cic_civ
+	# 		has > 10000
+	# 	}
+	# 	set_temp_variable = {
+	# 		temp_var:az_doh_clr_equ = var:cic
+	# 	}
+	# 	divide_temp_variable = {
+	# 		temp_var:az_doh_clr_equ = 1800
+	# 	}
+	# 	round_temp_variable = temp_var:az_doh_clr_equ
+	# 	set_temp_variable = {
+	# 		temp_var:az_doh_factroies_add = temp_var:az_doh_clr_equ
+	# 	}
+	# 	multiply_temp_variable = {
+	# 		temp_var:az_doh_clr_equ = -1800
+	# 	}
+	# 	add_equipment_to_stockpile = {
+	# 		type = doh_civ_equipment_1
+	# 		amount = temp_var:az_doh_clr_equ
+	# 	}
+	# 	add_offsite_building = {
+	# 		type = arms_factory
+	# 		level = temp_var:az_doh_factroies_add
+	# 	}
+	# 	add_offsite_building = {
+	# 		type = industrial_complex
+	# 		level = temp_var:az_doh_factroies_add
+	# 	}
+	# 	add_timed_idea = {
+	# 		idea = DOH_czdswgy
+	# 		days = 10
+	# 	}
+	# }
+}
+
+DOH_zhichilvchengfa_effect = {
+	add_popularity = {
+		ideology = neutrality
+		popularity = DOH_zhichiduchengfa_effect
+	}
+	# if = {
+	# 	limit = { has_completed_focus = DOH_renminwansui }
+	# 	add_popularity = {
+	# 		ideology = communism
+	# 		popularity = DOH_zhichiduchengfa_effect
+	# 	}
+	# }
+	# if = {
+	# 	limit = { has_completed_focus = DOH_yinruwaizi }
+	# 	add_popularity = {
+	# 		ideology = democratic
+	# 		popularity = DOH_zhichiduchengfa_effect
+	# 	}
+	# }
+	# if = {
+	# 	limit = { has_completed_focus = DOH_yixianwansui }
+	# 	add_popularity = {
+	# 		ideology = fascism
+	# 		popularity = DOH_zhichiduchengfa_effect
+	# 	}
+	# }
+}
+
+DOH_duiwaishuchu_effect = {
+	# 工厂数目
+	set_variable = {
+		DOH_has_shuchu_factroies = DOH_has_shuchu_civ
+	}
+	multiply_variable = {
+		DOH_has_shuchu_factroies = 0.011
+	}
+	# 控股比例：输出工厂数占对方总工厂数之百分比
+	set_variable = {
+		shuchu_factor = DOH_has_shuchu_factroies
+	}
+	every_country = {
+		if = {
+			limit = {
+				all_country = {
+					if = {
+						limit = {
+							has_country_flag = DOH_shuchu_civ_target_flag
+						}
+						set_temp_variable = {
+							target_total_factories_temp = var:num_of_factories
+						}
+					}
+				}
+			}
+			set_variable = {
+				target_total_factories = target_total_factories_temp
+			}
+		}
+	}
+	multiply_variable = {
+		target_total_factories = 1.45
+	}
+	divide_variable = {
+		shuchu_factor = target_total_factories
+	}
+	# 股东分红
+	set_variable = {
+		shuchu_factor_to_doh = shuchu_factor
+	}
+	multiply_variable = {
+		shuchu_factor_to_doh = 0.5
+	}
+	if = {
+		limit = {
+			check_variable = {
+				shuchu_factor_to_doh > 0.60
+			}
+		}
+		set_variable = {
+			shuchu_factor_to_doh = 0.6
+		}
+	}
+}
+
+d_DOH_auto_shuchu_effect = {
+	set_variable = {
+		DOH_civ_num = DOH.num_equipment@doh_civ_equipment_1
+	}
+	DOH = {
+		send_equipment = {
+			type = doh_civ_equipment_1
+			amount = DOH_civ_num
+			target = var:DOH_shuchu_civ_target_tag
+		}
+	}
+	add_to_variable = {
+		DOH_has_shuchu_civ = DOH_civ_num
+	}
+}
+
+d_DOH_self_duiwaishuchu_init = {
+	DOH = {
+		set_variable = {
+			var:DOH_has_shuchu_civ = 0
+		}
+		set_variable = {
+			var:DOH_has_shuchu_factroies = 0
+		}
+		set_variable = {
+			var:shuchu_factor = 0
+		}
+		set_variable = {
+			var:shuchu_factor_to_doh = 0
+		}
+		clr_country_flag = DOH_shuchu_civ_doing_flag
+		clr_country_flag = DOH_auto_shuchu_civ
+		d_DOH_auto_shuchu_effect = yes
+		DOH_duiwaishuchu_effect = yes
+	}
+}
+
+doh_kexueyuan_effect = {
+	set_variable = {
+		shared_speed_factor = DOH.num_subjects
+	}
+	multiply_variable = {
+		shared_speed_factor = 0.08
+	}
+	every_country = {
+		if = {
+			limit = {
+				OR = {
+					is_subject_of = DOH
+					tag = DOH
+				}
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = az_doh_kexueyuan_modifier
+					}
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = az_doh_kexueyuan_modifier
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						is_subject_of = DOH
+						tag = DOH
+					}
+				}
+				has_dynamic_modifier = {
+					modifier = az_doh_kexueyuan_modifier
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = az_doh_kexueyuan_modifier
+			}
+		}
+	}
+}
+
+# d_DOH_fanshu_add_effect = {
+# 	every_country = {
+# 		limit = {
+# 			has_autonomy_state = doh_fanshu
+# 		}
+# 		set_variable = {
+# 			THIS.zizhichengdu = THIS.autonomy_ratio
+# 		}
+# 		multiply_variable = {
+# 			THIS.zizhichengdu = -1
+# 		}
+# 		add_to_variable = {
+# 			THIS.zizhichengdu = 1
+# 		}
+# 		multiply_variable = {
+# 			THIS.zizhichengdu = 0.3
+# 		}
+# 		add_dynamic_modifier = {
+# 			modifier = az_doh_fanshu_modifier
+# 			scope = THIS.overlord
+# 		}
+# 	}
+# }
+# d_DOH_fanshu_refresh_effect = {
+# 	every_country = {
+# 		limit = {
+# 			has_autonomy_state = doh_fanshu
+# 		}
+# 		set_variable = {
+# 			THIS.zizhichengdu = THIS.autonomy_ratio
+# 		}
+# 		multiply_variable = {
+# 			THIS.zizhichengdu = -1
+# 		}
+# 		add_to_variable = {
+# 			THIS.zizhichengdu = 1
+# 		}
+# 		multiply_variable = {
+# 			THIS.zizhichengdu = 0.3
+# 		}
+# 	}
+# }
+
+
+DOH_neibufenqi_jianqin_effect = {
+	multiply_variable = {
+		var:DOH_zhichiduchengfa = 0.8
+	}
+	custom_effect_tooltip = DOH_neibufenqi_jianqin_effect_tooltip
+}
+DOH_neibufenqi_jianqin_few_effect = {
+	multiply_variable = {
+		var:DOH_zhichiduchengfa = 0.9
+	}
+	custom_effect_tooltip = DOH_neibufenqi_jianqin_few_effect_tooltip
+}
+DOH_neibufenqi_jiazhong_effect = {
+	multiply_variable = {
+		var:DOH_zhichiduchengfa = 2.50
+	}
+	custom_effect_tooltip = DOH_neibufenqi_jiazhong_effect_tooltip
+}
+
+DOH_gexinshengchanli_effect = {
+	DOH = {
+		set_variable = {
+			DOH_keyansudu_single = modifier@research_speed_factor
+		}
+		set_variable = {
+			DOH_keyancao_all = amount_research_slots
+		}
+		add_to_variable = {
+			DOH_keyancao_all = DOH_gexinshengchanli			
+		}
+		divide_variable = {
+			DOH_keyansudu_single = DOH_keyancao_all
+		}
+		set_variable = {
+			DOH_keyansudu_all = DOH_keyansudu_single
+		}
+		multiply_variable = {
+			DOH_keyansudu_all = DOH_gexinshengchanli
+		}
+	}
+}

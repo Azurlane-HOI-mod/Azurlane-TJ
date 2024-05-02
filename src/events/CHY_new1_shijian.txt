@@ -1,0 +1,1755 @@
+add_namespace = CHY_new1_shijian
+country_event = {
+	id = CHY_new1_shijian.1
+	title = CHY_new1_shijian.1.t
+	desc = CHY_new1_shijian.1.d
+	picture = GFX_aze_gangkou
+	is_triggered_only = yes
+	
+	option = {
+		name = "CHY_new1_shijian.1.a"
+		if = {
+		limit = {
+		has_global_flag = MOD_azurlane_sairenzhizai
+		}
+		CHY = {
+			load_focus_tree = chongying_focus
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.2
+	title = CHY_new1_shijian.2.t
+	desc = CHY_new1_shijian.2.d
+	picture = GFX_aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "CHY_new1_shijian.2.a"
+		set_country_flag = chy_zhongshihangmu
+		add_doctrine_cost_reduction = {
+			name = "航母新战术"
+			cost_reduction = 0.5
+			uses = 4
+			category = cat_base_strike
+		}
+		navy_experience = 100
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_country_leader  = {
+					ruling_only  = yes 
+					character  = CHY_chicheng
+				}
+				factor = 10
+			}
+			modifier = {
+				has_country_leader  = {
+					ruling_only  = yes 
+					character  = CHY_changmen
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.2.b"
+		set_country_flag = chy_zhongshizhanliejian
+		add_doctrine_cost_reduction = {
+			name = "战列舰新战术"
+			cost_reduction = 0.5
+			uses = 4
+			category = cat_fleet_in_being
+		}
+		navy_experience = 100
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_country_leader  = {
+					ruling_only  = yes 
+					character  = CHY_chicheng
+				}
+				factor = 0
+			}
+				modifier = {
+					has_country_leader  = {
+						ruling_only  = yes 
+						character  = CHY_changmen
+					}
+					factor = 10
+				}
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.3
+	title = CHY_new1_shijian.3.t
+	desc = CHY_new1_shijian.3.d
+	picture = GFX_aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "CHY_new1_shijian.3.a"
+		army_experience = 100
+		set_country_flag = chy_zhongshitubububin
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_country_leader  = {
+					ruling_only  = yes 
+					character  = CHY_chicheng
+				}
+				factor = 10
+			}
+				modifier = {
+					has_country_leader  = {
+						ruling_only  = yes 
+						character  = CHY_changmen
+					}
+					factor = 0
+				}
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.3.b"
+		army_experience = 100
+		set_country_flag = chy_zhongshijixiehua
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_country_leader  = {
+					ruling_only  = yes 
+					character  = CHY_chicheng
+				}
+				factor = 0
+			}
+				modifier = {
+					has_country_leader  = {
+						ruling_only  = yes 
+						character  = CHY_changmen
+					}
+					factor = 10
+				}
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.4
+	title = CHY_new1_shijian.4.t
+	desc = CHY_new1_shijian.4.d
+	picture = GFX_aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "CHY_new1_shijian.4.a"
+		air_experience = 100
+		set_country_flag = chy_xiaofeiji
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_country_leader  = {
+					ruling_only  = yes 
+					character  = CHY_chicheng
+				}
+				factor = 10
+			}
+				modifier = {
+					has_country_leader  = {
+						ruling_only  = yes 
+						character  = CHY_changmen
+					}
+					factor = 10
+				}
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.4.b"
+		air_experience = 100
+		set_country_flag = chy_zhongfeiji
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_country_leader  = {
+					ruling_only  = yes 
+					character  = CHY_chicheng
+				}
+				factor = 0
+			}
+				modifier = {
+					has_country_leader  = {
+						ruling_only  = yes 
+						character  = CHY_changmen
+					}
+					factor = 0
+				}
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.5
+	title = CHY_new1_shijian.5.t
+	desc = CHY_new1_shijian.5.desc
+	picture = GFX_aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "CHY_new1_shijian.5.a"
+		set_country_flag = chy_shangwu
+		add_popularity = { ideology = fascism popularity = 0.05 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				or = {
+				is_historical_focus_on = yes
+			
+				has_game_rule = {
+					rule = CHY_ai_behavior
+					option = CHY_historical_focus
+				}
+				}
+				factor = 10
+				}
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.5.b"
+		set_country_flag = chy_hundun
+		add_popularity = { ideology = neutrality popularity = 0.35 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				or = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = CHY_ai_behavior
+					option = CHY_historical_focus
+				}
+				}
+				factor = 0
+		    }
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.5.c"
+		set_country_flag = chy_wenhe
+		add_popularity = { ideology = democratic popularity = 0.50 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				or = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = CHY_ai_behavior
+					option = CHY_historical_focus
+				}
+				}
+				factor = 0
+		    }
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.5.d"
+		set_country_flag = chy_tuanjie
+		add_popularity = { ideology = communism popularity = 0.15 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				or = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = CHY_ai_behavior
+					option = CHY_historical_focus
+				}
+				}
+				factor = 0
+		    }
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.6
+	title = CHY_new1_shijian.6.t
+	desc = CHY_new1_shijian.6.desc
+	picture = GFX_aze_xuanzexinqijian
+
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.6.a" 
+		ai_chance = {
+			base = 40
+		}
+        TIX = { give_guarantee = CHY }
+		SAD = { give_guarantee = CHY }
+		CHY = { give_guarantee = SAD }
+		CHY = { give_guarantee = TIX }
+	}
+
+	option = {
+		name = "CHY_new1_shijian.6.b"
+		ai_chance = {
+			base = 10
+		}
+        CHY = { country_event = CHY_new1_shijian.7 }
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.7
+	title = CHY_new1_shijian.7.t
+	desc = CHY_new1_shijian.7.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.7.a" 
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.8
+	title = CHY_new1_shijian.8.t
+	desc = CHY_new1_shijian.8.desc
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.8.a" 
+		ai_chance = {
+			base = 40
+		}
+		TIX = {
+			add_to_faction = CHY
+		}
+	}
+
+	option = {
+		name = "CHY_new1_shijian.8.b" 
+		ai_chance = {
+			base = 10
+		}
+		CHY = { country_event = CHY_new1_shijian.7 }
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.9
+	title = CHY_new1_shijian.9.t
+	desc = CHY_new1_shijian.9.d
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.9.a
+		add_political_power = -200
+		CHY = {
+		transfer_state = 608
+		transfer_state = 614
+		transfer_state = 597
+		transfer_state = 743
+		add_state_claim = 613
+		add_state_claim = 743
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				or = {
+				is_historical_focus_on = yes
+			
+				has_game_rule = {
+					rule = CHY_ai_behavior
+					option = CHY_historical_focus
+				}
+				}
+				factor = 0
+				}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.9.b
+		add_war_support = 0.1
+		CHY = {
+		country_event = { id = CHY_new1_shijian.10 days = 1}
+		}
+		hidden_effect = {
+		news_event = { id = CHY_new1_shijian.11 hours = 30}
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				or = {
+				is_historical_focus_on = yes
+			
+				has_game_rule = {
+					rule = CHY_ai_behavior
+					option = CHY_historical_focus
+				}
+				}
+				factor = 10
+				}
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.10
+	title = CHY_new1_shijian.10.t
+	desc = CHY_new1_shijian.10.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.10.a
+		declare_war_on = { target = DOH type = annex_everything }
+		add_war_support = 0.2
+		set_country_flag = CHY_dohwar_1
+		add_state_claim = 613
+		add_state_claim = 743
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+news_event = {
+	id = CHY_new1_shijian.11
+	title = CHY_new1_shijian.11.t
+	desc = CHY_new1_shijian.11.d
+	picture = GFX_az_dh1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = CHY_new1_shijian.11.a
+		trigger = { 
+		OR = {
+		tag = CHY 
+		tag = DOH
+		}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.11.b
+		trigger = {
+			not = {tag = CHY }
+			not = {tag = DOH }
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.12
+	title = CHY_new1_shijian.12.t
+	desc = CHY_new1_shijian.12.d
+	picture = GFX_aze_daqingxi
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.12.a
+		ai_chance = {
+			base = 10
+		}
+		add_war_support = 0.5
+		add_stability = 0.5
+		add_political_power = 300
+		remove_ideas = {
+			CHY_rxdlj2
+			CHY_rxdlj3
+			CHY_rxdlj4
+		}
+	}
+}
+country_event = {
+	id = CHY_new1_shijian.13
+	title = CHY_new1_shijian.13.t
+	desc = CHY_new1_shijian.13.d
+	picture = GFX_aze_daqingxi
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.13.a
+		ai_chance = {
+			base = 100
+		}
+		white_peace = CHY
+		transfer_state = 609
+		transfer_state = 610
+		transfer_state = 611
+		transfer_state = 612
+		transfer_state = 716
+		transfer_state = 745
+		transfer_state = 328
+		transfer_state = 715
+		transfer_state = 714
+		transfer_state = 761
+		transfer_state = 717
+		transfer_state = 328
+		transfer_state = 524
+		CHY = {
+			country_event = CHY_new1_shijian.1301
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.13.b
+		ai_chance = {
+			base = 20
+		}
+		add_political_power = 100
+		add_war_support = 0.25
+	}
+}
+country_event = {
+	id = CHY_new1_shijian.1301
+	title = CHY_new1_shijian.1301.t
+	desc = CHY_new1_shijian.1301.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.1301.a
+		ai_chance = {
+			base = 100
+		}
+		CHY_xuefeng = {
+			set_nationality = DOH
+		}
+		DOH = {
+			country_event = CHY_new1_shijian.130101
+		}
+	}
+}
+country_event = {
+	id = CHY_new1_shijian.130101
+	title = CHY_new1_shijian.130101.t
+	desc = CHY_new1_shijian.130101.d
+	picture = GFX_aze_haijunxueyuan
+	is_triggered_only = yes
+	immediate = {
+		CHY_xuefeng = {
+			set_nationality = DOH
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.130101.a
+		ai_chance = {
+			base = 100
+		}
+		CHY_xuefeng = {
+			set_character_name = CHY_xuefeng_name1
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.130101.b
+		ai_chance = {
+			base = 0
+		}
+		CHY_xuefeng = {	
+			set_character_name = CHY_xuefeng_name2
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.130101.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = 10
+	}
+}
+country_event = {
+	id = CHY_new1_shijian.1302
+	title = CHY_new1_shijian.1302.t
+	desc = CHY_new1_shijian.1302.d
+	picture = GFX_aze_dhjj
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.1302.a
+		ai_chance = {
+			base = 100
+		}
+		add_war_support = 0.05
+	}
+}
+country_event = {
+	id = CHY_new1_shijian.14
+	title = CHY_new1_shijian.14.t
+	desc = CHY_new1_shijian.14.d
+	picture = GFX_aze_daqingxi
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.14.a
+		ai_chance = {
+			base = 10
+		}
+		swap_ideas = {
+			remove_idea = CHY_dohwar_buff_1
+			add_idea = CHY_dohwar_buff_2
+		}
+		
+	}
+}
+country_event = {
+	id = CHY_new1_shijian.15
+	title = CHY_new1_shijian.15.t
+	desc = CHY_new1_shijian.15.d
+	picture = GFX_aze_daqingxi
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.15.a
+		ai_chance = {
+			base = 10
+		}
+		swap_ideas = {
+			remove_idea = CHY_dohwar_buff_2
+			add_idea = CHY_dohwar_buff_3
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.16
+	title = CHY_new1_shijian.16.t
+	desc = CHY_new1_shijian.16.d
+	picture = GFX_aze_xiaotiancheng_nice
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.16.a
+		CHY = {
+		annex_country = { target = ROOT transfer_troops = yes }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.16.b
+		CHY = {
+		country_event = CHY_new1_shijian.17
+		}
+		ai_chance = {
+			base = 16
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.17
+	title = CHY_new1_shijian.17.t
+	desc = CHY_new1_shijian.17.d
+	picture = GFX_aze_xiaotiancheng_nice
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.17.a
+		CHY = {
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.17.b
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.18
+	title = CHY_new1_shijian.18.t
+	desc = CHY_new1_shijian.18.d
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.18.a
+		add_political_power = -100
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.19
+	title = CHY_new1_shijian.19.t
+	desc = CHY_new1_shijian.19.d
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.19.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment 
+			amount = 15000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 3000
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 1000
+		}
+		set_country_flag = CHY_help_americas
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.19.b
+		CHY = {
+			country_event = CHY_new1_shijian.17
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+news_event = {
+	id = CHY_new1_shijian.20
+	title = CHY_new1_shijian.20.t
+	desc = CHY_new1_shijian.20.d
+	picture = GFX_az_cychicheng
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = CHY_new1_shijian.20.a
+		trigger = { tag = CHY }
+	}
+	option = {
+		name = CHY_new1_shijian.20.b
+		trigger = { 
+			NOT = { tag = CHY }
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.21
+	title = CHY_new1_shijian.21.t
+	desc = CHY_new1_shijian.21.d
+	picture = GFX_aze_daqingxi
+	is_triggered_only = yes	
+	option = {
+		name = CHY_new1_shijian.21.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.22
+	title = CHY_new1_shijian.22.t
+	desc = CHY_new1_shijian.22.d
+	picture = GFX_aze_daqingxi
+	is_triggered_only = yes	
+	option = {
+		name = CHY_new1_shijian.22.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.23
+	title = CHY_new1_shijian.23.t
+	desc = CHY_new1_shijian.23.d
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.23.a
+		CHY = {
+		country_event = { id = CHY_new1_shijian.25 days = 2 }
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+			BYG = {
+			is_ai = no
+			}
+			factor = 0
+			}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.23.b
+		BYG = {
+		country_event = { id = CHY_new1_shijian.24 days = 1 }
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+			BYG = {
+			is_ai = no
+			}
+			factor = 100
+			}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.23.c
+		add_war_support = 0.2
+		CHY = {
+		country_event = { id = CHY_new1_shijian.26 days = 2 }
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.24
+	title = CHY_new1_shijian.24.t
+	desc = CHY_new1_shijian.24.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.24.a
+		CHY = {
+		country_event = { id = CHY_new1_shijian.25 days = 2 }
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.24.b
+		add_war_support = 0.2
+		CHY = {
+		country_event = { id = CHY_new1_shijian.26 days = 2 }
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.25
+	title = CHY_new1_shijian.25.t
+	desc = CHY_new1_shijian.25.d
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.25.a
+		transfer_state = 629
+		transfer_state = 632
+		transfer_state = 638
+		transfer_state = 630
+		transfer_state = 631
+		transfer_state = 727
+		transfer_state = 721
+		transfer_state = 326
+		transfer_state = 639
+		transfer_state = 642
+		transfer_state = 725
+		transfer_state = 643
+		transfer_state = 734
+		transfer_state = 635
+		transfer_state = 636
+		transfer_state = 726
+		transfer_state = 641
+		transfer_state = 733
+		transfer_state = 711
+		transfer_state = 712
+		transfer_state = 710
+		transfer_state = 281
+		transfer_state = 422
+		transfer_state = 650
+		transfer_state = 729
+
+		remove_ideas = CHY_BYG_Pacific
+		
+		if = {
+			limit = {
+				country_exists = INS
+			}
+			annex_country = { target = INS transfer_troops = yes }
+		}
+
+		if = {
+			limit = {
+				any_country = {
+					has_war_with = CHY
+					owns_state = 335
+			} 
+				not = { country_exists = INS }
+			}
+			every_state = {
+				limit = {
+					is_core_of = INS
+				}
+				transfer_state_to = CHY
+			}
+		}
+
+		if = {
+			limit = {
+				country_exists = PHI
+			}
+			annex_country = { target = PHI transfer_troops = yes }
+		}
+
+		if = {
+			limit = {
+				any_country = {
+						has_war_with = CHY
+					owns_state = 327
+			} 
+				not = { country_exists = PHI }
+			}
+			every_state = {
+				limit = {
+					is_core_of = PHI
+				}
+				transfer_state_to = CHY
+			}
+		}
+
+		if = {
+			limit = {
+				country_exists = MAL
+			}
+			annex_country = { target = MAL transfer_troops = yes }
+		}
+
+		if = {
+			limit = {
+				any_country = {
+				has_war_with = CHY
+				owns_state = 336
+			} 
+				not = { country_exists = MAL }
+			}
+			every_state = {
+				limit = {
+					is_core_of = MAL
+				}
+				transfer_state_to = CHY
+			}
+		}
+
+		if = {
+			limit = {
+				country_exists = RAJ
+			}
+			annex_country = { target = RAJ transfer_troops = yes }
+		}
+
+		if = {
+			limit = {
+				not = {
+					has_war_with = CHY
+					owns_state = 439
+			} 
+				not = { country_exists = RAJ }
+			}
+			every_state = {
+				limit = {
+					is_core_of = RAJ
+				}
+				transfer_state_to = CHY
+			}
+			transfer_state = 440
+			transfer_state = 442
+			transfer_state = 445
+			transfer_state = 443
+			transfer_state = 444
+			if = {
+				limit = {
+					NOT = { owns_state = 640 } 
+				}
+			transfer_state = 640
+			}
+			transfer_state = 288
+		}
+
+		if = {
+			limit = {
+				country_exists = AST
+			}
+			annex_country = { target = AST transfer_troops = yes }
+		}
+
+		if = {
+			limit = {
+				any_country = {
+						has_war_with = CHY
+					owns_state = 285
+			} 
+				not = { country_exists = AST }
+			}
+			every_state = {
+				limit = {
+					is_core_of = AST
+				}
+				transfer_state_to = CHY
+			}
+			transfer_state = 523
+		    transfer_state = 737
+		    transfer_state = 634
+		}
+
+		if = {
+			limit = {
+				country_exists = NZL
+			}
+			annex_country = { target = NZL transfer_troops = yes }
+		}
+
+		if = {
+			limit = {
+					any_country = {
+						has_war_with = CHY
+					owns_state = 284
+			} 
+				not = { country_exists = NZL }
+			}
+			every_state = {
+				limit = {
+					is_core_of = NZL
+				}
+				transfer_state_to = CHY
+			}
+		}
+
+		hidden_effect = {
+			CHY = {
+				add_ideas = TIX_guangrongheping
+				}
+		news_event = { id = CHY_new1_shijian.27 days = 1}
+
+		white_peace = { 
+			tag = HUJ
+			message = CHY_yuhujyihecg
+		}
+
+		every_country = {
+			limit = {
+				is_in_faction_with = HUJ
+			}
+			white_peace = { 
+				tag = CHY
+			}
+		}
+		
+		white_peace = { 
+			tag = BYG
+		}
+		BYG = { remove_ideas = BYG_CHY_Pacific }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.26
+	title = CHY_new1_shijian.26.t
+	desc = CHY_new1_shijian.26.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.26.a
+		add_war_support = 0.5
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+news_event = {
+	id = CHY_new1_shijian.27
+	title = CHY_new1_shijian.27.t
+	desc = CHY_new1_shijian.27.d
+	picture = GFX_az_cy1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = CHY_new1_shijian.27.a
+		trigger = { 
+		OR = {
+		tag = CHY 
+		tag = HUJ
+		tag = BYG
+		}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.27.b
+		trigger = {
+			not = {tag = CHY }
+			not = {tag = HUJ }
+			not = {tag = BYG }
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.28
+	title = CHY_new1_shijian.28.t
+	desc = CHY_new1_shijian.28.d
+	picture = GFX_aze_qiye
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.28.a
+		army_experience = 50
+		add_war_support = 0.3
+		CHY = { set_country_flag = CHY_bygwar_1 }
+		hidden_effect = {
+		country_event = { id = az_tianjiang.42 days = 50}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.29
+	title = CHY_new1_shijian.29.t
+	desc = CHY_new1_shijian.29.desc
+	picture = GFX_aze_gangkou
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "CHY_new1_shijian.29.a"
+		CHY_changmen = {
+			set_portraits = {
+				civilian = {
+					large="gfx/leaders/CHY/changmen2.png"
+				}
+			}
+			add_country_leader_trait = {
+				
+				trait = szz
+				ideology = fascism_ideology
+			}
+			add_country_leader_trait = {
+				
+				trait = ysxwx
+				ideology = fascism_ideology
+			}
+			add_country_leader_trait = {
+				
+				trait = follow_changmen_fascism
+				ideology = fascism_ideology
+			}
+		}
+		hidden_effect = {
+			news_event = CHY_new1_shijian.30
+		}
+		add_popularity = { ideology = fascism_ideology popularity = 0.05 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				or = {
+					has_game_rule = {
+						rule = CHY_ai_behavior
+						option = CHY_changmen_line_focus
+					}
+				}
+				factor = 1
+			}
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.29.b"
+		CHY_changmen = {
+			set_portraits = {
+				civilian = {
+					large="gfx/leaders/CHY/changmen2.png"
+				}
+			}
+			add_country_leader_trait = {
+				
+				trait = szz
+				ideology = despotism
+			}
+			add_country_leader_trait = {
+				
+				trait = ysxwx
+				ideology = despotism
+			}
+			add_country_leader_trait = {
+				
+				trait = follow_changmen_neutrality
+				ideology = despotism
+			}
+		}
+		hidden_effect = {
+			news_event = CHY_new1_shijian.30
+		}
+		set_politics = {
+			ruling_party = neutrality
+		}
+		add_popularity = { ideology = neutrality popularity = 0.5 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				or = {
+					has_game_rule = {
+						rule = CHY_ai_behavior
+						option = CHY_changmen_line_focus
+					}
+				}
+				factor = 1
+			}
+		}
+	}
+	option = {
+		name = "CHY_new1_shijian.29.c"
+		CHY_changmen = {
+			set_portraits = {
+				civilian = {
+					large="gfx/leaders/CHY/changmen2.png"
+				}
+			}
+			add_country_leader_trait = {
+				
+				trait = szz
+				ideology = conservatism
+			}
+			add_country_leader_trait = {
+				
+				trait = ysxwx
+				ideology = conservatism
+			}
+			add_country_leader_trait = {
+				
+				trait = follow_changmen_democratic
+				ideology = conservatism
+			}
+		}
+		hidden_effect = {
+			news_event = CHY_new1_shijian.30
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = { ideology = democratic popularity = 0.5 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				or = {
+					has_game_rule = {
+						rule = CHY_ai_behavior
+						option = CHY_changmen_line_focus
+					}
+				}
+				factor = 1
+			}
+		}
+	}
+}
+
+news_event = {
+	id = CHY_new1_shijian.30
+	title = CHY_new1_shijian.30.t
+	desc = CHY_new1_shijian.30.d
+	picture = GFX_az_cy1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = CHY_new1_shijian.30.a
+		trigger = { 
+		OR = {
+		tag = CHY 
+		}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.30.b
+		trigger = {
+			not = {tag = CHY }
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.31
+	title = CHY_new1_shijian.31.t
+	desc = CHY_new1_shijian.31.d
+	picture = GFX_aze_xiaotiancheng_nice
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.31.a
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+			}
+			white_peace = ROOT
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				ROOT = {
+					strength_ratio = {
+						tag = CHY
+						ratio < 0.5
+					}
+				}
+				factor = 1
+			}
+			modifier = {
+				ROOT = {
+					strength_ratio = {
+						tag = CHY
+						ratio > 0.5
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.31.b
+		CHY = {
+		country_event = CHY_new1_shijian.32
+		}
+		ai_chance = {
+			base = 3
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.32
+	title = CHY_new1_shijian.32.t
+	desc = CHY_new1_shijian.32.d
+	picture = GFX_aze_xiaotiancheng_nice
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.32.a
+		CHY = {
+		declare_war_on = {
+			target = FROM
+			type = topple_government
+		}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.33
+	title = CHY_new1_shijian.33.t
+	desc = CHY_new1_shijian.33.d
+	picture = GFX_aze_dhcy
+	is_triggered_only = yes	
+	option = {
+		name = CHY_new1_shijian.33.a
+		ai_chance = {
+			base = 5
+		}
+		add_political_power = 50
+		CHY = { set_country_flag = CHY_friend_with_doh }
+	}
+	option = {
+		name = CHY_new1_shijian.33.b
+		ai_chance = {
+			base = 5
+		}
+		add_political_power = -100
+		CHY = { add_political_power = 150 }
+		CHY = { 
+			set_country_flag = CHY_friend_with_doh
+			set_country_flag = CHY_friend_with_doh_good
+		}
+		CHY = {
+			add_opinion_modifier = {
+				target = DOH
+				modifier = large_increase 
+			}			
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.33.c
+		ai_chance = {
+			base = 1
+		}
+		CHY = {
+			complete_national_focus = CHY_yazhoufangxiang		
+		}
+	}
+}
+
+news_event = {
+	id = CHY_new1_shijian.34
+	title = CHY_new1_shijian.34.t
+	desc = CHY_new1_shijian.34.d
+	picture = GFX_az_dohchy1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = CHY_new1_shijian.34.a
+		trigger = { 
+		OR = {
+		tag = CHY 
+		tag = DOH
+		}
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.34.b
+		trigger = {
+			not = {tag = CHY }
+			not = {tag = DOH }
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.35
+	title = CHY_new1_shijian.35.t
+	desc = CHY_new1_shijian.35.desc
+	picture = GFX_aze_dhcy
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.35.a" 
+		ai_chance = {
+			base = 10
+		}
+		CHY = {
+			add_to_faction = DOH
+			add_ideas = CHY_dylm
+		}
+		DOH = {
+			set_country_flag = chy_jungongyuanzhu_flag
+			add_ideas = CHY_dylm
+		}
+	}
+
+	option = {
+		name = "CHY_new1_shijian.35.b" 
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+
+country_event = {
+	id = CHY_new1_shijian.36
+	title = CHY_new1_shijian.36.t
+	desc = CHY_new1_shijian.36.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.36.a" 
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.37
+	title = CHY_new1_shijian.37.t
+	desc = CHY_new1_shijian.37.desc
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes	
+	option = {
+		name = CHY_new1_shijian.37.a
+		ai_chance = {
+			base = 10
+		}
+		diplomatic_relation = {
+			country = CHY
+			relation = non_aggression_pact
+			active = yes
+		}
+		CHY = { set_country_flag = CHY_friend_with_BFL }
+	}
+	option = {
+		name = CHY_new1_shijian.37.b
+		CHY = { country_event = CHY_new1_shijian.38 }
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.38
+	title = CHY_new1_shijian.38.t
+	desc = CHY_new1_shijian.38.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.38.a" 
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.39
+	title = CHY_new1_shijian.39.t
+	desc = CHY_new1_shijian.39.desc
+	picture = GFX_aze_cy1
+	is_triggered_only = yes	
+	option = {
+		name = CHY_new1_shijian.39.a
+		ai_chance = {
+			base = 10
+		}
+		CHY = { 
+			country_event = CHY_new1_shijian.40
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.39.b
+		CHY = { country_event = CHY_new1_shijian.38 }
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.40
+	title = CHY_new1_shijian.40.t
+	desc = CHY_new1_shijian.40.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.40.a" 
+		ai_chance = {
+			base = 10
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = -1000
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -500
+		}
+		add_political_power = -100
+		add_ideas = chy_zujianbuxiongdui_buff
+		set_country_flag = CHY_zujianbuxiongdui_with_BFL
+		BFL = { 
+			add_manpower = -5000
+			add_ideas = chy_zujianbuxiongdui_buff 
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.41
+	title = CHY_new1_shijian.41.t
+	desc = CHY_new1_shijian.41.desc
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes	
+	option = {
+		name = CHY_new1_shijian.41.a
+		ai_chance = {
+			base = 10
+		}
+		diplomatic_relation = {
+			country = CHY
+			relation = non_aggression_pact
+			active = yes
+		}
+		remove_ideas = BYG_CHY_Pacific
+		CHY = { 
+			remove_ideas = CHY_BYG_Pacific
+			set_country_flag = CHY_friend_with_BYG
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.41.b
+		CHY = { country_event = CHY_new1_shijian.42 }
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.42
+	title = CHY_new1_shijian.42.t
+	desc = CHY_new1_shijian.42.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.42.a" 
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.43
+	title = CHY_new1_shijian.43.t
+	desc = CHY_new1_shijian.43.desc
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes	
+	option = {
+		name = CHY_new1_shijian.43.a
+		ai_chance = {
+			base = 10
+		}
+		CHY = {
+			add_opinion_modifier = {
+				target = HUJ
+				modifier = huge_increase 
+			}		
+			set_country_flag = 	CHY_friend_with_HUJ
+		}
+		add_opinion_modifier = {
+			target = CHY
+			modifier = huge_increase 
+		}
+		add_political_power = 100	
+	}
+	option = {
+		name = CHY_new1_shijian.43.b
+		CHY = { country_event = CHY_new1_shijian.44 }
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.44
+	title = CHY_new1_shijian.44.t
+	desc = CHY_new1_shijian.44.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = "CHY_new1_shijian.44.a" 
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.45
+	title = CHY_new1_shijian.45.t
+	desc = CHY_new1_shijian.45.desc
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.45.a
+		BYG = {
+		country_event = { id = CHY_new1_shijian.46 days = 2 }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.45.b
+		CHY = {
+		country_event = { id = CHY_new1_shijian.44 }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.46
+	title = CHY_new1_shijian.46.t
+	desc = CHY_new1_shijian.46.desc
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.46.a
+		CHY = {
+		country_event = { id = CHY_new1_shijian.47 }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = CHY_new1_shijian.46.b
+		CHY = {
+		country_event = { id = CHY_new1_shijian.42 }
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = CHY_new1_shijian.47
+	title = CHY_new1_shijian.47.t
+	desc = CHY_new1_shijian.47.d
+	picture = GFX_aze_xuanzexinqijian
+	is_triggered_only = yes
+	option = {
+		name = CHY_new1_shijian.47.a
+		transfer_state = 629
+		transfer_state = 632
+		transfer_state = 638
+		transfer_state = 630
+		transfer_state = 631
+		transfer_state = 727
+		transfer_state = 326
+		transfer_state = 639
+		transfer_state = 642
+		transfer_state = 725
+		transfer_state = 643
+		transfer_state = 734
+		transfer_state = 635
+		transfer_state = 636
+		transfer_state = 726
+		transfer_state = 641
+		transfer_state = 733
+		transfer_state = 711
+		transfer_state = 712
+		transfer_state = 710
+		transfer_state = 281
+		transfer_state = 422
+		transfer_state = 729
+		transfer_state = 737
+		transfer_state = 634
+		CHY = {
+			declare_war_on = {
+				target = TIX
+				type = topple_government
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+

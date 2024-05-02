@@ -1,0 +1,1755 @@
+characters = {
+	XGE_xier = {
+		#希尔
+		name = "希尔"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_xier_Fallen_angels.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_xier.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_xier_Fallen_angels.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_xier.dds"
+			}
+		}
+		corps_commander = {
+			desc = GER_xier_desc
+			traits = {
+				armor_officer
+			}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		country_leader = {
+			desc = "POLITICS_GER_xier_DESC"
+			ideology = lisha_xierism
+			expire = "1965.1.1.1"
+			traits = {
+				GER_Radical_Nazis
+				ZHISHANG_YUANSHOU
+				GER_Heroic_fusion
+				GER_fate_of_Fujimi_daughter
+				GER_halo_of_cause_and_effect
+				GER_Bloody_Sakura
+			}
+			id = -1
+		}
+	}
+	XGE_Wilhelm_TTT_Auth = {
+		name = "薇莲三世"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_Wilhelm_TTT_Auth.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_GER_Wilhelm_TTT_DESC"
+			ideology = enlightened_despotism
+			expire = "1965.1.1.1"
+			traits = {
+			}
+			id = -1
+		}
+	}
+	XGE_ernst_thalmann = {
+		name = "恩斯特·台尔曼"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/ernst_thalmann.dds"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = Spartacus
+			expire = "2011.1.1.1"
+			id = -1
+		}
+	}
+	XGE_gerd_von_rundstedt = {
+		#格尔德·冯·伦德斯泰特
+		name = GER_gerd_von_rundstedt
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/Portrait_Germany_Gerd_von_Rundstedt.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gerd_von_rundstedt.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/Portrait_Germany_Gerd_von_Rundstedt.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gerd_von_rundstedt.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = gerd_von_rundstedt
+			ledger = army
+			allowed = {
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+		field_marshal = {
+			traits = {
+				old_guard
+				urban_assault_specialist
+				defensive_doctrine
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 7
+			planning_skill = 5
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_gunther_von_kluge = {
+		#君特·冯·克鲁格
+		name = GER_gunther_von_kluge
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_gunther_von_kluge.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gunther_von_kluge.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_gunther_von_kluge.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gunther_von_kluge.dds"
+			}
+		}
+		field_marshal = {
+			traits = {
+				armor_officer
+				offensive_doctrine
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_friedrich_paulus = {
+		#弗里德里希·保卢斯
+		name = GER_friedrich_paulus
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_friedrich_paulus.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_friedrich_paulus.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_friedrich_paulus.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_friedrich_paulus.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_cautious
+				armor_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	XGE_erwin_rommel = {
+		#埃尔温·隆美尔
+		name = GER_erwin_rommel
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_erwin_rommel.dds"
+				small = "gfx/interface/ideas/XGE/idea_erwin_rommel.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = erwin_rommel
+			ledger = army
+			allowed = {
+			}
+			available = {
+				# has_completed_focus = GER_army_innovation
+			}
+			traits = {
+				army_armored_3
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 8
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_reckless
+				media_personality
+				armor_officer
+				war_hero
+				trickster
+			}
+			skill = 6
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_erich_von_manstein = {
+		#埃里希·冯·曼施坦因
+		name = GER_erich_von_manstein
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_erich_von_manstein.dds"
+				small = "gfx/interface/ideas/XGE/idea_manstein.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = manstein
+			ledger = army
+			allowed = {
+			}
+			traits = {
+				mobile_warfare_expert
+			}
+		}
+		corps_commander = {
+			traits = {
+				brilliant_strategist
+				armor_officer
+				trickster
+				trait_engineer
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+	XGE_heinz_guderian = {
+		#海因茨·古德里安
+		name = GER_heinz_guderian
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_heinz_guderian.dds"
+				small = "gfx/interface/ideas/XGE/idea_heinz_guderian.dds"
+			}
+		}
+		advisor = {
+			cost = 200
+			slot = theorist
+			idea_token = heinz_guderian
+			ledger = army
+			allowed = {
+			}
+			traits = {
+				blitzkrieg_theorist
+			}
+		}
+		corps_commander = {
+			traits = {
+				brilliant_strategist
+				career_officer
+				armor_officer
+				trickster
+				panzer_leader
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 7
+			logistics_skill = 5
+			legacy_id = -1
+		}
+	}
+	XGE_wilhelm_list = {
+		#威廉·利斯特
+		name = GER_wilhelm_list
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_wilhelm_list.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_wilhelm_list.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_wilhelm_list.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_wilhelm_list.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				inflexible_strategist
+				career_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XGE_ewald_von_kleist = {
+		#埃瓦尔德·冯·克莱斯特
+		name = GER_ewald_von_kleist
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/Portrait_Germany_ewald_von_kleist.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_ewald_von_kleist.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/Portrait_Germany_ewald_von_kleist.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_ewald_von_kleist.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_cautious
+				armor_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XGE_fedor_von_bock = {
+		#费多尔·冯·博克
+		name = GER_fedor_von_bock
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_fedor_von_bock.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_fedor_von_bock.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_fedor_von_bock.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_fedor_von_bock.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_cautious
+				harsh_leader
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XGE_walter_model = {
+		#瓦尔特·莫德尔
+		name = GER_walter_model
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_walter_model.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_walter_model.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_walter_model.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_walter_model.dds"
+			}
+		}
+		field_marshal = {
+			traits = {
+				brilliant_strategist
+				trait_cautious
+				politically_connected
+				defensive_doctrine
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	XGE_maximilian_von_weichs = {
+		#马克西米利安·冯·魏克斯
+		name = GER_maximilian_von_weichs
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_maximilian_von_weichs.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_maximilian_von_weichs.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_maximilian_von_weichs.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_maximilian_von_weichs.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				cavalry_officer
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	XGE_georghans_reinhardt = {
+		#格奥尔格-汉斯·莱因哈特
+		name = GER_georghans_reinhardt
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/Portrait_Germany_georghans_reinhardt.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_georghans_reinhardt.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/Portrait_Germany_georghans_reinhardt.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_georghans_reinhardt.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_cautious
+				armor_officer
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_kurt_student = {
+		#库尔特·斯图登特
+		name = GER_kurt_student
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_kurt_student.dds"
+				small = "gfx/interface/ideas/XGE/idea_kurt_student.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = kurt_student
+			ledger = air
+			allowed = {
+			}
+			traits = {
+				air_airborne_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_reckless
+				commando
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_erwin_von_witzleben = {
+		#埃尔温·冯·维茨勒本
+		name = GER_erwin_von_witzleben
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_erwin_von_witzleben.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_erwin_von_witzleben.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_erwin_von_witzleben.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_erwin_von_witzleben.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				career_officer
+				infantry_officer
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+	XGE_johannes_blaskowitz = {
+		#约翰内斯·布拉斯科维茨
+		name = GER_johannes_blaskowitz
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_johannes_blaskowitz.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_johannes_blaskowitz.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_johannes_blaskowitz.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_johannes_blaskowitz.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				infantry_officer
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XGE_paul_hausser = {
+		#保罗·豪塞尔
+		name = GER_paul_hausser
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_paul_hausser.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_paul_hausser.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_paul_hausser.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_paul_hausser.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				armor_officer
+				politically_connected
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_friedrich_schulz = {
+		#弗里德里希·舒尔茨
+		name = GER_friedrich_schulz
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/Portrait_Germany_friedrich_schulz.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_friedrich_schulz.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/Portrait_Germany_friedrich_schulz.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_friedrich_schulz.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				infantry_officer
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_georg_von_kuchler = {
+		#格奥尔格·冯·屈希勒
+		name = GER_georg_von_kuchler
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_georg_von_kuchler.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gunther_von_kluge.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_georg_von_kuchler.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gunther_von_kluge.dds"
+			}
+		}
+		field_marshal={
+			traits={ armor_officer offensive_doctrine }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=2
+		}
+	}
+	XGE_alfred_jodl = {
+		#阿尔弗雷德·约德尔
+		name = GER_alfred_jodl
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_alfred_jodl.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_alfred_jodl.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_alfred_jodl.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_alfred_jodl.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				career_officer
+				politically_connected
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_hasso_von_manteuffel = {
+		#哈索·冯·曼陀菲尔
+		name = GER_hasso_von_manteuffel
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_hasso_von_manteuffel.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_hasso_von_manteuffel.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_hasso_von_manteuffel.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_hasso_von_manteuffel.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = GER_hasso_von_manteuffel
+			ledger = army
+			allowed = {
+			}
+			available = {
+			}
+			traits = {
+				army_armored_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		corps_commander = {
+			traits = {
+				career_officer
+				trait_cautious
+				armor_officer
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_albert_kesselring = {
+		#阿尔贝特·凯塞林
+		name = GER_albert_kesselring
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_albert_kesselring.dds"
+				small = "gfx/interface/ideas/XGE/idea_albert_kesselring.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_albert_kesselring.dds"
+				small = "gfx/interface/ideas/XGE/idea_albert_kesselring.dds"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = albert_kesselring
+			allowed = {
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {
+				brilliant_strategist
+				trait_cautious
+				war_hero
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = 32
+		}
+	}
+	XGE_gotthard_heinrici = {
+		#戈特哈德·海因里希
+		name = GER_gotthard_heinrici
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/Portrait_Germany_gotthard_heinrici.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gotthard_heinrici.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/Portrait_Germany_gotthard_heinrici.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_gotthard_heinrici.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trait_cautious
+				infantry_officer
+				trait_engineer
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 33
+		}
+	}
+	XGE_ernsteberhard_hell = {
+		#恩斯特-埃贝哈德·赫尔
+		name = GER_ernsteberhard_hell
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_ernsteberhard_hell.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_ernsteberhard_hell.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_ernsteberhard_hell.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_ernsteberhard_hell.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				war_hero
+				trait_engineer
+				winter_specialist
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = 34
+		}
+	}
+	XGE_Karl_Doenitz = {
+		#卡尔·邓尼茨
+		name = "卡尔·邓尼茨"
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_Karl_Doenitz.dds"
+				small = "gfx/interface/ideas/XGE/idea_donitz.dds"
+			}
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_donitz.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				naval_lineage
+				seawolf
+				spotter
+				blue_water_expert
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = donitz
+			allowed = {
+			}
+			traits = {
+				navy_chief_commerce_raiding_3
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	XGE_Raeder = {
+		#埃里希·雷德尔
+		name = "埃里希·雷德尔"
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_Raeder.dds"
+				small = "gfx/interface/ideas/XGE/idea_raeder.dds"
+			}
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_raeder.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				battleship_adherent
+				blockade_runner
+				ironside
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = raeder
+			allowed = {
+			}
+			traits = {
+				navy_chief_decisive_battle_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	XGE_alfred_saalwachter = {
+		#阿尔弗雷德·萨尔瓦奇特
+		name = "阿尔弗雷德·萨尔瓦奇特"
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_alfred_saalwachter.dds"
+				small = "gfx/interface/ideas/XGE/idea_alfred_saalwachter.dds"
+			}
+			civilian = {
+				large = "gfx/leaders/XGE/GER_alfred_saalwachter.dds"
+				small = "gfx/interface/ideas/XGE/idea_alfred_saalwachter.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				old_guard_navy
+				gentlemanly
+				navy_media_personality
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = alfred_saalwachter
+			ledger = navy
+			allowed = {
+			}
+			traits = {
+				submarine_specialist
+			}
+		}
+	}
+	XGE_Hermann_Boehm = {
+		name = "欧根亲王"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/KMS/KMS_Prinz.dds"
+				small = "gfx/interface/ideas/KMS/KMS_Prinz_idea.dds"
+			}
+			navy = {
+				large = "gfx/leaders/KMS/KMS_Prinz.dds"
+				small = "gfx/interface/ideas/KMS/KMS_Prinz_idea.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				bold
+				blockade_runner
+				superior_tactician
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	XGE_Wilhelm_Marschall = {
+		name = "美因茨"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/KMS/KMS_Mainz.dds"
+				small = "gfx/interface/ideas/KMS/KMS_Mainz_idea.dds"
+			}
+			navy = {
+				large = "gfx/leaders/KMS/KMS_Mainz.dds"
+				small = "gfx/interface/ideas/KMS/KMS_Mainz_idea.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				gentlemanly
+				gunnery_expert
+				cuts_corners
+				ground_pounder
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	XGE_aosika = {
+		#奥斯卡·库姆梅茨
+		name = "奥斯卡·库姆梅茨"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_aosika.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_aosika.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_aosika.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_aosika.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				bold
+				caustic_personality
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	XGE_z23 = {
+		#z19
+		name = "Z23"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/KMS/KMS_Z23.dds"
+				small = "gfx/interface/ideas/KMS/KMS_Z23_idea.dds"
+			}
+			navy = {
+				large = "gfx/leaders/KMS/KMS_Z23.dds"
+				small = "gfx/interface/ideas/KMS/KMS_Z23_idea.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				superior_tactician
+				green_water_expert
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	XGE_shaen = {
+		#沙恩霍特
+		name = "沙恩霍特"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_shaen.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_shaen.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_shaen.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_shaen.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				chief_engineer
+				battleship_adherent
+				superior_tactician
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	XGE_xipeier = {
+		#希佩尔
+		name = "希佩尔"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_xipeier.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_xipeier.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_xipeier.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_xipeier.dds"
+			}
+		}
+		navy_leader = {
+			traits = {
+				bold
+				blockade_runner
+				superior_tactician
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+	}
+	#德国的一些内阁，但本身并不是将领，就加在这里了
+	XGE_todt = {
+		#弗里茨·托特
+		name = "弗里茨·托特"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_todt.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = todt
+			allowed = {
+			}
+			traits = {
+				fortification_engineer
+			}
+			ai_will_do = {
+				factor = 0.5
+			}
+		}
+	}
+	XGE_speer = {
+		#阿尔伯特·施佩尔
+		name = "阿尔伯特·施佩尔"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_speer.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = speer
+			allowed = {
+			}
+			equipment_bonus = {
+				armor = {
+					reliability = -0.1
+					instant = yes
+					build_cost_ic = -0.17
+					instant = yes
+				}
+			}
+			traits = {
+				armaments_organizer
+			}
+		}
+	}
+	XGE_hjalmar_schacht = {
+		#亚尔马·沙赫特
+		name = "亚尔马·沙赫特"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_hjalmar_schacht.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = hjalmar_schacht
+			allowed = {
+			}
+			traits = {
+				captain_of_industry
+			}
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	XGE_walther_funk = {
+		#瓦尔特·冯克
+		name = "瓦尔特·冯克"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_walther_funk.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = walther_funk
+			allowed = {
+			}
+			traits = {
+				war_industrialist
+			}
+			ai_will_do = {
+				factor = 3
+			}
+		}
+	}
+	XGE_rudolf_hess = {
+		#鲁道夫·赫斯
+		name = "鲁道夫·赫斯"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_rudolf_hess.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = rudolf_hess
+			allowed = {
+			}
+			traits = {
+				silent_workhorse
+			}
+		}
+	}
+	XGE_joachim_von_ribbentrop = {
+		#J·冯·里宾特洛甫
+		name = "J·冯·里宾特洛甫"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_joachim_von_ribbentrop.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = joachim_von_ribbentrop
+			allowed = {
+			}
+			traits = {
+				backroom_backstabber
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	XGE_konstantin_von_neurath = {
+		#K·冯·纽赖特
+		name = "K·冯·纽赖特"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_konstantin_von_neurath.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = konstantin_von_neurath
+			allowed = {
+			}
+			traits = {
+				smooth_talking_charmer
+			}
+		}
+	}
+	XGE_ludwig_beck = {
+		#路德维希·贝克
+		name = "路德维希·贝克"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_ludwig_beck.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = ludwig_beck
+			allowed = {
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_wilhelm_keitel = {
+		#威廉·凯特尔
+		name = "威廉·凯特尔"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_wilhelm_keitel.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = wilhelm_keitel
+			allowed = {
+			}
+			traits = {
+				army_chief_drill_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_franz_halder = {
+		#弗朗茨·哈尔德
+		name = "弗朗茨·哈尔德"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_franz_halder.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = franz_halder
+			allowed = {
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_walther_von_brauchitsch = {
+		#W·冯·布劳希奇
+		name = "W·冯·布劳希奇"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_walther_von_brauchitsch.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = walther_von_brauchitsch
+			allowed = {
+			}
+			traits = {
+				army_chief_maneuver_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_maiye = {
+		#赫尔曼·迈耶
+		name = "赫尔曼·迈耶"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_maiye.dds"
+				small = "gfx/interface/ideas/XGE/idea_goering.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_maiye.dds"
+				small = "gfx/interface/ideas/XGE/idea_goering.dds"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = maiye
+			allowed = {
+			}
+			traits = {
+				air_chief_ground_support_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = maiye
+			allowed = {
+			}
+			available = {
+				NOT = {
+					has_country_leader = {
+						ruling_only = yes
+						character = GER_maiye
+					}
+				}
+			}
+			traits = {
+				GER_Goeringnomics
+			}
+			ai_will_do = {
+				factor = 15
+			}
+		}
+	}
+	XGE_ritter_von_greim = {
+		#里特尔·冯·格莱姆
+		name = "里特尔·冯·格莱姆"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_ritter_von_greim.dds"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = ritter_von_greim
+			allowed = {
+			}
+			traits = {
+				air_chief_all_weather_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0.5
+			}
+		}
+	}
+	XGE_ferdinand_schorner = {
+		#斐迪南·舍尔纳
+		name = "斐迪南·舍尔纳"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_ferdinand_schorner.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = ferdinand_schorner
+			ledger = army
+			allowed = {
+			}
+			traits = {
+				army_infantry_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_werner_von_fritsch = {
+		#菲利克斯·施坦因纳
+		name = GER_werner_von_fritsch
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_werner_von_fritsch.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = werner_von_fritsch
+			ledger = army
+			allowed = {
+			}
+			traits = {
+				army_logistics_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+	}
+	XGE_hugo_sperrle = {
+		#胡戈·施佩勒
+		name = GER_hugo_sperrle
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_hugo_sperrle.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = hugo_sperrle
+			ledger = air
+			allowed = {
+			}
+			available = {
+				# has_completed_focus = GER_air_innovation
+			}
+			traits = {
+				air_close_air_support_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_erhard_milch = {
+		#埃哈德·米尔希
+		name = GER_erhard_milch
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_erhard_milch.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = erhard_milch
+			ledger = air
+			allowed = {
+			}
+			traits = {
+				air_bomber_interception_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_erich_bey = {
+		#埃里希·贝伊
+		name = GER_erich_bey
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_erich_bey.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = erich_bey
+			ledger = navy
+			allowed = {
+			}
+			traits = {
+				navy_naval_air_defense_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_gunther_lutjens = {
+		#冈瑟·吕特晏斯
+		name = "冈瑟·吕特晏斯"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/XGE/idea_gunther_lutjens.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = gunther_lutjens
+			ledger = navy
+			allowed = {
+			}
+			traits = {
+				navy_fleet_logistics_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XGE_viktor_schutze = {
+		#维克托·舒尔策
+		name = GER_viktor_schutze
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_viktor_schutze.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = viktor_schutze
+			ledger = navy
+			allowed = {
+			}
+			traits = {
+				navy_anti_submarine_1
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	#下面是从原版德国搬过来的理论家
+	XGE_von_braun = {
+		#韦恩赫尔·冯·布劳恩
+		name = GER_von_braun
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_von_braun.dds"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = von_braun
+			ledger = air
+			allowed = {
+			}
+			research_bonus = {
+				rocketry = 0.15
+			}
+			traits = {
+				rocket_scientist
+			}
+		}
+	}
+	XGE_heisenberg = {
+		#海森堡
+		name = "沃纳·卡尔·海森堡"
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_heisenberg.dds"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = heisenberg
+			ledger = army
+			allowed = {
+			}
+			research_bonus = {
+				nuclear = 0.15
+			}
+			traits = {
+				nuclear_scientist
+			}
+		}
+	}
+	XGE_wolfram_von_richthofen = {
+		#W·冯·里希特霍芬
+		name = GER_wolfram_von_richthofen
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_wolfram_von_richthofen.dds"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = wolfram_von_richthofen
+			ledger = air
+			allowed = {
+			}
+			traits = {
+				close_air_support_proponent
+			}
+		}
+	}
+	XGE_walther_wever = {
+		#瓦尔特·韦佛
+		name = GER_walther_wever
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_walther_wever.dds"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = walther_wever
+			ledger = air
+			allowed = {
+			}
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+	XGE_ernst_udet = {
+		#恩斯特·乌德特
+		name = GER_ernst_udet
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_ernst_udet.dds"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = ernst_udet
+			ledger = air
+			allowed = {
+			}
+			traits = {
+				dive_bomber
+			}
+		}
+	}
+	XGE_otto_ciliax = {
+		#奥托·克里安克斯
+		name = GER_otto_ciliax
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/XGE/idea_otto_ciliax.dds"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = otto_ciliax
+			ledger = navy
+			allowed = {
+			}
+			traits = {
+				naval_theorist
+			}
+		}
+	}
+	XGE_zhensui = {
+		#西住真穗
+		name = "西住真穗"
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/zhensui.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_zhensui.dds"
+			}
+		}
+		field_marshal = {
+			traits = {
+				brilliant_strategist
+				armor_officer
+				trickster
+				panzer_leader
+				desert_fox
+				hill_fighter
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+	XGE_ailika = {
+		#逸见艾丽卡
+		name = "逸见艾丽卡"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_Erika_13.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_ailika.dds"
+			}
+			army = {
+				large = "gfx/leaders/XGE/GER_Erika_13.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_ailika.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+				brilliant_strategist
+				commando
+				desert_fox
+				armor_officer
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XGE_Tanya = {
+		#谭雅·提古雷查夫
+		name = "谭雅·提古雷查夫"
+		portraits = {
+			army = {
+				large = "gfx/leaders/XGE/GER_Tanya.dds"
+				small = "gfx/interface/ideas/XGE/idea_GER_Tanya.dds"
+			}
+		}
+		corps_commander = {
+			traits = {
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+			legacy_id = -1
+		}
+	}
+	XGE_August_von_Mackensen = {
+		name = "奥古斯特·冯·马肯森"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_August_von_Mackensen.dds"
+			}
+		}
+	}
+	#薇尔莉特·伊芙加登
+	XGE_Violet_Evergarden = {
+		name = GER_Violet_Evergarden
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/XGE/GER_Violet_Evergarden.dds"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = liberalism
+			expire = "1965.1.1.1"
+			traits = {
+			}
+			id = -1
+		}
+	}
+	#弗里德里希·奥古斯特·冯·哈耶克
+	XGE_Friedrich_August_von_Hayek = {
+		name = DVL_Friedrich_August_von_Hayek
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/DVL/Friedrich_August_von_Hayek.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = GER_Friedrich_August_von_Hayek
+			allowed = {
+			}
+			visible = {
+				or = {
+					has_country_flag = Friedrich_August_von_Hayek_coming
+				}
+			}
+			available = {
+				has_government = democratic
+			}
+			traits = {
+				freedom_ecomic
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}

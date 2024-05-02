@@ -1,0 +1,4660 @@
+﻿# focus_tree = {
+# 	id = DOH_focus
+# 	shared_focus = AL_zhuanyi
+# 	shared_focus = AL_gujun
+# 	shared_focus = AL_junshi
+# 	country = {
+# 		factor = 0
+# 		modifier = {
+# 			add = 10
+# 			tag = DOH
+# 		}
+# 	}
+	
+
+# 	default = no
+
+# 	continuous_focus_position = { x = 20 y = 1000 }
+# #sairenmod
+# 	focus = {
+# 		id = DOH_nanxia
+# 		icon = GFX_goal_generic_position_armies
+# 		x = 2
+# 		y = 0
+# 		cost = 7
+# 		allow_branch = {
+# 			has_global_flag = MOD_azurlane_sairenzhizai
+# 		}
+# 		relative_position_id = DOH_beishang
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		available = {
+# 			has_navy_size = { size > 199 }
+# 			has_navy_size = {
+# 				size > 4
+# 				type = capital_ship
+# 			}
+# 		}
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_manpower = -25000
+# 			add_equipment_to_stockpile = {
+# 				type = infantry_equipment
+# 				amount = -2500
+# 			}
+# 			transfer_state = 327
+# 			transfer_state = 623
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_beishang
+# 		icon = GFX_goal_generic_special_forces
+# 		x = 1
+# 		y = 0
+# 		allow_branch = {
+# 			has_global_flag = MOD_azurlane_sairenzhizai
+# 		}
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 12
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_manpower = -50000
+# 			add_political_power = -100
+# 			transfer_state = 728
+# 			transfer_state = 592
+# 			transfer_state = 594
+# 			transfer_state = 729
+# 			add_state_core = 728
+# 			add_state_core = 592
+# 			add_state_core = 594
+# 			add_state_core = 729
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_jiejinanmin
+# 		icon = GFX_focus_generic_concessions
+# 		x = 1
+# 		y = 1
+# 		cost = 5
+# 		relative_position_id = DOH_beishang
+# 		prerequisite = { focus = DOH_beishang focus = DOH_nanxia }
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+# 		available = {
+# 			controls_state = 592
+# 			controls_state = 594
+# 		}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_timed_idea = { idea = DOH_rkqy days = 365 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jiefangxuanyan
+# 		icon = GFX_goal_generic_demand_territory
+# 		x = 0
+# 		y = 1
+# 		cost = 10 
+# 		relative_position_id = DOH_jiejinanmin
+# 		prerequisite = { focus = DOH_jiejinanmin }
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_timed_idea = { idea = DOH_jfzz days = 700 }
+# 			custom_effect_tooltip = "旧国南部成为我们的核心领土！"
+# 			hidden_effect = {	
+# 				599 = { add_core_of = ROOT }
+# 				593 = { add_core_of = ROOT }
+# 				326 = { add_core_of = ROOT }
+# 				595 = { add_core_of = ROOT }
+# 				596 = { add_core_of = ROOT }
+# 				600 = { add_core_of = ROOT }
+# 				602 = { add_core_of = ROOT }
+# 				603 = { add_core_of = ROOT }
+# 				748 = { add_core_of = ROOT }
+# 				750 = { add_core_of = ROOT }
+# 				605 = { add_core_of = ROOT }
+# 				606 = { add_core_of = ROOT }
+# 				620 = { add_core_of = ROOT }
+# 				749 = { add_core_of = ROOT }
+# 				613 = { add_core_of = ROOT }
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jixubeifa
+# 		icon = GFX_goal_generic_major_war
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+# 		relative_position_id = DOH_jiefangxuanyan
+# 		prerequisite = { focus = DOH_jiefangxuanyan }
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			custom_effect_tooltip = "旧国北部成为我们的核心领土！"
+# 			hidden_effect = {	
+# 				598 = { add_core_of = ROOT }
+# 				607 = { add_core_of = ROOT }
+# 				744 = { add_core_of = ROOT }
+# 				753 = { add_core_of = ROOT }
+# 				754 = { add_core_of = ROOT }
+# 				755 = { add_core_of = ROOT }
+# 				756 = { add_core_of = ROOT }
+# 				622 = { add_core_of = ROOT }
+# 				597 = { add_core_of = ROOT }
+# 				743 = { add_core_of = ROOT }
+# 				616 = { add_core_of = ROOT }
+# 				283 = { add_core_of = ROOT }
+# 				746 = { add_core_of = ROOT }
+# 				621 = { add_core_of = ROOT }
+# 				614 = { add_core_of = ROOT }
+# 				608 = { add_core_of = ROOT }
+# 				609 = { add_core_of = ROOT }
+# 				611 = { add_core_of = ROOT }
+# 				615 = { add_core_of = ROOT }
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_huishidongnanya
+# 		icon = GFX_focus_hol_gateway_to_europe
+# 		x = -2
+# 		y = 1
+# 		cost = 5
+# 		relative_position_id = DOH_jiefangxuanyan
+# 		prerequisite = { focus = DOH_jiefangxuanyan }
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			transfer_state = 671
+# 			670 = { add_core_of = ROOT }
+# 			671 = { add_core_of = ROOT }
+# 			286 = { add_core_of = ROOT }
+# 			741 = { add_core_of = ROOT }
+# 		}
+# 	}	
+# 	focus = {
+# 		id = DOH_zhengyankaishijie
+# 		icon = GFX_goal_generic_demand_territory
+# 		x = 12
+# 		y = 0
+
+# 		cost = 6
+
+# 		ai_will_do = {
+# 			factor = 5
+# 			modifier = {
+# 				date > 1936.6.1
+# 				add = 50
+# 			}
+# 		}
+
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_political_power = 200
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_shiyichangji
+# 		icon = GFX_goal_generic_intelligence_exchange
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_zhengyankaishijie }
+# 		relative_position_id = DOH_zhengyankaishijie
+	
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 0
+# 			modifier = {
+# 				date > 1938.6.1
+# 				add = 10
+# 			}
+# 			modifier = {
+# 				AND = {
+# 					date > 1938.1.1
+# 					check_variable = {
+# 						var = affect_from_huj
+# 						value = affect_from_tix
+# 						compare = greater_than
+# 					}
+# 				}
+# 				add = 10
+# 			}
+# 			modifier = {
+# 				AND = {
+# 					date > 1938.1.1
+# 					check_variable = {
+# 						var = affect_from_bfl
+# 						value = affect_from_tix
+# 						compare = greater_than
+# 					}
+# 				}
+# 				add = 10
+# 			}
+# 		}
+
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_political_power = -50
+# 			add_offsite_building = { type = industrial_complex level = 2 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_lishidejingcheng
+# 		icon = GFX_focus_chi_one_china_policy
+# 		x = -1
+# 		y = 1
+# 		prerequisite = { focus = DOH_shiyichangji }
+# 		relative_position_id = DOH_shiyichangji
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_political_power = 150
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_gerendefendou
+# 		icon = GFX_focus_generic_support_the_left_right
+# 		x = 1
+# 		y = 1
+# 		prerequisite = { focus = DOH_shiyichangji }
+# 		relative_position_id = DOH_shiyichangji
+# 		cost = 10
+
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			every_character = {
+# 				limit = { 
+# 					is_country_leader = yes 
+# 				}
+# 				add_skill_level = 3
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xuexizhilv
+# 		icon = GFX_goal_generic_scientific_exchange
+# 		x = -4
+# 		y = 2
+# 		prerequisite = { focus = DOH_shiyichangji }
+# 		relative_position_id = DOH_shiyichangji
+# 		mutually_exclusive = { focus = DOH_guguozhihui }
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			country_event = DOH_event.1
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yubeilianjiaoliu
+# 		icon = GFX_fflag_BFL
+# 		x = -2
+# 		y = 1
+# 		prerequisite = { focus = DOH_xuexizhilv }
+# 		relative_position_id = DOH_xuexizhilv
+# 		mutually_exclusive = { focus = DOH_yuhuangjiajiaoliu }
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		available = {
+# 			custom_trigger_tooltip = {
+# 				tooltip = "我们去了北联学习"
+# 				has_country_flag = DOH_qubeilian
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_popularity = { ideology = communism popularity = 0.2 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yindaoyuzhichi
+# 		icon = GFX_goal_tripartite_pact
+# 		x = -1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yubeilianjiaoliu }
+# 		relative_position_id = DOH_yubeilianjiaoliu
+# 		cost = 10
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_manpower = 500000
+# 			custom_effect_tooltip = DOH_yindaoyuzhichi_effect_tooltip 
+# 			add_popularity = { ideology = communism popularity = 0.1 }
+# 			division_template = {
+# 				name = "人民义勇军"
+# 				division_names_group = CHI_INF_01
+# 				regiments = {
+# 					infantry = { x = 0 y = 0 }
+# 					infantry = { x = 0 y = 1 }
+# 					infantry = { x = 0 y = 2 }
+# 					infantry = { x = 0 y = 3 }
+# 					infantry = { x = 1 y = 0 }
+# 					infantry = { x = 1 y = 1 }
+# 					infantry = { x = 1 y = 2 }
+# 					infantry = { x = 1 y = 3 }
+# 					infantry = { x = 2 y = 0 }
+# 					infantry = { x = 2 y = 1 }
+# 					infantry = { x = 2 y = 2 }
+# 					infantry = { x = 2 y = 3 }
+# 					infantry = { x = 3 y = 0 }
+# 					infantry = { x = 3 y = 1 }
+# 					infantry = { x = 3 y = 2 }
+# 					infantry = { x = 3 y = 3 }
+# 				}
+# 			}
+# 			hidden_effect = {
+# 				capital_scope = {
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 					create_unit = {
+# 						division = "name = \"民兵师团\" division_template = \"人民义勇军\" start_experience_factor = 0.1"
+# 						owner = ROOT
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jiansheguojia
+# 		icon = GFX_goal_generic_soviet_construction
+# 		x = 1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yubeilianjiaoliu }
+# 		relative_position_id = DOH_yubeilianjiaoliu
+# 		cost = 10
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_timed_idea = { idea = DOH_jsgc days = 365 }
+# 			random_owned_controlled_state = {
+# 				limit = { is_core_of = ROOT }
+# 				add_extra_state_shared_building_slots = 2
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 			}
+# 			random_owned_controlled_state = {
+# 				limit = { is_core_of = ROOT }
+# 				add_extra_state_shared_building_slots = 2
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 			}
+# 			random_owned_controlled_state = {
+# 				limit = { is_core_of = ROOT }
+# 				add_extra_state_shared_building_slots = 2
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 			}
+# 			random_owned_controlled_state = {
+# 				limit = { is_core_of = ROOT }
+# 				add_extra_state_shared_building_slots = 2
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 			}
+# 		}
+		
+# 	}
+# 	focus = {
+# 		id = DOH_hongsedengta
+# 		icon = GFX_focus_ETH_callout_to_the_world
+# 		x = -1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yindaoyuzhichi }
+# 		relative_position_id = DOH_yindaoyuzhichi
+# 		cost = 10
+# 		available = {
+# 			communism > 0.99
+# 			has_stability > 1.2
+# 			has_offensive_war = no
+# 			if = {
+# 				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+# 				threat > 0.75
+# 			}
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_research_slot = 1
+# 			every_country = {
+# 				limit = {
+# 					OR = {
+# 						has_government = communism 
+# 						has_government = neutrality
+# 					}
+					
+# 				}
+# 				add_opinion_modifier = {
+# 					target = DOH
+# 					modifier = took_stand_for_us
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_renminwansui
+# 		icon = GFX_focus_por_workers_of_iberia
+# 		x = 1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yindaoyuzhichi }
+# 		prerequisite = { focus = DOH_jiansheguojia }
+# 		relative_position_id = DOH_yindaoyuzhichi
+# 		cost = 10
+# 		available = {
+# 			communism > 0.50
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			set_politics = {
+# 				ruling_party = communism
+# 			}
+# 			add_ideas = DOH_rmws
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xindonghuang
+# 		icon = GFX_fflag_DOH
+# 		x = 2
+# 		y = 2
+# 		prerequisite = { focus = DOH_renminwansui focus = DOH_kaifangguomen }
+# 		relative_position_id = DOH_renminwansui
+# 		cost = 10
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			DOH_dongfangguguo_dengji = yes
+# 			add_ideas = DOH_xdh
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_huanxingjulong
+# 		icon = GFX_focus_donghuang
+# 		x = 4
+# 		y = 1
+# 		prerequisite = { focus = DOH_xindonghuang focus = DOH_yixianwansui }
+# 		relative_position_id = DOH_xindonghuang
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 15
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_political_power = 200
+			
+# 			DOH_dongfangguguo_dengji = yes
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_minzhikaiqi
+# 		icon = GFX_goal_generic_scientific_exchange
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_huanxingjulong }
+# 		relative_position_id = DOH_huanxingjulong
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_mzkq
+# 			add_research_slot = 1
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_neibujianshe
+# 		icon = GFX_goal_generic_construct_infrastructure
+# 		x = -2
+# 		y = 1
+# 		prerequisite = { focus = DOH_huanxingjulong }
+# 		relative_position_id = DOH_huanxingjulong
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_nbjs
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_shenrujinxiu
+# 		icon = GFX_focus_usa_honor_the_confederacy
+# 		x = -1
+# 		y = 1
+# 		prerequisite = { focus = DOH_neibujianshe }
+# 		relative_position_id = DOH_neibujianshe
+# 		cost = 5
+# 		available = {
+# 			OR = {
+# 				has_government = communism
+# 				has_government = democratic
+# 			}
+# 		}
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_timed_idea = {
+# 				idea = DOH_zhgjxz
+# 				days = 210
+# 			}
+# 			custom_effect_tooltip = DOH_shenrujinxiu_effect_tooltip
+# 			effect_tooltip = {
+# 				add_ideas = DOH_dhzztx
+# 				every_unit_leader = {
+# 					add_skill_level = 1
+# 				}
+# 			}
+# 			hidden_effect = {
+# 				country_event = {
+# 					id = DOH_event.27
+# 					days = 212
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jiachangbanshi
+# 		icon = GFX_focus_hol_the_foundations_of_defense
+# 		x = 1
+# 		y = 1
+# 		prerequisite = { focus = DOH_neibujianshe }
+# 		relative_position_id = DOH_neibujianshe
+# 		cost = 7
+# 		available = {
+# 			has_government = fascism
+# 		}
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_gddgzsc
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_shikejingjie
+# 		icon = GFX_focus_generic_manpower
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_jiachangbanshi }
+# 		relative_position_id = DOH_jiachangbanshi
+# 		cost = 10
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			swap_ideas = {
+# 				add_idea = DOH_jgjcsehy
+# 				remove_idea = DOH_gddgzsc
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_minzuzhuyi
+# 		icon = GFX_goal_generic_demand_territory
+# 		x = 2
+# 		y = 1
+# 		prerequisite = { focus = DOH_huanxingjulong }
+# 		relative_position_id = DOH_huanxingjulong
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_mzzy
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yuhuangjiajiaoliu
+# 		icon = GFX_fflag_HUJ
+# 		x = 2
+# 		y = 1
+# 		prerequisite = { focus = DOH_xuexizhilv }
+# 		relative_position_id = DOH_xuexizhilv
+# 		mutually_exclusive = { focus = DOH_yubeilianjiaoliu }
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		available = {
+# 			custom_trigger_tooltip = {
+# 				tooltip = "我们去了皇家学习"
+# 				has_country_flag = DOH_quhuangjia
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_popularity = { ideology = democratic popularity = 0.2 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_zhuanzhuchukou
+# 		icon = GFX_goal_generic_positive_trade_relations
+# 		x = -1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yuhuangjiajiaoliu }
+# 		relative_position_id = DOH_yuhuangjiajiaoliu
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_zyck
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yinruwaizi
+# 		icon = GFX_focus_generic_the_giant_wakes
+# 		x = 1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yuhuangjiajiaoliu }
+# 		relative_position_id = DOH_yuhuangjiajiaoliu
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_offsite_building = { type = industrial_complex level = 4 }
+# 			add_offsite_building = { type = arms_factory level = 3 }
+# 			add_popularity = { ideology = democratic popularity = 0.25 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xishoujishu
+# 		icon = GFX_goal_generic_production2
+# 		x = 1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yinruwaizi }
+# 		relative_position_id = DOH_yinruwaizi
+# 		cost = 10
+# 		available = {
+# 			has_completed_focus = DOH_dulizizhudejungong
+# 			has_completed_focus = DOH_donghuanggongyetixi
+# 			num_of_factories > 299
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_idea_jishushengji
+# 			add_tech_bonus = {
+# 				name = "吸收技术"
+# 				bonus = 1
+# 				uses = 2
+# 				category = industry
+# 			}
+# 			add_tech_bonus = {
+# 				name = "吸收技术"
+# 				bonus = 1
+# 				uses = 2
+# 				category = electronics
+# 			}
+			
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_kaifangguomen
+# 		icon = GFX_focus_mex_privatisation
+# 		x = -1
+# 		y = 1
+# 		prerequisite = { focus = DOH_yinruwaizi }
+# 		prerequisite = { focus = DOH_zhuanzhuchukou}
+# 		relative_position_id = DOH_yinruwaizi
+# 		cost = 10
+# 		available = {
+# 			democratic > 0.50
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			set_politics = {
+# 				ruling_party = democratic
+# 			}
+# 			add_ideas = DOH_ggkf
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_guguozhihui
+# 		icon = GFX_focus_generic_support_the_left_right
+# 		x = 4
+# 		y = 2
+# 		prerequisite = { focus = DOH_shiyichangji }
+# 		relative_position_id = DOH_shiyichangji
+# 		mutually_exclusive = { focus = DOH_xuexizhilv }
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 0
+# 			modifier = {
+# 				date > 1938.6.1
+# 				add = 10
+# 			}
+# 			modifier = {
+# 				AND = {
+# 					date > 1938.1.1
+# 					check_variable = {
+# 						var = affect_from_tix
+# 						value = affect_from_bfl
+# 						compare = greater_than
+# 					}
+# 					check_variable = {
+# 						var = affect_from_tix
+# 						value = affect_from_huj
+# 						compare = greater_than
+# 					}
+# 				}
+# 				add = 20
+# 			}
+# 		}
+
+
+		
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			DOH_dongfangguguo_dengji = yes
+# 			add_political_power = 200
+			
+# 		}
+# 	}
+	
+	
+	
+# 	focus = {
+# 		id = DOH_nanhaiqundaojianshe
+# 		icon = GFX_goal_generic_construct_civ_factory
+# 		x = 22
+# 		y = 0
+# 		cost = 10
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		available = {
+# 			has_full_control_of_state = 591
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			591 = {
+# 				add_manpower = 1200000
+# 				add_extra_state_shared_building_slots = 6
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 			}
+
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_nanhaiziyuankaifa
+# 		icon = GFX_goal_generic_oil_refinery
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_nanhaiqundaojianshe }
+# 		relative_position_id = DOH_nanhaiqundaojianshe
+		
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		available = {
+# 			controls_state = 591
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			591 = {
+# 				add_resource = {
+# 					type = oil
+# 					amount = 35
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jianshedaolian
+# 		icon = GFX_focus_hol_prepare_the_inundation_lines
+# 		x = 0
+# 		y = 2
+# 		prerequisite = { focus = DOH_nanhaiziyuankaifa }
+# 		relative_position_id = DOH_nanhaiziyuankaifa
+		
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		completion_reward = {	
+			
+# 			592 = {
+# 				add_manpower = 114514
+# 				add_extra_state_shared_building_slots = 5
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 			}
+# 			599 = {
+# 				add_manpower = 1919
+# 				add_extra_state_shared_building_slots = 3
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 4
+# 					instant_build = yes
+# 				}
+# 			}	
+# 			591 = {
+# 				add_manpower = 810
+# 				add_extra_state_shared_building_slots = 1
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 			}
+# 			592 = {
+# 				set_state_category = megalopolis
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 1047
+# 					value = 40
+# 				}
+# 			}			
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_qingqiuwaiguobangzhu
+# 		icon = GFX_goal_generic_major_alliance
+# 		x = 2
+# 		y = 0
+# 		relative_position_id = DOH_nanhaiqundaojianshe
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_offsite_building = { type = industrial_complex level = 4 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_daliangangtie
+# 		icon = GFX_focus_generic_steel
+# 		x = 0
+# 		y = 1
+# 		relative_position_id = DOH_qingqiuwaiguobangzhu
+# 		prerequisite = { focus = DOH_qingqiuwaiguobangzhu }
+# 		cost = 7
+# 		available = {
+# 			has_full_control_of_state = 615
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			615 = {
+# 				add_resource = {
+# 					type = steel
+# 					amount = 50
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_fazhanjungongye
+# 		icon = GFX_focus_generic_steel
+# 		x = 0
+# 		y = 1
+# 		relative_position_id = DOH_daliangangtie
+# 		prerequisite = { focus = DOH_daliangangtie }
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			random_owned_controlled_state = {
+# 				add_extra_state_shared_building_slots = 2
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 2
+# 					instant_build = yes		
+# 				}
+# 			}
+# 			random_owned_controlled_state = {
+# 				add_extra_state_shared_building_slots = 3
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 2
+# 					instant_build = yes	
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_bushuhaijunchuanwu
+# 		icon = GFX_goal_generic_construct_naval_dockyard
+# 		x = 2
+# 		y = 1
+# 		relative_position_id = DOH_daliangangtie
+# 		prerequisite = { focus = DOH_daliangangtie }
+# 		cost = 15
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 		random_owned_controlled_state = {
+# 			limit = {
+# 				is_coastal = yes
+# 				free_building_slots = {
+# 					building = dockyard
+# 					size > 4
+# 					include_locked = yes
+# 				}
+# 			}
+# 			add_extra_state_shared_building_slots = 4
+# 			add_building_construction = {
+# 				type = dockyard
+# 				level = 4
+# 				instant_build = yes
+# 			}
+			
+# 		}
+# 		random_owned_controlled_state = {
+# 			limit = {
+# 				is_coastal = yes
+# 				free_building_slots = {
+# 					building = dockyard
+# 					size > 3
+# 					include_locked = yes
+# 				}
+# 			}
+# 			add_extra_state_shared_building_slots = 3
+# 			add_building_construction = {
+# 				type = dockyard
+# 				level = 3
+# 				instant_build = yes
+# 			}
+			
+# 		}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_zaochuanjishugexin
+# 		icon = GFX_focus_POL_develop_polish_shipbuilding
+# 		x = 0
+# 		y = 1
+# 		relative_position_id = DOH_bushuhaijunchuanwu
+# 		prerequisite = { focus = DOH_bushuhaijunchuanwu }
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+# 		available = {
+# 		if = {
+# 				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+# 				or = { 
+# 				is_ai = yes
+# 		        num_of_naval_factories > 20
+# 		        } 
+# 			}
+# 			else_if = {
+# 				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+# 				or = { 
+# 				is_ai = yes
+# 		        num_of_naval_factories > 40
+# 		    } 
+# 			}
+# 			}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_dhzcc
+# 			remove_ideas = DOH_crdhj
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_donghuanggongyetixi
+# 		icon = GFX_focus_generic_tank_production
+# 		x = 0
+# 		y = 1
+# 		relative_position_id = DOH_fazhanjungongye
+# 		prerequisite = { focus = DOH_fazhanjungongye }
+# 		cost = 7
+# 		available = {
+# 			num_of_factories > 225
+# 			num_of_military_factories > 60
+# 			has_completed_focus = DOH_dulizizhudejungong
+			
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_dhgytx
+# 		}
+# 	}	
+# 	focus = {
+# 		id = DOH_faxiantianranqi
+# 		icon = GFX_focus_generic_offshore_oil_rig
+# 		x = -2
+# 		y = 1
+# 		prerequisite = { focus = DOH_nanhaiziyuankaifa }
+# 		relative_position_id = DOH_nanhaiziyuankaifa
+		
+# 		cost = 10
+
+# 		ai_will_do = {
+# 			factor = 7
+# 		}
+
+# 		available = {
+# 			controls_state = 591
+# 			has_tech = excavation3
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			591 = {
+# 				add_resource = {
+# 					type = oil
+# 					amount = 114
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_nanhaishiyougongsi
+# 		icon = GFX_goal_generic_oil_refinery
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_faxiantianranqi }
+# 		relative_position_id = DOH_faxiantianranqi
+		
+# 		cost = 10
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_ndhhsygs
+# 		}
+# 	}
+	
+# 	focus = {
+# 		id = DOH_nanhaidezhuren
+# 		icon = GFX_goal_generic_demand_territory
+# 		x = 3
+# 		y = 1
+# 		prerequisite = { focus = DOH_nanhaishiyougongsi }
+# 		prerequisite = { focus = DOH_jianshedaolian }
+# 		prerequisite = { focus = DOH_donghuanggongyetixi }
+# 		prerequisite = { focus = DOH_zaochuanjishugexin }
+# 		relative_position_id = DOH_nanhaishiyougongsi
+		
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+			
+# 			add_stability = 0.25
+# 			add_war_support = 0.1
+# 			add_political_power = 150
+# 			army_experience = 50
+# 			navy_experience = 50
+# 			air_experience = 50
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 1070
+# 					value = 20
+# 				}
+# 			}
+# 			591 = {
+# 				set_state_category = large_city
+# 			}
+# 		}
+# 	}	
+	
+	
+# 	#保护逸仙
+# 	focus = {
+# 		id = DOH_baohuyixian
+# 		icon = GFX_focus_rom_royal_dictatorship
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+# 		relative_position_id = DOH_guguozhihui
+# 		prerequisite = { focus = DOH_guguozhihui }
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_timed_idea = { idea = DOH_qxfdp days = 90 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_douzhengdejiaoxun
+# 		icon = GFX_focus_generic_women_in_military
+# 		x = -2
+# 		y = 1
+# 		cost = 20
+# 		relative_position_id = DOH_baohuyixian
+# 		prerequisite = { focus = DOH_baohuyixian }
+
+# 		ai_will_do = {
+# 			factor = 4
+# 		}
+
+# 		available = {
+# 			NOT = {
+# 				has_idea = DOH_qxfdp
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_stability = 0.15
+# 			add_political_power = 300
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_sirenjingbeidui
+# 		icon = GFX_focus_manjiu
+# 		x = 2
+# 		y = 1
+# 		cost = 5
+# 		relative_position_id = DOH_baohuyixian
+# 		prerequisite = { focus = DOH_baohuyixian }
+
+# 		ai_will_do = {
+# 			factor = 4
+# 		}
+
+# 		available = {
+# 			NOT = {
+# 				has_idea = DOH_qxfdp
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_sirenjingbeidui
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_kuodayixianquanli
+# 		icon = GFX_goal_generic_demand_territory
+# 		x = 0
+# 		y = 1
+# 		cost = 10
+# 		relative_position_id = DOH_baohuyixian
+# 		prerequisite = { focus = DOH_baohuyixian }
+
+# 		ai_will_do = {
+# 			factor = 10
+# 			modifier = {
+# 			has_war_with = CHY
+# 			add = 100
+# 			}
+# 		}
+
+# 		available = {
+# 			NOT = {
+# 				has_idea = DOH_qxfdp
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_dhgm	
+# 			add_popularity = { ideology = fascism popularity = 0.2 }
+# 			set_politics = {
+# 				ruling_party = fascism
+# 			}
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_zhangkongsanjun
+# 		icon = GFX_focus_generic_little_entente
+# 		x = -1
+# 		y = 1
+# 		cost = 7
+# 		relative_position_id = DOH_kuodayixianquanli
+# 		prerequisite = { focus = DOH_kuodayixianquanli }
+
+# 		ai_will_do = {
+# 			factor = 100
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_popularity = { ideology = fascism popularity = 0.25 }
+# 			add_ideas = DOH_yxdyjzh
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xianzibingfa
+# 		icon = GFX_focus_generic_little_entente
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		relative_position_id = DOH_zhangkongsanjun
+# 		prerequisite = { focus = DOH_zhangkongsanjun }
+
+# 		ai_will_do = {
+# 			factor = 100
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			army_experience = 50			
+# 			add_war_support = 0.2
+# 			DOH_yixian = {
+# 				add_skill_level = 2
+# 				add_planning = 1
+# 				add_unit_leader_trait = brilliant_strategist
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xieyibenzizhuan
+# 		icon = GFX_focus_generic_treaty
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		relative_position_id = DOH_ducuyixian
+# 		prerequisite = { focus = DOH_ducuyixian }
+
+
+# 		ai_will_do = {
+# 			factor = 100
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_political_power = 200
+# 			DOH_yixian = {
+# 				getzhg_event_dixingtezhi_se = yes
+# 				getzhg_event_xidetezhi_se = yes
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yixianwansui
+# 		icon = GFX_focus_yixian
+# 		x = -1
+# 		y = 1
+# 		cost = 10
+# 		relative_position_id = DOH_xieyibenzizhuan
+# 		prerequisite = { focus = DOH_xieyibenzizhuan }
+# 		prerequisite = { focus = DOH_xianzibingfa }
+
+# 		ai_will_do = {
+# 			factor = 5
+# 			modifier = {
+# 			date > 1939.6.1
+# 			add = 100
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			DOH_yixian = {
+# 				set_portraits = {
+# 					civilian = {
+# 						large="gfx/leaders/DOH/yixian2.png"
+# 					}
+# 				}
+# 			}
+# 			add_political_power = 350
+# 			add_stability = 0.25
+# 			swap_ideas = {
+# 				add_idea = DOH_gmyx
+# 				remove_idea = DOH_dhgm
+# 			}
+# 			swap_ideas = {
+# 				add_idea = DOH_yxdymzh
+# 				remove_idea = DOH_yxdyjzh
+# 			}
+# 			hidden_effect = { news_event = aznews.13 }
+# 		}
+# 	}
+# 	#督促逸仙学习
+# 	focus = {
+# 		id = DOH_ducuyixian
+# 		icon = GFX_goal_generic_scientific_exchange
+# 		x = 1
+# 		y = 1
+# 		cost = 10
+# 		relative_position_id = DOH_kuodayixianquanli
+# 		prerequisite = { focus = DOH_kuodayixianquanli }
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_popularity = { ideology = fascism popularity = 0.15 }
+
+# 			add_country_leader_trait = mjyx
+# 		}
+# 	}
+
+	
+# 	focus = {
+# 		id = DOH_junshigaige
+# 		icon = GFX_focus_RAJ_lions_of_the_great_war
+# 		x = 2
+# 		y = 1
+# 		cost = 6
+# 		relative_position_id = DOH_dongfangdexiaoxuesheng
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+
+
+
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_war_support = 0.15
+# 			army_experience = 50
+# 			navy_experience = 100
+# 			air_experience = 50
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xunlianjunguan
+# 		icon = GFX_focus_usa_honor_the_confederacy
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+# 		prerequisite = { focus = DOH_junshigaige }
+# 		relative_position_id = DOH_junshigaige
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			if = {
+# 				limit = {
+# 					is_ai = yes
+# 				}
+# 				every_army_leader = {
+# 					limit = { is_field_marshal = NO }
+# 					add_skill_level = 1
+# 				}
+# 				every_army_leader = {
+# 					limit = { is_field_marshal = yes }
+# 					add_skill_level = 2
+# 				}
+# 			}
+# 			if = {
+# 				limit = {
+# 					is_ai = no
+# 				}
+# 				every_army_leader = {
+# 					add_skill_level = 2
+# 				}
+# 			}
+# 			custom_effect_tooltip = "招募西风和北风"
+# 			hidden_effect = {
+# 				TAN = {
+# 					DOH_xifeng = {
+# 						set_nationality = ROOT
+# 					}
+# 					DOH_beifeng = {
+# 						set_nationality = ROOT
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xuanxuezhaohuanshu
+# 		icon = GFX_focus_usa_tank_destroyer_doctrine
+# 		x = 2
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_junshigaige }
+# 		relative_position_id = DOH_junshigaige
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			custom_effect_tooltip = "招募5个异世界将领"
+# 			hidden_effect = {
+# 				TAN = {
+# 					DOH_79shi = {
+# 						set_nationality = ROOT
+# 					}
+# 					DOH_97shi = {
+# 						set_nationality = ROOT
+# 					}
+# 					DOH_JS9 = {
+# 						set_nationality = ROOT
+# 					}
+# 					DOH_NZ75 = {
+# 						set_nationality = ROOT
+# 					}
+# 					DOH_QBU88 = {
+# 						set_nationality = ROOT
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_lujunsilingtiba
+# 		icon = GFX_focus_lujunsilingtiba
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_xuanxuezhaohuanshu }
+# 		relative_position_id = DOH_xuanxuezhaohuanshu
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			custom_effect_tooltip = DOH_lujunsilingtiba_effect_tooltip
+# 			DOH_79shi = {
+# 				add_skill_level = 2
+# 			}
+# 			DOH_97shi = {
+# 				add_skill_level = 2
+# 			}
+# 			DOH_JS9 = {
+# 				add_skill_level = 2
+# 			}
+# 			DOH_NZ75 = {
+# 				add_skill_level = 2
+# 			}
+# 			DOH_QBU88 = {
+# 				add_skill_level = 2
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_dulizizhudejungong
+# 		icon = GFX_focus_generic_combined_arms
+# 		x = -2
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_dongfangdexiaoxuesheng }
+# 		relative_position_id = DOH_junshigaige
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+# 		prerequisite = { focus = DOH_junshigaige }
+
+
+		
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_zzyf
+# 			DOH_dongfangguguo_dengji = yes
+# 			every_military_industrial_organization = {
+# 				add_mio_size = 5
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jingbingqiangjiang
+# 		icon = GFX_goal_generic_axis_build_infantry
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_dulizizhudejungong }
+# 		relative_position_id = DOH_dulizizhudejungong
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+		
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_ygxl
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_lujunxinlilun
+# 		icon = GFX_goal_generic_air_doctrine
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_jingbingqiangjiang }
+# 		relative_position_id = DOH_jingbingqiangjiang
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+		
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_doctrine_cost_reduction = {
+# 				name = "陆军新理论"
+# 				cost_reduction = 0.25
+# 				uses = 3
+# 				category = land_doctrine
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_liluntupo
+# 		icon = GFX_goal_generic_cavalry
+# 		x = 0
+# 		y = 1
+# 		relative_position_id = DOH_lujunxinlilun
+# 		prerequisite = { focus = DOH_lujunxinlilun }
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			TY_lujunliluntupo = yes
+# 			set_technology = { guerrilla_tactics_for_doh = 1 popup = no }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_haijunjianshe
+# 		icon = GFX_goal_generic_amphibious_assault
+# 		x = 3
+# 		y = 2
+# 		cost = 7
+# 		prerequisite = { focus = DOH_dulizizhudejungong }
+# 		relative_position_id = DOH_dulizizhudejungong
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+		
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_tech_bonus = {
+# 				name = "海军建设"
+# 				bonus = 1.5
+# 				uses = 2
+# 				ahead_reduction = 2
+# 				category = naval_equipment
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xuanxueshijianshe
+# 		icon = GFX_goal_generic_navy_battleship
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_haijunjianshe }
+# 		relative_position_id = DOH_haijunjianshe
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+		
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			TY_haijunliluntupo = yes
+# 			add_tech_bonus = {
+# 				name = "玄学建造"
+# 				bonus = 2
+# 				uses = 1
+# 				ahead_reduction = 3
+# 				category = naval_equipment
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_tieyuan
+# 		icon = GFX_goal_continuous_air_production
+# 		x = -3
+# 		y = 2
+# 		cost = 7
+# 		prerequisite = { focus = DOH_dulizizhudejungong }
+# 		relative_position_id = DOH_dulizizhudejungong
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+		
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_tech_bonus = {
+# 				name = "铁鸢"
+# 				bonus = 1.5
+# 				uses = 2
+# 				category = air_equipment
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_duidizhiyuan
+# 		icon = GFX_goal_generic_air_bomber
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_tieyuan }
+# 		relative_position_id = DOH_tieyuan
+# 		ai_will_do = {
+# 			factor = 3
+# 		}
+
+
+		
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			TY_kongjunliluntupo = yes
+# 			if = {
+# 				limit = {
+# 					has_dlc = "By Blood Alone"
+# 				}
+# 				add_tech_bonus = {
+# 				name = "铁鸢"
+# 				bonus = 1
+# 				uses = 1
+# 				category = light_air
+# 			    }
+# 				add_tech_bonus = {
+# 				name = "铁鸢"
+# 				bonus = 1
+# 				uses = 1
+# 				category = medium_air
+# 			    }
+# 				add_tech_bonus = {
+# 				name = "铁鸢"
+# 				bonus = 1
+# 				uses = 2
+# 				category = plane_modules_tech
+# 			    }
+# 			}
+# 			if = {
+# 				limit = {
+# 					not = { has_dlc = "By Blood Alone" }
+# 				}
+# 				add_tech_bonus = {
+# 				name = "铁鸢"
+# 				bonus = 1
+# 				uses = 4
+# 				category = cas_bomber
+# 				category = tactical_bomber
+# 			    }
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_tiexueguwen
+# 		icon = GFX_focus_ger_oppose_hitler
+# 		x = -2
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_dulizizhudejungong }
+# 		relative_position_id = DOH_dulizizhudejungong
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+	
+# 		available = {
+# 			or = {
+# 				TIX = { has_opinion = { target = DOH value > 59 } }
+# 				is_ai = yes
+# 				hidden_trigger = {
+# 					has_global_flag = MOD_azurlane_sairenzhizai
+# 				}
+# 			}
+# 		}
+
+# 		completion_reward = {
+# 			add_ideas = DOH_txjszd
+# 			create_corps_commander = {
+# 				name = "科隆"
+# 				picture = "kelong_donghuang.png"
+# 				traits = { trickster career_officer xunyang_army }
+# 				skill = 4
+# 				attack_skill = 4
+# 				defense_skill = 4
+# 				planning_skill = 2
+# 				logistics_skill = 3
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_huangjiaguwen
+# 		icon = GFX_goal_generic_navy_doctrines_tactics
+# 		x = 2
+# 		y = 1
+# 		cost = 7
+# 		prerequisite = { focus = DOH_dulizizhudejungong }
+# 		relative_position_id = DOH_dulizizhudejungong
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+	
+# 		available = {	
+# 			or = {
+# 				HUJ = { has_opinion = { target = DOH value > 59 } }
+# 				is_ai = yes 
+# 				hidden_trigger = {
+# 					has_global_flag = MOD_azurlane_sairenzhizai
+# 				}
+# 			}
+# 		}
+
+# 		completion_reward = {
+# 			navy_experience = 25
+# 			set_technology = { basic_ship_hull_heavy = 1 }
+# 			create_equipment_variant = {
+# 				name = "纳尔逊教师舰"
+# 				type = ship_hull_heavy_1
+# 				name_group = ENG_BB_HISTORICAL
+# 				parent_version = 0
+# 				modules = {
+# 					fixed_ship_battery_slot = ship_heavy_battery_2
+# 					fixed_ship_anti_air_slot = ship_anti_air_2
+# 					fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+# 					fixed_ship_radar_slot = empty
+# 					fixed_ship_engine_slot = heavy_ship_engine_2
+# 					fixed_ship_secondaries_slot = ship_secondaries_2
+# 					fixed_ship_armor_slot = ship_armor_bb_2
+# 					front_1_custom_slot = ship_heavy_battery_2
+# 					mid_1_custom_slot = empty
+# 					mid_2_custom_slot = empty
+# 					rear_1_custom_slot = ship_heavy_battery_2
+# 				}
+# 			}		
+# 			hidden_effect = {
+# 				add_equipment_production = {
+# 					equipment = {
+# 						type = ship_hull_heavy_4
+# 						creator = ROOT 
+# 						version_name = "纳尔逊教师舰"
+# 					}
+# 					requested_factories = 1
+# 					progress = 1
+# 					amount = 1
+# 				}
+# 				TAN = {
+# 					DOH_naerxun = {
+# 						set_nationality = ROOT
+# 					}
+# 				}
+# 			}
+# 			custom_effect_tooltip = "招募纳尔逊"
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xuexichongying
+# 		icon = GFX_goal_generic_navy_carrier
+# 		x = -3
+# 		y = 1
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+# 		prerequisite = { focus = DOH_chenglikeyanzu }
+# 		relative_position_id = DOH_chenglikeyanzu
+# 		available = {
+# 			NOT = { has_war_with = CHY }
+# 		}
+
+# 		bypass = {
+# 			has_war_with = CHY
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_political_power = -100
+# 			add_tech_bonus = {
+# 				name = "重樱航母技术"
+# 				bonus = 1.5
+# 				uses = 2
+# 				category = cv_tech
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_youbuxiaochicheng
+# 		icon = GFX_focus_xiaochicheng
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+# 		prerequisite = { focus = DOH_xuexichongying }
+# 		relative_position_id = DOH_xuexichongying
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_doctrine_cost_reduction = {
+# 				name = "诱捕小赤城"
+# 				cost_reduction = 0.75
+# 				uses = 1
+# 				category = naval_doctrine
+# 			}
+# 			custom_effect_tooltip = DOH_youbuxiaochicheng_effect_tootlip
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_chenglikeyanzu
+# 		icon = GFX_goal_tfv_generic_tech_sharing
+# 		x = 33
+# 		y = 0
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+	
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_timed_idea = { idea = DOH_kyxzgzz days = 180 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xuexihuangjia
+# 		icon = GFX_goal_generic_navy_battleship
+# 		x = 2
+# 		y = 0
+# 		cost = 5
+# 		relative_position_id = DOH_xuexichongying
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+# 		prerequisite = { focus = DOH_chenglikeyanzu }
+# 		available = {
+# 			NOT = { has_war_with = HUJ }
+# 		}
+
+# 		bypass = {
+# 			has_war_with = HUJ
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_political_power = -80
+# 			add_tech_bonus = {
+# 				name = "皇家战舰技术"
+# 				bonus = 1.0
+# 				uses = 3
+# 				category = bb_tech
+# 				category = ca_tech
+# 				category = ca_tech
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xuexitiexue
+# 		icon = GFX_goal_rhineland
+# 		x = 2
+# 		y = 0
+# 		cost = 5
+# 		relative_position_id = DOH_xuexihuangjia
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+# 		prerequisite = { focus = DOH_chenglikeyanzu }
+
+# 		available = {
+# 			NOT = { has_war_with = TIX }
+# 		}
+
+# 		bypass = {
+# 			has_war_with = TIX
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_political_power = -75
+# 			add_tech_bonus = {
+# 				name = "铁血陆军技术"
+# 				bonus = 0.5
+# 				uses = 2
+# 				category = infantry_weapons
+# 				category = armor
+# 			}
+# 			add_doctrine_cost_reduction = {
+# 				name = "铁血陆军技术"
+# 				cost_reduction = 0.25
+# 				uses = 1
+# 				category = land_doctrine
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xuexibaiying
+# 		icon = GFX_goal_continuous_repairments
+# 		x = 2
+# 		y = 0
+# 		cost = 5
+# 		relative_position_id = DOH_xuexitiexue
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+# 		prerequisite = { focus = DOH_chenglikeyanzu }
+
+# 		available = {
+# 			NOT = { has_war_with = BYG }
+# 		}
+
+# 		bypass = {
+# 			has_war_with = BYG
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_political_power = -150
+# 			add_tech_bonus = {
+# 				name = "白鹰工业技术"
+# 				bonus = 1
+# 				uses = 2
+# 				category = industry
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_baiyinggongchengshi
+# 		icon = GFX_focus_nvzaoshen
+# 		x = 0
+# 		y = 1
+# 		cost = 7
+# 		relative_position_id = DOH_xuexibaiying
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+# 		prerequisite = { focus = DOH_xuexibaiying }
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_tech_bonus = {
+# 				name = "白鹰工程师"
+# 				bonus = 1
+# 				uses = 1
+# 				category = industry
+# 			}
+# 			custom_effect_tooltip = DOH_baiyinggongchengshi_effect_tooltip
+# 		}
+# 	}
+# 	#
+# 	focus = {
+# 		id = DOH_dongfangdexiaoxuesheng
+# 		icon = GFX_goal_generic_scientific_exchange
+# 		x = -3
+# 		y = 1
+# 		cost = 10
+# 		prerequisite = { focus = DOH_xuexichongying }
+# 		prerequisite = { focus = DOH_xuexihuangjia }
+# 		prerequisite = { focus = DOH_xuexitiexue }
+# 		prerequisite = { focus = DOH_xuexibaiying }
+
+# 		relative_position_id = DOH_xuexibaiying
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_research_slot = 1
+# 			add_ideas = DOH_xxxx
+# 		}
+# 	}
+	
+# 	focus = {
+# 		id = DOH_donghuangdeshidai
+# 		icon = GFX_focus_donghuang
+# 		x = 52
+# 		y = 0
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+# 		available = {
+# 			has_completed_focus = DOH_dulizizhudejungong
+# 			has_completed_focus = DOH_huanxingjulong 
+# 			#has_completed_focus = DOH_weishejunfa
+# 		}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			DOH_dongfangguguo_dengji = yes
+# 			597 = {
+# 				set_state_category = large_city
+# 			}
+# 			614 = {
+# 				set_state_category = large_city
+# 			}
+# 			598 = {
+# 				set_state_category = large_city
+# 			}
+# 			620 = {
+# 				set_state_category = large_city
+# 			}
+# 			602 = {
+# 				set_state_category = large_city
+# 			}
+# 			607 = {
+# 				set_state_category = large_city
+# 			}
+# 			615 = {
+# 				set_state_category = large_city
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 1519
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 1069
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 7097
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 1319
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 10404
+# 					value = 10
+# 				}
+# 				set_victory_points = {
+# 					province = 7137
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 3992
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 7222
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 4619
+# 					value = 40
+# 				}
+# 				set_victory_points = {
+# 					province = 7101
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 9958
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 5033
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 7186
+# 					value = 30
+# 				}
+# 				set_victory_points = {
+# 					province = 12068
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 4504
+# 					value = 10
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_dashanghai
+# 		icon = GFX_goal_generic_propaganda
+# 		x = -4
+# 		y = 1
+# 		cost = 15
+# 		prerequisite = { focus = DOH_donghuangdeshidai }
+# 		relative_position_id = DOH_donghuangdeshidai
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		available = {
+# 			has_full_control_of_state = 613
+# 		}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			613 = {
+# 				add_extra_state_shared_building_slots = 9
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = dockyard
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 5
+# 					instant_build = yes
+# 				}
+# 				build_railway = {
+# 				level = 2
+# 				start_province = 7014 
+# 				target_province = 9843 
+# 				}
+# 			}
+# 			613 = {
+# 				set_state_category = megalopolis
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 11913
+# 					value = 50
+# 				}
+# 				set_victory_points = {
+# 					province = 10076
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 7014
+# 					value = 40
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_tianfuzhiguo
+# 		icon = GFX_goal_generic_propaganda
+# 		x = -2
+# 		y = 1
+# 		cost = 15
+# 		prerequisite = { focus = DOH_donghuangdeshidai }
+# 		relative_position_id = DOH_donghuangdeshidai
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		available = {
+# 			has_full_control_of_state = 605
+# 		}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_czdswgy
+# 			605 = {
+# 				add_extra_state_shared_building_slots = 4
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = supply_node
+# 					level = 1
+# 					province = 6999
+# 					instant_build = yes
+# 				}
+# 				build_railway = {
+# 				level = 2
+# 				start_province = 6999 
+# 				target_province = 9843
+# 				}
+# 			}
+# 			605 = {
+# 				set_state_category = metropolis
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 				province = 6999
+# 				value = 40
+# 			}
+# 			set_victory_points = {
+# 				province = 4925
+# 				value = 40
+# 			}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_qianniandidu
+# 		icon = GFX_goal_generic_propaganda
+# 		x = 0
+# 		y = 1
+# 		cost = 15
+# 		prerequisite = { focus = DOH_donghuangdeshidai }
+# 		relative_position_id = DOH_donghuangdeshidai
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		available = {
+# 			has_full_control_of_state = 608
+# 		}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_war_support = 0.15
+# 			add_stability = 0.1
+# 			add_political_power = 150
+# 			608 = {
+# 				add_extra_state_shared_building_slots = 4
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = naval_base
+# 					level = 8
+# 					province = 10068
+# 					instant_build = yes
+# 				}
+# 			}
+# 			608 = {
+# 				set_state_category = megalopolis
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 9843
+# 					value = 50
+# 				}
+# 				set_victory_points = {
+# 					province = 10068
+# 					value = 20
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_sichouzhilu
+# 		icon = GFX_goal_generic_propaganda
+# 		x = 2
+# 		y = 1
+# 		cost = 15
+# 		prerequisite = { focus = DOH_donghuangdeshidai }
+# 		relative_position_id = DOH_donghuangdeshidai
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		available = {
+# 			has_full_control_of_state = 622
+# 			controls_state = 283
+# 			controls_state = 754
+# 			controls_state = 755
+# 			controls_state = 756
+# 			controls_state = 760
+# 			controls_state = 617
+# 		}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			622 = {
+# 				add_extra_state_shared_building_slots = 3
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 4
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				build_railway = {
+# 				level = 2
+# 				start_province = 8049 
+# 				target_province = 1519
+# 				}
+# 			}
+# 			283 = {
+# 				add_extra_state_shared_building_slots = 1
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 			}
+# 			754 = {
+# 				add_extra_state_shared_building_slots = 1
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = supply_node
+# 					level = 1
+# 					province = 12732
+# 					instant_build = yes
+# 				}
+# 				build_railway = {
+# 				level = 2
+# 				start_province = 12732 
+# 				target_province = 8049
+# 				}
+# 			}
+# 			755 = {
+# 				add_extra_state_shared_building_slots = 1
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 4
+# 					instant_build = yes
+# 				}
+# 			}
+# 			build_railway = {
+# 				level = 2
+# 				path = { 12732 10490 10750 10796 10834 7940 }
+# 			}
+# 			756 = {
+# 				add_extra_state_shared_building_slots = 1
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = supply_node
+# 					level = 1
+# 					province = 1778
+# 					instant_build = yes
+# 				}
+# 			}
+# 			build_railway = {
+# 				level = 2
+# 				path = { 1778 7971 5076 2099 10750 }
+# 			}
+# 			760 = {
+# 				add_extra_state_shared_building_slots = 1
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 			}
+# 			617 = {
+# 				add_extra_state_shared_building_slots = 1
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 3
+# 					instant_build = yes
+# 				}
+# 				build_railway = {
+# 				level = 2
+# 				start_province = 4709
+# 				target_province = 1778
+# 				}
+# 			}
+# 			744 = {
+# 				set_state_category = metropolis
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 7418
+# 					value = 30
+# 				}
+# 				set_victory_points = {
+# 					province = 2022
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 12732
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 4709
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 4823
+# 					value = 10
+# 				}
+# 				set_victory_points = {
+# 					province = 8049
+# 					value = 10
+# 				}
+# 				set_victory_points = {
+# 					province = 2015
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 4823
+# 					value = 10
+# 				}
+# 				set_victory_points = {
+# 					province = 8127
+# 					value = 20
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_heijinsansheng
+# 		icon = GFX_goal_generic_propaganda
+# 		x = 4
+# 		y = 1
+# 		cost = 15
+# 		prerequisite = { focus = DOH_donghuangdeshidai }
+# 		relative_position_id = DOH_donghuangdeshidai
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		available = {
+# 			has_full_control_of_state = 714
+# 			has_full_control_of_state = 717
+# 			has_full_control_of_state = 715
+# 			has_full_control_of_state = 328
+# 			has_full_control_of_state = 716
+# 		}
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			714 = {
+# 				add_extra_state_shared_building_slots = 2
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = supply_node
+# 					level = 1
+# 					province = 7848
+# 					instant_build = yes
+# 				}
+# 				add_resource = {
+# 					type = oil
+# 					amount = 125
+# 				}
+# 			}
+# 			328 = {
+# 				add_extra_state_shared_building_slots = 4
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 			}
+# 			716 = {
+# 				add_extra_state_shared_building_slots = 4
+# 				add_building_construction = {
+# 					type = infrastructure
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = dockyard
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 			}
+# 			build_railway = {
+# 				level = 1
+# 				start_province = 4506
+# 				target_province = 7832
+# 			}
+# 			build_railway = {
+# 				level = 2
+# 				path = { 7848 10675 7832 }
+# 			}
+# 			build_railway = {
+# 				level = 1
+# 				start_province = 4506
+# 				target_province = 11771
+# 			}
+# 			build_railway = {
+# 				level = 1
+# 				start_province = 9897
+# 				target_province = 11771
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 11771
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 1150
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 10433
+# 					value = 20
+# 				}
+# 			}
+# 			745 = {
+# 				set_state_category = metropolis
+# 			}
+# 			328 = {
+# 				set_state_category = large_city
+# 			}
+# 			716 = {
+# 				set_state_category = large_city
+# 			}
+# 			714 = {
+# 				set_state_category = rural
+# 			}
+# 			717 = {
+# 				set_state_category = rural
+# 			}
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_weishejunfa
+# 		icon = GFX_goal_generic_demand_territory
+# 		x = 42
+# 		y = 2
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 5
+# 			modifier = {
+# 				date > 1936.6.1
+# 				add = 15
+# 			}
+# 		}
+
+
+# 		allow_branch = {
+# 			has_global_flag = MOD_azurlane_tianjiangjianniang
+# 		}
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			custom_effect_tooltip = DOH_weishejunfa_tooltip
+# 			add_timed_idea = { idea = DOH_qytd days = 365 }
+# 			set_country_flag = DOH_weishejunfa
+# 			hidden_effect = {
+# 				every_country = {
+# 					limit = {
+# 						OR = {
+# 							tag = SHX
+# 							tag = XSM
+# 							tag = SIK
+# 							tag = GXC
+# 							tag = YUN
+# 							tag = TIB
+# 						}
+# 					}
+# 					country_event = DOH_event.7
+# 				}
+# 			}
+			
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_fangfanjinlin
+# 		icon = GFX_goal_generic_defence
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+# 		prerequisite = { focus = DOH_weishejunfa }
+# 		relative_position_id = DOH_weishejunfa
+# 		ai_will_do = {
+# 			factor = 5
+# 			modifier = {
+# 				date > 1936.6.1
+# 				add = 15
+# 			}
+# 		}
+
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_timed_idea = { idea = DOH_dfcy days = 900 } 
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xianfazhiren
+# 		icon = GFX_aflag_CHY
+# 		x = -2
+# 		y = 1
+# 		cost = 10
+# 		prerequisite = { focus = DOH_fangfanjinlin }
+# 		relative_position_id = DOH_fangfanjinlin
+# 		mutually_exclusive = { focus = DOH_beijingfangxian }
+# 		available = {
+# 			has_completed_focus = DOH_huanxingjulong
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			create_wargoal = { target = CHY type = take_state expire = 180 }
+# 			add_timed_idea = { idea = DOH_xfzr days = 150 } 
+# 			if = {
+# 				limit = { has_idea = DOH_dfcy }
+# 				remove_ideas = { DOH_dfcy }
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yuchongyingjiaoshe
+# 		icon = GFX_focus_chongyingweixin
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+# 		prerequisite = { focus = DOH_xianfazhiren }
+# 		relative_position_id = DOH_xianfazhiren
+# 		ai_will_do = {
+# 			factor = 15
+# 		}
+# 		available = {
+# 			controls_state = 609
+# 			controls_state = 611
+# 			controls_state = 610
+# 			controls_state = 612
+# 			controls_state = 715
+# 			controls_state = 716
+# 			controls_state = 745
+# 			controls_state = 328
+# 			controls_state = 717
+# 			controls_state = 714
+# 			controls_state = 761
+# 			controls_state = 527
+# 			controls_state = 525
+# 		}
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			CHY = { country_event = { id = DOH_event.17 days = 14 } }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_beijingfangxian
+# 		icon = GFX_goal_generic_small_arms
+# 		x = 2
+# 		y = 1
+# 		cost = 6
+# 		prerequisite = { focus = DOH_fangfanjinlin }
+# 		relative_position_id = DOH_fangfanjinlin
+# 		mutually_exclusive = { focus = DOH_xianfazhiren }
+# 		ai_will_do = {
+# 			factor = 20
+# 		}
+# 		available = {
+# 			has_full_control_of_state = 608
+# 			has_full_control_of_state = 615
+# 			has_full_control_of_state = 621
+# 		}
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			608 = {
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 3
+# 					instant_build = yes
+# 					province = 10068
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 2
+# 					instant_build = yes
+# 					province = 11761
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 3
+# 					instant_build = yes
+# 					province = 9843
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 3
+# 					instant_build = yes
+# 					province = 4140
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 2
+# 					instant_build = yes
+# 					province = 12026
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 3
+# 					instant_build = yes
+# 					province = 10068
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 2
+# 					instant_build = yes
+# 					province = 6828
+# 				}
+# 			}
+# 			615 = {
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 2
+# 					instant_build = yes
+# 					province = 10480
+# 				}
+# 			}
+# 			621 = {
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 2
+# 					instant_build = yes
+# 					province = 7158
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 2
+# 					instant_build = yes
+# 					province = 12403
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 1
+# 					instant_build = yes
+# 					province = 7048
+# 				}
+# 				add_building_construction = {
+# 					type = bunker
+# 					level = 2
+# 					instant_build = yes
+# 					province = 12331
+# 				}
+#                 add_building_construction = {
+# 					type = supply_node
+# 					level = 1
+# 					instant_build = yes
+# 					province = 10424
+# 				}
+# 				build_railway = {
+# 				level = 2
+# 				start_province = 8049 
+# 				target_province = 10424
+# 				}
+# 				build_railway = {
+# 				level = 2
+# 				start_province = 8049 
+# 				target_province = 7418
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_haianfangshou
+# 		icon = GFX_goal_generic_small_arms
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+# 		prerequisite = { focus = DOH_beijingfangxian }
+# 		relative_position_id = DOH_beijingfangxian
+# 		ai_will_do = {
+# 			factor = 20
+# 		}
+# 		available = {
+# 			has_full_control_of_state = 613
+# 			has_full_control_of_state = 597
+# 			has_full_control_of_state = 743
+# 			has_full_control_of_state = 596
+# 		}
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			custom_effect_tooltip = DOH_haianfangshou_tooltip
+# 			hidden_effect = {
+# 				load_oob = "DOH_haianfangshou"
+# 			}
+# 			if = {
+# 			limit = {
+# 			is_ai = yes
+# 			}
+#             hidden_effect = {
+# 			load_oob = "DOH_haianfangshou_ai"
+# 			}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yuanyanghaijun
+# 		icon = GFX_goal_generic_navy_cruiser
+# 		x = 41
+# 		y = 0
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_yyhj
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yunshujiandui
+# 		icon = GFX_focus_generic_destroyer
+# 		x = 2
+# 		y = 0
+# 		cost = 7
+# 		relative_position_id = DOH_yuanyanghaijun
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_ysjd
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_ninghaixiaxiyang
+# 		icon = GFX_focus_ninghai
+# 		x = 1
+# 		y = 1
+# 		cost = 10
+# 		relative_position_id = DOH_yuanyanghaijun
+# 		prerequisite = { focus = DOH_yuanyanghaijun }
+# 		prerequisite = { focus = DOH_yunshujiandui }
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		available = {
+# 			has_navy_size = { size > 199 }
+# 			has_navy_size = {
+# 				size > 19
+# 				type = capital_ship
+# 			}
+# 		}
+		
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+# 		select_effect = {
+# 			HUJ = { country_event = { id = DOH_event.10 days = 30 } }
+# 			YUW = { country_event = { id = DOH_event.13 days = 30 } }
+# 		}
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			if = {
+# 				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
+# 				add_manpower = -250000
+# 			    custom_effect_tooltip = "获得南洋大部分岛屿、印度南部、非洲东部沿岸等土地的控制权~"
+# 			    hidden_effect = {
+# 				transfer_state = 336
+# 				transfer_state = 672
+# 				transfer_state = 335
+# 				transfer_state = 667
+# 				transfer_state = 721
+# 				transfer_state = 738
+# 				transfer_state = 520
+# 				transfer_state = 422
+# 				transfer_state = 423
+# 				transfer_state = 709
+# 				transfer_state = 559
+# 				transfer_state = 269
+# 				transfer_state = 543
+# 				transfer_state = 320
+# 			    }
+# 			}
+# 			else_if = {
+# 				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+# 				custom_effect_tooltip = DOH_ninghaixiaxiyang_tooltip
+# 			    add_political_power = -200
+# 			    navy_experience = 100
+# 			}
+# 			743 = {
+# 				set_state_category = megalopolis
+# 			}
+			
+# 			596 = {
+# 				set_state_category = metropolis
+# 			}
+# 			hidden_effect = {
+# 				set_victory_points = {
+# 					province = 10000
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 7191
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 9974
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 4196
+# 					value = 20
+# 				}
+# 				set_victory_points = {
+# 					province = 7071
+# 					value = 20
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_guguodejueze
+# 		icon = GFX_goal_generic_demand_territory
+# 		x = 23
+# 		y = 5
+
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 			modifier = {
+# 			is_historical_focus_on = yes
+# 			factor = 0
+# 			}
+# 		}
+
+# 		available = {
+# 			not = {has_war_with = CHY}
+# 			NOT = {
+# 				OR = {
+# 					has_idea = DOH_dfgg1
+# 					has_idea = DOH_dfgg2
+# 				}
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_political_power = 200
+# 			remove_ideas = {
+# 				DOH_tgyh
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_aoranzili
+# 		icon = GFX_goal_generic_demand_territory
+# 		relative_position_id = DOH_guguodejueze
+# 		x = 0
+# 		y = 4
+
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		available = {
+# 			OR = {
+# 				has_idea = DOH_dfgg4
+# 				has_idea = DOH_dfgg5
+# 			}
+# 			NOT = {
+# 				OR = {
+# 					has_completed_focus = DOH_gongchanlianmeng
+# 					has_completed_focus = DOH_chisezhongzhou
+# 					has_completed_focus = DOH_bilanhangxian
+# 				}	
+# 			}
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			set_rule = { can_create_factions = yes }
+# 			add_political_power = 500
+# 			swap_ideas = {
+# 				remove_idea = DOH_tgyh
+# 				add_idea = DOH_tcsg
+# 			}
+			
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_baochiweishe
+# 		icon = GFX_goal_anschluss
+# 		relative_position_id = DOH_aoranzili
+# 		prerequisite = { focus = DOH_aoranzili }
+# 		mutually_exclusive = { focus = DOH_jijikuozhang }
+# 		x = -1
+# 		y = 1
+
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_jdws
+			
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jijikuozhang
+# 		icon = GFX_goal_demand_sudetenland
+# 		relative_position_id = DOH_aoranzili
+# 		prerequisite = { focus = DOH_aoranzili }
+# 		mutually_exclusive = { focus = DOH_baochiweishe }
+# 		x = 1
+# 		y = 1
+
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 5
+# 		}
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_ideas = DOH_wlzs
+			
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_gongchanlianmeng
+# 		icon = GFX_focus_generic_join_comintern
+# 		x = -3
+# 		y = 1
+# 		prerequisite = { focus = DOH_guguodejueze }
+# 		relative_position_id = DOH_guguodejueze
+# 		mutually_exclusive = { focus = DOH_chisezhongzhou focus = DOH_bilanhangxian }
+# 		cost = 1
+# 		available = {
+# 			has_war = no
+# 			has_completed_focus = DOH_renminwansui
+# 			NOT = { has_completed_focus = DOH_aoranzili }
+# 			CHY = { NOT = { has_completed_focus = CHY_dongfanglianmeng } } 
+# 			OR = {
+# 			is_in_faction = no
+# 			is_faction_leader = yes
+# 			}
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			custom_effect_tooltip = DOH_gongchanlianmeng_tooltip
+# 			if = {
+# 				limit = {
+# 					AND = {
+# 						has_global_flag = BFL_created_gongchanlianmeng
+# 						BFL = { is_faction_leader = yes }
+# 					}
+# 				}
+# 				BFL = {
+# 					add_to_faction = DOH
+# 				}
+# 			}
+# 			else = {
+# 				set_global_flag = DOH_created_gongchanlianmeng
+# 				create_faction = "共产联盟"
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_quanfangmianhezuo
+# 		icon = GFX_goal_generic_improve_relations
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_gongchanlianmeng }
+# 		relative_position_id = DOH_gongchanlianmeng
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			BFL = {
+				
+# 				country_event = DOH_event.6
+# 			}
+# 			add_tech_bonus = {
+# 				name = "全方面合作"
+# 				bonus = 0.75
+# 				uses = 5
+# 				category = industry
+# 				category = construction_tech
+# 				category = infantry_weapons
+# 				category = armor
+# 				category = air_equipment
+# 			}
+# 			add_timed_idea = { idea = DOH_bldzjyz days = 210 }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_xingjiandaxue
+# 		icon = GFX_focus_research2
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_quanfangmianhezuo }
+# 		relative_position_id = DOH_quanfangmianhezuo
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			BFL = {
+# 				add_ideas = DOH_lzdfdlxs
+# 			}
+# 			add_research_slot = 1
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_chisezhongzhou
+# 		icon = GFX_goal_support_fascism
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_guguodejueze }
+# 		relative_position_id = DOH_guguodejueze
+# 		mutually_exclusive = { focus = DOH_gongchanlianmeng focus = DOH_bilanhangxian }
+# 		cost = 1
+# 		available = {
+# 			has_war = no
+# 			has_completed_focus = DOH_ducuyixian
+# 			custom_trigger_tooltip = {
+# 				tooltip = "铁血国创建了赤色中轴"
+# 				has_global_flag = TIX_created_chisezhongzhou
+# 				TIX = { is_faction_leader = yes } 
+# 			}
+# 			NOT = { has_completed_focus = DOH_aoranzili }
+# 			CHY = { NOT = { has_completed_focus = CHY_dongfanglianmeng } } 
+# 			OR = {
+# 			is_in_faction = no
+# 			is_faction_leader = yes
+# 			}
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			TIX = {
+# 				add_to_faction = DOH
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_nvhuangdexunyou
+# 		icon = GFX_focus_yixian
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_chisezhongzhou }
+# 		relative_position_id = DOH_chisezhongzhou
+# 		cost = 15
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_political_power = 150
+# 			every_country = {
+# 				limit = { 
+# 					NOT = { OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } }
+# 					has_government = fascism 
+# 				}
+				
+# 				add_opinion_modifier = {
+# 					target = DOH
+# 					modifier = DOH_yixiandelaifang
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_zhongxijiehe
+# 		icon = GFX_focus_generic_monarchy_2
+# 		x = 0
+# 		y = 1
+# 		prerequisite = { focus = DOH_nvhuangdexunyou }
+# 		relative_position_id = DOH_nvhuangdexunyou
+# 		cost = 7
+
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_tech_bonus = {
+# 				name = "西方的帮助"
+# 				bonus = 2
+# 				uses = 1
+# 				ahead_reduction = 1
+# 				category = armor
+# 			}
+# 			add_tech_bonus = {
+# 				name = "西方的帮助"
+# 				bonus = 2
+# 				uses = 1
+# 				ahead_reduction = 1
+# 				category = naval_equipment
+# 			}
+# 			add_research_slot = 1
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_bilanhangxian
+# 		icon = GFX_goal_support_democracy
+# 		x = 3
+# 		y = 1
+# 		prerequisite = { focus = DOH_guguodejueze }
+# 		relative_position_id = DOH_guguodejueze
+# 		mutually_exclusive = { focus = DOH_chisezhongzhou focus = DOH_gongchanlianmeng }
+# 		cost = 1
+# 		available = {
+# 			has_war = no
+# 			has_completed_focus = DOH_kaifangguomen
+# 			NOT = { has_completed_focus = DOH_aoranzili }
+# 			CHY = { NOT = { has_completed_focus = CHY_dongfanglianmeng } } 
+# 			OR = {
+# 			is_in_faction = no
+# 			is_faction_leader = yes
+# 			}
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			HUJ = {
+# 				add_to_faction = DOH
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jiadalidu
+# 		icon = GFX_focus_generic_the_giant_wakes
+# 		x = 1
+# 		y = 1
+# 		prerequisite = { focus = DOH_bilanhangxian }
+# 		relative_position_id = DOH_bilanhangxian
+# 		cost = 7
+# 		available = {
+# 			num_of_factories > 400	
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			swap_ideas = {
+# 				remove_idea = DOH_ggkf
+# 				add_idea = DOH_fsfz
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_huangjiashenjixiehui
+# 		icon = GFX_focus_hol_the_foundations_of_defense
+# 		x = -1
+# 		y = 1
+# 		prerequisite = { focus = DOH_bilanhangxian }
+# 		relative_position_id = DOH_bilanhangxian
+# 		cost = 7
+# 		available = {
+# 			has_political_power > 400
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {	
+# 			add_political_power = -400
+# 			add_ideas = DOH_fffb
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_ziguyilai
+# 		icon = GFX_focus_chi_one_china_policy
+# 		x = 49
+# 		y = 2
+# 		offset = {
+# 			trigger = {
+# 				has_global_flag = MOD_azurlane_sairenzhizai
+# 			}
+# 			x = -7
+# 		}
+# 		mutually_exclusive = {
+# 			focus = DOH_chaogongzhidu
+# 		}
+# 		cost = 5
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+
+# 		available = {
+# 			has_completed_focus = DOH_dulizizhudejungong
+# 			has_completed_focus = DOH_huanxingjulong 
+# 			#has_completed_focus = DOH_weishejunfa
+# 			has_completed_focus = DOH_donghuangdeshidai
+# 			or = {
+# 			has_completed_focus = DOH_gongchanlianmeng
+# 			has_completed_focus = DOH_chisezhongzhou
+# 			has_completed_focus = DOH_bilanhangxian
+# 			has_completed_focus = DOH_aoranzili
+# 			}
+# 			NOT = {
+# 				country_exists = DH1
+# 			}
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_ideas = DOH_gfgt
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_chaogongzhidu
+# 		icon = GFX_focus_chi_one_china_policy
+# 		x = 55
+# 		y = 2
+# 		offset = {
+# 			trigger = {
+# 				has_global_flag = MOD_azurlane_sairenzhizai
+# 			}
+# 			x = -7
+# 		}
+# 		cost = 5
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		mutually_exclusive = {
+# 			focus = DOH_ziguyilai
+# 		}
+# 		available = {
+# 			has_completed_focus = DOH_dulizizhudejungong
+# 			has_completed_focus = DOH_huanxingjulong 
+# 			#has_completed_focus = DOH_weishejunfa
+# 			has_completed_focus = DOH_donghuangdeshidai
+# 			or = {
+# 			has_completed_focus = DOH_gongchanlianmeng
+# 			has_completed_focus = DOH_chisezhongzhou
+# 			has_completed_focus = DOH_bilanhangxian
+# 			has_completed_focus = DOH_aoranzili
+# 			}
+# 			country_exists = DH1
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_buzhanerqurenzhibing
+# 		icon = GFX_goal_generic_air_doctrine
+# 		prerequisite = { focus = DOH_chaogongzhidu }
+# 		relative_position_id = DOH_chaogongzhidu
+# 		x = 3
+# 		y = 1
+# 		cost = 10
+
+# 		available = {
+# 			OR = {
+# 				is_ally_with = BFL
+# 				BFL = { exists = no } 
+# 				AND = {
+# 					has_completed_focus = DOH_ninghaixiaxiyang
+# 					has_army_manpower = {
+# 						size > 3000000
+# 					}
+# 				}
+# 			}
+# 		}
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			add_threat = 5
+# 			annex_country = {
+# 				target = MON
+# 				transfer_troops = yes
+# 			}
+# 			add_state_core = 820
+# 			add_state_core = 330
+# 			add_state_core = 818
+# 			add_state_core = 817
+# 			add_state_core = 819
+
+# 			add_state_core = 329
+# 			add_state_core = 563
+# 			add_state_core = 561
+# 			add_state_core = 657
+# 			add_state_core = 560
+# 			add_state_core = 409
+# 			add_state_core = 408
+# 			add_state_core = 655
+
+# 			transfer_state = 329
+# 			transfer_state = 563
+# 			transfer_state = 561
+# 			transfer_state = 657
+# 			transfer_state = 560
+# 			transfer_state = 409
+# 			transfer_state = 408
+# 			transfer_state = 655
+# 			BFL = {
+#                 remove_state_core = 329
+# 			    remove_state_core = 563
+# 			    remove_state_core = 561
+# 			    remove_state_core = 657
+# 			    remove_state_core = 560
+# 			    remove_state_core = 409
+# 			    remove_state_core = 408
+# 			    remove_state_core = 655
+#             }
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_shensuowaimengu
+# 		icon = GFX_goal_generic_air_doctrine
+# 		prerequisite = { focus = DOH_ziguyilai }
+# 		relative_position_id = DOH_ziguyilai
+# 		x = -3
+# 		y = 1
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			create_wargoal = { target = MON type = annex_everything } 
+# 			add_state_core = 820
+# 			add_state_core = 330
+# 			add_state_core = 818
+# 			add_state_core = 817
+# 			add_state_core = 819
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_jibeizhidi
+# 		icon = GFX_aflag_BFL
+# 		prerequisite = { focus = DOH_shensuowaimengu }
+# 		relative_position_id = DOH_shensuowaimengu
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			create_wargoal = { target = BFL type = puppet_wargoal_focus } 
+# 			add_state_core = 329
+# 			add_state_core = 563
+# 			add_state_core = 561
+# 			add_state_core = 657
+# 			add_state_core = 560
+# 			add_state_core = 409
+# 			add_state_core = 408
+# 			add_state_core = 655
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_rishenzhidi
+# 		icon = GFX_aflag_CHY
+# 		prerequisite = { 
+# 			focus = DOH_ziguyilai
+# 			focus = DOH_chaogongzhidu
+# 		}
+# 		relative_position_id = DOH_ziguyilai
+# 		x = 3
+# 		y = 1
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			create_wargoal = {
+# 				target = CHY
+# 				type = puppet_wargoal_focus
+# 			}			
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_chongyingdechaogong
+# 		icon = GFX_aflag_CHY
+# 		prerequisite = { 
+# 			focus = DOH_ziguyilai
+# 			focus = DOH_chaogongzhidu
+# 		}
+# 		relative_position_id = DOH_chaogongzhidu
+# 		x = -1
+# 		y = 2
+# 		cost = 5
+# 		available = {
+# 			has_subject = CHY
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+#             hidden_effect = {
+# 				remove_opinion_modifier = {
+# 					target = DOH
+# 					modifier = CHY_dhtiaoxin
+# 				}
+# 				remove_opinion_modifier = {
+# 					target = CHY
+# 					modifier = CHY_dhtiaoxin
+# 				}
+# 				CHY = {
+# 					complete_national_focus = CHY_duidonghuangyouhao
+# 					complete_national_focus = CHY_donghuangyouhao
+# 				}
+# 			}
+# 			custom_effect_tooltip = doh_chongying_focus
+# 			526 = {
+# 				add_core_of = DOH
+# 				remove_core_of = CHY
+# 				transfer_state_to = DOH
+# 			}
+# 			537 = {
+# 				add_core_of = DOH
+# 				remove_core_of = CHY
+# 				transfer_state_to = DOH
+# 			}
+# 			if = {
+# 				limit = { DOH = { has_completed_focus = DOH_chaogongzhidu } }
+# 				set_autonomy = {
+# 					target = CHY
+# 					autonomy_state = doh_fanshu
+# 				}
+# 			}
+#             TAN = {
+#                 DOH_chy_advisor = {
+#                     set_nationality = ROOT
+#                 }
+#             }
+# 		}
+# 	}
+
+# 	focus = {
+# 		id = DOH_yuanzhengjundeweilai
+# 		icon = GFX_goal_generic_propaganda
+# 		prerequisite = {
+# 			focus = DOH_chaogongzhidu
+# 		}
+# 		relative_position_id = DOH_chaogongzhidu
+# 		x = 1
+# 		y = 2
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+# 		available = {
+# 			has_subject = DH1
+# 			date > 1943.1.1
+# 		}
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			set_autonomy = {
+# 				target = DH1
+# 				autonomy_state = doh_fanshu
+# 			}
+# 			DH1 = {
+# 				set_cosmetic_tag = DH1_future
+# 			}
+# 			custom_effect_tooltip = doh_weilai_focus
+# 			hidden_effect = {				
+# 				DH1 = {
+# 					every_character = {
+# 						limit = {
+# 							is_country_leader = yes
+# 						}
+# 						DH1 = {
+# 							   add_country_leader_role = {
+# 								Character = PREV
+# 								Promote_leader = yes
+# 								Country_leader = {
+# 								ideology = leninism
+# 								expire = "2000.1.1.1"
+# 									traits = {
+# 										yfz
+# 									}
+# 								}
+# 							}
+			
+# 							add_country_leader_role = {
+# 								Character = PREV
+# 								Promote_leader = yes
+# 								Country_leader = {
+# 									ideology = fascism_ideology
+# 									expire = "2000.1.1.1"
+# 									traits = {
+# 										yfz
+# 									}
+# 								}
+# 							}
+			
+# 							add_country_leader_role = {
+# 								Character = PREV
+# 								Promote_leader = yes
+# 								Country_leader = {
+# 								ideology = liberalism
+# 								expire = "2000.1.1.1"
+# 								traits = {
+# 									yfz
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 				every_character = {
+# 					limit = { 
+# 						is_country_leader = yes 
+# 					}
+# 					add_country_leader_trait = yfz
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_yiluxiangnan
+# 		icon = GFX_focus_generic_support_the_left_right
+# 		prerequisite = { focus = DOH_ziguyilai }
+# 		relative_position_id = DOH_ziguyilai
+# 		x = 0
+# 		y = 1
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			create_wargoal = { target = YUW type = puppet_wargoal_focus }
+# 			create_wargoal = { target = SIA type = annex_everything } 
+# 			add_state_core = 671
+# 			add_state_core = 670
+# 			add_state_core = 741
+# 			add_state_core = 286
+# 			add_state_core = 868
+# 			add_state_core = 869
+# 			add_state_core = 289
+# 			add_state_core = 724
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_ximalayashanxia
+# 		icon = GFX_goal_generic_major_war
+# 		prerequisite = { focus = DOH_yiluxiangnan }
+# 		relative_position_id = DOH_yiluxiangnan
+# 		x = -1
+# 		y = 1
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			create_wargoal = { target = RAJ type = puppet_wargoal_focus }
+# 			create_wargoal = { target = HUJ type = puppet_wargoal_focus }
+# 			add_state_core = 434
+# 			add_state_core = 640
+# 			add_state_core = 288
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_chenbataipingyang
+# 		icon = GFX_focus_jap_strike_south
+# 		prerequisite = { focus = DOH_yiluxiangnan }
+# 		relative_position_id = DOH_yiluxiangnan
+# 		x = 1
+# 		y = 1
+# 		cost = 5
+
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+
+
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			create_wargoal = { target = PHI type = annex_everything }
+# 			create_wargoal = { target = INS type = puppet_wargoal_focus }
+# 			create_wargoal = { target = MAL type = puppet_wargoal_focus }
+# 			create_wargoal = { target = BYG type = puppet_wargoal_focus }
+# 			create_wargoal = { target = AST type = puppet_wargoal_focus }
+# 			create_wargoal = { target = NZL type = puppet_wargoal_focus }
+# 			add_state_core = 336
+# 			add_state_core = 623
+# 			add_state_core = 327
+# 			add_state_core = 626
+# 			add_state_core = 628
+# 			add_state_core = 625
+# 			add_state_core = 627
+# 			add_state_core = 624
+# 		}
+# 	}
+# 	focus = {
+# 		id = DOH_huidaoguxiang
+# 		icon = GFX_goal_generic_construct_civilian
+# 		x = 2
+# 		y = 1
+# 		cost = 7
+# 		relative_position_id = DOH_jiefangxuanyan
+# 		prerequisite = { focus = DOH_jiefangxuanyan }
+# 		ai_will_do = {
+# 			factor = 6
+# 		}
+
+# 		cancel_if_invalid = yes
+# 		continue_if_invalid = no
+# 		available_if_capitulated = no
+
+
+
+# 		#search_filters = { FOCUS_FILTER_STABILITY }
+# 		completion_reward = {
+# 			592 = {
+# 				add_extra_state_shared_building_slots = 4
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 			}
+# 			594 = {
+# 				add_extra_state_shared_building_slots = 3
+# 				add_building_construction = {
+# 					type = arms_factory
+# 					level = 1
+# 					instant_build = yes
+# 				}
+# 				add_building_construction = {
+# 					type = industrial_complex
+# 					level = 2
+# 					instant_build = yes
+# 				}
+# 			}
+# 		}
+# 	}
+# }

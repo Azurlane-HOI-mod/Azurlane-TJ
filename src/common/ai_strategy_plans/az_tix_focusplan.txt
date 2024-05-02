@@ -1,0 +1,289 @@
+TIX_historical = {
+	name = "TIX_historical"
+	desc = "TIX_historical_desc"
+
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+	has_global_flag = MOD_azurlane_tianjiangjianniang
+		or = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = TIX_ai_behavior
+				option = TIX_historical
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = TIX_wudidejundui
+	}
+
+	ai_national_focuses = {
+		#1936
+		TIX_chongjiangongye #49
+		TIX_yihuigaige #70
+		TIX_guojiayuanshoufa #49
+		TIX_saoqingfanduipai #63
+		TIX_tiewanyuanshou #49
+		TIX_tiexuededaolu #49#莱茵兰
+		TIX_hansipijiuchang #70
+		#1937
+        TIX_hansibinggongchang #70 
+        TIX_hansikafeichang #49
+		TIX_pijiuwaixiao #28
+		TIX_difangxifang #35
+		TIX_tunbingaodili #56
+		TIX_jiaruhuohuimie #35
+		TIX_diyiciweiyenazhongcai #28
+		TIX_namaoselai #35
+		#1938
+		TIX_kafeikouweigailiang #35
+		TIX_chenglihansijituan #35
+		TIX_tiexuedexingjun #70
+		TIX_fazhanzhuangjia #49
+		TIX_zhongoujubian #49
+		TIX_jiekesiluofakedemingyun #56
+		TIX_dierciweiyenazhongcai #35
+		TIX_henghenghongzhaji #49
+		#1939
+		TIX_fazhanbubing #49
+		TIX_lilunyanjiu #49
+		TIX_beifangdejuxiong #7
+		TIX_sudetiaoyue #35
+		TIX_danzehuozhanzheng #56 #但泽
+		TIX_weisebaoxingdong #14
+		TIX_didigongshi #28
+		TIX_jiaoxunyuanwei #21#by_pass
+		TIX_anfuzhanlingqu #35
+		#1940
+		TIX_kuodafanwei #35
+		TIX_shengdanshuxingdong #35
+		TIX_chengyuanzu #49
+		TIX_tiexuebubingban #49
+		TIX_siweichuangxin #49
+		TIX_zhongxingtanke #49
+		TIX_jixiehuabubing #35
+		TIX_zhongshijidong #49
+		TIX_tankeshuliang #49
+		#1941
+		TIX_zhuangjiashengchan #49
+		TIX_libingmoma #14
+		TIX_feixuzhixia #28
+		TIX_qifujuxiong #49
+		TIX_zhifujuxiong #49 #巴巴罗萨
+		TIX_diguofeixindui #70
+		TIX_zujianzongduxiaqu #35
+		TIX_jituankeyanbu #49
+		TIX_jituanshengchanbu #70
+		#1942
+		TIX_jituanwaimaobu #49
+		TIX_tiexuedehansi #49
+		TIX_zhenghediguogutu #105
+        TIX_jixuheikeji #70
+		TIX_kuayuedaxiyang #70
+		TIX_buqiangyanjiu #70
+		#1943
+		TIX_heikejibuqiang #70
+		TIX_xinshihuopao #70
+		TIX_heikejihuopao #70
+		TIX_donglixitong #49
+		TIX_shengwugongcheng #49
+		#1944
+		TIX_rengongzhineng #49
+		TIX_wanquansairen #70
+        TIX_dongfangmengyou #35
+		TIX_zhidaochongying #35
+		TIX_chichengdejiangzuo #49
+		TIX_dongxizhouxian #70
+		TIX_heikejihuojian #70
+		#1945
+		TIX_heikejitixi #49
+		TIX_wudidejundui #70
+		
+		
+		
+		
+	}
+
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+}
+
+TIX_xiaoxueshengjueqi = {
+	name = "TIX_xiaoxueshengjueqi"
+	desc = "TIX_xiaoxueshengjueqi_desc"
+
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		
+			has_game_rule = {
+				rule = TIX_ai_behavior
+				option = xiaoxueshengjueqi
+			}
+		
+	}
+	abort = {
+		has_completed_focus = TIX_gonggulingdaodiwei
+	}
+
+	ai_national_focuses = {
+		#1936
+		TIX_chongjiangongye
+		TIX_hansibinggongchang
+		TIX_hansipijiuchang
+		TIX_hansikafeichang
+		TIX_pijiuwaixiao
+		TIX_namaoselai
+		TIX_kafeikouweigailiang
+		TIX_chenglihansijituan
+		TIX_jituankeyanbu
+		TIX_jituanshengchanbu
+		TIX_jituanwaimaobu
+		TIX_tiexuedehansi
+		#1937.8.15
+		TIX_fanduibisimai
+		TIX_chongjiandayihui
+		TIX_yinghuiougen
+		TIX_yanlunziyou
+		TIX_guangkaiyanlu
+		TIX_hexiexintiexue
+		#z23
+		TIX_jinburenshi
+		TIX_gongchanzhuyijiaoyu
+		TIX_gongchanzhuyixuanchuan
+		TIX_libingmoma
+		TIX_xiaomiebaozheng
+		TIX_xiyingbiange
+		TIX_yiwujiaoyu
+		TIX_jingjigaizao
+		TIX_yubeilianhezuo
+		TIX_gonggulingdaodiwei
+	}
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+}
+TIX_ougenguilai = {
+	name = "TIX_ougenguilai"
+	desc = "TIX_ougenguilai_desc"
+
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		
+			has_game_rule = {
+				rule = TIX_ai_behavior
+				option = ougenguilai
+			}
+		
+	}
+	abort = {
+		has_completed_focus = TIX_xiaomiebaozheng
+	}
+	
+	ai_national_focuses = {
+		#1936
+		TIX_chongjiangongye
+		TIX_fanduibisimai
+		TIX_chongjiandayihui
+		TIX_yinghuiougen
+		TIX_yanlunziyou
+		TIX_guangkaiyanlu
+		TIX_hexiexintiexue
+		#ougen
+		TIX_shouhuzuihaodeougen
+		TIX_zhidugaige
+		TIX_chongjianjunzhuzhi
+		TIX_huanxingfeitelie
+		TIX_huangjiajinweijun
+		TIX_weinvdierzhan
+		TIX_chongxinqiyongbisimai
+		TIX_tiexuefanjizhan
+		TIX_hansibinggongchang
+		TIX_hansipijiuchang
+		TIX_hansikafeichang
+		TIX_pijiuwaixiao
+		TIX_namaoselai
+		TIX_kafeikouweigailiang
+		TIX_chenglihansijituan
+		TIX_jituankeyanbu
+		TIX_jituanshengchanbu
+		TIX_jituanwaimaobu
+		TIX_tiexuedehansi
+		TIX_jingongjieke
+		TIX_qiangpoxiongyali
+		TIX_zhenghedanmai
+		TIX_danzehyuanqubaohu
+		TIX_hebingadl
+		TIX_xiaomiebaozheng
+	}
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+}

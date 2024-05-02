@@ -1,0 +1,93 @@
+YUW_balance = {
+	initial_value = 0
+	left_side = YUW_left_side
+	right_side = YUW_right_side
+	decision_category = YUW_quanlipingheng
+	range = {
+		id = YUW_qiaomiaopingheng
+		min = -0.2
+		max = 0.2
+		modifier = {
+			political_power_gain = 2.5
+		}
+	}
+	side = {
+		id = YUW_left_side
+		icon = GFX_bop_SWI_centralization_council_side
+		range = {
+			id = YUW_zhenglunbuduan
+			min = -0.6
+			max = -0.2
+			modifier = {
+				political_power_gain = 2
+				fascism_drift = 0.2
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = YUW_hunluanbukan
+			min = -0.95
+			max = -0.6
+			modifier = {
+				political_power_gain = 1.5
+				fascism_drift = 0.5
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = YUW_bengkuibianyuan
+			min = -1.0
+			max = -0.95
+			modifier = {
+				
+			}
+			on_activate = {
+				country_event = az_tianjiang.162
+			}
+		}
+	}
+	side = {
+		id = YUW_right_side
+		icon = GFX_bop_SWI_centralization_canton_side
+		range = {
+			id = YUW_yizhangquanwei
+			min = 0.2
+			max = 0.6
+			modifier = {
+				political_power_gain = 2
+				democratic_drift = 0.2
+			}
+		}
+		range = {
+			id = YUW_kuodaquanli
+			min = 0.6
+			max = 0.95
+			modifier = {
+				political_power_gain = 1.5
+				democratic_drift = 0.5
+			}
+		}
+		range = {
+			id = YUW_junzhengducai
+			min = 0.95
+			max = 1
+			modifier = {
+				
+			}
+			on_activate = {
+				country_event = az_tianjiang.163
+			}
+		}
+	}	
+		
+}

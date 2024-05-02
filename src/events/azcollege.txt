@@ -1,0 +1,230 @@
+﻿##卖5000步枪=2000物资 买3000物资=5000步枪 1物资=0.8产能 
+add_namespace = azcollege
+country_event = {
+	id = azcollege.1
+	title = azcollege.1.t
+	desc = azcollege.1.d
+	picture = GFX_aze_haijunxueyuan
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = az_xmp_haijunzuozhanyanjiu_doing
+	}
+	option = {
+		name = azcollege.1.a
+		ai_chance = {
+			factor = 4
+		}
+		add_doctrine_cost_reduction = {
+			name = "如期完成"
+			cost_reduction = 0.2
+			uses = 1
+			category = naval_doctrine
+		}
+	}
+}
+country_event = {
+	id = azcollege.2
+	title = azcollege.2.t
+	desc = azcollege.2.d
+	picture = GFX_aze_haijunxueyuan
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = az_xmp_haijunzuozhanyanjiu_doing
+	}
+	option = {
+		name = azcollege.2.a
+		ai_chance = {
+			factor = 4
+		}
+		add_doctrine_cost_reduction = {
+			name = "科研成功"
+			cost_reduction = 0.4
+			uses = 2
+			category = naval_doctrine
+		}
+	}
+	}
+}
+country_event = {
+	id = azcollege.3
+	title = azcollege.3.t
+	desc = azcollege.3.d
+	picture = GFX_aze_haijunxueyuan
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = az_xmp_haijunzuozhanyanjiu_doing
+	}
+	option = {
+		name = azcollege.3.a
+		ai_chance = {
+			factor = 4
+		}
+		add_tech_bonus = {
+			name = "科研项目重大突破"
+			bonus = 0.7
+			uses = 3
+			category = naval_doctrine
+		}
+	}
+}
+country_event = {
+	id = azcollege.4
+	title = azcollege.4.t
+	desc = azcollege.4.d
+	picture = GFX_aze_gangkou
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = az_xmp_jianchuanzhuangbeishiyan_doing
+	}
+	option = {
+		name = azcollege.4.a
+		ai_chance = {
+			factor = 4
+		}
+		add_tech_bonus = {
+			name = "舰船装备实验完成"
+			bonus = 0.75
+			uses = 4
+			category = naval_equipment
+		}
+	}
+}
+country_event = {
+	id = azcollege.5
+	title = azcollege.5.t
+	desc = azcollege.5.d
+	picture = GFX_aze_gangkou
+	is_triggered_only = yes
+	immediate = {
+		clr_country_flag = az_xmp_jianchuanzhuangbeishiyan_doing
+	}
+	option = {
+		name = azcollege.5.a
+		ai_chance = {
+			factor = 4
+		}
+		add_tech_bonus = {
+			name = "舰船装备实验超量完成"
+			bonus = 1
+			uses = 6
+			category = naval_equipment
+		}
+	}
+}
+country_event = {
+	id = azcollege.6
+	title = azcollege.6.t
+	desc = azcollege.6.d
+	picture = GFX_aze_tankexueyuan
+	is_triggered_only = yes
+	option = {
+		name = azcollege.6.a
+		ai_chance = {
+			factor = 4
+		}
+		add_doctrine_cost_reduction = {
+			name = "科研成功"
+			cost_reduction = 0.25
+			uses = 2
+			category = land_doctrine
+		}
+	
+	}
+}
+country_event = {
+	id = azcollege.7
+	title = azcollege.7.t
+	desc = azcollege.7.d
+	picture = GFX_aze_tankexueyuan
+	is_triggered_only = yes
+	option = {
+		name = azcollege.7.a
+		ai_chance = {
+			factor = 4
+		}
+		add_doctrine_cost_reduction = {
+			name = "科研项目重大突破"
+			cost_reduction = 0.7
+			uses = 2
+			category = land_doctrine
+		}
+	}
+}
+country_event = {
+	id = azcollege.8
+	title = azcollege.8.t
+	desc = azcollege.8.d
+	picture = GFX_aze_mingshi2
+	is_triggered_only = yes
+	option = {
+		name = azcollege.8.junzhu
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_junzhu
+		custom_effect_tooltip = get_keyantuzhi_junzhu_tooltip
+	}
+	option = {
+		name = azcollege.8.zuozhiya
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_zuozhiya
+		custom_effect_tooltip = get_keyantuzhi_zuozhiya_tooltip
+	}
+	option = {
+		name = azcollege.8.feitelie
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_feitelie
+		custom_effect_tooltip = get_keyantuzhi_feitelie_tooltip
+	}
+	option = {
+		name = azcollege.8.chuyun
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_chuyun
+		custom_effect_tooltip = get_keyantuzhi_chuyun_tooltip
+	}
+}
+country_event = {
+	id = azcollege.9
+	title = azcollege.9.t
+	desc = azcollege.9.d
+	picture = GFX_aze_mingshi2
+	is_triggered_only = yes
+	option = {
+		name = azcollege.9.chaijun
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_chaijun
+		custom_effect_tooltip = get_keyantuzhi_chaijun_tooltip
+	}
+	option = {
+		name = azcollege.9.xiyatu
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_xiyatu
+		custom_effect_tooltip = get_keyantuzhi_xiyatu_tooltip
+	}
+	option = {
+		name = azcollege.9.luoen
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_luoen
+		custom_effect_tooltip = get_keyantuzhi_luoen_tooltip
+	}
+	option = {
+		name = azcollege.9.yichui
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = get_keyantuzhi_yichui
+		custom_effect_tooltip = get_keyantuzhi_yichui_tooltip
+	}
+}

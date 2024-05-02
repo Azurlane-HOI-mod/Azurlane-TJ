@@ -1,0 +1,206 @@
+BFL_historical = {
+	name = "BFL_historical"
+	desc = "BFL_historical_desc"
+
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+	has_global_flag = MOD_azurlane_tianjiangjianniang
+		or = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = BFL_ai_behavior
+				option = BFL_historical_focus
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = BFL_beijiyanjiuyuan
+	}
+
+	ai_national_focuses = {
+	    #1936
+		BFL_wanchengdiergewunianjihua #70
+		BFL_xiayigewunianjihua #35
+		BFL_12 #35
+		BFL_13 #35
+		BFL_15 #28
+		BFL_16 #28
+		BFL_17 #28
+		BFL_18 #28
+		BFL_19 #42
+		BFL_20 #28
+        BFL_futejiajiuchang	#49
+		#1937
+        BFL_huanleshiguang #35
+        BFL_jihuangwenti #70
+		BFL_zhongzhiyumi #35
+		BFL_21 #28
+		BFL_22 #28
+		BFL_23 #28
+		BFL_24 #42
+		BFL_1  #28
+		BFL_26 #35
+		BFL_29 #35
+		#1938
+		BFL_7  #35
+		BFL_8  #35
+		BFL_jinkouliangshi #28
+		BFL_28 #42
+        BFL_lujunjianshe #56
+		BFL_zhongshijiaoyu #35
+		BFL_jitizhuyi #35
+		BFL_yingxiongzhuyi #35
+		#1939
+		BFL_junduizhengwei #56
+        BFL_zhongshizhuangbei #70
+		BFL_fazhanbubing #35
+		BFL_jungongchang #42
+		BFL_lingpixijing #21
+		BFL_zuihoutongdie #35
+		BFL_buqiangshengchan #35
+		BFL_gongrenfuli #35
+		BFL_huopaodezhongchui #49
+		BFL_baohefugai #49
+		#1940
+		BFL_fazhanjidonghua #49
+		BFL_yundongzhan #56
+		BFL_zongshenzuozhan #49
+		BFL_weisheyilang #35
+		BFL_zhengfuafuhan #21
+		BFL_fazhanzhuangjia #49
+		BFL_qiequtiexuetuzhi #35
+		BFL_t34shengchan #56
+		#1941
+		BFL_gangtiehongliu #42
+		BFL_liluntupo #56
+		BFL_2 #28
+		BFL_3 #28
+		BFL_4 #28
+		BFL_5 #28
+		BFL_dongfangdeweixie #35
+		BFL_quebaohoufanganquan #14
+		BFL_kongjunjianshe #70
+		#1942
+		BFL_cezhongduidizhiyuan #70
+		BFL_31 #35
+		BFL_32 #35
+		BFL_hongzhadashi #70
+		BFL_moermansike #70
+		BFL_beijitanxiandui #35
+		BFL_beijiyanjiuyuan #49
+	}
+
+	research = {
+		cat_medium_armor = 50.0	
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+BFL_zouzibenzhuyidaolu = {
+	name = "BFL_zouzibenzhuyidaolu"
+	desc = "BFL_zouzibenzhuyidaolu_desc"
+
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		has_game_rule = {
+		rule = BFL_ai_behavior
+		option = BFL_zouzibenzhuyidaolu_focus
+		}
+	}
+	abort = {
+		has_completed_focus = BFL_xinkongjun
+	}
+
+	ai_national_focuses = {
+	    #1936
+		BFL_xiangyouzhuan #7
+		BFL_qiyonggaigepai #35
+		BFL_jiejuejunzhongzuopai #35
+		BFL_wuhaishenxianghua #35
+		BFL_kelimulinshibian #35
+		BFL_huodelindaoquan #35
+		BFL_chaijiejitinongzhuang #35
+		BFL_nongyeshui #35
+		BFL_duiwaikaifang #35
+		BFL_yaoqinwaiguoziben #70
+		BFL_yaoqinwaiguozhuanjia #70
+		#1937
+		BFL_sisanfangan #70
+		BFL_huaquan #140
+		BFL_changzhangzerenzhi #35
+		BFL_jiageshuangguizhi #35
+		BFL_daxiagang #35
+		#1938
+		BFL_zaoburumai #35
+		BFL_junshiqiyeshenji #70
+		BFL_zhongjienongyeshui #35
+		BFL_beilianjijiankuangmo #35
+		BFL_xingjingjizhence #70
+		BFL_zhaokaidaibiaodahui #35
+		BFL_menshengfacai #35
+		BFL_gerenchongbai #35
+		BFL_fanduiziyouhua #35
+		#1939
+		BFL_beiliantese #35
+		BFL_junshigaige #35
+		BFL_jianzaojungong #70
+		BFL_yanjiulujun #70
+		BFL_querentiaoyue #35
+		BFL_zhixintiaoyue #35
+		BFL_suoqudongbolan #35
+		BFL_didayinduyang #35
+		BFL_duifenziweifanjizhan #35#history bypass
+		BFL_bosanxiaogu #70 #history bypass
+		BFL_suoqubolan #70 #history bypass
+		BFL_shoufubisalabiya #21 #history bypass
+		BFL_buqiangyanjiu #70
+		#1940
+		BFL_kacheyanjiu #35
+		BFL_huopaoyanjiu #70
+		BFL_zhuangjiayanjiu #70
+		BFL_jixiehuayanjiu #70
+		BFL_xinlujun #70
+		#1941
+		BFL_zhunbeitiexue #35
+		BFL_jianzaobaolei #70
+		BFL_jianzaodahefangxian #70
+		BFL_keyanrenyuan #70
+		BFL_zhongshikeyan #70
+		BFL_yanjiukongjun #35
+		BFL_xiaoxinfeijiyanjiu #35
+		#1942
+		BFL_zhongxinfeijiyanjiu #35
+		BFL_daxinfeijiyanjiu #35
+		BFL_xinkongjun #70
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}

@@ -1,0 +1,69 @@
+BLI_historical = {
+	name = "BLI_historical"
+	desc = "BLI_historical_desc"
+
+	allowed = {
+		original_tag = BLI
+	}
+	enable = {
+		AND = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = BLI_ai_behavior
+				option = DEFAULT
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = BLI_xiangdong
+	}
+
+	ai_national_focuses = {
+		#1936
+		BLI_bulisanjutoudiyicihuiyi #35
+		BLI_pinwenhangxin #49
+		BLI_jiefangmanjiuxuanyan #49
+		BLI_daoyuguihua #35
+		BLI_yanjiugaocengfangwujianzaojishu #70
+		BLI_wakuangjishu #70
+		BLI_mofangkuangchang #70
+		#1937
+		BLI_goumaiziyuan #21
+		BLI_tianhaizaolu #70
+		BLI_huangdaoqiusheng #49
+		BLI_dixiagongdian #105
+		BLI_zhongyaosheshibanqian #70
+		BLI_xiyinyimin #35
+		BLI_bulijueqi #49
+		#1938
+		BLI_kaifangzaochuanshu  #21
+		BLI_jiarujiannianglianheguo #21
+		BLI_bulizhiyuanjun #35
+		BLI_pingqingguyongbing #49
+		BLI_huolixianzhijiechu #35
+		BLI_xindalu #35
+		BLI_xiangbei #70
+		BLI_xiangdong #70 #完成后准备和塞壬开干
+		#1939
+		
+	}
+
+	research = {
+		cat_heavy_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+

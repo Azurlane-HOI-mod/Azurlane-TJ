@@ -1,0 +1,306 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+state_is_important_trigger = {
+	OR = {
+		state = 37    #丹麦海峡
+		state = 195   #列宁格勒
+		state = 127   #伦敦附近
+		state = 119   #爱尔兰
+		state = 1     #科西嘉
+		state = 137   #克里米亚
+		state = 797   #君士坦丁堡
+		state = 182   #克里特（希腊南边的岛）
+		state = 115   #西西里
+		state = 118   #直布罗陀
+		state = 446   #开罗
+		state = 429   #孟买
+		state = 672   #苏门塔纳（东南亚群岛）
+		state = 285   #悉尼
+		state = 378   #加利福利亚
+		state = 468   #圣劳伦斯（渥太华旁边）
+		state = 500   #里约热内卢
+		state = 525   #南朝鲜
+		state = 609   #北京
+		state = 532   #东海道
+		state = 681   #开普
+		
+		state = 524   #台湾
+		state = 595   #福建
+		state = 336   #新加坡
+		state = 591   #海南
+		state = 523   #巴布亚
+		state = 413   #胡齐斯坦
+		state = 213   #摩尔曼斯克
+		state = 695   #库拉索
+		state = 685   #巴拿马
+		state = 187   #爱琴群岛
+		state = 635   
+		
+	}
+}
+az_photo_no_finish_triggers = {
+	OR = {
+		AND = {
+			has_country_flag = az_photowindow_1
+			not = { has_country_flag = az_photo_finish_1 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_2
+			not = { has_country_flag = az_photo_finish_2 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_3
+			not = { has_country_flag = az_photo_finish_3 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_4
+			not = { has_country_flag = az_photo_finish_4 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_5
+			not = { has_country_flag = az_photo_finish_5 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_6
+			not = { has_country_flag = az_photo_finish_6 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_7
+			not = { has_country_flag = az_photo_finish_7 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_8
+			not = { has_country_flag = az_photo_finish_8 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_9
+			not = { has_country_flag = az_photo_finish_9 }
+		}
+		AND = {
+			has_country_flag = az_photowindow_10
+			not = { has_country_flag = az_photo_finish_10 }
+		}
+	}
+}
+
+az_photo_finish_triggers = {
+	OR = {
+	az_photo_1_finish_triggers = yes
+	az_photo_2_finish_triggers = yes
+	az_photo_3_finish_triggers = yes
+	az_photo_4_finish_triggers = yes
+	az_photo_5_finish_triggers = yes
+	az_photo_6_finish_triggers = yes
+	az_photo_7_finish_triggers = yes
+	az_photo_8_finish_triggers = yes
+	az_photo_9_finish_triggers = yes
+	az_photo_10_finish_triggers = yes
+	}
+}
+
+az_photo_1_finish_triggers = {
+		has_country_flag = az_photowindow_1
+
+        has_country_flag = az_PT_1_000
+		has_country_flag = az_PT_1_001
+		has_country_flag = az_PT_1_002
+		has_country_flag = az_PT_1_003
+		has_country_flag = az_PT_1_004
+		has_country_flag = az_PT_1_005
+		has_country_flag = az_PT_1_006
+		has_country_flag = az_PT_1_007
+		has_country_flag = az_PT_1_008
+		has_country_flag = az_PT_1_009
+		has_country_flag = az_PT_1_010
+		has_country_flag = az_PT_1_011
+		has_country_flag = az_PT_1_012
+		has_country_flag = az_PT_1_013
+		has_country_flag = az_PT_1_014
+}
+az_photo_2_finish_triggers = {
+		has_country_flag = az_photowindow_2
+
+		has_country_flag = az_PT_2_000
+		has_country_flag = az_PT_2_001
+		has_country_flag = az_PT_2_002
+		has_country_flag = az_PT_2_003
+		has_country_flag = az_PT_2_004
+		has_country_flag = az_PT_2_005
+		has_country_flag = az_PT_2_006
+		has_country_flag = az_PT_2_007
+		has_country_flag = az_PT_2_008
+		has_country_flag = az_PT_2_009
+		has_country_flag = az_PT_2_010
+		has_country_flag = az_PT_2_011
+		has_country_flag = az_PT_2_012
+		has_country_flag = az_PT_2_013
+		has_country_flag = az_PT_2_014
+}
+az_photo_3_finish_triggers = {
+		has_country_flag = az_photowindow_3
+
+		has_country_flag = az_PT_3_000
+		has_country_flag = az_PT_3_001
+		has_country_flag = az_PT_3_002
+		has_country_flag = az_PT_3_003
+		has_country_flag = az_PT_3_004
+		has_country_flag = az_PT_3_005
+		has_country_flag = az_PT_3_006
+		has_country_flag = az_PT_3_007
+		has_country_flag = az_PT_3_008
+		has_country_flag = az_PT_3_009
+		has_country_flag = az_PT_3_010
+		has_country_flag = az_PT_3_011
+		has_country_flag = az_PT_3_012
+		has_country_flag = az_PT_3_013
+		has_country_flag = az_PT_3_014
+}
+az_photo_4_finish_triggers = {
+		has_country_flag = az_photowindow_4
+
+		has_country_flag = az_PT_4_000
+		has_country_flag = az_PT_4_001
+		has_country_flag = az_PT_4_002
+		has_country_flag = az_PT_4_003
+		has_country_flag = az_PT_4_004
+		has_country_flag = az_PT_4_005
+		has_country_flag = az_PT_4_006
+		has_country_flag = az_PT_4_007
+		has_country_flag = az_PT_4_008
+		has_country_flag = az_PT_4_009
+		has_country_flag = az_PT_4_010
+		has_country_flag = az_PT_4_011
+		has_country_flag = az_PT_4_012
+		has_country_flag = az_PT_4_013
+		has_country_flag = az_PT_4_014
+}
+az_photo_5_finish_triggers = {
+		has_country_flag = az_photowindow_5
+
+		has_country_flag = az_PT_5_000
+		has_country_flag = az_PT_5_001
+		has_country_flag = az_PT_5_002
+		has_country_flag = az_PT_5_003
+		has_country_flag = az_PT_5_004
+		has_country_flag = az_PT_5_005
+		has_country_flag = az_PT_5_006
+		has_country_flag = az_PT_5_007
+		has_country_flag = az_PT_5_008
+		has_country_flag = az_PT_5_009
+		has_country_flag = az_PT_5_010
+		has_country_flag = az_PT_5_011
+		has_country_flag = az_PT_5_012
+		has_country_flag = az_PT_5_013
+		has_country_flag = az_PT_5_014
+}
+az_photo_6_finish_triggers = {
+		has_country_flag = az_photowindow_6
+
+		has_country_flag = az_PT_6_000
+		has_country_flag = az_PT_6_001
+		has_country_flag = az_PT_6_002
+		has_country_flag = az_PT_6_003
+		has_country_flag = az_PT_6_004
+		has_country_flag = az_PT_6_005
+		has_country_flag = az_PT_6_006
+		has_country_flag = az_PT_6_007
+		has_country_flag = az_PT_6_008
+		has_country_flag = az_PT_6_009
+		has_country_flag = az_PT_6_010
+		has_country_flag = az_PT_6_011
+		has_country_flag = az_PT_6_012
+		has_country_flag = az_PT_6_013
+		has_country_flag = az_PT_6_014
+}
+az_photo_7_finish_triggers = {
+		has_country_flag = az_photowindow_7
+
+		has_country_flag = az_PT_7_000
+		has_country_flag = az_PT_7_001
+		has_country_flag = az_PT_7_002
+		has_country_flag = az_PT_7_003
+		has_country_flag = az_PT_7_004
+		has_country_flag = az_PT_7_005
+		has_country_flag = az_PT_7_006
+		has_country_flag = az_PT_7_007
+		has_country_flag = az_PT_7_008
+		has_country_flag = az_PT_7_009
+		has_country_flag = az_PT_7_010
+		has_country_flag = az_PT_7_011
+		has_country_flag = az_PT_7_012
+		has_country_flag = az_PT_7_013
+		has_country_flag = az_PT_7_014
+}
+
+az_photo_8_finish_triggers = {
+		has_country_flag = az_photowindow_8
+
+		has_country_flag = az_PT_8_000
+		has_country_flag = az_PT_8_001
+		has_country_flag = az_PT_8_002
+		has_country_flag = az_PT_8_003
+		has_country_flag = az_PT_8_004
+		has_country_flag = az_PT_8_005
+		has_country_flag = az_PT_8_006
+		has_country_flag = az_PT_8_007
+		has_country_flag = az_PT_8_008
+		has_country_flag = az_PT_8_009
+		has_country_flag = az_PT_8_010
+		has_country_flag = az_PT_8_011
+		has_country_flag = az_PT_8_012
+		has_country_flag = az_PT_8_013
+		has_country_flag = az_PT_8_014
+}
+az_photo_9_finish_triggers = {
+		has_country_flag = az_photowindow_9
+
+		has_country_flag = az_PT_9_000
+		has_country_flag = az_PT_9_001
+		has_country_flag = az_PT_9_002
+		has_country_flag = az_PT_9_003
+		has_country_flag = az_PT_9_004
+		has_country_flag = az_PT_9_005
+		has_country_flag = az_PT_9_006
+		has_country_flag = az_PT_9_007
+		has_country_flag = az_PT_9_008
+		has_country_flag = az_PT_9_009
+		has_country_flag = az_PT_9_010
+		has_country_flag = az_PT_9_011
+		has_country_flag = az_PT_9_012
+		has_country_flag = az_PT_9_013
+		has_country_flag = az_PT_9_014
+}
+
+az_photo_10_finish_triggers = {
+		has_country_flag = az_photowindow_10
+
+		has_country_flag = az_PT_10_000
+		has_country_flag = az_PT_10_001
+		has_country_flag = az_PT_10_002
+		has_country_flag = az_PT_10_003
+		has_country_flag = az_PT_10_004
+		has_country_flag = az_PT_10_005
+		has_country_flag = az_PT_10_006
+		has_country_flag = az_PT_10_007
+		has_country_flag = az_PT_10_008
+		has_country_flag = az_PT_10_009
+		has_country_flag = az_PT_10_010
+		has_country_flag = az_PT_10_011
+		has_country_flag = az_PT_10_012
+		has_country_flag = az_PT_10_013
+		has_country_flag = az_PT_10_014
+
+}

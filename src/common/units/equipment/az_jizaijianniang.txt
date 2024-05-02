@@ -1,0 +1,246 @@
+equipments = {
+	jizaijianniang_equipment_airframe = {
+		year = 1933
+		is_archetype = yes
+		is_buildable = no
+		is_convertable = yes
+		carrier_capable = yes
+		default_carrier_composition_weight = 1
+		picture = GFX_shipgirltech_jizaijianniang_medium
+		type = scout_plane
+		type_override = fixed_main_weapon_slot
+		allowed_types = {
+			fighter
+			cas
+			naval_bomber
+			scout_plane
+		}
+		allow_mission_type = training
+		group_by = archetype
+
+		sprite = light_plane
+		air_map_icon_frame = 1
+		interface_category = interface_category_air
+		priority = 5
+		air_superiority = 1
+		air_range = 500
+		maximum_speed = 1500
+		air_agility = 100
+		air_defence = 50
+		reliability = 0.8
+		lend_lease_cost = 8
+		manpower = 20
+		fuel_consumption = 0.05
+		weight = 0
+		build_cost_ic = 50
+		resources = {
+			aluminium = 4
+			rubber = 1
+		}
+		module_slots = {
+			fixed_main_weapon_slot = {
+				required = yes
+				allowed_module_categories = {
+					fighter_weapon
+					cas_weapon
+					nav_bomber_weapon
+					az_fighter_weapon
+					az_cas_weapon
+					az_nav_bomber_weapon
+				}
+			}
+			fixed_auxiliary_weapon_slot_1 = { 
+				required = no
+				allowed_module_categories = {
+					recon_camera
+					fighter_weapon
+					cas_weapon
+					nav_bomber_weapon
+					az_fighter_weapon
+					az_cas_weapon
+					az_nav_bomber_weapon
+					mine_warfare_offense
+					kamikaze_bomber_weapon
+				}
+			}
+
+			fixed_auxiliary_weapon_slot_2 = { 
+				required = no
+				allowed_module_categories = {
+					recon_camera
+					fighter_weapon
+					cas_weapon
+					nav_bomber_weapon
+					az_fighter_weapon
+					az_cas_weapon
+					az_nav_bomber_weapon
+					mine_warfare_offense
+					kamikaze_bomber_weapon
+				}
+			}
+
+			fixed_auxiliary_weapon_slot_3 = { 
+				required = no
+				allowed_module_categories = {
+					recon_camera
+					fighter_weapon
+					cas_weapon
+					nav_bomber_weapon
+					az_fighter_weapon
+					az_cas_weapon
+					az_nav_bomber_weapon
+					mine_warfare_offense
+					kamikaze_bomber_weapon
+				}
+			}
+
+			fixed_auxiliary_weapon_slot_4 = { 
+				required = no
+				allowed_module_categories = {
+					recon_camera
+					fighter_weapon
+					cas_weapon
+					nav_bomber_weapon
+					az_fighter_weapon
+					az_cas_weapon
+					az_nav_bomber_weapon
+					mine_warfare_offense
+					kamikaze_bomber_weapon
+				}
+			}
+
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					plane_engine_type
+					twin_plane_engine_type
+					plane_jet_engine_type
+					twin_plane_jet_engine_type
+					plane_rocket_engine_type
+				}
+			}
+
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_small
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					plane_special_module_defense_turret
+				}
+			}
+
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_small
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					plane_special_module_defense_turret
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_small
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					plane_special_module_defense_turret
+				}
+			}
+
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_small
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					plane_special_module_defense_turret
+				}
+			}
+
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_small
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					plane_special_module_defense_turret
+				}
+			}
+
+			special_type_slot_6 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_small
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					plane_special_module_defense_turret
+				}
+			}
+		}
+
+		default_modules = {
+			fixed_main_weapon_slot = empty
+			fixed_auxiliary_weapon_slot_1 = empty
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+			special_type_slot_2 = empty
+		}
+	}
+	jizaijianniang_plane = {
+		year = 1933
+		#type = scout_plane
+		archetype = jizaijianniang_equipment_airframe
+		priority = 5
+		picture = GFX_shipgirltech_jizaijianniang_medium
+
+		air_range = 500
+		maximum_speed = 1500
+		air_agility = 100
+		air_defence = 50
+		weight = 4
+		module_slots = inherit
+		lend_lease_cost = 8
+	}
+	# jizaijianniang_cas = {
+	# 	year = 1933
+	# 	type = fighter
+	# 	archetype = jizaijianniang_equipment_airframe
+	# 	priority = 5
+	# 	picture = GFX_shipgirltech_jizaijianniang_medium
+
+	# 	air_range = 500
+	# 	maximum_speed = 1500
+	# 	air_agility = 100
+	# 	air_defence = 50
+	# 	weight = 0
+	# 	module_slots = inherit
+	# }
+	# jizaijianniang_nb = {
+	# 	year = 1933
+	# 	type = fighter
+	# 	archetype = jizaijianniang_equipment_airframe
+	# 	priority = 5
+	# 	picture = GFX_shipgirltech_jizaijianniang_medium
+
+	# 	air_range = 500
+	# 	maximum_speed = 1500
+	# 	air_agility = 100
+	# 	air_defence = 50
+	# 	weight = 0
+	# 	module_slots = inherit
+	# }
+}

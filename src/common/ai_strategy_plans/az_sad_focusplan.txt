@@ -1,0 +1,104 @@
+SAD_historical = {
+	name = "SAD_historical"
+	desc = "SAD_historical_desc"
+
+	allowed = {
+		original_tag = SAD
+	}
+	enable = {
+		AND = {
+			is_historical_focus_on = yes
+			
+			has_game_rule = {
+				rule = SAD_ai_behavior
+				option = DEFAULT
+			}
+		}
+	}
+	abort = {
+		has_completed_focus = SAD_diguodelingkong
+	}
+
+	ai_national_focuses = {
+		#1936
+		SAD_zhianguanli
+		##安抚黑手党##
+		SAD_anfuheishoudang
+		SAD_xixilidajietou
+		SAD_hefahua
+		SAD_zhengfuneidedaqingxi
+		SAD_zhengzhijundui
+		SAD_jianshelujun
+		SAD_kaishijingjijianshe
+		SAD_tielujianshe
+		SAD_minyonggongchang
+		SAD_jungongchang
+		#政治
+		SAD_gonggulingxiuquanli
+		SAD_chengzanfeizhoujuntuan
+		SAD_anliuyongdong
+		SAD_jiaoaodezitai
+		SAD_weineituodeshengli
+		SAD_meilizhiguo
+		SAD_xunlianjundui
+		SAD_luomameng
+		SAD_maixiangsadingjueqi
+		SAD_weiyouyuxue
+		SAD_weichiquanlipingheng
+		#外交与扩张1938
+		SAD_yindaoguomin
+		SAD_waijiaozhengce
+		SAD_lingxiudediyizhan
+		SAD_xianglingxiuchenfu
+		SAD_youlingxiujueze
+		SAD_suoqutiqienuo
+		SAD_qiangzhanbalialiqundao
+		SAD_xijisaipulusi
+		#同化利比亚
+		SAD_diguodeyichan
+		SAD_yiminlibiya
+		SAD_tonghualibiya
+		#结盟铁血
+		SAD_baifangbisimai
+		SAD_qingqiubangzhu
+		SAD_sadingdebaoen
+		SAD_gangtietiaoyue
+		#撒丁工业
+		SAD_nanbumaoyiqu
+		SAD_beibuzhonggongyequ
+		SAD_gongyejishu
+		SAD_kaicaijishuyanjiu
+		SAD_ziyuanzhuanhua
+		SAD_chongzudeziyuan
+		SAD_haiyungongsi
+		SAD_lingxiudedierzhan
+		SAD_jiaoyujunguan
+		SAD_shaixuanjunguan
+		SAD_lingxiudeguwu
+		#撒丁需要空军
+		SAD_diguokongjunyanjiuyuan
+		SAD_feijiyanjiu
+		SAD_zengjiakeyanzijin
+		SAD_zhanshuyanxi
+		SAD_youxianpeixunlujunfeixingyuan
+		SAD_diguodelingkong
+	}
+
+	research = {
+		cat_light_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+

@@ -1,0 +1,392 @@
+liluntupo_category = {
+	army_jidong = {
+		icon = generic_army_support
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				has_army_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_army_liluntupo
+			NOT = {
+				has_tech = mobile_warfare
+				OR = {
+					has_country_flag = TY_army_youhuo
+					has_country_flag = TY_army_juezhan
+					has_country_flag = TY_army_renhai
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 100
+		}
+
+		custom_cost_text = liluntupo_armyexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				army_experience = -100
+			}
+			set_country_flag = TY_army_jidong
+		}
+		remove_effect = {
+			set_technology = { mobile_warfare = 1 }
+		}
+	}
+	army_youhuo = {
+		icon = generic_army_support
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				has_army_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_army_liluntupo
+			NOT = {
+				has_tech = superior_firepower
+				OR = {
+					has_country_flag = TY_army_jidong
+					has_country_flag = TY_army_juezhan
+					has_country_flag = TY_army_renhai
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 100
+		}
+
+		custom_cost_text = liluntupo_armyexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				army_experience = -100
+			}
+			set_country_flag = TY_army_youhuo
+		}
+		remove_effect = {
+			set_technology = { superior_firepower = 1 }
+		}
+	}
+	army_juezhan = {
+		icon = generic_army_support
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				has_army_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_army_liluntupo
+			NOT = {
+				has_tech = trench_warfare
+				OR = {
+					has_country_flag = TY_army_jidong
+					has_country_flag = TY_army_youhuo
+					has_country_flag = TY_army_renhai
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 100
+		}
+
+		custom_cost_text = liluntupo_armyexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				army_experience = -100
+			}
+			set_country_flag = TY_army_juezhan
+		}
+		remove_effect = {
+			set_technology = { trench_warfare = 1 }
+		}
+	}
+	army_renhai = {
+		icon = generic_army_support
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				has_army_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_army_liluntupo
+			NOT = { has_tech = mass_assault }
+			NOT = {
+				OR = {
+					has_country_flag = TY_army_jidong
+					has_country_flag = TY_army_juezhan
+					has_country_flag = TY_army_youhuo
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 100
+		}
+
+		custom_cost_text = liluntupo_armyexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				army_experience = -100
+			}
+			set_country_flag = TY_army_renhai
+		}
+		remove_effect = {
+			set_technology = { mass_assault = 1 }
+		}
+	}
+	navy_cunzai = {
+		icon = generic_naval
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				
+				has_navy_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_navy_liluntupo
+			NOT = { has_tech = fleet_in_being  }
+			NOT = {
+				OR = {
+					has_country_flag = TY_navy_zuduan
+					has_country_flag = TY_navy_daji
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 100
+		}
+
+		custom_cost_text = liluntupo_navyexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				navy_experience = -100
+			}
+			set_country_flag = TY_navy_cunzai
+		}
+		remove_effect = {
+			set_technology = { fleet_in_being  = 1 }
+		}
+	}
+	navy_zuduan = {
+		icon = generic_naval
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				
+				has_navy_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_navy_liluntupo
+			NOT = { has_tech = trade_interdiction }
+			NOT = {
+				OR = {
+					has_country_flag = TY_navy_cunzai
+					has_country_flag = TY_navy_daji
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 100
+		}
+
+		custom_cost_text = liluntupo_navyexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				navy_experience = -100
+			}
+			set_country_flag = TY_navy_zuduan
+		}
+		remove_effect = {
+			set_technology = { trade_interdiction = 1 }
+		}
+	}
+	navy_daji = {
+		icon = generic_naval
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				
+				has_navy_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_navy_liluntupo
+			NOT = { has_tech = base_strike }
+			NOT = {
+				OR = {
+					has_country_flag = TY_navy_cunzai
+					has_country_flag = TY_navy_zuduan
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 100
+		}
+
+		custom_cost_text = liluntupo_navyexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				navy_experience = -100
+			}
+			set_country_flag = TY_navy_daji
+		}
+		remove_effect = {
+			set_technology = { base_strike = 1 }
+		}
+	}
+	air_pohuai = {
+		icon = generic_air
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				
+				has_air_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_air_liluntupo
+			NOT = { has_tech = air_superiority }
+			NOT = {
+				OR = {
+					has_country_flag = TY_air_zhiyuan
+					has_country_flag = TY_air_zuozhan
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 100
+		}
+
+		custom_cost_text = liluntupo_airexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				air_experience = -100
+			}
+			set_country_flag = TY_air_pohuai
+		}
+		remove_effect = {
+			set_technology = { air_superiority = 1 }
+		}
+	}
+	air_zhiyuan = {
+		icon = generic_air
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				
+				has_air_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_air_liluntupo
+			NOT = { has_tech = formation_flying }
+			NOT = {
+				OR = {
+					has_country_flag = TY_air_pohuai
+					has_country_flag = TY_air_zuozhan
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 100
+		}
+
+		custom_cost_text = liluntupo_airexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				air_experience = -100
+			}
+			set_country_flag = TY_air_zhiyuan
+		}
+		remove_effect = {
+			set_technology = { formation_flying = 1 }
+		}
+	}
+	air_zuozhan = {
+		icon = generic_air
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				
+				has_air_experience > 100
+			}
+		}
+		visible = {
+			has_country_flag = TY_air_liluntupo
+			NOT = { has_tech = force_rotation }
+			NOT = {
+				OR = {
+					has_country_flag = TY_air_pohuai
+					has_country_flag = TY_air_zhiyuan
+				}
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 100
+		}
+
+		custom_cost_text = liluntupo_airexp_100
+		days_remove = 180
+		ai_will_do = {
+			factor = 1000
+		}
+		fire_only_once = yes
+		complete_effect = { 
+			hidden_effect = {
+				air_experience = -100
+			}
+			set_country_flag = TY_air_zuozhan
+		}
+		remove_effect = {
+			set_technology = { force_rotation = 1 }
+		}
+	}
+}

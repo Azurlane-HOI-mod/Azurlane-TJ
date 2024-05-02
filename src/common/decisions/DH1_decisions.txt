@@ -1,0 +1,387 @@
+DH1_decision_category = {
+	DH1_junken = {
+		icon = xingdong
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		highlight_color_while_active = 1
+		
+		ai_will_do = {
+			factor = 5
+			
+		}
+		cost = 15
+		days_remove = 60
+		modifier = {
+			political_power_gain = -0.25
+		}
+		available = {
+			ROOT = {
+				has_manpower > 9999
+			}
+			FROM = {
+				NOT = {
+					OR = {
+						has_state_category = large_city
+						has_state_category = megalopolis
+						has_state_category = metropolis
+					}
+				}
+			}
+			
+		}
+		
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+		}
+		
+		visible = { 
+			FROM = {
+				NOT = {
+					OR = {
+						has_state_category = large_city
+						has_state_category = megalopolis
+						has_state_category = metropolis
+					}
+				}
+			}
+		}
+		complete_effect = {
+			add_manpower = -10000
+			FROM = {
+				add_manpower = 10000
+				add_to_variable = {
+					THIS.junkencishu = 1
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				if = {
+					limit = {
+						check_variable = {
+							THIS.junkencishu = 2
+						} 
+					}
+					ETH_upgrade_state_category = yes
+					set_variable = {
+						THIS.junkencishu = 0
+					}
+				}
+			}
+			ROOT = { hidden_effect = { scoped_sound_effect = AZ_wancheng_sound } }
+		}
+	}
+	DH1_tuntian = {
+		icon = GFX_decision_xingdong
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DH1_tuntian_trigger_tt
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		cost = 250
+		days_remove = 180
+		days_re_enable = 180
+		remove_effect = {
+			random_list = {
+				20 = {
+					country_event = DH1_event.501
+				}
+				70 = {
+					country_event = DH1_event.502
+				}
+				10 = {
+					country_event = DH1_event.503
+				}
+			}
+		}
+			
+	}
+	DH1_xinanshibian_zhunbei = {
+		icon = generic_tank
+		allowed = {
+			tag = DH1
+		}
+		visible = {
+			has_completed_focus = DH1_xinanshibian
+			country_exists = DOH
+		}
+		fire_only_once = yes
+		complete_effect = {
+			declare_war_on = {
+				target = DOH
+				type = civil_war
+			}
+			activate_mission = DH1_xinanshibian
+		}
+	}
+	DH1_xinanshibian = {
+		icon = generic_tank
+		allowed = {
+			tag = DH1
+		}
+		activation = {
+			has_war_with = DOH
+			has_completed_focus = DH1_xinanshibian
+			country_exists = DOH
+		}
+		available = {
+			OR = {
+				controls_state = 605
+				any_allied_country = {
+					controls_state = 605
+				}
+			}
+		}
+		days_mission_timeout = 180
+		is_good = no
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = DH1_junzhengfu_flag
+				}
+				DH1 = {	
+					annex_country = {
+						target = DOH
+						transfer_troops = yes
+					}
+					load_focus_tree = { 
+						tree = DOH_focus
+						keep_completed = yes
+					}
+					every_state = {
+						limit = {
+							is_core_of = DOH
+						}
+						add_core_of = ROOT
+					}
+				}
+				set_country_flag = DH1_xinanshibian_success
+			}
+			if = {
+				limit = {
+					has_country_flag = DH1_linglizhongyang_flag
+				}
+				DH1 = {
+					puppet = DOH
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = DH1_qiuzhuchongying_flag
+				}
+				DH1 = {
+					annex_country = {
+						target = DOH
+					}
+					load_focus_tree = { 
+						tree = DOH_focus
+						keep_completed = yes
+					}
+					every_state = {
+						limit = {
+							is_core_of = DOH
+						}
+						add_core_of = ROOT
+					}
+				}
+				CHY = {
+					puppet = DH1
+				}
+				set_country_flag = DH1_xinanshibian_success
+			}
+		}
+		timeout_effect = {
+			DOH = {
+				annex_country = {
+					target = DH1
+				}
+			}
+		}
+		cancel_trigger = {
+
+		}
+	}
+	# ### 中南半岛
+	# DH1_zhongnanbandao_mission = {
+	# 	icon = border_war
+	# 	state_target = yes
+	# 	on_map_mode = map_and_decisions_view
+	# 	# target_array = neighbors
+	# 	target_array = state
+	# 	highlight_color_while_active = 1
+	# 	target_trigger = {
+	# 		OR = {
+	# 				is_core_of = RAJ
+	# 				is_core_of = BRM
+	# 				is_core_of = VIN
+	# 				is_core_of = LAO
+	# 				is_core_of = SIA
+	# 				is_core_of = MAL
+	# 				is_core_of = INS
+	# 				is_core_of = PHI
+	# 				is_core_of = AST
+	# 			}
+	# 	target_root_trigger = {
+	# 		tag = DH1
+	# 		OR = {
+	# 			has_completed_focus = DH1_zhongnanbandao
+	# 			is_debug = yes
+	# 		}
+	# 	}
+	# }
+
+	# ### 南亚次大陆
+	# DH1_nanyacidalu_mission = {
+	# 	icon = generic_tank
+	# 	allowed = {
+	# 		tag = DH1
+	# 	}
+	# 	activation = {
+	# 		always = no
+	# 	}
+	# 	available = {
+	# 		controls_state = 439
+	# 		controls_state = 429
+	# 		controls_state = 320
+	# 		controls_state = 321
+	# 		controls_state = 423
+	# 	}
+	# 	days_mission_timeout = 180
+	# 	is_good = no
+	# 	complete_effect = {
+	# 		set_country_flag = DH1_nanyacidalu_success
+	# 		transfer_state = 267
+	# 		transfer_state = 415
+	# 		transfer_state = 424
+	# 		transfer_state = 425
+	# 		transfer_state = 426
+	# 		transfer_state = 427
+	# 		transfer_state = 428
+	# 		transfer_state = 429
+	# 		transfer_state = 430
+	# 		transfer_state = 431
+	# 		transfer_state = 433
+	# 		transfer_state = 435
+	# 		transfer_state = 436
+	# 		transfer_state = 437
+	# 		transfer_state = 787
+	# 		transfer_state = 438
+	# 		transfer_state = 439
+	# 		transfer_state = 440
+	# 		transfer_state = 441
+	# 		transfer_state = 442
+	# 		transfer_state = 443
+	# 		transfer_state = 444
+	# 		transfer_state = 445
+	# 		transfer_state = 432
+
+	# 		add_state_core = 321
+	# 		add_state_core = 320
+	# 		add_state_core = 423
+	# 		add_state_core = 281
+	# 		add_state_core = 422
+
+	# 		transfer_state = 321
+	# 		transfer_state = 320
+	# 		transfer_state = 423
+	# 		transfer_state = 281
+	# 		transfer_state = 422
+	# 		every_country = {
+	# 			limit = {
+	# 				has_war_with = DH1
+	# 			}
+	# 			white_peace = DH1
+	# 		}
+	# 		clr_country_flag = DH1_renwujinxingzhong
+	# 	}
+	# 	timeout_effect = {
+	# 		every_country = {
+	# 			limit = {
+	# 				has_war_with = DH1
+	# 			}
+	# 			white_peace = DH1
+	# 		}
+	# 		clr_country_flag = DH1_renwujinxingzhong
+	# 	}
+	# 	cancel_trigger = {
+
+	# 	}
+	# }
+	# DH1_nanyacidalu_decision = {
+	# 	icon = mission_icon
+	# 	desc = DH1_nanyacidalu_mission_tooltip
+	# 	ai_will_do = {
+	# 		factor = 5	
+	# 	}
+		
+	# 	cost = 25
+	# 	days_remove = 10
+	# 	days_re_enable = 180
+	# 	visible = {
+	# 		has_completed_focus = DH1_nanyacidalu
+	# 		NOT = {
+	# 			has_country_flag = DH1_nanyacidalu_success
+	# 		}
+	# 	}
+	# 	remove_effect = {
+	# 		activate_mission = DH1_nanyacidalu_mission
+	# 		set_country_flag = DH1_renwujinxingzhong
+	# 		439 = {
+	# 			OWNER = {
+	# 				DH1 = {
+	# 				declare_war_on = { 
+	# 						target = PREV
+	# 						type = annex_everything
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		429 = {
+	# 			OWNER = {
+	# 				DH1 = {
+	# 				declare_war_on = { 
+	# 						target = PREV
+	# 						type = annex_everything
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		320 = {
+	# 			OWNER = {
+	# 				DH1 = {
+	# 				declare_war_on = { 
+	# 						target = PREV
+	# 						type = annex_everything
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		321 = {
+	# 			OWNER = {
+	# 				DH1 = {
+	# 				declare_war_on = { 
+	# 						target = PREV
+	# 						type = annex_everything
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		423 = {
+	# 			OWNER = {
+	# 				DH1 = {
+	# 				declare_war_on = { 
+	# 						target = PREV
+	# 						type = annex_everything
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
+}

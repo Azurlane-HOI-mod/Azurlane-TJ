@@ -1,0 +1,707 @@
+add_namespace = azspnews
+news_event = {
+	id = azspnews.33
+	title ="北京沦陷"
+	desc = azspnews.33.d
+	picture = GFX_az_cy1
+	major = yes
+	trigger = {
+		608 = { is_controlled_by = CHY }
+		608 = { is_owned_by = DOH }
+		CHY = { has_war_with = DOH }
+		NOT = { has_global_flag =CHY_beijing_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = CHY_beijing_flag
+	}
+	
+	option = {
+		name = "重樱拿下了桥头堡。"
+		trigger = {
+			NOT = {
+				TAG = DOH
+				TAG = CHY
+			}
+		}
+	}
+	option = {
+		name = "冲锋！！！"
+		trigger = { TAG = CHY }
+	}
+	option = {
+		name = "首战失利！"
+		trigger = { TAG = DOH }
+	}
+}
+news_event = {
+	id = azspnews.32
+	title ="东京陷落"
+	desc = azspnews.32.d
+	picture = GFX_az_byqiye
+	major = yes
+	trigger = {
+		282 = { is_controlled_by = BYG }
+		282 = { is_owned_by = CHY }
+		BYG = { has_war_with = CHY }
+		NOT = { has_global_flag =BYG_tokyo_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = BYG_tokyo_flag
+	}
+	
+	option = {
+		name = "重大的进展。"
+		trigger = {
+			NOT = {
+				TAG = BYG
+				TAG = CHY
+			}
+		}
+	}
+	option = {
+		name = "一亿玉碎！"
+		trigger = { TAG = CHY }
+	}
+	option = {
+		name = "还不能掉以轻心。"
+		trigger = { TAG = BYG }
+	}
+}
+news_event = {
+	id = azspnews.31
+	title ="东京陷落"
+	desc = azspnews.31.d
+	picture = GFX_az_dh1
+	major = yes
+	trigger = {
+		282 = { is_controlled_by = DOH }
+		282 = { is_owned_by = CHY }
+		DOH = { has_war_with = CHY }
+		NOT = { has_global_flag =DOH_tokyo_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = DOH_tokyo_flag
+	}
+	
+	option = {
+		name = "意想不到的进展。"
+		trigger = {
+			NOT = {
+				TAG = DOH
+				TAG = CHY
+			}
+		}
+	}
+	option = {
+		name = "一亿玉碎！"
+		trigger = { TAG = CHY }
+	}
+	option = {
+		name = "抓住长门！"
+		trigger = { TAG = DOH }
+	}
+}
+news_event = {
+	id = azspnews.30
+	title ="南京沦陷"
+	desc = azspnews.30.d
+	picture = GFX_az_cy1
+	major = yes
+	trigger = {
+		613 = { is_controlled_by = CHY }
+		613 = { is_owned_by = DOH }
+		CHY = { has_war_with = DOH }
+		NOT = { has_global_flag =CHY_nanjing_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = CHY_nanjing_flag
+	}
+	
+	option = {
+		name = "变幻莫测的时代。"
+		trigger = {
+			NOT = {
+				TAG = DOH
+				TAG = CHY
+			}
+		}
+	}
+	option = {
+		name = "板载！！！"
+		trigger = { TAG = CHY }
+	}
+	option = {
+		name = "抗战才刚刚开始！"
+		trigger = { TAG = DOH }
+	}
+}
+news_event = {
+	id = azspnews.29
+	title ="鸢尾国爆发内战！"
+	desc = "长期的政府混乱使鸢尾的政局十分动荡，内战一触即发。由于黎塞留的错误决定，让巴尔掌控了部分军队的控制权，并宣布发动内战。"
+	picture = GFX_az_yw2
+	is_triggered_only = yes
+	
+	option = {
+		name = "鸢尾的事情怎么总是这么糟糕！"
+		trigger = {
+			NOT = {
+				TAG = YUW
+			}
+		}
+	}
+	option = {
+		name = "来吧！"
+		trigger = { TAG = YUW }
+	}
+}
+news_event = {
+	id = azspnews.28
+	title ="莫斯科沦陷"
+	desc = azspnews.28.d
+	picture = GFX_az_tx1
+	major = yes
+	trigger = {
+		219 = { is_controlled_by = TIX }
+		219 = { is_owned_by = BFL }
+		TIX = { has_war_with = BFL }
+		NOT = { has_global_flag =TIX_mosike_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = TIX_mosike_flag
+	}
+	
+	option = {
+		name = "这就是北联的终结了吗？"
+		trigger = {
+			NOT = {
+				TAG = BFL
+				TAG = TIX
+			}
+		}
+	}
+	option = {
+		name = "到此为止了吗......"
+		trigger = { TAG = BFL }
+	}
+	option = {
+		name = "莫斯科是我们的了！"
+		trigger = { TAG = TIX }
+	}
+}
+news_event = {
+	id = azspnews.27
+	title ="攻克柏林"
+	desc = azspnews.27.d
+	picture = GFX_az_yw3
+	major = yes
+	trigger = {
+		64 = { is_controlled_by = YUW }
+		64 = { is_owned_by = TIX }
+		YUW = { has_war_with = TIX }
+		NOT = { has_global_flag =YUW_berlin_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = YUW_berlin_flag
+	}
+	
+	option = {
+		name = "这是战争终结的开始，亦或是一场漫长的停战期......."
+		trigger = {
+			NOT = {
+				TAG = YUW
+				TAG = TIX
+			}
+		}
+	}
+	option = {
+		name = "还没有结束！"
+		trigger = { TAG = TIX }
+	}
+	option = {
+		name = "我们终于来到了这里！"
+		trigger = { TAG = YUW }
+	}
+}
+news_event = {
+	id = azspnews.26
+	title ="攻克柏林"
+	desc = azspnews.26.d
+	picture = GFX_az_bfl1
+	major = yes
+	trigger = {
+		64 = { is_controlled_by = BFL }
+		64 = { is_owned_by = TIX }
+		BFL = { has_war_with = TIX }
+		NOT = { has_global_flag =BFL_berlin_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = BFL_berlin_flag
+	}
+	
+	option = {
+		name = "[BFL.GetAdjective]巨熊正在成长……"
+		trigger = {
+			NOT = {
+				TAG = BFL
+				TAG = TIX
+			}
+		}
+	}
+	option = {
+		name = "还没有结束！"
+		trigger = { TAG = TIX }
+	}
+	option = {
+		name = "终于，俾斯麦的老巢是我们的了！"
+		trigger = { TAG = BFL }
+	}
+}
+news_event = {
+	id = azspnews.25
+	title ="攻克柏林"
+	desc = azspnews.25.d
+	picture = GFX_az_byqiye
+	major = yes
+	trigger = {
+		64 = { is_controlled_by = BYG }
+		64 = { is_owned_by = TIX }
+		BYG = { has_war_with = TIX }
+		NOT = { has_global_flag =BYG_berlin_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = BYG_berlin_flag
+	}
+	
+	option = {
+		name = "战争即将宣告终结。"
+		trigger = {
+			NOT = {
+				TAG = TIX
+				TAG = BYG
+			}
+		}
+	}
+	option = {
+		name = "还没有结束！"
+		trigger = { TAG = TIX }
+	}
+	option = {
+		name = "一次教科书式的行动！"
+		trigger = { TAG = BYG }
+	}
+}
+news_event = {
+	id = azspnews.24
+	title ="攻克柏林"
+	desc = azspnews.24.d
+	picture = GFX_az_hj1
+	major = yes
+	trigger = {
+		64 = { is_controlled_by = HUJ }
+		64 = { is_owned_by = TIX }
+		TIX = { has_war_with = HUJ }
+		NOT = { has_global_flag =HUJ_berlin_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = HUJ_berlin_flag
+	}
+	
+	option = {
+		name = "战争即将宣告终结。"
+		trigger = {
+			NOT = {
+				TAG = TIX
+				TAG = HUJ
+			}
+		}
+	}
+	option = {
+		name = "还没有结束！"
+		trigger = { TAG = TIX }
+	}
+	option = {
+		name = "干得好，伙计们！"
+		trigger = { TAG = HUJ }
+	}
+}
+news_event = {
+	id = azspnews.23
+	title ="伦敦沦陷"
+	desc = azspnews.23.d
+	picture = GFX_az_sad1
+	major = yes
+	trigger = {
+		126 = { is_controlled_by = SAD }
+		126 = { is_owned_by = HUJ }
+		SAD = { has_war_with = HUJ }
+		NOT = { has_global_flag =SAD_london_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = SAD_london_flag
+	}
+	
+	option = {
+		name = "皇家已经没有机会了。"
+		trigger = {
+			NOT = {
+				TAG = SAD
+				TAG = HUJ
+			}
+		}
+	}
+	option = {
+		name = "我们会继续战斗！"
+		trigger = { TAG = HUJ }
+	}
+	option = {
+		name = "撒丁帝国的又一次征服！！"
+		trigger = { TAG = SAD }
+	}
+}
+news_event = {
+	id = azspnews.22
+	title ="伦敦沦陷"
+	desc = azspnews.22.d
+	picture = GFX_az_tix3
+	major = yes
+	trigger = {
+		126 = { is_controlled_by = TIX }
+		126 = { is_owned_by = HUJ }
+		TIX = { has_war_with = HUJ }
+		NOT = { has_global_flag =TIX_london_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = TIX_london_flag
+	}
+	
+	option = {
+		name = "皇家已经没有机会了。"
+		trigger = {
+			NOT = {
+				TAG = TIX
+				TAG = HUJ
+			}
+		}
+	}
+	option = {
+		name = "我们会继续战斗！"
+		trigger = { TAG = HUJ }
+	}
+	option = {
+		name = "我们将很快赢得这场战争的胜利！"
+		trigger = { TAG = TIX }
+	}
+}
+news_event = {
+	id = azspnews.21
+	title ="罗马陷落"
+	desc = azspnews.21.d
+	picture = GFX_az_yw3
+	major = yes
+	trigger = {
+		2 = { is_controlled_by = YUW }
+		2 = { is_owned_by = SAD }
+		SAD = { has_war_with = YUW }
+		NOT = { has_global_flag = YUW_roma_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = YUW_roma_flag
+	}
+	
+	option = {
+		name = "知道了"
+		trigger = {
+			NOT = {
+				TAG = YUW
+				TAG = SAD
+			}
+		}
+	}
+	option = {
+		name = "还没有结束！"
+		trigger = { TAG = SAD }
+	}
+	option = {
+		name = "鸢尾万岁！"
+		trigger = { TAG = YUW }
+	}
+}
+news_event = {
+	id = azspnews.20
+	title ="罗马陷落"
+	desc = azspnews.20.d
+	picture = GFX_az_hj1
+	major = yes
+	trigger = {
+		2 = { is_controlled_by = HUJ }
+		2 = { is_owned_by = SAD }
+		SAD = { has_war_with = HUJ }
+		NOT = { has_global_flag = HUJ_roma_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = HUJ_roma_flag
+	}
+	
+	option = {
+		name = "知道了"
+		trigger = {
+			NOT = {
+				TAG = HUJ
+				TAG = SAD
+			}
+		}
+	}
+	option = {
+		name = "还没有结束！"
+		trigger = { TAG = SAD }
+	}
+	option = {
+		name = "伟大的胜利！"
+		trigger = { TAG = HUJ }
+	}
+}
+news_event = {
+	id = azspnews.19
+	title ="鸢尾教廷的分裂"
+	desc = azspnews.19.d
+	picture = GFX_az_yw1
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "黑暗时代降临了。"
+		trigger = {
+			NOT = {
+				TAG = YUW
+				TAG = SAD
+				TAG = TIX
+				TAG = CHY
+			}
+		}
+	}
+	option = {
+		name = "欢迎加入赤色中轴！"
+		trigger = { TAG = TIX 	}
+	}
+	
+	option = {
+		name = "我们绝不会投降！"
+		trigger = { TAG = YUW }
+		load_focus_tree = yuanwei_free_focus
+		complete_national_focus = YUW_zhianshike
+		hidden_effect = {
+		TIX = {
+		YUW_shengnvzhende = {
+			set_nationality = YUW
+		}
+		YUW_lisailiu = {
+			set_nationality = YUW
+		}
+		YUW_6194 = {
+			set_nationality = YUW
+		}
+		YUW_kaixuan = {
+			set_nationality = YUW
+		}
+		YUW_juejiang = {
+			set_nationality = YUW
+		}
+		YUW_lumang = {
+			set_nationality = YUW
+		}
+		YUW_aimierbeierding = {
+			set_nationality = YUW
+		}
+		YUW_xiangbin = {
+			set_nationality = YUW
+		}
+		YUW_buleisite = {
+			set_nationality = YUW
+		}
+		}
+		YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = liberalism
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = despotism
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+		YUW_shengnvzhende = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				snddg
+			}
+			}
+			promote_leader = yes
+			}
+			}
+			
+		}
+	}
+	
+}
+news_event = {
+	id = azspnews.18
+	title ="巴黎沦陷"
+	desc = azspnews.18.d
+	picture = GFX_az_sad1
+	major = yes
+	trigger = {
+		16 = { is_controlled_by = SAD }
+		16 = { is_owned_by = YUW }
+		SAD = { has_war_with = YUW }
+		NOT = { has_global_flag = SAD_bali_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = SAD_bali_flag
+	}
+	
+	option = {
+		name = "怎么可能？"
+		trigger = {
+			NOT = {
+				TAG = YUW
+				TAG = SAD
+			}
+		}
+	}
+	option = {
+		name = "这才仅仅只是开始！"
+		trigger = { TAG = SAD }
+	}
+	option = {
+		name = "我们还没有输！"
+		trigger = { TAG = YUW }
+	}
+}
+
+news_event = { 
+	id = azspnews.17
+	title ="巴黎沦陷"
+	desc = azspnews.17.d
+	picture = GFX_az_tx1
+	major = yes
+	trigger = {
+		16 = { is_controlled_by = TIX }
+		16 = { is_owned_by = YUW }
+		TIX = { has_war_with = YUW }
+		NOT = { has_global_flag = TIX_bali_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = TIX_bali_flag
+	}
+	
+	option = {
+		name = "情理之中。"
+		trigger = {
+			NOT = {
+				TAG = YUW
+				TAG = TIX
+			}
+		}
+	}
+	option = {
+		name = "铁血军队已不可阻挡！"
+		trigger = { TAG = TIX }
+	}
+	option = {
+		name = "我们还没有输！"
+		trigger = { TAG = YUW }
+	}
+}

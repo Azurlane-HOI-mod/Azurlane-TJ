@@ -1,0 +1,196 @@
+﻿
+capital = 270
+
+oob = "BLI_1936"
+
+starting_train_buffer = 5
+navy_experience = 1000
+army_experience = 20
+air_experience = 50
+270 = {
+	set_state_name = "布里之家"
+}
+set_research_slots = 4
+
+set_stability = 0.9
+set_war_support = 0
+set_fuel_ratio = 1
+
+set_variable = { var = xzmf_sl value = 12 }
+set_variable = { var = zs_sl value = 500 }
+set_variable = { var = wz_sl value = 8000 }
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	gwtank = 1
+	basic_light_tank = 1
+	early_fighter = 1
+	cv_early_fighter = 1
+	cv_naval_bomber1 = 1
+	naval_bomber1 = 1
+	early_bomber = 1
+	CAS1 = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+	radio_detection = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	basic_train = 1
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		improved_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		improved_airplane_launcher = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "M1 Combat Car"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 2
+			tank_nsb_engine_upgrade = 5
+		}
+		icon = "gfx/interface/technologies/USA_basic_light_tank.dds"
+	}
+	create_equipment_variant = {
+		name = "M2A2"
+		type = light_tank_chassis_1
+		parent_version = 1
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 2
+			tank_nsb_engine_upgrade = 5
+		}
+		icon = "gfx/interface/technologies/USA_basic_light_tank.dds"
+	}
+}
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+
+
+add_ideas = {
+	disarmed_nation
+	free_trade
+	BLI_luxianwenti
+	BLI_quefamofangdezaochuanshu
+	BLI_ziyuankuifa
+	BLI_yongjidechenshi
+	BLI_quefarenli
+}
+	
+
+set_convoys = 1000
+
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.11.14"
+	election_frequency = 480
+	elections_allowed = yes ##suspended through duration of war, which is handled via event
+}
+set_popularities = {
+	neutrality = 20
+	democratic = 80
+	fascism = 0
+	communism = 0
+}
+
+
+
+recruit_character = BLI_chaojibuli
+recruit_character = BLI_huangjinbuli
+recruit_character = BLI_zibuli
+recruit_character = BLI_chaojibuli
+recruit_character = BLI_huangjinbuli
+recruit_character = BLI_zibuli
+recruit_character = BLI_haixiao
+recruit_character = BLI_he
+recruit_character = BLI_kala
+recruit_character = BLI_keluodiya
+recruit_character = BLI_laisha
+recruit_character = BLI_lian
+recruit_character = BLI_lila
+recruit_character = BLI_maliluosi
+recruit_character = BLI_mengya
+recruit_character = BLI_monika
+recruit_character = BLI_naimeizi
+recruit_character = BLI_nvtiangou
+recruit_character = BLI_patelixia
+recruit_character = BLI_xingtiaoqian
+recruit_character = BLI_qianlai
+recruit_character = BLI_sali
+recruit_character = BLI_suixiang
+recruit_character = BLI_xia
+recruit_character = BLI_zhixiao
+recruit_character = BLI_baoduoliuhua
+
+

@@ -1,0 +1,370 @@
+armor_default = {
+	available_for = {
+        DOH DH1
+	}
+	roles = {
+		armor
+	}
+	match_to_count = 0.55
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories > 150
+			}
+		}
+	medium_armor = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories > 150
+				not = { has_idea = TY_fengkuangai }
+	not = { has_idea = TY_fengkuangai2 }
+	not = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories > 150
+				not = { has_idea = TY_fengkuangai }
+	not = { has_idea = TY_fengkuangai2 }
+	not = { has_idea = TY_fengkuangai3 }
+			}
+		}
+		target_width = 42
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				logistics_company = 1
+				maintenance_company = 1
+			}
+			regiments = {
+			    medium_armor = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+				infantry = 10
+			}
+		}
+		allowed_types = {
+			medium_armor
+			infantry
+			engineer
+			light_tank_recon
+			logistics_company
+			maintenance_company
+			medium_flame_tank
+			medium_tank_destroyer_brigade
+			medium_sp_anti_air_brigade
+		}
+	}
+	medium_armor_2 = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories > 150
+				OR = {
+					has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+				}
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories > 150
+				OR = {
+					has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+		}
+	}
+		target_width = 42
+		width_weight = 1
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+		target_template = {
+			weight = 0.9
+			match_value = 9000.0
+			support = {
+				engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				maintenance_company = 1
+				field_hospital = 1
+			}
+			regiments = {
+			    medium_armor = 8
+				medium_tank_destroyer_brigade = 1
+				medium_sp_anti_air_brigade = 1
+				infantry = 10
+			}
+		}
+		allowed_types = {
+			medium_armor
+			infantry
+			engineer
+			light_tank_recon
+			maintenance_company
+			field_hospital
+			medium_flame_tank
+			medium_tank_destroyer_brigade
+			medium_sp_anti_air_brigade
+		}
+	}
+}
+
+garrison_default = {
+	available_for = {	
+    DOH DH1
+	}
+	roles = {
+		garrison
+	}
+	upgrade_prio = {
+		base = 1
+	}
+	match_to_count = 0.60
+	garrison_default = {
+		custom_icon = 7
+		upgrade_prio = { 
+        base = 1
+		}
+		target_width = 50
+		width_weight = 1
+		column_swap_factor = 1.5
+		target_template = {
+			weight = 0.95
+			match_value = 10000
+			
+			support = {
+				military_police = 1
+			}
+
+			regiments = {
+				cavalry = 24
+			}
+		}
+		allowed_types = {
+			cavalry		
+			military_police
+		}
+	}
+}
+
+infantry_DOH = {
+	available_for = {
+		DOH DH1
+	}
+	roles = {
+		infantry
+	}
+	upgrade_prio = {
+			base = 10
+			modifier = {
+				has_idea = TY_dingzhenai 
+				factor = 0
+			}
+		}
+	match_to_count = 0.6
+	infantry_1_DOH = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories < 150
+				not = { has_tech = human_wave_offensive }
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories < 150
+				not = { has_tech = human_wave_offensive }
+			}
+		}
+		target_width = 42.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+			artillery = 1
+			engineer = 1
+			recon = 1
+			maintenance_company = 1
+			logistics_company = 1
+			}
+			regiments = {
+				infantry = 9
+				artillery_brigade = 4
+			}
+		}
+		allowed_types = {
+		    engineer
+			infantry
+            recon			
+            artillery
+            artillery_brigade		
+			maintenance_company	
+			logistics_company
+		}
+	}
+	
+	infantry_1_DOH = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories < 150
+				has_tech = human_wave_offensive
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories < 150
+				has_tech = human_wave_offensive
+			}
+		}
+		target_width = 42.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+			engineer = 1
+			recon = 1
+			artillery = 1
+			maintenance_company = 1
+			logistics_company = 1
+			}
+			regiments = {
+				infantry = 10
+				artillery_brigade = 5
+			}
+		}
+		allowed_types = {
+		    engineer
+			recon
+			infantry	
+            artillery
+            artillery_brigade	
+			maintenance_company		
+			logistics_company
+		}
+	}
+	
+	infantry_3_DOH = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories > 150
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+				num_of_military_factories > 150
+			}
+		}
+		target_width = 50.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1	
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			support = {
+				engineer = 1
+				artillery = 1
+			}
+			
+			regiments = {
+				infantry = 11
+			}
+		}
+		
+		allowed_types = {
+			engineer
+			infantry
+			artillery
+		}
+	}
+	
+}
+
+
+
+# REGIMENTS:
+#infantry
+#light_armor
+#super_heavy_armor
+#modern_armor
+#heavy_armor
+#medium_armor
+#light_armor
+#anti_tank
+#cavalry
+#motorized
+#mechanized
+#marine
+#mountaineers
+#paratrooper
+#rocket_artillery
+#light_tank_destroyer
+#medium_tank_destroyer_brigade
+#heavy_tank_destroyer_brigade
+#super_heavy_tank_destroyer_brigade
+#modern_tank_destroyer_brigade
+#field_hospital
+#artillery
+
+# SUPPORT:
+#engineer
+#recon
+#signal_company
+#field_hospital
+#anti_tank_brigade
+#anti_air_brigade
+#artillery_brigade
+#field_hospital
+#logistics_company
+#military_police
+#light_sp_anti_air_brigade
+#light_sp_artillery_brigade

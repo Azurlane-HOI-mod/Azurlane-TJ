@@ -1,0 +1,103 @@
+equipments = {
+	#archetype
+	doh_civ_equipment = {
+		year = 1936
+
+		is_archetype = yes
+		is_buildable = no
+		active = no
+		type = infantry
+		picture = GFX_doh_civ_equipment_medium
+		group_by = archetype
+
+		interface_category = interface_category_land
+
+		reliability = 1
+		lend_lease_cost = 20
+		manpower = 0
+		can_license = no
+		is_convertable = yes
+		build_cost_ic = 10
+		resources = {
+			steel = 2
+		}
+	}
+	doh_civ_equipment_1 = {
+		year = 1936
+		archetype = doh_civ_equipment
+		picture = GFX_doh_civ_equipment_medium
+		priority = 10
+		reliability = 1
+		build_cost_ic = 100
+		resources = {
+			steel = 8
+		}
+		can_be_produced = {
+			tag = DOH
+		}
+		can_license = yes
+		can_be_lend_leased = {
+			always = yes
+		}
+	}
+
+	# doh_civ_naval_equipment = {
+	# 	year = 1936
+
+	# 	is_archetype = yes
+	# 	is_buildable = no
+	# 	active = no
+	# 	type = 
+	# 	picture = GFX_doh_civ_naval_equipment_medium
+	# 	group_by = archetype
+
+	# 	interface_category = interface_category_other_ships
+
+	# 	reliability = 1
+	# 	# Unused by convoys
+	# 	surface_detection = 10
+	# 	sub_detection = 0
+
+	# 	fuel_consumption = 0
+
+	# 	# Combat abilities
+	# 	lg_armor_piercing = 1
+	# 	armor_value = 0
+	# 	reliability = 0.8
+	# 	surface_visibility = 14
+
+	# 	torpedo_attack = 0
+	# 	lg_attack = 0.25
+	# 	naval_speed = 12
+	# 	max_strength = 60
+	# 	max_organisation = 30
+	# 	anti_air_attack = 0.1
+
+		
+
+    #     #Space taken in convoy
+    #     lend_lease_cost = 0
+		
+	# 	# (Describes combat behaviour - hidden stat)
+	# 	offensive_weapons = no
+		
+	# 	build_cost_ic = 100
+	# 	resources = {
+	# 		steel = 1
+	# 	}
+	# }
+	# doh_civ_naval_equipment_1 = {
+	# 	year = 1936
+	# 	archetype = doh_civ_naval_equipment
+	# 	picture = GFX_doh_civ_naval_equipment_medium
+	# 	priority = 1
+	# 	reliability = 1
+	# 	build_cost_ic = 100
+	# 	resources = {
+	# 		steel = 1
+	# 	}
+	# 	can_be_lend_leased = {
+	# 		always = yes
+	# 	}
+	# }
+}

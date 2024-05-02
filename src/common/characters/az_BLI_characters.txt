@@ -1,0 +1,742 @@
+characters={
+	BLI_chaojibuli = {
+		name = BLI_chaojibuli
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/chaojibuli.png"
+				small="gfx/interface/ideas/idea_chaojibuli.png"
+			}
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = liberalism
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = despotism
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = fascism_ideology
+		}
+		country_leader={
+			expire = "2000.1.1"
+			ideology = leninism
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = chaojibuli
+			traits = { trait_chaojibuli }
+
+			ai_will_do = {
+				factor = 16
+			}
+		}
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	
+	BLI_huangjinbuli = {
+		name = BLI_huangjinbuli
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/huangjinbuli.png"
+				small="gfx/interface/ideas/idea_huangjinbuli.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = huangjinbuli
+			traits = { trait_huangjinbuli }
+			available = {
+			or = {
+			    hidden_trigger = { is_ai = yes }
+				BLI_huangjinbuli = { is_field_marshal = yes }
+				}
+			}
+			ai_will_do = {
+				factor = 16
+			}
+		}
+	}
+	
+	BLI_zibuli = {
+		name = BLI_zibuli
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/zibuli.png"
+				small="gfx/interface/ideas/idea_zibuli.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_navy }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = zibuli
+			traits = { trait_zibuli }
+			
+			ai_will_do = {
+				factor = 16
+			}
+		}
+	}
+	BLI_maliluosi = {
+		name = BLI_maliluosi
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/maliluosi.png"
+				small="gfx/interface/ideas/idea_maliluosi.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_navy navy_media_personality }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = maliluosi
+			
+			
+			traits = { trait_maliluosi }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+	BLI_suixiang = {
+		name = BLI_suixiang
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/suixiang.png"
+				small="gfx/interface/ideas/idea_suixiang.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army armor_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BLI_xia = {
+		name = BLI_xia
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/xia.png"
+				small="gfx/interface/ideas/idea_xia.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army career_officer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = xia
+
+			traits = { trait_xia }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+	BLI_haixiao = {
+		name = BLI_haixiao
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/haixiao.png"
+				small="gfx/interface/ideas/idea_haixiao.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = haixiao
+			traits = { trait_haixiao }
+
+			ai_will_do = {
+				factor = 16
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_navy navy_media_personality }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+	BLI_lian = {
+		name = BLI_lian
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/lian.png"
+				small="gfx/interface/ideas/idea_lian.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	BLI_lian = {
+		name = BLI_lian
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/lian.png"
+				small="gfx/interface/ideas/idea_lian.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	BLI_xingtiaoqian = {
+		name = BLI_xingtiaoqian
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/qian.png"
+				small="gfx/interface/ideas/idea_qian.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = xingtiaoqian
+			traits = { trait_blixingtiaoqian }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+	}
+	BLI_mengya = {
+		name = BLI_mengya
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/mengya.png"
+				small="gfx/interface/ideas/idea_mengya.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army brilliant_strategist bearer_of_artillery }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = mengya
+			traits = { trait_mengya }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+	}
+	BLI_qianlai = {
+		name = BLI_qianlai
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/qianlai.png"
+				small="gfx/interface/ideas/idea_qianlai.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_navy bold }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = qianlai
+			traits = { trait_qianlai }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+	}
+	BLI_laisha = {
+		name = BLI_laisha
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/laisha.png"
+				small="gfx/interface/ideas/idea_laisha.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_navy bold cuts_corners }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = laisha
+			traits = { trait_laisha }
+
+			ai_will_do = {
+				factor = 16
+			}
+		}
+	}
+	BLI_keluodiya = {
+		name = BLI_keluodiya
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/keluodiya.png"
+				small="gfx/interface/ideas/idea_keluodiya.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army trait_cautious }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = keluodiya
+
+			traits = { trait_keluodiya }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	BLI_patelixia = {
+		name = BLI_patelixia
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/patelixia.png"
+				small="gfx/interface/ideas/idea_patelixia.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BLI_kala = {
+		name = BLI_kala
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/kala.png"
+				small="gfx/interface/ideas/idea_kala.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army brilliant_strategist trait_cautious }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BLI_zhixiao = {
+		name = BLI_zhixiao
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/zhixiao.png"
+				small="gfx/interface/ideas/idea_zhixiao.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_navy naval_lineage }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	BLI_nvtiangou = {
+		name = BLI_nvtiangou
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/nvtiangou.png"
+				small="gfx/interface/ideas/idea_nvtiangou.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army media_personality }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+    BLI_monika = {
+		name = BLI_monika
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/monika.png"
+				small="gfx/interface/ideas/idea_monika.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+    BLI_naimeizi = {
+		name = BLI_naimeizi
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/naimeizi.png"
+				small="gfx/interface/ideas/idea_naimeizi.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+	BLI_he = {
+		name = BLI_he
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/he.png"
+				small="gfx/interface/ideas/idea_he.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army inflexible_strategist }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	BLI_lila = {
+		name = BLI_lila
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/lila.png"
+				small="gfx/interface/ideas/idea_lila.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army brilliant_strategist harsh_leader war_hero }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = lila
+			
+			traits = { trait_lila }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+	BLI_sali = {
+		name = BLI_sali
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/sali.png"
+				small="gfx/interface/ideas/idea_sali.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = sali
+			traits = { trait_sali }
+
+			ai_will_do = {
+				factor = 16
+			}
+		}
+	}
+	BLI_baoduoliuhua = {
+		name = BLI_baoduoliuhua
+		portraits={
+			army = {
+				large="gfx/leaders/BLI/baoduoliuhua.png"
+				small="gfx/interface/ideas/idea_baoduoliuhua.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army brilliant_strategist trait_reckless }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = baoduoliuhua
+			traits = { trait_baoduoliuhua }
+
+			ai_will_do = {
+				factor = 16
+			}
+		}
+	}
+}

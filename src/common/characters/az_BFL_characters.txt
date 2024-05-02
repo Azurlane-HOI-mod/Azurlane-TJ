@@ -1,0 +1,1028 @@
+characters={
+	BFL_sayousi = {
+		name = BFL_sayousi
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/sayousi.png"
+				small="gfx/interface/ideas/idea_sayousi.png"
+			}
+		}
+
+		country_leader={
+			ideology = stalinism
+			traits = {
+				jdfm
+				
+			}
+			desc = BFL_sayousi_desc
+			expire="2000.1.1.1"
+		}
+
+		country_leader={
+			ideology = fascism_ideology
+			traits = {
+				jdfm
+				
+			}
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology = liberalism
+			traits = {
+				jdfm
+				
+			}
+			expire="2000.1.1.1"
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = sayousi
+			traits = { trait_sayousi }
+
+			ai_will_do = {
+				factor = 16
+			}
+			visible = { 
+				NOT = { has_completed_focus = BFL_wuhaishenxianghua } 
+		    }
+			available = {
+                if = { 	limit = { tag = BFL }			
+				NOT = { has_completed_focus = BFL_wuhaishenxianghua } 
+		    }
+			}
+		}
+		field_marshal = {
+			visible = { 
+			    NOT = { has_completed_focus = BFL_wuhaishenxianghua } 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_expert offensive_doctrine expert_delegator zhanlie_army }
+			skill = 4	
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+	BFL_luoxiya = {
+		name = BFL_luoxiya
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/luoxiya.png"
+				small="gfx/interface/ideas/idea_luoxiya.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = luoxiya
+			traits = { trait_luoxiya}
+
+			ai_will_do = {
+				factor = 100
+			}
+			visible = { 
+				NOT = { has_completed_focus = BFL_jiejuejunzhongzuopai } 
+		    }
+			available = {
+            if = { 	limit = { tag = BFL }			
+				NOT = { has_completed_focus = BFL_jiejuejunzhongzuopai } 
+		    }
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				NOT = { has_completed_focus = BFL_jiejuejunzhongzuopai } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05001
+			traits = { brilliant_strategist  trait_engineer career_officer armor_officer winter_expert zhanlie_army }
+			skill = 4	
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		
+	}
+	BFL_gangute = {
+		name = BFL_gangute
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/gangute.png"
+				small="gfx/interface/ideas/idea_gangute.png"
+			}
+		}
+        advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = gangute
+			traits = { trait_gangute }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05002
+			traits = { armor_officer brilliant_strategist winter_specialist zhanlie_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	BFL_qiabayefu = {
+		name = BFL_qiabayefu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/qiabayefu.png"
+				small="gfx/interface/ideas/idea_qiabayefu.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = qiabayefu
+			
+			
+			traits = { trait_qiabayefu }
+			ai_will_do = {
+				factor = 100
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05003
+			traits = { inflexible_strategist bearer_of_artillery winter_specialist xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	BFL_mingsike = {
+		name = BFL_mingsike
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/mingsike.png"
+				small="gfx/interface/ideas/idea_mingsike.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05004
+			traits = { trickster trait_engineer winter_specialist winter_specialist quzhu_army }
+			skill = 1
+			
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_afuleer = {
+		name = BFL_afuleer
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/afuleer.png"
+				small="gfx/interface/ideas/idea_afuleer.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = afuleer
+			traits = { trait_afuleer }
+
+			ai_will_do = {
+				factor = 10
+			}
+			visible = {
+                if = { 	limit = { tag = BFL }		
+				NOT = { has_completed_focus = BFL_kelimulinshibian } 
+				}
+		    }
+			available = { 
+			    if = { 	limit = { tag = BFL }	
+				NOT = { has_completed_focus = BFL_kelimulinshibian } 
+		    }
+			}
+		}
+		navy_leader = {
+			visible = { 
+			    NOT = { has_completed_focus = BFL_kelimulinshibian } 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05005
+			traits = { ground_pounder ironside xunyang_navy }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 4
+		}
+	}
+	BFL_tashigan = {
+		name = BFL_tashigan
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/tashigan.png"
+				small="gfx/interface/ideas/idea_tashigan.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = tashigan
+			traits = { trait_tashigan }
+			
+			ai_will_do = {
+				factor = 16
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05006
+			traits = { spotter seawolf quzhu_navy }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	BFL_weiyan = {
+		name = BFL_weiyan
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/weiyan.png"
+				small="gfx/interface/ideas/idea_weiyan.png"
+			}
+		}
+
+		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05007
+			traits = { arctic_water_expert spotter quzhu_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+	}
+	BFL_beilaluosi = {
+		name = BFL_beilaluosi
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/beilaluosi.png"
+				small="gfx/interface/ideas/idea_beilaluosi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = beilaluosi
+			traits = { trait_beilaluosi }
+			available = {
+			or = {
+			    is_ai = yes
+				BFL_beilaluosi = { is_field_marshal = yes }
+				}
+			}
+			ai_will_do = {
+				factor = 16
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05008
+			traits = { career_officer cavalry_officer winter_specialist zhanlie_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	BFL_hongliang = {
+		name = BFL_hongliang
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/hongliang.png"
+				small="gfx/interface/ideas/idea_hongliang.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05009
+			traits = { bearer_of_artillery winter_specialist quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_leiming = {
+		name = BFL_leiming
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/leiming.png"
+				small="gfx/interface/ideas/idea_leiming.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = leiming
+			traits = { trait_leiming }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05010
+			traits = { harsh_leader winter_specialist quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_shensu = {
+		name = BFL_shensu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/shensu.png"
+				small="gfx/interface/ideas/idea_shensu.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = shensu
+			traits = { trait_shensu }
+
+			ai_will_do = {
+				factor = 15
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05011
+			traits = { trait_reckless trickster winter_specialist quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_moermansike = {
+		name = BFL_moermansike
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/moermansike.png"
+				small="gfx/interface/ideas/idea_moermansike.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05012
+			traits = { trait_cautious winter_specialist xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	BFL_talin = {
+		name = BFL_talin
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/talin.png"
+				small="gfx/interface/ideas/idea_talin.png"
+			}
+		}
+		advisor = {
+			cost = 300
+			slot = political_advisor
+			idea_token = talin
+			traits = { trait_talin }
+			available = {
+			if = {
+			limit = { tag = BFL }
+			}
+			OR = {
+			has_country_flag = BFL_zzpianzhidu_on
+			has_completed_focus = BFL_24
+			}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05013
+			traits = { career_officer armor_officer winter_specialist xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BFL_jiluofu = {
+		name = BFL_jiluofu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/jiluofu.png"
+				small="gfx/interface/ideas/idea_jiluofu.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = jiluofu
+			traits = { trait_jiluofu }
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05014
+			traits = { armor_officer winter_specialist xunyang_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	BFL_shuixingjinian = {
+		name = BFL_shuixingjinian
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/shuixingjinian.png"
+				small="gfx/interface/ideas/idea_shuixingjinian.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = shuixingjinian
+			traits = { trait_shuixingjinian }
+
+			ai_will_do = {
+				factor = 10
+			}
+			visible = { 
+				NOT = { has_completed_focus = BFL_kelimulinshibian } 
+		    }
+			available= {
+            if = { 	limit = { tag = BFL }
+			NOT = {
+			has_completed_focus = BFL_kelimulinshibian } 
+			}
+		    }
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				NOT = { has_completed_focus = BFL_kelimulinshibian } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05014
+			traits = { winter_specialist skilled_staffer xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BFL_aerhangeersike = {
+		name = BFL_aerhangeersike
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/aerhangeersike.png"
+				small="gfx/interface/ideas/idea_aerhangeersike.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = aerhangeersike
+			traits = { trait_aerhangeersike }
+			visible = { 
+			if = {
+			limit = { tag = BFL }
+				has_completed_focus = BFL_qiyonggaigepai
+			}
+			}
+
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_navy ironside }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	BFL_jifu = {
+		name = BFL_jifu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/jifu.png"
+				small="gfx/interface/ideas/idea_jifu.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_lingmin = {
+		name = BFL_lingmin
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/lingmin.png"
+				small="gfx/interface/ideas/idea_lingmin.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist quzhu_army trait_engineer}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_kalangshitade = {
+		name = BFL_kalangshitade
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/kalangshitade.png"
+				small="gfx/interface/ideas/idea_kalangshitade.png"
+			}
+		}
+		advisor = {
+			cost = 200
+			slot = political_advisor
+			idea_token = kalangshitade
+			traits = { trait_kalangshitade }
+
+			ai_will_do = {
+				factor = 11
+			}
+			visible = { 
+				NOT = { has_completed_focus = BFL_kelimulinshibian } 
+		    }
+				
+			available= {
+			if = { 	limit = { tag = BFL }
+            NOT = {
+			has_completed_focus = BFL_kelimulinshibian }
+			available = {
+			if = {
+			limit = { tag = BFL }
+			}
+			OR = {
+			has_country_flag = BFL_zzpianzhidu_on
+			has_completed_focus = BFL_24
+			}
+			}
+			}
+		    }
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				NOT = { has_completed_focus = BFL_kelimulinshibian } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist skilled_staffer trait_mountaineer xunyang_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	BFL_fuerjia = {
+		name = BFL_fuerjia
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/fuerjia.png"
+				small="gfx/interface/ideas/idea_fuerjia.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = fuerjia
+			traits = { trait_fuerjia }
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_navy arctic_water_expert air_controller }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
+	BFL_qikaluofu = {
+		name = BFL_qikaluofu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/qikaluofu.png"
+				small="gfx/interface/ideas/idea_qikaluofu.png"
+			}
+		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist hangmu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = qikaluofu
+
+			traits = { trait_qikaluofu			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	BFL_huoli = {
+		name = BFL_huoli
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/huoli.png"
+				small="gfx/interface/ideas/idea_huoli.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = huoli
+			traits = { trait_psh_rumunuanyang }
+
+			ai_will_do = {
+				factor = 16
+			}
+			visible = { 
+				NOT = { has_completed_focus = BFL_wuhaishenxianghua } 
+		    }
+			available = {
+                if = { 	limit = { tag = BFL }			
+				NOT = { has_completed_focus = BFL_wuhaishenxianghua } 
+				not = { has_country_flag = BFL_zzpianzhidu_on }
+				has_completed_focus = BFL_24
+		    }
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { trait_reckless winter_specialist quzhu_army }
+			skill = 2
+			
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BFL_kuersike = {
+		name = BFL_kuersike
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/kuersike.png"
+				small="gfx/interface/ideas/idea_kuersike.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = kuersike
+			traits = { trait_psh_xueyuangulang }
+
+			ai_will_do = {
+				factor = 14
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { trickster winter_specialist xunyang_army }
+			skill = 4
+			
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	BFL_fuluosiluofu = {
+		name = BFL_fuluosiluofu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/fuluosiluofu.png"
+				small="gfx/interface/ideas/idea_fuluosiluofu.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = fuluosiluofu
+			traits = { trait_psh_handongjiangzhi }
+
+			ai_will_do = {
+				factor = 14
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { career_officer trait_cautious winter_specialist xunyang_army }
+			skill = 3
+			
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	BFL_xiongmeng = {
+		name = BFL_xiongmeng
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/xiongmeng.png"
+				small="gfx/interface/ideas/idea_xiongmeng.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist quzhu_army }
+			skill = 1
+			
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_boertawa = {
+		name = BFL_boertawa
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/boertawa.png"
+				small="gfx/interface/ideas/idea_boertawa.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { skilled_staffer winter_specialist zhanlie_army }
+			skill = 3
+			
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BFL_saiwasituoboer = {
+		name = BFL_saiwasituoboer
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/saiwasituoboer.png"
+				small="gfx/interface/ideas/idea_saiwasituoboer.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = saiwasituoboer
+			traits = { trait_psh_biangedezhidaolun }
+			available = {
+				
+			}
+			ai_will_do = {
+				factor = 16
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { war_hero winter_specialist zhanlie_army }
+			skill = 4
+			
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+}

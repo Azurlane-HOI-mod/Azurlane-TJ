@@ -1,0 +1,615 @@
+guiTypes = {
+	containerWindowType = {
+		name = "az_xmp_decision_window"
+		position = { x = 0 y = 0 }  
+		
+		buttonType = {
+			name = "az_xmp_decision_button"
+			position = { x = 185 y = -30 }
+			quadTextureSprite ="GFX_az_smallbutton2" 
+			Orientation = "CENTER"
+			buttonFont = "vic_18"
+			buttonText = "az_xmp_decision_button_text"
+			pdx_tooltip = "az_xmp_decision_button_tooltip"
+			clicksound = click_default
+		}
+		
+		buttonType = { 
+			name = "az_jhd_decision_button"
+			position = { x = 325 y = -30 } 
+			quadTextureSprite ="GFX_az_smallbutton2" 
+			Orientation = "CENTER"
+			buttonFont = "vic_18"
+			buttonText = "az_jhd_decision_button_text"
+			pdx_tooltip = "az_jhd_decision_button_tooltip"
+			clicksound = click_default
+		}
+	}
+	containerWindowType = { 
+		name = "az_xmp_main_window"
+		position = { x=500 y=0}
+		Orientation = "CENTER"
+		fade_time = 400
+		fade_type = linear
+		size = { width = 755 height = 900 }   
+		moveable = yes
+		background = {
+			name = "az_xmp_main_window_bg"
+			quadTextureSprite ="GFX_az_xmp_bg"
+		}
+		iconType = {
+			name = "az_xmp_main_window_tittle_bg"
+			spriteType = "GFX_az_xmp_tittle_bg"
+			position = { x = 288 y = 7 }
+		}
+		iconType ={
+			name ="az_xmp_main_window_picture"
+			spriteType = "GFX_az_xmp_picture_1"
+			position = { x= 0 y = 60 }
+			Orientation = "UPPER"
+			pdx_tooltip = "buzhihuo_icon_tooltip"
+		}
+		
+		
+    
+		buttonType = {
+			name = "az_xmp_main_window_close_button"
+			position = { x = -46 y = 4 }
+			quadTextureSprite ="GFX_az_close_button1"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		instantTextboxType = {
+			name = "xmp_zs_number_text"
+			position = { x = 20 y = 25 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			text = "zs_number_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "zs_number_tooltip"
+		}
+		instantTextboxType = {
+			name = "xmp_wz_number_text"
+			position = { x = 100 y = 25 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "wz_number_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "wz_number_tooltip"
+		}
+	
+		instantTextboxType = {
+			name = "xmp_mf_number_text"
+			position = { x = 180 y = 25 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "mf_number_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "mf_number_tooltip"
+		}
+		############################################################
+		iconType ={
+			name ="az_xmp_zuanshi_icon1"
+			spriteType = "GFX_az_misc_icon_1"
+			position = { x = 610 y = 400 }
+			Orientation = "UPPER_CENTER"
+			
+		}
+		iconType ={
+			name ="az_xmp_zuanshi_icon2"
+			spriteType = "GFX_az_misc_icon_2"
+			position = { x = 10 y = 400 } 
+			Orientation = "UPPER_CENTER"
+			
+		}
+		instantTextboxType = {
+			name = "az_xmp_wzzschange"
+			position = { x = 310 y = 400 } 
+			font = "hoi_24header" 
+			text = "az_xmp_wzzschange_text"
+			maxWidth = 140
+			maxHeight = 40 
+
+		}
+		instantTextboxType = {
+			name = "az_xmp_wzzschange_tooltip"
+			position = { x = 290 y = 450 } 
+			font = "hoi_24header" 
+			text = "az_xmp_wzzschange_text2"
+			maxWidth = 200
+			maxHeight = 40 
+
+		}
+		ButtonType = {
+			name = "get_100zs_button"
+			position = { x = 130 y = 440 }
+			quadTextureSprite ="GFX_az_button1"
+			buttonText = "get_100zs_button_text"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		ButtonType = {
+			name = "get_10000wz_button"
+			position = { x = 500 y = 440 } 
+			quadTextureSprite ="GFX_az_button1"
+			buttonText = "get_10000wz_button_text"
+			buttonFont = "hoi_18mbs"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+		
+		############################################################
+		iconType ={
+			name ="az_xmp_small_window_1_bg"
+			spriteType = "GFX_az_xmp_smallwindow_bg"
+			position = { x = 10 y = -390 }
+			Orientation = "LOWER_LEFT"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_small_window_1_next_button"
+			Orientation = "LOWER_RIGHT"
+			position = { x = -85 y = -220 }   
+			quadTextureSprite ="GFX_az_next_button"
+			clicksound = click_ok
+			oversound = ui_menu_over 
+
+			pdx_tooltip = "xmp_next_button_tooltip"
+		}
+		ButtonType = {
+			name = "az_xmp_small_window_2_pre_button"
+			Orientation = "LOWER_LEFT"
+			position = { x = 60 y = -220 }  
+			quadTextureSprite ="GFX_az_pre_button"
+			clicksound = click_default
+			oversound = ui_menu_over
+
+			pdx_tooltip = "xmp_pre_button_tooltip"
+		}
+		ButtonType = {
+			name = "az_xmp_small_window_2_next_button"
+			Orientation = "LOWER_RIGHT"
+			position = { x = -85 y = -220 }  
+			quadTextureSprite ="GFX_az_next_button"
+			clicksound = click_ok
+			oversound = ui_menu_over 
+
+			pdx_tooltip = "xmp_pre_button_tooltip"
+		}
+		ButtonType = {
+			name = "az_xmp_small_window_3_pre_button"
+			Orientation = "LOWER_LEFT"
+			position = { x = 60 y = -220 }  
+			quadTextureSprite ="GFX_az_pre_button"
+			clicksound = click_default
+			oversound = ui_menu_over
+
+			pdx_tooltip = "xmp_pre_button_tooltip"
+		}
+		########
+		iconType ={
+			name ="az_xmp_maimiaoxiang"
+			spriteType = "GFX_az_xmp_icon1"  
+			position = { x = 100 y = -370 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_maimiaoxiang_desc"
+			pdx_tooltip_delayed = "az_xmp_maimiaoxiang_desc2"
+		} 
+		ButtonType = {
+			name = "az_xmp_maimiaoxiang_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 112 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_maimiaoxiang_desc"
+			pdx_tooltip_delayed = "az_xmp_maimiaoxiang_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_maimiaoxiang_text"
+			position = { x = 120 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_maimiaoxiang_text" 
+			maxWidth = 120
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_maimiaoxiang_desc"
+			pdx_tooltip_delayed = "az_xmp_maimiaoxiang_desc2"
+		}
+		########
+		
+		
+		iconType ={
+			name ="az_xmp_maishiyou1"
+			spriteType = "GFX_az_xmp_icon2"  
+			position = { x = 100 y = -190 }  
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_maishiyou1_desc"
+			pdx_tooltip_delayed = "az_xmp_maishiyou1_desc2"
+		} 
+		ButtonType = {
+			name = "az_xmp_maishiyou1_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 112 y = -190 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_maishiyou1_desc"
+			pdx_tooltip_delayed = "az_xmp_maishiyou1_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_maishiyou1_text"
+			position = { x = 105 y = -65 } 
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = [az_xmp_maishiyou1_sl]
+			maxWidth = 150
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_maishiyou1_desc"
+			pdx_tooltip_delayed = "az_xmp_maishiyou1_desc2"
+		}
+		########
+		iconType ={
+			name ="az_xmp_zhongxiangjiao"
+			spriteType = "GFX_az_xmp_icon4"  
+			position = { x = 300 y = -370 } 
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_zhongxiangjiao_desc"
+			pdx_tooltip_delayed = "az_xmp_zhongxiangjiao_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_zhongxiangjiao_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 312 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_zhongxiangjiao_desc"
+			pdx_tooltip_delayed = "az_xmp_zhongxiangjiao_desc2"	
+		}
+		instantTextboxType = {
+			name = "az_xmp_zhongxiangjiao_text"
+			position = { x = 320 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_zhongxiangjiao_text" 
+			maxWidth = 120
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_zhongxiangjiao_desc"
+			pdx_tooltip_delayed = "az_xmp_zhongxiangjiao_desc2"
+		}
+		########
+		iconType ={
+			name ="az_xmp_maishiyou2"
+			spriteType = "GFX_az_xmp_icon3" 
+			position = { x = 300 y = -190 } 
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_maishiyou2_desc"
+			pdx_tooltip_delayed = "az_xmp_maishiyou2_desc2"
+		}
+		
+		ButtonType = {
+			name = "az_xmp_maishiyou2_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 312 y = -190 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_maishiyou2_desc"
+			pdx_tooltip_delayed = "az_xmp_maishiyou2_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_maishiyou2_text"
+			position = { x = 305 y = -65 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = [az_xmp_maishiyou2_sl]
+			maxWidth = 150
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_maishiyou2_desc"
+			pdx_tooltip_delayed = "az_xmp_maishiyou2_desc2"
+		}
+		########
+		iconType ={
+			name ="az_xmp_haijunzuozhanyanjiu"
+			spriteType = "GFX_az_xmp_icon7"  
+			position = { x = 500 y = -370 } 
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_haijunzuozhanyanjiu_desc"
+			pdx_tooltip_delayed = "az_xmp_haijunzuozhanyanjiu_desc2"
+		} 
+		ButtonType = {
+			name = "az_xmp_haijunzuozhanyanjiu_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 512 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_haijunzuozhanyanjiu_desc"
+			pdx_tooltip_delayed = "az_xmp_haijunzuozhanyanjiu_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_haijunzuozhanyanjiu_text"
+			position = { x = 520 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_haijunzuozhanyanjiu_text" 
+			maxWidth = 140
+			maxHeight = 38
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_haijunzuozhanyanjiu_desc"
+			pdx_tooltip_delayed = "az_xmp_haijunzuozhanyanjiu_desc2"
+		}
+		########
+		iconType ={
+			name ="az_xmp_zhaopinzhihuiguan"
+			spriteType = "GFX_az_xmp_icon5"  
+			position = { x = 500 y = -190 } 
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_zhaopinzhihuiguan_desc"
+			pdx_tooltip_delayed = "az_xmp_zhaopinzhihuiguan_desc2"
+		}
+		
+		ButtonType = {
+			name = "az_xmp_zhaopinzhihuiguan_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 512 y = -190 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+						pdx_tooltip = "az_xmp_zhaopinzhihuiguan_desc"
+			pdx_tooltip_delayed = "az_xmp_zhaopinzhihuiguan_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_zhaopinzhihuiguan_text"
+			position = { x = 520 y = -65 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_zhaopinzhihuiguan_text" 
+			maxWidth = 120
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+						pdx_tooltip = "az_xmp_zhaopinzhihuiguan_desc"
+			pdx_tooltip_delayed = "az_xmp_zhaopinzhihuiguan_desc2"
+		}
+		########
+		
+		########
+		iconType ={
+			name ="az_xmp_jianchuanzhuangbeishiyan"
+			spriteType = "GFX_az_xmp_icon6"  
+			position = { x = 100 y = -370 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_jianchuanzhuangbeishiyan_desc"
+			pdx_tooltip_delayed = "az_xmp_jianchuanzhuangbeishiyan_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_jianchuanzhuangbeishiyan_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 112 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_jianchuanzhuangbeishiyan_desc"
+			pdx_tooltip_delayed = "az_xmp_jianchuanzhuangbeishiyan_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_jianchuanzhuangbeishiyan_text"
+			position = { x = 120 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_jianchuanzhuangbeishiyan_text" 
+			maxWidth = 140
+			maxHeight = 38
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_jianchuanzhuangbeishiyan_desc"
+			pdx_tooltip_delayed = "az_xmp_jianchuanzhuangbeishiyan_desc2"
+		}
+		########
+
+		########
+		iconType ={
+			name ="az_xmp_pingqingjiaoguan"
+			spriteType = "GFX_az_xmp_icon8"  
+			position = { x = 300 y = -370 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_pingqingjiaoguan_desc"
+			pdx_tooltip_delayed = "az_xmp_pingqingjiaoguan_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_pingqingjiaoguan_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 312 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_pingqingjiaoguan_desc"
+			pdx_tooltip_delayed = "az_xmp_pingqingjiaoguan_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_pingqingjiaoguan_text"
+			position = { x = 320 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_pingqingjiaoguan_text" 
+			maxWidth = 120 
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_pingqingjiaoguan_desc"
+			pdx_tooltip_delayed = "az_xmp_pingqingjiaoguan_desc2"
+		}
+		########
+		
+		########
+		iconType ={
+			name ="az_xmp_goumaimofang1"
+			spriteType = "GFX_az_xmp_icon9"  
+			position = { x = 500 y = -370 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_goumaimofang1_desc"
+			pdx_tooltip_delayed = "az_xmp_goumaimofang1_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_goumaimofang1_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 512 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_goumaimofang1_desc"
+			pdx_tooltip_delayed = "az_xmp_goumaimofang1_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_goumaimofang1_text"
+			position = { x = 520 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_goumaimofang1_text" 
+			maxWidth = 120 
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_goumaimofang1_desc"
+			pdx_tooltip_delayed = "az_xmp_goumaimofang1_desc2"
+		}
+		########
+		
+		########
+		iconType ={
+			name ="az_xmp_goumaimofang2"
+			spriteType = "GFX_az_xmp_icon10"  
+			position = { x = 100 y = -190 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_goumaimofang2_desc"
+			pdx_tooltip_delayed = "az_xmp_goumaimofang2_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_goumaimofang2_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 112 y = -190 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_goumaimofang2_desc"
+			pdx_tooltip_delayed = "az_xmp_goumaimofang2_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_goumaimofang2_text"
+			position = { x = 120 y = -65 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_goumaimofang2_text"
+			maxWidth = 120
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_goumaimofang2_desc"
+			pdx_tooltip_delayed = "az_xmp_goumaimofang2_desc2"
+		}
+		########
+
+		########
+		iconType ={
+			name ="az_xmp_goumairiji"
+			spriteType = "GFX_az_xmp_icon11"  
+			position = { x = 300 y = -190 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_goumairiji_desc"
+			pdx_tooltip_delayed = "az_xmp_goumairiji_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_goumairiji_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 312 y = -190 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_goumairiji_desc"
+			pdx_tooltip_delayed = "az_xmp_goumairiji_desc2"
+		}
+		instantTextboxType = {
+			name = "az_xmp_goumairiji_text"
+			position = { x = 320 y = -65 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_goumairiji_text"
+			maxWidth = 120
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_goumairiji_desc"
+			pdx_tooltip_delayed = "az_xmp_goumairiji_desc2"
+		} 
+		########
+			########
+			iconType ={
+				name ="az_xmp_xiaoliwu"
+				spriteType = "GFX_az_xmp_icon12"  
+				position = { x = 500 y = -190 }
+				Orientation = "LOWER_LEFT"
+				pdx_tooltip = "az_xmp_xiaoliwu_desc"
+				pdx_tooltip_delayed = "az_xmp_xiaoliwu_desc2"
+				
+			} 
+			ButtonType = {
+				name = "az_xmp_xiaoliwu_btn"
+				Orientation = "LOWER_LEFT"
+				position = { x = 512 y = -190 }
+				quadTextureSprite ="GFX_az_xmp_buybutton" 
+				clicksound = click_default
+				oversound = ui_menu_over
+				pdx_tooltip = "az_xmp_xiaoliwu_desc"
+				pdx_tooltip_delayed = "az_xmp_xiaoliwu_desc2"
+			} 
+			instantTextboxType = {
+				name = "az_xmp_xiaoliwu_text"
+				position = { x = 520 y = -65 }
+				Orientation = "LOWER_LEFT"
+				font = "hoi_24header"
+				text = "az_xmp_xiaoliwu_text"
+				maxWidth = 120
+				maxHeight = 38
+				format = center
+				fixedsize=yes
+				pdx_tooltip = "az_xmp_xiaoliwu_desc"
+				pdx_tooltip_delayed = "az_xmp_xiaoliwu_desc2"
+			}
+			########
+	}
+	
+}

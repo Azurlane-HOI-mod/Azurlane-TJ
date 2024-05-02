@@ -1,0 +1,385 @@
+focus_tree = {
+	id = xier_germany_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = XGE
+		}
+	}
+	default = no
+	continuous_focus_position = {
+		x = 20
+		y = 2200
+	}
+	#重提德意志方案
+	focus = {
+		id = XGE_Revisit_the_German_Plan
+		icon = GFX_GRU_pangermanismone
+		x = 5
+		y = 0
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = { has_war = no }
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			custom_effect_tooltip = XGE_Revisit_the_German_Plan_tt
+			every_state = {
+				limit = {
+					has_state_flag = Great_Germany_Area
+					NOT = { is_core_of = XGE }
+				}
+				add_core_of = XGE
+			}
+		}
+	}
+	#再进军柏林
+	focus = {
+		id = XGE_On_the_march_to_Berlin
+		icon = GFX_PLC_germany
+		prerequisite = {
+			focus = XGE_Revisit_the_German_Plan
+		}
+		relative_position_id = XGE_Revisit_the_German_Plan
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			declare_war_on = { target = TIX type = annex_everything }
+			add_ideas = XGE_On_the_march_to_Berlin
+			hidden_effect = {
+				TIX = {
+					add_timed_idea = {
+						idea = ready_to_surrender
+						days = 100
+					}
+				}
+				news_event = {
+					id = XGE_News.002
+				}
+			}
+		}
+		will_lead_to_war_with = TIX
+	}
+	#德意志光复凯旋
+	focus = {
+		id = XGE_The_German_reconquest_triumphed
+		icon = GFX_UBR_form_the_abwehr
+		prerequisite = {
+			focus = XGE_On_the_march_to_Berlin
+		}
+		relative_position_id = XGE_On_the_march_to_Berlin
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+			TIX = { exists = no }
+			controls_state = 64
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			set_capital = {
+				state = 64
+				remember_old_capital = no
+			}
+			set_province_name = {
+				id = 6521
+				name = "日耳曼妮娅"
+			}
+			set_victory_points = {
+				province = 6521
+				value = 100
+			}
+			add_ideas = bettter_german
+			add_offsite_building = { type = arms_factory level = 100 }
+			add_offsite_building = { type = industrial_complex level = 100 }
+		}
+	}
+	#她将归来......
+	focus = {
+		id = XGE_She_will_return
+		icon = GFX_GER_LISHA
+		prerequisite = {
+			focus = XGE_The_German_reconquest_triumphed
+		}
+		relative_position_id = XGE_The_German_reconquest_triumphed
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			unlock_decision_category_tooltip = GER_Eye_of_Rebirth_Project
+		}
+	}
+	#发动帝国战争机器
+	focus = {
+		id = XGE_Unleash_the_Imperial_War_Machine
+		icon = GFX_GRU_National_Socialism
+		prerequisite = {
+			focus = XGE_She_will_return
+		}
+		relative_position_id = XGE_She_will_return
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			add_ideas = XGE_Unleash_the_Imperial_War_Machine
+		}
+	}
+	#解构异世科技
+	focus = {
+		id = XGE_Deconstructing_otherworldly_technology
+		icon = GFX_GFX_UBR_ahnenerbe
+		prerequisite = {
+			focus = XGE_She_will_return
+		}
+		relative_position_id = XGE_She_will_return
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 5
+				ahead_reduction = 5
+				uses = 5
+				category = jianniang_tech
+			}
+			set_technology = { tech_military_police = 1 }
+			set_technology = { tech_maintenance_company = 1 }
+			set_technology = { tech_maintenance_company2 = 1 }
+			set_technology = { mechanised_infantry = 1 }
+			set_technology = { armored_train = 1 }
+			set_technology = { basic_fire_control_system = 1 }
+			set_technology = { improved_fire_control_system = 1 }
+			set_technology = { advanced_fire_control_system = 1 }
+			set_technology = { basic_battery = 1 }
+			set_technology = { basic_light_battery = 1 }
+			set_technology = { improved_light_battery = 1 }
+			set_technology = { advanced_light_battery = 1 }
+			set_technology = { basic_dp_light_battery = 1 }
+			set_technology = { improved_dp_light_battery = 1 }
+			set_technology = { advanced_dp_light_battery = 1 }
+			set_technology = { basic_medium_battery = 1 }
+			set_technology = { improved_medium_battery = 1 }
+			set_technology = { advanced_medium_battery = 1 }
+			set_technology = { basic_dp_medium_battery = 1 }
+			set_technology = { basic_heavy_battery = 1 }
+			set_technology = { improved_heavy_battery = 1 }
+			set_technology = { advanced_heavy_battery = 1 }
+			set_technology = { basic_torpedo = 1 }
+			set_technology = { improved_ship_torpedo_launcher = 1 }
+			set_technology = { advanced_ship_torpedo_launcher = 1 }
+			set_technology = { modern_ship_torpedo_launcher = 1 }
+			set_technology = { sonar = 1 }
+			set_technology = { improved_sonar = 1 }
+			set_technology = { basic_cruiser_armor_scheme = 1 }
+			set_technology = { basic_heavy_armor_scheme = 1 }
+			set_technology = { improved_heavy_armor_scheme = 1 }
+			set_technology = { basic_submarine_snorkel = 1 }
+			set_technology = { improved_submarine_snorkel = 1 }
+			set_technology = { early_bombs = 1 }
+			set_technology = { armor_piercing_bombs = 1 }
+			set_technology = { heavy_bombs = 1 }
+			set_technology = { aa_lmg = 1 }
+			set_technology = { photo_reconnaisance = 1 }
+			set_technology = { survivability_studies = 1 }
+			set_technology = { aa_hmg = 1 }
+			set_technology = { aa_cannon_1 = 1 }
+			set_technology = { aa_cannon_2 = 1 }
+			set_technology = { aa_cannon_3 = 1 }
+			set_technology = { air_torpedoe_1 = 1 }
+			set_technology = { air_torpedoe_2 = 1 }
+			set_technology = { air_torpedoe_3 = 1 }
+			set_technology = { aircraft_construction = 1 }
+			set_technology = { engines_1 = 1 }
+			set_technology = { range_improvements = 1 }
+			set_technology = { engines_2 = 1 }
+			set_technology = { engines_3 = 1 }
+			set_technology = { engines_4 = 1 }
+			set_technology = { rocket_artillery = 1 }
+			set_technology = { jet_engines = 1 }
+			set_technology = { advanced_infantry_weapons = 1 }
+			set_technology = { armor_tech_1 = 1 }
+			set_technology = { armor_tech_2 = 1 }
+			set_technology = { engine_tech_2 = 1 }
+			set_technology = { interwar_antiair = 1 }
+			set_technology = { interwar_antitank = 1 }
+			set_technology = { antitank1 = 1 }
+			set_technology = { antitank2 = 1 }
+			set_technology = { antitank3 = 1 }
+			set_technology = { antitank4 = 1 }
+			set_technology = { antitank5 = 1 }
+			set_technology = { mechanised_infantry2 = 1 }	
+			set_technology = { mechanised_infantry3 = 1 }
+			set_technology = { amphibious_mechanized_infantry = 1 }	
+			set_technology = { amphibious_mechanized_infantry_2 = 1 }
+			set_technology = { basic_medium_tank_chassis = 1 }
+			set_technology = { advanced_medium_tank_chassis = 1 }
+			set_technology = { improved_medium_tank_chassis = 1 }
+			set_technology = { improved_heavy_tank_chassis = 1 }
+			set_technology = { advanced_heavy_tank_chassis = 1 }
+			set_technology = { amphibious_tank_chassis = 1 }
+			set_technology = { centimetric_radar = 1 }
+			set_technology = { improved_decimetric_radar = 1 }
+			set_technology = { decimetric_radar = 1 }
+			set_technology = { radio_detection = 1 }
+			set_technology = { radio = 1 }
+			set_technology = { tech_engineers2 = 1}
+			set_technology = { improved_small_airframe = 1 }
+			set_technology = { engines_3 = 1 }
+			set_technology = { aa_hmg = 1 }
+			set_technology = { aa_cannon_1 = 1 }
+			set_technology = { range_improvements = 1 }
+			set_technology = { survivability_studies= 1 }
+			add_nuclear_bombs = 100
+			add_research_slot = 2
+		}
+	}
+	#建立帝国国防军
+	focus = {
+		id = XGE_Creation_of_the_Reichswehr
+		icon = GFX_UBR_germany_reborn
+		prerequisite = {
+			focus = XGE_She_will_return
+		}
+		relative_position_id = XGE_She_will_return
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			add_ideas = XGE_Creation_of_the_Reichswehr
+		}
+	}
+	#为了祖国！为了莉莎！
+	focus = {
+		id = XGE_For_the_Motherland_For_the_Lisha
+		icon = GFX_GRU_german_millenia
+		prerequisite = {
+			focus = XGE_Unleash_the_Imperial_War_Machine
+		}
+		prerequisite = {
+			focus = XGE_Deconstructing_otherworldly_technology
+		}
+		prerequisite = {
+			focus = XGE_Creation_of_the_Reichswehr
+		}
+		relative_position_id = XGE_Deconstructing_otherworldly_technology
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			unlock_decision_category_tooltip = GER_war_plan
+			hidden_effect = {
+				country_event = {
+					id = XGE.008
+				}
+			}
+		}
+	}
+	#终焉降至
+	focus = {
+		id = XGE_Eventually_it_fell
+		icon = GFX_ARY_esoteric_aryanism
+		prerequisite = {
+			focus = XGE_For_the_Motherland_For_the_Lisha
+		}
+		relative_position_id = XGE_For_the_Motherland_For_the_Lisha
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			base = 10
+		}
+		available = {
+			is_subject = no
+			or = {
+				controls_state = 16
+				any_allied_country = {
+					controls_state = 16
+				}
+			}
+			or = {
+				controls_state = 219
+				any_allied_country = {
+					controls_state = 219
+				}
+			}
+			or = {
+				controls_state = 126
+				any_allied_country = {
+					controls_state = 126
+				}
+			}
+			has_war = no
+		}
+		available_if_capitulated = no
+		cancel_if_invalid = yes
+		completion_reward = {
+			every_country = {
+				limit = {
+					not = {
+						or = {
+							has_war_with = ROOT
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+			}
+			hidden_effect = {
+				news_event = {
+					id = XGE_News.003
+				}
+			}
+		}
+	}
+}
