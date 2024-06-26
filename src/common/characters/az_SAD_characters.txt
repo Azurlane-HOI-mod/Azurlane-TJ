@@ -617,11 +617,11 @@ characters={
 				}
 			}
 			traits = { qianting_navy }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 2
-			coordination_skill = 2
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			maneuvering_skill = 5
+			coordination_skill = 6
 		}
 	}
 	SAD_luoma = {
@@ -763,6 +763,122 @@ characters={
 			defense_skill = 1
 			planning_skill = 2
 			logistics_skill = 2
+		}
+	}
+	SAD_leigeluo = {
+		name = SAD_leigeluo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/leigeluo.png"
+				small="gfx/interface/ideas/idea_leigeluo.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = leigeluo
+			traits = { trait_gongzhuyutuzigongjue }
+			ai_will_do = {
+				factor = 8
+				
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 5
+		}
+	}
+	SAD_geliqiya = {
+		name = SAD_geliqiya
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/geliqiya.png"
+				small="gfx/interface/ideas/idea_geliqiya.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = geliqiya
+			traits = { trait_psh_huanxiangziyu }
+			ai_will_do = {
+				factor = 8
+				
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 5
+			planning_skill = 2
+			logistics_skill = 5
+		}
+	}
+	SAD_boerzhanuo = {
+		name = SAD_boerzhanuo
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/boerzhanuo.png"
+				small="gfx/interface/ideas/idea_boerzhanuo.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	SAD_duoliya = {
+		name = SAD_duoliya
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/duoliya.png"
+				small="gfx/interface/ideas/idea_duoliya.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
 		}
 	}
 }

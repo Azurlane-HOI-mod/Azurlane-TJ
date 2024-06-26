@@ -669,7 +669,7 @@ keyan_category = {
 	steal_jupaotech = {
 		icon = jian
 		visible = { 
-			NOT = { tag = BYG } 
+			NOT = { tag = YUW } 
 			is_ai = no
 			NOT = { has_tech = keyantech_jupao }
 			has_global_flag = YUW_jupaotech_get
@@ -683,6 +683,211 @@ keyan_category = {
 			random_list = {
 				1 = {
 					set_technology = { keyantech_jupao = 1 }
+					army_experience = 10
+					hidden_effect = { scoped_sound_effect = AZ_wancheng_sound }
+				}	
+				9 = {
+					army_experience = 1
+					hidden_effect = { scoped_sound_effect = AZ_shibai_sound }
+				}
+			}
+			
+		}
+	}
+	CHY_hangmutech = {
+		icon = jian
+		visible = { tag = CHY }
+		available = {
+			if = {
+				limit = { is_ai = no }	
+				OR = {
+					AND = {
+						has_tech = ship_hull_super_heavy
+					}
+					
+					custom_trigger_tooltip = {
+						tooltip = DOH_daodantech_trigger_tt
+						has_country_flag = shikongchuansuo_get
+					}
+					
+				}
+				
+			}
+		}
+		fire_only_once = yes
+		days_remove = 30
+		cost = 200
+		remove_effect = {
+			set_technology = { keyantech_juxinghangmu = 1 }
+			set_global_flag = CHY_hangmutech_get
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 1937.6.1
+				add = 500
+			}
+		}
+	}
+	buy_hangmutech = {
+		icon = jian
+		visible = { 
+			NOT = { tag = CHY } 
+			is_ai = no
+			NOT = { has_tech = keyantech_juxinghangmu }
+			has_global_flag = CHY_hangmutech_get
+		}
+		available = {
+			NOT = { has_tech = keyantech_juxinghangmu }
+			custom_trigger_tooltip = {
+			tooltip = ""
+				check_variable = {
+					var = wz_sl
+					value = 25000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		custom_cost_text = wz_shuliang_25000
+		custom_cost_trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 25000
+				compare = greater_than_or_equals
+			}
+		}
+		
+		days_remove = 2
+		cost = 300
+		complete_effect = {
+			add_to_variable = { wz_sl = -25000 }
+		}
+		remove_effect = {
+			set_technology = { keyantech_juxinghangmu = 1 }
+
+		}
+	}
+	steal_hangmutech = {
+		icon = jian
+		visible = { 
+			NOT = { tag = CHY } 
+			is_ai = no
+			NOT = { has_tech = keyantech_juxinghangmu }
+			has_global_flag = CHY_hangmutech_get
+		}
+		available = {
+			NOT = { has_tech = keyantech_juxinghangmu }
+		}
+		days_remove = 7
+		cost = 300
+		remove_effect = {
+			random_list = {
+				1 = {
+					set_technology = { keyantech_juxinghangmu = 1 }
+					army_experience = 10
+					hidden_effect = { scoped_sound_effect = AZ_wancheng_sound }
+				}	
+				9 = {
+					army_experience = 1
+					hidden_effect = { scoped_sound_effect = AZ_shibai_sound }
+				}
+			}
+			
+		}
+	}
+	BFL_hangtiankeji = {
+		icon = jian
+		visible = { tag = BFL }
+		available = {
+			if = {
+				limit = { is_ai = no }	
+				OR = {
+					AND = {
+						has_tech = nuclear_reactor
+					}
+					
+					custom_trigger_tooltip = {
+						tooltip = DOH_daodantech_trigger_tt
+						has_country_flag = shikongchuansuo_get
+					}
+					
+				}
+				
+			}
+		}
+		fire_only_once = yes
+		days_remove = 30
+		cost = 200
+		remove_effect = {
+			set_technology = { keyantech_feitingtoudanqi = 1 }
+			set_technology = { keyantech_hedonglifeijiyinqing = 1 }
+			set_global_flag = BFL_hangtiankeji_get
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 1937.6.1
+				add = 500
+			}
+		}
+	}
+	buy_hangtiankeji = {
+		icon = jian
+		visible = { 
+			NOT = { tag = BFL } 
+			is_ai = no
+			NOT = { has_tech = keyantech_feitingtoudanqi }
+			has_global_flag = BFL_hangtiankeji
+		}
+		available = {
+			NOT = { has_tech = keyantech_feitingtoudanqi }
+			custom_trigger_tooltip = {
+			tooltip = ""
+				check_variable = {
+					var = wz_sl
+					value = 25000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		custom_cost_text = wz_shuliang_25000
+		custom_cost_trigger = {
+			check_variable = {
+				var = wz_sl
+				value = 25000
+				compare = greater_than_or_equals
+			}
+		}
+		
+		days_remove = 2
+		cost = 300
+		complete_effect = {
+			add_to_variable = { wz_sl = -25000 }
+		}
+		remove_effect = {
+			set_technology = { keyantech_feitingtoudanqi = 1 }
+			set_technology = { keyantech_hedonglifeijiyinqing = 1 }
+
+		}
+	}
+	steal_hangtiankeji = {
+		icon = jian
+		visible = { 
+			NOT = { tag = BFL } 
+			is_ai = no
+			NOT = { has_tech = keyantech_feitingtoudanqi }
+			has_global_flag = BFL_hangtiankeji
+		}
+		available = {
+			NOT = { has_tech = keyantech_feitingtoudanqi }
+		}
+		days_remove = 7
+		cost = 300
+		remove_effect = {
+			random_list = {
+				1 = {
+					set_technology = { keyantech_feitingtoudanqi = 1 }
+					set_technology = { keyantech_hedonglifeijiyinqing = 1 }
 					army_experience = 10
 					hidden_effect = { scoped_sound_effect = AZ_wancheng_sound }
 				}	

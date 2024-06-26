@@ -120,7 +120,10 @@ BFL_fanduipaiyinmou = {
 		}
 		is_good = no
 		available = {
-			has_completed_focus = BFL_24
+			or = {
+			has_completed_focus = BFL_19
+			has_completed_focus = BFL_37
+			}
 		}
 		days_mission_timeout = 180
 		timeout_effect = {
@@ -144,7 +147,10 @@ BFL_fanduipaiyinmou = {
 			add_stability = 0.05
 		}
 		available = {
+			or = {
 			has_completed_focus = BFL_19
+			has_completed_focus = BFL_37
+			}
 		}
 		days_mission_timeout = 365
 		timeout_effect = {
@@ -174,7 +180,10 @@ BFL_fanduipaiyinmou = {
 			add_stability = 0.05
 		}
 		available = {
-			has_completed_focus = BFL_24
+			or = {
+			has_completed_focus = BFL_19
+			has_completed_focus = BFL_37
+			}
 		}
 		days_mission_timeout = 365
 		timeout_effect = {
@@ -203,7 +212,10 @@ BFL_fanduipaiyinmou = {
 			add_war_support = 0.1
 		}
 		available = {
-			has_completed_focus = BFL_28
+			or = {
+			has_completed_focus = BFL_19
+			has_completed_focus = BFL_37
+			}
 		}
 		days_mission_timeout = 120
 		timeout_effect = {
@@ -234,7 +246,10 @@ BFL_fanduipaiyinmou = {
 			}
 		}
 		available = {
-			has_completed_focus = BFL_28
+			or = {
+			has_completed_focus = BFL_19
+			has_completed_focus = BFL_37
+			}
 		}
 		days_mission_timeout = 60
 		timeout_effect = {
@@ -254,6 +269,27 @@ BFL_fanduipaiyinmou = {
 }
 
 BFL_neiwu = {
+	BFL_xingzhengjigougaige_time = {
+		icon = generic_political_discourse
+		priority = 0
+		is_good = no
+		activation	= {
+			always = no
+		}
+		complete_effect = {
+			add_popularity = { ideology = communism popularity = 0.2 }
+		}
+		available = {
+			has_completed_focus = BFL_42
+		}
+		days_mission_timeout = 900
+		timeout_effect = {
+			add_popularity = { ideology = democratic popularity = 0.2 }
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			add_popularity = { ideology = communism popularity = -0.3 }
+			load_focus_tree = bfl_apocrypha_focus
+		}
+	}
 	BFL_junduigaige = {
 		icon = generic_form_nation
 		available = {
@@ -2494,6 +2530,27 @@ YUW_fangong = {
 			YUW_masaiqu = {
 				set_nationality = YUW
 			}
+			YUW_kelaimengsuo = {
+				set_nationality = YUW
+			}
+			YUW_kaiersheng = {
+				set_nationality = YUW
+			}
+			YUW_leimaer = {
+				set_nationality = YUW
+			}
+			YUW_xukufu = {
+				set_nationality = YUW
+			}
+			YUW_huajian = {
+				set_nationality = YUW
+			}
+			YUW_zhongjian = {
+				set_nationality = YUW
+			}
+			YUW_mojiaduoer = {
+				set_nationality = YUW
+			}
 			}
 			SAD = {
 			YUW_rangbaer = {
@@ -2533,6 +2590,27 @@ YUW_fangong = {
 				set_nationality = YUW
 			}
 			YUW_masaiqu = {
+				set_nationality = YUW
+			}
+			YUW_kelaimengsuo = {
+				set_nationality = YUW
+			}
+			YUW_kaiersheng = {
+				set_nationality = YUW
+			}
+			YUW_leimaer = {
+				set_nationality = YUW
+			}
+			YUW_xukufu = {
+				set_nationality = YUW
+			}
+			YUW_huajian = {
+				set_nationality = YUW
+			}
+			YUW_zhongjian = {
+				set_nationality = YUW
+			}
+			YUW_mojiaduoer = {
 				set_nationality = YUW
 			}
 			}
@@ -7596,6 +7674,7 @@ YUW_quanlipingheng = {
 			date > 1936.7.1
 			has_war = no
 			not = { has_completed_focus = YUW_shenshengshiming }
+			not = { has_completed_focus = YUW_jiaojuzhe }
 		}
 		modifier = {
 			
@@ -7817,6 +7896,7 @@ YUW_quanlipingheng = {
 			or = {
 			not = { has_idea = YUW_daxuanqiandejingzheng }
 			has_completed_focus = YUW_cuobaiyinmou
+			has_completed_focus = YUW_daibudunkeerke
 			has_war = yes
 			is_ai = yes
 			}
@@ -8197,6 +8277,17 @@ ALL_luxianzhinan = {
 		}
 		complete_effect = {
 			country_event = az_tianjiang.196
+		}
+	}
+	BFL_luxian = {
+		visible = {
+			original_tag = BFL
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			country_event = az_tianjiang.266
 		}
 	}
 }
@@ -9365,12 +9456,12 @@ SAD_gonggulingxiuquanwei_renwu = {
 			has_army_manpower = {
 				size > 1499999
 			}
-			arms_factory > 199
-			dockyard > 49
+			arms_factory > 149
+			dockyard > 19
 			has_stability > 1.2
-			has_war_support > 1.9
+			has_war_support > 1.8
 		}
-		days_mission_timeout = 210
+		days_mission_timeout = 365
 		is_good = no
 		timeout_effect = {
 			add_stability = 0.15

@@ -2963,8 +2963,12 @@ country_event = {
 			autonomy_state = autonomy_integrated_puppet
 		}
 		}
-		HUJ = {
-		transfer_state = 110
+		DEN = {
+		set_cosmetic_tag = DEN
+		add_popularity = { ideology = democratic popularity = 0.3 }
+		set_politics = {
+			ruling_party = democratic
+		}
 		}
 		GER = {
 		add_popularity = { ideology = democratic popularity = 0.75 }
@@ -6674,7 +6678,7 @@ country_event = {
 	picture = GFX_aze_hit
 	is_triggered_only = yes
 	option = {
-		name = "大元帅，你在搞什么飞机？"
+		name = "这下全完了..."
 		set_country_flag = xiafei_gongtongjinjun
 		add_days_mission_timeout = { mission = YUW_jinjunbali_time days = -30 }
 		ai_chance = {
@@ -6945,24 +6949,6 @@ country_event = {
 			factor = 33
 		}
 	}
-	option = {
-		name = "安克雷奇，想帮忙…嗯！"
-		BYG_ankeleiqi= {
-			add_country_leader_role = {
-				country_leader = {
-					expire = "4999.1.1"
-					ideology = liberalism
-					traits = {
-						 trait_psh_ankeleiqi
-					}
-				}
-				promote_leader = yes
-				}
-		}
-		ai_chance = {
-			factor = 33
-		}
-	}
 }
 
 country_event = {
@@ -7082,24 +7068,6 @@ country_event = {
 					ideology = liberalism
 					traits = {
 						  trait_aierdeliqi
-					}
-				}
-				promote_leader = yes
-				}
-		}
-		ai_chance = {
-			factor = 33
-		}
-	}
-	option = {
-		name = "安克雷奇，想帮忙…嗯！"
-		BYG_ankeleiqi= {
-			add_country_leader_role = {
-				country_leader = {
-					expire = "4999.1.1"
-					ideology = liberalism
-					traits = {
-						 trait_psh_ankeleiqi
 					}
 				}
 				promote_leader = yes
@@ -8927,6 +8895,7 @@ country_event = {
 					traits = {
 						 msdj
 					}
+					desc = BFL_luoxiya_desc
 				}
 				promote_leader = yes
 				}
@@ -9073,6 +9042,7 @@ country_event = {
 			var = az_pianzhidu
 			value = 10
 		}
+		set_country_flag = BFL_fanduiluoxiya_flag
 		ai_chance = {
 			factor = 100
 		}
@@ -9132,7 +9102,7 @@ country_event = {
 		tag = BFL
 		has_government = communism
 		is_ai = no
-		has_country_flag = `
+		has_country_flag = BFL_zzpianzhidu_on
 	}
 	option = {
 		name = "她疯了..."
@@ -9147,5 +9117,392 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.252
+	title = "反对罗西亚"
+	desc = "罗西亚正准备用极端手段消灭阴谋集团，这会波及那些正常的同志，我们必须阻止她！"
+	picture = GFX_aze_txluoen2
+	is_triggered_only = yes
+	option = {
+		name = "新名单，新名单"
+		activate_mission = BFL_diyicidaqingxi_time
+		activate_mission = BFL_xiaoqingsao_time
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.253
+	title = "贝拉罗斯上台"
+	desc = "冷静下来的罗西亚认识到了自己的错误，同意由多数舰娘认同的贝拉罗斯担任主席职务。"
+	picture = GFX_aze_txluoen2
+	is_triggered_only = yes
+	option = {
+		name = "好起来了"
+		clr_country_flag = BFL_zzpianzhidu_on 
+		custom_effect_tooltip = BFL_zzpianzhidu_yichu
+		add_political_power = 200
+		add_stability = 0.2
+		add_war_support = 0.3
+		BFL_beilaluosi = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = marxism
+					traits = {
+						trait_psh_yunluobingyao 
+					}
+					desc = BFL_beilaluosi_desc
+				}
+				promote_leader = yes
+				}
+		}
+		activate_mission = BFL_xingzhengjigougaige_time
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.254
+	title = "意料之外的转折"
+	desc = "罗西亚并不准备交出自己的权力，她仍认为自己的清扫是正确的行为。为了防止冲突加剧，萨悠斯决定重新出山。"
+	picture = GFX_aze_txluoen2
+	is_triggered_only = yes
+	option = {
+		name = "老大姐！"
+		clr_country_flag = BFL_zzpianzhidu_on 
+		custom_effect_tooltip = BFL_zzpianzhidu_yichu
+		complete_national_focus = BFL_51
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.255
+	title = "大清洗"
+	desc = "是时候开始一场全国范围的大清洗了，我们必须确保所有人的忠诚..."
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "萨悠斯会做出正确的判断"
+		add_political_power = 200
+		add_ideas = BFL_dqx_0
+		hidden_effect = {
+		country_event = { id = az_tianjiang.256 days = 20 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.256
+	title = "清洗：西方舰娘"
+	desc = "国内有许多从西方学习归来的舰娘，她们很有可能就是阴谋集团的领导者..."
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "无言，图之"
+		add_political_power = 150
+		custom_effect_tooltip = bfldaqingxi_tips
+		BFL_dqx_dengji = 1
+		complete_national_focus = BFL_55
+		hidden_effect = {
+		country_event = { id = az_tianjiang.257 days = 20 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我们应该尝试感化她们"
+		add_political_power = 50
+		complete_national_focus = BFL_55
+		hidden_effect = {
+		country_event = { id = az_tianjiang.257 days = 20 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.257
+	title = "清洗：内务部"
+	desc = "内务部有许多自己的小心思，我们能信任她们吗？"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "内务部需要重组了"
+		add_political_power = 50
+		add_stability = 0.2
+		custom_effect_tooltip = bfldaqingxi_tips
+		BFL_dqx_dengji = 1
+		complete_national_focus = BFL_56
+		hidden_effect = {
+		country_event = { id = az_tianjiang.258 days = 20 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我觉得她们肯定没问题"
+		add_stability = 0.1
+		complete_national_focus = BFL_56
+		hidden_effect = {
+		country_event = { id = az_tianjiang.258 days = 20 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.258
+	title = "清洗：军队高层"
+	desc = "军队高层可能也有反对者，但她们对军队有着不小的影响力..."
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "图，都可以图"
+		add_political_power = 100
+		add_war_support = 0.2
+		custom_effect_tooltip = bfldaqingxi_tips
+		BFL_dqx_dengji = 1
+		complete_national_focus = BFL_57
+		hidden_effect = {
+		country_event = { id = az_tianjiang.259 days = 20 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "放宽心吧"
+		add_war_support = 0.1
+		complete_national_focus = BFL_57
+		hidden_effect = {
+		country_event = { id = az_tianjiang.259 days = 20 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.259
+	title = "清洗：不忠蛮啾"
+	desc = "黄鸡智商低下，可能也有被忽悠的...."
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "图！"
+		add_political_power = 50
+		custom_effect_tooltip = bfldaqingxi_tips
+		BFL_dqx_dengji = 1
+		complete_national_focus = BFL_58
+		hidden_effect = {
+		country_event = { id = az_tianjiang.260 days = 20 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "这这不能"
+		complete_national_focus = BFL_58
+		hidden_effect = {
+		country_event = { id = az_tianjiang.260 days = 20 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.260
+	title = "清洗：年轻舰娘"
+	desc = "年轻的北联舰娘很有可能会受到阴谋集团的蛊惑，必须先下手为强。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "杀杀杀"
+		army_experience = 100
+		custom_effect_tooltip = bfldaqingxi_tips
+		BFL_dqx_dengji = 1
+		complete_national_focus = BFL_59
+		hidden_effect = {
+		country_event = { id = az_tianjiang.261 days = 3 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "这理由也太牵强了吧！"
+		complete_national_focus = BFL_59
+		hidden_effect = {
+		country_event = { id = az_tianjiang.261 days = 3 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.261
+	title = "大清洗结束"
+	desc = "大清洗终于结束了，北联将迎来新生！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "终于结束了！"
+		add_political_power = 150
+		complete_national_focus = BFL_54
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.262
+	title = "内战爆发！"
+	desc = "萨悠斯血腥的大清洗激起了群愤，一些舰娘公然背叛了团结主义！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "BIG胆！"
+		 add_country_leader_role = {
+				Character = BFL_qiabayefu
+				Promote_leader = yes
+				Country_leader = {
+					ideology = liberalism
+					expire = 2000.1.1.1
+					traits = {
+						baiqibing
+					}
+				}
+			}
+		start_civil_war = {
+			ideology = democratic
+			size = 0.6
+			only_own_territory = no
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.263
+	title = "北方联合想要与我们结盟"
+	desc = "北联的外交官提出了一个大胆的建议：她们觉得我们两国可以结盟，这样就完全掌控欧洲大陆，随便暴揍碧蓝航线！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "天才！就这么办！"
+		complete_national_focus = TIX_jiaohaojuxiong
+		BFL = {
+		country_event = { id = az_tianjiang.264 days = 1 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们信不过北联"
+		BFL = {
+		country_event = { id = az_tianjiang.265 days = 1 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.264
+	title = "铁血同意了"
+	desc = "铁血已经同意了我们的提议，现在我们将加入赤色中轴。"
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = "这是属于我们的新秩序"
+		TIX = {
+		add_to_faction = BFL
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.265
+	title = "铁血拒绝了"
+	desc = "很遗憾，铁血拒绝了我们的提议。"
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = "她们会后悔的"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.266
+	title = "北联路线指南"
+	desc = az_tianjiang.266.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = "我懂了"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+news_event = { 
+	id = az_tianjiang.267
+	title ="自爆卡车莫加多尔"
+	desc = az_tianjiang.267.d
+	picture = GFX_az_buli
+	major = yes
+	trigger = {
+		date > 1936.3.1
+		not = { has_global_flag = gaoxiaoxinwen_mjder }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = gaoxiaoxinwen_mjder
+	}
+	
+	option = {
+		name = "牢莫，what can i say ？"
 	}
 }

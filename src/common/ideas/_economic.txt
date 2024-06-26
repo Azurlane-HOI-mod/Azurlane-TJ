@@ -31,7 +31,13 @@ ideas = {
 			
 			allowed_to_remove = {
 				OR = {
-					has_war_support > 1.2
+					if = {
+					has_war_support > 1.5
+					not = { has_idea = BYG_jjwjhyz }
+					not = { has_idea = BYG_jjwjhyz_1 }
+					not = { has_idea = BYG_jjwjhyz_2 }
+					not = { has_idea = BYG_jjwjhyz_3 }
+					}
 					has_war = yes
 					has_completed_focus = BYG_wanzhengdewomen
 				}

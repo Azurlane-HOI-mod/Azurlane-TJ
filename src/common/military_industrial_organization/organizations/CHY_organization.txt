@@ -755,16 +755,45 @@ CHY_tokyo_arsenal_organization = {
       	}
 
 		production_bonus = {
-			production_resource_need_factor = -0.25
+			production_resource_need_factor = -0.2
 			production_capacity_factor = 0.05
-			production_efficiency_gain_factor = 0.05
-			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.01
+			production_efficiency_cap_factor = 0.01
 		}
 
 		organization_modifier = {
-			military_industrial_organization_research_bonus = 0.15
+			military_industrial_organization_research_bonus = 0.05
 		}
 	}
+	add_trait = {  
+		token = wushipeidao
+		name = wushipeidao
+		icon = GFX_generic_mio_department_icon_infantry_quality
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_reinforced_stocks
+		all_parents = { generic_mio_trait_reinforced_stocks }
+		available = {
+			#FROM = { has_completed_focus =  CHY_gongyejituan }
+		}
+		
+		equipment_bonus = {
+			#reliability = 0.05
+			soft_attack = 0.06
+			breakthrough = 0.03
+			build_cost_ic = 0.01
+      	}
+
+		production_bonus = {
+			#production_resource_need_factor = -0.25
+		}
+
+		organization_modifier = {
+			#military_industrial_organization_research_bonus = 0.15
+		}
+	}
+	
 }
 
 CHY_osaka_army_arsenal_artillery_organization = {

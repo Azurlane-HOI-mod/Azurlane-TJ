@@ -11,8 +11,33 @@ ideas = {
 				custom_modifier_tooltip = az_hidden_ideas
 			}
 		}
+		HUJ_jieshoubeilianmanjiu = {
+			allowed_civil_war = {
+				always = yes
+			}
+	
+			modifier = {
+				research_speed_factor = 0.08
+				custom_modifier_tooltip = az_hidden_ideas
+			}
+		}
+		
 	}
 	country = {
+		HUJ_idea_lundunmosikejiaoliuxiaozu = {
+			picture = ARG_women_in_industry
+			allowed_civil_war = {
+				has_government = communism
+			}
+	
+			modifier = {
+				surrender_limit = 0.05
+				trade_opinion_factor = 0.15
+				communism_drift = 0.1
+				drift_defence_factor = 0.25
+				political_power_factor = 0.08
+			}
+		}
 		HUJ_idea_nvpuguoji = {
 			picture = chi_wargaming_division
 			allowed_civil_war = {
@@ -318,9 +343,9 @@ ideas = {
 			}
 	
 			modifier = {
-				planning_speed = 0.3
-				max_planning = 0.15
-				max_command_power = 40
+				planning_speed = 0.4
+				max_planning = 0.2
+				max_command_power = 50
 			}
 		}
 		HUJ_hjfxy = {
@@ -342,10 +367,12 @@ ideas = {
 			}
 	
 			modifier = {
-				consumer_goods_factor = 0.08
+				consumer_goods_factor = 0.01
 				stability_weekly = 0.005
 				war_support_weekly = 0.005
-				line_change_production_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				line_change_production_efficiency_factor = 0.25
 			}
 		}
 		HUJ_zzcy = {
@@ -355,8 +382,10 @@ ideas = {
 			}
 	
 			modifier = {
-				army_org_factor = 0.08
-				army_morale_factor = 0.08
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				army_org_factor = 0.2
+				army_morale_factor = 0.25
 			}
 		}
 		HUJ_qxhc = {
@@ -366,8 +395,8 @@ ideas = {
 			}
 	
 			modifier = {
-				industrial_capacity_factory = 0.1
-				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.3
+				industrial_capacity_dockyard = 0.3
 			}
 		}
 		HUJ_jtjz = {
@@ -393,16 +422,16 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_defence_factor = 0.15
-				army_speed_factor = 0.03
+				army_defence_factor = 0.2
+				army_speed_factor = 0.05
 			}
 			equipment_bonus = {
 				
 				heavy_tank_chassis = {
-					armor_value = 0.15
-					defense = 0.1
-					breakthrough = 0.2
-					soft_attack = 0.1
+					armor_value = 0.25
+					defense = 0.4
+					breakthrough = 0.35
+					soft_attack = 0.25
 					instant = yes
 				}
 				
@@ -415,28 +444,28 @@ ideas = {
 			}
 			equipment_bonus = {
 				ship_hull_cruiser = {
-					build_cost_ic = -0.15
-					reliability = 0.05
+					build_cost_ic = -0.25
+					reliability = 0.1
 					instant = yes
 				}
 				ship_hull_light = {
-					build_cost_ic = -0.2
-					reliability = 0.05
+					build_cost_ic = -0.35
+					reliability = 0.1
 					instant = yes
 				}
 				ship_hull_carrier = {
-					build_cost_ic = -0.15
-					reliability = 0.05
+					build_cost_ic = -0.25
+					reliability = 0.1
 					instant = yes
 				}
 				ship_hull_heavy = {
-					build_cost_ic = -0.15
-					reliability = 0.05
+					build_cost_ic = -0.25
+					reliability = 0.1
 					instant = yes
 				}
 			}
 			modifier = {
-				industrial_capacity_dockyard = 0.05	
+				industrial_capacity_dockyard = 0.2	
 			}
 		}
 		HUJ_hjhjdry = {
@@ -445,13 +474,13 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				navy_capital_ship_attack_factor = 0.2
-				navy_capital_ship_defence_factor = 0.2
+				navy_capital_ship_attack_factor = 0.4
+				navy_capital_ship_defence_factor = 0.4
 			}
 			equipment_bonus = {
 				ship_hull_heavy = {
-					reliability = 0.08
-					armor_value = 0.05
+					reliability = 0.15
+					armor_value = 0.25
 					instant = yes
 				}
 				
@@ -464,17 +493,17 @@ ideas = {
 			}
 	
 			modifier = {
-				screening_efficiency = 0.1
-				naval_retreat_speed = 0.1
+				screening_efficiency = 0.25
+				naval_retreat_speed = 0.25
 				positioning = 0.15
-				spotting_chance = 0.15
-				sortie_efficiency = 0.2
-				naval_speed_factor = 0.1
-				navy_max_range_factor = 0.15
+				spotting_chance = 0.25
+				sortie_efficiency = 0.5
+				naval_speed_factor = 0.15
+				navy_max_range_factor = 0.25
 			}
 			equipment_bonus = {
 				ship_hull_carrier = {
-					carrier_size = 1
+					carrier_size = 2
 					instant = yes
 				}
 			}
@@ -499,15 +528,15 @@ ideas = {
 	
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = -0.3
+					build_cost_ic = -0.4
 					instant = yes
 				}
 				support_equipment = {
-					build_cost_ic = -0.2
+					build_cost_ic = -0.4
 					instant = yes
 				}
 				motorized_equipment = {
-					build_cost_ic = -0.15
+					build_cost_ic = -0.3
 					instant = yes
 				}
 			}
@@ -520,22 +549,22 @@ ideas = {
 	
 			equipment_bonus = {
 				armor = {
-					build_cost_ic = -0.05
+					build_cost_ic = -0.15
 					instant = yes
 				}
 				heavy_tank_chassis = {
-					build_cost_ic = -0.1
-					reliability = 0.05
+					build_cost_ic = -0.15
+					reliability = 0.1
 					instant = yes
 				}
 				super_heavy_tank_chassis = {
-					build_cost_ic = -0.05
-					reliability = 0.05
+					build_cost_ic = -0.25
+					reliability = 0.1
 					instant = yes
 				}
 				modern_tank_equipment = {
-					build_cost_ic = -0.1
-					reliability = 0.05
+					build_cost_ic = -0.15
+					reliability = 0.1
 					instant = yes
 				}
 			}
@@ -558,10 +587,10 @@ ideas = {
 			}
 	
 			modifier = {
-				industrial_capacity_factory = 0.1
-				production_factory_max_efficiency_factor = 0.1
-				production_factory_efficiency_gain_factor = 0.1
-				line_change_production_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.3
+				production_factory_max_efficiency_factor = 0.3
+				production_factory_efficiency_gain_factor = 0.3
+				line_change_production_efficiency_factor = 0.35
 			}
 		}
 		HUJ_cxrbl = {
@@ -571,13 +600,13 @@ ideas = {
 			}
 	
 			modifier = {
-				navy_max_range_factor = 0.1
-				navy_org_factor = 0.2
-				air_range_factor = 0.2
-				air_mission_efficiency = 0.1
-				army_org_factor = 0.1
-				army_morale_factor = 0.08
-				compliance_growth = 0.2
+				navy_max_range_factor = 0.4
+				navy_org_factor = 0.4
+				air_range_factor = 0.5
+				air_mission_efficiency = 0.25
+				army_org_factor = 0.25
+				army_morale_factor = 0.25
+				compliance_growth = 0.5
 			}
 		}
 		HUJ_khlz = {
@@ -587,14 +616,14 @@ ideas = {
 			}
 			equipment_bonus = {
 				artillery_equipment = {
-					soft_attack = 0.2
+					soft_attack = 0.3
 					instant = yes
 				}
 			}
 			modifier = {
-				army_artillery_attack_factor = 0.15
-				army_infantry_attack_factor = 0.05
-				breakthrough_factor = 0.1
+				army_artillery_attack_factor = 0.3
+				army_infantry_attack_factor = 0.15
+				breakthrough_factor = 0.15
 				supply_consumption_factor = 0.05
 			}
 		}
@@ -605,12 +634,12 @@ ideas = {
 			}
 	
 			modifier = {
-				air_agility_factor = 0.15
-				air_night_penalty = -0.05
-				air_intercept_efficiency = 0.2
-				air_superiority_efficiency = 0.2
-				air_cas_efficiency = 0.2
-				air_accidents = -0.1
+				air_agility_factor = 0.2
+				air_night_penalty = -0.2
+				air_intercept_efficiency = 0.25
+				air_superiority_efficiency = 0.25
+				air_cas_efficiency = 0.25
+				air_accidents = -0.2
 			}
 		}
 		HUJ_hjzdkyz = {

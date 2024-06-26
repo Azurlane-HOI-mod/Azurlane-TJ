@@ -736,3 +736,99 @@ YUW_shenshengshiming_xiafei = {
 		}
 	}
 }
+
+YUW_jiaojuzhe_banerwei = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_jiaojuzhe_banerwei
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_xingyunqiyuan
+	}
+
+	ai_national_focuses = {
+		#政治线
+		YUW_jiaojuzhe
+		YUW_yingjiuliren
+		YUW_xunliwenyi
+		YUW_qubali
+		YUW_fensuizuoyipanluan
+		YUW_daibudunkeerke
+		YUW_yurangbaertuoxie
+		YUW_zhengmianyingjibuqu
+		YUW_zhongzhifengkuangjihua
+		YUW_xingyunqiyuan
+	}
+
+	research = {
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+YUW_jiaojuzhe_mojiaduoer = {
+	name = "YUW_historical_lisailiu"
+	desc = "YUW_historical_lisailiu_desc"
+
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+			has_game_rule = {
+				rule = YUW_ai_behavior
+				option = YUW_jiaojuzhe_mojiaduoer
+			}
+	}
+	abort = {
+		has_completed_focus = YUW_weiyouzhandou
+	}
+
+	ai_national_focuses = {
+		#政治线
+		YUW_jiaojuzhe
+		YUW_yingjiuliren
+		YUW_xunliwenyi
+		YUW_qubali
+		YUW_fensuizuoyipanluan
+		YUW_daibudunkeerke
+		YUW_yurangbaertuoxie
+		YUW_zhengmianyingjibuqu
+		YUW_zhongzhifengkuangjihua
+		YUW_weiyouzhandou
+	}
+
+	research = {
+		infantry_weapons = 20.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

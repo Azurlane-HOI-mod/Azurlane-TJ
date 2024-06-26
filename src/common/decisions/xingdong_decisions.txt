@@ -8,8 +8,7 @@ xingdong_category = {
 		}
 		complete_effect = {
 			set_technology = {
-				keyantech_jupao = 1
-				keyantech_donglizhuangjia = 1
+				keyantech_juxinghangmu = 1
 			}
 			
 		}
@@ -1360,6 +1359,144 @@ xingdong_category = {
 				}
 			}
 			
+		}
+	}
+	daibuyiyizhe = {
+		icon = hongsegantan
+		available = {
+			has_stability < 1
+		}
+		visible = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+		days_remove = 90
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_stability < 0.8
+				date > 1939.6.1
+				not = { tag = TIX }
+				add = 10
+			}
+		}
+		fixed_random_seed = no
+		modifier = {
+			political_power_cost = 1.5
+			stability_weekly = 0.01
+		}
+	}
+	zhengmianxuanchuan = {
+		icon = kejixiang
+		available = {
+			has_stability < 1
+		}
+		visible = {
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
+		days_remove = 90
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_stability < 0.8
+				date > 1939.6.1
+				not = { tag = TIX }
+				add = 10
+			}
+		}
+		fixed_random_seed = no
+		modifier = {
+			political_power_cost = 0.75
+			consumer_goods_factor = 0.1
+			stability_weekly = 0.01
+		}
+	}
+	zhanzhengkuangre = {
+		icon = jian
+		available = {
+			if = {
+				limit = { has_government = democratic }
+				has_war_support < 1
+				OR = {
+					has_war = yes
+					threat > 0.8
+				}
+			}
+			if = {
+				limit = { 
+					OR = {
+						has_government = communism
+						has_government = fascism
+						has_government = neutrality
+					}
+				}
+				has_war_support < 1.5
+			}
+		}
+		visible = {
+			
+		}
+		days_remove = 30
+		
+		ai_will_do = {
+			factor = 0
+		}
+		fixed_random_seed = no
+		modifier = {
+			political_power_cost = 5
+			war_support_weekly = 0.03
+		}
+	}
+	qibicongrong = {
+		icon = xunzhang
+		available = {
+			if = {
+				limit = { has_government = democratic }
+				OR = {
+					has_war = yes
+					has_war_support > 1
+					threat > 0.5
+				}
+			}
+			if = {
+				limit = { 
+					OR = {
+						has_government = communism
+						has_government = fascism
+						has_government = neutrality
+					}
+				}
+				has_war_support > 0.8
+			}
+		}
+		visible = {
+
+		}
+		days_remove = 365
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				has_war = yes
+				add = 1
+			}
+		}
+		fixed_random_seed = no
+		modifier = {
+			political_power_cost = 1.5
+			army_core_attack_factor = 0.08
+			army_defence_factor = 0.08
+			experience_gain_air_factor = 0.2
+			experience_gain_army_factor = 0.2
+			experience_gain_navy_factor = 0.2
 		}
 	}
 	shengyu_huifushengyu = {

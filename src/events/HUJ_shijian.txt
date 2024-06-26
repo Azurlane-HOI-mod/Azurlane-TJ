@@ -497,6 +497,9 @@ country_event = {
 	title = HUJ_event.11.t
 	desc = HUJ_event.11.d
 	picture = GFX_aze_chaijun_nice
+	immediate = {
+		HUJ = { set_country_flag = HUJ_huangjiazhiyuanjunguantuan_get }
+	}
 	trigger = {
 		tag = DOH
 		OR = {
@@ -540,5 +543,247 @@ country_event = {
 			}
 		}
 		add_political_power = 25
+	}
+}
+country_event = {
+	id = HUJ_event.12
+	title = HUJ_event.12.t
+	desc = HUJ_event.12.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.12.a
+		ai_chance = {
+			factor = 5
+		}
+		HUJ = { country_event = HUJ_event.1201 }
+	}
+	option = {
+		name = HUJ_event.12.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				strength_ratio = {
+					tag = HUJ
+					ratio > 1.1
+				}
+				add = 10
+			}
+		}
+		HUJ = { country_event = HUJ_event.1202 }
+		add_war_support = 0.1
+	}
+}
+country_event = {
+	id = HUJ_event.1201
+	title = HUJ_event.1201.t
+	desc = HUJ_event.1201.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1201.a
+		ai_chance = {
+			factor = 5
+		}
+		transfer_state = 729
+		transfer_state = 321
+	}
+	option = {
+		name = HUJ_event.1201.b
+		ai_chance = {
+			base = 0
+		}
+		guojishengyu_up_5 = yes
+		DOH = {	transfer_state = 729 }
+		RAJ = { transfer_state = 321 }
+	}
+}
+country_event = {
+	id = HUJ_event.1202
+	title = HUJ_event.1202.t
+	desc = HUJ_event.1202.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1202.a
+		ai_chance = {
+			factor = 5
+		}
+		create_wargoal = {
+			target = POR
+			type = topple_government
+			expire = -1
+		}
+	}
+}
+country_event = {
+	id = HUJ_event.13
+	title = HUJ_event.13.t
+	desc = HUJ_event.12.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.12.a
+		ai_chance = {
+			factor = 5
+		}
+		HUJ = { country_event = HUJ_event.1301 }
+	}
+	option = {
+		name = HUJ_event.12.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				strength_ratio = {
+					tag = HUJ
+					ratio > 1.1
+				}
+				add = 10
+			}
+		}
+		HUJ = { country_event = HUJ_event.1302 }
+		add_war_support = 0.1
+	}
+}
+country_event = {
+	id = HUJ_event.1301
+	title = HUJ_event.1301.t
+	desc = HUJ_event.1201.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1201.a
+		ai_chance = {
+			factor = 5
+		}
+		transfer_state = 670
+		transfer_state = 671
+		transfer_state = 286
+		transfer_state = 741
+	}
+}
+country_event = {
+	id = HUJ_event.1302
+	title = HUJ_event.1302.t
+	desc = HUJ_event.1202.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1202.a
+		ai_chance = {
+			factor = 5
+		}
+		create_wargoal = {
+			target = YUW
+			type = topple_government
+			expire = -1
+		}
+	}
+}
+country_event = {
+	id = HUJ_event.14
+	title = HUJ_event.14.t
+	desc = HUJ_event.12.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.12.a
+		ai_chance = {
+			factor = 5
+		}
+		HUJ = { country_event = HUJ_event.1401 }
+	}
+	option = {
+		name = HUJ_event.12.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				strength_ratio = {
+					tag = HUJ
+					ratio > 1.1
+				}
+				add = 10
+			}
+		}
+		HUJ = { country_event = HUJ_event.1402 }
+		add_war_support = 0.1
+	}
+}
+country_event = {
+	id = HUJ_event.1401
+	title = HUJ_event.1401.t
+	desc = HUJ_event.1201.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1201.a
+		ai_chance = {
+			factor = 5
+		} 
+		annex_country = {
+			target = INS
+		}
+	}
+}
+country_event = {
+	id = HUJ_event.1402
+	title = HUJ_event.1402.t
+	desc = HUJ_event.1202.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1202.a
+		ai_chance = {
+			factor = 5
+		}
+		create_wargoal = {
+			target = HOL
+			type = topple_government
+			expire = -1
+		}
+		create_wargoal = {
+			target = INS
+			type = topple_government
+			expire = -1
+		}
+	}
+}
+country_event = {
+	id = HUJ_event.15
+	title = HUJ_event.15.t
+	desc = HUJ_event.15.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.15.a
+		ai_chance = {
+			factor = 5
+		}
+		transfer_state = 326
+		news_event = { id = HUJ_event.1501 days = 3 }
+	}
+}
+news_event = {
+	id = HUJ_event.1501
+	title = HUJ_event.1501.t
+	desc = HUJ_event.1501.d
+	picture = GFX_az_blhxyq
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = HUJ_event.1501.a
+		trigger = {
+			OR = {
+				tag = DOH
+				is_ally_with = DOH
+			}
+			
+		}
+	}
+	option = {
+		name =HUJ_event.1501.a
+		trigger = {
+			NOT = { tag = DOH }
+		}
 	}
 }

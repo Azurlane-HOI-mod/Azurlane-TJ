@@ -274,6 +274,142 @@ yuw_mission_category = {
 			}
 		}
 	}
+	yuwdecision_ewaijiaotiao_shizhan = {
+		icon = eng_propaganda_campaigns
+		cost = 50
+		available = {
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+		}
+		visible = { 
+			has_completed_focus = YUW_jiaotiaohaibugouduo 
+		}
+		remove_trigger = {
+            not = { 
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+			} 
+        }
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = -1
+		modifier = {
+			mobilization_speed = 0.5
+			offensive_war_stability_factor = 0.5
+			war_support_weekly = 0.01
+		}
+		complete_effect = {  
+			custom_effect_tooltip = yuw_santoutongmengfennu
+		}
+	}
+	yuwdecision_ewaijiaotiao_shengying = {
+		icon = eng_propaganda_campaigns
+		cost = 50
+		available = {
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+		}
+		visible = { 
+			has_completed_focus = YUW_jiaotiaohaibugouduo 
+		}
+		remove_trigger = {
+            not = { 
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+			} 
+        }
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = -1
+		modifier = {
+			monthly_population = 1
+			conscription = 0.03
+			army_leader_start_level = 1
+		}
+		complete_effect = {  
+			custom_effect_tooltip = yuw_santoutongmengfennu
+		}
+	}
+	yuwdecision_ewaijiaoyi_benwo = {
+		icon = eng_propaganda_campaigns
+		cost = 50
+		available = {
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+		}
+		visible = { 
+			has_completed_focus = YUW_jiaoyihaibugouxin
+		}
+		remove_trigger = {
+            not = { 
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+			} 
+        }
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = -1
+		modifier = {
+			stability_factor = -0.2
+			war_support_factor = -0.2
+			research_speed_factor = 0.1
+			consumer_goods_factor = -0.4
+		}
+		complete_effect = {  
+			custom_effect_tooltip = yuw_santoutongmengfennu
+		}
+	}
+	yuwdecision_ewaijiaoyi_jiaopeishensheng = {
+		icon = eng_propaganda_campaigns
+		cost = 50
+		available = {
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+		}
+		visible = { 
+			has_completed_focus = YUW_baituochangshishufu
+		}
+		remove_trigger = {
+            not = { 
+			has_country_leader = {
+			character = YUW_mojiaduoer
+			ruling_only = yes
+			}
+			} 
+        }
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = -1
+		modifier = {
+			stability_factor = 0.3
+			war_support_factor = 0.3
+			industrial_capacity_factory = 0.3
+			industrial_capacity_dockyard = 0.3
+			production_factory_max_efficiency_factor = 0.3
+			production_factory_efficiency_gain_factor = 0.3
+		}
+		complete_effect = {  
+			custom_effect_tooltip = yuw_santoutongmengfennu
+		}
+	}
 	yuw_11111 = {
 		icon = generic_construction
 		available = {

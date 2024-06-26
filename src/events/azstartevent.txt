@@ -1,5 +1,29 @@
 ﻿add_namespace = azstartevent
 country_event = {
+	id = azstartevent.2
+	title = azstartevent.2.t
+	desc = azstartevent.2.d
+	picture = GFX_aze_diaochawenjuan
+	trigger = {
+		NOT = { has_country_flag = diaochawenjuan_get }
+	}
+	immediate = {
+		set_country_flag = diaochawenjuan_get
+	}
+	mean_time_to_happen = {
+		days = 40
+	}
+	#fire_only_once = yes
+	option = {
+		name = azstartevent.2.a
+		add_political_power = 1
+	}
+	option = {
+		name = azstartevent.2.b
+		army_experience = 1
+	}
+}
+country_event = {
 	id = azstartevent.1001
 	title = azstartevent.1001.t
 	desc = azstartevent.1001.d

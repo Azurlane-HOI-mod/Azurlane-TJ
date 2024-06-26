@@ -44,9 +44,9 @@ characters={
 			legacy_id = 08001
 			traits = { logistics_wizard organizer offensive_doctrine trait_cautious hangmu_army }
 			skill = 4
-			attack_skill = 4
+			attack_skill = 6
 			defense_skill = 3
-			planning_skill = 3
+			planning_skill = 5
 			logistics_skill = 3
 		}
 		advisor = {
@@ -124,6 +124,9 @@ characters={
 			slot = army_chief
 			idea_token = baerdimo
 			traits = { trait_baerdimo }
+			ai_will_do = {
+				factor = 30
+			}
 		}
 		corps_commander = {
 			visible = { 
@@ -186,7 +189,7 @@ characters={
 			
 			#cost = 100
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -245,6 +248,9 @@ characters={
 			slot = army_chief
 			idea_token = botelan
 			traits = { trait_botelan }
+			ai_will_do = {
+				factor = 30
+			}
 		}
 		corps_commander = {
 			visible = { 
@@ -444,7 +450,28 @@ characters={
 				small="gfx/interface/ideas/idea_kelifulan.png"
 			}
 		}
-
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = kelifulan 
+			
+			available = {
+				if = {
+					limit = { tag = BYG }
+					OR = {
+						has_completed_focus = BYG_qishituanchuji
+						has_completed_focus = BYG_kuodazhinangtuan
+						has_completed_focus = BYG_chongzubaiyingguohui
+						has_completed_focus = BYG_jianchatanwufubai
+						has_completed_focus = BYG_jurendejuexing
+					}
+				}
+			}
+			traits = { trait_psh_qaingxihaoling }
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -470,7 +497,28 @@ characters={
 				small="gfx/interface/ideas/idea_hailunna.png"
 			}
 		}		
-
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = hailunna 
+			
+			available = {
+				if = {
+					limit = { tag = BYG }
+					OR = {
+						has_completed_focus = BYG_qishituanchuji
+						has_completed_focus = BYG_kuodazhinangtuan
+						has_completed_focus = BYG_chongzubaiyingguohui
+						has_completed_focus = BYG_jianchatanwufubai
+						has_completed_focus = BYG_jurendejuexing
+					}
+				}
+			}
+			traits = { trait_psh_chanyefusu }
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -537,6 +585,9 @@ characters={
 			slot = high_command
 			idea_token = changdao
 			traits = { trait_changdao }
+			ai_will_do = {
+				factor = 10
+			}
 		}
 		navy_leader = {
 			visible = { 
@@ -677,6 +728,21 @@ characters={
 				factor = 10
 			}
 		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army  }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
 	}
 	BYG_tikangdeluojia = {
 		name = BYG_tikangdeluojia
@@ -717,6 +783,21 @@ characters={
 				factor = 10
 			}
 		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
 	}
 
 	BYG_youqibing = {
@@ -735,7 +816,7 @@ characters={
 			
 			traits = { trait_youqibing }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -757,6 +838,21 @@ characters={
 				factor = 10
 			}
 		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
 	}
 	BYG_dahuangfeng = {
 		name = BYG_dahuangfeng 
@@ -776,6 +872,21 @@ characters={
 				factor = 10
 			}
 		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
 	}
 	BYG_binxifaniya = {
 		name = BYG_binxifaniya 
@@ -792,8 +903,23 @@ characters={
 			
 			traits = { trait_binxifaniya }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}
 	BYG_ailunsamuna = {
@@ -908,6 +1034,21 @@ characters={
 				factor = 10
 			}
 		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
 	}
 	BYG_shengluyisi = {
 		name = BYG_shengluyisi
@@ -939,6 +1080,21 @@ characters={
 				factor = 10
 			}
 		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { politically_connected xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
 	}
 	BYG_yalisangna = {
 		name = BYG_yalisangna
@@ -969,6 +1125,21 @@ characters={
 			ai_will_do = {
 				factor = 10
 			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}
 	BYG_yinggelahan = {
@@ -1069,9 +1240,9 @@ characters={
 			traits = { xunyang_army }
 			skill = 3
 			attack_skill = 2
-			defense_skill = 2
+			defense_skill = 6
 			planning_skill = 3
-			logistics_skill = 3
+			logistics_skill = 5
 		}
 	}
 	BYG_huayuan = {
@@ -1144,8 +1315,78 @@ characters={
 			skill = 5
 			attack_skill = 6
 			defense_skill = 6
-			planning_skill = 2
-			logistics_skill = 2
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+	BYG_guandao = {
+		name = BYG_guandao
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/guandao.png"
+				small="gfx/interface/ideas/idea_guandao.png"
+			}
+		}		
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = guandao
+			
+			traits = { trait_psh_guandao }
+
+			ai_will_do = {
+				factor = 20
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { media_personality armor_officer panzer_leader career_officer organizer xunyang_army }
+			skill = 5
+			attack_skill = 7
+			defense_skill = 6
+			planning_skill = 6
+			logistics_skill = 3
+		}
+	}
+	BYG_xingzuo = {
+		name = BYG_xingzuo
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/xingzuo.png"
+				small="gfx/interface/ideas/idea_xingzuo.png"
+			}
+		}		
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = xingzuo
+			
+			traits = { trait_psh_xingzuo }
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { bearer_of_artillery zhanlie_army }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
 		}
 	}
 }

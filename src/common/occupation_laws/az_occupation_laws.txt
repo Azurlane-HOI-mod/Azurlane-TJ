@@ -151,3 +151,34 @@ TIX_colonial_police_final = {
 		base = 800
 	}
 }
+HUJ_quyuzizhizhidu = {
+	icon = 10
+	sound_effect = "Martial_Law_Interface_Harsh_Quotas_Occupation"
+
+	visible = {
+		is_puppet = no
+		original_tag = HUJ
+		has_completed_focus = HUJ_quyuzizhizhidu
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.25
+		compliance_gain 				= 0.05
+		required_garrison_factor 		= -0.9
+		resistance_damage_to_garrison 	= -0.5
+		#production_speed_buildings_factor = 0.01
+		#local_factories 				= 0.35
+		local_resources 				= 0.1
+		#enemy_operative_detection_chance_over_occupied_tag = 0.25 
+		#enemy_intel_network_gain_factor_over_occupied_tag = -0.25 
+	}
+
+
+	ai_will_do = {
+		base = 0
+		modifier = {
+			has_government = communism
+			add = 500
+		}
+	}
+}

@@ -272,9 +272,14 @@ TIX_unit_production = {
 		value = 1
 	}
 	ai_strategy = {
+		type = equipment_production_factor	#装备倾向
+		id = armor			
+		value = 200
+	}
+	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = train
-		value = 200
+		value = 20
 	}
 	ai_strategy = {
 		type = equipment_production_min_factories
@@ -285,16 +290,14 @@ TIX_unit_production = {
 		type = ignore_army_incompetence
 		value = 10000
 	}
-
-	ai_strategy = {
-		type = ignore_army_incompetence
-		value = 10000
-	}
-	
 	ai_strategy = {
         type = force_build_armies
         value = 100
     }
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = 5
+	}
 }
 
 TIX_template_design = {
@@ -322,19 +325,19 @@ TIX_template_design = {
 	ai_strategy = {
 		type = template_prio
 		id = artillery
-		value = 10
+		value = 5
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = motorized
-		value = 10
+		value = 1
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = cavalry
-		value = 10
+		value = 1
 	}
 	
 	ai_strategy = {
@@ -813,7 +816,13 @@ make_sure_poland_is_ganked_before_we_move = {
 	abort = {
 		date > 1940.1.1
 	}
-
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = "POL"
+		value = 200
+	}
+	
 	ai_strategy = {
 		type = front_control
 

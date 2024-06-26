@@ -537,11 +537,11 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			army_experience = 50
+			army_experience = 75
 			add_doctrine_cost_reduction = {
 				name = "注重陆军"
-				cost_reduction = 0.25
-				uses = 1
+				cost_reduction = 0.5
+				uses = 4
 				category = land_doctrine
 			}
 		}
@@ -671,8 +671,8 @@ focus = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = "理论研究"
-				cost_reduction = 0.25
-				uses = 3
+				cost_reduction = 0.5
+				uses = 5
 				category = land_doctrine
 			}
 			
@@ -701,7 +701,7 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			army_experience = 50
+			army_experience = 250
 			custom_effect_tooltip = "允许解锁第二条陆军学说路线"
 			set_country_flag = TY_army_liluntupo
 			set_technology = { tactical_withdrawal_huj = 1 popup = no }
@@ -806,7 +806,7 @@ focus = {
 		relative_position_id = HUJ_huangjiatanketuan
 		prerequisite = { focus = HUJ_huangjiatanketuan }
 		mutually_exclusive = { focus = HUJ_qingwuqigongchang }
-		cost = 7
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1853,7 +1853,7 @@ focus = {
 
 
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			swap_ideas = {
 				add_idea = HUJ_hjtgnpd
@@ -1904,7 +1904,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_weicengshexiangdedaolu
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_generic_join_comintern
 		x = -19
 		y = 0
 		cost = 5
@@ -1933,7 +1933,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_yaoqiuxiudingquanlifaan
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_goal_generic_forceful_treaty
 		x = 0
 		y = 1
 		cost = 7
@@ -1970,7 +1970,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_nvpugongzuozhidu
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_generic_workers_and_farmers_rise
 		x = -2
 		y = 1
 		cost = 5
@@ -2004,7 +2004,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_nvpucanzhengquanli
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_SOV_builder_of_the_red_army
 		x = 0
 		y = 1
 		cost = 5
@@ -2045,7 +2045,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_nvpushoujiaoyuquan
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_NORDIC_com_research
 		x = 2
 		y = 1
 		cost = 5
@@ -2075,7 +2075,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_chenglinvpugonghui
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_ARG_women_in_industry
 		x = 0
 		y = 1
 		cost = 5
@@ -2113,7 +2113,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_mimixingdong
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_SOV_support_spanish_poum
 		x = -2
 		y = 2
 		cost = 5
@@ -2169,7 +2169,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_nvpubigong
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
 		x = 0
 		y = 1
 		cost = 5
@@ -2201,7 +2201,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_huangshidemingyun
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_SOV_the_last_purge
 		x = 0
 		y = 1
 		cost = 5
@@ -2229,7 +2229,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_jiaruneigeyihui
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_SWE_socialist_reforms
 		x = 0
 		y = 1
 		cost = 5
@@ -2271,7 +2271,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_anfunvwang
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_BRA_good_neighbor_policy
 		x = 2
 		y = 2
 		cost = 10
@@ -2303,7 +2303,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_yunvwangtuoxie
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_BRA_good_neighbor_policy
 		x = 0
 		y = 1
 		cost = 10
@@ -2332,7 +2332,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_huoquzizhu
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_BRA_good_neighbor_policy
 		x = 0
 		y = 1
 		cost = 10
@@ -2360,7 +2360,7 @@ focus = {
 	}
 	focus = {
 		id = HUJ_nvpulianmeng
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_nvpugonghui
 		x = 0
 		y = 3
 		cost = 10
@@ -2385,30 +2385,22 @@ focus = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			set_cosmetic_tag = HUJ_nvpu_communism
-			if = {
-				limit = {
-					is_in_faction = no
-				}
-				create_faction = nvpuguoji
-			}
-			
+			create_faction = nvpuguoji
 			add_ideas = HUJ_idea_nvpuguoji
 		}
 	}
 	focus = {
 		id = HUJ_waijiaoxipai
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_BRA_the_polaca
 		x = 5
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = HUJ_jiaruneigeyihui }
 		relative_position_id = HUJ_jiaruneigeyihui
 		mutually_exclusive = {
 			focus = HUJ_hongchawaijiao
 		}
-		available = {
-			always = no
-		}
+		
 		ai_will_do = {
 			factor = 5			
 		}
@@ -2421,16 +2413,16 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			
+			add_political_power = 50
+			add_war_support = 0.1
 		}
 	}
 	focus = {
 		id = HUJ_shengdixunli
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_fflag_BFL_2
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = HUJ_waijiaoxipai }
 		relative_position_id = HUJ_waijiaoxipai
 		ai_will_do = {
@@ -2446,15 +2438,21 @@ focus = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_political_power = 100
+			BFL = {
+				add_opinion_modifier = {
+					target = HUJ
+					modifier = offered_support
+				}
+			}
 			
 		}
 	}
 	focus = {
 		id = HUJ_yubeilianlunzhan
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_SWE_lottakoren
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = HUJ_shengdixunli }
 		relative_position_id = HUJ_shengdixunli
 		mutually_exclusive = {
@@ -2472,13 +2470,31 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			
+			guojishengyu_up_5 = yes
+			add_stability = 0.05
+			BFL = {
+				add_opinion_modifier = {
+					target = HUJ
+					modifier = worse_pact_against_us
+				}
+			}
+			every_other_country = {
+				limit = {
+					NOT = { tag = BFL }
+					has_government = communism
+				}
+				
+				add_opinion_modifier = {
+					target = HUJ
+					modifier = anti_comintern_pact_opinion
+				}
+				
+			}
 		}
 	}
 	focus = {
 		id = HUJ_jieshoubeilianmanjiu
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_manjiu
 		x = 0
 		y = 1
 		cost = 10
@@ -2496,16 +2512,23 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			
+			add_tech_bonus = {
+				name = HUJ_jieshoubeilianmanjiu
+				bonus = 3
+				uses = 1
+				ahead_reduction = 2
+				category = armor
+				category = artillery
+			}
+			add_ideas = HUJ_jieshoubeilianmanjiu
 		}
 	}
 	focus = {
 		id = HUJ_qiutongcunyi
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_SWE_the_beast_stirs
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = HUJ_shengdixunli }
 		relative_position_id = HUJ_shengdixunli
 		mutually_exclusive = {
@@ -2523,13 +2546,18 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			
+			add_political_power = 200
+			BFL = {
+				add_opinion_modifier = {
+					target = HUJ
+					modifier = took_stand_for_us
+				}
+			}
 		}
 	}
 	focus = {
 		id = HUJ_gongtongjinbu
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_SWE_form_rfsu
 		x = 0
 		y = 1
 		cost = 10
@@ -2547,20 +2575,26 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
+			BFL = {
+				add_ideas = HUJ_idea_lundunmosikejiaoliuxiaozu
+			}
+			HUJ = {
+				add_ideas = HUJ_idea_lundunmosikejiaoliuxiaozu
+			}
+			
 			
 		}
 	}
 	focus = {
 		id = HUJ_jujiaoyazhou
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_usa_focus_on_asia
 		x = 4
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = HUJ_waijiaoxipai focus = HUJ_hongchawaijiao }
 		relative_position_id = HUJ_waijiaoxipai
 		ai_will_do = {
-			factor = 5			
+			factor = 6			
 		}
 
 		cancel_if_invalid = yes
@@ -2571,13 +2605,13 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			
+			navy_experience = 30
+			add_war_support = 0.1
 		}
 	}
 	focus = {
 		id = HUJ_duizhiminzhezuihoutongdie
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_GRE_byzantine_themata
 		x = -1
 		y = 1
 		cost = 10
@@ -2597,12 +2631,40 @@ focus = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_political_power = 100
-			
-		}
+			custom_effect_tooltip = HUJ_duizhiminzhezuihoutongdie_tt
+			POR = {
+				if = { 
+					limit = { 
+						OR = {
+							controls_state = 729 
+							controls_state = 321
+						}
+					} 
+				}
+				country_event = { id =  HUJ_event.12 days = 3 }
+			}
+			YUW = {
+				if = { 
+					limit = { 
+						OR = {
+							controls_state = 286
+							controls_state = 741
+							controls_state = 670
+							controls_state = 671
+						}
+					} 
+				}
+				country_event = { id =  HUJ_event.13 days = 10 }
+			}
+			if = {
+				limit = { INS = { is_puppet_of = HOL } }
+				HOL = { country_event = { id =  HUJ_event.14 days = 20 } }
+			}
+		} 
 	}
 	focus = {
 		id = HUJ_quyuzizhizhidu
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_generic_women_in_military
 		x = 0
 		y = 1
 		cost = 10
@@ -2620,23 +2682,38 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			
+			custom_effect_tooltip = HUJ_quyuzizhizhidu_tt
+			 
 		}
 	}
 	focus = {
 		id = HUJ_donghuanggongluyujianqiaohangxiang
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_generic_africa_infrastructure
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = HUJ_jujiaoyazhou }
-		prerequisite = { focus = HUJ_waijiaoxipai }
 		relative_position_id = HUJ_jujiaoyazhou
 		ai_will_do = {
-			factor = 5			
+			factor = 7		
 		}
-
+		available = {
+			DOH = {
+				OR = { 
+					controls_state = 747 
+					any_allied_country = {
+						controls_state = 747 
+					}
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = DOH
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -2645,20 +2722,36 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
+			guojishengyu_up_3 = yes
+			747 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
 			
 		}
 	}
 	focus = {
 		id = HUJ_xianggangwenti
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_goal_continuous_boost_freedom
 		x = -1
 		y = 2
-		cost = 10
+		cost = 3
 		prerequisite = { focus = HUJ_donghuanggongluyujianqiaohangxiang }
 		relative_position_id = HUJ_donghuanggongluyujianqiaohangxiang
 		ai_will_do = {
-			factor = 5			
+			base = 0
+			modifier = {
+				DOH = { is_ai = no }
+				add = 5
+			}
+			modifier = {
+				DOH = { is_in_faction_with = HUJ }
+				add = 10
+			}
 		}
 
 		cancel_if_invalid = yes
@@ -2669,26 +2762,33 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			
+			add_political_power = 50
+			DOH = { country_event = HUJ_event.15 }
 		}
 	}
 	focus = {
 		id = HUJ_huangjiazhiyuanjunguantuan
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_fflag_HUJ
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = HUJ_donghuanggongluyujianqiaohangxiang }
 		relative_position_id = HUJ_donghuanggongluyujianqiaohangxiang
 		ai_will_do = {
-			factor = 5			
+			factor = 10
 		}
-
+		bypass = {
+			OR = {
+				has_war_with = DOH
+				NOT = { country_exists = DOH }
+				DOH = { has_capitulated = yes }
+				has_country_flag = HUJ_huangjiazhiyuanjunguantuan_get
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
+	
 
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
@@ -2701,8 +2801,8 @@ focus = {
 	}
 	focus = {
 		id = HUJ_kuodasixiangchuanbo
-		icon = GFX_goal_generic_position_armies
-		x = -5
+		icon = GFX_focus_NORDIC_com_capstone_materiel
+		x = -3
 		y = 1
 		cost = 3
 		relative_position_id = HUJ_weicengshexiangdedaolu
@@ -2735,7 +2835,7 @@ focus = {
 	focus = {
 		id = HUJ_jixuyihuizhi
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 60
+		x = 53
 		y = 0
 		offset = {
 			x = -2
@@ -2761,7 +2861,7 @@ focus = {
 
 
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.1
@@ -3101,6 +3201,9 @@ focus = {
 		cost = 10
 		prerequisite = { focus = HUJ_jiaruneigeyihui focus = HUJ_jixuyihuizhi }
 		relative_position_id = HUJ_jixuyihuizhi
+		mutually_exclusive = {
+			focus = HUJ_waijiaoxipai
+		}
 		ai_will_do = {
 			factor = 3
 			modifier = {
@@ -3117,7 +3220,7 @@ focus = {
 
 
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			add_political_power = 100
 			add_tech_bonus = {
@@ -3135,19 +3238,41 @@ focus = {
 		}
 	}
 	focus = {
-		id = HUJ_baohuyunhe
-		icon = GFX_focus_generic_coastal_fort
-		x = -1
+		id = HUJ_shouhujiayuandeanquan
+		icon = GFX_focus_usa_focus_on_asia
+		x = -4
 		y = 1
 		cost = 5
-		prerequisite = { focus = HUJ_hongchawaijiao }
-		mutually_exclusive = {
-			focus = HUJ_waijiaoxipai
+		prerequisite = { focus = HUJ_waijiaoxipai focus = HUJ_hongchawaijiao }
+		relative_position_id = HUJ_hongchawaijiao
+		ai_will_do = {
+			factor = 15		
 		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			navy_experience = 30
+			army_experience = 20
+		}
+	}
+	focus = {
+		id = HUJ_baohuyunhe
+		icon = GFX_focus_generic_coastal_fort
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = { focus = HUJ_shouhujiayuandeanquan }
+		
         allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
-		relative_position_id = HUJ_hongchawaijiao
+		relative_position_id = HUJ_shouhujiayuandeanquan
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -3285,14 +3410,19 @@ focus = {
 
 		relative_position_id = HUJ_lianhexila
 		ai_will_do = {
-			factor = 20
+			factor = 100
 			
 		}
 
 
 		available = { 
+			or = {
+			if = {
 			controls_state = 446
 			controls_state = 447
+			}
+			has_war_with = SAD
+			}
 		}
 
 		cancel_if_invalid = yes
@@ -3309,16 +3439,16 @@ focus = {
 	focus = {
 		id = HUJ_jieguandanmaizhimindi
 		icon = GFX_focus_generic_concessions
-		x = -3
+		x = -1
 		y = 1
 		cost = 2
-		prerequisite = { focus = HUJ_hongchawaijiao }
+		prerequisite = { focus = HUJ_shouhujiayuandeanquan }
         allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
-		relative_position_id = HUJ_hongchawaijiao
+		relative_position_id = HUJ_shouhujiayuandeanquan
 		ai_will_do = {
-			factor = 15
+			factor = 25
 		}
 
 
@@ -3326,6 +3456,7 @@ focus = {
 			or = {
 			not = {country_exists = DEN}
 			DEN = {has_capitulated = yes}
+			DEN = { is_subject = yes }
 			}
 		}
 		bypass = { 
@@ -3349,7 +3480,6 @@ focus = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			transfer_state = 100
 			transfer_state = 337
 			transfer_state = 101
 		}
@@ -3364,7 +3494,11 @@ focus = {
 
 		relative_position_id = HUJ_jieguandanmaizhimindi
 		ai_will_do = {
-			factor = 2
+			factor = 20
+			modifier = {
+			is_historical_focus_on = yes
+			factor = 0
+			}
 		}
 
 
@@ -3411,7 +3545,7 @@ focus = {
 
 		relative_position_id = HUJ_xiangbeiouzujiegangkou
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 
 
@@ -3430,7 +3564,7 @@ focus = {
 	focus = {
 		id = HUJ_bangzhuyuanwei
 		icon = GFX_fflag_YUW
-		x = 3
+		x = 1
 		y = 1
 		offset = {
 			trigger = {
@@ -3473,7 +3607,7 @@ focus = {
 	focus = {
 		id = HUJ_biandepengyou
 		icon = GFX_fflag_BYG
-		x = 1
+		x = -1
 		y = 1
 		offset = {
 			trigger = {
@@ -4325,7 +4459,7 @@ focus = {
 	focus = {
 		id = HUJ_zhunbeibukebimianzhizhan
 		icon = GFX_goal_generic_defence
-		x = 2
+		x = 0
 		y = 1
 		relative_position_id = HUJ_huangjialieying
 		continue_if_invalid = yes
@@ -4356,6 +4490,7 @@ focus = {
 		y = 1
 		prerequisite = { focus = HUJ_zhunbeibukebimianzhizhan }
 		relative_position_id = HUJ_zhunbeibukebimianzhizhan
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		continue_if_invalid = yes
 		available = {
 			or = {
@@ -4441,6 +4576,7 @@ focus = {
 		prerequisite = { focus = HUJ_bentufangyu }
 		relative_position_id = HUJ_heiandeyitian
 		continue_if_invalid = yes
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		available = {
 			is_puppet = no
 			threat > 0.3
@@ -4496,7 +4632,12 @@ focus = {
 		ai_will_do = {
 			factor = 20
 			modifier = {
+			or = {
 			is_historical_focus_on = yes
+			TIX = {
+			not = { has_government = fascism } 
+			}
+			}
 			factor = 0
 			}
 			modifier = {
@@ -4548,7 +4689,7 @@ focus = {
 			}
 		}
 		cost = 5
-
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		ai_will_do = {
 			factor = 50
 			modifier = {
@@ -4603,6 +4744,7 @@ focus = {
 		prerequisite = { focus = HUJ_bentufangyu focus = HUJ_quanqiufangwei}
 		relative_position_id = HUJ_bentufangyu
 		continue_if_invalid = yes
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		available = {
 			is_puppet = no
 			or = {
@@ -4986,7 +5128,7 @@ focus = {
 			}
 		}
 		cost = 3
-
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -5055,6 +5197,7 @@ focus = {
 			}
 			TIX = {has_added_tension_amount > 50}
 		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -5205,6 +5348,7 @@ focus = {
 		bypass = {
 			has_war_with = CHY
 		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		ai_will_do = {
 			factor = 2
 			modifier = {
@@ -5286,7 +5430,7 @@ focus = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			add_political_power = 150
 			country_event = { id = az_tianjiang.191 days = 1 }
@@ -5549,6 +5693,7 @@ focus = {
 		cost = 30
 		prerequisite = { focus = HUJ_jianshezhimindi }
 		relative_position_id = HUJ_jianshezhimindi
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		available = {
 			is_puppet = no
 			or = {

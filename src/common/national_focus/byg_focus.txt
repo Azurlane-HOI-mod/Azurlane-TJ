@@ -57,9 +57,9 @@ focus_tree = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			army_experience = 50
-			navy_experience = 50
-			air_experience = 50
+			army_experience = 75
+			navy_experience = 75
+			air_experience = 75
 		}
 	}
 	focus = {
@@ -98,7 +98,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = "陆军改革研讨"
 				cost_reduction = 0.5
-				uses = 4
+				uses = 6
 				category = land_doctrine
 			}
 		}
@@ -118,10 +118,7 @@ focus_tree = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 1000
-			}	
+			custom_effect_tooltip = jiesuobubingpeijian_byg
 			add_ideas = BYG_jldzb
 		}
 	}
@@ -152,7 +149,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = BYG_lujungaigeyantao
 		prerequisite = { focus = BYG_lujungaigeyantao }
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
@@ -162,8 +159,8 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = "优势火力学说"
-				cost_reduction = 0.25
-				uses = 2
+				cost_reduction = 0.75
+				uses = 4
 				category = cat_superior_firepower
 			}
 		
@@ -184,16 +181,12 @@ focus_tree = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			custom_effect_tooltip = jiesuopaobingpeijian_byg
 			add_tech_bonus = {
 				name = "协同炮击"
 				bonus = 1.5
 				uses = 1
 				category = artillery
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 1000
-			
 			}
 		}
 	}
@@ -336,7 +329,7 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = "现代闪电战"
 				cost_reduction = 0.5
-				uses = 3
+				uses = 4
 				category = land_doctrine
 			}
 		    set_technology = { barrage_for_BYG = 1 popup = no }
@@ -354,12 +347,16 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+			date > 1943.6.1
+			add = 100
+			}
 		}
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			TY_haijunliluntupo = yes
-			navy_experience = 50
+			navy_experience = 200
 		}
 	}
 	focus = {
@@ -526,6 +523,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+			date > 1943.6.1
+			add = 100
+			}
 		}
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
@@ -625,7 +626,11 @@ focus_tree = {
 		cost = 7
 
 		ai_will_do = {
-			factor = 5
+			factor = 50
+			modifier = {
+			date > 1943.6.1
+			add = 100
+			}
 		}
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
@@ -646,10 +651,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = BYG_zhongdianfanghu
 		prerequisite = { focus = BYG_zhongdianfanghu }
-		cost = 10
+		cost = 5
 
 		ai_will_do = { 
-			factor = 5
+			factor = 50
+			modifier = {
+			date > 1943.6.1
+			add = 100
+			}
 		}
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
@@ -845,7 +854,7 @@ focus_tree = {
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			
+			custom_effect_tooltip = jiesuofeijipeijian_byg
 			add_ideas = BYG_kdxt
 		}
 	}
@@ -2253,13 +2262,12 @@ focus = {
 			has_completed_focus = BYG_xinshichuanjiadan
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 100
 		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			add_ideas = BYG_zxjzdqf
-			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	focus = {
@@ -2269,16 +2277,13 @@ focus = {
 		y = 1
 		relative_position_id = BYG_zuiqiangjianzhuang
 		prerequisite = { focus = BYG_zuiqiangjianzhuang }
-		allow_branch = {
-			has_completed_focus = BYG_zuiqiangjianzhuang
-		}
 		cost = 3
 
 		ai_will_do = {
-			factor = 5
+			factor = 100
 		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			custom_effect_tooltip = BYG_xunzhaojianpaozhuren_tooltip
 			mark_focus_tree_layout_dirty = yes
@@ -2297,7 +2302,7 @@ focus = {
 		cost = 3
 
 		ai_will_do = {
-			factor = 4
+			factor = 100
 		}
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
@@ -2344,7 +2349,7 @@ focus = {
 			factor = 7
 		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			add_stability = 0.1
 			add_political_power = 150
@@ -2595,7 +2600,7 @@ focus = {
 			factor = 5
 		}
  
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			#custom_effect_tooltip = BYG_baiyingdazongtong_tooltip
 			add_country_leader_trait = bydyx
@@ -2662,7 +2667,7 @@ focus = {
 			factor = 10
 		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			guojishengyu_up_1 = yes
 			add_stability = 0.15
@@ -2769,10 +2774,10 @@ focus = {
 			}
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 100
 		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			custom_effect_tooltip = BYG_tuijumuhou_effect_tooltip
 			
@@ -2916,8 +2921,12 @@ focus = {
 		ai_will_do = {
 			factor = 10
 		}
+		bypass = {
+			is_in_faction_with = HUJ
+			has_government = democratic
+		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			guojishengyu_up_3 = yes
 			add_political_power = 50
@@ -2955,7 +2964,7 @@ focus = {
 			}
 		}
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			HUJ = { add_to_faction = BYG }
 			
@@ -3001,10 +3010,13 @@ focus = {
 		available = {
 			PHI = { is_puppet_of = BYG }
 		}
-		cost = 7
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
+		}
+		bypass = {
+			PHI = { has_capitulated = yes }
 		}
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
@@ -3049,7 +3061,7 @@ focus = {
 				size > 1200000
 			}
 		}
-		cost = 7
+		cost = 5
 		bypass = {
 			BLI = {
 			has_completed_focus = BLI_xindalu
@@ -3110,7 +3122,7 @@ focus = {
 				size > 800000
 			}
 		}
-		cost = 7
+		cost = 4
 		bypass = {
 			or = {
 			YUW = {
@@ -3156,7 +3168,7 @@ focus = {
 				}
 			}
 		}
-		cost = 7
+		cost = 2
 
 		ai_will_do = {
 			factor = 10
@@ -3814,7 +3826,7 @@ focus = {
 		ai_will_do = {
 			factor = 100
 		}
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			custom_effect_tooltip = huodebangzhu_gaibianxiaoguo_qiye
 			if = {
@@ -6029,8 +6041,8 @@ focus = {
 		ai_will_do = {
 			factor = 100
 		}
-		will_lead_to_war_with = BFL
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		will_lead_to_war_with = CHY
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			custom_effect_tooltip = jiesuoluorijueyi_tip
 			add_tech_bonus = {

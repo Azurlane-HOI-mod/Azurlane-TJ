@@ -912,7 +912,91 @@ country_event = {
 		add_offsite_building = { type = industrial_complex level = 5 }
 	}
 }
-
+country_event = {
+	id = DOH_event.31
+	title = DOH_event.31.t
+	desc = DOH_event.31.d
+	picture = GFX_aze_hit
+	trigger = {
+		count_triggers = {
+			amount = 3
+			controls_state = 592
+			controls_state = 325
+			controls_state = 283
+			controls_state = 617
+		}
+		tag = DOH
+	}
+	fire_only_once = yes
+	option = {
+		name = DOH_event.31.a
+		ai_chance = {
+			factor = 9
+		}
+		add_timed_idea = {
+			idea = DOH_idea_jfdfbzf
+			days = 90
+		}
+		hidden_effect = {
+			country_event = { id = DOH_event.3101 days = 100 }
+		}
+	}
+	option = {
+		name = DOH_event.31.b
+		ai_chance = {
+			factor = 1
+		}
+		add_timed_idea = {
+			idea = DOH_idea_jfdfbzf
+			days = 300
+		}
+		hidden_effect = {
+			country_event = { id = DOH_event.3102 days = 335 }
+		}
+	}
+	
+}
+country_event = {
+	id = DOH_event.3101
+	title = DOH_event.3101.t
+	desc = DOH_event.3101.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = DOH_event.3101.a
+		ai_chance = {
+			factor = 0
+		}
+		army_experience = 50
+		custom_effect_tooltip = wz_earn_18000
+		add_to_variable = {
+			wz_sl = 18000
+		}
+	}
+	option = {
+		name = DOH_event.3101.b
+		ai_chance = {
+			factor = 9
+		}
+		army_experience = 50
+		add_stability = 0.15
+		add_war_support = 0.15
+	}
+}
+country_event = {
+	id = DOH_event.3102
+	title = DOH_event.3102.t
+	desc = DOH_event.3102.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = DOH_event.3102.a
+		ai_chance = {
+			factor = 9
+		}
+		add_ideas = DOH_idea_qldxztx
+	}
+}
 add_namespace = DOH_loong_event
 country_event = {
 	id = DOH_loong_event.1001

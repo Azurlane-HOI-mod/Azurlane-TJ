@@ -1,6 +1,36 @@
 ideas = {
 	# 天降独有民族精神，防覆盖
 	country = {
+		BFL_weidadeweiguozhanzheng_ai = {
+			picture = ideas_tank_BFL
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				not = { has_war_with = TIX }
+			}
+			modifier = {
+				army_strength_factor = 0.2
+				army_org_factor = 0.5
+				army_morale_factor = 0.5
+				land_reinforce_rate = 0.25
+				army_core_attack_factor = 0.8
+				army_core_defence_factor = 2
+				planning_speed = -1
+				max_planning = -0.8
+			}
+			targeted_modifier = {
+				tag = TIX
+				attack_bonus_against = 0.8
+				defense_bonus_against = 2.3
+			}
+			targeted_modifier = {
+				tag = SAD
+				attack_bonus_against = 0.8
+				defense_bonus_against = 2.3
+			}
+		}
+		
 		TIX_jdzy = {
 			picture = FRA_scw_intervention_republicans_focus
 			allowed_civil_war = {
@@ -1121,11 +1151,13 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			modifier = {
+				army_speed_factor = -0.2
+			}
 			targeted_modifier = {
 				tag = BFL
-				attack_bonus_against = 0.7
-				defense_bonus_against = 0.7
-				breakthrough_bonus_against = 0.1
+				attack_bonus_against = 0.3
+				defense_bonus_against = 0.3
 			}
 		}
 		CHY_rimuxishan = {
@@ -1437,9 +1469,9 @@ ideas = {
 				org_loss_when_moving = -0.2
 				army_armor_attack_factor = 0.6
 				army_armor_defence_factor = 0.6
-				army_speed_factor = 0.25
+				army_speed_factor = 0.1
 				ai_focus_aggressive_factor = 1
-				army_strength_factor = 0.1
+				training_time_army_factor = -0.2
 			}
 			equipment_bonus = {
 				infantry_equipment = {
@@ -1501,6 +1533,7 @@ ideas = {
 				air_night_penalty = -0.3
 				air_range_factor = 0.3
 				air_agility_factor = 0.3
+				training_time_army_factor = -0.1
 			}
 			equipment_bonus = {
 				infantry_equipment = {
@@ -1555,6 +1588,7 @@ ideas = {
 				naval_speed_factor = 0.2
 				navy_max_range_factor = 0.4
 				supply_consumption_factor = -0.2
+				training_time_army_factor = -0.1
 			}
 			equipment_bonus = {
 				infantry_equipment = {
@@ -1607,7 +1641,7 @@ ideas = {
 				land_reinforce_rate = 0.05
 				planning_speed = 1.2
 				max_planning = 0.8
-				
+				training_time_army_factor = -0.2
 			}
 			equipment_bonus = {
 				infantry_equipment = {
@@ -1668,6 +1702,12 @@ ideas = {
 				air_night_penalty = -0.3
 				air_range_factor = 0.2
 				air_agility_factor = 0.2
+				industrial_capacity_dockyard = 1.5
+				navy_org = 20
+				navy_screen_attack_factor = 0.5
+				navy_screen_defence_factor = 0.5
+				navy_capital_ship_attack_factor = 0.3
+				training_time_army_factor = -0.1
 			}
 			targeted_modifier = {
 				tag = SAD
@@ -1736,9 +1776,10 @@ ideas = {
 				political_power_cost = -0.8
 				line_change_production_efficiency_factor = 0.4
 				industrial_capacity_factory = 0.5
-				industrial_capacity_dockyard = 1
+				industrial_capacity_dockyard = 2.5
 				production_factory_max_efficiency_factor = 0.3
 				production_factory_efficiency_gain_factor = 2
+				training_time_army_factor = -0.2
 			}
 			equipment_bonus = {
 				infantry_equipment = {
@@ -2426,6 +2467,208 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.2
 				stability_factor = -0.1
+			}
+		}
+		
+		BFL_dongyuanzhanshijingji = {
+			picture = ARG_construction_guilds
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.25
+				mobilization_laws_cost_factor = -0.33
+				economy_cost_factor = -0.33
+				production_speed_arms_factory_factor = 0.2
+			}
+		}
+		
+		BFL_xiangyuanshuaizhijing = {
+			picture = generic_reserve_divisions
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				war_support_factor = 0.5
+				political_power_factor = 0.25
+				production_speed_arms_factory_factor = 0.15
+				drift_defence_factor = 1
+				war_support_weekly = 0.01
+				max_command_power = 50
+			}
+		}
+		
+		BFL_dqx_0 = {
+			picture = SOV_conspiracy_in_the_academy_army
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				political_power_cost = 0.1
+				drift_defence_factor = -0.1
+				stability_factor = -0.05
+				war_support_factor = -0.1
+				command_power_gain = -0.1
+				max_command_power = -5
+				army_org_factor = -0.1
+				army_morale_factor = -0.05
+				planning_speed = -0.1
+				max_planning = -0.05
+			}
+		}
+		
+		BFL_dqx_1 = {
+			name = BFL_dqx_0
+			picture = SOV_conspiracy_in_the_academy_army
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				political_power_cost = 0.2
+				drift_defence_factor = -0.2
+				stability_factor = -0.1
+				war_support_factor = -0.2
+				command_power_gain = -0.2
+				max_command_power = -20
+				army_org_factor = -0.2
+				army_morale_factor = -0.1
+				planning_speed = -0.2
+				max_planning = -0.1
+			}
+		}
+		
+		BFL_dqx_2 = {
+			name = BFL_dqx_0
+			picture = SOV_conspiracy_in_the_academy_army
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				political_power_cost = 0.3
+				drift_defence_factor = -0.4
+				stability_factor = -0.2
+				war_support_factor = -0.3
+				command_power_gain = -0.4
+				max_command_power = -40
+				army_org_factor = -0.3
+				army_morale_factor = -0.2
+				planning_speed = -0.3
+				max_planning = -0.2
+			}
+		}
+		
+		BFL_dqx_3 = {
+			name = BFL_dqx_0
+			picture = SOV_conspiracy_in_the_academy_army
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				political_power_cost = 0.5
+				drift_defence_factor = -0.5
+				stability_factor = -0.3
+				war_support_factor = -0.5
+				command_power_gain = -0.5
+				max_command_power = -50
+				army_org_factor = -0.4
+				army_morale_factor = -0.3
+				planning_speed = -0.4
+				max_planning = -0.3
+				stability_weekly = -0.001
+				war_support_weekly = -0.002
+			}
+		}
+		
+		BFL_dqx_4 = {
+			name = BFL_dqx_0
+			picture = SOV_conspiracy_in_the_academy_army
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				political_power_cost = 0.75
+				drift_defence_factor = -0.6
+				stability_factor = -0.4
+				war_support_factor = -0.6
+				command_power_gain = -0.7
+				max_command_power = -75
+				army_org_factor = -0.5
+				army_morale_factor = -0.4
+				planning_speed = -0.5
+				max_planning = -0.4
+				stability_weekly = -0.003
+				war_support_weekly = -0.005
+			}
+		}
+		
+		BFL_dqx_5 = {
+			name = BFL_dqx_0
+			picture = SOV_conspiracy_in_the_academy_army
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				political_power_cost = 1
+				drift_defence_factor = -0.8
+				stability_factor = -0.5
+				war_support_factor = -0.7
+				command_power_gain = -0.8
+				max_command_power = -90
+				army_org_factor = -0.7
+				army_morale_factor = -0.5
+				planning_speed = -0.7
+				max_planning = -0.5
+				stability_weekly = -0.005
+				war_support_weekly = -0.01
+			}
+		}
+		
+		BFL_weibeilianfuyi = {
+			picture = ARG_women_in_industry
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				line_change_production_efficiency_factor = 0.2
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.3
+				production_factory_max_efficiency_factor = 0.2
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		
+		BFL_tuanjieyixin = {
+			picture = ARG_construction_guilds
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				subversive_activites_upkeep = -0.5
+				justify_war_goal_time = -0.8
+				stability_factor = 0.3
+				war_support_factor = 0.3
+				research_speed_factor = 0.15
+				local_resources_factor = 0.25
+			}
+		}
+		
+		BFL_chiseliming = {
+			picture = generic_attack_soviet_union
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				justify_war_goal_time = -2
+				stability_factor = 0.5
+				war_support_factor = 1
+				compliance_growth = 2
+				resistance_target = -0.5
+				war_support_weekly = 0.01
+				stability_weekly = 0.01
+				generate_wargoal_tension = -0.5
 			}
 		}
 		
