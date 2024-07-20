@@ -1584,10 +1584,14 @@ focus_tree = {
             army_experience = 50            
             add_war_support = 0.2
             DOH_yixian = {
-                add_skill_level = 2
+                add_skill_level = 1
                 add_planning = 1
                 add_unit_leader_trait = brilliant_strategist
+				add_unit_leader_trait = expert_delegator
             }
+			every_army_leader = {
+				add_skill_level = 1
+			}
         }
     }
     focus = {
@@ -1607,7 +1611,7 @@ focus_tree = {
             add_popularity = { ideology = fascism popularity = 0.25 }
 			add_to_variable = { DOH_guomuyixian_var_army_morale_factor = 0.08 }
 			add_to_variable = { DOH_guomuyixian_var_land_reinforce_rate = 0.1 }
-			add_to_variable = { DOH_guomuyixian_var_planning_speed = 0.1 }
+			add_to_variable = { DOH_guomuyixian_var_planning_speed = 0.15 }
             custom_effect_tooltip = DOH_zhangkongsanjun_tt
         }
     }
@@ -1698,8 +1702,8 @@ focus_tree = {
             add_political_power = 350
             add_stability = 0.25
 			add_to_variable = { DOH_guomuyixian_var_political_power_factor = 0.1 }
-			add_to_variable = { DOH_guomuyixian_var_army_attack_factor = 0.05 }
-			add_to_variable = { DOH_guomuyixian_var_army_defence_factor = 0.05 }
+			add_to_variable = { DOH_guomuyixian_var_army_attack_factor = 0.25 }
+			add_to_variable = { DOH_guomuyixian_var_army_defence_factor = 0.25 }
             custom_effect_tooltip = DOH_yixianwansui_tt
             hidden_effect = { news_event = aznews.13 }
         }
@@ -2337,7 +2341,6 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			custom_effect_tooltip = DOH_hongsedengta_tooltip
-			custom_effect_tooltip = "（这里有个bug，还没做完）"
 			every_country = {
 				limit = {
 					OR = {
@@ -3645,6 +3648,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = DOH_chaogongtixi_tooltip
+			custom_effect_tooltip = "（还没做完）"
 		}
 	}
 	focus = {
@@ -3666,11 +3670,12 @@ focus_tree = {
 		}
 
 		available = {
-			
+			always = no
 		}
 
 		completion_reward = {
 			custom_effect_tooltip = DOH_cijichaogongzhongxin_tooltip
+			custom_effect_tooltip = "（还没做完）"
 		}
 	}
 
@@ -5080,9 +5085,9 @@ focus_tree = {
 			focus = DOH_junmingronghe_jishugaijing
 		}
 		available = {
-			num_of_factories > 1600
+			num_of_factories > 800
 		}
-		cost = 5
+		cost = 2
 		x = 3
 		y = 2
 		completion_reward = {

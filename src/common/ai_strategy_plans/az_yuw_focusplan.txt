@@ -14,6 +14,7 @@ YUW_historical_new = {
 				option = YUW_historical_focus_new
 			}
 		}
+		not = { has_global_flag = modoption_historicalbossai_on }
 	}
 	abort = {
 		has_completed_focus = YUW_yongwangzhiqian
@@ -745,13 +746,16 @@ YUW_jiaojuzhe_banerwei = {
 		original_tag = YUW
 	}
 	enable = {
+			or = {
 			has_game_rule = {
 				rule = YUW_ai_behavior
 				option = YUW_jiaojuzhe_banerwei
 			}
+			has_global_flag = modoption_historicalbossai_on
+			}
 	}
 	abort = {
-		has_completed_focus = YUW_xingyunqiyuan
+		has_completed_focus = YUW_yongwangzhiqian
 	}
 
 	ai_national_focuses = {
@@ -766,6 +770,18 @@ YUW_jiaojuzhe_banerwei = {
 		YUW_zhengmianyingjibuqu
 		YUW_zhongzhifengkuangjihua
 		YUW_xingyunqiyuan
+		#外交线
+		YUW_jiuciweizhiderongren
+		YUW_gongfangzhuanhuan
+		YUW_yanchangfangxian
+		YUW_jiaotingjiudi
+		#其他线路
+		YUW_chongzhengjunbei
+		YUW_lan
+		YUW_blhx
+		YUW_ouzhouxiongji
+		YUW_xinyang
+		YUW_yongwangzhiqian
 	}
 
 	research = {

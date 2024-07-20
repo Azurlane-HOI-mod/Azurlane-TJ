@@ -1082,3 +1082,52 @@ BYG_protect_asia_ore = {
 	 }
 	
 }
+
+BYG_dont_do_so_many_naval_invasions_please = {
+	allowed = { original_tag = BYG }
+
+	enable = {
+		is_historical_focus_on = yes
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = ROM
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = HUN
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = TUR
+		value = -200
+	}
+}
+
+BYG_dont_do_so_many_naval_1942 = {
+	allowed = { original_tag = BYG }
+
+	enable = {
+		is_historical_focus_on = yes
+		date < 1941.8.1
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = TIX
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = SAD
+		value = -200
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = WEX
+		value = -200
+	}
+}

@@ -119,6 +119,13 @@ xingdong_category = {
 		visible = {
 			NOT = { has_country_flag = show_tuxizhanzheng }
 		}
+		available = {
+			or = {
+			not = { has_global_flag = modoption_fengkuangai_on }
+			not = { has_global_flag = modoption_historicalbossai_on }
+			has_global_flag = MOD_azurlane_sairenzhizai
+			}
+		}
 		complete_effect = { 
 			set_country_flag = show_tuxizhanzheng
 		}
@@ -1902,6 +1909,10 @@ xingdong_category = {
 	mf_chushoumofang = {
 		icon = xzmf
 		available = {
+			or = {
+			has_global_flag = modoption_fengkuangai_on
+			not = { has_global_flag = modoption_historicalbossai_on }
+			}
 			custom_trigger_tooltip = {
 				tooltip = ""
 				check_variable = {

@@ -332,6 +332,18 @@ focus = {
 			army_experience = 100
 			navy_experience = 50
 			TIX_heikeji_dengji = yes  
+			custom_effect_tooltip = AZ_lishitiaozhan_on
+			effect_tooltip = {
+			country_event =  az_tianjiang.269
+			}
+			hidden_effect = {
+			if = {
+			limit = {
+			has_global_flag = modoption_historicalbossai_on
+			}
+			country_event =  az_tianjiang.269
+			}
+			}
 		}
 	}
 	
@@ -2256,6 +2268,18 @@ focus = {
 					trait = twys
 					ideology = nazism
 				} 
+			}
+			custom_effect_tooltip = AZ_lishitiaozhan_on
+			effect_tooltip = {
+			country_event =  az_tianjiang.268
+			}
+			hidden_effect = {
+			if = {
+			limit = {
+			has_global_flag = modoption_historicalbossai_on
+			}
+			country_event =  az_tianjiang.268
+			}
 			}
 		}
 	}
@@ -5085,7 +5109,16 @@ focus = {
 			add_timed_idea = { idea = TIX_shuangxianzuozhandepibei days = 80 }
 			}
 			}
-			
+			if = {
+			limit = {
+			is_ai = yes
+			BFL = { is_ai = yes }
+			has_idea = TIX_fkAIbuff
+			}
+			BFL = { 
+			add_timed_idea = { idea = BFL_weidadeweiguozhanzheng_ai days = 650 }  
+			}
+			}
 		}
 	}
 	

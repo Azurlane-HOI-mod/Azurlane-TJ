@@ -1268,20 +1268,57 @@ country_event = {
 		}
 	}
 }
-# country_event = {
-# 	id = DOH_loong_event.1003
-# 	hidden = yes
-# 	is_triggered_only = yes
-# 	immediate = {
-# 		add_dynamic_modifier = {
-# 			modifier = DOH_nciv_to_ship_dynamic_modifier
-# 		}
-# 		add_equipment_to_stockpile = {
-# 			type = doh_civ_naval_equipment_1
-# 			amount = FROM.num_nciv_equipment_clr
-# 		}
-# 	}
-# 	option = {
 
-# 	}
-# }
+country_event = {
+	id = DOH_loong_event.3002
+	title = DOH_loong_event.3002.t
+	desc = DOH_loong_event.3002.d
+	trigger = {
+		tag = DOH
+		has_country_flag = DOH_BFL_bifenggang_flag
+		BFL = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = DOH_loong_event.3002.a
+		trigger = {
+			CHY = {
+				has_focus_tree = chongying_new_focus
+				OR = {
+					has_completed_focus = CHY_chichen1
+					is_debug = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+
+		custom_effect_tooltip = "北联舰娘回归。作为报答，她们和我们进行了深入的交♂流。"
+		add_political_power = 100
+		every_army_leader = {
+			add_logistics = 2
+		}
+		DOH = {
+			BFL_sayousi = {
+				set_nationality = DOH
+			}
+			BFL_afuleer = {
+				set_nationality = DOH
+			}
+			BFL_shuixingjinian = {
+				set_nationality = DOH
+			}
+			BFL_kalangshitade = {
+				set_nationality = DOH
+			}
+			BFL_luoxiya = {
+				set_nationality = DOH
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = DOH_BFL_bifenggang_flag
+		}
+	}
+}

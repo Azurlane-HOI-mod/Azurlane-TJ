@@ -4774,6 +4774,10 @@
 			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag #This focus cannot be canceled
 		}
 		available = {
+			if = {
+			limit = {
+			is_ai = no
+			}
 			has_country_flag = BFL_fanduiluoxiya_flag
 			has_country_flag = BFL_zzpianzhidu_on 
 			custom_trigger_tooltip = {
@@ -4784,6 +4788,7 @@
 			compare = less_than_or_equals
 			}
 			}
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -4792,6 +4797,7 @@
 			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
 			if = {
 			limit = {
+			is_ai = no
 			check_variable = {
 			var = az_pianzhidu
 			value = 19
@@ -4799,7 +4805,18 @@
 			}
 			}
 			country_event = az_tianjiang.253
-			}else = {
+			}
+			if = {
+			limit = {
+			or = {
+			is_ai = yes
+			check_variable = {
+			var = az_pianzhidu
+			value = 20
+			compare = greater_than_or_equals
+			}
+			}
+			}
 			country_event = az_tianjiang.254
 			}
 		}

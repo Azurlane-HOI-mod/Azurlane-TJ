@@ -633,6 +633,20 @@ scripted_gui = {
 					}
 				}
 			}
+			modoption_button8_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_historicalbossai_on
+					}
+					clr_global_flag = modoption_historicalbossai_on
+				}
+				else = {
+					set_global_flag = modoption_historicalbossai_on
+					every_country = {
+					country_event = az_tianjiang.271
+					}
+				}
+			}
 		}
 		triggers = {
 			modoption_button6_on_click_enabled = {
@@ -640,6 +654,9 @@ scripted_gui = {
 			}
 			modoption_button7_on_click_enabled = {
 				NOT = { has_global_flag = modoption_fengkuangai_on }
+			}
+			modoption_button8_on_click_enabled = {
+				is_historical_focus_on = yes
 			}
 			modoption_sirennandu1_click_enabled = {
 				NOT = { has_global_flag = sirennandu2 }
@@ -672,6 +689,9 @@ scripted_gui = {
 				NOT = { has_global_flag = az_gamestarted }
 			}
 			modoption_button7_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button8_on_visible = {
 				NOT = { has_global_flag = az_gamestarted }
 			}
 			modoption_sirennandu_title_visible = {

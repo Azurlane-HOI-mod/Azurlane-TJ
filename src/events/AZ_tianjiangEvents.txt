@@ -9506,3 +9506,147 @@ news_event = {
 		name = "牢莫，what can i say ？"
 	}
 }
+
+country_event = {
+	id = az_tianjiang.268
+	title = "她一直在我们身边"
+	desc = "虽然腓特烈大帝的舰身不存在，但她的意识一直存在着，作为腓特烈最忠诚的臣子，俾斯麦的权威毋庸置疑。"
+	picture = GFX_aze_hxftl
+	is_triggered_only = yes
+	option = {
+		name = "为了皇帝！"
+			add_ideas = TIX_hjjwj
+			add_ideas = TIX_wndez
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.269
+	title = "塞壬教的帮助"
+	desc = "在开始研究塞壬科技之后，塞壬教找上了我们，她们愿意分享给我们塞壬的全部知识，但代价是她们想租借东普鲁士地区十年。同时她们声称并不会在这片地区进行任何研究，不会危害当地的蛮啾。"
+	picture = GFX_aze_sr1
+	is_triggered_only = yes
+	option = {
+		name = "我们可以接受"
+			set_country_flag = TIX_yusirdejiaoyi
+		   complete_national_focus = TIX_donglixitong
+		   complete_national_focus = TIX_fangzhisairenfadongji
+		   complete_national_focus = TIX_shengwugongcheng
+		   complete_national_focus = TIX_yizhijishu
+		   complete_national_focus = TIX_rengongzhineng
+		   complete_national_focus = TIX_wanquansairen
+		   complete_national_focus = TIX_heikejihuopao
+		   complete_national_focus = TIX_heikejibuqiang
+		   SIR = {
+		   transfer_state = 5
+		   transfer_state = 763
+		   transfer_state = 188
+		   add_state_core = 5
+		   add_state_core = 763
+		   add_state_core = 188
+		   }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "拒绝与塞壬教的交易"
+			add_war_support = -0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.270
+	title = "团结一致"
+	desc = "委员会与元老院都看清了局势，我们应该共同领导撒丁，开始对外疯狂扩张了！"
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = "撒丁即将崛起"
+			add_ideas = SAD_zhimindizhengbing_idea
+			add_ideas = SAD_jinghuamanjiu_idea
+			add_ideas = SAD_ylyzkql
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.271
+	title = "历史挑战，启动！"
+	desc = az_tianjiang.271.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.272
+	title = "塞壬之灾"
+	desc = "经过多年的发展，塞壬已经足够强大，而此前我们提供给她们的普鲁士地区此时也将成为她们侵略欧洲的跳板..."
+	picture = GFX_aze_diannao
+	fire_only_once = yes
+	trigger = {
+		date > 1945.8.16
+		tag = TIX
+		has_country_flag = TIX_yusirdejiaoyi
+		has_global_flag = modoption_fengkuangai_on
+		SIR = {
+		is_ai = yes
+		is_major = yes
+		has_war = no
+		has_completed_focus = SIR_diyicizhaohuan
+		}
+	}
+	option = {
+		name = "发生什么了"
+		SIR = {
+		declare_war_on = { target = TIX type = annex_everything }
+		if = {
+		limit = {
+		country_exists = ITA
+		}
+		declare_war_on = { target = ITA type = annex_everything }
+		}else = {
+		declare_war_on = { target = SAD type = annex_everything }
+		}
+		declare_war_on = { target = CHY type = annex_everything }
+		declare_war_on = { target = DOH type = annex_everything }
+		declare_war_on = { target = BYG type = annex_everything }
+		declare_war_on = { target = HUJ type = annex_everything }
+		declare_war_on = { target = YUW type = annex_everything }
+		declare_war_on = { target = BFL type = annex_everything }
+		}
+		hidden_effect = {
+		news_event = { id = az_tianjiang.273 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+news_event = { 
+	id = az_tianjiang.273
+	title ="塞壬之灾"
+	desc = az_tianjiang.273.d
+	picture = GFX_az_sr2
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "世界乱成一团"
+	}
+}

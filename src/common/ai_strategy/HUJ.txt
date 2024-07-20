@@ -922,6 +922,7 @@ HUJ_defend_Britain = {
 	}
 	enable = {
 		or = { 
+		has_war_with = TIX
 		has_war_with = CHY
 		has_war_with = SAD
 		has_war_with = YUW
@@ -936,32 +937,33 @@ HUJ_defend_Britain = {
 	ai_strategy = {
 		type = put_unit_buffers
 
-		order_id = 2
+		order_id = 1
 
 		# south england
 		states = {
-			125
 			126
-			127
-			128
-			129
+	 		127
+	 		123
+			125
 			338
-			123
 			122
-			132
+			129
 			130
+			132
 			131
-			121
 			133
-			136
-			120
+			121
+			119
+			113
+			135
 		}
 
-		ratio = 0.20
+		ratio = 1.0
 
 		area = europe
-
-		subtract_invasions_from_need = no
+		subtract_invasions_from_need = yes 
+		subtract_fronts_from_need = yes 
+		
 	}
 	
 }
@@ -991,7 +993,6 @@ HUJ_convoy_raids_TIX_SAD_convoys = {
 		id = 18 
 		value = 200
 	}
-
 	ai_strategy = {
 		type = naval_convoy_raid_region
 		id = 43 
@@ -1002,6 +1003,21 @@ HUJ_convoy_raids_TIX_SAD_convoys = {
 		type = naval_convoy_raid_region
 		id = 16 
 		value = 200
+	}
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 18 
+		value = 400
+	}
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 43 
+		value = 400
+	}
+	ai_strategy = {
+		type = strike_force_home_base
+		id = 16 
+		value = 400
 	}
 }
 
@@ -1139,10 +1155,10 @@ HUJ_protect_bentu_ore = {
 	 	type = put_unit_buffers
 
 		# ratio of total armeis in country to be buffered
-	 	ratio = 0.4
+	 	ratio = 1.0
 
 		# you can specify an order id. ratio of same orders ids will be share same ratio
-	 	order_id = 1
+	 	order_id = 2
 
 	 	# states to put garrison orders (if no state is friendly, strat is invalid)
 	 	states = {
@@ -1162,7 +1178,8 @@ HUJ_protect_bentu_ore = {
 			113
 			135
 	 	} 
-
+		subtract_invasions_from_need = yes 
+		subtract_fronts_from_need = yes 
 		# ai areas that the orders will use these buffers in
 	 	area = europe
 	 }

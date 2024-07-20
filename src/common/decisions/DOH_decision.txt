@@ -670,7 +670,7 @@ DOH_decision_category = {
 		days_remove = 21
 		remove_effect = {
 			custom_effect_tooltip = "（原）北联的五位革命舰娘将来到东煌暂避。"
-			TIX = {
+			every_possible_country = {
 				BFL_sayousi = {
 					set_nationality = DOH
 				}
@@ -687,40 +687,7 @@ DOH_decision_category = {
 					set_nationality = DOH
 				}
 			}
-			BFL = {
-				BFL_sayousi = {
-					set_nationality = DOH
-				}
-				BFL_afuleer = {
-					set_nationality = DOH
-				}
-				BFL_shuixingjinian = {
-					set_nationality = DOH
-				}
-				BFL_kalangshitade = {
-					set_nationality = DOH
-				}
-				BFL_luoxiya = {
-					set_nationality = DOH
-				}
-			}
-			CHY = {
-				BFL_sayousi = {
-					set_nationality = DOH
-				}
-				BFL_afuleer = {
-					set_nationality = DOH
-				}
-				BFL_shuixingjinian = {
-					set_nationality = DOH
-				}
-				BFL_kalangshitade = {
-					set_nationality = DOH
-				}
-				BFL_luoxiya = {
-					set_nationality = DOH
-				}
-			}
+			set_country_flag = DOH_BFL_bifenggang_flag
 		}
 	}
 	#DOH_BFL_bifenggang_gaobie_decision
@@ -983,6 +950,7 @@ DOH_industry_decision_category = {
 					has_completed_focus = DOH_jinjigaige
 					NOT = {
 						has_country_flag = DOH_auto_conv_com_arm
+						has_country_flag = DOH_auto_conv_arm
 					}
 				}
 			}
@@ -1007,7 +975,10 @@ DOH_industry_decision_category = {
 				is_debug = yes
 				AND = {
 					has_completed_focus = DOH_jinjigaige
-					has_country_flag = DOH_auto_conv_com_arm
+					OR = {
+						has_country_flag = DOH_auto_conv_com_arm
+						has_country_flag = DOH_auto_conv_arm
+					}	
 				}
 			}
 		}
@@ -1019,7 +990,58 @@ DOH_industry_decision_category = {
 			clr_country_flag = DOH_auto_conv_com_arm
 		}
 	}
-	
+	DOH_auto_civ_to_arm_industry_decision = {
+		icon = xingdong
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			OR = {
+				is_debug = yes
+				AND = {
+					has_completed_focus = DOH_jinjigaige
+					NOT = {
+						has_country_flag = DOH_auto_conv_com_arm
+						has_country_flag = DOH_auto_conv_arm
+					}
+				}
+			}
+		}
+		cost = 0
+		available = {
+			has_equipment = {
+				doh_civ_equipment_1 > 0
+			}
+		}
+		complete_effect = {
+			set_country_flag = DOH_auto_conv_arm
+		}
+	}
+	DOH_disable_auto_civ_to_arm_industry_decision = {
+		icon = xingdong
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			OR = {
+				is_debug = yes
+				AND = {
+					has_completed_focus = DOH_jinjigaige
+					OR = {
+						has_country_flag = DOH_auto_conv_com_arm
+						has_country_flag = DOH_auto_conv_arm
+					}	
+				}
+			}
+		}
+		cost = 0
+		available = {
+			has_country_flag = DOH_auto_conv_arm
+		}
+		complete_effect = {
+			clr_country_flag = DOH_auto_conv_arm
+		}
+	}
 	# DOH_cic_to_civ_industry_decision = {
 	# 	icon = xingdong
 	# 	ai_will_do = {

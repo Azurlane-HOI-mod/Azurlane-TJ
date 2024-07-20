@@ -1912,3 +1912,62 @@ TIX_hold_up_in_bfl = { #We got this far but there are bigger targets to worry ab
 	}
 
 }
+
+TIX_attack_DOH = {	
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		not = { country_exists = BFL }
+		TIX = {
+		has_government = fascism
+		not = { is_in_faction_with = DOH }
+		}
+		DOH =  { is_ai = no }
+	}
+	abort = {
+		NOT = {
+		TIX = {
+		has_government = fascism
+		}
+		}
+	}
+	ai_strategy = {
+		type = invade
+		id = "DOH"			
+		value = 200
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "DOH"			
+		value = 200
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "DOH"			
+		value = 1000
+	}		
+}
+
+TIX_SIR_guanxi = {
+	allowed = { original_tag = TIX }
+
+	enable = {
+		is_subject = no
+	}
+
+	abort = {
+		is_subject = yes
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = SIR
+		value = 40
+	}
+	ai_strategy = {
+		type = alliance
+		id = SIR
+		value = 40
+	}
+}

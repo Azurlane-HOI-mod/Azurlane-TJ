@@ -206,6 +206,45 @@ DOH_mofifier_effect = {
 			days = 10
 		}
 	}
+
+	if = {
+		limit = {
+			has_country_flag = DOH_auto_conv_arm
+			check_variable = {
+				var:num_equipment@doh_civ_equipment_1 > 0
+			}
+		}
+		set_temp_variable = {
+			temp_var:az_doh_clr_equ = var:num_equipment@doh_civ_equipment_1
+		}
+		divide_temp_variable = {
+			temp_var:az_doh_clr_equ = 72
+		}
+		round_temp_variable = temp_var:az_doh_clr_equ
+		set_temp_variable = {
+			temp_var:az_doh_factroies_add = temp_var:az_doh_clr_equ
+		}
+		multiply_temp_variable = {
+			temp_var:az_doh_clr_equ = -72
+		}
+		add_equipment_to_stockpile = {
+			type = doh_civ_equipment_1
+			amount = temp_var:az_doh_clr_equ
+		}
+		add_offsite_building = {
+			type = arms_factory
+			level = temp_var:az_doh_factroies_add
+		}
+		add_offsite_building = {
+			type = industrial_complex
+			level = temp_var:az_doh_factroies_add
+		}
+		add_timed_idea = {
+			idea = DOH_czdswgy
+			days = 10
+		}
+	}
+
 	#东煌矿业大学
 	if = {
 		limit = {

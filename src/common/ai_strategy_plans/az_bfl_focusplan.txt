@@ -15,6 +15,7 @@ BFL_historical = {
 				option = BFL_historical_focus
 			}
 		}
+		not = { has_global_flag = modoption_historicalbossai_on }
 	}
 	abort = {
 		has_completed_focus = BFL_beijiyanjiuyuan
@@ -91,6 +92,111 @@ BFL_historical = {
 		BFL_moermansike #70
 		BFL_beijitanxiandui #35
 		BFL_beijiyanjiuyuan #49
+	}
+
+	research = {
+		cat_medium_armor = 50.0	
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+BFL_sayousi = {
+	name = "BFL_sayousi"
+	desc = "BFL_sayousi_desc"
+
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+			has_global_flag = modoption_historicalbossai_on
+	}
+	abort = {
+		has_completed_focus = BFL_68
+	}
+
+	ai_national_focuses = {
+	    #1936
+		BFL_wanchengdiergewunianjihua #70
+		BFL_xiayigewunianjihua #35
+		BFL_12 #35
+		BFL_14 #35
+		BFL_33 #28
+		BFL_34 #28
+		BFL_36 #28
+		BFL_35 #28
+		BFL_37 #42
+		BFL_51 #0
+		BFL_52 #28
+		BFL_53 #28
+		BFL_54 #210
+		#1937
+		BFL_60
+		BFL_61
+		BFL_62
+		BFL_futejiajiuchang	#49
+        BFL_huanleshiguang #35
+        BFL_jihuangwenti #70
+		#1938
+		BFL_zhongzhiyumi #35
+		BFL_63 #70
+		BFL_1  #28
+		BFL_7  #35
+		BFL_8  #35
+		BFL_jinkouliangshi #28
+        BFL_lujunjianshe #56
+		BFL_zhongshijiaoyu #35
+		BFL_jitizhuyi #35
+		BFL_yingxiongzhuyi #35
+		#1939
+		BFL_junduizhengwei #56
+        BFL_zhongshizhuangbei #70
+		BFL_fazhanbubing #35
+		BFL_jungongchang #42
+		BFL_lingpixijing #21
+		BFL_zuihoutongdie #35
+		BFL_buqiangshengchan #35
+		BFL_gongrenfuli #35
+		BFL_huopaodezhongchui #49
+		BFL_baohefugai #49
+		#1940
+		BFL_fazhanjidonghua #49
+		BFL_yundongzhan #56
+		BFL_zongshenzuozhan #49
+		BFL_weisheyilang #35
+		BFL_zhengfuafuhan #21
+		BFL_fazhanzhuangjia #49
+		BFL_qiequtiexuetuzhi #35
+		BFL_t34shengchan #56
+		#1941
+		BFL_gangtiehongliu #42
+		BFL_liluntupo #56
+		BFL_2 #28
+		BFL_3 #28
+		BFL_4 #28
+		BFL_5 #28
+		BFL_dongfangdeweixie #35
+		BFL_quebaohoufanganquan #14
+		BFL_kongjunjianshe #70
+		#1942
+		BFL_cezhongduidizhiyuan #70
+		BFL_hongzhadashi #70
+		BFL_moermansike #70
+		BFL_beijitanxiandui #35
+		BFL_beijiyanjiuyuan #49
+		BFL_64
+		BFL_66
+		BFL_68
 	}
 
 	research = {

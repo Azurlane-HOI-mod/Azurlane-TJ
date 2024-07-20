@@ -1,4 +1,51 @@
 tianjiang_aizuobi = {
+		ai_byg_ruzhan_fa = {
+		available = {
+			date > 1940.4.1
+			tag = BYG
+			is_puppet = no
+			is_ai = yes
+			has_global_flag = modoption_historicalbossai_on
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		visible = {
+			is_ai = yes
+			tag = BYG
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {  
+			set_technology = { mobile_warfare = 1 }
+			complete_national_focus = BYG_ziyouhanweizhe
+			complete_national_focus = BYG_bilanhangxianfangyutongmeng
+			complete_national_focus = BYG_lianbangdeyingxiong
+			complete_national_focus = BYG_zongtongqinshangzhen
+			complete_national_focus = BYG_xiandaishandianzhan
+		}
+		}
+		ai_huj_zhimindi_fa = {
+		available = {
+			date > 1939.10.10
+			tag = HUJ
+			is_puppet = no
+			is_ai = yes
+			has_global_flag = modoption_historicalbossai_on
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		visible = {
+			is_ai = yes
+			tag = HUJ
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {  
+			complete_national_focus = HUJ_tongzhibabuliedianhuj
+		}
+		}
 		ai_tix_zaozhanbeilianzuobi = {
 		available = {
 			date > 1939.12.30
@@ -20,6 +67,58 @@ tianjiang_aizuobi = {
 			YUW = { has_capitulated = yes }
 			NOT = { country_exists = YUW }
 			}
+			not = { has_global_flag = modoption_historicalbossai_on }
+		}
+		visible = {
+			is_ai = yes
+			tag = TIX
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		days_remove = 180
+		complete_effect = {  
+			complete_national_focus = TIX_siweichuangxin
+			complete_national_focus = TIX_libingmoma
+			complete_national_focus = TIX_feixuzhixia
+			BFL = { country_event = az_tianjiang.231 }
+			BYG = { country_event = az_tianjiang.231 }
+			add_ai_strategy = {
+			type = prepare_for_war
+			id = "BFL"
+			value = 500
+			}
+			
+		}
+		remove_effect = {
+			complete_national_focus = TIX_qifujuxiong
+			complete_national_focus = TIX_zhifujuxiong
+		}
+		}
+		
+		ai_tix_zaozhanbeilianzuobi2 = {
+		available = {
+			date > 1940.6.30
+			tag = TIX
+			is_puppet = no
+			or = {
+			has_idea = TY_fengkuangai
+			has_idea = TY_fengkuangai2
+			has_idea = TY_fengkuangai3
+			}
+			is_ai = yes
+			has_government = fascism
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+			or = {
+			BFL = { is_ai = no }
+			BYG = { is_ai = no }
+			}
+			OR = {
+			YUW = { has_capitulated = yes }
+			NOT = { country_exists = YUW }
+			}
+			has_global_flag = modoption_historicalbossai_on
 		}
 		visible = {
 			is_ai = yes
@@ -784,6 +883,7 @@ tianjiang_aizuobi = {
 			tag = TIX
 			date > 1939.8.1
 			has_idea = TIX_fkAIbuff
+			not = { has_global_flag = modoption_historicalbossai_on }
 		}
 		visible = {
 			tag = TIX
@@ -803,6 +903,27 @@ tianjiang_aizuobi = {
 		   complete_national_focus = TIX_wanquansairen
 		   complete_national_focus = TIX_heikejihuopao
 		   complete_national_focus = TIX_heikejibuqiang
+		}
+	}
+	
+	tix_sairenkeji_fa2 = {
+		icon = generic_construction
+		available = {
+			is_ai = yes
+			tag = TIX
+			date > 1939.2.1
+			has_global_flag = modoption_historicalbossai_on 
+		}
+		visible = {
+			tag = TIX
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {  
+		   complete_national_focus = TIX_jixuheikeji
 		}
 	}
 
