@@ -57,32 +57,30 @@ az_DOH_railway_organization = {
 	trait = {
 		token = DOH_wuzhuangyunshuchuan_trait
 		name = DOH_wuzhuangyunshuchuan_trait
-		position = { x = 0 y = 0 }
+		position = { x = 0 y = 1 }
+		parent = {
+			traits = { DOH_yunshujiandui_trait }
+		}
 		icon = GFX_generic_mio_trait_icon_lg_attack
-		limit_to_equipment_type = {
-			convoy
-		}
-		equipment_bonus = {
-			naval_speed = 0.20
-			surface_visibility = -0.25
-			lg_attack = 1
-			anti_air_attack = 1
-		}
 		available = {
 			DOH = {
-				has_completed_focus = DOH_yunshujiandui
+				has_completed_focus = DOH_ninghaixiaxiyang
+			}
+		}
+		on_complete = {
+			DOH = {
+				swap_ideas = {
+					remove_idea = DOH_hailufuhe_idea_3
+					add_idea = DOH_hailufuhe_idea_4
+				}
 			}
 		}
 	}
 	trait = {
 		token = DOH_yunshujiandui_trait
 		name = DOH_yunshujiandui_trait
-		parent = {
-			traits = { DOH_wuzhuangyunshuchuan_trait }
-		}
 		icon = GFX_generic_mio_trait_icon_build_cost_ic
-		relative_position_id = DOH_wuzhuangyunshuchuan_trait
-		position = { x = 0 y = 1}
+		position = { x = 0 y = 0}
 		limit_to_equipment_type = {
 			convoy
 		}
