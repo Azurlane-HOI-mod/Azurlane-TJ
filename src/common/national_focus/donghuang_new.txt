@@ -628,7 +628,7 @@ focus_tree = {
         }
     
         available = {
-            or = {
+           OR = {
                 TIX = { has_opinion = { target = DOH value > 59 } }
                 is_ai = yes
                 hidden_trigger = {
@@ -682,7 +682,7 @@ focus_tree = {
         }
     
         available = {    
-            or = {
+           OR = {
                 HUJ = { has_opinion = { target = DOH value > 59 } }
                 is_ai = yes 
                 hidden_trigger = {
@@ -946,14 +946,14 @@ focus_tree = {
 		available = {
 		if = {
 				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
-				or = { 
+				OR = { 
 				is_ai = yes
 		        num_of_naval_factories > 20
 		        } 
 			}
 			else_if = {
 				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
-				or = { 
+				OR = { 
 				is_ai = yes
 		        num_of_naval_factories > 40
 		    } 

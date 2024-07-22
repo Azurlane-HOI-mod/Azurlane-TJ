@@ -175,7 +175,7 @@ armor_default = {
 				engineer = 1
 				mot_recon = 1
 				artillery = 1
-				fight_shipgirl = 1
+				fight_shipgirl_fankong = 1
 				command_shipgirl = 1
 			}
 			
@@ -194,7 +194,7 @@ armor_default = {
 			armored_car_recon
 			light_tank_recon
 			artillery
-			fight_shipgirl
+			fight_shipgirl_fankong
 			command_shipgirl
 			mot_artillery_brigade
 		}
@@ -394,7 +394,7 @@ armor_default = {
 				artillery = 1
 				maintenance_company = 1
 				logistics_company = 1
-				fight_shipgirl = 1
+				fight_shipgirl_fankong = 1
 			}
 			
 			regiments = {
@@ -423,7 +423,7 @@ armor_default = {
 			artillery
 			#anti_tank
 			mot_artillery_brigade
-			fight_shipgirl
+			fight_shipgirl_fankong
 		}
 		
 		replace_at_match = 0.95
@@ -510,7 +510,7 @@ armor_default = {
 				artillery = 1
 				maintenance_company = 1
 				logistics_company = 1
-				fight_shipgirl = 1
+				fight_shipgirl_fankong = 1
 				command_shipgirl = 1
 			}
 			
@@ -539,7 +539,7 @@ armor_default = {
 			logistics_company
 			artillery
 			#anti_tank
-			fight_shipgirl
+			fight_shipgirl_fankong
 			command_shipgirl
 			mot_artillery_brigade
 		}
@@ -714,7 +714,7 @@ armor_default = {
 				logistics_company = 1
 				maintenance_company = 1
 				artillery = 1
-				fight_shipgirl = 1
+				fight_shipgirl_fankong = 1
 				command_shipgirl = 1
 			}
 			
@@ -746,7 +746,7 @@ armor_default = {
 			signal_company
 			maintenance_company
 			logistics_company
-			fight_shipgirl
+			fight_shipgirl_fankong
 			command_shipgirl
 			anti_tank
 			artillery
@@ -1050,7 +1050,7 @@ suppression_default = {
 			}
 			
 			regiments = {
-				cavalry = 25
+				cavalry = 24
 			}
 		}
 		
@@ -1277,7 +1277,7 @@ infantry_big_default = {
 				signal_company = 1
 				logistics_company = 1
 				command_shipgirl = 1
-				fight_shipgirl = 1
+				fight_shipgirl_fankong = 1
 			}
 			
 			regiments = {
@@ -1298,7 +1298,7 @@ infantry_big_default = {
 			artillery_brigade
 			signal_company
 			command_shipgirl
-			fight_shipgirl
+			fight_shipgirl_fankong
 		}
 		
 		replace_at_match = 0.95
@@ -1387,7 +1387,7 @@ infantry_big_default = {
 				signal_company = 1
 				logistics_company = 1
 				command_shipgirl = 1
-				fight_shipgirl = 1
+				fight_shipgirl_fankong = 1
 			}
 			
 			regiments = {
@@ -1410,7 +1410,7 @@ infantry_big_default = {
 			signal_company
 			heavy_sp_anti_air_brigade
 			command_shipgirl
-			fight_shipgirl
+			fight_shipgirl_fankong
 		}
 	}
 }
@@ -1847,13 +1847,9 @@ jianniangshi = {
 	
 	upgrade_prio = {
 		factor = 2
-
 		modifier = {
-			factor = 1
-			modifier = {
-				factor = 2
-				date > 1938.1.1
-			}
+			add = 2
+			date > 1938.1.1
 		}
 	}
 	
@@ -1919,22 +1915,23 @@ jianniangshi = {
 			support = {
 				recon = 1
 				engineer = 1
-				fight_shipgirl = 1
+				fight_shipgirl_fankong = 1
+				fight_shipgirl_tuji = 1
 				command_shipgirl = 1
 				
 			}
 			
 			regiments = {
-				shipgirl_brigade = 5
+				shipgirl_brigade_xunyang = 5
 			}
 		}
 
 		
 		allowed_types = {
-			shipgirl_brigade
+			fight_shipgirl_fankong
+			fight_shipgirl_tuji
 			engineer
 			command_shipgirl
-			fight_shipgirl
 		}
 	}
 }

@@ -149,7 +149,7 @@ HUJ_unit_production_at_week = {
 		}
 	}
 	abort = {
-		or = {
+		OR = {
 		num_of_military_factories > 150
 		date > 1940.1.1	
 			has_idea = TY_dingzhenai
@@ -220,7 +220,7 @@ HUJ_unit_production_at_strong = {
 	}
     
 	enable = {
-		or = {
+		OR = {
 		num_of_military_factories > 150
 		date > 1940.1.1	
     }
@@ -440,7 +440,7 @@ HUJ_lifeline_of_the_empire = {
 	}
     
 	enable = {
-		or = {
+		OR = {
 		has_war_with = TIX
 		has_war_with = BYG
 		has_war_with = BFL
@@ -463,7 +463,7 @@ HUJ_lifeline_of_the_empire = {
 
 HUJ_BYG_focus_on_europe = {
     allowed = {
-        or = {
+       OR = {
 		original_tag = HUJ
 		original_tag = BYG
 		}
@@ -492,8 +492,8 @@ HUJ_time_to_ditch_FRA = {
 		YUW = {
 			has_capitulated = no
 		}
-		not = { country_exists = WEX }
-		not = { is_in_faction_with = BYG }
+		NOT = { country_exists = WEX }
+		NOT = { is_in_faction_with = BYG }
 	}
 	
 	abort_when_not_enabled = yes
@@ -686,7 +686,7 @@ HUJ_wushibfl = {
 	}
 
 	enable = {
-		or = { 
+		OR = { 
 		has_war_with = CHY
 		has_war_with = SAD
 		has_war_with = YUW
@@ -712,7 +712,7 @@ HUJ_wushitix = {
 		original_tag = HUJ
 	}
 	enable = {
-		or = { 
+		OR = { 
 		has_war_with = CHY
 		has_war_with = SAD
 		has_war_with = YUW
@@ -921,7 +921,7 @@ HUJ_defend_Britain = {
 		original_tag = HUJ
 	}
 	enable = {
-		or = { 
+		OR = { 
 		has_war_with = TIX
 		has_war_with = CHY
 		has_war_with = SAD
@@ -1278,11 +1278,11 @@ HUJ_dengluqidong_sad = {
 	}
 	enable = {
 		has_war_with = SAD
-		or = {
+		OR = {
 		date > 1941.1.1
 		SAD = { is_ai = no }
 		}
-		or = {
+		OR = {
 		is_historical_focus_on = yes
 		SAD = { is_ai = no }
 		}
@@ -1323,11 +1323,11 @@ HUJ_dengluqidong_tix = {
 	}
 	enable = {
 		has_war_with = TIX
-		or = {
+		OR = {
 		date > 1942.6.1
 		TIX = { is_ai = no }
 		}
-		or = {
+		OR = {
 		is_historical_focus_on = yes
 		TIX = { is_ai = no }
 		}
@@ -1368,11 +1368,11 @@ HUJ_dengluqidong_wex = {
 	}
 	enable = {
 		has_war_with = WEX
-		or = {
+		OR = {
 		date > 1942.6.1
 		WEX = { is_ai = no }
 		}
-		or = {
+		OR = {
 		is_historical_focus_on = yes
 		WEX = { is_ai = no }
 		}

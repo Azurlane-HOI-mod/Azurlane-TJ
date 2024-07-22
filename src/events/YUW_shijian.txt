@@ -12,7 +12,7 @@ country_event = {
 	controls_state = 64
 	controls_state = 16
 	controls_state = 2
-	or = {
+	OR = {
 	controls_state = 219
 	controls_state = 126
 	}
@@ -70,7 +70,7 @@ country_event = {
 	is_ai = no
 	has_war = no
 	date > 1937.6.1
-	or = {
+	OR = {
 	tag = YUW
 	is_in_faction_with = YUW
 	}
@@ -111,7 +111,7 @@ news_event = {
 	option = {
 		name = YUW_event.43.b
 		trigger = {
-			not = {tag = YUW }
+			NOT = {tag = YUW }
 		}
 	}
 }
@@ -135,8 +135,8 @@ news_event = {
 	option = {
 		name = YUW_event.42.b
 		trigger = {
-			not = {tag = YUW }
-			not = {tag = TIX }
+			NOT = {tag = YUW }
+			NOT = {tag = TIX }
 		}
 	}
 }
@@ -165,10 +165,10 @@ news_event = {
 	option = {
 		name = YUW_event.41.b
 		trigger = {
-			not = {tag = YUW }
-			not = {tag = TIX }
-			not = {tag = SAD }
-			not = {tag = HUJ }
+			NOT = {tag = YUW }
+			NOT = {tag = TIX }
+			NOT = {tag = SAD }
+			NOT = {tag = HUJ }
 		}
 	}
 }
@@ -799,12 +799,12 @@ country_event = {
 	has_war_with = YUW
 	YUW = {
 	has_government = democratic
-	not = {
+	NOT = {
 	has_country_leader = { ruling_only = yes name = "霞飞" }
 	}
-	not = { has_completed_focus = YUW_shenshengshiming }
-	not = { has_completed_focus = YUW_chedijingjigaige }
-	not = { has_completed_focus = YUW_weiyouzhandou }
+	NOT = { has_completed_focus = YUW_shenshengshiming }
+	NOT = { has_completed_focus = YUW_chedijingjigaige }
+	NOT = { has_completed_focus = YUW_weiyouzhandou }
 	}
 	date < 1941.1.1
 	}
@@ -825,12 +825,12 @@ country_event = {
 	tag = YUW
 	has_government = democratic
 	has_war_with = TIX
-	not = {
+	NOT = {
 	 has_country_leader = { ruling_only = yes name = "霞飞" }
 	}
-	not = { has_completed_focus = YUW_shenshengshiming }
-	not = { has_completed_focus = YUW_chedijingjigaige }
-	not = { has_completed_focus = YUW_weiyouzhandou }
+	NOT = { has_completed_focus = YUW_shenshengshiming }
+	NOT = { has_completed_focus = YUW_chedijingjigaige }
+	NOT = { has_completed_focus = YUW_weiyouzhandou }
 	date < 1941.1.1
 	}
 	option = {
@@ -1004,7 +1004,7 @@ country_event = {
 	has_government = fascism
 	has_war_with = YUW
 	YUW = {
-	not = {
+	NOT = {
 	has_government = fascism 
 	}
 	has_idea = YUW_zbbz
@@ -1327,11 +1327,11 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_completed_focus = YUW_jingjigaige
-		not = {has_completed_focus = YUW_rangbaerdemingling}
+		NOT = {has_completed_focus = YUW_rangbaerdemingling}
 		has_idea = YUW_hldzf4
 		has_idea = YUW_wddjj
 		date > 1938.12.1
-		not = { has_country_flag = yiwai_daxuanwufajinxing }
+		NOT = { has_country_flag = yiwai_daxuanwufajinxing }
 	}
 	option = {
 		name = "为什么会有选举啊！"
@@ -2065,7 +2065,7 @@ country_event = {
 		country_event = { id = YUW_event.61 days = 80 }
 		}
 		trigger = { 
-		not = { has_country_flag = yuw_lalongchenggongtiaojian_3 }
+		NOT = { has_country_flag = yuw_lalongchenggongtiaojian_3 }
 		check_variable = {
 			var = yuw_qstcgl
 			value = 50
@@ -2652,7 +2652,7 @@ country_event = {
 		set_political_power = 900
 		}
 		trigger = { 
-		not = { has_country_flag = yuw_jianlijunzhuzhiyuwzhunbei }
+		NOT = { has_country_flag = yuw_jianlijunzhuzhiyuwzhunbei }
 		}
 		ai_chance = {
 			factor = 0
@@ -3421,7 +3421,7 @@ country_event = {
 		add_political_power = -500
 		set_country_flag = yuwjjz_flag_10
 		trigger = { 
-		not = { has_country_flag = yuwjjz_flag_1 }
+		NOT = { has_country_flag = yuwjjz_flag_1 }
 		}
 		ai_chance = {
 			factor = 0
@@ -3555,7 +3555,7 @@ country_event = {
 		set_country_flag = yuwzuipaineizhan_kaishi
 		if = {
 		limit = {
-		not = { has_country_flag = yuwjjz_flag_2 }
+		NOT = { has_country_flag = yuwjjz_flag_2 }
 		}
 		activate_mission = YUW_dunkeerkezhengbain_time
 		set_country_flag = dunkeerkezhengbian_kaishi
@@ -3664,8 +3664,8 @@ country_event = {
 		country_event = { id = YUW_event.107 days = 2 }
 		}
 		trigger = { 
-		not = { has_country_flag = yuwjjz_flag_1 }
-		not = { has_country_flag = yuwjjz_flag_laomo }
+		NOT = { has_country_flag = yuwjjz_flag_1 }
+		NOT = { has_country_flag = yuwjjz_flag_laomo }
 		}
 		ai_chance = {
 			factor = 0
@@ -4303,7 +4303,7 @@ country_event = {
 		country_event = { id = YUW_event.124 days = 1 }
 		}
 		trigger = {
-		not = { has_country_flag = xiafei_gongtongjinjun }
+		NOT = { has_country_flag = xiafei_gongtongjinjun }
 		}
 		ai_chance = {
 			factor = 0
@@ -4508,7 +4508,7 @@ country_event = {
 		country_event = { id = YUW_event.130 days = 1 }
 		}
 		trigger = {
-		not = { has_country_flag = yuwjjz_flag_13 }
+		NOT = { has_country_flag = yuwjjz_flag_13 }
 		}
 		ai_chance = {
 			factor = 0
@@ -4540,7 +4540,7 @@ country_event = {
 			}
 		}
 		trigger = {
-		not = { has_country_flag = yuwjjz_flag_11 }
+		NOT = { has_country_flag = yuwjjz_flag_11 }
 		check_variable = {
 			var = yuw_jjz_win
 			value = 40
@@ -4586,7 +4586,7 @@ country_event = {
 		}
 		trigger = {
 		has_country_flag = yuwjjz_flag_laomo
-		not = { has_country_flag = yuwjjz_flag_11 }
+		NOT = { has_country_flag = yuwjjz_flag_11 }
 		check_variable = {
 			var = yuw_jjz_win
 			value = 60

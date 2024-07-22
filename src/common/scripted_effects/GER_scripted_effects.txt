@@ -66,13 +66,13 @@ AUS_clr_pubilcity_slot = {
 GER_get_a_governor_to_PREV = {
 	if = {
 		limit = {
-			has_character = KMS_Bismarck
-			KMS_Bismarck = {
-				not = {
-					has_character_flag = has_been_a_governor
-				}
-				is_country_leader = no
-			}
+			# has_character = KMS_Bismarck
+			# KMS_Bismarck = {
+			# 	NOT = {
+			# 		has_character_flag = has_been_a_governor
+			# 	}
+			# 	is_country_leader = no
+			# }
 		}
 		PREV = {
 			create_country_leader = {
@@ -85,15 +85,15 @@ GER_get_a_governor_to_PREV = {
 				}
 			}
 		}
-		KMS_Bismarck = {
-			set_character_flag = has_been_a_governor
-		}
+		# KMS_Bismarck = {
+		# 	set_character_flag = has_been_a_governor
+		# }
 	}
 	else_if = {
 		limit = {
 			has_character = GER_gerd_von_rundstedt
 			GER_gerd_von_rundstedt = {
-				not = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -116,12 +116,13 @@ GER_get_a_governor_to_PREV = {
 	}
 	else_if = {
 		limit = {
-			not = {
-				has_idea = GER_xier_idea
-			}
-			has_character = GER_xier
-			GER_xier = {
-				not = {
+			always = no
+			# NOT = {
+			# 	has_idea = GER_xier_idea
+			# }
+			has_character = XGE_xier
+			XGE_xier = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -138,15 +139,15 @@ GER_get_a_governor_to_PREV = {
 				}
 			}
 		}
-		GER_xier = {
+		XGE_xier = {
 			set_character_flag = has_been_a_governor
 		}
 	}
 	else_if = {
 		limit = {
-			has_character = GER_maiye
-			GER_maiye = {
-				not = {
+			has_character = XGE_maiye
+			XGE_maiye = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -163,15 +164,15 @@ GER_get_a_governor_to_PREV = {
 				}
 			}
 		}
-		GER_maiye = {
+		XGE_maiye = {
 			set_character_flag = has_been_a_governor
 		}
 	}
 	else_if = {
 		limit = {
-			has_character = GER_Tanya
-			GER_Tanya = {
-				not = {
+			has_character = XGE_Tanya
+			XGE_Tanya = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -188,15 +189,15 @@ GER_get_a_governor_to_PREV = {
 				}
 			}
 		}
-		GER_Tanya = {
+		XGE_Tanya = {
 			set_character_flag = has_been_a_governor
 		}
 	}
 	else_if = {
 		limit = {
-			has_character = GER_ailika
-			GER_ailika = {
-				not = {
+			has_character = XGE_ailika
+			XGE_ailika = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -213,15 +214,15 @@ GER_get_a_governor_to_PREV = {
 				}
 			}
 		}
-		GER_ailika = {
+		XGE_ailika = {
 			set_character_flag = has_been_a_governor
 		}
 	}
 	else_if = {
 		limit = {
-			has_character = GER_zhensui
-			GER_zhensui = {
-				not = {
+			has_character = XGE_zhensui
+			XGE_zhensui = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -238,7 +239,7 @@ GER_get_a_governor_to_PREV = {
 				}
 			}
 		}
-		GER_zhensui = {
+		XGE_zhensui = {
 			set_character_flag = has_been_a_governor
 		}
 	}
@@ -246,7 +247,7 @@ GER_get_a_governor_to_PREV = {
 		limit = {
 			has_character = GER_gunther_von_kluge
 			GER_gunther_von_kluge = {
-				not = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -271,7 +272,7 @@ GER_get_a_governor_to_PREV = {
 		limit = {
 			has_character = GER_erwin_rommel
 			GER_erwin_rommel = {
-				not = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -296,7 +297,7 @@ GER_get_a_governor_to_PREV = {
 		limit = {
 			has_character = GER_erich_von_manstein
 			GER_erich_von_manstein = {
-				not = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -319,9 +320,9 @@ GER_get_a_governor_to_PREV = {
 	}
 	else_if = {
 		limit = {
-			has_character = GER_speer
-			GER_speer = {
-				not = {
+			has_character = XGE_speer
+			XGE_speer = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -338,7 +339,7 @@ GER_get_a_governor_to_PREV = {
 				}
 			}
 		}
-		GER_speer = {
+		XGE_speer = {
 			set_character_flag = has_been_a_governor
 		}
 	}
@@ -346,7 +347,7 @@ GER_get_a_governor_to_PREV = {
 		limit = {
 			has_character = GER_friedrich_paulus
 			GER_friedrich_paulus = {
-				not = {
+				NOT = {
 					has_character_flag = has_been_a_governor
 				}
 				is_country_leader = no
@@ -373,7 +374,7 @@ XGE_LISHA_EFFECT = {
 	if  = {
 		limit = {
 			check_variable = { Lisa_resurrection_progress_var > 0 }
-			not = { has_country_flag = Lisa_resurrection_progress_var_event_1 }
+			NOT = { has_country_flag = Lisa_resurrection_progress_var_event_1 }
 		}
 		country_event = {
 			id = XGE.007
@@ -383,7 +384,7 @@ XGE_LISHA_EFFECT = {
 	if  = {
 		limit = {
 			check_variable = { Lisa_resurrection_progress_var > 50 }
-			not = { has_country_flag = Lisa_resurrection_progress_var_event_2 }
+			NOT = { has_country_flag = Lisa_resurrection_progress_var_event_2 }
 		}
 		country_event = {
 			id = XGE.009
@@ -393,7 +394,7 @@ XGE_LISHA_EFFECT = {
 	if  = {
 		limit = {
 			check_variable = { Lisa_resurrection_progress_var > 80 }
-			not = { has_country_flag = Lisa_resurrection_progress_var_event_3 }
+			NOT = { has_country_flag = Lisa_resurrection_progress_var_event_3 }
 		}
 		country_event = {
 			id = XGE.010
@@ -403,7 +404,7 @@ XGE_LISHA_EFFECT = {
 	if  = {
 		limit = {
 			check_variable = { Lisa_resurrection_progress_var = 100 }
-			not = { has_country_flag = Lisa_resurrection_progress_var_event_4 }
+			NOT = { has_country_flag = Lisa_resurrection_progress_var_event_4 }
 		}
 		country_event = {
 			id = XGE.011

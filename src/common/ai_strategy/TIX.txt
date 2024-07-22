@@ -660,7 +660,7 @@ TIX_strike_BFL_crazyaivsai = {
 		has_completed_focus = TIX_qifujuxiong
 		date < 1941.8.1
 		BFL = { is_ai = yes }
-		BFL = { or = {
+		BFL = {OR = {
 			has_idea = TY_fengkuangai
 			has_idea = TY_fengkuangai2
 			has_idea = TY_fengkuangai3
@@ -735,8 +735,8 @@ TIX_area_priority = {
 		date > 1941.3.1
 	}
 	abort = {
-		or = {
-		not = { country_exists = BFL }
+		OR = {
+		NOT = { country_exists = BFL }
 		BFL = { is_subject = yes }
 		is_in_faction_with = BFL
 		}
@@ -959,7 +959,7 @@ TIX_war_maginot_line = {
 			has_war_with = YUW
 			OR = {
 				POL = { has_capitulated = yes }
-				not = { country_exists = POL }
+				NOT = { country_exists = POL }
 		}			
 		}
 	}
@@ -1493,7 +1493,7 @@ TIX_ignore_little_country = {
 		original_tag = TIX
 	}
 	enable = {
-		or = {
+		OR = {
 		has_war_with = BFL
 		has_war_with = SAD
 		has_war_with = HUJ
@@ -1595,7 +1595,7 @@ spain_help_TIX = {
 	}
 	abort = {
 		OR = {
-			not = { 
+			NOT = { 
 			TIX = { has_government = fascism }
 			}
 			SPA = { has_completed_focus = SPA_join_the_allies }
@@ -1665,7 +1665,7 @@ TIX_we_dont_fight_pathetic_sweden = { # :O
 	}
 	abort = {
 		SWE = {
-			not = { has_idea = neutrality_idea }
+			NOT = { has_idea = neutrality_idea }
 		}
 	}
 	ai_strategy = {
@@ -1693,7 +1693,7 @@ TIX_we_dont_fight_pathetic_sweden_on_historical = { # :O
 	}
 	abort = {
 		SWE = {
-			not = { has_idea = neutrality_idea }
+			NOT = { has_idea = neutrality_idea }
 		}
 	}
 	ai_strategy = {
@@ -1846,7 +1846,7 @@ TIX_donthelpnor = {
 	abort = { 
 		OR = {
 			has_war_with = BFL 
-			not = { country_exists = BFL }
+			NOT = { country_exists = BFL }
 		}
 	
 	}
@@ -1889,7 +1889,7 @@ TIX_hold_up_in_bfl = { #We got this far but there are bigger targets to worry ab
 		is_historical_focus_on = yes
 		BFL = { has_capitulated = no }
 		BFL = { is_ai = yes }
-		or = {
+		OR = {
 		YUW = { is_ai = yes }
 		YUW = { has_capitulated = yes }
 		}
@@ -1918,10 +1918,10 @@ TIX_attack_DOH = {
 		original_tag = TIX
 	}
 	enable = {
-		not = { country_exists = BFL }
+		NOT = { country_exists = BFL }
 		TIX = {
 		has_government = fascism
-		not = { is_in_faction_with = DOH }
+		NOT = { is_in_faction_with = DOH }
 		}
 		DOH =  { is_ai = no }
 	}

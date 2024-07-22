@@ -10,19 +10,20 @@ huj_yihui_category = {
 			}
 		}
 		visible = {
-			HUJ_weiershi = { is_country_leader = no }
-		} 
-		
-		complete_effect = {  
-			set_country_flag = { flag = renmingshouxiang_cd value = 1 days = 365 }
+			HUJ_weiershi = {
+				is_country_leader = no
+			}
+		}
+		complete_effect = {
+			set_country_flag = {
+				flag = renmingshouxiang_cd
+				value = 1
+				days = 365
+			}
 			promote_character = {
-				
 				character = HUJ_weiershi
 				ideology = liberalism
-
 			}
-				
-			  
 		}
 		ai_will_do = {
 			factor = 0
@@ -31,10 +32,14 @@ huj_yihui_category = {
 	shouxiangrenwu_weiershiqinwang = {
 		icon = weiershi
 		activation = {
-			HUJ_weiershi = { is_country_leader = yes }
+			HUJ_weiershi = {
+				is_country_leader = yes
+			}
 		}
 		cancel_trigger = {
-			HUJ_weiershi = { is_country_leader = no }
+			HUJ_weiershi = {
+				is_country_leader = no
+			}
 		}
 		is_good = no
 		available = {
@@ -90,20 +95,20 @@ huj_yihui_category = {
 				}
 			}
 		}
-
 		visible = {
-			HUJ_weiershi = { is_country_leader = yes }
-		} 
+			HUJ_weiershi = {
+				is_country_leader = yes
+			}
+		}
 		days_mission_timeout = 730
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			add_political_power = 500
 		}
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
 	renmingshouxiang_hude = {
 		icon = hude
 		available = {
@@ -115,27 +120,33 @@ huj_yihui_category = {
 			}
 		}
 		visible = {
-			HUJ_hude = { is_country_leader = no }
-			
+			HUJ_hude = {
+				is_country_leader = no
+			}
 		}
-		
-		complete_effect = {  
-			set_country_flag = { flag = renmingshouxiang_cd value = 1 days = 365 }
+		complete_effect = {
+			set_country_flag = {
+				flag = renmingshouxiang_cd
+				value = 1
+				days = 365
+			}
 			promote_character = HUJ_hude
-
 		}
 		ai_will_do = {
 			factor = 0
-			
 		}
 	}
 	shouxiangrenwu_hude = {
 		icon = hude
 		activation = {
-			HUJ_hude = { is_country_leader = yes }
+			HUJ_hude = {
+				is_country_leader = yes
+			}
 		}
 		cancel_trigger = {
-			HUJ_hude = { is_country_leader = no }
+			HUJ_hude = {
+				is_country_leader = no
+			}
 		}
 		is_good = no
 		available = {
@@ -144,15 +155,23 @@ huj_yihui_category = {
 			has_war_support > 1
 			count_triggers = {
 				amount = 2
-				has_army_manpower = { size > 1000000 } 
-				has_deployed_air_force_size = { size > 2000 }
-				has_navy_size = { size > 300 }
+				has_army_manpower = {
+					size > 1000000
+				}
+				has_deployed_air_force_size = {
+					size > 2000
+				}
+				has_navy_size = {
+					size > 300
+				}
 				num_of_military_factories > 200
 			}
 		}
 		visible = {
-			HUJ_hude = { is_country_leader = yes }
-		} 
+			HUJ_hude = {
+				is_country_leader = yes
+			}
+		}
 		days_mission_timeout = 730
 		fire_only_once = yes
 		complete_effect = {
@@ -173,28 +192,31 @@ huj_yihui_category = {
 			}
 		}
 		visible = {
-			HUJ_yanzhan = { is_country_leader = no }
-			NOT = { 
+			HUJ_yanzhan = {
+				is_country_leader = no
+			}
+			NOT = {
 				has_country_leader = {
 					name = "厌战"
 					ruling_only = yes
 				}
 			}
 		}
-		
-		complete_effect = {  
-			set_country_flag = { flag = renmingshouxiang_cd value = 1 days = 365 }
-			 
+		complete_effect = {
+			set_country_flag = {
+				flag = renmingshouxiang_cd
+				value = 1
+				days = 365
+			}
 			promote_character = HUJ_yanzhan
-				
-			
-			
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
 				has_completed_focus = HUJ_youyakebushihuaping
-				NOT = { has_completed_focus = HUJ_guofangjianshe } 
+				NOT = {
+					has_completed_focus = HUJ_guofangjianshe
+				}
 				add = 10
 			}
 		}
@@ -202,20 +224,28 @@ huj_yihui_category = {
 	shouxiangrenwu_yanzhan = {
 		icon = yanzhan
 		activation = {
-			HUJ_yanzhan = { is_country_leader = yes }
+			HUJ_yanzhan = {
+				is_country_leader = yes
+			}
 		}
 		cancel_trigger = {
-			HUJ_yanzhan = { is_country_leader = no }
+			HUJ_yanzhan = {
+				is_country_leader = no
+			}
 		}
 		available = {
 			num_of_military_factories > 200
 			num_of_naval_factories > 70
 			has_war_support > 1.5
-			has_army_manpower = { size > 750000 }
+			has_army_manpower = {
+				size > 750000
+			}
 		}
 		visible = {
-			HUJ_yanzhan = { is_country_leader = yes }
-		} 
+			HUJ_yanzhan = {
+				is_country_leader = yes
+			}
+		}
 		fire_only_once = yes
 		days_mission_timeout = 730
 		complete_effect = {
@@ -231,7 +261,6 @@ huj_yihui_category = {
 	renmingshouxiang_beierfasite = {
 		icon = beifa
 		available = {
-			
 			custom_trigger_tooltip = {
 				tooltip = rnemingshouxiang_trigger_tooltip
 				NOT = {
@@ -240,20 +269,25 @@ huj_yihui_category = {
 			}
 		}
 		visible = {
-			HUJ_beierfasite = { is_country_leader = no }
-		
+			HUJ_beierfasite = {
+				is_country_leader = no
+			}
 		}
-		
-		complete_effect = {  
-			set_country_flag = { flag = renmingshouxiang_cd value = 1 days = 365 }
+		complete_effect = {
+			set_country_flag = {
+				flag = renmingshouxiang_cd
+				value = 1
+				days = 365
+			}
 			promote_character = HUJ_beierfasite
-
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
 				has_completed_focus = HUJ_guofangjianshe
-				NOT = { has_completed_focus = HUJ_tiaojiaonvwang } 
+				NOT = {
+					has_completed_focus = HUJ_tiaojiaonvwang
+				}
 				add = 10
 			}
 		}
@@ -261,18 +295,24 @@ huj_yihui_category = {
 	shouxiangrenwu_beierfasite = {
 		icon = beifa
 		activation = {
-			HUJ_beierfasite = { is_country_leader = yes }
+			HUJ_beierfasite = {
+				is_country_leader = yes
+			}
 		}
 		cancel_trigger = {
-			HUJ_beierfasite = { is_country_leader = no }
+			HUJ_beierfasite = {
+				is_country_leader = no
+			}
 		}
 		days_mission_timeout = 730
 		available = {
 			has_completed_focus = HUJ_tiaojiaonvwang
 		}
 		visible = {
-			HUJ_beierfasite = { is_country_leader = yes }
-		} 
+			HUJ_beierfasite = {
+				is_country_leader = yes
+			}
+		}
 		fire_only_once = yes
 		complete_effect = {
 			add_political_power = 150
@@ -285,7 +325,6 @@ huj_yihui_category = {
 	renmingshouxiang_chaijun = {
 		icon = chaijun
 		available = {
-			
 			custom_trigger_tooltip = {
 				tooltip = rnemingshouxiang_trigger_tooltip
 				NOT = {
@@ -294,27 +333,33 @@ huj_yihui_category = {
 			}
 		}
 		visible = {
-			HUJ_chaijun = { is_country_leader = no } 
+			HUJ_chaijun = {
+				is_country_leader = no
+			}
 		}
-		
-		complete_effect = {  
-			set_country_flag = { flag = renmingshouxiang_cd value = 1 days = 365 }
+		complete_effect = {
+			set_country_flag = {
+				flag = renmingshouxiang_cd
+				value = 1
+				days = 365
+			}
 			promote_character = HUJ_chaijun
-		
 		}
-
 		ai_will_do = {
 			factor = 0
-
 		}
 	}
 	shouxiangrenwu_chaijun = {
 		icon = chaijun
 		activation = {
-			HUJ_chaijun = { is_country_leader = yes }
+			HUJ_chaijun = {
+				is_country_leader = yes
+			}
 		}
 		cancel_trigger = {
-			HUJ_chaijun = { is_country_leader = no }
+			HUJ_chaijun = {
+				is_country_leader = no
+			}
 		}
 		days_mission_timeout = 730
 		available = {
@@ -323,9 +368,10 @@ huj_yihui_category = {
 		}
 		fire_only_once = yes
 		visible = {
-			HUJ_chaijun = { is_country_leader = yes }
-		} 
-		
+			HUJ_chaijun = {
+				is_country_leader = yes
+			}
+		}
 		complete_effect = {
 			add_political_power = 250
 		}

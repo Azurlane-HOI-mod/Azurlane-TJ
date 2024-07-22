@@ -37,7 +37,7 @@ CHY_unit_production_air_at_week = {
 		num_of_military_factories < 150
 	}
 	abort = {
-		or = {
+		OR = {
 			num_of_military_factories > 150
 			date > 1940.1.1
 			NOT = { country_exists = DOH }
@@ -106,7 +106,7 @@ CHY_unit_production_air_at_strong = {
 		original_tag = CHY
 	}
 	enable = {
-		or = {
+		OR = {
 			num_of_military_factories > 150
 			date > 1940.1.1
 			NOT = { country_exists = DOH }
@@ -170,7 +170,7 @@ CHY_unit_production_army_before_1940 = {
 		}
 	}
 	abort = {
-	or = {
+	OR = {
 		num_of_military_factories > 150
 		date > 1940.1.1
 		NOT = { country_exists = DOH }
@@ -255,7 +255,7 @@ CHY_unit_production_army_after_1940 = {
 		original_tag = CHY
 	}
 	enable = {
-	or = {
+	OR = {
 		num_of_military_factories > 150
 		date > 1940.1.1
 		NOT = { country_exists = DOH }
@@ -677,7 +677,7 @@ CHY_ignore_north = {
 	enable = {
 		country_exists = BFL
 		date < 1942.1.1
-		not = { has_war_with = BFL }
+		NOT = { has_war_with = BFL }
 	}
 	abort_when_not_enabled = yes
 	
@@ -996,9 +996,9 @@ CHY_prio_military_even_at_peace = {
 		date < 1939.1.1
 	}
 	abort = {
-	    or = {
+	   OR = {
 		date > 1939.1.1
-		not = { country_exists = DOH }
+		NOT = { country_exists = DOH }
 		DOH = { is_subject = yes }
 		is_in_faction_with = DOH
 		has_game_rule = {
@@ -1028,7 +1028,7 @@ CHY_prio_military_no_doh = {
 				rule = CHY_ai_behavior
 				option = CHY_changmen_line_focus
 			}
-		not = { country_exists = DOH }
+		NOT = { country_exists = DOH }
 		DOH = { is_subject = yes }
 		is_in_faction_with = DOH
 		}

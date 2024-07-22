@@ -78,7 +78,7 @@ DOH_weishejunfa = {
 		original_tag = DOH
 	}
 	enable = {
-		not = { has_completed_focus = DOH_weishejunfa }
+		NOT = { has_completed_focus = DOH_weishejunfa }
 	}
 	abort = {
 		has_completed_focus = DOH_fangfanjinlin
@@ -502,8 +502,8 @@ DOH_prio_military_even_at_peace = {
 		date > 1936.1.1
 	}
 	abort = {
-	or = {
-		not = { country_exists = CHY }
+	OR = {
+		NOT = { country_exists = CHY }
 		CHY = { is_subject = yes }
 		is_in_faction_with = CHY
 		DOH = { controls_state = 716 }
@@ -641,7 +641,7 @@ DOH_hunker_down_now  = {
 	}
 
 	abort = {
-	    or = {
+	   OR = {
 		date > 1942.1.1 #We accept our fate after this point
 		CHY = { has_war_with = BFL }
 		CHY = { has_war_with = BYG }

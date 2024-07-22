@@ -78,7 +78,6 @@ DOH_decision_category = {
 				}
 			}
 		}
-
 		is_good = no
 		days_mission_timeout = 350
 		complete_effect = {
@@ -137,7 +136,7 @@ DOH_decision_category = {
 		}
 		visible = {
 			OR = {
-				is_debug = yes			
+				is_debug = yes
 				owns_state = 716
 			}
 		}
@@ -161,12 +160,12 @@ DOH_decision_category = {
 		}
 		visible = {
 			OR = {
-				is_debug = yes			
+				is_debug = yes
 				has_completed_focus = DOH_huanxingjulong
 			}
 		}
 		available = {
-		#	owns_state = 329
+			#	owns_state = 329
 			owns_state = 563
 			owns_state = 561
 			owns_state = 657
@@ -214,15 +213,15 @@ DOH_decision_category = {
 					set_state_name = DOH_boli_name
 				}
 				set_victory_points = {
-					province = 957 # 符拉迪沃斯托克/海参崴
+					province = 957					# 符拉迪沃斯托克/海参崴
 					value = 20
 				}
 				set_victory_points = {
-					province = 12189 # 哈巴罗夫斯克/伯力
+					province = 12189					# 哈巴罗夫斯克/伯力
 					value = 20
 				}
 				set_victory_points = {
-					province = 4705 # 赤塔/尼布楚
+					province = 4705					# 赤塔/尼布楚
 					value = 10
 				}
 			}
@@ -235,7 +234,7 @@ DOH_decision_category = {
 		}
 		visible = {
 			OR = {
-				is_debug = yes			
+				is_debug = yes
 				has_completed_focus = DOH_huanxingjulong
 			}
 		}
@@ -256,11 +255,11 @@ DOH_decision_category = {
 			}
 			hidden_effect = {
 				set_victory_points = {
-					province = 10627 # 克孜勒/乌里雅苏台
+					province = 10627					# 克孜勒/乌里雅苏台
 					value = 10
 				}
 				set_victory_points = {
-					province = 4801 # 乌兰巴托
+					province = 4801					# 乌兰巴托
 					value = 15
 				}
 			}
@@ -273,7 +272,7 @@ DOH_decision_category = {
 		}
 		visible = {
 			OR = {
-				is_debug = yes			
+				is_debug = yes
 				has_completed_focus = DOH_huanxingjulong
 			}
 		}
@@ -301,11 +300,11 @@ DOH_decision_category = {
 			}
 			hidden_effect = {
 				set_victory_points = {
-					province = 10062 # 香港
+					province = 10062					# 香港
 					value = 20
 				}
 				set_victory_points = {
-					province = 4189 # 澳门
+					province = 4189					# 澳门
 					value = 10
 				}
 			}
@@ -318,7 +317,7 @@ DOH_decision_category = {
 		}
 		visible = {
 			OR = {
-				is_debug = yes			
+				is_debug = yes
 				AND = {
 					has_completed_focus = DOH_huanxingjulong
 					has_completed_focus = DOH_ninghaixiaxiyang
@@ -335,14 +334,13 @@ DOH_decision_category = {
 		complete_effect = {
 			add_state_core = 527
 			add_state_core = 525
-			
 			hidden_effect = {
 				set_victory_points = {
-					province = 4052 # 平壤
+					province = 4052					# 平壤
 					value = 15
 				}
 				set_victory_points = {
-					province = 7125 # 汉城
+					province = 7125					# 汉城
 					value = 20
 				}
 			}
@@ -426,11 +424,10 @@ DOH_decision_category = {
 		on_map_mode = map_and_decisions_view
 		target_array = controlled_states
 		highlight_color_while_active = 1
-		
 		ai_will_do = {
 			factor = 5
 		}
-		visible = { 
+		visible = {
 			FROM = {
 				OR = {
 					AND = {
@@ -475,7 +472,6 @@ DOH_decision_category = {
 		on_map_mode = map_and_decisions_view
 		target_array = controlled_states
 		highlight_color_while_active = 1
-		
 		ai_will_do = {
 			factor = 5
 		}
@@ -521,7 +517,6 @@ DOH_decision_category = {
 		on_map_mode = map_and_decisions_view
 		target_array = controlled_states
 		highlight_color_while_active = 1
-		
 		ai_will_do = {
 			factor = 5
 		}
@@ -567,7 +562,6 @@ DOH_decision_category = {
 		on_map_mode = map_and_decisions_view
 		target_array = controlled_states
 		highlight_color_while_active = 1
-		
 		ai_will_do = {
 			factor = 5
 		}
@@ -692,6 +686,7 @@ DOH_decision_category = {
 	}
 	#DOH_BFL_bifenggang_gaobie_decision
 }
+
 DOH_industry_decision_category = {
 	DOH_civ_to_arm_industry_decision = {
 		icon = xingdong
@@ -818,7 +813,6 @@ DOH_industry_decision_category = {
 			}
 		}
 	}
-
 	# DOH_nciv_to_naval_industry_decision = {
 	# 	icon = xingdong
 	# 	ai_will_do = {
@@ -912,7 +906,6 @@ DOH_industry_decision_category = {
 	# 		}
 	# 	}
 	# }
-
 	# DOH_nciv_to_ship_industry_decision = {
 	# 	icon = xingdong
 	# 	ai_will_do = {
@@ -978,7 +971,7 @@ DOH_industry_decision_category = {
 					OR = {
 						has_country_flag = DOH_auto_conv_com_arm
 						has_country_flag = DOH_auto_conv_arm
-					}	
+					}
 				}
 			}
 		}
@@ -1030,7 +1023,7 @@ DOH_industry_decision_category = {
 					OR = {
 						has_country_flag = DOH_auto_conv_com_arm
 						has_country_flag = DOH_auto_conv_arm
-					}	
+					}
 				}
 			}
 		}
@@ -1055,7 +1048,6 @@ DOH_industry_decision_category = {
 	# 	}
 	# 	cost = 0
 	# 	available = {
-			
 	# 	}
 	# 	complete_effect = {
 	# 		add_cic = -1000
@@ -1205,7 +1197,6 @@ DOH_decision_debug_category = {
 			}
 		}
 		cost = 10
-		
 		complete_effect = {
 			custom_effect_tooltip = "减少1点投资"
 			effect_tooltip = {
@@ -1266,7 +1257,6 @@ DOH_decision_debug_category = {
 			}
 		}
 		cost = 10
-		
 		complete_effect = {
 			custom_effect_tooltip = "减少1点公共开支"
 			effect_tooltip = {
@@ -1327,7 +1317,6 @@ DOH_decision_debug_category = {
 			}
 		}
 		cost = 10
-		
 		complete_effect = {
 			custom_effect_tooltip = "减少1点额外科研经费"
 			effect_tooltip = {
@@ -1357,7 +1346,6 @@ DOH_decision_debug_category = {
 			}
 		}
 		cost = 10
-		
 		complete_effect = {
 			custom_effect_tooltip = "增加1点额外生产经费"
 			effect_tooltip = {
@@ -1389,7 +1377,6 @@ DOH_decision_debug_category = {
 			}
 		}
 		cost = 10
-		
 		complete_effect = {
 			custom_effect_tooltip = "减少1点额外生产经费"
 			effect_tooltip = {
@@ -1421,7 +1408,6 @@ DOH_decision_debug_category = {
 			}
 		}
 		cost = 10
-		
 		complete_effect = {
 			custom_effect_tooltip = "增加1点市场开放程度"
 			effect_tooltip = {
@@ -1453,7 +1439,6 @@ DOH_decision_debug_category = {
 			}
 		}
 		cost = 10
-		
 		complete_effect = {
 			custom_effect_tooltip = "减少1点市场开放程度"
 			effect_tooltip = {
@@ -1468,7 +1453,6 @@ DOH_decision_debug_category = {
 			DOH_zhichilvchengfa_effect = yes
 		}
 	}
-
 	DOH_debug_1 = {
 		icon = xingdong
 		cost = 0
@@ -1597,7 +1581,10 @@ DOH_decision_debug_category = {
 		}
 		complete_effect = {
 			complete_national_focus = DOH_donghuanggongyetixi
-			add_offsite_building = { type = industrial_complex level = 500 }
+			add_offsite_building = {
+				type = industrial_complex
+				level = 500
+			}
 		}
 	}
 	DOH_debug_6 = {
@@ -1630,7 +1617,6 @@ DOH_decision_debug_category = {
 			}
 		}
 	}
-
 	# DOH_debug_8 = {
 	# 	icon = xingdong
 	# 	cost = 0
@@ -1708,7 +1694,6 @@ DOH_duiwaitouzi_decision_category = {
 			}
 		}
 		allowed = {
-			
 		}
 		target_trigger = {
 			any_country = {
@@ -1750,7 +1735,6 @@ DOH_duiwaitouzi_decision_category = {
 			}
 		}
 		allowed = {
-			
 		}
 		available = {
 			NOT = {
@@ -1782,7 +1766,6 @@ DOH_duiwaitouzi_decision_category = {
 			}
 		}
 	}
-
 	DOH_shuchu_yaoqiu = {
 		icon = xingdong
 		cost = 100
@@ -1797,7 +1780,6 @@ DOH_duiwaitouzi_decision_category = {
 			}
 		}
 		allowed = {
-			
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -1825,7 +1807,6 @@ DOH_duiwaitouzi_decision_category = {
 			DOH_neibufenqi_jianqin_effect = yes
 		}
 	}
-
 	shuchu_100_civ = {
 		icon = xingdong
 		cost = 50
@@ -1886,7 +1867,6 @@ DOH_duiwaitouzi_decision_category = {
 			}
 		}
 		available = {
-			
 		}
 		complete_effect = {
 			set_country_flag = DOH_auto_shuchu_civ
@@ -1914,7 +1894,6 @@ DOH_duiwaitouzi_decision_category = {
 			has_country_flag = DOH_auto_shuchu_civ
 		}
 		available = {
-			
 		}
 		complete_effect = {
 			clr_country_flag = DOH_auto_shuchu_civ
@@ -1922,7 +1901,7 @@ DOH_duiwaitouzi_decision_category = {
 		}
 	}
 }
+
 # DOH_xianjinjianniangdebifenggang_decision_category = {
 # 	DOH_xianjinjianniangdebifenggang_decision
-
 # }

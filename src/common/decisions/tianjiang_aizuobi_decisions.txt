@@ -1,5 +1,5 @@
 tianjiang_aizuobi = {
-		ai_byg_ruzhan_fa = {
+	ai_byg_ruzhan_fa = {
 		available = {
 			date > 1940.4.1
 			tag = BYG
@@ -16,16 +16,18 @@ tianjiang_aizuobi = {
 			factor = 10000
 		}
 		fire_only_once = yes
-		complete_effect = {  
-			set_technology = { mobile_warfare = 1 }
+		complete_effect = {
+			set_technology = {
+				mobile_warfare = 1
+			}
 			complete_national_focus = BYG_ziyouhanweizhe
 			complete_national_focus = BYG_bilanhangxianfangyutongmeng
 			complete_national_focus = BYG_lianbangdeyingxiong
 			complete_national_focus = BYG_zongtongqinshangzhen
 			complete_national_focus = BYG_xiandaishandianzhan
 		}
-		}
-		ai_huj_zhimindi_fa = {
+	}
+	ai_huj_zhimindi_fa = {
 		available = {
 			date > 1939.10.10
 			tag = HUJ
@@ -42,32 +44,42 @@ tianjiang_aizuobi = {
 			factor = 10000
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			complete_national_focus = HUJ_tongzhibabuliedianhuj
 		}
-		}
-		ai_tix_zaozhanbeilianzuobi = {
+	}
+	ai_tix_zaozhanbeilianzuobi = {
 		available = {
 			date > 1939.12.30
 			tag = TIX
 			is_puppet = no
-			or = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
 			has_government = fascism
 			has_global_flag = MOD_azurlane_tianjiangjianniang
-			or = {
-			BFL = { is_ai = no }
-			BYG = { is_ai = no }
+			OR = {
+				BFL = {
+					is_ai = no
+				}
+				BYG = {
+					is_ai = no
+				}
 			}
 			OR = {
-			YUW = { has_capitulated = yes }
-			NOT = { country_exists = YUW }
+				YUW = {
+					has_capitulated = yes
+				}
+				NOT = {
+					country_exists = YUW
+				}
 			}
-			not = { has_global_flag = modoption_historicalbossai_on }
+			NOT = {
+				has_global_flag = modoption_historicalbossai_on
+			}
 		}
 		visible = {
 			is_ai = yes
@@ -78,45 +90,55 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = yes
 		days_remove = 180
-		complete_effect = {  
+		complete_effect = {
 			complete_national_focus = TIX_siweichuangxin
 			complete_national_focus = TIX_libingmoma
 			complete_national_focus = TIX_feixuzhixia
-			BFL = { country_event = az_tianjiang.231 }
-			BYG = { country_event = az_tianjiang.231 }
-			add_ai_strategy = {
-			type = prepare_for_war
-			id = "BFL"
-			value = 500
+			BFL = {
+				country_event = az_tianjiang.231
 			}
-			
+			BYG = {
+				country_event = az_tianjiang.231
+			}
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = "BFL"
+				value = 500
+			}
 		}
 		remove_effect = {
 			complete_national_focus = TIX_qifujuxiong
 			complete_national_focus = TIX_zhifujuxiong
 		}
-		}
-		
-		ai_tix_zaozhanbeilianzuobi2 = {
+	}
+	ai_tix_zaozhanbeilianzuobi2 = {
 		available = {
 			date > 1940.6.30
 			tag = TIX
 			is_puppet = no
-			or = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
 			has_government = fascism
 			has_global_flag = MOD_azurlane_tianjiangjianniang
-			or = {
-			BFL = { is_ai = no }
-			BYG = { is_ai = no }
+			OR = {
+				BFL = {
+					is_ai = no
+				}
+				BYG = {
+					is_ai = no
+				}
 			}
 			OR = {
-			YUW = { has_capitulated = yes }
-			NOT = { country_exists = YUW }
+				YUW = {
+					has_capitulated = yes
+				}
+				NOT = {
+					country_exists = YUW
+				}
 			}
 			has_global_flag = modoption_historicalbossai_on
 		}
@@ -129,40 +151,46 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = yes
 		days_remove = 180
-		complete_effect = {  
+		complete_effect = {
 			complete_national_focus = TIX_siweichuangxin
 			complete_national_focus = TIX_libingmoma
 			complete_national_focus = TIX_feixuzhixia
-			BFL = { country_event = az_tianjiang.231 }
-			BYG = { country_event = az_tianjiang.231 }
-			add_ai_strategy = {
-			type = prepare_for_war
-			id = "BFL"
-			value = 500
+			BFL = {
+				country_event = az_tianjiang.231
 			}
-			
+			BYG = {
+				country_event = az_tianjiang.231
+			}
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = "BFL"
+				value = 500
+			}
 		}
 		remove_effect = {
 			complete_national_focus = TIX_qifujuxiong
 			complete_national_focus = TIX_zhifujuxiong
 		}
-		}
-		
-		ai_tix_jinzhitaoke = {
+	}
+	ai_tix_jinzhitaoke = {
 		available = {
 			date > 1940.1.1
 			tag = TIX
 			is_puppet = no
-			or = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
 			has_government = fascism
 			has_global_flag = MOD_azurlane_tianjiangjianniang
-			YUW = { is_ai = no }
-			BFL = { is_ai = yes }
+			YUW = {
+				is_ai = no
+			}
+			BFL = {
+				is_ai = yes
+			}
 			has_war_with = BFL
 		}
 		visible = {
@@ -179,183 +207,257 @@ tianjiang_aizuobi = {
 			attack_bonus_against = 99.99
 			defense_bonus_against = 99.99
 		}
-		
-		}
-		
-		ai_jianngshi_zuobi = {
+	}
+	ai_jianngshi_zuobi = {
 		available = {
-			or = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
 			date > 1940.1.1
 		}
-		visible = { 
+		visible = {
 			is_ai = yes
 		}
 		ai_will_do = {
 			factor = 10000
 		}
 		fire_only_once = yes
-		complete_effect = {  
-			set_technology = { shipgirltech_jichulilun = 1 }
-			set_technology = { shipgirltech_quzhupao_1 = 1 }
-			set_technology = { shipgirltech_quzhupao_2 = 1 }
-			set_technology = { shipgirltech_quzhupao_3 = 1 }
-			set_technology = { shipgirltech_xunyangpao_1 = 1 }
-			set_technology = { shipgirltech_xunyangpao_2 = 1 }
-			set_technology = { shipgirltech_xunyangpao_3 = 1 }
-			set_technology = { shipgirltech_zhanliepao_1 = 1 }
-			set_technology = { shipgirltech_zhanliepao_2 = 1 }
-			set_technology = { shipgirltech_zhanliepao_3 = 1 }
-			set_technology = { shipgirltech_zuozhanlilun_1 = 1 }
-			set_technology = { shipgirltech_zuozhanlilun_2 = 1 }
-			set_technology = { shipgirltech_zuozhanlilun_3 = 1 }
-			set_technology = { shipgirltech_jizaijianniang_2 = 1 }
+		complete_effect = {
+			set_technology = {
+				shipgirltech_jichulilun = 1
+			}
+			set_technology = {
+				shipgirltech_quzhupao_1 = 1
+			}
+			set_technology = {
+				shipgirltech_quzhupao_2 = 1
+			}
+			set_technology = {
+				shipgirltech_quzhupao_3 = 1
+			}
+			set_technology = {
+				shipgirltech_xunyangpao_1 = 1
+			}
+			set_technology = {
+				shipgirltech_xunyangpao_2 = 1
+			}
+			set_technology = {
+				shipgirltech_xunyangpao_3 = 1
+			}
+			set_technology = {
+				shipgirltech_zhanliepao_1 = 1
+			}
+			set_technology = {
+				shipgirltech_zhanliepao_2 = 1
+			}
+			set_technology = {
+				shipgirltech_zhanliepao_3 = 1
+			}
+			set_technology = {
+				shipgirltech_zuozhanlilun_1 = 1
+			}
+			set_technology = {
+				shipgirltech_zuozhanlilun_2 = 1
+			}
+			set_technology = {
+				shipgirltech_zuozhanlilun_3 = 1
+			}
+			set_technology = {
+				shipgirltech_jizaijianniang_2 = 1
+			}
 		}
-		
-		}
-		
-		ai_jianngshi_zuobi_2 = {
+	}
+	ai_jianngshi_zuobi_2 = {
 		available = {
-			or = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
 			date > 1942.1.1
 		}
-		visible = { 
+		visible = {
 			is_ai = yes
 		}
 		ai_will_do = {
 			factor = 10000
 		}
 		fire_only_once = yes
-		complete_effect = {  
-			set_technology = { shipgirltech_zhinenghuajianzhuang = 1 }
-			set_technology = { shipgirltech_zuozhanlilun_4 = 1 }
-			set_technology = { shipgirltech_zuozhanlilun_5 = 1 }
+		complete_effect = {
+			set_technology = {
+				shipgirltech_zhinenghuajianzhuang = 1
+			}
+			set_technology = {
+				shipgirltech_zuozhanlilun_4 = 1
+			}
+			set_technology = {
+				shipgirltech_zuozhanlilun_5 = 1
+			}
 		}
-		
-		}
-		
-		ai_jianngshi_zuobi_3 = {
+	}
+	ai_jianngshi_zuobi_3 = {
 		available = {
-			or = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
 			date > 1940.6.1
 		}
-		visible = { 
+		visible = {
 			is_ai = yes
 		}
 		ai_will_do = {
 			factor = 10000
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			division_template = {
-				name = "舰娘师"	
+				name = "舰娘师"
 				division_names_group = shipgirl_zhanlie_01
 				is_locked = yes
 				regiments = {
-					shipgirl_brigade_quzhu = { x = 0 y = 0 }
-					shipgirl_brigade_quzhu = { x = 0 y = 1 }
-					shipgirl_brigade_quzhu = { x = 0 y = 2 }
-					shipgirl_brigade_quzhu = { x = 0 y = 3 }
-					shipgirl_brigade_quzhu = { x = 1 y = 0 }
-					shipgirl_brigade_quzhu = { x = 1 y = 1 }
-					shipgirl_brigade_zhanlie = { x = 2 y = 0 }
-					shipgirl_brigade_zhanlie = { x = 2 y = 1 }
-					shipgirl_brigade_zhanlie = { x = 2 y = 2 }
-					shipgirl_brigade_zhanlie = { x = 2 y = 3 }
-					shipgirl_brigade_zhanlie = { x = 3 y = 0 }
-					shipgirl_brigade_zhanlie = { x = 3 y = 1 }
+					shipgirl_brigade_quzhu = {
+						x = 0
+						y = 0
+					}
+					shipgirl_brigade_quzhu = {
+						x = 0
+						y = 1
+					}
+					shipgirl_brigade_quzhu = {
+						x = 0
+						y = 2
+					}
+					shipgirl_brigade_quzhu = {
+						x = 0
+						y = 3
+					}
+					shipgirl_brigade_quzhu = {
+						x = 1
+						y = 0
+					}
+					shipgirl_brigade_quzhu = {
+						x = 1
+						y = 1
+					}
+					shipgirl_brigade_zhanlie = {
+						x = 2
+						y = 0
+					}
+					shipgirl_brigade_zhanlie = {
+						x = 2
+						y = 1
+					}
+					shipgirl_brigade_zhanlie = {
+						x = 2
+						y = 2
+					}
+					shipgirl_brigade_zhanlie = {
+						x = 2
+						y = 3
+					}
+					shipgirl_brigade_zhanlie = {
+						x = 3
+						y = 0
+					}
+					shipgirl_brigade_zhanlie = {
+						x = 3
+						y = 1
+					}
 				}
 				support = {
-					engineer = { x = 0 y = 0 } 	# (semi-mot) Engineer bn
-					light_tank_recon = { x = 0 y = 1 }
-					medium_flame_tank = { x = 0 y = 2 }
-					fight_shipgirl_tuji = { x = 0 y = 3 }
-					fight_shipgirl_fankong = { x = 0 y = 4 }
+					engineer = {
+						x = 0
+						y = 0
+					}
+					# (semi-mot) Engineer bn
+					light_tank_recon = {
+						x = 0
+						y = 1
+					}
+					medium_flame_tank = {
+						x = 0
+						y = 2
+					}
+					fight_shipgirl_tuji = {
+						x = 0
+						y = 3
+					}
+					fight_shipgirl_fankong = {
+						x = 0
+						y = 4
+					}
 				}
 			}
-			for_loop_effect = { 
+			for_loop_effect = {
 				start = 0
 				end = 6
-				add = 1 
-
+				add = 1
 				capital_scope = {
 					create_unit = {
 						division = "name = \"强袭舰娘师\" division_template = \"舰娘师\" start_experience_factor = 1 start_equipment_factor = 1"
 						owner = ROOT
-					}	
+					}
 				}
 			}
 			create_railway_gun = {
-			equipment = az_equipment_liechepao_1
-			name = "终极猫猫头"
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
 			}
 			create_railway_gun = {
-			equipment = az_equipment_liechepao_1
-			name = "终极猫猫头"
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
 			}
 		}
-		
-		}
-		
-		ai_jianngshi_zuobi_4 = {
+	}
+	ai_jianngshi_zuobi_4 = {
 		available = {
-			or = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
 			date > 1941.6.1
 		}
-		visible = { 
+		visible = {
 			is_ai = yes
 		}
 		days_re_enable = 365
 		ai_will_do = {
 			factor = 10000
 		}
-		complete_effect = {  
-			for_loop_effect = { 
+		complete_effect = {
+			for_loop_effect = {
 				start = 0
 				end = 4
-				add = 1 
-
+				add = 1
 				capital_scope = {
 					create_unit = {
 						division = "name = \"强袭舰娘师\" division_template = \"舰娘师\" start_experience_factor = 0.3 start_equipment_factor = 1"
 						owner = ROOT
-					}	
+					}
 				}
 			}
 			create_railway_gun = {
-			equipment = az_equipment_liechepao_1
-			name = "终极猫猫头"
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
 			}
 		}
-		
-		}
-		
-		zuobi = {
+	}
+	zuobi = {
 		available = {
 			tag = TIX
 			is_ai = yes
 			date > 1938.1.1
 		}
-		visible = { 
+		visible = {
 			tag = TIX
 			is_ai = yes
 		}
@@ -363,27 +465,25 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
-			add_equipment_to_stockpile = { 
-				type =  medium_tank_chassis
-				amount = 6000 
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis
+				amount = 6000
 				producer = TIX
 			}
-			add_equipment_to_stockpile = { 
-				type =  motorized_equipment
-				amount = 6000 
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 6000
 				producer = TIX
-				}
+			}
 		}
-		
-		}
-		
-		zuobi_beilian = {
+	}
+	zuobi_beilian = {
 		available = {
 			tag = BFL
 			is_ai = yes
 		}
-		visible = { 
+		visible = {
 			tag = BFL
 			is_ai = yes
 		}
@@ -391,19 +491,17 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			add_political_power = 450
 		}
-		
-		}
-		
-		zuobi_beilian_2 = {
+	}
+	zuobi_beilian_2 = {
 		available = {
 			tag = BFL
 			is_ai = yes
 			date > 1940.1.1
 		}
-		visible = { 
+		visible = {
 			tag = BFL
 			is_ai = yes
 			date > 1940.1.1
@@ -412,20 +510,18 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			add_political_power = 450
 		}
-		
-		}
-		
-		zuobi_beilian_3 = {
+	}
+	zuobi_beilian_3 = {
 		available = {
 			tag = BFL
 			is_ai = yes
 			has_war_with = TIX
 			surrender_progress > 0.35
 		}
-		visible = { 
+		visible = {
 			tag = BFL
 			is_ai = yes
 			has_war_with = TIX
@@ -435,19 +531,17 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			add_political_power = 1000
 		}
-		
-		}
-		
-		zuobi_baiying = {
+	}
+	zuobi_baiying = {
 		available = {
 			tag = BYG
 			is_ai = yes
 			date > 1939.6.1
 		}
-		visible = { 
+		visible = {
 			tag = BYG
 			is_ai = yes
 		}
@@ -455,40 +549,80 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
-		    army_experience = 1000
-			set_technology = { interwar_antitank = 1 }
-			set_technology = { armor_tech_1 = 1 }
-			set_technology = { armor_tech_2 = 1 }
-			set_technology = { antitank1 = 1 }
-			set_technology = { antitank2 = 1 }
-			set_technology = { antitank3 = 1 }
-			set_technology = { rocket_artillery = 1 }
-			set_technology = { amphibious_mechanized_infantry = 1 }	
-			set_technology = { amphibious_tank_chassis = 1}
-			set_technology = { amphibious_drive = 1}
-			set_technology = { interwar_antiair = 1 }
-			set_technology = { centimetric_radar = 1 }
-			set_technology = { improved_decimetric_radar = 1 }
-			set_technology = { decimetric_radar = 1 }
-			set_technology = { radio_detection = 1 }
-			set_technology = { radio = 1 }
-			set_technology = { tech_engineers2 = 1}
-			set_technology = { engine_tech_1 = 1 }
-			set_technology = { engine_tech_2 = 1 }
-			set_technology = { mtg_landing_craft = 1 }
-			set_technology = { mtg_tank_landing_craft = 1 }
-					}
-		
+		complete_effect = {
+			army_experience = 1000
+			set_technology = {
+				interwar_antitank = 1
+			}
+			set_technology = {
+				armor_tech_1 = 1
+			}
+			set_technology = {
+				armor_tech_2 = 1
+			}
+			set_technology = {
+				antitank1 = 1
+			}
+			set_technology = {
+				antitank2 = 1
+			}
+			set_technology = {
+				antitank3 = 1
+			}
+			set_technology = {
+				rocket_artillery = 1
+			}
+			set_technology = {
+				amphibious_mechanized_infantry = 1
+			}
+			set_technology = {
+				amphibious_tank_chassis = 1
+			}
+			set_technology = {
+				amphibious_drive = 1
+			}
+			set_technology = {
+				interwar_antiair = 1
+			}
+			set_technology = {
+				centimetric_radar = 1
+			}
+			set_technology = {
+				improved_decimetric_radar = 1
+			}
+			set_technology = {
+				decimetric_radar = 1
+			}
+			set_technology = {
+				radio_detection = 1
+			}
+			set_technology = {
+				radio = 1
+			}
+			set_technology = {
+				tech_engineers2 = 1
+			}
+			set_technology = {
+				engine_tech_1 = 1
+			}
+			set_technology = {
+				engine_tech_2 = 1
+			}
+			set_technology = {
+				mtg_landing_craft = 1
+			}
+			set_technology = {
+				mtg_tank_landing_craft = 1
+			}
 		}
-		
-		zuobi_2 = {
+	}
+	zuobi_2 = {
 		available = {
 			tag = BYG
 			is_ai = yes
 			date > 1940.1.1
 		}
-		visible = { 
+		visible = {
 			tag = BYG
 			is_ai = yes
 		}
@@ -496,39 +630,46 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			army_experience = 2000
 			navy_experience = 2000
 			air_experience = 2000
-			add_equipment_to_stockpile = { 
-				type =  medium_tank_amphibious_chassis
-				amount = 2000 
+			add_equipment_to_stockpile = {
+				type = medium_tank_amphibious_chassis
+				amount = 2000
 				producer = BYG
 			}
-			add_equipment_to_stockpile = { 
-				type =  medium_tank_chassis
-				amount = 2000 
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis
+				amount = 2000
 				producer = BYG
 			}
 		}
-		}
-		
-		
-		
-		zuobi_baiying_2 = {
+	}
+	zuobi_baiying_2 = {
 		available = {
 			tag = BYG
 			is_ai = yes
 			date > 1940.3.1
-			or = {
-			TIX = {is_ai = no}
-			SAD = {is_ai = no}
-			BFL = {is_ai = no}
-			CHY = {is_ai = no}
-			YUW = {is_ai = no}
+			OR = {
+				TIX = {
+					is_ai = no
+				}
+				SAD = {
+					is_ai = no
+				}
+				BFL = {
+					is_ai = no
+				}
+				CHY = {
+					is_ai = no
+				}
+				YUW = {
+					is_ai = no
+				}
 			}
 		}
-		visible = { 
+		visible = {
 			tag = BYG
 			is_ai = yes
 		}
@@ -536,42 +677,42 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			army_experience = 2000
 			navy_experience = 2000
 			air_experience = 2000
-			add_equipment_to_stockpile = { 
-				type =  medium_tank_amphibious_chassis
-				amount = 8000 
+			add_equipment_to_stockpile = {
+				type = medium_tank_amphibious_chassis
+				amount = 8000
 				producer = BYG
 			}
-			add_equipment_to_stockpile = { 
-				type =  medium_tank_chassis
-				amount = 8000 
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis
+				amount = 8000
 				producer = BYG
 			}
 		}
-		
-		}
-		
-		zuobi_baiying_3 = {
+	}
+	zuobi_baiying_3 = {
 		available = {
 			tag = BYG
 			is_ai = yes
 			date > 1939.7.1
 			controls_state = 358
-			NOT = { has_idea = TY_dingzhenai }
-			or = {
-			has_war_with = TIX
-			has_war_with = CHY
-			has_war_with = SAD
-			has_war_with = BFL
-			has_war_with = HUJ
-			has_war_with = DOH
-			has_war_with = YUW
+			NOT = {
+				has_idea = TY_dingzhenai
+			}
+			OR = {
+				has_war_with = TIX
+				has_war_with = CHY
+				has_war_with = SAD
+				has_war_with = BFL
+				has_war_with = HUJ
+				has_war_with = DOH
+				has_war_with = YUW
 			}
 		}
-		visible = { 
+		visible = {
 			tag = BYG
 			is_ai = yes
 		}
@@ -580,18 +721,17 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = no
 		days_re_enable = 180
-		complete_effect = {  
+		complete_effect = {
 			load_oob = BYG_lqtk
 		}
-		}
-		
-		zuobi_huj_1 = {
+	}
+	zuobi_huj_1 = {
 		available = {
 			tag = HUJ
 			is_ai = yes
 			date > 1939.6.1
 		}
-		visible = { 
+		visible = {
 			tag = HUJ
 			is_ai = yes
 		}
@@ -599,52 +739,90 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = { 
-            army_experience = 1000		
-			set_technology = { interwar_antitank = 1 }
-			set_technology = { armor_tech_1 = 1 }
-			set_technology = { armor_tech_2 = 1 }
-			set_technology = { antitank1 = 1 }
-			set_technology = { antitank2 = 1 }
-			set_technology = { antitank3 = 1 }
-			set_technology = { amphibious_mechanized_infantry = 1 }	
-			set_technology = { amphibious_tank_chassis = 1} 
-			set_technology = { amphibious_drive = 1}
-			set_technology = { interwar_antiair = 1 }
-			set_technology = { centimetric_radar = 1 }
-			set_technology = { improved_decimetric_radar = 1 }
-			set_technology = { decimetric_radar = 1 }
-			set_technology = { radio_detection = 1 }
-			set_technology = { radio = 1 }
-			set_technology = { tech_engineers2 = 1}
-			set_technology = { engine_tech_1 = 1 }
-			set_technology = { engine_tech_2 = 1 }
-			set_technology = { mtg_landing_craft = 1 }
-			set_technology = { mtg_tank_landing_craft = 1 }
-						
-			
+		complete_effect = {
+			army_experience = 1000
+			set_technology = {
+				interwar_antitank = 1
+			}
+			set_technology = {
+				armor_tech_1 = 1
+			}
+			set_technology = {
+				armor_tech_2 = 1
+			}
+			set_technology = {
+				antitank1 = 1
+			}
+			set_technology = {
+				antitank2 = 1
+			}
+			set_technology = {
+				antitank3 = 1
+			}
+			set_technology = {
+				amphibious_mechanized_infantry = 1
+			}
+			set_technology = {
+				amphibious_tank_chassis = 1
+			}
+			set_technology = {
+				amphibious_drive = 1
+			}
+			set_technology = {
+				interwar_antiair = 1
+			}
+			set_technology = {
+				centimetric_radar = 1
+			}
+			set_technology = {
+				improved_decimetric_radar = 1
+			}
+			set_technology = {
+				decimetric_radar = 1
+			}
+			set_technology = {
+				radio_detection = 1
+			}
+			set_technology = {
+				radio = 1
+			}
+			set_technology = {
+				tech_engineers2 = 1
+			}
+			set_technology = {
+				engine_tech_1 = 1
+			}
+			set_technology = {
+				engine_tech_2 = 1
+			}
+			set_technology = {
+				mtg_landing_craft = 1
+			}
+			set_technology = {
+				mtg_tank_landing_craft = 1
+			}
 		}
-		
-		}
-		
-		zuobi_huj_2 = {
+	}
+	zuobi_huj_2 = {
 		available = {
 			tag = HUJ
 			is_ai = yes
 			date > 1939.7.1
 			controls_state = 126
-			NOT = { has_idea = TY_dingzhenai }
-			or = {
-			has_war_with = TIX
-			has_war_with = CHY
-			has_war_with = SAD
-			has_war_with = BFL
-			has_war_with = BYG
-			has_war_with = DOH
-			has_war_with = YUW
+			NOT = {
+				has_idea = TY_dingzhenai
+			}
+			OR = {
+				has_war_with = TIX
+				has_war_with = CHY
+				has_war_with = SAD
+				has_war_with = BFL
+				has_war_with = BYG
+				has_war_with = DOH
+				has_war_with = YUW
 			}
 		}
-		visible = { 
+		visible = {
 			tag = HUJ
 			is_ai = yes
 		}
@@ -653,26 +831,25 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = no
 		days_re_enable = 180
-		complete_effect = {  
+		complete_effect = {
 			load_oob = HUJ_lqtk
 		}
-		}
-		
-		zuobi_huj_3 = {
+	}
+	zuobi_huj_3 = {
 		available = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 			date > 1938.6.1
 		}
 		visible = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 		}
@@ -680,7 +857,7 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			set_country_flag = huj_3_1_yes
 			add_tech_bonus = {
 				name = "小型飞机研究加成"
@@ -690,24 +867,23 @@ tianjiang_aizuobi = {
 				category = light_air
 			}
 		}
-		}
-		
-		zuobi_huj_3_1 = {
+	}
+	zuobi_huj_3_1 = {
 		available = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 			has_country_flag = huj_3_1_yes
 			has_tech = improved_small_airframe
 		}
 		visible = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 		}
@@ -717,36 +893,35 @@ tianjiang_aizuobi = {
 		fire_only_once = yes
 		complete_effect = {
 			if = {
-			limit = {
-			tag = HUJ
-			tag = TIX
-			}
-			air_experience = 500
+				limit = {
+					tag = HUJ
+					tag = TIX
+				}
+				air_experience = 500
 			}
 			if = {
-			limit = {
-			tag = SAD
-			}
-			air_experience = 500
+				limit = {
+					tag = SAD
+				}
+				air_experience = 500
 			}
 		}
-		}
-		
-		zuobi_huj_4 = {
+	}
+	zuobi_huj_4 = {
 		available = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 			date > 1941.1.1
 		}
 		visible = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 		}
@@ -754,7 +929,7 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			set_country_flag = huj_4_1_yes
 			add_tech_bonus = {
 				name = "小型飞机研究加成"
@@ -764,24 +939,23 @@ tianjiang_aizuobi = {
 				category = light_air
 			}
 		}
-		}
-		
-		zuobi_huj_4_1 = {
+	}
+	zuobi_huj_4_1 = {
 		available = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 			has_country_flag = huj_4_1_yes
 			has_tech = advanced_small_airframe
 		}
 		visible = {
-			or = {
-			tag = HUJ
-			tag = SAD
-			tag = TIX
+			OR = {
+				tag = HUJ
+				tag = SAD
+				tag = TIX
 			}
 			is_ai = yes
 		}
@@ -791,34 +965,41 @@ tianjiang_aizuobi = {
 		fire_only_once = yes
 		complete_effect = {
 			if = {
-			limit = {
-			tag = HUJ
-			tag = TIX
-			}
-			air_experience = 500
+				limit = {
+					tag = HUJ
+					tag = TIX
+				}
+				air_experience = 500
 			}
 			if = {
-			limit = {
-			tag = SAD
-			}
-			air_experience = 500
+				limit = {
+					tag = SAD
+				}
+				air_experience = 500
 			}
 		}
-		}
-		
-		zuobi_tiexue_2 = {
+	}
+	zuobi_tiexue_2 = {
 		available = {
 			tag = TIX
 			is_ai = yes
 			date > 1939.1.1
-			or = {
-			BYG = {is_ai = no}
-			HUJ = {is_ai = no}
-			BFL = {is_ai = no}
-			YUW = {is_ai = no}
+			OR = {
+				BYG = {
+					is_ai = no
+				}
+				HUJ = {
+					is_ai = no
+				}
+				BFL = {
+					is_ai = no
+				}
+				YUW = {
+					is_ai = no
+				}
 			}
 		}
-		visible = { 
+		visible = {
 			tag = TIX
 			is_ai = yes
 		}
@@ -826,19 +1007,17 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			army_experience = 2000
 			navy_experience = 2000
 			air_experience = 2000
-			add_equipment_to_stockpile = { 
-				type =  medium_tank_chassis
-				amount = 15000 
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis
+				amount = 15000
 				producer = TIX
 			}
 		}
-		
 	}
-		
 	tix_huanzhuang = {
 		icon = generic_construction
 		available = {
@@ -854,28 +1033,56 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
-		    army_experience = 1000
-			set_technology = { interwar_antitank = 1 }
-			set_technology = { armor_tech_1 = 1 }
-			set_technology = { armor_tech_2 = 1 }
-			set_technology = { antitank1 = 1 }
-			set_technology = { antitank2 = 1 }
-			set_technology = { antitank3 = 1 }
-			set_technology = { amphibious_mechanized_infantry = 1 }	
-			set_technology = { interwar_antiair = 1 }
-			set_technology = { centimetric_radar = 1 }
-			set_technology = { improved_decimetric_radar = 1 }
-			set_technology = { decimetric_radar = 1 }
-			set_technology = { radio_detection = 1 }
-			set_technology = { radio = 1 }
-			set_technology = { tech_engineers2 = 1}
+		complete_effect = {
+			army_experience = 1000
+			set_technology = {
+				interwar_antitank = 1
+			}
+			set_technology = {
+				armor_tech_1 = 1
+			}
+			set_technology = {
+				armor_tech_2 = 1
+			}
+			set_technology = {
+				antitank1 = 1
+			}
+			set_technology = {
+				antitank2 = 1
+			}
+			set_technology = {
+				antitank3 = 1
+			}
+			set_technology = {
+				amphibious_mechanized_infantry = 1
+			}
+			set_technology = {
+				interwar_antiair = 1
+			}
+			set_technology = {
+				centimetric_radar = 1
+			}
+			set_technology = {
+				improved_decimetric_radar = 1
+			}
+			set_technology = {
+				decimetric_radar = 1
+			}
+			set_technology = {
+				radio_detection = 1
+			}
+			set_technology = {
+				radio = 1
+			}
+			set_technology = {
+				tech_engineers2 = 1
+			}
 			set_country_flag = tix_zuobi1
-			set_technology = { engine_tech_2 = 1 }
-						
+			set_technology = {
+				engine_tech_2 = 1
+			}
 		}
 	}
-	
 	tix_sairenkeji_fa = {
 		icon = generic_construction
 		available = {
@@ -883,7 +1090,9 @@ tianjiang_aizuobi = {
 			tag = TIX
 			date > 1939.8.1
 			has_idea = TIX_fkAIbuff
-			not = { has_global_flag = modoption_historicalbossai_on }
+			NOT = {
+				has_global_flag = modoption_historicalbossai_on
+			}
 		}
 		visible = {
 			tag = TIX
@@ -893,26 +1102,25 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
-		   complete_national_focus = TIX_jixuheikeji
-		   complete_national_focus = TIX_donglixitong
-		   complete_national_focus = TIX_fangzhisairenfadongji
-		   complete_national_focus = TIX_shengwugongcheng
-		   complete_national_focus = TIX_yizhijishu
-		   complete_national_focus = TIX_rengongzhineng
-		   complete_national_focus = TIX_wanquansairen
-		   complete_national_focus = TIX_heikejihuopao
-		   complete_national_focus = TIX_heikejibuqiang
+		complete_effect = {
+			complete_national_focus = TIX_jixuheikeji
+			complete_national_focus = TIX_donglixitong
+			complete_national_focus = TIX_fangzhisairenfadongji
+			complete_national_focus = TIX_shengwugongcheng
+			complete_national_focus = TIX_yizhijishu
+			complete_national_focus = TIX_rengongzhineng
+			complete_national_focus = TIX_wanquansairen
+			complete_national_focus = TIX_heikejihuopao
+			complete_national_focus = TIX_heikejibuqiang
 		}
 	}
-	
 	tix_sairenkeji_fa2 = {
 		icon = generic_construction
 		available = {
 			is_ai = yes
 			tag = TIX
 			date > 1939.2.1
-			has_global_flag = modoption_historicalbossai_on 
+			has_global_flag = modoption_historicalbossai_on
 		}
 		visible = {
 			tag = TIX
@@ -922,11 +1130,10 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
-		   complete_national_focus = TIX_jixuheikeji
+		complete_effect = {
+			complete_national_focus = TIX_jixuheikeji
 		}
 	}
-
 	SAD_tankekeji_fa = {
 		icon = generic_construction
 		available = {
@@ -943,19 +1150,18 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
-		   complete_national_focus = SAD_tankexueyuan
-		   complete_national_focus = SAD_kuodazhaoshengguimo
-		   complete_national_focus = SAD_changshizizhuyanfa
-		   complete_national_focus = SAD_junkedaxue
-		   complete_national_focus = SAD_jishujiehe
-		   complete_national_focus = SAD_qianghuaqingtan
-		   complete_national_focus = SAD_xuexitiexue
-		   complete_national_focus = SAD_shengchanjishuzhidao
-		   complete_national_focus = SAD_hezuoyanfa
+		complete_effect = {
+			complete_national_focus = SAD_tankexueyuan
+			complete_national_focus = SAD_kuodazhaoshengguimo
+			complete_national_focus = SAD_changshizizhuyanfa
+			complete_national_focus = SAD_junkedaxue
+			complete_national_focus = SAD_jishujiehe
+			complete_national_focus = SAD_qianghuaqingtan
+			complete_national_focus = SAD_xuexitiexue
+			complete_national_focus = SAD_shengchanjishuzhidao
+			complete_national_focus = SAD_hezuoyanfa
 		}
 	}
-
 	zuobi_chy_1 = {
 		available = {
 			tag = CHY
@@ -963,7 +1169,7 @@ tianjiang_aizuobi = {
 			date > 1936.1.1
 			has_tech = ship_hull_super_heavy
 		}
-		visible = { 
+		visible = {
 			tag = CHY
 			is_ai = yes
 		}
@@ -971,7 +1177,7 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			create_equipment_variant = {
 				name = "超重型战列舰"
 				type = ship_hull_super_heavy_1
@@ -998,25 +1204,23 @@ tianjiang_aizuobi = {
 			add_equipment_production = {
 				equipment = {
 					type = ship_hull_super_heavy_1
-					creator = CHY 
+					creator = CHY
 					version_name = "超重型战列舰"
 				}
-				name = "大和" 
+				name = "大和"
 				requested_factories = 1
 				progress = 1
 				amount = 1
 			}
-			
 		}
 	}
-
 	zuobi_chy_2 = {
 		available = {
 			tag = CHY
 			is_ai = yes
 			date > 1937.1.1
 		}
-		visible = { 
+		visible = {
 			tag = CHY
 			is_ai = yes
 		}
@@ -1024,28 +1228,27 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			add_equipment_production = {
 				equipment = {
 					type = ship_hull_super_heavy_1
-					creator = CHY 
+					creator = CHY
 					version_name = "超重型战列舰"
 				}
-				name = "长门" 
+				name = "长门"
 				requested_factories = 1
 				progress = 1
 				amount = 1
 			}
 		}
 	}
-
 	zuobi_chy_3 = {
 		available = {
 			tag = CHY
 			is_ai = yes
 			date > 1938.7.1
 		}
-		visible = { 
+		visible = {
 			tag = CHY
 			is_ai = yes
 		}
@@ -1053,28 +1256,27 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			add_equipment_production = {
 				equipment = {
 					type = ship_hull_super_heavy_1
-					creator = CHY 
+					creator = CHY
 					version_name = "超重型战列舰"
 				}
-				name = "天城" 
+				name = "天城"
 				requested_factories = 1
 				progress = 1
 				amount = 1
 			}
 		}
 	}
-
 	zuobi_chy_4 = {
 		available = {
 			tag = CHY
 			is_ai = yes
 			date > 1940.1.1
 		}
-		visible = { 
+		visible = {
 			tag = CHY
 			is_ai = yes
 		}
@@ -1082,28 +1284,27 @@ tianjiang_aizuobi = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			add_equipment_production = {
 				equipment = {
 					type = ship_hull_super_heavy_1
-					creator = CHY 
+					creator = CHY
 					version_name = "超重型战列舰"
 				}
-				name = "出云" 
+				name = "出云"
 				requested_factories = 1
 				progress = 1
 				amount = 1
 			}
 		}
 	}
-
 	zuobi_chy_5 = {
 		available = {
 			tag = CHY
 			is_ai = yes
 			date > 1941.1.1
 		}
-		visible = { 
+		visible = {
 			tag = CHY
 			is_ai = yes
 		}
@@ -1112,11 +1313,11 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = no
 		days_re_enable = 365
-		complete_effect = {  
+		complete_effect = {
 			add_equipment_production = {
 				equipment = {
 					type = ship_hull_super_heavy_1
-					creator = CHY 
+					creator = CHY
 					version_name = "超重型战列舰"
 				}
 				requested_factories = 1
@@ -1125,25 +1326,26 @@ tianjiang_aizuobi = {
 			}
 		}
 	}
-	
 	zuobi_chy_6 = {
 		available = {
 			tag = CHY
 			is_ai = yes
 			date > 1939.7.1
 			controls_state = 282
-			NOT = { has_idea = TY_dingzhenai }
-			or = {
-			has_war_with = TIX
-			has_war_with = BYG
-			has_war_with = SAD
-			has_war_with = BFL
-			has_war_with = HUJ
-			has_war_with = DOH
-			has_war_with = YUW
+			NOT = {
+				has_idea = TY_dingzhenai
+			}
+			OR = {
+				has_war_with = TIX
+				has_war_with = BYG
+				has_war_with = SAD
+				has_war_with = BFL
+				has_war_with = HUJ
+				has_war_with = DOH
+				has_war_with = YUW
 			}
 		}
-		visible = { 
+		visible = {
 			tag = CHY
 			is_ai = yes
 		}
@@ -1152,9 +1354,8 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = no
 		days_re_enable = 180
-		complete_effect = {  
+		complete_effect = {
 			load_oob = CHY_lqtk
 		}
-		}
-
+	}
 }

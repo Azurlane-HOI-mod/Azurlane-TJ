@@ -62,27 +62,27 @@ economy = {
 
 
 		xinyangzhidi = {
-
-			icon = GFX_decision_xingdong2
-			
-			recruitable_population_factor = 0.3
-			global_building_slots_factor = 0.15
-			state_production_speed_buildings_factor = 0.15
-			army_speed_factor_for_controller = 0.15
-			army_defence_factor = 0.5
-			weekly_manpower = 2000
+			picture = GFX_decision_xingdong2
+			modifier = {
+				recruitable_population_factor = 0.3
+				global_building_slots_factor = 0.15
+				state_production_speed_buildings_factor = 0.15
+				army_speed_factor_for_controller = 0.15
+				army_defence_factor = 0.5
+				weekly_manpower = 2000	
+			}			
 		}
 
 		dead_silence = {
-
-			icon = GFX_decision_xingdong2
-			
-			recruitable_population_factor = -0.9
-			state_production_speed_buildings_factor = -0.7
-			local_non_core_manpower = -0.8
-			compliance_growth = 0.8
-			resistance_growth = -0.5
-			resistance_target = -0.8
+			picture = GFX_decision_xingdong2
+			modifier = {
+				recruitable_population_factor = -0.9
+				state_production_speed_buildings_factor = -0.7
+				local_non_core_manpower = -0.8
+				compliance_growth = 0.8
+				resistance_growth = -0.5
+				resistance_target = -0.8
+			}
 		}
 	CHY_island_hopping8 = {
 			picture = chi_war_of_resistance3
@@ -362,13 +362,13 @@ economy = {
 		destroyer = {
 		max_organisation = -0.1
 		}
-		light_cruiser = {
+		ship_hull_light = {
 			max_organisation = -0.1
 		}
-		carrier = {
+		ship_hull_carrier = {
 			max_organisation = -0.1
 		}
-		battleship = {
+		ship_hull_heavy = {
 			max_organisation = -0.1
 		}
 		}
@@ -554,11 +554,11 @@ economy = {
 				always = yes
 			}
 			cancel = {
-				or = {
+				OR = {
 				CHY = {
-				not = { has_government = communism }
+				NOT = { has_government = communism }
 				}
-				not = {country_exists = CHY}
+				NOT = {country_exists = CHY}
 				}
 			}
 			modifier = {

@@ -10,7 +10,7 @@ USA_historical_plan = {
 			AND = {
 				is_historical_focus_on = yes
 				OR = {
-					not = { has_dlc = "Man the Guns" }
+					NOT = { has_dlc = "Man the Guns" }
 					has_game_rule = {
 						rule = USA_ai_behavior
 						option = DEFAULT
@@ -37,12 +37,12 @@ USA_historical_plan = {
 						has_completed_focus = GER_oppose_hitler
 					}
 					ENG = {
-						not = { has_government = democratic }
+						NOT = { has_government = democratic }
 					}
 					has_war_with = CAN
 					has_war_with = MEX
 					JAP = {
-						not = {
+						NOT = {
 							OR = {
 								has_government = fascism
 								has_government = neutrality

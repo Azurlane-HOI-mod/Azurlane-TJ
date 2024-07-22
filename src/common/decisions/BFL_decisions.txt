@@ -6,7 +6,7 @@ bfl_jihua_category = {
 		available = {
 			if = {
 				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
-				or = {
+				OR = {
 				AND = {
 				is_ai = yes
 				date > 1940.1.1
@@ -19,7 +19,7 @@ bfl_jihua_category = {
 			}
 			else_if = {
 				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
-				or = {
+				OR = {
 				AND = {
 				is_ai = yes
 				date > 1940.12.1
@@ -977,7 +977,7 @@ bfl_jiansheshehuizhuyi_category = {
 		icon = generic_construction
 		visible = {
 			tag = BFL
-			not = { has_country_flag = BFL_wunianjihua_start }
+			NOT = { has_country_flag = BFL_wunianjihua_start }
 			has_completed_focus = BFL_xiayigewunianjihua
 		}
 		days_remove = 180

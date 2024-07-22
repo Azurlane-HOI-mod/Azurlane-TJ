@@ -1,7 +1,6 @@
 ideas = {
-
-    country = {
-	BYG_jjwjhyz_1 = {
+	country = {
+		BYG_jjwjhyz_1 = {
 			picture = great_depression
 			allowed_civil_war = {
 				always = yes
@@ -11,12 +10,12 @@ ideas = {
 				production_speed_buildings_factor = -0.35
 				industrial_capacity_factory = -0.35
 				industrial_capacity_dockyard = -0.15
-				war_support_factor = -0.20
+				war_support_factor = -0.2
 				ai_join_ally_desire_factor = -3000
 				ai_get_ally_desire_factor = -3000
 			}
 		}
-	BYG_jjwjhyz_2 = {
+		BYG_jjwjhyz_2 = {
 			picture = great_depression
 			allowed_civil_war = {
 				always = yes
@@ -30,8 +29,8 @@ ideas = {
 				ai_join_ally_desire_factor = -2000
 				ai_get_ally_desire_factor = -2000
 			}
-		}	
-	BYG_jjwjhyz_3 = {
+		}
+		BYG_jjwjhyz_3 = {
 			picture = great_depression
 			allowed_civil_war = {
 				always = yes
@@ -45,7 +44,7 @@ ideas = {
 				ai_get_ally_desire_factor = -1000
 			}
 		}
-	BYG_jjwjhyz_4 = {
+		BYG_jjwjhyz_4 = {
 			picture = great_depression
 			allowed_civil_war = {
 				always = yes
@@ -58,38 +57,61 @@ ideas = {
 				ai_get_ally_desire_factor = -500
 			}
 		}
-	BYG_wbygerz = {
+		BYG_wbygerz = {
 			picture = chi_war_of_resistance3
-
 			allowed_civil_war = {
 				always = yes
 			}
 			cancel = {
-				or = {
-				if = {
-				tag = BYG
-				not = { country_exists = USA }
-				not = { country_exists = USB }
-				not = { country_exists = CSA }
-				}
-				if = {
-				tag = USA
-				not = { country_exists = BYG }
-				not = { country_exists = USB }
-				not = { country_exists = CSA }
-				}
-				if = {
-				tag = USB
-				not = { country_exists = USA }
-				not = { country_exists = BYG }
-				not = { country_exists = CSA }
-				}
-				if = {
-				tag = CSA
-				not = { country_exists = USA }
-				not = { country_exists = USB }
-				not = { country_exists = BYG }
-				}
+				OR = {
+					AND = {
+						tag = BYG
+						NOT = {
+							country_exists = USA
+						}
+						NOT = {
+							country_exists = USB
+						}
+						NOT = {
+							country_exists = CSA
+						}
+					}
+					AND = {
+						tag = USA
+						NOT = {
+							country_exists = BYG
+						}
+						NOT = {
+							country_exists = USB
+						}
+						NOT = {
+							country_exists = CSA
+						}
+					}
+					AND = {
+						tag = USB
+						NOT = {
+							country_exists = USA
+						}
+						NOT = {
+							country_exists = BYG
+						}
+						NOT = {
+							country_exists = CSA
+						}
+					}
+					AND = {
+						tag = CSA
+						NOT = {
+							country_exists = USA
+						}
+						NOT = {
+							country_exists = USB
+						}
+						NOT = {
+							country_exists = BYG
+						}
+					}
 				}
 			}
 			modifier = {
@@ -108,38 +130,61 @@ ideas = {
 				can_join_factions = no
 			}
 		}
-	BYG_hldneizhan = {
+		BYG_hldneizhan = {
 			picture = generic_army_problems
-
 			allowed_civil_war = {
 				always = yes
 			}
 			cancel = {
-				or = {
-				if = {
-				tag = BYG
-				not = { country_exists = USA }
-				not = { country_exists = USB }
-				not = { country_exists = CSA }
-				}
-				if = {
-				tag = USA
-				not = { country_exists = BYG }
-				not = { country_exists = USB }
-				not = { country_exists = CSA }
-				}
-				if = {
-				tag = USB
-				not = { country_exists = USA }
-				not = { country_exists = BYG }
-				not = { country_exists = CSA }
-				}
-				if = {
-				tag = CSA
-				not = { country_exists = USA }
-				not = { country_exists = USB }
-				not = { country_exists = BYG }
-				}
+				OR = {
+					AND = {
+						tag = BYG
+						NOT = {
+							country_exists = USA
+						}
+						NOT = {
+							country_exists = USB
+						}
+						NOT = {
+							country_exists = CSA
+						}
+					}
+					AND = {
+						tag = USA
+						NOT = {
+							country_exists = BYG
+						}
+						NOT = {
+							country_exists = USB
+						}
+						NOT = {
+							country_exists = CSA
+						}
+					}
+					AND = {
+						tag = USB
+						NOT = {
+							country_exists = USA
+						}
+						NOT = {
+							country_exists = BYG
+						}
+						NOT = {
+							country_exists = CSA
+						}
+					}
+					AND = {
+						tag = CSA
+						NOT = {
+							country_exists = USA
+						}
+						NOT = {
+							country_exists = USB
+						}
+						NOT = {
+							country_exists = BYG
+						}
+					}
 				}
 			}
 			modifier = {
@@ -151,21 +196,21 @@ ideas = {
 				ai_focus_defense_factor = 2
 			}
 		}
-	BYG_djzs = {
+		BYG_djzs = {
 			picture = generic_foreign_capital
 			allowed_civil_war = {
 				always = yes
 			}
 			modifier = {
-				political_power_factor  = 0.2
+				political_power_factor = 0.2
 				war_support_weekly = 0.001
-				trade_laws_cost_factor  = -0.33
+				trade_laws_cost_factor = -0.33
 				economy_cost_factor = -0.33
 				drift_defence_factor = 0.5
 				production_speed_infrastructure_factor = 0.2
 			}
 		}
-	BYG_jszyck = {
+		BYG_jszyck = {
 			picture = generic_flexible_foreign_policy2
 			allowed_civil_war = {
 				always = yes
@@ -177,8 +222,8 @@ ideas = {
 				research_speed_factor = 0.1
 				local_resources_factor = 0.1
 			}
-	}	
-	BYG_zzydlr = {
+		}
+		BYG_zzydlr = {
 			picture = gre_schachtplan2
 			allowed_civil_war = {
 				always = yes
@@ -189,8 +234,8 @@ ideas = {
 				industrial_capacity_factory = 0.05
 				war_support_factor = -0.25
 			}
-	}	
-	BYG_bygdesd = {
+		}
+		BYG_bygdesd = {
 			picture = SPR_torchbearers_of_tomorrow
 			allowed_civil_war = {
 				always = yes
@@ -204,8 +249,8 @@ ideas = {
 				army_org_factor = 0.15
 				army_speed_factor = 0.05
 			}
-	}
-	BYG_fenxiangcf = {
+		}
+		BYG_fenxiangcf = {
 			picture = EST_democratic_opposition
 			allowed_civil_war = {
 				always = yes
@@ -217,67 +262,67 @@ ideas = {
 				industrial_capacity_dockyard = 0.15
 				war_support_factor = 0.2
 			}
-	}
-	BYG_tankegc = {
+		}
+		BYG_tankegc = {
 			picture = generic_license_production
 			allowed_civil_war = {
 				always = yes
 			}
 			equipment_bonus = {
-			armor = {
-			build_cost_ic = -0.25
-			instant = yes
+				armor = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
 			}
-	}
-	}
-	BYG_ljcfsfan = {
+		}
+		BYG_ljcfsfan = {
 			picture = generic_goods_red_bonus
 			allowed_civil_war = {
 				always = yes
 			}
 			modifier = {
-			political_power_factor = 0.2
-			consumer_goods_factor = -0.2
-			trade_laws_cost_factor  = -0.33
-			economy_cost_factor = -0.33
+				political_power_factor = 0.2
+				consumer_goods_factor = -0.2
+				trade_laws_cost_factor = -0.33
+				economy_cost_factor = -0.33
 			}
-	}
-	BYG_zygonghui = {
+		}
+		BYG_zygonghui = {
 			picture = SOV_stakhanovite_movement
 			allowed_civil_war = {
 				always = yes
 			}
 			modifier = {
-			global_building_slots_factor = 0.1
-			industrial_capacity_factory = 0.15
-			industrial_capacity_dockyard = 0.15
+				global_building_slots_factor = 0.1
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
 			}
-	}
-	BYG_zzxchuan = {
+		}
+		BYG_zzxchuan = {
 			picture = por_iberian_workers_united
 			allowed_civil_war = {
 				always = yes
 			}
 			modifier = {
-			defensive_war_stability_factor = 0.3
-			war_support_factor = 0.3
-			war_support_weekly = 0.03
-			production_speed_arms_factory_factor = 0.2
+				defensive_war_stability_factor = 0.3
+				war_support_factor = 0.3
+				war_support_weekly = 0.03
+				production_speed_arms_factory_factor = 0.2
 			}
-	}
-	BYG_hykxjia = {
+		}
+		BYG_hykxjia = {
 			picture = SOV_atomic_bomb_project
 			allowed_civil_war = {
 				always = yes
 			}
 			modifier = {
-			research_speed_factor = 0.2
-			theorist_cost_factor = -0.5
-			supply_consumption_factor = -0.2
-			no_supply_grace = 144
+				research_speed_factor = 0.2
+				theorist_cost_factor = -0.5
+				supply_consumption_factor = -0.2
+				no_supply_grace = 144
 			}
-	}
-	BYG_huobibianzhi = {
+		}
+		BYG_huobibianzhi = {
 			picture = ETH_customs_barrier_ITA
 			allowed_civil_war = {
 				always = yes
@@ -288,8 +333,8 @@ ideas = {
 				war_support_factor = 0.1
 				trade_opinion_factor = 0.8
 			}
-	}
-	BYG_shehuibaozhang = {
+		}
+		BYG_shehuibaozhang = {
 			picture = ETH_dire_dawa_industries
 			allowed_civil_war = {
 				always = yes
@@ -299,7 +344,6 @@ ideas = {
 				stability_factor = 0.2
 				political_power_factor = 0.15
 			}
+		}
 	}
-	
-		}
-		}
+}

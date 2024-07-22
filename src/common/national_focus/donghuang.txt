@@ -1344,14 +1344,14 @@
 # 		available = {
 # 		if = {
 # 				limit = { has_global_flag = MOD_azurlane_sairenzhizai }
-# 				or = { 
+# 				OR = { 
 # 				is_ai = yes
 # 		        num_of_naval_factories > 20
 # 		        } 
 # 			}
 # 			else_if = {
 # 				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
-# 				or = { 
+# 				OR = { 
 # 				is_ai = yes
 # 		        num_of_naval_factories > 40
 # 		    } 
@@ -2182,7 +2182,7 @@
 # 			}
 # 			if = {
 # 				limit = {
-# 					not = { has_dlc = "By Blood Alone" }
+# 					NOT = { has_dlc = "By Blood Alone" }
 # 				}
 # 				add_tech_bonus = {
 # 				name = "铁鸢"
@@ -2207,7 +2207,7 @@
 # 		}
 	
 # 		available = {
-# 			or = {
+# 			OR = {
 # 				TIX = { has_opinion = { target = DOH value > 59 } }
 # 				is_ai = yes
 # 				hidden_trigger = {
@@ -2243,7 +2243,7 @@
 # 		}
 	
 # 		available = {	
-# 			or = {
+# 			OR = {
 # 				HUJ = { has_opinion = { target = DOH value > 59 } }
 # 				is_ai = yes 
 # 				hidden_trigger = {
@@ -3635,7 +3635,7 @@
 # 		}
 
 # 		available = {
-# 			not = {has_war_with = CHY}
+# 			NOT = {has_war_with = CHY}
 # 			NOT = {
 # 				OR = {
 # 					has_idea = DOH_dfgg1
@@ -4110,7 +4110,7 @@
 # 			has_completed_focus = DOH_huanxingjulong 
 # 			#has_completed_focus = DOH_weishejunfa
 # 			has_completed_focus = DOH_donghuangdeshidai
-# 			or = {
+# 			OR = {
 # 			has_completed_focus = DOH_gongchanlianmeng
 # 			has_completed_focus = DOH_chisezhongzhou
 # 			has_completed_focus = DOH_bilanhangxian
@@ -4155,7 +4155,7 @@
 # 			has_completed_focus = DOH_huanxingjulong 
 # 			#has_completed_focus = DOH_weishejunfa
 # 			has_completed_focus = DOH_donghuangdeshidai
-# 			or = {
+# 			OR = {
 # 			has_completed_focus = DOH_gongchanlianmeng
 # 			has_completed_focus = DOH_chisezhongzhou
 # 			has_completed_focus = DOH_bilanhangxian

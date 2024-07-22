@@ -5,16 +5,12 @@ focus_tree = {
 	shared_focus = AL_junshi
 	country = {
 		factor = 0
-		
 		modifier = {
 			add = 10
 			tag = SHO
 		}
-
 	}
-	
 	default = no
-
 	#####工业线#####
 	focus = {
 		id = SHO_industry_bill
@@ -22,7 +18,6 @@ focus_tree = {
 		x = 4
 		y = 0
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
@@ -31,7 +26,6 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-
 	####民工线####
 	focus = {
 		id = SHO_industrial_area
@@ -39,9 +33,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SHO_industry_bill
-		prerequisite = { focus = SHO_industry_bill }
+		prerequisite = {
+			focus = SHO_industry_bill
+		}
 		cost = 5
-
 		ai_will_do = {
 			factor = 10
 		}
@@ -50,21 +45,22 @@ focus_tree = {
 			294 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
+					type = industrial_complex
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
 	}
-
 	focus = {
 		id = SHO_industrial_area_2
 		icon = GFX_goal_generic_construct_civilian
 		x = 0
 		y = 1
 		relative_position_id = SHO_industrial_area
-		prerequisite = { focus = SHO_industrial_area }
+		prerequisite = {
+			focus = SHO_industrial_area
+		}
 		cost = 5
 		ai_will_do = {
 			factor = 5
@@ -74,21 +70,22 @@ focus_tree = {
 			294 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-				type = industrial_complex
-				level = 3
-				instant_build = yes
+					type = industrial_complex
+					level = 3
+					instant_build = yes
 				}
 			}
 		}
 	}
-
 	focus = {
 		id = SHO_industrial_area_3
 		icon = GFX_goal_generic_construct_civilian
 		x = 0
 		y = 1
 		relative_position_id = SHO_industrial_area_2
-		prerequisite = { focus = SHO_industrial_area_2 }
+		prerequisite = {
+			focus = SHO_industrial_area_2
+		}
 		cost = 5
 		ai_will_do = {
 			factor = 5
@@ -98,14 +95,13 @@ focus_tree = {
 			294 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
-				type = industrial_complex
-				level = 4
-				instant_build = yes
+					type = industrial_complex
+					level = 4
+					instant_build = yes
 				}
 			}
 		}
 	}
-
 	####军工线####
 	focus = {
 		id = SHO_aviation_industry
@@ -113,82 +109,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SHO_industry_bill
-		prerequisite = { focus = SHO_industry_bill }
-		cost = 5
-
-		ai_will_do = {
-			factor = 5
-		}
-		#search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			294 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-				type = arms_factory
-				level = 2
-				instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHO_aviation_industry_2
-		icon = GFX_goal_generic_air_production
-		x = 0
-		y = 1
-		relative_position_id = SHO_aviation_industry
-		prerequisite = { focus = SHO_aviation_industry }
-		cost = 5
-		ai_will_do = {
-			factor = 5
-		}
-		#search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			294 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-				type = arms_factory
-				level = 3
-				instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHO_aviation_industry_3
-		icon = GFX_goal_generic_air_production
-		x = 0
-		y = 1
-		relative_position_id = SHO_aviation_industry_2
-		prerequisite = { focus = SHO_aviation_industry_2 }
-		cost = 5
-		ai_will_do = {
-			factor = 5
-		}
-		#search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			294 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-				type = arms_factory
-				level = 4
-				instant_build = yes
-				}
-			}
-		}
-	}
-
-
-	####铁路线####
-	focus = {
-		id = SHO_strategic_infrastructure
-		icon = GFX_goal_generic_construct_infrastructure
-		x = -3
-		y = 1
-		relative_position_id = SHO_industry_bill
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_industry_bill
 		}
 		cost = 5
@@ -197,29 +118,106 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_extra_state_shared_building_slots = 2
+			294 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_tech_bonus = {
-				name = "加速研究"
-				bonus = 2.0
-				ahead_reduction = 3.0
-				uses = 1
-				category = construction3
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
 			}
 		}
 	}
-
+	focus = {
+		id = SHO_aviation_industry_2
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = SHO_aviation_industry
+		prerequisite = {
+			focus = SHO_aviation_industry
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			294 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = SHO_aviation_industry_3
+		icon = GFX_goal_generic_air_production
+		x = 0
+		y = 1
+		relative_position_id = SHO_aviation_industry_2
+		prerequisite = {
+			focus = SHO_aviation_industry_2
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			294 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+	####铁路线####
+	focus = {
+		id = SHO_strategic_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -3
+		y = 1
+		relative_position_id = SHO_industry_bill
+		prerequisite = {
+			focus = SHO_industry_bill
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = "加速研究"
+				bonus = 2
+				ahead_reduction = 3
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
 	focus = {
 		id = SHO_strategic_infrastructure_2
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 0
 		y = 1
 		relative_position_id = SHO_strategic_infrastructure
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_strategic_infrastructure
 		}
 		cost = 5
@@ -228,29 +226,30 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_extra_state_shared_building_slots = 3
+			capital_scope = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
 			}
 			add_tech_bonus = {
 				name = "加速研究"
-				bonus = 2.0
-				ahead_reduction = 5.0
+				bonus = 2
+				ahead_reduction = 5
 				uses = 1
-				category = construction4
+				category = construction_tech
 			}
 		}
 	}
-
 	focus = {
 		id = SHO_strategic_infrastructure_3
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 0
 		y = 1
 		relative_position_id = SHO_strategic_infrastructure_2
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_strategic_infrastructure_2
 		}
 		cost = 5
@@ -259,22 +258,23 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_extra_state_shared_building_slots = 4
+			capital_scope = {
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
 			}
 			add_tech_bonus = {
 				name = "加速研究"
-				bonus = 2.0
-				ahead_reduction = 7.0
+				bonus = 2
+				ahead_reduction = 7
 				uses = 1
-				category = construction5
+				category = construction_tech
 			}
 		}
 	}
-	
 	####雷达线####
 	focus = {
 		id = SHO_RD_Electronics
@@ -282,7 +282,9 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = SHO_industry_bill
-		prerequisite = { focus = SHO_industry_bill }
+		prerequisite = {
+			focus = SHO_industry_bill
+		}
 		cost = 5
 		ai_will_do = {
 			factor = 5
@@ -291,10 +293,10 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = "加速研究"
-				bonus = 2.0
+				bonus = 2
 				ahead_reduction = 2.5
 				uses = 1
-				category = decimetric_radar
+				category = radar_tech
 			}
 			294 = {
 				add_building_construction = {
@@ -305,14 +307,13 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = SHO_RD_Electronics_2
 		icon = GFX_goal_generic_radar
 		x = 0
 		y = 1
 		relative_position_id = SHO_RD_Electronics
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_RD_Electronics
 		}
 		cost = 5
@@ -323,10 +324,10 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = "加速研究"
-				bonus = 2.0
-				ahead_reduction = 3.0
+				bonus = 2
+				ahead_reduction = 3
 				uses = 1
-				category = improved_decimetric_radar
+				category = radar_tech
 			}
 			294 = {
 				add_building_construction = {
@@ -337,14 +338,13 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = SHO_RD_Electronics_3
 		icon = GFX_goal_generic_radar
 		x = 0
 		y = 1
 		relative_position_id = SHO_RD_Electronics_2
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_RD_Electronics_2
 		}
 		cost = 5
@@ -353,13 +353,12 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			
 			add_tech_bonus = {
 				name = "加速研究"
-				bonus = 2.0
-				ahead_reduction = 4.0
+				bonus = 2
+				ahead_reduction = 4
 				uses = 1
-				category = centimetric_radar
+				category = radar_tech
 			}
 			294 = {
 				add_building_construction = {
@@ -370,15 +369,18 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = SHO_Military_Research_Network
 		icon = GFX_focus_research
 		x = 1
 		y = 1
 		relative_position_id = SHO_aviation_industry_3
-		prerequisite = { focus = SHO_RD_Electronics_3 }
-		prerequisite = { focus = SHO_aviation_industry_3 }
+		prerequisite = {
+			focus = SHO_RD_Electronics_3
+		}
+		prerequisite = {
+			focus = SHO_aviation_industry_3
+		}
 		ai_will_do = {
 			factor = 5
 		}
@@ -386,20 +388,19 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_research_slot = 1
-			add_ideas = SHO_Aviation_Communication_Research
+			#add_ideas = SHO_Aviation_Communication_Research
 		}
 	}
-
 	focus = {
 		id = SHO_Infrastructure_miracle
 		icon = GFX_focus_generic_industry_3
 		x = 1
 		y = 1
 		relative_position_id = SHO_strategic_infrastructure_3
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_industrial_area_3
 		}
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_strategic_infrastructure_3
 		}
 		cost = 5
@@ -411,7 +412,6 @@ focus_tree = {
 			add_ideas = SHO_Developed_infrastructure
 		}
 	}
-
 	#### 合作 ####
 	focus = {
 		id = SHO_Reciprocity_of_science_and_engineering
@@ -419,12 +419,12 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SHO_industrial_area_3
-		prerequisite = { 
+		prerequisite = {
 			focus = SHO_strategic_infrastructure_3
 			focus = SHO_industrial_area_3
 		}
-		prerequisite = { 
-			focus = SHO_aviation_industry_3 
+		prerequisite = {
+			focus = SHO_aviation_industry_3
 			focus = SHO_RD_Electronics_3
 		}
 		cost = 10
@@ -433,7 +433,7 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_ideas = SHO_complex_system
+			#add_ideas = SHO_complex_system
 		}
 	}
 }

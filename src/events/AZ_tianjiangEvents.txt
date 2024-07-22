@@ -50,7 +50,7 @@ news_event = {
 	option = {
 		name = az_tianjiang.3.b
 		trigger = {
-			not = {tag = TIX }
+			NOT = {tag = TIX }
 		}
 	}
 }
@@ -315,8 +315,8 @@ country_event = {
 	picture = GFX_aze_luoxiya
 	trigger = {
 	has_global_flag = bfl_yes_pact
-	not = {has_global_flag = bfl_yes_pact_ok}
-	or = {
+	NOT = {has_global_flag = bfl_yes_pact_ok}
+	OR = {
 	tag = TIX
 	tag = BFL
 	}
@@ -325,9 +325,9 @@ country_event = {
 	TIX = {not = { has_war_with = BFL } }
 	OR = {
 			AND = {
-				or = {
+				OR = {
 				POL = { has_capitulated = yes }
-				not = { country_exists = POL }
+				NOT = { country_exists = POL }
 				}
 				AND = {
 					OR = {
@@ -345,9 +345,9 @@ country_event = {
 				}
 			}
 			AND = {
-				or = {
+				OR = {
 				POL = { has_capitulated = yes }
-				not = { country_exists = POL }
+				NOT = { country_exists = POL }
 				}
 				AND = {
 					OR = {
@@ -618,7 +618,7 @@ news_event = {
 	option = {
 		name = az_tianjiang.15.b
 		trigger = {
-			not = {
+			NOT = {
 			tag = TIX 
 			tag = HUH 
 			tag = YUW
@@ -1105,8 +1105,8 @@ news_event = {
 	option = {
 		name = az_tianjiang.36.b
 		trigger = {
-			not = {tag = TIX }
-			not = {tag = SAD }
+			NOT = {tag = TIX }
+			NOT = {tag = SAD }
 		}
 	}
 }
@@ -1217,8 +1217,8 @@ news_event = {
 	option = {
 		name = az_tianjiang.41.b
 		trigger = {
-			not = {tag = CHY }
-			not = {tag = DOH }
+			NOT = {tag = CHY }
+			NOT = {tag = DOH }
 		}
 	}
 }
@@ -2054,7 +2054,7 @@ country_event = {
 		name = "终于可以歇一歇了"
 		if = {
 		limit = {
-		not = { has_global_flag = tix_guifanweixitudile }
+		NOT = { has_global_flag = tix_guifanweixitudile }
 		}
 		transfer_state = 785
 		transfer_state = 806
@@ -2245,10 +2245,10 @@ news_event = {
 	option = {
 		name = az_tianjiang.74.b
 		trigger = {
-			not = {tag = TIX }
-			not = {tag = SAD }
-			not = {tag = HUJ }
-			not = {tag = BYG }
+			NOT = {tag = TIX }
+			NOT = {tag = SAD }
+			NOT = {tag = HUJ }
+			NOT = {tag = BYG }
 		}
 	}
 }
@@ -2382,7 +2382,7 @@ news_event = {
 	trigger = {
 		date > 1941.1.1
 		16 = { is_controlled_by = YUW }
-		or = {
+		OR = {
 		16 = { is_owned_by = TIX }
 		16 = { is_owned_by = WEX }
 		}
@@ -2411,7 +2411,7 @@ country_event = {
 	trigger = {
 		date > 1941.6.1
 		tag = SAD
-		or = {
+		OR = {
 		2 = { is_controlled_by = BYG } 
 		2 = { is_controlled_by = YUW } 
 		2 = { is_controlled_by = HUJ } 
@@ -2422,7 +2422,7 @@ country_event = {
 		}
 		has_war_with = HUJ
 		has_war_with = BYG
-		or = {
+		OR = {
 		HUJ = {	is_faction_leader = yes }
 		BYG = {	is_faction_leader = yes }
 		}
@@ -2604,7 +2604,7 @@ country_event = {
 		controls_state = 126
 		has_war_with = TIX
 		HUJ = {	is_in_faction_with = BYG }
-		not = { has_war_with = BFL }
+		NOT = { has_war_with = BFL }
 		surrender_progress < 0.3
 		TIX = {
 		surrender_progress > 0.1
@@ -2722,7 +2722,7 @@ country_event = {
 		name = "由于北联拒绝出席会议，雅尔塔会议宣布失败！"
 		trigger = { 
 		has_global_flag = yaerta_baiying_fuhui
-		not = { has_global_flag = yaerta_beilian_fuhui }
+		NOT = { has_global_flag = yaerta_beilian_fuhui }
 		}
 		ai_chance = {
 			factor = 100
@@ -2731,7 +2731,7 @@ country_event = {
 	option = {
 		name = "由于白鹰拒绝出席会议，雅尔塔会议宣布失败！"
 		trigger = { 
-		not = { has_global_flag = yaerta_baiying_fuhui }
+		NOT = { has_global_flag = yaerta_baiying_fuhui }
 		has_global_flag = yaerta_beilian_fuhui
 		}
 		ai_chance = {
@@ -2741,8 +2741,8 @@ country_event = {
 	option = {
 		name = "除了皇家之外，另外两方都没有出席会议！"
 		trigger = { 
-		not = { has_global_flag = yaerta_baiying_fuhui }
-		not = { has_global_flag = yaerta_beilian_fuhui }
+		NOT = { has_global_flag = yaerta_baiying_fuhui }
+		NOT = { has_global_flag = yaerta_beilian_fuhui }
 		}
 		ai_chance = {
 			factor = 100
@@ -3653,7 +3653,7 @@ country_event = {
 		ai_chance = {
 			factor = 60
 			modifier = {
-			or = {
+			OR = {
 			is_historical_focus_on = yes
 			
 			has_game_rule = {
@@ -3773,7 +3773,7 @@ country_event = {
 		ai_chance = {
 			factor = 40
 			modifier = {
-			or = {
+			OR = {
 			has_game_rule = {
 				rule = BYG_ai_behavior
 				option = BYG_chongzuguohui
@@ -3829,7 +3829,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 			modifier = {
-			or = {
+			OR = {
 			has_game_rule = {
 				rule = BYG_ai_behavior
 				option = BYG_anbaoxian
@@ -3972,7 +3972,7 @@ country_event = {
 		ai_chance = {
 			factor = 33
 			modifier = {
-			or = {
+			OR = {
 			is_historical_focus_on = yes
 			
 			has_game_rule = {
@@ -4002,7 +4002,7 @@ country_event = {
 		ai_chance = {
 			factor = 33
 			modifier = {
-			or = {
+			OR = {
 			is_historical_focus_on = yes
 			
 			has_game_rule = {
@@ -4032,7 +4032,7 @@ country_event = {
 		ai_chance = {
 			factor = 33
 			modifier = {
-			or = {
+			OR = {
 			is_historical_focus_on = yes
 			
 			has_game_rule = {
@@ -5280,19 +5280,19 @@ country_event = {
 	trigger = {
 		date > 1942.1.1
 		tag = CHY
-		or = {
+		OR = {
 		has_government = fascism
 		has_government = neutrality
 		}
-		not = { is_in_faction_with = YUW }
+		NOT = { is_in_faction_with = YUW }
 		has_war_with = BYG
 		has_war_with = BFL
 		has_war_with = HUJ
 		country_exists = DOH
-		not = { is_in_faction_with = DOH }
-		or = {
+		NOT = { is_in_faction_with = DOH }
+		OR = {
 		country_exists = GER
-		not = { country_exists = TIX }
+		NOT = { country_exists = TIX }
 		TIX = {
 		is_puppet = yes
 		}
@@ -5303,8 +5303,8 @@ country_event = {
 		has_government = democratic
 		}
 		}
-		or = {
-		not = { country_exists = SAD }
+		OR = {
+		NOT = { country_exists = SAD }
 		SAD = {
 		is_puppet = yes
 		}
@@ -5335,11 +5335,11 @@ country_event = {
 	picture = GFX_aze_gangkou
 	trigger = {
 		tag = CHY
-		or = {
+		OR = {
 		has_government = fascism
 		has_government = neutrality
 		}
-		not = { is_in_faction_with = DOH }
+		NOT = { is_in_faction_with = DOH }
 		has_idea = CHY_rimuxishan
 		has_stability < 0.41
 		has_war_support < 0.41
@@ -5670,7 +5670,7 @@ news_event = {
 	option = {
 		name = az_tianjiang.143.b
 		trigger = {
-			not = {tag = CHY }
+			NOT = {tag = CHY }
 		}
 	}
 }
@@ -5878,8 +5878,8 @@ news_event = {
 	option = {
 		name = az_tianjiang.147.b
 		trigger = {
-			not = {tag = TIX }
-			not = {tag = SAD }
+			NOT = {tag = TIX }
+			NOT = {tag = SAD }
 		}
 	}
 }
@@ -6195,8 +6195,8 @@ news_event = {
 	option = {
 		name = az_tianjiang.157.b
 		trigger = {
-			not = {tag = YUW }
-			not = {tag = SAD }
+			NOT = {tag = YUW }
+			NOT = {tag = SAD }
 		}
 	}
 }
@@ -7199,7 +7199,7 @@ country_event = {
 	trigger = {
 	is_ai = yes
 	has_idea = TY_fengkuangAI
-	not = { has_country_flag = yihuode_AIBUFF }
+	NOT = { has_country_flag = yihuode_AIBUFF }
 	date < 1937.1.1
 	}
 	mean_time_to_happen = {
@@ -7515,7 +7515,7 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1936.5.1
-		not = { has_global_flag = gaoxiaoxinwen_bsmdl }
+		NOT = { has_global_flag = gaoxiaoxinwen_bsmdl }
 	}
 	
 	mean_time_to_happen = {
@@ -7539,7 +7539,7 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1936.7.1
-		not = { has_global_flag = gaoxiaoxinwen_xjjxzj }
+		NOT = { has_global_flag = gaoxiaoxinwen_xjjxzj }
 	}
 	
 	mean_time_to_happen = {
@@ -7563,7 +7563,7 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1937.1.1
-		not = { has_global_flag = gaoxiaoxinwen_hjfzbsx  }
+		NOT = { has_global_flag = gaoxiaoxinwen_hjfzbsx  }
 	}
 	
 	mean_time_to_happen = {
@@ -7587,7 +7587,7 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1937.8.1
-		not = { has_global_flag = gaoxiaoxinwen_mycmpf  }
+		NOT = { has_global_flag = gaoxiaoxinwen_mycmpf  }
 	}
 	
 	mean_time_to_happen = {
@@ -7611,8 +7611,8 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1938.2.1
-		not = { has_global_flag = gaoxiaoxinwen_sairenzhizai  }
-		not = { has_global_flag = MOD_azurlane_sairenzhizai }
+		NOT = { has_global_flag = gaoxiaoxinwen_sairenzhizai  }
+		NOT = { has_global_flag = MOD_azurlane_sairenzhizai }
 	}
 	
 	mean_time_to_happen = {
@@ -7636,8 +7636,8 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1940.3.1
-		not = { has_global_flag = gaoxiaoxinwen_sairenzhizaibaimuda  }
-		not = { has_global_flag = MOD_azurlane_sairenzhizai }
+		NOT = { has_global_flag = gaoxiaoxinwen_sairenzhizaibaimuda  }
+		NOT = { has_global_flag = MOD_azurlane_sairenzhizai }
 	}
 	
 	mean_time_to_happen = {
@@ -7661,7 +7661,7 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1938.2.1
-		not = { has_global_flag = gaoxiaoxinwen_tianjiangjianniang  }
+		NOT = { has_global_flag = gaoxiaoxinwen_tianjiangjianniang  }
 		has_global_flag = MOD_azurlane_sairenzhizai
 	}
 	
@@ -7686,7 +7686,7 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1940.3.1
-		not = { has_global_flag = gaoxiaoxinwen_tianjiangjiannianggrhp }
+		NOT = { has_global_flag = gaoxiaoxinwen_tianjiangjiannianggrhp }
 		has_global_flag = MOD_azurlane_sairenzhizai
 	}
 	
@@ -7733,7 +7733,7 @@ country_event = {
 			value = -30
 			compare = less_than_or_equals
 		}
-		not = { has_country_flag = beibishile_tj }
+		NOT = { has_country_flag = beibishile_tj }
 		is_in_faction = no
 	}
 	option = {
@@ -7758,7 +7758,7 @@ country_event = {
 			compare = greater_than_or_equals
 		}
 		has_idea = TJ_guojiqimin
-		not = { has_country_flag = guojiqiminyichu_yes }
+		NOT = { has_country_flag = guojiqiminyichu_yes }
 	}
 	option = {
 		name = "太好了"
@@ -7788,8 +7788,8 @@ news_event = {
 	option = {
 		name = az_tianjiang.208.b
 		trigger = {
-			not = {tag = SAD }
-			not = {tag = TIX }
+			NOT = {tag = SAD }
+			NOT = {tag = TIX }
 		}
 	}
 	option = {
@@ -7820,8 +7820,8 @@ news_event = {
 	option = {
 		name = az_tianjiang.209.b
 		trigger = {
-			not = {tag = SAD }
-			not = {tag = HUJ }
+			NOT = {tag = SAD }
+			NOT = {tag = HUJ }
 		}
 	}
 	option = {
@@ -7956,7 +7956,7 @@ country_event = {
 	trigger = {
 		tag = TIX
 		has_government = fascism
-		not = { has_country_flag = tix_bimianjuqingsha }
+		NOT = { has_country_flag = tix_bimianjuqingsha }
 		has_war_support < 0.9
 		has_offensive_war = yes
 		any_country = {
@@ -8074,7 +8074,7 @@ country_event = {
 		date > 1938.6.1
 		tag = SAD
 		has_government = fascism
-		not = { is_in_faction_with = HUJ }
+		NOT = { is_in_faction_with = HUJ }
 		has_country_leader = {
 			name = "维内托"
 			ruling_only = yes
@@ -8106,8 +8106,8 @@ country_event = {
 		date > 1939.6.1
 		threat > 0.4
 		tag = SAD
-		not = { is_in_faction_with = HUJ }
-		not = { is_in_faction_with = YUW }
+		NOT = { is_in_faction_with = HUJ }
+		NOT = { is_in_faction_with = YUW }
 		has_government = fascism
 		has_country_leader = {
 			name = "维内托"
@@ -8158,7 +8158,7 @@ country_event = {
 	trigger = {
 		date < 1937.6.1
 		tag = BYG
-		not = { has_country_flag = baiyingneizhaweiji }
+		NOT = { has_country_flag = baiyingneizhaweiji }
 		has_offensive_war = yes
 		has_added_tension_amount > 9
 		has_global_flag = MOD_azurlane_tianjiangjianniang
@@ -8194,7 +8194,7 @@ country_event = {
 		has_offensive_war = yes
 		has_added_tension_amount > 9
 		has_global_flag = MOD_azurlane_tianjiangjianniang
-		not = {
+		NOT = {
 		has_game_rule = {
 			rule = AZ_huj_bengkui_rule
 			option =  AZ_huj_bengkui_rule_on
@@ -8394,7 +8394,7 @@ country_event = {
 		date > 1936.1.3
 		tag = HUJ
 		has_global_flag = MOD_azurlane_tianjiangjianniang
-		not = {
+		NOT = {
 		has_game_rule = {
 			rule = AZ_huj_bengkui_rule
 			option =  AZ_huj_bengkui_rule_off
@@ -8625,7 +8625,7 @@ country_event = {
 	trigger = {
 		tag = TIX
 		has_government = fascism
-		not = { has_country_flag = tix_bimianjuqingsha_2 }
+		NOT = { has_country_flag = tix_bimianjuqingsha_2 }
 		has_war_support < 1.9
 		has_offensive_war = yes
 		any_country = {
@@ -8826,7 +8826,7 @@ country_event = {
 		has_war_with = BFL
 		has_war_with = HUJ
 		has_war_with = BYG
-		not = { controls_state = 16 }
+		NOT = { controls_state = 16 }
 		BFL = {
 		surrender_progress < 0.3
 		}
@@ -9063,7 +9063,7 @@ country_event = {
 		tag = BFL
 		has_government = communism
 		is_ai = no
-		not = { has_country_flag = BFL_tufaqingsao_on }
+		NOT = { has_country_flag = BFL_tufaqingsao_on }
 		has_country_flag = BFL_zzpianzhidu_on
 	}
 	option = {
@@ -9491,7 +9491,7 @@ news_event = {
 	major = yes
 	trigger = {
 		date > 1936.3.1
-		not = { has_global_flag = gaoxiaoxinwen_mjder }
+		NOT = { has_global_flag = gaoxiaoxinwen_mjder }
 	}
 	
 	mean_time_to_happen = {

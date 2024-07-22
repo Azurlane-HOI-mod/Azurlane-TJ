@@ -1,14 +1,12 @@
 #购买武器(1政治点=15的IC产能） 1军工满效率每天5IC产出 10把步枪（净生产量+三分之一） 1.42火炮（净生产量+五分之一） 2卡车（净生产量+四分之一）
 sad_guofangjianshe_category = {
-	
 	SAD_decision_tiaozhengjunfei_army = {
 		icon = generic_prepare_civil_war
-		
 		visible = {
-			NOT = { 
+			NOT = {
 				has_idea = SAD_junfei_army2
 				has_idea = SAD_junfei_1
-			}	
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -18,19 +16,12 @@ sad_guofangjianshe_category = {
 				}
 			}
 		}
-		
 		cost = 25
-		
 		days_remove = 7
-		complete_effect = {  
-
+		complete_effect = {
 		}
 		remove_effect = {
-			
-			
 			SAD_junfei_army = yes
-			
-			
 			set_country_flag = {
 				flag = SAD_decision_tiaozhengjunfei_cd
 				days = 180
@@ -50,14 +41,13 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_tiaozhengjunfei_navy = {
 		icon = generic_naval
-		
 		visible = {
-			NOT = { 
+			NOT = {
 				OR = {
 					has_idea = SAD_junfei_navy2
 					has_idea = SAD_junfei_1
 				}
-			}	
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -67,18 +57,12 @@ sad_guofangjianshe_category = {
 				}
 			}
 		}
-		
 		cost = 25
 		days_remove = 7
-		complete_effect = {  
-
+		complete_effect = {
 		}
 		remove_effect = {
-			
-			
 			SAD_junfei_navy = yes
-			
-			
 			set_country_flag = {
 				flag = SAD_decision_tiaozhengjunfei_cd
 				days = 180
@@ -98,29 +82,24 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_daliangzengjiajunfei = {
 		icon = ger_mefo_bills
-		
 		visible = {
-			has_completed_focus = SAD_chongzudeziyuan	
+			has_completed_focus = SAD_chongzudeziyuan
 		}
 		available = {
 			AND = {
 				has_completed_focus = SAD_gongyejishu
 				has_completed_focus = SAD_haiyungongsi
-				NOT = { has_idea = SAD_fbdzf }
-				
+				NOT = {
+					has_idea = SAD_fbdzf
+				}
 			}
 		}
-		
 		cost = 100
 		days_remove = 7
-		complete_effect = {  
-
+		complete_effect = {
 		}
-
 		fire_only_once = yes
 		remove_effect = {
-			
-			
 			if = {
 				limit = {
 					has_idea = SAD_junfei_army2
@@ -166,18 +145,14 @@ sad_guofangjianshe_category = {
 					add_idea = SAD_junfei_1
 				}
 			}
-			
 		}
 		ai_will_do = {
 			factor = 30
-			
 		}
 	}
 	SAD_decision_jinkougangtie = {
 		icon = steel
-		
 		visible = {
-				
 		}
 		fire_only_once = yes
 		modifier = {
@@ -185,14 +160,13 @@ sad_guofangjianshe_category = {
 		}
 		days_remove = 90
 		cost = 30
-		complete_effect = {  
+		complete_effect = {
 			capital_scope = {
 				add_resource = {
 					type = steel
 					amount = 20
 				}
 			}
-			
 		}
 		remove_effect = {
 			set_country_flag = SAD_decision_jinkougangtie_get
@@ -203,7 +177,6 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_jinkougangtie2 = {
 		icon = steel
-		
 		visible = {
 			has_country_flag = SAD_decision_jinkougangtie_get
 		}
@@ -213,14 +186,13 @@ sad_guofangjianshe_category = {
 		}
 		days_remove = 120
 		cost = 50
-		complete_effect = {  
+		complete_effect = {
 			capital_scope = {
 				add_resource = {
 					type = steel
 					amount = 50
 				}
 			}
-			
 		}
 		remove_effect = {
 			set_country_flag = SAD_decision_jinkougangtie2_get
@@ -231,7 +203,6 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_jinkouxiyoujinshu = {
 		icon = steel
-		
 		visible = {
 			has_country_flag = SAD_decision_jinkougangtie_get
 		}
@@ -241,7 +212,7 @@ sad_guofangjianshe_category = {
 		}
 		days_remove = 120
 		cost = 35
-		complete_effect = {  
+		complete_effect = {
 			capital_scope = {
 				add_resource = {
 					type = tungsten
@@ -252,7 +223,6 @@ sad_guofangjianshe_category = {
 					amount = 18
 				}
 			}
-			
 		}
 		remove_effect = {
 			set_country_flag = SAD_decision_jinkouxiyoujinshu_get
@@ -263,7 +233,6 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_jinkoulvziyuan = {
 		icon = steel
-		
 		visible = {
 			has_country_flag = SAD_decision_jinkougangtie_get
 		}
@@ -273,15 +242,13 @@ sad_guofangjianshe_category = {
 		}
 		days_remove = 120
 		cost = 40
-		complete_effect = {  
+		complete_effect = {
 			capital_scope = {
 				add_resource = {
 					type = aluminium
 					amount = 42
 				}
-				
 			}
-			
 		}
 		remove_effect = {
 			set_country_flag = SAD_decision_jinkoulvziyuan_get
@@ -292,7 +259,6 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_touzijungongye = {
 		icon = generic_factory
-		
 		visible = {
 			NOT = {
 				has_idea = SAD_junfei_1
@@ -305,12 +271,14 @@ sad_guofangjianshe_category = {
 		}
 		days_remove = 120
 		cost = 80
-		complete_effect = {  
+		complete_effect = {
 			if = {
 				limit = {
-					NOT = { has_idea = SAD_junfei_army2 }
+					NOT = {
+						has_idea = SAD_junfei_army2
+					}
 				}
-				SAD_junfei_army =YES
+				SAD_junfei_army = yes
 			}
 			set_country_flag = SAD_decision_touzijungongye_doing
 		}
@@ -320,7 +288,7 @@ sad_guofangjianshe_category = {
 				add_building_construction = {
 					type = arms_factory
 					level = 4
-					instant_build = yes 
+					instant_build = yes
 				}
 			}
 			clr_country_flag = SAD_decision_touzijungongye_doing
@@ -331,7 +299,6 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_touzizaochuanchang = {
 		icon = generic_construction
-		
 		visible = {
 			NOT = {
 				has_idea = SAD_junfei_1
@@ -344,14 +311,15 @@ sad_guofangjianshe_category = {
 		}
 		days_remove = 120
 		cost = 80
-		complete_effect = {  
+		complete_effect = {
 			if = {
 				limit = {
-					NOT = { has_idea = SAD_junfei_navy2 }
+					NOT = {
+						has_idea = SAD_junfei_navy2
+					}
 				}
-				SAD_junfei_navy =YES
+				SAD_junfei_navy = yes
 			}
-			
 			set_country_flag = SAD_decision_touzizaochuanchang_doing
 		}
 		remove_effect = {
@@ -360,7 +328,7 @@ sad_guofangjianshe_category = {
 				add_building_construction = {
 					type = dockyard
 					level = 2
-					instant_build = yes 
+					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
@@ -368,7 +336,7 @@ sad_guofangjianshe_category = {
 				add_building_construction = {
 					type = dockyard
 					level = 3
-					instant_build = yes 
+					instant_build = yes
 				}
 			}
 			clr_country_flag = SAD_decision_touzizaochuanchang_doing
@@ -379,20 +347,21 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_gaishanlujunhuoshi = {
 		icon = generic_military
-
 		days_remove = -1
 		modifier = {
 			conscription = 0.01
 			no_supply_grace = 6
 		}
 		cost = 50
-		complete_effect = {  
+		complete_effect = {
 			set_country_flag = SAD_decision_gaishanlujunhuoshi_get
 			if = {
 				limit = {
-					NOT = { has_idea = SAD_junfei_army2 }
+					NOT = {
+						has_idea = SAD_junfei_army2
+					}
 				}
-				SAD_junfei_army =YES
+				SAD_junfei_army = yes
 			}
 		}
 		ai_will_do = {
@@ -401,20 +370,21 @@ sad_guofangjianshe_category = {
 	}
 	SAD_decision_tigaoshuibingsuzhi = {
 		icon = generic_decision
-		
 		days_remove = -1
 		modifier = {
 			navy_org_factor = 0.1
 			experience_gain_navy_factor = 0.15
 		}
 		cost = 50
-		complete_effect = {  
+		complete_effect = {
 			set_country_flag = SAD_decision_tigaoshuibingsuzhi_get
 			if = {
 				limit = {
-					NOT = { has_idea = SAD_junfei_navy2 }
+					NOT = {
+						has_idea = SAD_junfei_navy2
+					}
 				}
-				SAD_junfei_navy =YES
+				SAD_junfei_navy = yes
 			}
 		}
 		ai_will_do = {
@@ -426,9 +396,10 @@ sad_guofangjianshe_category = {
 sadkeyanhezuo_category = {
 	34_heavy_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = basic_heavy_tank }
+			NOT = {
+				has_tech = basic_heavy_tank
+			}
 			tag = SAD
 			TIX = {
 				has_tech = basic_heavy_tank
@@ -437,29 +408,33 @@ sadkeyanhezuo_category = {
 		fire_only_once = yes
 		cost = 10
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { basic_heavy_tank = 1 }
+		remove_effect = {
+			set_technology = {
+				basic_heavy_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
 		}
 	}
-
 	41_heavy_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = improved_heavy_tank }
+			NOT = {
+				has_tech = improved_heavy_tank
+			}
 			tag = SAD
 			TIX = {
-				has_tech = improved_heavy_tank 
+				has_tech = improved_heavy_tank
 			}
 		}
 		fire_only_once = yes
 		cost = 75
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { improved_heavy_tank = 1 }
+		remove_effect = {
+			set_technology = {
+				improved_heavy_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -467,40 +442,45 @@ sadkeyanhezuo_category = {
 	}
 	43_heavy_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = advanced_heavy_tank  }
+			NOT = {
+				has_tech = advanced_heavy_tank
+			}
 			tag = SAD
 			TIX = {
-				has_tech = advanced_heavy_tank  
+				has_tech = advanced_heavy_tank
 			}
 		}
 		fire_only_once = yes
 		cost = 100
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { advanced_heavy_tank = 1 }
+		remove_effect = {
+			set_technology = {
+				advanced_heavy_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
 		}
 	}
-	
 	39_medium_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = basic_medium_tank  }
+			NOT = {
+				has_tech = basic_medium_tank
+			}
 			tag = SAD
 			TIX = {
-				has_tech = basic_medium_tank  
+				has_tech = basic_medium_tank
 			}
 		}
 		fire_only_once = yes
 		cost = 50
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { basic_medium_tank = 1 }
+		remove_effect = {
+			set_technology = {
+				basic_medium_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -508,19 +488,22 @@ sadkeyanhezuo_category = {
 	}
 	41_medium_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = improved_medium_tank   }
+			NOT = {
+				has_tech = improved_medium_tank
+			}
 			tag = SAD
 			TIX = {
-				has_tech = improved_medium_tank   
+				has_tech = improved_medium_tank
 			}
 		}
 		fire_only_once = yes
 		cost = 75
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { improved_medium_tank  = 1 }
+		remove_effect = {
+			set_technology = {
+				improved_medium_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -528,19 +511,22 @@ sadkeyanhezuo_category = {
 	}
 	43_medium_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = advanced_medium_tank  }
+			NOT = {
+				has_tech = advanced_medium_tank
+			}
 			tag = SAD
 			TIX = {
-				has_tech = advanced_medium_tank    
+				has_tech = advanced_medium_tank
 			}
 		}
 		fire_only_once = yes
 		cost = 100
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { advanced_medium_tank = 1 }
+		remove_effect = {
+			set_technology = {
+				advanced_medium_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -548,19 +534,22 @@ sadkeyanhezuo_category = {
 	}
 	36_light_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = improved_light_tank  }
+			NOT = {
+				has_tech = improved_light_tank
+			}
 			tag = SAD
 			TIX = {
-				has_tech = improved_light_tank    
+				has_tech = improved_light_tank
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { improved_light_tank = 1 }
+		remove_effect = {
+			set_technology = {
+				improved_light_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -568,19 +557,22 @@ sadkeyanhezuo_category = {
 	}
 	41_light_tank = {
 		icon = generic_tank
-		
 		visible = {
-			NOT = { has_tech = advanced_light_tank  }
+			NOT = {
+				has_tech = advanced_light_tank
+			}
 			tag = SAD
 			TIX = {
-				has_tech = advanced_light_tank    
+				has_tech = advanced_light_tank
 			}
 		}
 		fire_only_once = yes
 		cost = 70
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { advanced_light_tank = 1 }
+		remove_effect = {
+			set_technology = {
+				advanced_light_tank = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -588,19 +580,22 @@ sadkeyanhezuo_category = {
 	}
 	36_zhandouji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = fighter1   }
+			NOT = {
+				has_tech = fighter1
+			}
 			tag = TIX
 			SAD = {
-				has_tech = fighter1     
+				has_tech = fighter1
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { fighter1  = 1 }
+		remove_effect = {
+			set_technology = {
+				fighter1 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -608,19 +603,22 @@ sadkeyanhezuo_category = {
 	}
 	40_zhandouji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = fighter2   }
+			NOT = {
+				has_tech = fighter2
+			}
 			tag = TIX
 			SAD = {
-				has_tech = fighter2     
+				has_tech = fighter2
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { fighter2  = 1 }
+		remove_effect = {
+			set_technology = {
+				fighter2 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -628,40 +626,45 @@ sadkeyanhezuo_category = {
 	}
 	44_zhandouji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = fighter3   }
+			NOT = {
+				has_tech = fighter3
+			}
 			tag = TIX
 			SAD = {
-				has_tech = fighter3     
+				has_tech = fighter3
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { fighter3  = 1 }
+		remove_effect = {
+			set_technology = {
+				fighter3 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
 		}
 	}
-	
 	36_zhiyuanji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = CAS1   }
+			NOT = {
+				has_tech = CAS1
+			}
 			tag = TIX
 			SAD = {
-				has_tech = CAS1     
+				has_tech = CAS1
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { CAS1  = 1 }
+		remove_effect = {
+			set_technology = {
+				CAS1 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -669,19 +672,22 @@ sadkeyanhezuo_category = {
 	}
 	40_zhiyuanji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = CAS2   }
+			NOT = {
+				has_tech = CAS2
+			}
 			tag = TIX
 			SAD = {
-				has_tech = CAS2     
+				has_tech = CAS2
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { CAS2  = 1 }
+		remove_effect = {
+			set_technology = {
+				CAS2 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -689,19 +695,22 @@ sadkeyanhezuo_category = {
 	}
 	44_zhiyuanji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = CAS3   }
+			NOT = {
+				has_tech = CAS3
+			}
 			tag = TIX
 			SAD = {
-				has_tech = CAS3     
+				has_tech = CAS3
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { CAS3  = 1 }
+		remove_effect = {
+			set_technology = {
+				CAS3 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -709,19 +718,22 @@ sadkeyanhezuo_category = {
 	}
 	36_haijunji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = naval_bomber1 }
+			NOT = {
+				has_tech = naval_bomber1
+			}
 			tag = TIX
 			SAD = {
-				has_tech = naval_bomber1     
+				has_tech = naval_bomber1
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { naval_bomber1  = 1 }
+		remove_effect = {
+			set_technology = {
+				naval_bomber1 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -729,19 +741,22 @@ sadkeyanhezuo_category = {
 	}
 	40_haijunji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = naval_bomber2 }
+			NOT = {
+				has_tech = naval_bomber2
+			}
 			tag = TIX
 			SAD = {
-				has_tech = naval_bomber2     
+				has_tech = naval_bomber2
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { naval_bomber2  = 1 }
+		remove_effect = {
+			set_technology = {
+				naval_bomber2 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -749,19 +764,22 @@ sadkeyanhezuo_category = {
 	}
 	44_haijunji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = naval_bomber3 }
+			NOT = {
+				has_tech = naval_bomber3
+			}
 			tag = TIX
 			SAD = {
-				has_tech = naval_bomber3     
+				has_tech = naval_bomber3
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { naval_bomber3  = 1 }
+		remove_effect = {
+			set_technology = {
+				naval_bomber3 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -769,19 +787,22 @@ sadkeyanhezuo_category = {
 	}
 	36_zhongzhanji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = heavy_fighter1  }
+			NOT = {
+				has_tech = heavy_fighter1
+			}
 			tag = TIX
 			SAD = {
-				has_tech = heavy_fighter1      
+				has_tech = heavy_fighter1
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { heavy_fighter1   = 1 }
+		remove_effect = {
+			set_technology = {
+				heavy_fighter1 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -789,19 +810,22 @@ sadkeyanhezuo_category = {
 	}
 	40_zhongzhanji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = heavy_fighter2  }
+			NOT = {
+				has_tech = heavy_fighter2
+			}
 			tag = TIX
 			SAD = {
-				has_tech = heavy_fighter2      
+				has_tech = heavy_fighter2
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { heavy_fighter2   = 1 }
+		remove_effect = {
+			set_technology = {
+				heavy_fighter2 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -809,19 +833,22 @@ sadkeyanhezuo_category = {
 	}
 	44_zhongzhanji = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = heavy_fighter3  }
+			NOT = {
+				has_tech = heavy_fighter3
+			}
 			tag = TIX
 			SAD = {
-				has_tech = heavy_fighter3      
+				has_tech = heavy_fighter3
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { heavy_fighter3 = 1 }
+		remove_effect = {
+			set_technology = {
+				heavy_fighter3 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -829,19 +856,22 @@ sadkeyanhezuo_category = {
 	}
 	36_zhanshuhong = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = tactical_bomber1  }
+			NOT = {
+				has_tech = tactical_bomber1
+			}
 			tag = TIX
 			SAD = {
-				has_tech = tactical_bomber1       
+				has_tech = tactical_bomber1
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { tactical_bomber1 = 1 }
+		remove_effect = {
+			set_technology = {
+				tactical_bomber1 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -849,19 +879,22 @@ sadkeyanhezuo_category = {
 	}
 	40_zhanshuhong = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = tactical_bomber2  }
+			NOT = {
+				has_tech = tactical_bomber2
+			}
 			tag = TIX
 			SAD = {
-				has_tech = tactical_bomber2       
+				has_tech = tactical_bomber2
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { tactical_bomber2 = 1 }
+		remove_effect = {
+			set_technology = {
+				tactical_bomber2 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -869,19 +902,22 @@ sadkeyanhezuo_category = {
 	}
 	44_zhanshuhong = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = tactical_bomber3  }
+			NOT = {
+				has_tech = tactical_bomber3
+			}
 			tag = TIX
 			SAD = {
-				has_tech = tactical_bomber3       
+				has_tech = tactical_bomber3
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { tactical_bomber3 = 1 }
+		remove_effect = {
+			set_technology = {
+				tactical_bomber3 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -889,19 +925,22 @@ sadkeyanhezuo_category = {
 	}
 	36_zhanluehong = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = strategic_bomber1   }
+			NOT = {
+				has_tech = strategic_bomber1
+			}
 			tag = TIX
 			SAD = {
-				has_tech = strategic_bomber1        
+				has_tech = strategic_bomber1
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { strategic_bomber1  = 1 }
+		remove_effect = {
+			set_technology = {
+				strategic_bomber1 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -909,19 +948,22 @@ sadkeyanhezuo_category = {
 	}
 	40_zhanluehong = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = strategic_bomber2   }
+			NOT = {
+				has_tech = strategic_bomber2
+			}
 			tag = TIX
 			SAD = {
-				has_tech = strategic_bomber2        
+				has_tech = strategic_bomber2
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { strategic_bomber2 = 1 }
+		remove_effect = {
+			set_technology = {
+				strategic_bomber2 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -929,19 +971,22 @@ sadkeyanhezuo_category = {
 	}
 	44_zhanluehong = {
 		icon = generic_air
-		
 		visible = {
-			NOT = { has_tech = strategic_bomber3   }
+			NOT = {
+				has_tech = strategic_bomber3
+			}
 			tag = TIX
 			SAD = {
-				has_tech = strategic_bomber3        
+				has_tech = strategic_bomber3
 			}
 		}
 		fire_only_once = yes
 		cost = 20
 		days_remove = 7
-		remove_effect = {  
-			set_technology = { strategic_bomber3  = 1 }
+		remove_effect = {
+			set_technology = {
+				strategic_bomber3 = 1
+			}
 		}
 		ai_will_do = {
 			factor = 100

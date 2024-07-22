@@ -541,7 +541,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		cost = 5
 		available = {
-		or = {
+		OR = {
 		has_government = communism
 		has_government = fascism
 		}
@@ -660,7 +660,7 @@ focus_tree = {
 		relative_position_id = WEX_lingyizhongziyou
 		cost = 5
 		available = {
-			not = { has_idea = WEX_xiangtiexuezhifuzhanzhengpeikuan }
+			NOT = { has_idea = WEX_xiangtiexuezhifuzhanzhengpeikuan }
 		}
 		ai_will_do = {
 			factor = 100
@@ -751,8 +751,8 @@ focus_tree = {
 		available = {
 			is_puppet = no
 			threat > 0.5
-			not = { has_war_with = TIX }
-			not = {is_in_faction_with = TIX}
+			NOT = { has_war_with = TIX }
+			NOT = {is_in_faction_with = TIX}
 		}
 		ai_will_do = {
 			factor = 100

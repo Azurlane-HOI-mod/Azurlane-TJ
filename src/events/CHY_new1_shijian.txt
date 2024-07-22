@@ -211,7 +211,7 @@ country_event = {
 		ai_chance = {
 			base = 100
 			modifier = {
-				or = {
+				OR = {
 				is_historical_focus_on = yes
 			
 				has_game_rule = {
@@ -230,7 +230,7 @@ country_event = {
 		ai_chance = {
 			base = 0
 			modifier = {
-				or = {
+				OR = {
 				is_historical_focus_on = yes
 				has_game_rule = {
 					rule = CHY_ai_behavior
@@ -248,7 +248,7 @@ country_event = {
 		ai_chance = {
 			base = 0
 			modifier = {
-				or = {
+				OR = {
 				is_historical_focus_on = yes
 				has_game_rule = {
 					rule = CHY_ai_behavior
@@ -266,7 +266,7 @@ country_event = {
 		ai_chance = {
 			base = 0
 			modifier = {
-				or = {
+				OR = {
 				is_historical_focus_on = yes
 				has_game_rule = {
 					rule = CHY_ai_behavior
@@ -368,7 +368,7 @@ country_event = {
 		ai_chance = {
 			base = 10
 			modifier = {
-				or = {
+				OR = {
 				is_historical_focus_on = yes
 			
 				has_game_rule = {
@@ -392,7 +392,7 @@ country_event = {
 		ai_chance = {
 			base = 100
 			modifier = {
-				or = {
+				OR = {
 				is_historical_focus_on = yes
 			
 				has_game_rule = {
@@ -444,8 +444,8 @@ news_event = {
 	option = {
 		name = CHY_new1_shijian.11.b
 		trigger = {
-			not = {tag = CHY }
-			not = {tag = DOH }
+			NOT = {tag = CHY }
+			NOT = {tag = DOH }
 		}
 	}
 }
@@ -889,7 +889,7 @@ country_event = {
 					has_war_with = CHY
 					owns_state = 335
 			} 
-				not = { country_exists = INS }
+				NOT = { country_exists = INS }
 			}
 			every_state = {
 				limit = {
@@ -912,7 +912,7 @@ country_event = {
 						has_war_with = CHY
 					owns_state = 327
 			} 
-				not = { country_exists = PHI }
+				NOT = { country_exists = PHI }
 			}
 			every_state = {
 				limit = {
@@ -935,7 +935,7 @@ country_event = {
 				has_war_with = CHY
 				owns_state = 336
 			} 
-				not = { country_exists = MAL }
+				NOT = { country_exists = MAL }
 			}
 			every_state = {
 				limit = {
@@ -954,11 +954,11 @@ country_event = {
 
 		if = {
 			limit = {
-				not = {
+				NOT = {
 					has_war_with = CHY
 					owns_state = 439
 			} 
-				not = { country_exists = RAJ }
+				NOT = { country_exists = RAJ }
 			}
 			every_state = {
 				limit = {
@@ -993,7 +993,7 @@ country_event = {
 						has_war_with = CHY
 					owns_state = 285
 			} 
-				not = { country_exists = AST }
+				NOT = { country_exists = AST }
 			}
 			every_state = {
 				limit = {
@@ -1019,7 +1019,7 @@ country_event = {
 						has_war_with = CHY
 					owns_state = 284
 			} 
-				not = { country_exists = NZL }
+				NOT = { country_exists = NZL }
 			}
 			every_state = {
 				limit = {
@@ -1095,9 +1095,9 @@ news_event = {
 	option = {
 		name = CHY_new1_shijian.27.b
 		trigger = {
-			not = {tag = CHY }
-			not = {tag = HUJ }
-			not = {tag = BYG }
+			NOT = {tag = CHY }
+			NOT = {tag = HUJ }
+			NOT = {tag = BYG }
 		}
 	}
 }
@@ -1161,7 +1161,7 @@ country_event = {
 		ai_chance = {
 			base = 100
 			modifier = {
-				or = {
+				OR = {
 					has_game_rule = {
 						rule = CHY_ai_behavior
 						option = CHY_changmen_line_focus
@@ -1205,7 +1205,7 @@ country_event = {
 		ai_chance = {
 			base = 100
 			modifier = {
-				or = {
+				OR = {
 					has_game_rule = {
 						rule = CHY_ai_behavior
 						option = CHY_changmen_line_focus
@@ -1249,7 +1249,7 @@ country_event = {
 		ai_chance = {
 			base = 100
 			modifier = {
-				or = {
+				OR = {
 					has_game_rule = {
 						rule = CHY_ai_behavior
 						option = CHY_changmen_line_focus
@@ -1279,7 +1279,7 @@ news_event = {
 	option = {
 		name = CHY_new1_shijian.30.b
 		trigger = {
-			not = {tag = CHY }
+			NOT = {tag = CHY }
 		}
 	}
 }
@@ -1413,8 +1413,8 @@ news_event = {
 	option = {
 		name = CHY_new1_shijian.34.b
 		trigger = {
-			not = {tag = CHY }
-			not = {tag = DOH }
+			NOT = {tag = CHY }
+			NOT = {tag = DOH }
 		}
 	}
 }

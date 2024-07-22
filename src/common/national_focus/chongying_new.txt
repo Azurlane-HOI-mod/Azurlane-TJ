@@ -1,36 +1,30 @@
 ﻿focus_tree = {
 	id = chongying_new_focus
-	
 	country = {
 		factor = 0
-		
 	}
-	
-
 	default = no
-
-	continuous_focus_position = { x = 0 y = 2300 }
+	continuous_focus_position = {
+		x = 0
+		y = 2300
+	}
 	focus = {
 		id = CHY_jianshejihua
 		icon = GFX_goal_generic_construction
 		x = 3
 		y = 0
 		cost = 8
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_building
 			every_owned_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -59,21 +53,17 @@
 		x = 5
 		y = 0
 		cost = 4
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_xiaozuofang
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -111,23 +101,23 @@
 		x = 0
 		y = 1
 		cost = 4
-		prerequisite = { focus = CHY_jianshejihua }
-		prerequisite = { focus = CHY_gulixiaozuofang }
+		prerequisite = {
+			focus = CHY_jianshejihua
+		}
+		prerequisite = {
+			focus = CHY_gulixiaozuofang
+		}
 		relative_position_id = CHY_jianshejihua
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -154,7 +144,7 @@
 			}
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -187,23 +177,23 @@
 		x = 2
 		y = 1
 		cost = 4
-		prerequisite = { focus = CHY_jianshejihua }
-		prerequisite = { focus = CHY_gulixiaozuofang }
+		prerequisite = {
+			focus = CHY_jianshejihua
+		}
+		prerequisite = {
+			focus = CHY_gulixiaozuofang
+		}
 		relative_position_id = CHY_jianshejihua
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -230,7 +220,7 @@
 			}
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -263,18 +253,16 @@
 		x = 0
 		y = 1
 		cost = 10
-		prerequisite = { focus = CHY_minggong_1 }
+		prerequisite = {
+			focus = CHY_minggong_1
+		}
 		relative_position_id = CHY_minggong_1
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "建造技术"
@@ -285,7 +273,7 @@
 			}
 			swap_ideas = {
 				remove_idea = CHY_building
-			add_idea = CHY_building_plus
+				add_idea = CHY_building_plus
 			}
 		}
 	}
@@ -295,21 +283,19 @@
 		x = -2
 		y = 1
 		cost = 10
-		prerequisite = { focus = CHY_minggong_1 }
+		prerequisite = {
+			focus = CHY_minggong_1
+		}
 		relative_position_id = CHY_minggong_1
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_political_power = -200
-		    custom_effect_tooltip = CHY_gongyejituan_tooltip
+			custom_effect_tooltip = CHY_gongyejituan_tooltip
 			every_military_industrial_organization = {
 				limit = {
 					OR = {
@@ -339,22 +325,20 @@
 		x = 2
 		y = 1
 		cost = 5
-		prerequisite = { focus = CHY_jungong_1 }
+		prerequisite = {
+			focus = CHY_jungong_1
+		}
 		relative_position_id = CHY_jungong_1
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-		    random_owned_controlled_state = {
+			random_owned_controlled_state = {
 				limit = {
-				    is_core_of = CHY
+					is_core_of = CHY
 					free_building_slots = {
 						building = dockyard
 						size > 3
@@ -370,7 +354,7 @@
 			}
 			random_owned_controlled_state = {
 				limit = {
-				    is_core_of = CHY
+					is_core_of = CHY
 					free_building_slots = {
 						building = dockyard
 						size > 3
@@ -392,20 +376,18 @@
 		x = 0
 		y = 1
 		cost = 5
-		prerequisite = { focus = CHY_jungong_1 }
+		prerequisite = {
+			focus = CHY_jungong_1
+		}
 		relative_position_id = CHY_jungong_1
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-		    add_tech_bonus = {
+			add_tech_bonus = {
 				name = "生产技术"
 				bonus = 1
 				uses = 2
@@ -421,19 +403,19 @@
 		x = 1
 		y = 1
 		cost = 10
-		prerequisite = { focus = CHY_jianzhujishugaijin }
-		prerequisite = { focus = CHY_shenchanjishu }
+		prerequisite = {
+			focus = CHY_jianzhujishugaijin
+		}
+		prerequisite = {
+			focus = CHY_shenchanjishu
+		}
 		relative_position_id = CHY_jianzhujishugaijin
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_chongyinggongye
 			add_tech_bonus = {
@@ -451,19 +433,19 @@
 		x = -1
 		y = 1
 		cost = 5
-		prerequisite = { focus = CHY_jianzhujishugaijin }
-		prerequisite = { focus = CHY_gongyejituan }
+		prerequisite = {
+			focus = CHY_jianzhujishugaijin
+		}
+		prerequisite = {
+			focus = CHY_gongyejituan
+		}
 		relative_position_id = CHY_jianzhujishugaijin
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			custom_effect_tooltip = CHY_bentukaifa_tooltip
 		}
@@ -474,19 +456,19 @@
 		x = 1
 		y = 1
 		cost = 5
-		prerequisite = { focus = CHY_shenchanjishu }
-		prerequisite = { focus = CHY_haijunchuanwu_1 }
+		prerequisite = {
+			focus = CHY_shenchanjishu
+		}
+		prerequisite = {
+			focus = CHY_haijunchuanwu_1
+		}
 		relative_position_id = CHY_shenchanjishu
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_chongyingzaochuan
 		}
@@ -497,19 +479,19 @@
 		x = 1
 		y = 1
 		cost = 10
-		prerequisite = { focus = CHY_bentukaifa }
-		prerequisite = { focus = CHY_gongyejishu }
+		prerequisite = {
+			focus = CHY_bentukaifa
+		}
+		prerequisite = {
+			focus = CHY_gongyejishu
+		}
 		relative_position_id = CHY_bentukaifa
-
 		ai_will_do = {
 			factor = 50
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_ziyuankaicaijishu
 			add_tech_bonus = {
@@ -527,19 +509,19 @@
 		x = 1
 		y = 1
 		cost = 5
-		prerequisite = { focus = CHY_chongyingzaochuanshu }
-		prerequisite = { focus = CHY_gongyejishu }
+		prerequisite = {
+			focus = CHY_chongyingzaochuanshu
+		}
+		prerequisite = {
+			focus = CHY_gongyejishu
+		}
 		relative_position_id = CHY_gongyejishu
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_navyupupup
 		}
@@ -550,16 +532,12 @@
 		x = 11
 		y = 0
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "电子管技术"
@@ -572,21 +550,19 @@
 	focus = {
 		id = CHY_jisuanji
 		icon = GFX_goal_tfv_generic_tech_sharing
-		prerequisite = { focus = CHY_dianziguan }
+		prerequisite = {
+			focus = CHY_dianziguan
+		}
 		relative_position_id = CHY_dianziguan
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "计算机技术"
@@ -600,44 +576,40 @@
 	focus = {
 		id = CHY_kexuejiaup
 		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = CHY_jisuanji }
+		prerequisite = {
+			focus = CHY_jisuanji
+		}
 		relative_position_id = CHY_jisuanji
 		x = 0
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_research_slot = 1
-            add_ideas = chy_kexuejiaupup
+			add_ideas = chy_kexuejiaupup
 		}
 	}
 	focus = {
 		id = CHY_leida
 		icon = GFX_goal_generic_radar
-		prerequisite = { focus = CHY_kexuejiaup }
+		prerequisite = {
+			focus = CHY_kexuejiaup
+		}
 		relative_position_id = CHY_kexuejiaup
 		x = -2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "雷达技术"
@@ -651,21 +623,19 @@
 	focus = {
 		id = CHY_nuclear
 		icon = GFX_goal_generic_secret_weapon
-		prerequisite = { focus = CHY_kexuejiaup }
+		prerequisite = {
+			focus = CHY_kexuejiaup
+		}
 		relative_position_id = CHY_kexuejiaup
 		x = 0
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "原子能研究"
@@ -679,21 +649,19 @@
 	focus = {
 		id = CHY_rocketry
 		icon = GFX_focus_rocketry
-		prerequisite = { focus = CHY_kexuejiaup }
+		prerequisite = {
+			focus = CHY_kexuejiaup
+		}
 		relative_position_id = CHY_kexuejiaup
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "火箭研究"
@@ -710,16 +678,12 @@
 		x = 20
 		y = 0
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			country_event = CHY_new1_shijian.2
 		}
@@ -727,48 +691,44 @@
 	focus = {
 		id = CHY_hangmu
 		icon = GFX_goal_generic_navy_carrier
-		prerequisite = { focus = CHY_haijun }
+		prerequisite = {
+			focus = CHY_haijun
+		}
 		relative_position_id = CHY_haijun
 		x = -4
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "航母研究"
 				bonus = 1.5
 				uses = 2
-				category = cv_tech				
+				category = cv_tech
 			}
 		}
 	}
 	focus = {
 		id = CHY_hangmu_buff
 		icon = GFX_focus_generic_air_defense
-		prerequisite = { focus = CHY_hangmu }
+		prerequisite = {
+			focus = CHY_hangmu
+		}
 		relative_position_id = CHY_hangmu
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_hangmu_buff_1
 		}
@@ -776,27 +736,25 @@
 	focus = {
 		id = CHY_xunyangjian
 		icon = GFX_focus_generic_cruiser2
-		prerequisite = { focus = CHY_haijun }
+		prerequisite = {
+			focus = CHY_haijun
+		}
 		relative_position_id = CHY_haijun
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "巡洋舰研究"
 				bonus = 1.5
 				uses = 2
-				category = cl_tech				
+				category = cl_tech
 			}
 		}
 	}
@@ -807,48 +765,50 @@
 		y = 2
 		cost = 5
 		available = {
-		or = {
-        num_of_civilian_factories_available_for_projects > 20
-		is_ai = yes
-		}
+			OR = {
+				num_of_civilian_factories_available_for_projects > 20
+				is_ai = yes
+			}
 		}
 		ai_will_do = {
 			factor = 3
 		}
-		prerequisite = { focus = CHY_xunyangjian }
+		prerequisite = {
+			focus = CHY_xunyangjian
+		}
 		relative_position_id = CHY_xunyangjian
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-        select_effect = {
-		set_country_flag = chy_wq
+		select_effect = {
+			set_country_flag = chy_wq
 		}
-
 		completion_reward = {
-		
-		country_event = { id = chy_new.37 days = 2 }	
-		
+			country_event = {
+				id = chy_new.37
+				days = 2
+			}
 		}
 	}
 	focus = {
 		id = CHY_pinweijian_buff
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = CHY_xunyangjian }
-		prerequisite = { focus = CHY_quzhujian }
+		prerequisite = {
+			focus = CHY_xunyangjian
+		}
+		prerequisite = {
+			focus = CHY_quzhujian
+		}
 		relative_position_id = CHY_xunyangjian
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_pinweijian_buff_1
 		}
@@ -856,27 +816,25 @@
 	focus = {
 		id = CHY_quzhujian
 		icon = GFX_focus_generic_destroyer
-		prerequisite = { focus = CHY_haijun }
+		prerequisite = {
+			focus = CHY_haijun
+		}
 		relative_position_id = CHY_haijun
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "驱逐舰研究"
 				bonus = 1.5
 				uses = 2
-				category = dd_tech				
+				category = dd_tech
 			}
 		}
 	}
@@ -887,72 +845,72 @@
 		y = 2
 		cost = 5
 		available = {
-        or = {
-        num_of_civilian_factories_available_for_projects > 10
-		is_ai = yes
-		}
+			OR = {
+				num_of_civilian_factories_available_for_projects > 10
+				is_ai = yes
+			}
 		}
 		ai_will_do = {
 			factor = 3
 		}
-		prerequisite = { focus = CHY_quzhujian }
+		prerequisite = {
+			focus = CHY_quzhujian
+		}
 		relative_position_id = CHY_quzhujian
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-        select_effect = {
-		set_country_flag = chy_xf
+		select_effect = {
+			set_country_flag = chy_xf
 		}
 		completion_reward = {
-        country_event = { id = chy_new.36 days = 2 } 
-		
+			country_event = {
+				id = chy_new.36
+				days = 2
+			}
 		}
 	}
 	focus = {
 		id = CHY_qiantin
 		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = CHY_haijun }
+		prerequisite = {
+			focus = CHY_haijun
+		}
 		relative_position_id = CHY_haijun
 		x = 4
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "潜艇研究"
 				bonus = 1.5
 				uses = 2
-				category = ss_tech				
+				category = ss_tech
 			}
 		}
 	}
 	focus = {
 		id = CHY_qiantin_buff
 		icon = GFX_goal_generic_wolf_pack
-		prerequisite = { focus = CHY_qiantin }
+		prerequisite = {
+			focus = CHY_qiantin
+		}
 		relative_position_id = CHY_qiantin
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_qiantin_buff_1
 		}
@@ -960,27 +918,25 @@
 	focus = {
 		id = CHY_zhanliejian
 		icon = GFX_focus_generic_navy_battleship2
-		prerequisite = { focus = CHY_haijun }
+		prerequisite = {
+			focus = CHY_haijun
+		}
 		relative_position_id = CHY_haijun
-		x = -2		
+		x = -2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "战列舰研究"
 				bonus = 1.5
 				uses = 2
-				category = bb_tech				
+				category = bb_tech
 			}
 		}
 	}
@@ -990,47 +946,48 @@
 		x = 1
 		y = 3
 		cost = 10
-
 		ai_will_do = {
 			factor = 3
 		}
-		prerequisite = { focus = CHY_zhanliejian }
+		prerequisite = {
+			focus = CHY_zhanliejian
+		}
 		relative_position_id = CHY_zhanliejian
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-        available = {
-		or = {
-        num_of_civilian_factories_available_for_projects > 35
-		is_ai = yes
+		available = {
+			OR = {
+				num_of_civilian_factories_available_for_projects > 35
+				is_ai = yes
+			}
 		}
-		}
-
 		select_effect = {
-		set_country_flag = chy_wz
+			set_country_flag = chy_wz
 		}
 		completion_reward = {
-		country_event = { id = chy_new.68 days = 2 }
+			country_event = {
+				id = chy_new.68
+				days = 2
+			}
 		}
 	}
 	focus = {
 		id = CHY_zhanliejian_buff
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = CHY_zhanliejian }
+		prerequisite = {
+			focus = CHY_zhanliejian
+		}
 		relative_position_id = CHY_zhanliejian
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_zhanliejian_buff_1
 		}
@@ -1038,43 +995,41 @@
 	focus = {
 		id = CHY_haijun_buff
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = CHY_hangmu_buff  focus = CHY_zhanliejian_buff }
+		prerequisite = {
+			focus = CHY_hangmu_buff
+			focus = CHY_zhanliejian_buff
+		}
 		relative_position_id = CHY_hangmu_buff
 		x = 1
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
 			OR = {
-				if = {
-				has_country_flag = chy_zhongshihangmu
-				has_completed_focus = CHY_hangmu_buff
-			}
-			if = {
-				has_country_flag = chy_zhongshizhanliejian
-				has_completed_focus = CHY_zhanliejian_buff
+				AND = {
+					has_country_flag = chy_zhongshihangmu
+					has_completed_focus = CHY_hangmu_buff
+				}
+				AND = {
+					has_country_flag = chy_zhongshizhanliejian
+					has_completed_focus = CHY_zhanliejian_buff
+				}
 			}
 		}
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			if = {
-            limit = {
-	            has_country_flag = chy_zhongshihangmu
-            }
-            swap_ideas = {
-				remove_idea = chy_hangmu_buff_1
-				add_idea = chy_hangmu_buff_2
-			}
+				limit = {
+					has_country_flag = chy_zhongshihangmu
+				}
+				swap_ideas = {
+					remove_idea = chy_hangmu_buff_1
+					add_idea = chy_hangmu_buff_2
+				}
 			}
 			else_if = {
 				limit = {
@@ -1095,27 +1050,29 @@
 		y = 3
 		cost = 10
 		available = {
-		or = {
-        num_of_civilian_factories_available_for_projects > 30
-		is_ai = yes
-		}
+			OR = {
+				num_of_civilian_factories_available_for_projects > 30
+				is_ai = yes
+			}
 		}
 		ai_will_do = {
 			factor = 3
 		}
-		prerequisite = { focus = CHY_hangmu }
+		prerequisite = {
+			focus = CHY_hangmu
+		}
 		relative_position_id = CHY_hangmu
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-        select_effect = {
-		set_country_flag = chy_xn
+		select_effect = {
+			set_country_flag = chy_xn
 		}
-		
-
 		completion_reward = {
-		country_event = { id = chy_new.35 days = 2 }
-   		
+			country_event = {
+				id = chy_new.35
+				days = 2
+			}
 		}
 	}
 	focus = {
@@ -1124,16 +1081,12 @@
 		x = 33
 		y = 0
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			country_event = CHY_new1_shijian.3
 		}
@@ -1141,26 +1094,25 @@
 	focus = {
 		id = CHY_bubinzhanshugaige
 		icon = GFX_focus_generic_little_entente
-		prerequisite = { focus = CHY_lujun }
+		prerequisite = {
+			focus = CHY_lujun
+		}
 		relative_position_id = CHY_lujun
-		mutually_exclusive = { focus = CHY_jixiehuagaige }
+		mutually_exclusive = {
+			focus = CHY_jixiehuagaige
+		}
 		x = -4
 		y = 1
 		cost = 7
-
 		available = {
 			has_country_flag = chy_zhongshitubububin
 		}
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = "步兵战术改革"
@@ -1178,49 +1130,45 @@
 	focus = {
 		id = CHY_bubinzhuangbei1
 		icon = GFX_focus_rifle
-		prerequisite = { focus = CHY_bubinzhanshugaige }
+		prerequisite = {
+			focus = CHY_bubinzhanshugaige
+		}
 		relative_position_id = CHY_bubinzhanshugaige
 		x = -1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "先进步兵装备"
 				bonus = 1.5
 				uses = 1
 				ahead_reduction = 1
-				category = infantry_weapons				
+				category = infantry_weapons
 			}
 		}
 	}
 	focus = {
 		id = CHY_bubinzhuangbei2
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = CHY_bubinzhuangbei1 }
+		prerequisite = {
+			focus = CHY_bubinzhuangbei1
+		}
 		relative_position_id = CHY_bubinzhuangbei1
 		x = 0
 		y = 1
 		cost = 7
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_bubinzhuangbei_buff
 		}
@@ -1228,49 +1176,45 @@
 	focus = {
 		id = CHY_huopaozhuangbei1
 		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = CHY_bubinzhanshugaige }
+		prerequisite = {
+			focus = CHY_bubinzhanshugaige
+		}
 		relative_position_id = CHY_bubinzhanshugaige
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "先进火炮装备"
 				bonus = 1.5
 				uses = 1
 				ahead_reduction = 1
-				category = artillery				
+				category = artillery
 			}
 		}
 	}
 	focus = {
 		id = CHY_huopaozhuangbei2
 		icon = GFX_focus_SWE_let_fly_all_guns
-		prerequisite = { focus = CHY_huopaozhuangbei1 }
+		prerequisite = {
+			focus = CHY_huopaozhuangbei1
+		}
 		relative_position_id = CHY_huopaozhuangbei1
 		x = 0
 		y = 1
 		cost = 7
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_huopaozhuangbei_buff
 		}
@@ -1278,53 +1222,52 @@
 	focus = {
 		id = CHY_zhongshibubin
 		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = CHY_bubinzhuangbei2 }
-		prerequisite = { focus = CHY_huopaozhuangbei2 }
+		prerequisite = {
+			focus = CHY_bubinzhuangbei2
+		}
+		prerequisite = {
+			focus = CHY_huopaozhuangbei2
+		}
 		relative_position_id = CHY_bubinzhuangbei2
 		x = 1
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_zhongshibubin_buff
 			remove_ideas = CHY_bhsdlj_1
 			#set_technology = {
-				#mijibubin_chy = 1
+			#mijibubin_chy = 1
 			#}
 		}
 	}
 	focus = {
 		id = CHY_jixiehuagaige
 		icon = GFX_focus_generic_combined_arms
-		prerequisite = { focus = CHY_lujun }
+		prerequisite = {
+			focus = CHY_lujun
+		}
 		relative_position_id = CHY_lujun
-		mutually_exclusive = { focus = CHY_bubinzhanshugaige }
+		mutually_exclusive = {
+			focus = CHY_bubinzhanshugaige
+		}
 		x = 4
 		y = 1
 		cost = 7
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		available = {
 			has_country_flag = chy_zhongshijixiehua
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = "机械化改革"
@@ -1341,52 +1284,48 @@
 	}
 	focus = {
 		id = CHY_zhuangjia1
-		icon = GFX_goal_continuous_armor_production 
-		prerequisite = { focus = CHY_jixiehuagaige }
+		icon = GFX_goal_continuous_armor_production
+		prerequisite = {
+			focus = CHY_jixiehuagaige
+		}
 		relative_position_id = CHY_jixiehuagaige
 		x = -1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "先进坦克装备"
 				bonus = 1.5
 				uses = 1
 				ahead_reduction = 1
-				category = cat_medium_armor		
-				category = cat_light_armor	
-				category = cat_heavy_armor			
+				category = cat_medium_armor
+				category = cat_light_armor
+				category = cat_heavy_armor
 			}
 		}
 	}
 	focus = {
 		id = CHY_zhuangjia2
 		icon = GFX_focus_generic_tank_production
-		prerequisite = { focus = CHY_zhuangjia1 }
+		prerequisite = {
+			focus = CHY_zhuangjia1
+		}
 		relative_position_id = CHY_zhuangjia1
 		x = 0
 		y = 1
 		cost = 7
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_zhuangjia_buff
 		}
@@ -1394,49 +1333,45 @@
 	focus = {
 		id = CHY_jixiehuazhuangbei1
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = CHY_jixiehuagaige }
+		prerequisite = {
+			focus = CHY_jixiehuagaige
+		}
 		relative_position_id = CHY_jixiehuagaige
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "先进机械化装备"
 				bonus = 1.5
 				uses = 1
 				ahead_reduction = 1
-				category = cat_mechanized_equipment				
+				category = cat_mechanized_equipment
 			}
 		}
 	}
 	focus = {
 		id = CHY_jixiehuazhuangbei2
 		icon = GFX_focus_generic_truck
-		prerequisite = { focus = CHY_jixiehuazhuangbei1 }
+		prerequisite = {
+			focus = CHY_jixiehuazhuangbei1
+		}
 		relative_position_id = CHY_jixiehuazhuangbei1
 		x = 0
 		y = 1
 		cost = 7
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_jixiehuazhuangbei_buff
 		}
@@ -1444,22 +1379,22 @@
 	focus = {
 		id = CHY_zhongshijixiehua
 		icon = GFX_focus_generic_license_production
-		prerequisite = { focus = CHY_zhuangjia2 }
-		prerequisite = { focus = CHY_jixiehuazhuangbei2 }
+		prerequisite = {
+			focus = CHY_zhuangjia2
+		}
+		prerequisite = {
+			focus = CHY_jixiehuazhuangbei2
+		}
 		relative_position_id = CHY_zhuangjia2
 		x = 1
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_zhongshijixiehua_buff
 			remove_ideas = CHY_bhsdlj_1
@@ -1468,210 +1403,204 @@
 	focus = {
 		id = CHY_jichububinzhuangbei
 		icon = GFX_focus_generic_manpower
-		prerequisite = { focus = CHY_bubinzhanshugaige focus = CHY_jixiehuagaige }
+		prerequisite = {
+			focus = CHY_bubinzhanshugaige
+			focus = CHY_jixiehuagaige
+		}
 		relative_position_id = CHY_bubinzhanshugaige
 		x = 3
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "基础步兵装备"
 				bonus = 1
 				uses = 1
-				category = infantry_weapons				
+				category = infantry_weapons
 			}
 		}
 	}
 	focus = {
 		id = CHY_jichubuhuopao
 		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = CHY_bubinzhanshugaige focus = CHY_jixiehuagaige }
+		prerequisite = {
+			focus = CHY_bubinzhanshugaige
+			focus = CHY_jixiehuagaige
+		}
 		relative_position_id = CHY_bubinzhanshugaige
 		x = 5
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "基础火炮"
 				bonus = 1
 				uses = 1
-				category = artillery				
+				category = artillery
 			}
 		}
 	}
 	focus = {
 		id = CHY_jichubuzhiyuanlian
 		icon = GFX_goal_generic_axis_build_infantry
-		prerequisite = { focus = CHY_bubinzhanshugaige focus = CHY_jixiehuagaige }
+		prerequisite = {
+			focus = CHY_bubinzhanshugaige
+			focus = CHY_jixiehuagaige
+		}
 		relative_position_id = CHY_bubinzhanshugaige
 		x = 3
 		y = 2
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "支援连研究"
 				bonus = 1
 				uses = 2
-				category = support_tech				
+				category = support_tech
 			}
 		}
 	}
 	focus = {
 		id = CHY_jichutanke
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = CHY_bubinzhanshugaige focus = CHY_jixiehuagaige }
+		prerequisite = {
+			focus = CHY_bubinzhanshugaige
+			focus = CHY_jixiehuagaige
+		}
 		relative_position_id = CHY_bubinzhanshugaige
 		x = 5
 		y = 2
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "基础坦克研究"
 				bonus = 1
 				uses = 1
-				category = armor				
+				category = armor
 			}
 		}
 	}
 	focus = {
 		id = CHY_sakulajundui
 		icon = GFX_focus_jap_manchurian_project
-		prerequisite = { focus = CHY_zhongshibubin focus = CHY_zhongshijixiehua }
+		prerequisite = {
+			focus = CHY_zhongshibubin
+			focus = CHY_zhongshijixiehua
+		}
 		relative_position_id = CHY_zhongshibubin
 		x = 4
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 60
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_sakulajundui_buff
 			TY_lujunliluntupo = yes
-			set_technology = { infantry_charge_for_chy = 1 popup = no }
+			set_technology = {
+				infantry_charge_for_chy = 1
+				popup = no
+			}
 		}
 	}
 	focus = {
 		id = CHY_haijunluzhandui
-		icon = GFX_goal_generic_occupy_states_coastal 
-		prerequisite = { focus = CHY_lujun }
-		prerequisite = { focus = CHY_haijun }
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = {
+			focus = CHY_lujun
+		}
+		prerequisite = {
+			focus = CHY_haijun
+		}
 		relative_position_id = CHY_haijun
 		x = 6
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "海军陆战队研究"
 				bonus = 2
 				uses = 1
 				ahead_reduction = 1
-				category = marine_tech				
+				category = marine_tech
 			}
 		}
 	}
 	focus = {
 		id = CHY_haijunluzhandui1
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = CHY_haijunluzhandui }
+		prerequisite = {
+			focus = CHY_haijunluzhandui
+		}
 		relative_position_id = CHY_haijunluzhandui
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "登录科技研究"
 				bonus = 2
 				uses = 1
 				ahead_reduction = 1
-				category = tp_tech				
+				category = tp_tech
 			}
 		}
 	}
 	focus = {
 		id = CHY_haijunluzhandui2
 		icon = GFX_goal_generic_amphibious_assault
-		prerequisite = { focus = CHY_haijunluzhandui1 }
+		prerequisite = {
+			focus = CHY_haijunluzhandui1
+		}
 		relative_position_id = CHY_haijunluzhandui1
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_haijunluzhandui_buff
 		}
@@ -1682,16 +1611,12 @@
 		x = 45
 		y = 0
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			country_event = CHY_new1_shijian.4
 		}
@@ -1699,21 +1624,19 @@
 	focus = {
 		id = CHY_feijiyanjiu
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = CHY_kongjun }
+		prerequisite = {
+			focus = CHY_kongjun
+		}
 		relative_position_id = CHY_kongjun
 		x = -1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			if = {
 				limit = {
@@ -1724,19 +1647,19 @@
 					bonus = 2
 					uses = 1
 					ahead_reduction = 1
-					category = light_air				
+					category = light_air
 				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = chy_zhongfeiji
 				}
-				else_if = {
-					limit = {
-						has_country_flag = chy_zhongfeiji
-					}
-					add_tech_bonus = {
-						name = "中型飞机研究"
-						bonus = 2
-						uses = 1
-						ahead_reduction = 1
-						category = medium_air				
+				add_tech_bonus = {
+					name = "中型飞机研究"
+					bonus = 2
+					uses = 1
+					ahead_reduction = 1
+					category = medium_air
 				}
 			}
 		}
@@ -1744,60 +1667,56 @@
 	focus = {
 		id = CHY_dafeijiyanjiu
 		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = CHY_kongjun }
+		prerequisite = {
+			focus = CHY_kongjun
+		}
 		relative_position_id = CHY_kongjun
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "大飞机研究"
 				bonus = 2
 				uses = 1
 				ahead_reduction = 1
-				category = heavy_air				
+				category = heavy_air
 			}
 		}
 	}
 	focus = {
 		id = CHY_kongzhanbuff
 		icon = GFX_focus_generic_multi_role_aircraft
-		prerequisite = { focus = CHY_feijiyanjiu }
+		prerequisite = {
+			focus = CHY_feijiyanjiu
+		}
 		relative_position_id = CHY_feijiyanjiu
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			if = {
 				limit = {
 					has_country_flag = chy_xiaofeiji
 				}
 				add_ideas = chy_xiaofeiji_buff
+			}
+			else_if = {
+				limit = {
+					has_country_flag = chy_zhongfeiji
 				}
-				else_if = {
-					limit = {
-						has_country_flag = chy_zhongfeiji
-					}
 				add_ideas = chy_zhongfeiji_buff
 			}
 		}
@@ -1805,21 +1724,19 @@
 	focus = {
 		id = CHY_hongzhabuff
 		icon = GFX_focus_SWE_marauder_bombers
-		prerequisite = { focus = CHY_dafeijiyanjiu }
+		prerequisite = {
+			focus = CHY_dafeijiyanjiu
+		}
 		relative_position_id = CHY_dafeijiyanjiu
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_hongzha_buff
 		}
@@ -1827,22 +1744,22 @@
 	focus = {
 		id = CHY_kongjun1
 		icon = GFX_focus_jap_zero
-		prerequisite = { focus = CHY_kongzhanbuff }
-		prerequisite = { focus = CHY_hongzhabuff }
+		prerequisite = {
+			focus = CHY_kongzhanbuff
+		}
+		prerequisite = {
+			focus = CHY_hongzhabuff
+		}
 		relative_position_id = CHY_kongzhanbuff
 		x = 1
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_kongjun_buff
 			TY_kongjunliluntupo = yes
@@ -1851,50 +1768,48 @@
 	focus = {
 		id = CHY_sanbin1
 		icon = GFX_focus_eng_special_air_service
-		prerequisite = { focus = CHY_kongjun }
-		prerequisite = { focus = CHY_lujun }
+		prerequisite = {
+			focus = CHY_kongjun
+		}
+		prerequisite = {
+			focus = CHY_lujun
+		}
 		relative_position_id = CHY_lujun
 		x = 7
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "伞兵"
 				bonus = 2
 				uses = 1
 				ahead_reduction = 1
-				category = para_tech				
+				category = para_tech
 			}
 		}
 	}
 	focus = {
 		id = CHY_sanbin2
 		icon = GFX_focus_generic_paratrooper
-		prerequisite = { focus = CHY_sanbin1 }
+		prerequisite = {
+			focus = CHY_sanbin1
+		}
 		relative_position_id = CHY_sanbin1
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_sanbin_buff
 		}
@@ -1902,22 +1817,22 @@
 	focus = {
 		id = CHY_cas1
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = CHY_kongjun }
-		prerequisite = { focus = CHY_lujun }
+		prerequisite = {
+			focus = CHY_kongjun
+		}
+		prerequisite = {
+			focus = CHY_lujun
+		}
 		relative_position_id = CHY_lujun
 		x = 9
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			if = {
 				limit = {
@@ -1929,13 +1844,13 @@
 					uses = 4
 					category = cat_battlefield_support
 				}
-				}
-				else = {
+			}
+			else = {
 				add_doctrine_cost_reduction = {
-						name = "空军学说"
-						cost_reduction = 0.5
-						uses = 4
-						category = air_doctrine
+					name = "空军学说"
+					cost_reduction = 0.5
+					uses = 4
+					category = air_doctrine
 				}
 			}
 		}
@@ -1943,21 +1858,19 @@
 	focus = {
 		id = CHY_cas2
 		icon = GFX_goal_poland_goal
-		prerequisite = { focus = CHY_cas1 }
+		prerequisite = {
+			focus = CHY_cas1
+		}
 		relative_position_id = CHY_cas1
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_cas_buff
 		}
@@ -1965,49 +1878,45 @@
 	focus = {
 		id = CHY_navalbomb1
 		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = CHY_kongjun }
+		prerequisite = {
+			focus = CHY_kongjun
+		}
 		relative_position_id = CHY_kongjun
 		x = 3
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "空军鱼雷研究"
 				bonus = 2
 				uses = 1
 				ahead_reduction = 1
-				category = mio_cat_all_naval_bomber_and_modules				
+				category = mio_cat_all_naval_bomber_and_modules
 			}
 		}
 	}
 	focus = {
 		id = CHY_navalbomb2
 		icon = GFX_focus_generic_air_defense
-		prerequisite = { focus = CHY_navalbomb1 }
+		prerequisite = {
+			focus = CHY_navalbomb1
+		}
 		relative_position_id = CHY_navalbomb1
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 20
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_navalbomb_buff
 		}
@@ -2018,16 +1927,12 @@
 		x = 20
 		y = 6
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			country_event = CHY_new1_shijian.5
 			add_political_power = 100
@@ -2037,34 +1942,34 @@
 	focus = {
 		id = CHY_chichen1
 		icon = GFX_focus_jap_pacific_guardian
-		prerequisite = { focus = CHY_chongyindeweilai }
+		prerequisite = {
+			focus = CHY_chongyindeweilai
+		}
 		relative_position_id = CHY_chongyindeweilai
-		mutually_exclusive = { focus = CHY_changmen1 }
+		mutually_exclusive = {
+			focus = CHY_changmen1
+		}
 		available = {
-			has_country_flag =  chy_shangwu
+			has_country_flag = chy_shangwu
 		}
 		x = 5
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			promote_character = {			
+			promote_character = {
 				character = CHY_chicheng
 				ideology = fascism_ideology
 			}
 			CHY_chicheng = {
 				add_country_leader_trait = {
 					trait = yihangzhan
-					ideology = fascism_ideology
+					ideology = fascism
 				}
 			}
 			news_event = CHY_new1_shijian.20
@@ -2074,22 +1979,20 @@
 	focus = {
 		id = CHY_chongyinshendaojiao
 		icon = GFX_focus_jap_spiritual_mobilization
-		prerequisite = { focus = CHY_chichen1 focus = CHY_changmen1 }
+		prerequisite = {
+			focus = CHY_chichen1
+			focus = CHY_changmen1
+		}
 		relative_position_id = CHY_chichen1
-
 		x = -5
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_chongyinshendaojiao_buff
 		}
@@ -2097,30 +2000,28 @@
 	focus = {
 		id = CHY_wushidaojinshen
 		icon = GFX_focus_generic_japanese_imperial_glory
-		prerequisite = { focus = CHY_chongyinshendaojiao }
+		prerequisite = {
+			focus = CHY_chongyinshendaojiao
+		}
 		relative_position_id = CHY_chongyinshendaojiao
-		mutually_exclusive = { focus = CHY_shouhu }
-
+		mutually_exclusive = {
+			focus = CHY_shouhu
+		}
 		available = {
-			has_country_leader  = {
-				ruling_only  = yes 
-				character  = CHY_chicheng
+			has_country_leader = {
+				ruling_only = yes
+				character = CHY_chicheng
 			}
-	    }
-		
+		}
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_wushidaojinshen_buff
 		}
@@ -2128,22 +2029,19 @@
 	focus = {
 		id = CHY_chichenghangmu
 		icon = GFX_goal_generic_navy_carrier
-		prerequisite = { focus = CHY_chichen1 }
+		prerequisite = {
+			focus = CHY_chichen1
+		}
 		relative_position_id = CHY_chichen1
-		
 		x = -2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_chichenghangmu_buff
 		}
@@ -2151,81 +2049,71 @@
 	focus = {
 		id = CHY_chichengkongzhan
 		icon = GFX_focus_jap_zero
-		prerequisite = { focus = CHY_chichenghangmu }
+		prerequisite = {
+			focus = CHY_chichenghangmu
+		}
 		relative_position_id = CHY_chichenghangmu
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_chichengkongzhan_buff
 		}
 	}
-
 	focus = {
 		id = CHY_chichengdezhunbei
 		icon = GFX_focus_generic_military_dictatorship
-		prerequisite = { focus = CHY_chichen1 }
+		prerequisite = {
+			focus = CHY_chichen1
+		}
 		relative_position_id = CHY_chichen1
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_chichengdezhunbei_buff
 		}
 	}
-
 	focus = {
 		id = CHY_hangmujianniang
 		icon = GFX_focus_generic_royal_wedding
-		prerequisite = { focus = CHY_chichengdezhunbei }
+		prerequisite = {
+			focus = CHY_chichengdezhunbei
+		}
 		relative_position_id = CHY_chichengdezhunbei
-		
 		x = 0
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			every_army_leader = {
 				limit = {
 					has_trait = hangmu_army
-					not = { has_id = 07003 }
+					NOT = {
+						has_id = 7003
+					}
 				}
 				add_skill_level = 2
 				add_attack = 1
 				add_planning = 1
 				add_logistics = 1
-
 			}
 			every_navy_leader = {
 				limit = {
@@ -2235,18 +2123,15 @@
 				add_attack = 1
 				add_planning = 1
 				add_logistics = 1
-
 			}
 			random_army_leader = {
 				limit = {
-					has_id = 07003
+					has_id = 7003
 				}
-
 				add_skill_level = 3
 				add_attack = 2
 				add_planning = 2
 				add_logistics = 2
-
 				add_unit_leader_trait = brilliant_strategist
 				add_unit_leader_trait = expert_delegator
 				add_unit_leader_trait = logistics_wizard
@@ -2260,31 +2145,30 @@
 			}
 		}
 	}
-
 	focus = {
 		id = CHY_kuozhangzhunbei
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = CHY_chichen1 }
+		prerequisite = {
+			focus = CHY_chichen1
+		}
 		relative_position_id = CHY_chichen1
-		
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			add_timed_idea = { idea = CHY_czyl_1 days = 300 }
+			add_timed_idea = {
+				idea = CHY_czyl_1
+				days = 300
+			}
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -2311,7 +2195,7 @@
 			}
 			random_owned_controlled_state = {
 				limit = {
-				    is_core_of = CHY
+					is_core_of = CHY
 					free_building_slots = {
 						building = dockyard
 						size > 3
@@ -2327,26 +2211,22 @@
 			}
 		}
 	}
-
 	focus = {
 		id = CHY_dalishenchan
 		icon = GFX_focus_generic_combined_arms
-		prerequisite = { focus = CHY_kuozhangzhunbei }
+		prerequisite = {
+			focus = CHY_kuozhangzhunbei
+		}
 		relative_position_id = CHY_kuozhangzhunbei
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_dalishenchan_buff
 		}
@@ -2354,57 +2234,65 @@
 	focus = {
 		id = CHY_hechisezhongzhouhezuo
 		icon = GFX_fflag_TIX
-		prerequisite = { focus = CHY_chichen1 }
+		prerequisite = {
+			focus = CHY_chichen1
+		}
 		relative_position_id = CHY_chichen1
-
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "铁血国创建了赤色中轴"
 				has_global_flag = TIX_created_chisezhongzhou
-				TIX = { is_faction_leader = yes } 
+				TIX = {
+					is_faction_leader = yes
+				}
 			}
 			any_country = {
 				original_tag = TIX
 				has_government = fascism
-				NOT = { has_war_with = ROOT }
+				NOT = {
+					has_war_with = ROOT
+				}
 			}
 			any_country = {
 				original_tag = SAD
 				has_government = fascism
-				NOT = { has_war_with = ROOT }
+				NOT = {
+					has_war_with = ROOT
+				}
 			}
 		}
-		
 		x = 5
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			random_country = {
 				limit = {
 					original_tag = TIX
 					has_government = fascism
 				}
-				country_event = { id = CHY_new1_shijian.6 days = 1 }
+				country_event = {
+					id = CHY_new1_shijian.6
+					days = 1
+				}
 			}
 		}
 	}
 	focus = {
 		id = CHY_joinchise
 		icon = GFX_goal_molotov_ribbentrop_pact
-		prerequisite = { focus = CHY_hechisezhongzhouhezuo }
+		prerequisite = {
+			focus = CHY_hechisezhongzhouhezuo
+		}
 		relative_position_id = CHY_hechisezhongzhouhezuo
-		mutually_exclusive = { focus = CHY_ziligenshen }
-
+		mutually_exclusive = {
+			focus = CHY_ziligenshen
+		}
 		available = {
 			any_country = {
 				is_major = yes
@@ -2415,50 +2303,47 @@
 				is_faction_leader = yes
 			}
 		}
-		
 		x = -1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 30
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			random_country = {
 				limit = {
 					original_tag = TIX
 					has_government = fascism
 				}
-				country_event = { id = CHY_new1_shijian.8 days = 1 }
+				country_event = {
+					id = CHY_new1_shijian.8
+					days = 1
+				}
 			}
 		}
 	}
 	focus = {
 		id = CHY_ziligenshen
 		icon = GFX_fflag_CHY
-		prerequisite = { focus = CHY_hechisezhongzhouhezuo }
+		prerequisite = {
+			focus = CHY_hechisezhongzhouhezuo
+		}
 		relative_position_id = CHY_hechisezhongzhouhezuo
-		mutually_exclusive = { focus = CHY_joinchise }
-		
+		mutually_exclusive = {
+			focus = CHY_joinchise
+		}
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_ziligenshen_buff
 		}
@@ -2466,24 +2351,24 @@
 	focus = {
 		id = CHY_kuangredekuozhangzhuyi
 		icon = GFX_focus_chongyingweixin
-		prerequisite = { focus = CHY_hangmujianniang focus = CHY_wushidaojinshen }
+		prerequisite = {
+			focus = CHY_hangmujianniang
+			focus = CHY_wushidaojinshen
+		}
 		relative_position_id = CHY_hangmujianniang
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			set_rule = { can_create_factions = yes }
+			set_rule = {
+				can_create_factions = yes
+			}
 			custom_effect_tooltip = CHY_xijinanyangziyuanqu_tooltip
 			create_faction = "东亚合作圈"
 			add_ideas = CHY_kuangredekuozhangzhuyi_buff
@@ -2492,22 +2377,19 @@
 	focus = {
 		id = CHY_yazhoufangxiang
 		icon = GFX_goal_generic_alliance
-		prerequisite = { focus = CHY_kuangredekuozhangzhuyi }
+		prerequisite = {
+			focus = CHY_kuangredekuozhangzhuyi
+		}
 		relative_position_id = CHY_kuangredekuozhangzhuyi
-		
 		x = -4
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_war_support = 0.2
 			add_political_power = 300
@@ -2516,30 +2398,32 @@
 	focus = {
 		id = CHY_dongyajunduikuobian
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		prerequisite = { focus = CHY_yazhoufangxiang }
+		prerequisite = {
+			focus = CHY_yazhoufangxiang
+		}
 		relative_position_id = CHY_yazhoufangxiang
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = CHY_qinlvejihua
 			DOH = {
-				hidden_effect = { country_event = { id = CHY_new1_shijian.21 days = 10 } }
+				hidden_effect = {
+					country_event = {
+						id = CHY_new1_shijian.21
+						days = 10
+					}
+				}
 				add_opinion_modifier = {
 					target = CHY
 					modifier = CHY_dhtiaoxin
-				}			
+				}
 			}
 			custom_effect_tooltip = CHY_dongyajunduikuobian_tooltip
 			add_ai_strategy = {
@@ -2548,84 +2432,182 @@
 				value = 200
 			}
 			add_equipment_to_stockpile = {
-				type = infantry_equipment 
+				type = infantry_equipment
 				amount = 9000
 			}
-			
 			add_equipment_to_stockpile = {
 				type = artillery_equipment
 				amount = 998
 			}
-
 			add_equipment_to_stockpile = {
-				type = convoy 
+				type = convoy
 				amount = 500
 			}
-            if = {
-			limit = {
-			is_ai = yes
-			}
-			set_technology = { mtg_landing_craft = 1 }
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				set_technology = {
+					mtg_landing_craft = 1
+				}
 			}
 			hidden_effect = {
-				if = {  
-					limit = { NOT = { has_idea = TY_dingzhenai }
-				 } 
-				division_template = {
-					name = "关东边防师" 			
-					division_names_group = JAP_INF_01
-
-					regiments = {
-						artillery_brigade = { x = 0 y = 0 }
-						artillery_brigade = { x = 0 y = 1 }
-						artillery_brigade = { x = 0 y = 2 }
-						artillery_brigade = { x = 0 y = 3 }
-						light_armor = { x = 1 y = 0 }
-						infantry = { x = 2 y = 0 }
-						infantry = { x = 2 y = 1 }
-						infantry = { x = 2 y = 2 }
-						infantry = { x = 2 y = 3 }
-						infantry = { x = 3 y = 0 }
-						infantry = { x = 3 y = 1 }
-						infantry = { x = 3 y = 2 }
-						infantry = { x = 3 y = 3 }
+				if = {
+					limit = {
+						NOT = {
+							has_idea = TY_dingzhenai
+						}
 					}
-					support = {
-						engineer = { x = 0 y = 0 }
-				        artillery = { x = 0 y = 1 }
-				        recon = { x = 0 y = 2 }
-				        logistics_company = { x = 0 y = 3 }
-				        maintenance_company = { x = 0 y = 4 }
+					division_template = {
+						name = "关东边防师"
+						division_names_group = JAP_INF_01
+						regiments = {
+							artillery_brigade = {
+								x = 0
+								y = 0
+							}
+							artillery_brigade = {
+								x = 0
+								y = 1
+							}
+							artillery_brigade = {
+								x = 0
+								y = 2
+							}
+							artillery_brigade = {
+								x = 0
+								y = 3
+							}
+							light_armOR = {
+								x = 1
+								y = 0
+							}
+							infantry = {
+								x = 2
+								y = 0
+							}
+							infantry = {
+								x = 2
+								y = 1
+							}
+							infantry = {
+								x = 2
+								y = 2
+							}
+							infantry = {
+								x = 2
+								y = 3
+							}
+							infantry = {
+								x = 3
+								y = 0
+							}
+							infantry = {
+								x = 3
+								y = 1
+							}
+							infantry = {
+								x = 3
+								y = 2
+							}
+							infantry = {
+								x = 3
+								y = 3
+							}
+						}
+						support = {
+							engineer = {
+								x = 0
+								y = 0
+							}
+							artillery = {
+								x = 0
+								y = 1
+							}
+							recon = {
+								x = 0
+								y = 2
+							}
+							logistics_company = {
+								x = 0
+								y = 3
+							}
+							maintenance_company = {
+								x = 0
+								y = 4
+							}
+						}
 					}
-
 				}
-			}
-			if = {  
-				limit = { has_idea = TY_dingzhenai } 
-				division_template = {
-					name = "关东边防师" 			
-					division_names_group = JAP_INF_01
-												
-					regiments = {
-						artillery_brigade = { x = 0 y = 0 }
-						artillery_brigade = { x = 0 y = 1 }
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-						infantry = { x = 1 y = 2 }
-						infantry = { x = 1 y = 3 }
-						infantry = { x = 2 y = 0 }
-						infantry = { x = 2 y = 1 }
-						infantry = { x = 2 y = 2 }
+				if = {
+					limit = {
+						has_idea = TY_dingzhenai
 					}
-					support = {
-						engineer = { x = 0 y = 0 }
-				        artillery = { x = 0 y = 1 }
-				        recon = { x = 0 y = 2 }
-				        anti_air = { x = 0 y = 3 }
-				        logistics_company = { x = 0 y = 4 }
+					division_template = {
+						name = "关东边防师"
+						division_names_group = JAP_INF_01
+						regiments = {
+							artillery_brigade = {
+								x = 0
+								y = 0
+							}
+							artillery_brigade = {
+								x = 0
+								y = 1
+							}
+							infantry = {
+								x = 1
+								y = 0
+							}
+							infantry = {
+								x = 1
+								y = 1
+							}
+							infantry = {
+								x = 1
+								y = 2
+							}
+							infantry = {
+								x = 1
+								y = 3
+							}
+							infantry = {
+								x = 2
+								y = 0
+							}
+							infantry = {
+								x = 2
+								y = 1
+							}
+							infantry = {
+								x = 2
+								y = 2
+							}
+						}
+						support = {
+							engineer = {
+								x = 0
+								y = 0
+							}
+							artillery = {
+								x = 0
+								y = 1
+							}
+							recon = {
+								x = 0
+								y = 2
+							}
+							anti_air = {
+								x = 0
+								y = 3
+							}
+							logistics_company = {
+								x = 0
+								y = 4
+							}
+						}
 					}
 				}
-			}
 				609 = {
 					create_unit = {
 						division = "name = \"边防师\" division_template = \"关东边防师\" start_experience_factor = 0.4"
@@ -2748,28 +2730,25 @@
 	focus = {
 		id = CHY_houqinzhunbei
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = CHY_dongyajunduikuobian }
+		prerequisite = {
+			focus = CHY_dongyajunduikuobian
+		}
 		relative_position_id = CHY_dongyajunduikuobian
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			609 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 2
-					instant_build = yes 
+					instant_build = yes
 				}
 				add_building_construction = {
 					type = naval_base
@@ -2782,14 +2761,14 @@
 				add_building_construction = {
 					type = infrastructure
 					level = 3
-					instant_build = yes 
+					instant_build = yes
 				}
 			}
 			611 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 2
-					instant_build = yes 
+					instant_build = yes
 				}
 				add_building_construction = {
 					type = supply_node
@@ -2802,7 +2781,7 @@
 				add_building_construction = {
 					type = infrastructure
 					level = 4
-					instant_build = yes 
+					instant_build = yes
 				}
 			}
 			build_railway = {
@@ -2814,22 +2793,19 @@
 	focus = {
 		id = CHY_duidonghuangxuanzhan
 		icon = GFX_aflag_DOH
-		prerequisite = { focus = CHY_houqinzhunbei }
+		prerequisite = {
+			focus = CHY_houqinzhunbei
+		}
 		relative_position_id = CHY_houqinzhunbei
-		
 		x = 0
 		y = 1
 		cost = 4
-
 		ai_will_do = {
 			factor = 100
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			DOH = {
 				country_event = CHY_new1_shijian.9
@@ -2840,30 +2816,32 @@
 	focus = {
 		id = CHY_xiaohuashenliguoshi
 		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = CHY_duidonghuangxuanzhan }
+		prerequisite = {
+			focus = CHY_duidonghuangxuanzhan
+		}
 		relative_position_id = CHY_duidonghuangxuanzhan
-		
 		x = -3
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		available = {
 			OR = {
-			    NOT = { country_exists = DOH }
-			    DOH = { has_capitulated = yes }
-			    DOH = { is_subject_of = CHY }
+				NOT = {
+					country_exists = DOH
+				}
+				DOH = {
+					has_capitulated = yes
+				}
+				DOH = {
+					is_subject_of = CHY
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_state_core = 612
 			add_state_core = 611
@@ -2884,22 +2862,19 @@
 	focus = {
 		id = CHY_dongbeikuangchankaijue
 		icon = GFX_goal_generic_construction2
-		prerequisite = { focus = CHY_xiaohuashenliguoshi }
+		prerequisite = {
+			focus = CHY_xiaohuashenliguoshi
+		}
 		relative_position_id = CHY_xiaohuashenliguoshi
-		
 		x = 1
 		y = 1
 		cost = 15
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			714 = {
 				add_resource = {
@@ -2936,149 +2911,141 @@
 	focus = {
 		id = CHY_yuandongchenshitouzi
 		icon = GFX_focus_chi_legislative_yuan
-		prerequisite = { focus = CHY_xiaohuashenliguoshi }
+		prerequisite = {
+			focus = CHY_xiaohuashenliguoshi
+		}
 		relative_position_id = CHY_xiaohuashenliguoshi
-		
 		x = -1
 		y = 1
 		cost = 20
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_state_core = 608
 			add_state_core = 743
 			add_state_core = 613
 			608 = {
 				set_state_category = metropolis
-					add_extra_state_shared_building_slots = 6
-					add_building_construction = {
-							type = industrial_complex
-							level = 3
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = arms_factory
-							level = 2
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = dockyard
-							level = 1
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = infrastructure
-							level = 2
-							instant_build = yes
-						}
-					
-			   }
-			
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 			745 = {
-					set_state_category = metropolis
-					add_extra_state_shared_building_slots = 6
-					add_building_construction = {
-							type = industrial_complex
-							level = 3
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = arms_factory
-							level = 2
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = dockyard
-							level = 1
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = infrastructure
-							level = 2
-							instant_build = yes
-						}
-					}
-			
+				set_state_category = metropolis
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 			743 = {
 				set_state_category = metropolis
-					add_extra_state_shared_building_slots = 6
-					add_building_construction = {
-							type = industrial_complex
-							level = 3
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = arms_factory
-							level = 2
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = dockyard
-							level = 1
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = infrastructure
-							level = 2
-							instant_build = yes
-						}
-					}
-			
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 			613 = {
 				set_state_category = metropolis
-					add_extra_state_shared_building_slots = 6
-					add_building_construction = {
-							type = industrial_complex
-							level = 3
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = arms_factory
-							level = 2
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = dockyard
-							level = 1
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = infrastructure
-							level = 2
-							instant_build = yes
-					}
-		
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
 			}
 			524 = {
-				set_state_category = metropolis	
-					add_extra_state_shared_building_slots = 6
-					add_building_construction = {
-							type = industrial_complex
-							level = 3
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = arms_factory
-							level = 2
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = dockyard
-							level = 1
-							instant_build = yes
-						}
-					add_building_construction = {
-							type = infrastructure
-							level = 2
-							instant_build = yes
+				set_state_category = metropolis
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
@@ -3086,140 +3053,153 @@
 	focus = {
 		id = CHY_xiangzhongdongchufa
 		icon = GFX_focus_TUR_treaty_of_saadabad
-		prerequisite = { focus = CHY_duidonghuangxuanzhan }
+		prerequisite = {
+			focus = CHY_duidonghuangxuanzhan
+		}
 		relative_position_id = CHY_duidonghuangxuanzhan
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			OR = {
-			    NOT = { country_exists = DOH }
-			    DOH = { has_capitulated = yes }
-			    DOH = { is_subject_of = CHY }
+				NOT = {
+					country_exists = DOH
+				}
+				DOH = {
+					has_capitulated = yes
+				}
+				DOH = {
+					is_subject_of = CHY
+				}
 			}
-			NOT = { 
-				has_country_leader  = {
-				ruling_only  = yes 
-				character  = CHY_changmen
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					character = CHY_changmen
+				}
 			}
 		}
-		}
-
 		bypass = {
-			or = {
-			if = {
-				has_war_with = PER
-				has_war_with = AFG
-			}
-			if = {
-				PER = { has_capitulated = yes }
-				AFG = { has_capitulated = yes }
-			}
-			if = {
-				not = { country_exists = PER }
-				not = { country_exists = AFG }
-			}
+			OR = {
+				AND = {
+					has_war_with = PER
+					has_war_with = AFG
+				}
+				AND = {
+					PER = {
+						has_capitulated = yes
+					}
+					AFG = {
+						has_capitulated = yes
+					}
+				}
+				AND = {
+					NOT = {
+						country_exists = PER
+					}
+					NOT = {
+						country_exists = AFG
+					}
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			PER = {
 				country_event = CHY_new1_shijian.16
-				}
+			}
 			AFG = {
 				country_event = CHY_new1_shijian.16
-				}
+			}
 		}
 	}
 	focus = {
 		id = CHY_yazhoudelinyiduan
 		icon = GFX_focus_generic_attack_turkey
-		prerequisite = { focus = CHY_xiangzhongdongchufa }
+		prerequisite = {
+			focus = CHY_xiangzhongdongchufa
+		}
 		relative_position_id = CHY_xiangzhongdongchufa
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			is_neighbor_of = TUR
 		}
-
 		bypass = {
-			or = {
+			OR = {
 				has_war_with = TUR
-				TUR = { has_capitulated = yes }
-				NOT = { country_exists = TUR }
+				TUR = {
+					has_capitulated = yes
+				}
+				NOT = {
+					country_exists = TUR
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			TUR = {
 				country_event = CHY_new1_shijian.16
-				}
+			}
 		}
 	}
 	focus = {
 		id = CHY_menguwenti
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = CHY_duidonghuangxuanzhan }
+		prerequisite = {
+			focus = CHY_duidonghuangxuanzhan
+		}
 		relative_position_id = CHY_duidonghuangxuanzhan
-		
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			OR = {
-			    NOT = { country_exists = DOH }
-			    DOH = { has_capitulated = yes }
-			    DOH = { is_subject_of = CHY }
+				NOT = {
+					country_exists = DOH
+				}
+				DOH = {
+					has_capitulated = yes
+				}
+				DOH = {
+					is_subject_of = CHY
+				}
 			}
-			NOT = { 
-				has_country_leader  = {
-				ruling_only  = yes 
-				character  = CHY_changmen
+			NOT = {
+				has_country_leader = {
+					ruling_only = yes
+					character = CHY_changmen
+				}
 			}
 		}
-		}
-
 		bypass = {
-			or = {
+			OR = {
 				has_war_with = MON
-				MON = { has_capitulated = yes }
-				NOT = { country_exists = MON }
+				MON = {
+					has_capitulated = yes
+				}
+				NOT = {
+					country_exists = MON
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			MON = {
 				country_event = CHY_new1_shijian.16
@@ -3229,71 +3209,81 @@
 	focus = {
 		id = CHY_duibeilianzhanzhen
 		icon = GFX_aflag_BFL
-		prerequisite = { focus = CHY_menguwenti }
+		prerequisite = {
+			focus = CHY_menguwenti
+		}
 		relative_position_id = CHY_menguwenti
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-        available = {
-			or = {
-				BFL = { has_war_with = TIX }
-				BFL = { has_war_with = YUW }
+		available = {
+			OR = {
+				BFL = {
+					has_war_with = TIX
+				}
+				BFL = {
+					has_war_with = YUW
+				}
 				date > 1943.1.1
 			}
 		}
 		select_effect = {
 			BFL = {
-				country_event = { id = CHY_new1_shijian.22 days = 14 }
+				country_event = {
+					id = CHY_new1_shijian.22
+					days = 14
+				}
 			}
 		}
-		
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			add_state_claim  = 655
-			create_wargoal = { target = BFL type = take_state_focus }
+			add_state_claim = 655
+			create_wargoal = {
+				target = BFL
+				type = take_state_focus
+			}
 			add_ideas = CHY_bflwar_buff
 		}
 	}
 	focus = {
 		id = CHY_taipinyangfangxiang
 		icon = GFX_focus_generic_support_the_left_right
-		prerequisite = { focus = CHY_kuangredekuozhangzhuyi }
+		prerequisite = {
+			focus = CHY_kuangredekuozhangzhuyi
+		}
 		relative_position_id = CHY_kuangredekuozhangzhuyi
-		
 		x = 4
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		available = {
 			is_puppet = no
 			OR = {
 				date > 1940.1.1
-			    NOT = { country_exists = DOH }
-			    DOH = { has_capitulated = yes }
-			    DOH = { is_subject_of = CHY }
-				DOH = { surrender_progress > 0.35 }
+				NOT = {
+					country_exists = DOH
+				}
+				DOH = {
+					has_capitulated = yes
+				}
+				DOH = {
+					is_subject_of = CHY
+				}
+				DOH = {
+					surrender_progress > 0.35
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_war_support = 0.2
 			army_experience = 100
@@ -3305,22 +3295,34 @@
 		x = 0
 		y = 1
 		cost = 5
-		prerequisite = { focus = CHY_taipinyangfangxiang}
+		prerequisite = {
+			focus = CHY_taipinyangfangxiang
+		}
 		relative_position_id = CHY_taipinyangfangxiang
 		available = {
-		is_puppet = no
-			or = {
-			YUW = { surrender_progress > 0.5 }
-			country_exists = WEX
-			YUW = {has_capitulated = yes}
+			is_puppet = no
+			OR = {
+				YUW = {
+					surrender_progress > 0.5
+				}
+				country_exists = WEX
+				YUW = {
+					has_capitulated = yes
+				}
 			}
 		}
 		bypass = {
-			or = {
-			has_war_with = YUW
-			YUW = { has_completed_focus = YUW_yuanweikuozhangzhuyi }
-			YUW = { has_completed_focus = YUW_rushensuoyuan }
-			YUW = { has_completed_focus = YUW_chedijingjigaige }
+			OR = {
+				has_war_with = YUW
+				YUW = {
+					has_completed_focus = YUW_yuanweikuozhangzhuyi
+				}
+				YUW = {
+					has_completed_focus = YUW_rushensuoyuan
+				}
+				YUW = {
+					has_completed_focus = YUW_chedijingjigaige
+				}
 			}
 		}
 		ai_will_do = {
@@ -3328,7 +3330,7 @@
 		}
 		completion_reward = {
 			YUW = {
-			country_event = CHY_new1_shijian.18
+				country_event = CHY_new1_shijian.18
 			}
 			add_war_support = 0.1
 			transfer_state = 671
@@ -3341,9 +3343,10 @@
 	focus = {
 		id = CHY_xianluo
 		icon = GFX_goal_tripartite_pact
-		prerequisite = { focus = CHY_fashudongya }
+		prerequisite = {
+			focus = CHY_fashudongya
+		}
 		relative_position_id = CHY_fashudongya
-		
 		x = 0
 		y = 1
 		cost = 5
@@ -3353,12 +3356,9 @@
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			SIA = {
 				country_event = CHY_new1_shijian.16
@@ -3368,9 +3368,10 @@
 	focus = {
 		id = CHY_feilvbin
 		icon = GFX_aflag_BYG
-		prerequisite = { focus = CHY_xianluo }
+		prerequisite = {
+			focus = CHY_xianluo
+		}
 		relative_position_id = CHY_xianluo
-		
 		x = 2
 		y = 1
 		cost = 4
@@ -3380,45 +3381,64 @@
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			declare_war_on = { target = PHI type = annex_everything }
+			declare_war_on = {
+				target = PHI
+				type = annex_everything
+			}
 			if = {
 				limit = {
 					PHI = {
 						is_subject_of = BYG
 					}
 				}
-				declare_war_on = { target = BYG type = annex_everything }
+				declare_war_on = {
+					target = BYG
+					type = annex_everything
+				}
 				set_country_flag = CHY_bygwar_1
 				if = {
-					limit = { 
-					BYG = { is_in_faction_with = HUJ } 
-					country_exists = HUJ
-					has_war_with = DOH
+					limit = {
+						BYG = {
+							is_in_faction_with = HUJ
+						}
+						country_exists = HUJ
+						has_war_with = DOH
+						DOH = {
+							NOT = {
+								has_war_with = HUJ
+							}
+							is_faction_leader = yes
+							NOT = {
+								is_in_faction_with = HUJ
+							}
+						}
+					}
 					DOH = {
-					not = { has_war_with = HUJ }
-					is_faction_leader = yes
-					not = { is_in_faction_with = HUJ } 
+						country_event = az_tianjiang.135
 					}
-					}
-					DOH = { country_event = az_tianjiang.135 }
 				}
 				BYG = {
-				country_event = { id = CHY_new1_shijian.28 days = 3}
+					country_event = {
+						id = CHY_new1_shijian.28
+						days = 3
+					}
 				}
 			}
-			add_timed_idea = { idea = JAP_tora_tora_tora_idea days = 500 }
-			if = {
-			limit = {
-			is_ai = yes
+			add_timed_idea = {
+				idea = JAP_tora_tora_tora_idea
+				days = 500
 			}
-			set_technology = { mtg_tank_landing_craft = 1 } 
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				set_technology = {
+					mtg_tank_landing_craft = 1
+				}
 			}
 			add_ideas = CHY_bygwar_buff
 		}
@@ -3426,36 +3446,45 @@
 	focus = {
 		id = CHY_malaixiya
 		icon = GFX_focus_jap_strike_south
-		prerequisite = { focus = CHY_xianluo }
+		prerequisite = {
+			focus = CHY_xianluo
+		}
 		relative_position_id = CHY_xianluo
-		
 		x = -2
 		y = 1
 		cost = 4
-
 		ai_will_do = {
 			factor = 35
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			declare_war_on = { target = MAL type = annex_everything }
-			create_wargoal = { target = INS type = take_state_focus } 
+			declare_war_on = {
+				target = MAL
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = INS
+				type = take_state_focus
+			}
 			if = {
-			limit = {
-			country_exists = HUJ
-			has_war_with = DOH
-			DOH = {
-			not = { has_war_with = HUJ }
-			is_faction_leader = yes
-			not = { is_in_faction_with = HUJ } 
-			}
-			}
-			DOH = { country_event = az_tianjiang.135 }
+				limit = {
+					country_exists = HUJ
+					has_war_with = DOH
+					DOH = {
+						NOT = {
+							has_war_with = HUJ
+						}
+						is_faction_leader = yes
+						NOT = {
+							is_in_faction_with = HUJ
+						}
+					}
+				}
+				DOH = {
+					country_event = az_tianjiang.135
+				}
 			}
 			add_ideas = CHY_hujwar_buff
 		}
@@ -3463,54 +3492,51 @@
 	focus = {
 		id = CHY_warbuli
 		icon = GFX_focus_jinbuli
-		prerequisite = { focus = CHY_malaixiya }
+		prerequisite = {
+			focus = CHY_malaixiya
+		}
 		relative_position_id = CHY_malaixiya
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			has_full_control_of_state = 641
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			create_wargoal = { target = BLI type = annex_everything } 
+			create_wargoal = {
+				target = BLI
+				type = annex_everything
+			}
 		}
 	}
 	focus = {
 		id = CHY_touxiatudao
 		icon = GFX_goal_continuous_suppression
-		prerequisite = { focus = CHY_feilvbin }
+		prerequisite = {
+			focus = CHY_feilvbin
+		}
 		relative_position_id = CHY_feilvbin
-		
 		x = -2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			has_war_with = BYG
-			not = { controls_state = 650 }
+			NOT = {
+				controls_state = 650
+			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			transfer_state = 650
 		}
@@ -3518,34 +3544,31 @@
 	focus = {
 		id = CHY_tongmengels
 		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = CHY_feilvbin }
+		prerequisite = {
+			focus = CHY_feilvbin
+		}
 		relative_position_id = CHY_feilvbin
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			has_full_control_of_state = 629
 		}
-
 		bypass = {
-			or = {
-			is_in_faction_with = ELS
-			has_war_with = ELS
-			NOT = { country_exists = ELS }
+			OR = {
+				is_in_faction_with = ELS
+				has_war_with = ELS
+				NOT = {
+					country_exists = ELS
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			ELS = {
 				country_event = CHY_new1_shijian.19
@@ -3556,34 +3579,31 @@
 	focus = {
 		id = CHY_tongmengpru
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = CHY_feilvbin }
+		prerequisite = {
+			focus = CHY_feilvbin
+		}
 		relative_position_id = CHY_feilvbin
-		
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			has_full_control_of_state = 629
 		}
-
 		bypass = {
-			or = {
-			is_in_faction_with = PRU
-			has_war_with = PRU
-			NOT = { country_exists = PRU }
+			OR = {
+				is_in_faction_with = PRU
+				has_war_with = PRU
+				NOT = {
+					country_exists = PRU
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			PRU = {
 				country_event = CHY_new1_shijian.19
@@ -3594,40 +3614,51 @@
 	focus = {
 		id = CHY_els_start_war
 		icon = GFX_focus_mex_redeem_aztlan
-		prerequisite = { focus = CHY_tongmengels }
+		prerequisite = {
+			focus = CHY_tongmengels
+		}
 		relative_position_id = CHY_tongmengels
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
-			ELS = { has_country_flag = CHY_help_americas }
-		}
-
-		bypass = {
-			or = {
-			is_in_faction_with = ELS
-			has_war_with = ELS
-			NOT = { country_exists = ELS }
+			ELS = {
+				has_country_flag = CHY_help_americas
 			}
 		}
-
+		bypass = {
+			OR = {
+				is_in_faction_with = ELS
+				has_war_with = ELS
+				NOT = {
+					country_exists = ELS
+				}
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			ELS = {
-				declare_war_on = { target = GUA type = annex_everything }
-				declare_war_on = { target = HON type = annex_everything }
-				declare_war_on = { target = NIC type = annex_everything }
-				declare_war_on = { target = COS type = annex_everything }
+				declare_war_on = {
+					target = GUA
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = HON
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = NIC
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = COS
+					type = annex_everything
+				}
 				add_state_core = 313
 				add_state_core = 312
 				add_state_core = 317
@@ -3639,40 +3670,51 @@
 	focus = {
 		id = CHY_pru_start_war
 		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = CHY_tongmengpru }
+		prerequisite = {
+			focus = CHY_tongmengpru
+		}
 		relative_position_id = CHY_tongmengpru
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
-			PRU = { has_country_flag = CHY_help_americas }
-		}
-
-		bypass = {
-			or = {
-			is_in_faction_with = PRU
-			has_war_with = PRU
-			NOT = { country_exists = PRU }
+			PRU = {
+				has_country_flag = CHY_help_americas
 			}
 		}
-
+		bypass = {
+			OR = {
+				is_in_faction_with = PRU
+				has_war_with = PRU
+				NOT = {
+					country_exists = PRU
+				}
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			PRU = {
-				declare_war_on = { target = ECU type = annex_everything }
-				declare_war_on = { target = COL type = annex_everything }
-				declare_war_on = { target = VEN type = annex_everything }
-				declare_war_on = { target = PAN type = annex_everything }
+				declare_war_on = {
+					target = ECU
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = COL
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = VEN
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = PAN
+					type = annex_everything
+				}
 				every_state = {
 					limit = {
 						OR = {
@@ -3691,76 +3733,81 @@
 	focus = {
 		id = CHY_contral_americas
 		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = CHY_pru_start_war focus = CHY_els_start_war }
+		prerequisite = {
+			focus = CHY_pru_start_war
+			focus = CHY_els_start_war
+		}
 		relative_position_id = CHY_pru_start_war
-		
 		x = -1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 15
 		}
-
 		available = {
 			OR = {
-				ELS = { has_country_flag = CHY_help_americas }
-				PRU = { has_country_flag = CHY_help_americas }
+				ELS = {
+					has_country_flag = CHY_help_americas
+				}
+				PRU = {
+					has_country_flag = CHY_help_americas
+				}
 			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			IF = {
-            limit = {
-	            ELS = { has_country_flag = CHY_help_americas }
-            }
-			set_autonomy = {
-				target = ELS
-				autonomy_state = autonomy_reichskommissariat
+				limit = {
+					ELS = {
+						has_country_flag = CHY_help_americas
+					}
+				}
+				set_autonomy = {
+					target = ELS
+					autonomy_state = autonomy_reichskommissariat
+				}
 			}
-		}
-		IF = {
-            limit = {
-	            PRU = { has_country_flag = CHY_help_americas }
-            }
-			set_autonomy = {
-				target = PRU
-				autonomy_state = autonomy_reichskommissariat
+			IF = {
+				limit = {
+					PRU = {
+						has_country_flag = CHY_help_americas
+					}
+				}
+				set_autonomy = {
+					target = PRU
+					autonomy_state = autonomy_reichskommissariat
+				}
 			}
-		}
 		}
 	}
 	#nagato line
 	focus = {
 		id = CHY_changmen1
 		icon = GFX_focus_jap_spiritual_mobilization
-		prerequisite = { focus = CHY_chongyindeweilai }
+		prerequisite = {
+			focus = CHY_chongyindeweilai
+		}
 		relative_position_id = CHY_chongyindeweilai
-		mutually_exclusive = { focus = CHY_chichen1 }
+		mutually_exclusive = {
+			focus = CHY_chichen1
+		}
 		available = {
-			has_country_leader  = {
-				ruling_only  = yes 
-				character  = CHY_changmen
+			has_country_leader = {
+				ruling_only = yes
+				character = CHY_changmen
 			}
-	    }
+		}
 		x = -5
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_stability = 0.1
 			add_political_power = 300
@@ -3787,30 +3834,28 @@
 	focus = {
 		id = CHY_shouhu
 		icon = GFX_focus_GRE_a_land_of_mountains
-		prerequisite = { focus = CHY_chongyinshendaojiao }
+		prerequisite = {
+			focus = CHY_chongyinshendaojiao
+		}
 		relative_position_id = CHY_chongyinshendaojiao
-		mutually_exclusive = { focus = CHY_wushidaojinshen }
-
+		mutually_exclusive = {
+			focus = CHY_wushidaojinshen
+		}
 		available = {
-			has_country_leader  = {
-				ruling_only  = yes 
-				character  = CHY_changmen
+			has_country_leader = {
+				ruling_only = yes
+				character = CHY_changmen
 			}
-	    }
-		
+		}
 		x = -1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_shouhu_buff
 		}
@@ -3818,57 +3863,49 @@
 	focus = {
 		id = CHY_kuojianshenzhiyuan
 		icon = GFX_focus_chongyingweixin
-		prerequisite = { focus = CHY_changmen1 }
+		prerequisite = {
+			focus = CHY_changmen1
+		}
 		relative_position_id = CHY_changmen1
-		
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
 			OR = {
 				hidden_trigger = {
-				CHY = { is_ai = yes } 
+					CHY = {
+						is_ai = yes
+					}
+				}
+				has_tech = construction3
 			}
-			has_tech = construction3
 		}
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			hidden_effect = {
-				unlock_decision_tooltip = CHY_xindeshenzhiyuan_decision
-			}
 			custom_effect_tooltip = CHY_xindeshenzhiyuan_tooltip
 		}
 	}
 	focus = {
 		id = CHY_zhujianweili
 		icon = GFX_focus_FIN_weapon_caches
-		prerequisite = { focus = CHY_kuojianshenzhiyuan }
+		prerequisite = {
+			focus = CHY_kuojianshenzhiyuan
+		}
 		relative_position_id = CHY_kuojianshenzhiyuan
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_stability = 0.3
 			add_war_support = -0.5
@@ -3877,23 +3914,22 @@
 	focus = {
 		id = CHY_hepinyindao
 		icon = GFX_focus_SWE_urbanization
-		prerequisite = { focus = CHY_zhujianweili }
-		prerequisite = { focus = CHY_shouhu }
+		prerequisite = {
+			focus = CHY_zhujianweili
+		}
+		prerequisite = {
+			focus = CHY_shouhu
+		}
 		relative_position_id = CHY_zhujianweili
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_hepinyindao_buff
 		}
@@ -3901,22 +3937,19 @@
 	focus = {
 		id = CHY_changmenhuopao
 		icon = GFX_focus_SWE_let_fly_all_guns
-		prerequisite = { focus = CHY_changmen1 }
+		prerequisite = {
+			focus = CHY_changmen1
+		}
 		relative_position_id = CHY_changmen1
-		
 		x = -2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_changmenhuopao_buff
 		}
@@ -3924,22 +3957,19 @@
 	focus = {
 		id = CHY_changmentanke
 		icon = GFX_focus_NORDIC_dem_civilian
-		prerequisite = { focus = CHY_changmenhuopao }
+		prerequisite = {
+			focus = CHY_changmenhuopao
+		}
 		relative_position_id = CHY_changmenhuopao
-		
 		x = -1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_changmentanke_buff
 		}
@@ -3947,22 +3977,19 @@
 	focus = {
 		id = CHY_changmenzhanlie
 		icon = GFX_focus_generic_refit_civilian_ships
-		prerequisite = { focus = CHY_changmenhuopao }
+		prerequisite = {
+			focus = CHY_changmenhuopao
+		}
 		relative_position_id = CHY_changmenhuopao
-		
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_changmenzhanlie_buff
 		}
@@ -3970,34 +3997,34 @@
 	focus = {
 		id = CHY_zhanliejianniang
 		icon = GFX_focus_SWE_coastal_support
-		prerequisite = { focus = CHY_changmentanke }
-		prerequisite = { focus = CHY_changmenzhanlie }
+		prerequisite = {
+			focus = CHY_changmentanke
+		}
+		prerequisite = {
+			focus = CHY_changmenzhanlie
+		}
 		relative_position_id = CHY_changmentanke
-		
 		x = 1
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			every_army_leader = {
 				limit = {
 					has_trait = zhanlie_army
-					not = { has_id = 07001 }
+					NOT = {
+						has_id = 7001
+					}
 				}
 				add_skill_level = 2
 				add_attack = 1
 				add_planning = 1
 				add_logistics = 1
-
 			}
 			every_navy_leader = {
 				limit = {
@@ -4007,18 +4034,15 @@
 				add_attack = 1
 				add_planning = 1
 				add_logistics = 1
-
 			}
 			random_army_leader = {
 				limit = {
-					has_id = 07001
+					has_id = 7001
 				}
-
 				add_skill_level = 3
 				add_attack = 2
 				add_planning = 2
 				add_logistics = 2
-
 				add_unit_leader_trait = inflexible_strategist
 				add_unit_leader_trait = logistics_wizard
 			}
@@ -4034,26 +4058,23 @@
 	focus = {
 		id = CHY_changmenminggong
 		icon = GFX_focus_generic_industry_3
-		prerequisite = { focus = CHY_changmen1 }
+		prerequisite = {
+			focus = CHY_changmen1
+		}
 		relative_position_id = CHY_changmen1
-		
 		x = -5
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -4080,7 +4101,7 @@
 			}
 			random_owned_controlled_state = {
 				limit = {
-				OR = {
+					OR = {
 						state = 533
 						state = 282
 						state = 534
@@ -4110,22 +4131,19 @@
 	focus = {
 		id = CHY_zhongshiminshen
 		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = CHY_changmenminggong }
+		prerequisite = {
+			focus = CHY_changmenminggong
+		}
 		relative_position_id = CHY_changmenminggong
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_ideas = chy_zhongshiminshen_buff
 		}
@@ -4133,25 +4151,26 @@
 	focus = {
 		id = CHY_hepinshouhuzhe
 		icon = GFX_focus_NOR_broken_gun_policies
-		prerequisite = { focus = CHY_hepinyindao }
-		prerequisite = { focus = CHY_zhanliejianniang }
+		prerequisite = {
+			focus = CHY_hepinyindao
+		}
+		prerequisite = {
+			focus = CHY_zhanliejianniang
+		}
 		relative_position_id = CHY_zhanliejianniang
-		
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			set_rule = { can_create_factions = yes }
+			set_rule = {
+				can_create_factions = yes
+			}
 			create_faction = "和平守护者"
 			country_event = CHY_new1_shijian.29
 		}
@@ -4159,83 +4178,77 @@
 	focus = {
 		id = CHY_duidonghuangyouhao
 		icon = GFX_fflag_DOH
-		prerequisite = { focus = CHY_hepinshouhuzhe }
+		prerequisite = {
+			focus = CHY_hepinshouhuzhe
+		}
 		relative_position_id = CHY_hepinshouhuzhe
-		
 		x = -4
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
-			not = { has_war_with = DOH } 
+			NOT = {
+				has_war_with = DOH
+			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			DOH = {
 				add_opinion_modifier = {
 					target = CHY
 					modifier = CHY_dhyouhao
-				}			
+				}
 			}
 			add_ai_strategy = {
-			type = befriend
-			id = DOH			
-			value = 300
+				type = befriend
+				id = DOH
+				value = 300
 			}
-		add_ai_strategy = {
-			type = alliance
-			id = "DOH"			
-			value = 200
-		}
-		DOH = {
-		add_ai_strategy = {
-			type = alliance
-			id = "CHY"			
-			value = 200
-		}
-		add_ai_strategy = {
-			type = befriend
-			id = CHY			
-			value = 300
+			add_ai_strategy = {
+				type = alliance
+				id = "DOH"
+				value = 200
 			}
-		}
-		DOH = {
-			country_event = CHY_new1_shijian.33
-		}
+			DOH = {
+				add_ai_strategy = {
+					type = alliance
+					id = "CHY"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = CHY
+					value = 300
+				}
+			}
+			DOH = {
+				country_event = CHY_new1_shijian.33
+			}
 		}
 	}
 	focus = {
 		id = CHY_guihuanzhimindi
 		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = CHY_duidonghuangyouhao }
+		prerequisite = {
+			focus = CHY_duidonghuangyouhao
+		}
 		relative_position_id = CHY_duidonghuangyouhao
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
 			has_country_flag = CHY_friend_with_doh
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			DOH = {
 				transfer_state = 612
@@ -4250,8 +4263,14 @@
 				transfer_state = 745
 				transfer_state = 716
 				transfer_state = 524
-				give_resource_rights = { receiver = CHY state = 328 }
-		        give_resource_rights = { receiver = CHY state = 716 }
+				give_resource_rights = {
+					receiver = CHY
+					state = 328
+				}
+				give_resource_rights = {
+					receiver = CHY
+					state = 716
+				}
 				add_political_power = -1000
 			}
 			CHY = {
@@ -4267,22 +4286,19 @@
 	focus = {
 		id = CHY_yuanzhudonghuang
 		icon = GFX_focus_NORDIC_dem_civilian
-		prerequisite = { focus = CHY_guihuanzhimindi }
+		prerequisite = {
+			focus = CHY_guihuanzhimindi
+		}
 		relative_position_id = CHY_guihuanzhimindi
-		
 		x = -2
 		y = 1
 		cost = 20
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			if = {
 				limit = {
@@ -4290,293 +4306,284 @@
 						has_country_flag = CHY_frieng_with_doh_good
 					}
 				}
-					608 = {
-						add_extra_state_shared_building_slots = 12
-						add_building_construction = {
-								type = industrial_complex
-								level = 6
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 4
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-							}
-				   }
+				608 = {
+					add_extra_state_shared_building_slots = 12
+					add_building_construction = {
+						type = industrial_complex
+						level = 6
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 4
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
 				745 = {
-						add_extra_state_shared_building_slots = 12
-						add_building_construction = {
-								type = industrial_complex
-								level = 6
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 4
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-							}
-						}
+					add_extra_state_shared_building_slots = 12
+					add_building_construction = {
+						type = industrial_complex
+						level = 6
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 4
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
 				743 = {
-						add_extra_state_shared_building_slots = 12
-						add_building_construction = {
-								type = industrial_complex
-								level = 6
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 4
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-							}
-						}
+					add_extra_state_shared_building_slots = 12
+					add_building_construction = {
+						type = industrial_complex
+						level = 6
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 4
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
 				613 = {
-						add_extra_state_shared_building_slots = 12
-						add_building_construction = {
-								type = industrial_complex
-								level = 6
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 4
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-						}
+					add_extra_state_shared_building_slots = 12
+					add_building_construction = {
+						type = industrial_complex
+						level = 6
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 4
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
 				}
 				524 = {
-						add_extra_state_shared_building_slots = 12
-						add_building_construction = {
-								type = industrial_complex
-								level = 6
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 4
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
+					add_extra_state_shared_building_slots = 12
+					add_building_construction = {
+						type = industrial_complex
+						level = 6
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 4
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
 					}
 				}
 				592 = {
-						add_extra_state_shared_building_slots = 12
-						add_building_construction = {
-								type = industrial_complex
-								level = 6
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 4
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
+					add_extra_state_shared_building_slots = 12
+					add_building_construction = {
+						type = industrial_complex
+						level = 6
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 4
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
 					}
 				}
-				}
+			}
 			else = {
 				608 = {
-					
-						add_extra_state_shared_building_slots = 6
-						add_building_construction = {
-								type = industrial_complex
-								level = 3
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 1
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-							}
-						
-				   }
-				
+					add_extra_state_shared_building_slots = 6
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
 				745 = {
-						
-						add_extra_state_shared_building_slots = 6
-						add_building_construction = {
-								type = industrial_complex
-								level = 3
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 1
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-							}
-						}
-				
+					add_extra_state_shared_building_slots = 6
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
 				743 = {
-					
-						add_extra_state_shared_building_slots = 6
-						add_building_construction = {
-								type = industrial_complex
-								level = 3
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 1
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-							}
-						}
-				
+					add_extra_state_shared_building_slots = 6
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
 				613 = {
-					
-						add_extra_state_shared_building_slots = 6
-						add_building_construction = {
-								type = industrial_complex
-								level = 3
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 1
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
-						}
-			
+					add_extra_state_shared_building_slots = 6
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
 				}
 				524 = {
-						add_extra_state_shared_building_slots = 6
-						add_building_construction = {
-								type = industrial_complex
-								level = 3
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = arms_factory
-								level = 2
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = dockyard
-								level = 1
-								instant_build = yes
-							}
-						add_building_construction = {
-								type = infrastructure
-								level = 2
-								instant_build = yes
+					add_extra_state_shared_building_slots = 6
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
 					}
 				}
 				592 = {
 					add_extra_state_shared_building_slots = 6
 					add_building_construction = {
-							type = industrial_complex
-							level = 3
-							instant_build = yes
-						}
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
 					add_building_construction = {
-							type = arms_factory
-							level = 2
-							instant_build = yes
-						}
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 					add_building_construction = {
-							type = dockyard
-							level = 1
-							instant_build = yes
-						}
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
 					add_building_construction = {
-							type = infrastructure
-							level = 2
-							instant_build = yes
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
 				}
-			}
 			}
 			add_ideas = chy_yuanzhudonghuang_buff
 		}
@@ -4584,35 +4591,32 @@
 	focus = {
 		id = CHY_keyanhezuo_doh
 		icon = GFX_focus_NORDIC_dem_research
-		prerequisite = { focus = CHY_guihuanzhimindi }
+		prerequisite = {
+			focus = CHY_guihuanzhimindi
+		}
 		relative_position_id = CHY_guihuanzhimindi
-		
 		x = 0
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_tech_bonus = {
 				name = "来自东煌的科技援助"
 				bonus = 1
 				uses = 2
-				category = artillery		
+				category = artillery
 				category = infantry_weapons
 			}
 			add_doctrine_cost_reduction = {
 				name = "来自东煌的科技援助"
 				cost_reduction = -0.5
 				uses = 4
-				category = land_doctrine		
+				category = land_doctrine
 			}
 			add_ideas = chy_keyanhezuo_doh_buff
 			DOH = {
@@ -4632,7 +4636,7 @@
 					name = "来自重樱的科技援助"
 					cost_reduction = -0.5
 					uses = 4
-					category = naval_doctrine		
+					category = naval_doctrine
 				}
 				add_ideas = chy_keyanhezuo_doh_buff
 			}
@@ -4641,31 +4645,29 @@
 	focus = {
 		id = CHY_ziyuankaifahezuo_doh
 		icon = GFX_focus_generic_mining_industry
-		prerequisite = { focus = CHY_guihuanzhimindi }
+		prerequisite = {
+			focus = CHY_guihuanzhimindi
+		}
 		relative_position_id = CHY_guihuanzhimindi
-		
 		x = 2
 		y = 1
 		cost = 10
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
 			OR = {
 				hidden_trigger = {
-				CHY = { is_ai = yes } 
+					CHY = {
+						is_ai = yes
+					}
+				}
+				has_tech = excavation3
 			}
-			has_tech = excavation3
 		}
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
 			add_political_power = -200
 			714 = {
@@ -4729,9 +4731,18 @@
 				}
 			}
 			DOH = {
-				give_resource_rights = { receiver = CHY state = 608 }
-				give_resource_rights = { receiver = CHY state = 524 }
-		        give_resource_rights = { receiver = CHY state = 714 }
+				give_resource_rights = {
+					receiver = CHY
+					state = 608
+				}
+				give_resource_rights = {
+					receiver = CHY
+					state = 524
+				}
+				give_resource_rights = {
+					receiver = CHY
+					state = 714
+				}
 			}
 			hidden_effect = {
 				news_event = CHY_new1_shijian.34
@@ -4741,30 +4752,32 @@
 	focus = {
 		id = CHY_yaoqindonghuang
 		icon = GFX_goal_generic_major_alliance
-		prerequisite = { focus = CHY_yuanzhudonghuang }
-		prerequisite = { focus = CHY_ziyuankaifahezuo_doh }
-		prerequisite = { focus = CHY_keyanhezuo_doh }
+		prerequisite = {
+			focus = CHY_yuanzhudonghuang
+		}
+		prerequisite = {
+			focus = CHY_ziyuankaifahezuo_doh
+		}
+		prerequisite = {
+			focus = CHY_keyanhezuo_doh
+		}
 		relative_position_id = CHY_keyanhezuo_doh
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
-			not = { has_war_with = DOH } 
+			NOT = {
+				has_war_with = DOH
+			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			DOH = { 
+			DOH = {
 				country_event = CHY_new1_shijian.35
 			}
 		}
@@ -4772,28 +4785,26 @@
 	focus = {
 		id = CHY_duibeilianyouhao
 		icon = GFX_fflag_BFL
-		prerequisite = { focus = CHY_hepinshouhuzhe }
+		prerequisite = {
+			focus = CHY_hepinshouhuzhe
+		}
 		relative_position_id = CHY_hepinshouhuzhe
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
-			not = { has_war_with = BFL } 
+			NOT = {
+				has_war_with = BFL
+			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			BFL = { 
+			BFL = {
 				country_event = CHY_new1_shijian.37
 			}
 		}
@@ -4801,28 +4812,24 @@
 	focus = {
 		id = CHY_kaifayuandong
 		icon = GFX_focus_eng_expose_the_belly_of_the_bear
-		prerequisite = { focus = CHY_duibeilianyouhao }
+		prerequisite = {
+			focus = CHY_duibeilianyouhao
+		}
 		relative_position_id = CHY_duibeilianyouhao
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		available = {
-			has_country_flag =  CHY_friend_with_BFL
+			has_country_flag = CHY_friend_with_BFL
 		}
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			BFL = { 
+			BFL = {
 				country_event = CHY_new1_shijian.39
 			}
 		}
@@ -4830,72 +4837,64 @@
 	focus = {
 		id = CHY_keyanhezuo_bfl
 		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = CHY_kaifayuandong }
+		prerequisite = {
+			focus = CHY_kaifayuandong
+		}
 		relative_position_id = CHY_kaifayuandong
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		available = {
-			has_country_flag =  CHY_zujianbuxiongdui_with_BFL
+			has_country_flag = CHY_zujianbuxiongdui_with_BFL
 		}
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			BFL = { 
+			BFL = {
 				add_tech_bonus = {
 					name = "捕熊的经验"
 					bonus = 1
 					uses = 2
-					category = motorized_equipment	
-					category =infantry_weapons	
+					category = motorized_equipment
+					category = infantry_weapons
 				}
 			}
 			add_tech_bonus = {
 				name = "捕熊的经验"
 				bonus = 1
 				uses = 2
-				category = motorized_equipment	
-				category =infantry_weapons	
+				category = motorized_equipment
+				category = infantry_weapons
 			}
 		}
 	}
 	focus = {
 		id = CHY_duibaiyinyouhao
 		icon = GFX_fflag_BYG
-		prerequisite = { focus = CHY_hepinshouhuzhe }
+		prerequisite = {
+			focus = CHY_hepinshouhuzhe
+		}
 		relative_position_id = CHY_hepinshouhuzhe
-		
 		x = 2
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
-			not = { has_war_with = BYG } 
+			NOT = {
+				has_war_with = BYG
+			}
 		}
-
-
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			BYG = { 
+			BYG = {
 				country_event = CHY_new1_shijian.41
 			}
 		}
@@ -4903,28 +4902,24 @@
 	focus = {
 		id = CHY_keyanhezuo_byg
 		icon = GFX_focus_SWE_italian_destroyers
-		prerequisite = { focus = CHY_duibaiyinyouhao }
+		prerequisite = {
+			focus = CHY_duibaiyinyouhao
+		}
 		relative_position_id = CHY_duibaiyinyouhao
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
 			has_country_flag = CHY_friend_with_BYG
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			BYG = { 
+			BYG = {
 				add_tech_bonus = {
 					name = "来自重樱的科研合作"
 					bonus = 1
@@ -4943,28 +4938,26 @@
 	focus = {
 		id = CHY_duihuangjiayouhao
 		icon = GFX_fflag_HUJ
-		prerequisite = { focus = CHY_hepinshouhuzhe }
+		prerequisite = {
+			focus = CHY_hepinshouhuzhe
+		}
 		relative_position_id = CHY_hepinshouhuzhe
-		
 		x = 4
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		available = {
-			not = { has_war_with = HUJ } 
+			NOT = {
+				has_war_with = HUJ
+			}
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			HUJ = { 
+			HUJ = {
 				country_event = CHY_new1_shijian.43
 			}
 		}
@@ -4972,24 +4965,21 @@
 	focus = {
 		id = CHY_keyanhezuo_huj
 		icon = GFX_focus_generic_copy_plane_designs
-		prerequisite = { focus = CHY_duihuangjiayouhao }
+		prerequisite = {
+			focus = CHY_duihuangjiayouhao
+		}
 		relative_position_id = CHY_duihuangjiayouhao
-		
 		x = 0
 		y = 1
 		cost = 5
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			HUJ = { 
+			HUJ = {
 				add_tech_bonus = {
 					name = "来自重樱的科研合作"
 					bonus = 1
@@ -5008,14 +4998,16 @@
 	focus = {
 		id = CHY_help_blhx
 		icon = GFX_aflag_TIX
-		prerequisite = { focus = CHY_keyanhezuo_huj }
-		prerequisite = { focus = CHY_keyanhezuo_byg }
+		prerequisite = {
+			focus = CHY_keyanhezuo_huj
+		}
+		prerequisite = {
+			focus = CHY_keyanhezuo_byg
+		}
 		relative_position_id = CHY_keyanhezuo_huj
-		
 		x = -1
 		y = 1
 		cost = 5
-
 		available = {
 			TIX = {
 				has_war_with = BYG
@@ -5023,18 +5015,14 @@
 				has_offensive_war = yes
 			}
 		}
-
 		ai_will_do = {
 			factor = 40
 		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-
 		completion_reward = {
-			HUJ = { 
+			HUJ = {
 				country_event = CHY_new1_shijian.45
 			}
 		}

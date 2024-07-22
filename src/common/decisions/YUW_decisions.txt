@@ -10,17 +10,17 @@ yuw_mission_category = {
 		}
 		visible = {
 			tag = YUW
-			NOT = { has_country_flag = YUW_dangerclear }
+			NOT = {
+				has_country_flag = YUW_dangerclear
+			}
 		}
-		
-		complete_effect = {  
-			
+		complete_effect = {
 		}
 	}
 	yuwdecision_lalongzhende = {
 		icon = eng_propaganda_campaigns
 		fire_only_once = yes
-		complete_effect = {  
+		complete_effect = {
 			country_event = YUW_event.2
 		}
 		ai_will_do = {
@@ -32,11 +32,15 @@ yuw_mission_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		visible = { 
-			NOT = { has_country_flag = yuw_jinshen } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_jinshen
+			}
 		}
 		ai_will_do = {
 			factor = 60
@@ -45,8 +49,12 @@ yuw_mission_category = {
 		modifier = {
 			army_attack_factor = 0.05
 		}
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			set_country_flag = yuw_jijin
 			custom_effect_tooltip = yuw_ziyoufennujia2
 			add_to_variable = {
@@ -60,11 +68,15 @@ yuw_mission_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		visible = { 
-			NOT = { has_country_flag = yuw_jijin } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_jijin
+			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -73,8 +85,12 @@ yuw_mission_category = {
 		modifier = {
 			max_planning = 0.1
 		}
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			custom_effect_tooltip = yuw_weixifennujia2
 			set_country_flag = yuw_jinshen
 			add_to_variable = {
@@ -88,11 +104,15 @@ yuw_mission_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		visible = { 
-			NOT = { has_country_flag = yuw_qinwai } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_qinwai
+			}
 		}
 		days_remove = -1
 		ai_will_do = {
@@ -113,8 +133,12 @@ yuw_mission_category = {
 			attack_bonus_against = 0.1
 			defense_bonus_against = 0.1
 		}
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			custom_effect_tooltip = yuw_ziyoufennujia1
 			set_country_flag = yuw_paiwai
 			add_to_variable = {
@@ -124,15 +148,19 @@ yuw_mission_category = {
 		}
 	}
 	yuwdecision_duiwai_qinwai = {
-		icon = eng_propaganda_campaigns		
+		icon = eng_propaganda_campaigns
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		visible = { 
-			NOT = { has_country_flag = yuw_paiwai } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_paiwai
+			}
 		}
 		ai_will_do = {
 			factor = 90
@@ -148,9 +176,14 @@ yuw_mission_category = {
 			attack_bonus_against = 0.1
 			defense_bonus_against = 0.1
 		}
-		remove_effect = { }
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		remove_effect = {
+		}
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			custom_effect_tooltip = yuw_weixifennujia1
 			set_country_flag = yuw_qinwai
 			add_to_variable = {
@@ -164,11 +197,15 @@ yuw_mission_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		visible = { 
-			NOT = { has_country_flag = yuw_yinxiu } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_yinxiu
+			}
 		}
 		days_remove = -1
 		ai_will_do = {
@@ -177,8 +214,12 @@ yuw_mission_category = {
 		modifier = {
 			stability_factor = 0.15
 		}
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			custom_effect_tooltip = yuw_ziyoufennujia2
 			set_country_flag = yuw_rushi
 			add_to_variable = {
@@ -192,12 +233,15 @@ yuw_mission_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		
-		visible = { 
-			NOT = { has_country_flag = yuw_rushi } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_rushi
+			}
 		}
 		days_remove = -1
 		ai_will_do = {
@@ -206,8 +250,12 @@ yuw_mission_category = {
 		modifier = {
 			conscription = 0.015
 		}
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			custom_effect_tooltip = yuw_weixifennujia2
 			set_country_flag = yuw_yinxiu
 			add_to_variable = {
@@ -221,11 +269,15 @@ yuw_mission_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		visible = { 
-			NOT = { has_country_flag = yuw_hujiao } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_hujiao
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -235,8 +287,12 @@ yuw_mission_category = {
 			planning_speed = 0.15
 			army_speed_factor = 0.05
 		}
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			custom_effect_tooltip = yuw_ziyoufennujia3
 			set_country_flag = yuw_shengdian
 			add_to_variable = {
@@ -250,11 +306,15 @@ yuw_mission_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = "距选择一个政策已过去60天"
-				NOT = { has_country_flag = yuwdecision_cd }
+				NOT = {
+					has_country_flag = yuwdecision_cd
+				}
 			}
 		}
-		visible = { 
-			NOT = { has_country_flag = yuw_shengdian } 
+		visible = {
+			NOT = {
+				has_country_flag = yuw_shengdian
+			}
 		}
 		ai_will_do = {
 			factor = 60
@@ -264,8 +324,12 @@ yuw_mission_category = {
 			army_defence_factor = 0.1
 			experience_loss_factor = -0.25
 		}
-		complete_effect = {  
-			set_country_flag = { flag = yuwdecision_cd value = 1 days = 60 }
+		complete_effect = {
+			set_country_flag = {
+				flag = yuwdecision_cd
+				value = 1
+				days = 60
+			}
 			custom_effect_tooltip = yuw_weixifennujia3
 			set_country_flag = yuw_hujiao
 			add_to_variable = {
@@ -279,21 +343,21 @@ yuw_mission_category = {
 		cost = 50
 		available = {
 			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+				character = YUW_mojiaduoer
+				ruling_only = yes
 			}
 		}
-		visible = { 
-			has_completed_focus = YUW_jiaotiaohaibugouduo 
+		visible = {
+			has_completed_focus = YUW_jiaotiaohaibugouduo
 		}
 		remove_trigger = {
-            not = { 
-			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+			NOT = {
+				has_country_leader = {
+					character = YUW_mojiaduoer
+					ruling_only = yes
+				}
 			}
-			} 
-        }
+		}
 		ai_will_do = {
 			factor = 100
 		}
@@ -303,7 +367,7 @@ yuw_mission_category = {
 			offensive_war_stability_factor = 0.5
 			war_support_weekly = 0.01
 		}
-		complete_effect = {  
+		complete_effect = {
 			custom_effect_tooltip = yuw_santoutongmengfennu
 		}
 	}
@@ -312,21 +376,21 @@ yuw_mission_category = {
 		cost = 50
 		available = {
 			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+				character = YUW_mojiaduoer
+				ruling_only = yes
 			}
 		}
-		visible = { 
-			has_completed_focus = YUW_jiaotiaohaibugouduo 
+		visible = {
+			has_completed_focus = YUW_jiaotiaohaibugouduo
 		}
 		remove_trigger = {
-            not = { 
-			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+			NOT = {
+				has_country_leader = {
+					character = YUW_mojiaduoer
+					ruling_only = yes
+				}
 			}
-			} 
-        }
+		}
 		ai_will_do = {
 			factor = 100
 		}
@@ -336,7 +400,7 @@ yuw_mission_category = {
 			conscription = 0.03
 			army_leader_start_level = 1
 		}
-		complete_effect = {  
+		complete_effect = {
 			custom_effect_tooltip = yuw_santoutongmengfennu
 		}
 	}
@@ -345,21 +409,21 @@ yuw_mission_category = {
 		cost = 50
 		available = {
 			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+				character = YUW_mojiaduoer
+				ruling_only = yes
 			}
 		}
-		visible = { 
+		visible = {
 			has_completed_focus = YUW_jiaoyihaibugouxin
 		}
 		remove_trigger = {
-            not = { 
-			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+			NOT = {
+				has_country_leader = {
+					character = YUW_mojiaduoer
+					ruling_only = yes
+				}
 			}
-			} 
-        }
+		}
 		ai_will_do = {
 			factor = 100
 		}
@@ -370,7 +434,7 @@ yuw_mission_category = {
 			research_speed_factor = 0.1
 			consumer_goods_factor = -0.4
 		}
-		complete_effect = {  
+		complete_effect = {
 			custom_effect_tooltip = yuw_santoutongmengfennu
 		}
 	}
@@ -379,21 +443,21 @@ yuw_mission_category = {
 		cost = 50
 		available = {
 			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+				character = YUW_mojiaduoer
+				ruling_only = yes
 			}
 		}
-		visible = { 
+		visible = {
 			has_completed_focus = YUW_baituochangshishufu
 		}
 		remove_trigger = {
-            not = { 
-			has_country_leader = {
-			character = YUW_mojiaduoer
-			ruling_only = yes
+			NOT = {
+				has_country_leader = {
+					character = YUW_mojiaduoer
+					ruling_only = yes
+				}
 			}
-			} 
-        }
+		}
 		ai_will_do = {
 			factor = 100
 		}
@@ -406,7 +470,7 @@ yuw_mission_category = {
 			production_factory_max_efficiency_factor = 0.3
 			production_factory_efficiency_gain_factor = 0.3
 		}
-		complete_effect = {  
+		complete_effect = {
 			custom_effect_tooltip = yuw_santoutongmengfennu
 		}
 	}
@@ -414,11 +478,11 @@ yuw_mission_category = {
 		icon = generic_construction
 		available = {
 			is_ai = yes
-			or = {
-			has_completed_focus = YUW_tuanjieweixixingdong
-			has_completed_focus = YUW_jinjunbali
-			has_completed_focus = YUW_tingshinuhou
-			has_completed_focus = YUW_shenshengshiming
+			OR = {
+				has_completed_focus = YUW_tuanjieweixixingdong
+				has_completed_focus = YUW_jinjunbali
+				has_completed_focus = YUW_tingshinuhou
+				has_completed_focus = YUW_shenshengshiming
 			}
 		}
 		visible = {
@@ -429,30 +493,64 @@ yuw_mission_category = {
 			factor = 100
 		}
 		fire_only_once = yes
-		complete_effect = {  
-			set_technology = { interwar_antitank = 1 } 
-			set_technology = { armor_tech_2 = 1 }
-			set_technology = { antitank1 = 1 }
-			set_technology = { antitank2 = 1 }
-			set_technology = { antitank3 = 1 }
-			set_technology = { amphibious_mechanized_infantry = 1 }	
-			set_technology = { interwar_antiair = 1 }
-			set_technology = { centimetric_radar = 1 }
-			set_technology = { improved_decimetric_radar = 1 }
-			set_technology = { decimetric_radar = 1 }
-			set_technology = { radio_detection = 1 }
-			set_technology = { radio = 1 }
-			set_technology = { tech_engineers2 = 1}
+		complete_effect = {
+			set_technology = {
+				interwar_antitank = 1
+			}
+			set_technology = {
+				armor_tech_2 = 1
+			}
+			set_technology = {
+				antitank1 = 1
+			}
+			set_technology = {
+				antitank2 = 1
+			}
+			set_technology = {
+				antitank3 = 1
+			}
+			set_technology = {
+				amphibious_mechanized_infantry = 1
+			}
+			set_technology = {
+				interwar_antiair = 1
+			}
+			set_technology = {
+				centimetric_radar = 1
+			}
+			set_technology = {
+				improved_decimetric_radar = 1
+			}
+			set_technology = {
+				decimetric_radar = 1
+			}
+			set_technology = {
+				radio_detection = 1
+			}
+			set_technology = {
+				radio = 1
+			}
+			set_technology = {
+				tech_engineers2 = 1
+			}
 			set_country_flag = yuw_zuobi1
-			set_technology = { super_heavy_tank_chassis = 1}
-			set_technology = { engine_tech_2 = 1 }
-			set_technology = { tech_maintenance_company = 1 }
-			set_technology = { tech_maintenance_company2 = 1 }
+			set_technology = {
+				super_heavy_tank_chassis = 1
+			}
+			set_technology = {
+				engine_tech_2 = 1
+			}
+			set_technology = {
+				tech_maintenance_company = 1
+			}
+			set_technology = {
+				tech_maintenance_company2 = 1
+			}
 			if = {
 				limit = {
-				not = { 
-				has_tech = basic_medium_tank_chassis
-				}
+					NOT = {
+						has_tech = basic_medium_tank_chassis
+					}
 				}
 				add_tech_bonus = {
 					name = "装甲研究加成"
@@ -461,14 +559,13 @@ yuw_mission_category = {
 					ahead_reduction = 10
 					category = cat_medium_armor
 				}
-			
-		}
+			}
 			if = {
 				limit = {
-						has_tech = basic_medium_tank_chassis
-				not = { 
-				has_tech = improved_medium_tank_chassis
-				}
+					has_tech = basic_medium_tank_chassis
+					NOT = {
+						has_tech = improved_medium_tank_chassis
+					}
 				}
 				add_tech_bonus = {
 					name = "装甲研究加成"
@@ -477,8 +574,7 @@ yuw_mission_category = {
 					ahead_reduction = 10
 					category = cat_medium_armor
 				}
-			
-		}
+			}
 		}
 	}
 	yuw_2222 = {
@@ -495,120 +591,113 @@ yuw_mission_category = {
 		ai_will_do = {
 			factor = 100
 		}
-		complete_effect = {  
-		army_experience = 500
-		air_experience = 500
-		create_equipment_variant = {
-			name = "MB.157" 
-			type = small_plane_airframe_3
-			parent_version = 0
-			modules = {
-				fixed_main_weapon_slot = aircraft_cannon_2_2x
-				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
-				fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
-				engine_type_slot = engine_4_1x
-				special_type_slot_1 = drop_tanks
-				special_type_slot_2 = self_sealing_fuel_tanks_small
-				special_type_slot_3 = armor_plate_small
+		complete_effect = {
+			army_experience = 500
+			air_experience = 500
+			create_equipment_variant = {
+				name = "MB.157"
+				type = small_plane_airframe_3
+				parent_version = 0
+				modules = {
+					fixed_main_weapon_slot = aircraft_cannon_2_2x
+					fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+					fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
+					engine_type_slot = engine_4_1x
+					special_type_slot_1 = drop_tanks
+					special_type_slot_2 = self_sealing_fuel_tanks_small
+					special_type_slot_3 = armor_plate_small
+				}
+				upgrades = {
+				}
+				#icon = "gfx/interface/technologies/.dds"
 			}
-			upgrades = {
-				
+			create_equipment_variant = {
+				name = "AMC 40”贞德“"
+				type = medium_tank_chassis_2
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon_2
+					turret_type_slot = tank_medium_three_man_tank_turret
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = tank_radio_3
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = secondary_turret_small_cannon
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 9
+					tank_nsb_armor_upgrade = 13
+				}
+				icon = "gfx/interface/technologies/FRA_basic_main_tank.dds"
 			}
-			#icon = "gfx/interface/technologies/.dds"
+			create_equipment_variant = {
+				name = "FCM 39”恶毒“"
+				type = light_tank_chassis_2				#light_tank_flame_chassis
+				parent_version = 0
+				modules = {
+					main_armament_slot = flamethrower
+					turret_type_slot = tank_light_two_man_tank_turret
+					suspension_type_slot = tank_bogie_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = secondary_turret_small_cannon
+					special_type_slot_2 = dozer_blade
+					special_type_slot_3 = additional_machine_guns
+					special_type_slot_4 = additional_machine_guns
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+				icon = "gfx/interface/technologies/FRA_basic_main_tank.dds"
 			}
-		create_equipment_variant = {
-			name = "AMC 40”贞德“" 
-			type = medium_tank_chassis_2
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_medium_cannon_2
-				turret_type_slot = tank_medium_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_diesel_engine
-				special_type_slot_1 = tank_radio_3
-				special_type_slot_2 = easy_maintenance
-				special_type_slot_3 = secondary_turret_small_cannon
-				special_type_slot_4 = secondary_turret_small_cannon
+			create_equipment_variant = {
+				name = "教廷之剑"
+				type = medium_tank_destroyer_chassis_2
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_heavy_cannon_3
+					turret_type_slot = tank_medium_fixed_superstructure_turret
+					suspension_type_slot = tank_bogie_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = secondary_turret_small_cannon
+					special_type_slot_2 = secondary_turret_small_cannon
+					special_type_slot_3 = easy_maintenance
+					special_type_slot_4 = dozer_blade
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+				#icon = "gfx/interface/technologies/FRA_basic_main_tank.dds"
 			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 9
-				tank_nsb_armor_upgrade = 13
+			create_equipment_variant = {
+				name = "杨大屌超重型坦克"
+				type = super_heavy_tank_chassis_1
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_super_heavy_cannon
+					turret_type_slot = tank_super_heavy_three_man_tank_turret
+					suspension_type_slot = tank_torsion_bar_suspension
+					armor_type_slot = tank_welded_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = tank_radio_3
+					special_type_slot_2 = dozer_blade
+					special_type_slot_3 = additional_machine_guns
+					special_type_slot_4 = additional_machine_guns
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 14
+					tank_nsb_armor_upgrade = 14
+				}
+				icon = "gfx/interface/technologies/ger_basic_main_tank.dds"
 			}
-			icon = "gfx/interface/technologies/FRA_basic_main_tank.dds"
-		}
-		create_equipment_variant = {
-			name = "FCM 39”恶毒“" 
-			type = light_tank_chassis_2	#light_tank_flame_chassis
-			parent_version = 0
-			modules = {
-				main_armament_slot = flamethrower
-				turret_type_slot = tank_light_two_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = secondary_turret_small_cannon
-				special_type_slot_2 = dozer_blade
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 0
-				tank_nsb_armor_upgrade = 0
-			}
-			icon = "gfx/interface/technologies/FRA_basic_main_tank.dds"
-		}
-		
-		create_equipment_variant = {
-			name = "教廷之剑" 
-			type = medium_tank_destroyer_chassis_2
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_heavy_cannon_3
-				turret_type_slot = tank_medium_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = secondary_turret_small_cannon
-				special_type_slot_2 = secondary_turret_small_cannon
-				special_type_slot_3 = easy_maintenance
-				special_type_slot_4 = dozer_blade
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 0
-				tank_nsb_armor_upgrade = 0
-			}
-			#icon = "gfx/interface/technologies/FRA_basic_main_tank.dds"
-		}
-		
-		
-		create_equipment_variant = {
-			name = "杨大屌超重型坦克" 
-			type = super_heavy_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_super_heavy_cannon
-				turret_type_slot = tank_super_heavy_three_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_3
-				special_type_slot_2 = dozer_blade
-				special_type_slot_3 = additional_machine_guns
-				special_type_slot_4 = additional_machine_guns
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 14
-				tank_nsb_armor_upgrade = 14
-			}
-			icon = "gfx/interface/technologies/GER_basic_main_tank.dds"
-		}
-		set_country_flag = yuw_zuobi2
-		
-		
+			set_country_flag = yuw_zuobi2
 		}
 	}
-	
 	yuw_3333 = {
 		icon = generic_construction
 		available = {
@@ -624,30 +713,29 @@ yuw_mission_category = {
 			factor = 100
 		}
 		complete_effect = {
-		army_experience = 500
-		add_equipment_to_stockpile = { 
+			army_experience = 500
+			add_equipment_to_stockpile = {
 				type = infantry_equipment
-				amount = 20000 
+				amount = 20000
 				producer = YUW
-				}
-		add_equipment_to_stockpile = { 
-				type = support_equipment 
-				amount = 2000 
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
 				producer = YUW
-				}
-		add_equipment_to_stockpile = { 
-				type =  artillery_equipment 
-				amount = 2000 
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 2000
 				producer = YUW
-				}
-		add_equipment_to_stockpile = { 
-				type =  medium_tank_chassis
-				amount = 8000 
+			}
+			add_equipment_to_stockpile = {
+				type = medium_tank_chassis
+				amount = 8000
 				producer = YUW
 			}
 		}
-		
-		}
+	}
 }
 
 yuw_dashengzhan_category = {
@@ -658,14 +746,20 @@ yuw_dashengzhan_category = {
 		}
 		available = {
 			is_puppet = no
-			has_army_manpower = { size > 1999999 }
-			or = {
-			date > 1939.6.1
-			has_army_manpower = { size > 2999999 }
+			has_army_manpower = {
+				size > 1999999
+			}
+			OR = {
+				date > 1939.6.1
+				has_army_manpower = {
+					size > 2999999
+				}
 			}
 			has_completed_focus = YUW_xinyangshouhuzhe
 			country_exists = TIX
-			not = { is_in_faction_with = TIX }
+			NOT = {
+				is_in_faction_with = TIX
+			}
 		}
 		fire_only_once = yes
 		days_remove = 60
@@ -673,11 +767,13 @@ yuw_dashengzhan_category = {
 		ai_will_do = {
 			factor = 100
 		}
-		complete_effect = {  
-			
+		complete_effect = {
 		}
 		remove_effect = {
-			declare_war_on = { target = TIX type = annex_everything }
+			declare_war_on = {
+				target = TIX
+				type = annex_everything
+			}
 		}
 	}
 	yuw_taofayiduan2 = {
@@ -687,20 +783,26 @@ yuw_dashengzhan_category = {
 		}
 		available = {
 			is_puppet = no
-			has_army_manpower = { size > 2999999 }
-			or = {
-			date > 1941.6.1
-			has_army_manpower = { size > 4999999 }
+			has_army_manpower = {
+				size > 2999999
+			}
+			OR = {
+				date > 1941.6.1
+				has_army_manpower = {
+					size > 4999999
+				}
 			}
 			has_completed_focus = YUW_xinyangshouhuzhe
 			any_country = {
-				if = {
-				is_major= yes
+				is_major = yes
 				has_government = communism
-				not = { is_in_faction_with = YUW }
-				not = { has_war_with = YUW }
-				has_capitulated = no
+				NOT = {
+					is_in_faction_with = YUW
 				}
+				NOT = {
+					has_war_with = YUW
+				}
+				has_capitulated = no
 			}
 		}
 		fire_only_once = yes
@@ -709,30 +811,35 @@ yuw_dashengzhan_category = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-			or = {
-			is_in_faction_with = TIX
-			not = { country_exists = TIX }
-			}
-			add = 100
+				OR = {
+					is_in_faction_with = TIX
+					NOT = {
+						country_exists = TIX
+					}
+				}
+				add = 100
 			}
 		}
-		complete_effect = {  
-			
+		complete_effect = {
 		}
 		remove_effect = {
 			every_country = {
-				limit = { 
-				is_major= yes
-				has_government = communism
-				not = { is_in_faction_with = YUW }
-				not = { has_war_with = YUW }
-				has_capitulated = no
+				limit = {
+					is_major = yes
+					has_government = communism
+					NOT = {
+						is_in_faction_with = YUW
+					}
+					NOT = {
+						has_war_with = YUW
+					}
+					has_capitulated = no
 				}
 				YUW = {
-				declare_war_on = {
-				target = PREV
-				type = annex_everything
-				}
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
 				}
 			}
 		}
@@ -746,7 +853,9 @@ yuw_dashengzhan_category = {
 			is_puppet = no
 			has_war = no
 			date > 1943.1.1
-			not = { country_exists = BLI }
+			NOT = {
+				country_exists = BLI
+			}
 		}
 		fire_only_once = yes
 		days_remove = 60
@@ -754,11 +863,13 @@ yuw_dashengzhan_category = {
 		ai_will_do = {
 			factor = 100
 		}
-		complete_effect = {  
-			
+		complete_effect = {
 		}
 		remove_effect = {
-			declare_war_on = { target = SIR type = annex_everything }
+			declare_war_on = {
+				target = SIR
+				type = annex_everything
+			}
 		}
 	}
 	yuw_shengdiylsl = {
@@ -768,12 +879,12 @@ yuw_dashengzhan_category = {
 			has_completed_focus = YUW_qishituandedashengzhan
 		}
 		available = {
-			or = {
-			controls_state = 454
-			any_country = {
-			is_in_faction_with = YUW
-			controls_state = 454
-			}
+			OR = {
+				controls_state = 454
+				any_country = {
+					is_in_faction_with = YUW
+					controls_state = 454
+				}
 			}
 			has_completed_focus = YUW_wuzhuangchaosheng
 		}
@@ -789,12 +900,11 @@ yuw_dashengzhan_category = {
 		}
 		remove_trigger = {
 			any_country = {
-			controls_state = 454
-			has_war_with = YUW
+				controls_state = 454
+				has_war_with = YUW
 			}
-        }
+		}
 	}
-	
 	yuw_shengdifdg = {
 		icon = hol_war_on_pacifism
 		days_remove = -1
@@ -802,15 +912,15 @@ yuw_dashengzhan_category = {
 			has_completed_focus = YUW_qishituandedashengzhan
 		}
 		available = {
-			or = {
-			controls_state = 2
-			any_country = {
-			is_in_faction_with = YUW
-			controls_state = 2
-			}
-			SAD = {
-			has_idea = SAD_shengdishouhuzhe_idea
-			}
+			OR = {
+				controls_state = 2
+				any_country = {
+					is_in_faction_with = YUW
+					controls_state = 2
+				}
+				SAD = {
+					has_idea = SAD_shengdishouhuzhe_idea
+				}
 			}
 			has_completed_focus = YUW_wuzhuangchaosheng
 		}
@@ -824,12 +934,11 @@ yuw_dashengzhan_category = {
 		}
 		remove_trigger = {
 			any_country = {
-			controls_state = 2
-			has_war_with = YUW
+				controls_state = 2
+				has_war_with = YUW
 			}
-        }
+		}
 	}
-	
 	yuw_shengdisdyg = {
 		icon = hol_war_on_pacifism
 		days_remove = -1
@@ -837,12 +946,12 @@ yuw_dashengzhan_category = {
 			has_completed_focus = YUW_qishituandedashengzhan
 		}
 		available = {
-			or = {
-			controls_state = 171
-			any_country = {
-			is_in_faction_with = YUW
-			controls_state = 171
-			}
+			OR = {
+				controls_state = 171
+				any_country = {
+					is_in_faction_with = YUW
+					controls_state = 171
+				}
 			}
 			has_completed_focus = YUW_wuzhuangchaosheng
 		}
@@ -856,12 +965,11 @@ yuw_dashengzhan_category = {
 		}
 		remove_trigger = {
 			any_country = {
-			controls_state = 171
-			has_war_with = YUW
+				controls_state = 171
+				has_war_with = YUW
 			}
-        }
+		}
 	}
-	
 	yuw_shengdisdyg2 = {
 		icon = hol_exchange_intelligence_data
 		visible = {
@@ -872,19 +980,21 @@ yuw_dashengzhan_category = {
 			has_global_flag = scw_over
 			is_puppet = no
 			is_in_faction = yes
-			or = {
-			has_government = democratic
-			has_government = neutrality
+			OR = {
+				has_government = democratic
+				has_government = neutrality
 			}
 			any_country = {
-				if = {
 				original_tag = SPR
 				owns_state = 41
 				has_government = democratic
-				not = { is_in_faction_with = YUW }
-				not = { has_war_with = YUW }
+				NOT = {
+					is_in_faction_with = YUW
+				}
+				NOT = {
+					has_war_with = YUW
+				}
 				has_capitulated = no
-					}
 			}
 		}
 		ai_will_do = {
@@ -893,22 +1003,28 @@ yuw_dashengzhan_category = {
 		fire_only_once = yes
 		complete_effect = {
 			every_country = {
-			limit = {
-				original_tag = SPR
-				owns_state = 41
-				has_government = democratic
-				not = { is_in_faction_with = YUW }
-				not = { has_war_with = YUW }
-				OR = {
-					has_capitulated = no
-					is_subject = no
+				limit = {
+					original_tag = SPR
+					owns_state = 41
+					has_government = democratic
+					NOT = {
+						is_in_faction_with = YUW
+					}
+					NOT = {
+						has_war_with = YUW
+					}
+					OR = {
+						has_capitulated = no
+						is_subject = no
+					}
 				}
-			}
-			country_event = { id = YUW_event.46 days = 2}
+				country_event = {
+					id = YUW_event.46
+					days = 2
+				}
 			}
 		}
 	}
-	
 	yuw_shengdisdyg3 = {
 		icon = hol_exchange_intelligence_data
 		visible = {
@@ -918,25 +1034,35 @@ yuw_dashengzhan_category = {
 		available = {
 			has_global_flag = scw_over
 			is_puppet = no
-			or = {
-			has_government = democratic
-			has_government = neutrality
+			OR = {
+				has_government = democratic
+				has_government = neutrality
 			}
 			any_country = {
-				if = {
 				original_tag = SPR
 				owns_state = 41
-				not = { has_government = democratic }
-				not = { is_in_faction_with = YUW }
-				not = { has_war_with = YUW }
+				NOT = {
+					has_government = democratic
+				}
+				NOT = {
+					is_in_faction_with = YUW
+				}
+				NOT = {
+					has_war_with = YUW
+				}
 				has_capitulated = no
-					}
 			}
 			POR = {
 				is_puppet = no
-				not = { is_in_faction_with = YUW }
-				not = { is_in_faction_with = HUJ }
-				not = { has_war_with = YUW }
+				NOT = {
+					is_in_faction_with = YUW
+				}
+				NOT = {
+					is_in_faction_with = HUJ
+				}
+				NOT = {
+					has_war_with = YUW
+				}
 				has_capitulated = no
 			}
 		}
@@ -946,28 +1072,36 @@ yuw_dashengzhan_category = {
 		fire_only_once = yes
 		complete_effect = {
 			every_country = {
-			limit = {
-				original_tag = SPR
-				owns_state = 41
-				not = { has_government = democratic }
-				not = { is_in_faction_with = YUW }
-				not = { has_war_with = YUW }
-				OR = {
-					has_capitulated = no
-					is_subject = no
+				limit = {
+					original_tag = SPR
+					owns_state = 41
+					NOT = {
+						has_government = democratic
+					}
+					NOT = {
+						is_in_faction_with = YUW
+					}
+					NOT = {
+						has_war_with = YUW
+					}
+					OR = {
+						has_capitulated = no
+						is_subject = no
+					}
+				}
+				YUW = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
 				}
 			}
-			YUW = {
-				declare_war_on = {
-				target = PREV
+			declare_war_on = {
+				target = POR
 				type = annex_everything
-				}
 			}
-			}
-			declare_war_on = { target = POR type = annex_everything }
 		}
 	}
-	
 	yuw_shengdifdg2 = {
 		icon = hol_exchange_intelligence_data
 		fire_only_once = yes
@@ -977,15 +1111,15 @@ yuw_dashengzhan_category = {
 		cost = 50
 		available = {
 			SAD = {
-			is_puppet = no
-			has_idea = SAD_shengdishouhuzhe_idea
-			is_in_faction = no
+				is_puppet = no
+				has_idea = SAD_shengdishouhuzhe_idea
+				is_in_faction = no
 			}
 			is_puppet = no
 			is_in_faction = yes
-			or = {
-			has_government = democratic
-			has_government = neutrality
+			OR = {
+				has_government = democratic
+				has_government = neutrality
 			}
 		}
 		ai_will_do = {
@@ -993,39 +1127,38 @@ yuw_dashengzhan_category = {
 		}
 		complete_effect = {
 			SAD = {
-			country_event = { id = YUW_event.46 days = 2}
+				country_event = {
+					id = YUW_event.46
+					days = 2
+				}
 			}
 		}
 	}
-	
 	YUW_chuanjiaobianhexin = {
-		
 		icon = generic_form_nation
 		state_target = yes
 		on_map_mode = map_and_decisions_view
 		target_array = controlled_states
 		highlight_color_while_active = 1
-		
 		days_remove = hexinhua_cost_days
 		cost = hexinhua_cost_pp
-		
 		target_trigger = {
 			FROM = {
 				always = yes
 			}
 		}
-		
 		visible = {
 			has_completed_focus = YUW_zhengxinyongheng
 			FROM = {
 				compliance > 30
 				AND = {
 					is_controlled_by = ROOT
-					NOT = { is_core_of = ROOT }
+					NOT = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		}
-		
 		available = {
 			FROM = {
 				is_controlled_by = ROOT
@@ -1036,132 +1169,145 @@ yuw_dashengzhan_category = {
 							has_state_category = enclave
 							has_state_category = tiny_island
 							has_state_category = pastoral
-							
 						}
 					}
-					set_temp_variable = { hexinhua_cost_pp = 20 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 20
+					}
 				}
 				else_if = {
 					limit = {
-						or = {
+						OR = {
 							has_state_category = small_island
-							has_state_category = rural	
+							has_state_category = rural
 						}
 					}
-					
-					set_temp_variable = { hexinhua_cost_pp = 40 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 40
+					}
 				}
 				else_if = {
 					limit = {
 						has_state_category = town
 					}
-					
-					set_temp_variable = { hexinhua_cost_pp = 60 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 60
+					}
 				}
 				else_if = {
 					limit = {
 						has_state_category = large_town
 					}
-					
-					set_temp_variable = { hexinhua_cost_pp = 80 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 80
+					}
 				}
 				else_if = {
 					limit = {
 						has_state_category = city
 					}
-					
-					set_temp_variable = { hexinhua_cost_pp = 100 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 100
+					}
 				}
 				else_if = {
 					limit = {
 						has_state_category = large_city
 					}
-					
-					set_temp_variable = { hexinhua_cost_pp = 120 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 120
+					}
 				}
 				else_if = {
 					limit = {
 						has_state_category = metropolis
 					}
-					
-					set_temp_variable = { hexinhua_cost_pp = 140 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 140
+					}
 				}
 				else_if = {
 					limit = {
 						has_state_category = megalopolis
 					}
-					
-					set_temp_variable = { hexinhua_cost_pp = 160 }
+					set_temp_variable = {
+						hexinhua_cost_pp = 160
+					}
 				}
 			}
-			
-			
 		}
-		
-		
 		complete_effect = {
 			FROM = {
 				if = {
 					limit = {
 						state_population < 300000
 					}
-					set_temp_variable = { hexinhua_cost_days = 5 } 
+					set_temp_variable = {
+						hexinhua_cost_days = 5
+					}
 				}
 				else_if = {
 					limit = {
 						AND = {
 							state_population > 299999
-							state_population < 1000000	
+							state_population < 1000000
 						}
-						
 					}
-					set_temp_variable = { hexinhua_cost_days = 10 } 
+					set_temp_variable = {
+						hexinhua_cost_days = 10
+					}
 				}
 				else_if = {
 					limit = {
 						AND = {
 							state_population > 999999
-							state_population < 3000000	
+							state_population < 3000000
 						}
-						
 					}
-					set_temp_variable = { hexinhua_cost_days = 15 } 
+					set_temp_variable = {
+						hexinhua_cost_days = 15
+					}
 				}
 				else_if = {
 					limit = {
 						AND = {
 							state_population > 2999999
-							state_population < 6000000	
+							state_population < 6000000
 						}
-						
 					}
-					set_temp_variable = { hexinhua_cost_days = 20 } 
+					set_temp_variable = {
+						hexinhua_cost_days = 20
+					}
 				}
 				else_if = {
 					limit = {
 						AND = {
 							state_population > 5999999
-							state_population < 12000000	
+							state_population < 12000000
 						}
-						
 					}
-					set_temp_variable = { hexinhua_cost_days = 25 } 
+					set_temp_variable = {
+						hexinhua_cost_days = 25
+					}
 				}
 				else_if = {
 					limit = {
 						AND = {
 							state_population > 11999999
-							state_population < 25000000	
+							state_population < 25000000
 						}
-						
 					}
-					set_temp_variable = { hexinhua_cost_days = 30 } 
+					set_temp_variable = {
+						hexinhua_cost_days = 30
+					}
 				}
 				else_if = {
 					limit = {
-							state_population > 24999999
+						state_population > 24999999
 					}
-					set_temp_variable = { hexinhua_cost_days = 50 } 
+					set_temp_variable = {
+						hexinhua_cost_days = 50
+					}
 				}
 			}
 		}
@@ -1170,7 +1316,6 @@ yuw_dashengzhan_category = {
 				add_core_of = ROOT
 			}
 		}
-		
 		ai_will_do = {
 			factor = 99
 		}

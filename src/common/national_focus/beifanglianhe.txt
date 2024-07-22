@@ -211,7 +211,7 @@
 		y = 1
 		cost = 7
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 10
@@ -339,7 +339,7 @@
 		prerequisite = { focus = BFL_mingongjianshe }
 		relative_position_id = BFL_mingongjianshe
 		available = {
-			or = {
+			OR = {
 			has_completed_focus = BFL_yubilanhangxianhezuo
 			has_completed_focus = BFL_6
 			}
@@ -652,7 +652,7 @@
 			factor = 11
 		}
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 			has_war = yes
 			has_war_support > 1.8
 		}
@@ -876,7 +876,7 @@
 		ai_will_do = {
 			factor = 20
 			modifier = {
-			or = {
+			OR = {
 			date > 1940.10.1
 			has_completed_focus = BFL_zhengfuafuhan
 			}
@@ -907,7 +907,7 @@
 		ai_will_do = {
 			factor = 20
 			modifier = {
-			or = {
+			OR = {
 			date > 1940.10.1
 			has_completed_focus = BFL_zhengfuafuhan
 			}
@@ -940,7 +940,7 @@
 		ai_will_do = {
 			factor = 20
 			modifier = {
-			or = {
+			OR = {
 			date > 1940.10.1
 			has_completed_focus = BFL_zhengfuafuhan
 			}
@@ -1003,7 +1003,7 @@
 		ai_will_do = {
 			factor = 50
 			modifier = {
-			or = {
+			OR = {
 			has_war_with = TIX
 			has_war_with = CHY
 			}
@@ -1120,7 +1120,7 @@
 		x = 1
 		y = 1
 		available = {
-			or = {
+			OR = {
             has_tech = improved_medium_tank_chassis
             is_ai = yes
 			}
@@ -1148,7 +1148,7 @@
 		x = 0
 		y = 1
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 			OR = { 
 			num_of_military_factories > 150
 			hidden_trigger = {
@@ -1161,7 +1161,7 @@
 		ai_will_do = {
 			factor = 20
 			modifier = {
-			or = {
+			OR = {
 			has_war_with = TIX
 			has_war_with = CHY
 			}
@@ -1351,9 +1351,8 @@
 
 				capital_scope = {
 					create_unit = {
-						division = "name = \"北联装甲师\" division_template = \"北联装甲师\" start_experience_factor = 0.3 start_equipment_factor = 1"
+						division = "name = \"北联装甲师\" division_template = \"北联装甲师\" start_experience_factor = 0.3 start_equipment_factor = 1 force_equipment_variants = { light_tank_chassis_2 = { owner = \"BFL\" version_name = \"T-34\" } }"
 						owner = ROOT
-						force_equipment_variants = { light_tank_chassis_2 = { owner = "BFL" version_name = "T-34" } }
 					}	
 				}
 			}
@@ -1373,12 +1372,12 @@
 		
 		cost = 8
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
-			or = {
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
+			OR = {
 			has_idea = BFL_zhengzhihuajundui3
 			has_idea = BFL_zhengzhihuajundui2
 			}
-			not = { has_completed_focus = BFL_yubilanhangxianhezuo }
+			NOT = { has_completed_focus = BFL_yubilanhangxianhezuo }
 		}
 		ai_will_do = {
 			factor = 20
@@ -1477,7 +1476,7 @@
 		
 		cost = 7
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 5
@@ -1528,7 +1527,7 @@
 		
 		cost = 7
 		available = {
-			or = {
+			OR = {
             is_ai = yes
 			has_navy_experience > 499
 			}
@@ -1570,7 +1569,7 @@
 		x = -1
 		y = 1
 		available = {
-			or = {
+			OR = {
             is_ai = yes
 			has_navy_experience > 999
 			}
@@ -1621,7 +1620,7 @@
 		
 		cost = 7
 		available = {
-			or = {
+			OR = {
             is_ai = yes
 			has_navy_experience > 499
 			}
@@ -1655,7 +1654,7 @@
 		
 		cost = 7
 		available = {
-			or = {
+			OR = {
             is_ai = yes
 			has_navy_experience > 999
 			}
@@ -2315,7 +2314,7 @@
 		}
 		cost = 5
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 			threat > 0.4
 		}
 		ai_will_do = {
@@ -2344,7 +2343,7 @@
 		ai_will_do = {
 			factor = 10
 			modifier = {
-			or = {
+			OR = {
 			CHY = {has_war_with = DOH}
 			CHY = {has_war_with = BYG}
 			}
@@ -2397,16 +2396,16 @@
 		relative_position_id = BFL_zhuzhouweinue
 		cost = 5
 		available = {
-			or = {
-			not = {country_exists = TIX}
+			OR = {
+			NOT = {country_exists = TIX}
 			TIX = {
-			or = {
+			OR = {
 			has_government = communism
 			has_government = democratic
 			}
 			}
 			}
-			or = {
+			OR = {
 			CHY = {has_war_with = DOH}
 			CHY = {has_war_with = BYG}
 			}
@@ -2416,7 +2415,7 @@
 			factor = 0
 			modifier = {
 			date > 1942.6.1
-			not = { has_war_with = TIX }
+			NOT = { has_war_with = TIX }
 			add = 50
 			}
 		}
@@ -2439,7 +2438,7 @@
 		}
 		cost = 5
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 			threat > 0.3
 		}
 		ai_will_do = {
@@ -2641,7 +2640,7 @@
 			country_exists = SWE
 		}
 		bypass = {
-			or = {
+			OR = {
 			SWE = {is_in_faction_with = TIX}
 			SWE = {is_in_faction_with = HUJ}
 			has_war_with = SWE
@@ -2665,10 +2664,10 @@
 			create_wargoal = { target = SWE type = take_state_focus }
 			if = {
 			limit = {
-			or = {
-			not = {SWE = {is_in_faction_with = TIX}}
-			not = { is_in_faction_with = TIX }
-			not = { has_war_with = TIX } 
+			OR = {
+			NOT = {SWE = {is_in_faction_with = TIX}}
+			NOT = { is_in_faction_with = TIX }
+			NOT = { has_war_with = TIX } 
 			}
 			}
 			TIX = {
@@ -2700,9 +2699,9 @@
 			POL = {has_capitulated = no}
 		}
 		bypass = {
-			or = {
+			OR = {
 			POL = {has_capitulated = yes}
-			not = {country_exists = POL}
+			NOT = {country_exists = POL}
 			}
 		}
 		ai_will_do = {
@@ -2738,9 +2737,9 @@
 			country_exists = TUR
 		}
 		bypass = {
-			or = {
+			OR = {
 			has_war_with = TUR
-			not = {country_exists = TUR}
+			NOT = {country_exists = TUR}
 			}
 		}
 		ai_will_do = {
@@ -2762,9 +2761,9 @@
 			create_wargoal = { target = TUR type = take_state_focus }
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = TIX }
-			not = { has_war_with = TIX }
+			OR = {
+			NOT = { is_in_faction_with = TIX }
+			NOT = { has_war_with = TIX }
 			}
 			}
 			TIX = {
@@ -2788,30 +2787,30 @@
 		will_lead_to_war_with = HUJ
 		mutually_exclusive = {focus = BFL_xianfazhiren}
 		available = {
-			not = {has_completed_focus = BFL_yubilanhangxianhezuo}
-			not = {has_completed_focus = BFL_6}
-			not = { has_global_flag = yaertahuiyi_chenggong }
-			or = {
+			NOT = {has_completed_focus = BFL_yubilanhangxianhezuo}
+			NOT = {has_completed_focus = BFL_6}
+			NOT = { has_global_flag = yaertahuiyi_chenggong }
+			OR = {
 			date > 1943.3.1
-			not = {country_exists = TIX}
+			NOT = {country_exists = TIX}
 			}
 			has_army_manpower = {
 				size > 2000000
 			}
 		}
 		bypass = {
-			or = {
+			OR = {
 			has_war_with = HUJ
-			not = {country_exists = HUJ}
+			NOT = {country_exists = HUJ}
 			}
 		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
-			not = {has_war_with = TIX}
-			not = {has_war_with = CHY}
-			not = {has_war_with = SAD}
-			or = {
+			NOT = {has_war_with = TIX}
+			NOT = {has_war_with = CHY}
+			NOT = {has_war_with = SAD}
+			OR = {
 			date > 1944.3.1
 			has_war_with = HUJ
 			}
@@ -2843,18 +2842,18 @@
 			}
 		}
 		bypass = {
-			or = {
+			OR = {
 			has_war_with = TIX
-			not = {country_exists = TIX}
+			NOT = {country_exists = TIX}
 			}
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		ai_will_do = {
 			factor = 0
 			modifier = {
-			or = {
+			OR = {
 			is_historical_focus_on = yes
-			not = {has_war_with = CHY}
+			NOT = {has_war_with = CHY}
 			date > 1943.9.1
 			}
 			add = 20
@@ -2879,8 +2878,8 @@
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
-			or = {
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
+			OR = {
 			threat > 0.3
 			has_army_manpower = {
 				size > 1500000
@@ -3405,7 +3404,7 @@
 					add_to_faction = DOH
 				}
 			}
-			else_if = {
+			else = {
 				set_global_flag = BFL_created_gongchanlianmeng
 				create_faction = "共产联盟"
 			}
@@ -3494,7 +3493,7 @@
 		relative_position_id = BFL_kongjunjianshe
 		cost = 10
 		available = {
-			or = {
+			OR = {
             is_ai = yes
 			has_air_experience > 299
 			}
@@ -3531,7 +3530,7 @@
 			}
 			if = {
 				limit = {
-					not = { has_dlc = "By Blood Alone" }
+					NOT = { has_dlc = "By Blood Alone" }
 				}
 				add_tech_bonus = {
 				name = "对地支援"
@@ -3560,8 +3559,8 @@
 		relative_position_id = BFL_cezhongduidizhiyuan
 		cost = 10
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
-			or = {
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
+			OR = {
             is_ai = yes
 			has_air_experience > 499
 			}
@@ -3608,19 +3607,19 @@
 		relative_position_id = BFL_12
 		mutually_exclusive = { focus = BFL_12 }
 		available = {
-			not = { has_completed_focus = BFL_kongjunjianshe }
-			not = { has_completed_focus = BFL_lujunjianshe }
-			not = { has_completed_focus = BFL_wanchengdiergewunianjihua }
-			not = { has_completed_focus = BFL_zhongshihaijun }
-			not = { has_completed_focus = BFL_12 }
+			NOT = { has_completed_focus = BFL_kongjunjianshe }
+			NOT = { has_completed_focus = BFL_lujunjianshe }
+			NOT = { has_completed_focus = BFL_wanchengdiergewunianjihua }
+			NOT = { has_completed_focus = BFL_zhongshihaijun }
+			NOT = { has_completed_focus = BFL_12 }
 			
 		}
 		allow_branch = {
 		    not = { has_completed_focus = BFL_kongjunjianshe }
-			not = { has_completed_focus = BFL_lujunjianshe }
-			not = { has_completed_focus = BFL_wanchengdiergewunianjihua }
-			not = { has_completed_focus = BFL_zhongshihaijun }
-			not = { has_completed_focus = BFL_12 }
+			NOT = { has_completed_focus = BFL_lujunjianshe }
+			NOT = { has_completed_focus = BFL_wanchengdiergewunianjihua }
+			NOT = { has_completed_focus = BFL_zhongshihaijun }
+			NOT = { has_completed_focus = BFL_12 }
 		}
 		cost = 1
 
@@ -3656,7 +3655,7 @@
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		available = {
-			or = {
+			OR = {
 			has_completed_focus = BFL_24
 			has_completed_focus = BFL_42
 			has_completed_focus = BFL_60
@@ -3680,7 +3679,7 @@
 					add_to_faction = DOH
 				}
 			}
-			else_if = {
+			else = {
 				set_global_flag = BFL_created_gongchanlianmeng
 				create_faction = "共产联盟"
 			}
@@ -3702,7 +3701,7 @@
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 3
@@ -3789,9 +3788,9 @@
 		}
 		available = {
 			
-			not = { has_completed_focus = BFL_14 }
+			NOT = { has_completed_focus = BFL_14 }
 			has_government = communism
-			not = { has_war_with = HUJ }
+			NOT = { has_war_with = HUJ }
 			HUJ = {
 			is_faction_leader = yes
 			}
@@ -3917,7 +3916,7 @@
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -3949,12 +3948,12 @@
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 2
 			modifier = {
-			not = { TIX = { has_government = fascism } }
+			NOT = { TIX = { has_government = fascism } }
 			factor = 100
 			}
 		}
@@ -3994,24 +3993,24 @@
 			is_faction_leader = yes
 			has_war = no
 			has_global_flag = yaertahuiyi_chenggong
-			or = {
+			OR = {
 			TIX = {
-			or = {
+			OR = {
 			is_subject = yes
 			exists = no
 			}
 			}
 			}
 			CHY = {
-			not = { has_government = fascism }
+			NOT = { has_government = fascism }
 			}
 			SAD = {
 			OR = {
-			not = { has_government = fascism }
+			NOT = { has_government = fascism }
 			exists = no
 			}
 			}
-			not = { country_exists = WEX }
+			NOT = { country_exists = WEX }
 			BYG = {
 			is_subject = no
 			has_government = democratic
@@ -4377,7 +4376,7 @@
 		}
 		available = {
 			has_country_flag = BFL_zzpianzhidu_on 
-			not = { has_idea = BFL_dasaochudeyingxing }
+			NOT = { has_idea = BFL_dasaochudeyingxing }
 			custom_trigger_tooltip = {
 			tooltip = BFL_pianzhidudiyu25
 			check_variable = {
@@ -4474,7 +4473,7 @@
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -4505,7 +4504,7 @@
 		}
 		available = {
 			has_country_flag = BFL_zzpianzhidu_on 
-			not = { has_idea = BFL_dasaochudeyingxing }
+			NOT = { has_idea = BFL_dasaochudeyingxing }
 			custom_trigger_tooltip = {
 			tooltip = BFL_pianzhidudiyu19
 			check_variable = {
@@ -4539,7 +4538,7 @@
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		available = {
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -4808,7 +4807,7 @@
 			}
 			if = {
 			limit = {
-			or = {
+			OR = {
 			is_ai = yes
 			check_variable = {
 			var = az_pianzhidu
@@ -4838,7 +4837,7 @@
 			character = BFL_beilaluosi
 			ruling_only = yes
 			}
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -4868,7 +4867,7 @@
 			character = BFL_beilaluosi
 			ruling_only = yes
 			}
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -4899,7 +4898,7 @@
 			character = BFL_beilaluosi
 			ruling_only = yes
 			}
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -4930,7 +4929,7 @@
 			character = BFL_beilaluosi
 			ruling_only = yes
 			}
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -4959,7 +4958,7 @@
 			character = BFL_beilaluosi
 			ruling_only = yes
 			}
-			not = { has_country_flag = BFL_zzpianzhidu_on }
+			NOT = { has_country_flag = BFL_zzpianzhidu_on }
 		}
 		ai_will_do = {
 			factor = 100
@@ -5143,8 +5142,8 @@
 			set_war_support = 2
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = TIX }
+			OR = {
+			NOT = { is_in_faction_with = TIX }
 			TIX = { not = { has_government = communism } }
 			}
 			}
@@ -5152,8 +5151,8 @@
 			}
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = SAD }
+			OR = {
+			NOT = { is_in_faction_with = SAD }
 			SAD = { not = { has_government = communism } }
 			}
 			}
@@ -5161,8 +5160,8 @@
 			}
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = CHY }
+			OR = {
+			NOT = { is_in_faction_with = CHY }
 			CHY = { not = { has_government = communism } }
 			}
 			}
@@ -5170,8 +5169,8 @@
 			}
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = YUW }
+			OR = {
+			NOT = { is_in_faction_with = YUW }
 			YUW = { not = { has_government = communism } }
 			}
 			}
@@ -5179,8 +5178,8 @@
 			}
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = BYG }
+			OR = {
+			NOT = { is_in_faction_with = BYG }
 			BYG = { not = { has_government = communism } }
 			}
 			}
@@ -5188,8 +5187,8 @@
 			}
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = HUJ }
+			OR = {
+			NOT = { is_in_faction_with = HUJ }
 			HUJ = { not = { has_government = communism } }
 			}
 			}
@@ -5197,8 +5196,8 @@
 			}
 			if = {
 			limit = {
-			or = {
-			not = { is_in_faction_with = DOH }
+			OR = {
+			NOT = { is_in_faction_with = DOH }
 			DOH = { not = { has_government = communism } }
 			}
 			}
@@ -5758,7 +5757,7 @@
 			}
 			has_war_with = TIX
 			is_faction_leader = yes
-			or = {
+			OR = {
 			HUJ = { 
 			is_faction_leader = yes 
 			has_war_with = TIX

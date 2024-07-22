@@ -340,19 +340,19 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			or = {
+			OR = {
 				controls_state = 16
 				any_allied_country = {
 					controls_state = 16
 				}
 			}
-			or = {
+			OR = {
 				controls_state = 219
 				any_allied_country = {
 					controls_state = 219
 				}
 			}
-			or = {
+			OR = {
 				controls_state = 126
 				any_allied_country = {
 					controls_state = 126
@@ -365,8 +365,8 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {
-					not = {
-						or = {
+					NOT = {
+						OR = {
 							has_war_with = ROOT
 							is_in_faction_with = ROOT
 							is_subject_of = ROOT

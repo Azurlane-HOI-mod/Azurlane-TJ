@@ -14,105 +14,106 @@ xingdong_category = {
 		}
 	}
 
-	kaogudui_1_begin = {
-		icon = xingdong
-		cost = 150
-		days_remove = 180
-		ai_will_do = {
-			base = 0
-			modifier = {
-				date > 1941.6.1
-				add = 5
-			}
-		}
-		visible = {
-			always = no
-		}
-		modifier = {
-			civilian_factory_use = 5
-		}
-		remove_effect = {
-			set_country_flag = kaogudui_level_1_get
-		}
-	}
+	# kaogudui_1_begin = {
+	# 	icon = xingdong
+	# 	cost = 150
+	# 	days_remove = 180
+	# 	ai_will_do = {
+	# 		base = 0
+	# 		modifier = {
+	# 			date > 1941.6.1
+	# 			add = 5
+	# 		}
+	# 	}
+	# 	visible = {
+	# 		always = no
+	# 	}
+	# 	modifier = {
+	# 		civilian_factory_use = 5
+	# 	}
+	# 	remove_effect = {
+	# 		set_country_flag = kaogudui_level_1_get
+	# 	}
+	# }
 	
-	kaogudui_level_1 = {
+	# kaogudui_level_1 = {
 		
-		icon = xingdong
-		state_target = yes
-		on_map_mode = map_and_decisions_view
-		target_array = controlled_states
-		highlight_color_while_active = 1
-		visible = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		cost = var:kaogudui_cost_pp
-		days_remove = 60
-		modifier = {
-			civilian_factory_use = 5
-		}
-		available = {
-			#设定PP
-			FROM = {
-				if = {
-					limit = {
-						id = 64
-					}
-					set_temp_variable = { kaogudui_cost_pp = 60 }
-				}
-			}
-			has_country_flag = kaogudui_level_1_get
-			custom_cost_trigger = {
-				tooltip = kaogudui_cost_wz_check_tt
-				check_variable = { wz_sl > kaogudui_cost_wz }
-			}
+	# 	icon = xingdong
+	# 	state_target = yes
+	# 	on_map_mode = map_and_decisions_view
+	# 	target_array = controlled_states
+	# 	highlight_color_while_active = 1
+	# 	visible = {
+	# 		always = no
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 20
+	# 	}
+	# 	cost = var:kaogudui_cost_pp
+	# 	days_remove = 60
+	# 	modifier = {
+	# 		civilian_factory_use = 5
+	# 	}
+	# 	available = {
+	# 		#设定PP
+	# 		FROM = {
+	# 			if = {
+	# 				limit = {
+	# 					id = 64
+	# 				}
+	# 				set_temp_variable = { kaogudui_cost_pp = 60 }
+	# 			}
+	# 		}
+	# 		has_country_flag = kaogudui_level_1_get
+	# 		custom_cost_trigger = {
+	# 			tooltip = kaogudui_cost_wz_check_tt
+	# 			check_variable = { wz_sl > kaogudui_cost_wz }
+	# 		}
 			
 			
-		}
+	# 	}
 		
-		target_trigger = {
-			FROM = {
-				OR = {
-					id = 1
-				}
-			}
-		}
+	# 	target_trigger = {
+	# 		FROM = {
+	# 			OR = {
+	# 				id = 1
+	# 			}
+	# 		}
+	# 	}
 		
-		visible = {
-			has_country_flag = kaogudui_level_1_get
-			FROM = {
-				OR = {
-					id = 1
-				}
-			}
-		}
-		complete_effect = {
-			subtract_from_variable = { wz_sl = kaogudui_cost_wz }
-		}
-		remove_effect = {
-			FROM = {
-				if = {
-					limit = {
-						id = 64
-					}
-					controller = { 
-						country_event = azkaogudui.1
-					}
-				}
-				if = {
-					limit = {
-						id = 64
-					}
-					controller = { 
-						country_event = azkaogudui.2
-					}
-				}
-			}
-		}
-	}
+	# 	visible = {
+	# 		has_country_flag = kaogudui_level_1_get
+	# 		FROM = {
+	# 			OR = {
+	# 				id = 1
+	# 			}
+	# 		}
+	# 	}
+	# 	complete_effect = {
+	# 		subtract_from_variable = { wz_sl = kaogudui_cost_wz }
+	# 	}
+	# 	remove_effect = {
+	# 		FROM = {
+	# 			if = {
+	# 				limit = {
+	# 					id = 64
+	# 				}
+	# 				controller = { 
+	# 					country_event = azkaogudui.1
+	# 				}
+	# 			}
+	# 			if = {
+	# 				limit = {
+	# 					id = 64
+	# 				}
+	# 				controller = { 
+	# 					country_event = azkaogudui.2
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
+
 	show_tuxizhanzheng= {
 		priority = 10
 		icon = jian
@@ -120,9 +121,9 @@ xingdong_category = {
 			NOT = { has_country_flag = show_tuxizhanzheng }
 		}
 		available = {
-			or = {
-			not = { has_global_flag = modoption_fengkuangai_on }
-			not = { has_global_flag = modoption_historicalbossai_on }
+			OR = {
+			NOT = { has_global_flag = modoption_fengkuangai_on }
+			NOT = { has_global_flag = modoption_historicalbossai_on }
 			has_global_flag = MOD_azurlane_sairenzhizai
 			}
 		}
@@ -155,7 +156,7 @@ xingdong_category = {
 		}
 		available = {
 			FROM = { 
-				not = { has_country_flag = beituxizhanzheng_doing } 
+				NOT = { has_country_flag = beituxizhanzheng_doing } 
 			}
 			set_temp_variable = { temp_jinzhangdu = global.threat }
 			clamp_temp_variable = {
@@ -251,7 +252,7 @@ xingdong_category = {
 				}
 				every_other_country = {
 					limit = { 
-						not = { 
+						NOT = { 
 							has_country_flag = did_tuxizhanzheng
 						} 
 						
@@ -280,7 +281,7 @@ xingdong_category = {
 				}
 				every_other_country = {
 					limit = { 
-						not = { has_country_flag = did_tuxizhanzheng } 
+						NOT = { has_country_flag = did_tuxizhanzheng } 
 						shijianniangguojia_trigger = yes
 					}
 					add_political_power = 2000
@@ -289,7 +290,7 @@ xingdong_category = {
 					air_experience = 200
 				}
 			}
-			else_ = {
+			else_if = {
 				limit = { 
 					check_variable = {
 						global.tuxizhanzheng_amount = 3
@@ -318,7 +319,7 @@ xingdong_category = {
 				}
 				every_other_country = {
 					limit = { 
-						not = { has_country_flag = did_tuxizhanzheng } 
+						NOT = { has_country_flag = did_tuxizhanzheng } 
 						shijianniangguojia_trigger = yes
 					}
 					every_core_state = {
@@ -339,7 +340,7 @@ xingdong_category = {
 					air_experience = 200
 				}
 			}
-			else_ = {
+			else_if = {
 				limit = { 
 					check_variable = {
 						global.tuxizhanzheng_amount = 3
@@ -368,7 +369,7 @@ xingdong_category = {
 				}
 				every_other_country = {
 					limit = { 
-						not = { has_country_flag = did_tuxizhanzheng } 
+						NOT = { has_country_flag = did_tuxizhanzheng } 
 						shijianniangguojia_trigger = yes
 					}
 					every_core_state = {
@@ -390,7 +391,7 @@ xingdong_category = {
 				}
 
 			}
-			else_ = {
+			else_if = {
 				limit = { 
 					check_variable = {
 						global.tuxizhanzheng_amount > 3
@@ -600,7 +601,7 @@ xingdong_category = {
 					country_event = getzhg_event.13
 					modifier = {
 						factor = 0
-						or = {
+						OR = {
 							has_global_flag = meta_fangzhou_found
 							any_country = {
 								has_country_flag = meta_fangzhou_finding
@@ -612,7 +613,7 @@ xingdong_category = {
 					country_event = getzhg_event.14
 					modifier = {
 						factor = 0
-						or = {
+						OR = {
 							has_global_flag = meta_feilong_found
 							any_country = {
 								has_country_flag = meta_feilong_finding
@@ -624,7 +625,7 @@ xingdong_category = {
 					country_event = getzhg_event.15
 					modifier = {
 						factor = 0
-						or = {
+						OR = {
 							has_global_flag = meta_hailunna_found
 							any_country = {
 								has_country_flag = meta_hailunna_finding
@@ -636,7 +637,7 @@ xingdong_category = {
 					country_event = getzhg_event.16
 					modifier = {
 						factor = 0
-						or = {
+						OR = {
 							has_global_flag = meta_feiying_found
 							any_country = {
 								has_country_flag = meta_fangzhou_finding
@@ -648,7 +649,7 @@ xingdong_category = {
 					country_event = getzhg_event.17
 					modifier = {
 						factor = 0
-						or = {
+						OR = {
 							has_global_flag = meta_fusang_found
 							any_country = {
 								has_country_flag = meta_fusang_finding
@@ -660,7 +661,7 @@ xingdong_category = {
 					country_event = getzhg_event.18
 					modifier = {
 						factor = 0
-						or = {
+						OR = {
 							has_global_flag = meta_genaisennao_found
 							any_country = {
 								has_country_flag = meta_genaisennao_finding
@@ -1387,7 +1388,7 @@ xingdong_category = {
 			modifier = {
 				has_stability < 0.8
 				date > 1939.6.1
-				not = { tag = TIX }
+				NOT = { tag = TIX }
 				add = 10
 			}
 		}
@@ -1415,7 +1416,7 @@ xingdong_category = {
 			modifier = {
 				has_stability < 0.8
 				date > 1939.6.1
-				not = { tag = TIX }
+				NOT = { tag = TIX }
 				add = 10
 			}
 		}
@@ -1642,7 +1643,7 @@ xingdong_category = {
 			}
 			if = {
 				limit = { has_idea = TY_laodonglichongzu }
-				remove_idea = TY_laodonglichongzu
+				remove_ideas = TY_laodonglichongzu
 			}
 		}
 	}
@@ -1909,9 +1910,9 @@ xingdong_category = {
 	mf_chushoumofang = {
 		icon = xzmf
 		available = {
-			or = {
+			OR = {
 			has_global_flag = modoption_fengkuangai_on
-			not = { has_global_flag = modoption_historicalbossai_on }
+			NOT = { has_global_flag = modoption_historicalbossai_on }
 			}
 			custom_trigger_tooltip = {
 				tooltip = ""

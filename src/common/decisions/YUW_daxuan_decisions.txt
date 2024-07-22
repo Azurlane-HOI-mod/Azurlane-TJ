@@ -1,48 +1,67 @@
-	YUWmr = {
-		YUWmrsj = {
+YUWmr = {
+	YUWmrsj = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
-		activation	= {
+		activation = {
 			has_completed_focus = YUW_shijieshengzhan
 		}
-		available = {not = { country_exists = TIX country_exists = SAD country_exists = CHY country_exists = BFL country_exists = DOH country_exists = HUJ country_exists = BYG country_exists = BLI}}
+		available = {
+			NOT = {
+				country_exists = TIX
+				country_exists = SAD
+				country_exists = CHY
+				country_exists = BFL
+				country_exists = DOH
+				country_exists = HUJ
+				country_exists = BYG
+				country_exists = BLI
+			}
+		}
 		days_mission_timeout = 730
 		is_good = no
 		fire_only_once = yes
 		timeout_effect = {
-		country_event = { id = YUW_event.18}
+			country_event = {
+				id = YUW_event.18
+			}
 		}
-		}
-	
 	}
-	
-	
-	YUWdx = {
-		YUWdxsj = {
+}
+
+YUWdx = {
+	YUWdxsj = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
-		activation	= {
+		activation = {
 			has_completed_focus = YUW_daxuan
 		}
-		available = {always = no}
+		available = {
+			always = no
+		}
 		days_mission_timeout = 180
 		is_good = no
 		fire_only_once = yes
 		timeout_effect = {
-		country_event = { id = YUW_event.6}
+			country_event = {
+				id = YUW_event.6
+			}
 		}
-		}
+	}
 	YUWdxmzp1 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			has_idea = YUW_fdp
 			has_completed_focus = YUW_daxuan
 		}
-		available = {not = { has_idea = YUW_fdp }}
+		available = {
+			NOT = {
+				has_idea = YUW_fdp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
@@ -50,49 +69,67 @@
 			add_stability = -0.03
 			activate_mission = YUWdxmzp2
 		}
-		}
+	}
 	YUWdxmzp2 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_fdp }}
+		available = {
+			NOT = {
+				has_idea = YUW_fdp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
 		timeout_effect = {
 			add_stability = -0.04
 			activate_mission = YUWdxmzp3
-			add_days_mission_timeout = { mission = YUWdxsj days = -35 }
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = -35
+			}
 		}
-		}
+	}
 	YUWdxmzp3 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_fdp }}
+		available = {
+			NOT = {
+				has_idea = YUW_fdp
+			}
+		}
 		days_mission_timeout = 70
 		is_good = no
 		fire_only_once = yes
 		timeout_effect = {
 			add_stability = -0.05
 			activate_mission = YUWdxmzp4
-			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = 35
+			}
 		}
-		}
+	}
 	YUWdxmzp4 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_fdp }}
+		available = {
+			NOT = {
+				has_idea = YUW_fdp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
@@ -100,49 +137,67 @@
 			add_stability = -0.06
 			activate_mission = YUWdxmzp5
 		}
-		}	
+	}
 	YUWdxmzp5 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_fdp }}
+		available = {
+			NOT = {
+				has_idea = YUW_fdp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
 		timeout_effect = {
 			add_stability = -0.07
 			activate_mission = YUWdxmzp6
-			add_days_mission_timeout = { mission = YUWdxsj days = -35 }
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = -35
+			}
 		}
-		}
+	}
 	YUWdxmzp6 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_fdp }}
+		available = {
+			NOT = {
+				has_idea = YUW_fdp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
 		timeout_effect = {
-				add_stability = -0.08
-			add_days_mission_timeout = { mission = YUWdxsj days = -70 }
+			add_stability = -0.08
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = -70
+			}
 		}
-		}
+	}
 	YUWdxfdp1 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			has_idea = YUW_mzp
 			has_completed_focus = YUW_daxuan
 		}
-		available = {not = { has_idea = YUW_mzp }}
+		available = {
+			NOT = {
+				has_idea = YUW_mzp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
@@ -151,15 +206,19 @@
 			add_stability = -0.03
 			activate_mission = YUWdxfdp2
 		}
-		}
+	}
 	YUWdxfdp2 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_mzp }}
+		available = {
+			NOT = {
+				has_idea = YUW_mzp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
@@ -167,17 +226,24 @@
 		timeout_effect = {
 			add_stability = -0.04
 			activate_mission = YUWdxfdp3
-			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = 35
+			}
 		}
-		}
+	}
 	YUWdxfdp3 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_mzp }}
+		available = {
+			NOT = {
+				has_idea = YUW_mzp
+			}
+		}
 		days_mission_timeout = 70
 		is_good = no
 		fire_only_once = yes
@@ -185,17 +251,24 @@
 		timeout_effect = {
 			add_stability = -0.05
 			activate_mission = YUWdxfdp4
-			add_days_mission_timeout = { mission = YUWdxsj days = 70 }
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = 70
+			}
 		}
-		}
+	}
 	YUWdxfdp4 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_mzp }}
+		available = {
+			NOT = {
+				has_idea = YUW_mzp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
@@ -204,15 +277,19 @@
 			add_stability = -0.06
 			activate_mission = YUWdxfdp5
 		}
-		}
+	}
 	YUWdxfdp5 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_mzp }}
+		available = {
+			NOT = {
+				has_idea = YUW_mzp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
@@ -220,254 +297,412 @@
 		timeout_effect = {
 			add_stability = -0.07
 			activate_mission = YUWdxfdp6
-			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = 35
+			}
 		}
-		}
+	}
 	YUWdxfdp6 = {
 		allowed = {
-		tag = YUW
+			tag = YUW
 		}
 		activation = {
 			always = no
 		}
-		available = {not = { has_idea = YUW_mzp } }
+		available = {
+			NOT = {
+				has_idea = YUW_mzp
+			}
+		}
 		days_mission_timeout = 35
 		is_good = no
 		fire_only_once = yes
 		icon = ger_reichskommissariats
 		timeout_effect = {
 			add_stability = -0.08
-			add_days_mission_timeout = { mission = YUWdxsj days = 35 }
+			add_days_mission_timeout = {
+				mission = YUWdxsj
+				days = 35
+			}
 		}
-		}
+	}
 	YUWdxfdp11 = {
 		visible = {
 			has_idea = YUW_mzp
-			
 		}
 		available = {
-			
 		}
 		cost = 10
 		days_remove = 5
 		fire_only_once = yes
 		remove_effect = {
 			hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxfdp1 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp2 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp3 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp4 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp5 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp6 days = 10 }
-		}
-		custom_effect_tooltip = "干扰对手，对手当前任务就会延时完成。"
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		}
-	YUWdxfdp12 = {
-		visible = {
-			has_idea = YUW_mzp
-			
-		}
-		available = {
-			
-		}
-		cost = 20
-		days_remove = 50
-		fire_only_once = yes
-		remove_effect = {
-		hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxfdp1 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxfdp2 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxfdp3 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxfdp4 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxfdp5 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxfdp6 days = 15 }
-			}
-			custom_effect_tooltip = "加强对政府内我们支持者的保护，防止他们被维希派暗杀。"
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		}
-	YUWdxfdp13 = {
-		visible = {
-			has_idea = YUW_mzp
-		}
-		available = {
-			
-		}
-		cost = 30
-		days_remove = 70
-		fire_only_once = yes
-		remove_effect = {
-		hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxfdp1 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxfdp2 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxfdp3 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxfdp4 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxfdp5 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxfdp6 days = 20 }
-			}
-			custom_effect_tooltip = "加强安保力量，每个议员都会获得人身安全保障。"
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		}
-	YUWdxfdp14 = {
-		visible = {
-			has_idea = YUW_mzp
-		}
-		available = {
-			
-		}
-		cost = 50
-		days_remove = 100
-		fire_only_once = yes
-		remove_effect = {
-		hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxfdp1 days = 35 }
-			add_days_mission_timeout = { mission = YUWdxfdp2 days = 35 }
-			add_days_mission_timeout = { mission = YUWdxfdp3 days = 35 }
-			add_days_mission_timeout = { mission = YUWdxfdp4 days = 35 }
-			add_days_mission_timeout = { mission = YUWdxfdp5 days = 35 }
-			add_days_mission_timeout = { mission = YUWdxfdp6 days = 35 }
-			}
-			custom_effect_tooltip = "选举必须是公平的，阻止维希派破坏选举公平的行为！"
-					}
-		ai_will_do = {
-			factor = 100
-		}
-		}
-			YUWdxfdp11 = {
-		visible = {
-			has_idea = YUW_mzp
-			
-		}
-		available = {
-			
-		}
-		cost = 10
-		days_remove = 5
-		fire_only_once = yes
-		remove_effect = {
-		custom_effect_tooltip = "选举必须是公平的，阻止维希派破坏选举公平的行为！"
-		hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxfdp1 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp2 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp3 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp4 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp5 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxfdp6 days = 10 }
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		}
-	YUWdxmzp11 = {
-		visible = {
-			has_idea = YUW_fdp
-			
-		}
-		available = {
-			
-		}
-		cost = 10
-		days_remove = 5
-		fire_only_once = yes
-		remove_effect = {
-		hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxmzp1 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxmzp2 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxmzp3 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxmzp4 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxmzp5 days = 10 }
-			add_days_mission_timeout = { mission = YUWdxmzp6 days = 10 }
+				add_days_mission_timeout = {
+					mission = YUWdxfdp1
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp2
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp3
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp4
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp5
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp6
+					days = 10
+				}
 			}
 			custom_effect_tooltip = "干扰对手，对手当前任务就会延时完成。"
 		}
 		ai_will_do = {
 			factor = 100
 		}
-		}
-	YUWdxmzp12 = {
+	}
+	YUWdxfdp12 = {
 		visible = {
-			has_idea = YUW_fdp
-			
+			has_idea = YUW_mzp
 		}
 		available = {
-			
 		}
 		cost = 20
 		days_remove = 50
 		fire_only_once = yes
 		remove_effect = {
-		hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxmzp1 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxmzp2 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxmzp3 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxmzp4 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxmzp5 days = 15 }
-			add_days_mission_timeout = { mission = YUWdxmzp6 days = 15 }
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = YUWdxfdp1
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp2
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp3
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp4
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp5
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp6
+					days = 15
+				}
 			}
-			custom_effect_tooltip = "暗杀敌对派的支持者，让对方行动更加困难。"
+			custom_effect_tooltip = "加强对政府内我们支持者的保护，防止他们被维希派暗杀。"
 		}
 		ai_will_do = {
 			factor = 100
 		}
-		}
-	YUWdxmzp13 = {
+	}
+	YUWdxfdp13 = {
 		visible = {
-			has_idea = YUW_fdp
+			has_idea = YUW_mzp
 		}
 		available = {
-			
 		}
 		cost = 30
 		days_remove = 70
 		fire_only_once = yes
 		remove_effect = {
-		hidden_effect = {
-			add_days_mission_timeout = { mission = YUWdxmzp1 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxmzp2 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxmzp3 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxmzp4 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxmzp5 days = 20 }
-			add_days_mission_timeout = { mission = YUWdxmzp6 days = 20 }
-		}
-			custom_effect_tooltip = "不给我们投票的坏人必须消失！"
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = YUWdxfdp1
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp2
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp3
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp4
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp5
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp6
+					days = 20
+				}
+			}
+			custom_effect_tooltip = "加强安保力量，每个议员都会获得人身安全保障。"
 		}
 		ai_will_do = {
 			factor = 100
 		}
-		}
-	YUWdxmzp14 = {
+	}
+	YUWdxfdp14 = {
 		visible = {
-			has_idea = YUW_fdp
+			has_idea = YUW_mzp
 		}
 		available = {
-			
 		}
 		cost = 50
 		days_remove = 100
 		fire_only_once = yes
 		remove_effect = {
 			hidden_effect = {
-				add_days_mission_timeout = { mission = YUWdxmzp1 days = 35 }
-				add_days_mission_timeout = { mission = YUWdxmzp2 days = 35 }
-				add_days_mission_timeout = { mission = YUWdxmzp3 days = 35 }
-				add_days_mission_timeout = { mission = YUWdxmzp4 days = 35 }
-				add_days_mission_timeout = { mission = YUWdxmzp5 days = 35 }
-				add_days_mission_timeout = { mission = YUWdxmzp6 days = 35 }
+				add_days_mission_timeout = {
+					mission = YUWdxfdp1
+					days = 35
 				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp2
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp3
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp4
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp5
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp6
+					days = 35
+				}
+			}
+			custom_effect_tooltip = "选举必须是公平的，阻止维希派破坏选举公平的行为！"
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	YUWdxfdp11 = {
+		visible = {
+			has_idea = YUW_mzp
+		}
+		available = {
+		}
+		cost = 10
+		days_remove = 5
+		fire_only_once = yes
+		remove_effect = {
+			custom_effect_tooltip = "选举必须是公平的，阻止维希派破坏选举公平的行为！"
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = YUWdxfdp1
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp2
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp3
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp4
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp5
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxfdp6
+					days = 10
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	YUWdxmzp11 = {
+		visible = {
+			has_idea = YUW_fdp
+		}
+		available = {
+		}
+		cost = 10
+		days_remove = 5
+		fire_only_once = yes
+		remove_effect = {
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = YUWdxmzp1
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp2
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp3
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp4
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp5
+					days = 10
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp6
+					days = 10
+				}
+			}
+			custom_effect_tooltip = "干扰对手，对手当前任务就会延时完成。"
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	YUWdxmzp12 = {
+		visible = {
+			has_idea = YUW_fdp
+		}
+		available = {
+		}
+		cost = 20
+		days_remove = 50
+		fire_only_once = yes
+		remove_effect = {
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = YUWdxmzp1
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp2
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp3
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp4
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp5
+					days = 15
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp6
+					days = 15
+				}
+			}
+			custom_effect_tooltip = "暗杀敌对派的支持者，让对方行动更加困难。"
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	YUWdxmzp13 = {
+		visible = {
+			has_idea = YUW_fdp
+		}
+		available = {
+		}
+		cost = 30
+		days_remove = 70
+		fire_only_once = yes
+		remove_effect = {
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = YUWdxmzp1
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp2
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp3
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp4
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp5
+					days = 20
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp6
+					days = 20
+				}
+			}
+			custom_effect_tooltip = "不给我们投票的坏人必须消失！"
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	YUWdxmzp14 = {
+		visible = {
+			has_idea = YUW_fdp
+		}
+		available = {
+		}
+		cost = 50
+		days_remove = 100
+		fire_only_once = yes
+		remove_effect = {
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = YUWdxmzp1
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp2
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp3
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp4
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp5
+					days = 35
+				}
+				add_days_mission_timeout = {
+					mission = YUWdxmzp6
+					days = 35
+				}
+			}
 			custom_effect_tooltip = "用一点点好处，就能让议员们缠住民主派。"
 		}
 		ai_will_do = {
 			factor = 100
 		}
-		}
 	}
+}

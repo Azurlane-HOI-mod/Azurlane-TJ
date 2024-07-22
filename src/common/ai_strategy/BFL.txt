@@ -105,7 +105,7 @@ BFL_unit_production_air = {
 		original_tag = BFL
 	}
 	enable = {
-		always = YES
+		always = yes
 	}
 	abort = {
 		always = no
@@ -787,8 +787,8 @@ BFL_prio_military_even_at_peace = {
 		date > 1939.6.1
 	}
 	abort = {
-	or = {
-		not = { country_exists = TIX }
+	OR = {
+		NOT = { country_exists = TIX }
 		TIX = { is_subject = yes }
 		is_in_faction_with = TIX
 		date > 1941.7.1
@@ -1049,11 +1049,11 @@ BFL_area_priority = {
 	}
 	enable = {
 		is_historical_focus_on = yes
-		not = { has_war_with = CHY }
+		NOT = { has_war_with = CHY }
 	}
 	
 	abort = {
-		or = {
+		OR = {
 		has_war_with = CHY
 		has_war_with = HUJ
 		}

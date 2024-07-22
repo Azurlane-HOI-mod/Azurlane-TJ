@@ -1757,9 +1757,9 @@ country_event = { #吾妻
 	
 	trigger = {
 	tag = CHY
-	or = {
+	OR = {
 			has_war_with = BYG
-			not = {country_exists = BYG}
+			NOT = {country_exists = BYG}
 			BYG = { 
 			is_in_faction_with = CHY
 			}
@@ -1786,9 +1786,9 @@ country_event = { #吾妻
 	
 	trigger = {
 	tag = BYG
-	or = {
+	OR = {
 			has_war_with = CHY
-			not = {country_exists = CHY}
+			NOT = {country_exists = CHY}
 			CHY = { 
 			is_in_faction_with = BYG
 			}
@@ -2333,7 +2333,7 @@ country_event = { #吾妻
 			focus = CHY_zhengfuneideqingxi
 			progress > 0.9
 		}
-		not = { has_country_flag = CHY_purge_3 }
+		NOT = { has_country_flag = CHY_purge_3 }
 	}
 	fire_only_once = yes
 	option = { 

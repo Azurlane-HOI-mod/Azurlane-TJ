@@ -47,7 +47,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_GER_Wilhelm_TTT_DESC"
-			ideology = enlightened_despotism
+			ideology = despotism
 			expire = "1965.1.1.1"
 			traits = {
 			}
@@ -63,7 +63,7 @@ characters = {
 		}
 		country_leader = {
 			desc = ""
-			ideology = Spartacus
+			ideology = nazism
 			expire = "2011.1.1.1"
 			id = -1
 		}
@@ -408,11 +408,11 @@ characters = {
 		name = GER_georghans_reinhardt
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/XGE/Portrait_Germany_georghans_reinhardt.dds"
+				#large = "gfx/leaders/XGE/Portrait_Germany_georghans_reinhardt.dds"
 				small = "gfx/interface/ideas/XGE/idea_GER_georghans_reinhardt.dds"
 			}
 			army = {
-				large = "gfx/leaders/XGE/Portrait_Germany_georghans_reinhardt.dds"
+				#large = "gfx/leaders/XGE/Portrait_Germany_georghans_reinhardt.dds"
 				small = "gfx/interface/ideas/XGE/idea_GER_georghans_reinhardt.dds"
 			}
 		}
@@ -547,11 +547,11 @@ characters = {
 		name = GER_friedrich_schulz
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/XGE/Portrait_Germany_friedrich_schulz.dds"
+				#large = "gfx/leaders/XGE/Portrait_Germany_friedrich_schulz.dds"
 				small = "gfx/interface/ideas/XGE/idea_GER_friedrich_schulz.dds"
 			}
 			army = {
-				large = "gfx/leaders/XGE/Portrait_Germany_friedrich_schulz.dds"
+				#large = "gfx/leaders/XGE/Portrait_Germany_friedrich_schulz.dds"
 				small = "gfx/interface/ideas/XGE/idea_GER_friedrich_schulz.dds"
 			}
 		}
@@ -704,11 +704,11 @@ characters = {
 		name = GER_gotthard_heinrici
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/XGE/Portrait_Germany_gotthard_heinrici.dds"
+				#large = "gfx/leaders/XGE/Portrait_Germany_gotthard_heinrici.dds"
 				small = "gfx/interface/ideas/XGE/idea_GER_gotthard_heinrici.dds"
 			}
 			army = {
-				large = "gfx/leaders/XGE/Portrait_Germany_gotthard_heinrici.dds"
+				#large = "gfx/leaders/XGE/Portrait_Germany_gotthard_heinrici.dds"
 				small = "gfx/interface/ideas/XGE/idea_GER_gotthard_heinrici.dds"
 			}
 		}
@@ -874,12 +874,12 @@ characters = {
 		name = "欧根亲王"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KMS/KMS_Prinz.dds"
-				small = "gfx/interface/ideas/KMS/KMS_Prinz_idea.dds"
+				#large = "gfx/leaders/KMS/KMS_Prinz.dds"
+				#small = "gfx/interface/ideas/KMS/KMS_Prinz_idea.dds"
 			}
 			navy = {
-				large = "gfx/leaders/KMS/KMS_Prinz.dds"
-				small = "gfx/interface/ideas/KMS/KMS_Prinz_idea.dds"
+				#large = "gfx/leaders/KMS/KMS_Prinz.dds"
+				#small = "gfx/interface/ideas/KMS/KMS_Prinz_idea.dds"
 			}
 		}
 		navy_leader = {
@@ -900,12 +900,12 @@ characters = {
 		name = "美因茨"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KMS/KMS_Mainz.dds"
-				small = "gfx/interface/ideas/KMS/KMS_Mainz_idea.dds"
+				#large = "gfx/leaders/KMS/KMS_Mainz.dds"
+				#small = "gfx/interface/ideas/KMS/KMS_Mainz_idea.dds"
 			}
 			navy = {
-				large = "gfx/leaders/KMS/KMS_Mainz.dds"
-				small = "gfx/interface/ideas/KMS/KMS_Mainz_idea.dds"
+				#large = "gfx/leaders/KMS/KMS_Mainz.dds"
+				#small = "gfx/interface/ideas/KMS/KMS_Mainz_idea.dds"
 			}
 		}
 		navy_leader = {
@@ -954,12 +954,12 @@ characters = {
 		name = "Z23"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KMS/KMS_Z23.dds"
-				small = "gfx/interface/ideas/KMS/KMS_Z23_idea.dds"
+				#large = "gfx/leaders/KMS/KMS_Z23.dds"
+				#small = "gfx/interface/ideas/KMS/KMS_Z23_idea.dds"
 			}
 			navy = {
-				large = "gfx/leaders/KMS/KMS_Z23.dds"
-				small = "gfx/interface/ideas/KMS/KMS_Z23_idea.dds"
+				#large = "gfx/leaders/KMS/KMS_Z23.dds"
+				#small = "gfx/interface/ideas/KMS/KMS_Z23_idea.dds"
 			}
 		}
 		navy_leader = {
@@ -1063,14 +1063,6 @@ characters = {
 			slot = political_advisor
 			idea_token = speer
 			allowed = {
-			}
-			equipment_bonus = {
-				armor = {
-					reliability = -0.1
-					instant = yes
-					build_cost_ic = -0.17
-					instant = yes
-				}
 			}
 			traits = {
 				armaments_organizer
@@ -1296,11 +1288,8 @@ characters = {
 			allowed = {
 			}
 			available = {
-				NOT = {
-					has_country_leader = {
-						ruling_only = yes
-						character = GER_maiye
-					}
+				XGE_maiye = {
+					is_country_leader = no
 				}
 			}
 			traits = {
@@ -1728,7 +1717,7 @@ characters = {
 		name = DVL_Friedrich_August_von_Hayek
 		portraits = {
 			civilian = {
-				small = "gfx/interface/ideas/DVL/Friedrich_August_von_Hayek.png"
+				#small = "gfx/interface/ideas/DVL/Friedrich_August_von_Hayek.png"
 			}
 		}
 		advisor = {
@@ -1737,7 +1726,7 @@ characters = {
 			allowed = {
 			}
 			visible = {
-				or = {
+				OR = {
 					has_country_flag = Friedrich_August_von_Hayek_coming
 				}
 			}
@@ -1745,7 +1734,7 @@ characters = {
 				has_government = democratic
 			}
 			traits = {
-				freedom_ecomic
+				#freedom_ecomic
 			}
 			ai_will_do = {
 				factor = 10

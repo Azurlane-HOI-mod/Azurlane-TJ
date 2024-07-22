@@ -6,8 +6,8 @@ YUW_youjidui_state = {
 	}
 	icon = GFX_modifiers_generic_resistance
 	remove_trigger = {
-		or = {
-		not = { country_exists = YUW }
+		OR = {
+		NOT = { country_exists = YUW }
 		ROOT = {
 			has_state_flag = TIX_dikangyibeizhenya
 		}
@@ -33,10 +33,10 @@ BFL_youjidui_state = {
 	}
 	icon = GFX_modifiers_generic_resistance
 	remove_trigger = {
-		or = {
+		OR = {
 		controller = {
-		not = { has_war_with = BFL }
-		not = { tag = TIX }
+		NOT = { has_war_with = BFL }
+		NOT = { tag = TIX }
 		}
 		ROOT = {
 			has_state_flag = TIX_dikangyibeizhenya

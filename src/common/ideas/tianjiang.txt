@@ -7,7 +7,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = { has_war_with = TIX }
+				NOT = { has_war_with = TIX }
 			}
 			modifier = {
 				army_strength_factor = 0.2
@@ -450,9 +450,6 @@ ideas = {
 			picture = generic_air_payment
 
 			equipment_bonus = {
-				fighter_equipment = {
-					build_cost_ic = -0.15 instant = yes
-				}
 				small_plane_airframe = {
 					build_cost_ic = -0.15 instant = yes
 				}
@@ -468,16 +465,16 @@ ideas = {
 					instant = yes
 					build_cost_ic = 0.1 instant = yes
 				}
-				CAS_equipment = {
+				cas = {
 					build_cost_ic = 0.1 instant = yes
 				}
-				tac_bomber_equipment = {
+				tactical_bomber = {
+					build_cost_ic = 0.1 instant = yes					
+				} 
+				strategic_bomber = {
 					build_cost_ic = 0.1 instant = yes
 				}
-				strat_bomber_equipment = {
-					build_cost_ic = 0.1 instant = yes
-				}
-				nav_bomber_equipment = {
+				naval_bomber = {
 					build_cost_ic = 0.1 instant = yes
 				}
 			}
@@ -498,10 +495,10 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				fighter_equipment = {
+				fighter = {
 					build_cost_ic = -0.2 instant = yes
 				}
-				CAS_equipment = {
+				cas = {
 					build_cost_ic = -0.1 instant = yes
 				}
 				small_plane_airframe = {
@@ -654,7 +651,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				or = {
+				OR = {
 				has_war_with = TIX
 				has_war_with = HUJ
 				}
@@ -672,7 +669,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = { is_subject_of = TIX }
+				NOT = { is_subject_of = TIX }
 			}
 			modifier = {
 				army_core_attack_factor = 0.2
@@ -688,7 +685,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = {
+				NOT = {
 					has_country_leader = {
 					name = "霞飞"
 					ruling_only = yes
@@ -771,7 +768,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = { has_war_with = ETH }
+				NOT = { has_war_with = ETH }
 			}
 			modifier = {
 				attrition = -0.2
@@ -1166,11 +1163,11 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-			or = {
+			OR = {
 				DOH = {
 				is_in_faction_with = CHY
 				}
-				not = { country_exists = DOH }
+				NOT = { country_exists = DOH }
 			}
 			}
 			modifier = {
@@ -1725,10 +1722,10 @@ ideas = {
 				defense_bonus_against = 0.6
 			}
 			equipment_bonus = {
-				fighter_equipment = {
+				fighter = {
 					build_cost_ic = -0.25 instant = yes
 				}
-				CAS_equipment = {
+				cas = {
 					build_cost_ic = -0.2 instant = yes
 				}
 				small_plane_airframe = {
@@ -2018,7 +2015,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				or = {
+				OR = {
 				NOT = {
 					has_government = fascism	
 					}
@@ -2047,7 +2044,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = { has_war_with = TIX }
+				NOT = { has_war_with = TIX }
 				controls_state = 16
 			}
 			modifier = {
@@ -2078,7 +2075,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = { has_war_with = BFL }
+				NOT = { has_war_with = BFL }
 			}
 			modifier = {
 				supply_consumption_factor =  0.2
@@ -2093,7 +2090,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = { has_war_with = BFL }
+				NOT = { has_war_with = BFL }
 			}
 			modifier = {
 				resistance_target = 0.1
@@ -2132,7 +2129,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = { has_government = fascism }
+				NOT = { has_government = fascism }
 			}
 			modifier = {
 				army_attack_factor = -0.25
@@ -2149,7 +2146,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = {
+				NOT = {
 				has_country_leader = {
 					name = "维内托"
 					ruling_only = yes
@@ -2173,7 +2170,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = {
+				NOT = {
 				has_country_leader = {
 					name = "维内托"
 					ruling_only = yes
@@ -2194,7 +2191,7 @@ ideas = {
 				always = yes
 			}
 			cancel = {
-				not = {
+				NOT = {
 				has_country_leader = {
 					name = "维内托"
 					ruling_only = yes

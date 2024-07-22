@@ -36,7 +36,7 @@ YUW_colonial_police_final = {
 		is_puppet = no
 		original_tag = YUW
 		has_completed_focus = YUW_yidapianlan
-		not = { has_completed_focus = YUW_zhengxinyongheng }
+		NOT = { has_completed_focus = YUW_zhengxinyongheng }
 	}
 
 	state_modifier = {
@@ -177,7 +177,9 @@ HUJ_quyuzizhizhidu = {
 	ai_will_do = {
 		base = 0
 		modifier = {
-			has_government = communism
+			FROM = {
+				has_government = communism
+			}
 			add = 500
 		}
 	}

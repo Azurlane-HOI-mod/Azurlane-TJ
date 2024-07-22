@@ -1,50 +1,50 @@
 #购买武器(1政治点=15的IC产能） 1军工满效率每天5IC产出 10把步枪（净生产量+三分之一） 1.42火炮（净生产量+五分之一） 2卡车（净生产量+四分之一）
 jiefanglingtu_category = {
-	
 	yaoqiuguihuanhexinlingtu_mapdecision = {
-		
 		icon = lansegantan
 		state_target = yes
 		on_map_mode = map_only
 		target_array = core_states
 		highlight_color_while_active = 1
-		
 		ai_will_do = {
 			factor = 0
-			
 		}
 		cost = 100
-		
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = yaoqiuguihuanhexinlingtu_mapdecision_trigger_tooltip
 				FROM = {
-					controller = { NOT = { has_war_with = ROOT } }
+					controller = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
 				}
 			}
 			is_puppet = NO
 			FROM = {
-				NOT = { is_controlled_by = ROOT }
+				NOT = {
+					is_controlled_by = ROOT
+				}
 			}
 		}
-		
 		target_trigger = {
 			FROM = {
 				always = yes
 			}
 		}
-		
 		visible = {
 			NOT = {
 				has_country_flag = yaoqiuguihuanhexinlingtu_mapdecision_cd
 			}
-			FROM = { 
+			FROM = {
 				is_core_of = ROOT
-				
-				NOT = { has_state_flag = shouhuihexinlingtu_doing }
-				
-				NOT = { is_controlled_by = ROOT }
-
+				NOT = {
+					has_state_flag = shouhuihexinlingtu_doing
+				}
+				NOT = {
+					is_controlled_by = ROOT
+				}
 				NOT = {
 					OR = {
 						is_controlled_by = SIR
@@ -52,7 +52,7 @@ jiefanglingtu_category = {
 						is_controlled_by = SR2
 						is_controlled_by = SR3
 						is_controlled_by = SR4
-					}	
+					}
 				}
 			}
 		}
@@ -63,20 +63,21 @@ jiefanglingtu_category = {
 				value = 1
 			}
 			FROM = {
-				controller = { 
-					country_event = { id = azevent.66 hours = 12 }
+				controller = {
+					country_event = {
+						id = azevent.66
+						hours = 12
+					}
 				}
 			}
 		}
 	}
 	shouhuihexinlingtu_mapdecision = {
-		
 		icon = hongsegantan
 		state_target = yes
 		on_map_mode = map_only
 		target_array = core_states
 		highlight_color_while_active = 1
-		
 		ai_will_do = {
 			factor = 0
 			modifier = {
@@ -93,19 +94,18 @@ jiefanglingtu_category = {
 		modifier = {
 			civilian_factory_use = 5
 		}
-		
 		target_trigger = {
 			FROM = {
 				always = yes
 			}
 		}
-		
 		visible = {
-			FROM = { 
+			FROM = {
 				has_state_flag = shouhuihexinlingtu_doing
 				is_core_of = ROOT
-				NOT = { is_controlled_by = ROOT }
-
+				NOT = {
+					is_controlled_by = ROOT
+				}
 				NOT = {
 					OR = {
 						is_controlled_by = SIR
@@ -113,22 +113,25 @@ jiefanglingtu_category = {
 						is_controlled_by = SR2
 						is_controlled_by = SR3
 						is_controlled_by = SR4
-					}	
+					}
 				}
 			}
 		}
 		available = {
 			num_of_civilian_factories_available_for_projects > 4
 			FROM = {
-				NOT = { is_controlled_by = ROOT }
+				NOT = {
+					is_controlled_by = ROOT
+				}
 			}
 		}
-		
 		remove_effect = {
 			ROOT = {
 				transfer_state = FROM
 				FROM = {
-					controller = { remove_state_core = FROM }
+					controller = {
+						remove_state_core = FROM
+					}
 					clr_state_flag = shouhuihexinlingtu_doing
 				}
 			}

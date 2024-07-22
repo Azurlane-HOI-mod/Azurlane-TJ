@@ -155,7 +155,7 @@ default_unit_production = { #If adding country-unique ones, bear in mind that th
 
 default_role_ratios = {
 	enable = {
-		not = {
+		NOT = {
 			has_dlc = "Man the Guns"
 		}
 	}
@@ -189,7 +189,7 @@ default_role_ratios = {
 default_role_ratios = {
 	enable = {
 		has_dlc = "Man the Guns"
-		not = {
+		NOT = {
 			OR = {
 				original_tag = GER
 				original_tag = ENG
@@ -278,7 +278,7 @@ default_surplus_management = {
 	# If we manage to get all equipment we want, keep producing more stuff according to this
 	enable = {
 		always = yes  # For now, applies to everyone
-		not = {
+		NOT = {
 			OR = {
 				original_tag = CHY
 				original_tag = DOH
@@ -748,7 +748,7 @@ default_mobile_production = {
 		NOT = { original_tag = GER }
 		ai_wants_divisions > 11
 		has_tech = motorised_infantry
-		not = {
+		NOT = {
 			OR = {
 				original_tag = CHY
 				original_tag = DOH
@@ -1630,7 +1630,7 @@ default_produce_some_trucks_for_buffer = {
 		num_of_military_factories > 12
 		has_tech = tech_trucks
 		has_equipment = { motorized_equipment < 3000 }
-		not = {
+		NOT = {
 			OR = {
 				original_tag = CHY
 				original_tag = DOH
