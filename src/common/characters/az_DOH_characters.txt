@@ -369,7 +369,7 @@ characters={
 		}
 		advisor = {
 			cost = 100
-			slot = theorist
+			slot = air_chief
 			idea_token = xiaochicheng 
 			visible = {
 				if = {
@@ -1101,6 +1101,71 @@ characters={
 			defense_skill = 3
 			planning_skill = 2
 			logistics_skill = 2
+		}
+	}
+	DOH_yingrui_advisor = {
+		name = DOH_yingrui_advisor
+		portraits={
+			army = {
+				large="gfx/leaders/DOH/yingrui.png"
+				small="gfx/interface/ideas/idea_yingrui.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = yingrui_advisor
+			available = {
+				if = {
+					limit = { tag = DOH }
+					has_completed_focus = DOH_junshigaige
+				}
+			}
+			traits = { trait_yingrui }
+
+			ai_will_do = {
+				factor = 50
+			}
+		}
+	}
+	DOH_pinghai_advisor = {
+		name = DOH_pinghai_advisor
+		portraits={
+			army = {
+				large="gfx/leaders/DOH/pinghai.png"
+				small="gfx/interface/ideas/idea_pinghai.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = pinghai
+			
+			
+			traits = { trait_pinghai }
+			ai_will_do = {
+				factor = 50
+			}
+		}
+	}
+	DOH_haerbin_advisor = {
+		name = DOH_haerbin_advisor
+		portraits = { 
+			army = {
+				large="gfx/leaders/DOH/haerbin.png"
+				small="gfx/interface/ideas/idea_haerbin.png"
+			} 
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = haerbin
+			
+			
+			traits = { trait_haerbin }
+			ai_will_do = {
+				factor = 50
+			}
 		}
 	}
 }

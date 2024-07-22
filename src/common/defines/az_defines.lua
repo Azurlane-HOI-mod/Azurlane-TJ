@@ -1,14 +1,14 @@
 
 NDefines.NGame.END_DATE = "2000.1.1.1" 				   								
 	
-NDefines.NCountry.POLITICAL_POWER_CAP = 5000 										
+NDefines.NCountry.POLITICAL_POWER_CAP = 9999 										
 NDefines.NCountry.MAX_WAR_SUPPORT = 2												
 NDefines.NCountry.MAX_STABILITY = 1.25                   
 NDefines.NCountry.POLITICAL_POWER_LOWER_CAP = -5000.0
-NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 5000.0   					
-NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 2000									
-NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 2000										
-NDefines.NMilitary.MAX_AIR_EXPERIENCE = 2000 										
+NDefines.NCountry.POLITICAL_POWER_UPPER_CAP = 9999.0   					
+NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 3000									
+NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 3000										
+NDefines.NMilitary.MAX_AIR_EXPERIENCE = 3000 										
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 0								
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_CHANGE_COST = 5							
 NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 5									
@@ -21,7 +21,7 @@ NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 10
 
 NDefines.NCountry.BASE_MAX_COMMAND_POWER = 400			
 NDefines.NCountry.BASE_COMMAND_POWER_GAIN = 0.6	
-NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 35
+
 --下划线
 NDefines.NDiplomacy.MAX_TRUST_VALUE = 200						-- 最大关系上限
 NDefines.NDiplomacy.MIN_TRUST_VALUE = -200						-- 最小关系上限

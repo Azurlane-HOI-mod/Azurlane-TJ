@@ -1715,7 +1715,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = DOH_yixianwansui }
 		relative_position_id = DOH_yixianwansui
-		cost = 15
+		cost = 3
 		available = {
 			OR = {
 				has_idea = DOH_dfgg4
@@ -1728,6 +1728,9 @@ focus_tree = {
 
 		completion_reward = {	
 			add_political_power = 150
+			every_army_leader = {
+				add_skill_level = 1
+			}
 			every_country = {
 				limit = { 
 					NOT = { OR = { tag = SIR tag = SR1 tag = SR2 tag = SR3 tag = SR4 } }
@@ -1748,7 +1751,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = DOH_nvhuangdexunyou }
 		relative_position_id = DOH_nvhuangdexunyou
-		cost = 7
+		cost = 3
 
 		ai_will_do = {
 			factor = 10
@@ -1783,9 +1786,13 @@ focus_tree = {
 		id = DOH_baochiweishe
 		icon = GFX_goal_anschluss
 		relative_position_id = DOH_special_force
-		prerequisite = { focus = DOH_special_force }
+		prerequisite = { 
+			focus = DOH_haijunjianshe
+			focus = DOH_lujunxinlilun
+			focus = DOH_tieyuan
+		}
 		mutually_exclusive = { focus = DOH_jijikuozhang }
-		x = -2
+		x = -3
 		y = 1
 
 		cost = 5
@@ -1804,9 +1811,13 @@ focus_tree = {
 		id = DOH_jijikuozhang
 		icon = GFX_goal_demand_sudetenland
 		relative_position_id = DOH_special_force
-		prerequisite = { focus = DOH_special_force }
+		prerequisite = { 
+			focus = DOH_haijunjianshe
+			focus = DOH_lujunxinlilun
+			focus = DOH_tieyuan
+		}
 		mutually_exclusive = { focus = DOH_baochiweishe }
-		x = 2
+		x = 3
 		y = 1
 
 		cost = 5

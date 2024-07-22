@@ -14,11 +14,11 @@
 
 	default = no
 
-	continuous_focus_position = { x = 20 y = 1000 }
+	continuous_focus_position = { x = 0 y = 0 }
 	focus = {
 		id = DH1_querentongshuai
 		icon = GFX_focus_generic_treaty
-		x = 4
+		x = 20
 		y = 0
 		cost = 7
 		
@@ -58,7 +58,7 @@
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		relative_position_id = DH1_querentongshuai
 		x = 2
-		y = 0
+		y = 1
 		cost = 5
 		
 		ai_will_do = {
@@ -83,7 +83,7 @@
 		id = DH1_pingdingpanluan
 		icon = GFX_focus_TUR_ratify_the_six_arrows
 		relative_position_id = DH1_querentongshuai
-		x = 4
+		x = 2
 		y = 0
 		cost = 10
 		
@@ -205,7 +205,7 @@
 		prerequisite = {
 			focus = DH1_beibeibeiqilexingnang
 		}
-		x = -8
+		x = -5
 		y = 1
 		cost = 4
 		
@@ -237,7 +237,7 @@
 		prerequisite = {
 			focus = DH1_junduijianshe
 		}
-		x = 2
+		x = 0
 		y = 1
 		cost = 4
 		
@@ -324,7 +324,7 @@
 		prerequisite = {
 			focus = DH1_dalikaifakuangchan
 		}
-		x = 0
+		x = 1
 		y = 2
 		cost = 4
 		
@@ -428,9 +428,19 @@
 			factor = 6
 		}
 		available = {
-			has_tech = radio_detection 
-			capital_scope = {
-				radar_station > 0
+			OR = {
+				AND = {
+					has_tech = radio_detection 
+					capital_scope = {
+						radar_station > 0
+					}
+				}
+				hidden_trigger = {
+					AND = {
+						is_ai = yes
+						has_completed_focus = DH1_qingqiuzhijiao
+					}
+				}
 			}
 		}
 		
@@ -443,6 +453,42 @@
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			remove_ideas = DH1_idea_sixiangbing
+			if = {
+				limit = {
+					DH1 = {
+						DOH_yingrui = {
+							is_country_leader = yes
+						}
+					}
+				}
+				DOH = {
+					country_event = DH1_event.111
+				}
+			}
+			if = {
+				limit = {
+					DH1 = {
+						DOH_pinghai = {
+							is_country_leader = yes
+						}
+					}
+				}
+				DOH = {
+					country_event = DH1_event.112
+				}
+			}
+			if = {
+				limit = {
+					DH1 = {
+						DOH_haerbin = {
+							is_country_leader = yes
+						}
+					}
+				}
+				DOH = {
+					country_event = DH1_event.113
+				}
+			}
 		}
 	}
 	focus = {
@@ -549,7 +595,7 @@
 		prerequisite = {
 			focus = DH1_shengchanjianshejidi
 		}
-		x = -4
+		x = -3
 		y = 1
 		cost = 10
 		
@@ -741,7 +787,7 @@
 		prerequisite = {
 			focus = DH1_beibeibeiqilexingnang
 		}
-		x = 8
+		x = 5
 		y = 1
 		cost = 4
 		
@@ -777,7 +823,7 @@
 		prerequisite = {
 			focus = DH1_minshengjianshe
 		}
-		x = -4
+		x = -2
 		y = 1
 		cost = 10
 		
@@ -927,7 +973,7 @@
 		prerequisite = {
 			focus = DH1_minshengjianshe
 		}
-		x = -2
+		x = 0
 		y = 1
 		cost = 4
 		
@@ -991,6 +1037,20 @@
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_research_slot = 1
+			hidden_effect = {
+				if = {
+					limit = { DH1 = { is_ai = yes } }
+					set_technology = {
+						radio_detection = 1
+					}
+					capital_scope = {
+						add_building_construction = {
+							type = radar_station
+							level = 1
+						}
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -1000,7 +1060,7 @@
 		prerequisite = {
 			focus = DH1_minshengjianshe
 		}
-		x = 0
+		x = 2
 		y = 1
 		cost = 4
 		
@@ -1076,10 +1136,10 @@
 			focus = DH1_shengchandianfengshan
 		}
 		prerequisite = {
-			focus = DH1_kaifangyiminzhengce
+			focus = DH1_qingqiuzhijiao
 		}
 		x = -1
-		y = 1
+		y = 2
 		cost = 3
 		
 		ai_will_do = {
@@ -1111,7 +1171,7 @@
 	focus = {
 		id = DH1_jiaqianglianluo
 		icon = GFX_goal_generic_improve_relations
-		x = 20
+		x = 34
 		y = 0
 		cost = 5
 		
@@ -1137,7 +1197,7 @@
 	focus = {
 		id = DH1_biaoshizhongcheng
 		icon = GFX_goal_generic_propaganda
-		x = -4
+		x = -2
 		y = 1
 		cost = 5
 		relative_position_id = DH1_jiaqianglianluo
@@ -1166,7 +1226,7 @@
 	focus = {
 		id = DH1_hanweibianjiang
 		icon = GFX_focus_chi_one_china_policy
-		x = 4
+		x = 2
 		y = 1
 		cost = 5
 		relative_position_id = DH1_jiaqianglianluo
@@ -1299,7 +1359,7 @@
 	focus = {
 		id = DH1_kuozhankongzhongluxian
 		icon = GFX_focus_generic_air_bases
-		x = -4
+		x = -3
 		y = 1
 		cost = 3
 		relative_position_id = DH1_gengduoyaoqiu
@@ -1360,7 +1420,7 @@
 	focus = {
 		id = DH1_kuozhanhaiyunluxian
 		icon = GFX_goal_generic_navy_cruiser
-		x = 4
+		x = 3
 		y = 1
 		cost = 3
 		relative_position_id = DH1_gengduoyaoqiu
@@ -1417,7 +1477,7 @@
 		id = DH1_guojimaoyi
 		icon = GFX_goal_generic_positive_trade_relations
 		x = 0
-		y = 2
+		y = 3
 		cost = 5
 		relative_position_id = DH1_kuozhanhaiyunluxian
 		prerequisite = {
@@ -1539,10 +1599,10 @@
 	focus = {
 		id = DH1_yixiandemiling
 		icon = GFX_focus_yixian
-		x = -4
+		x = 0
 		y = 3
 		cost = 1
-		relative_position_id = DH1_ludilianjie
+		relative_position_id = DH1_kuozhankongzhongluxian
 		# prerequisite = {
 		# 	focus = DH1_kuodajunxuyunshu
 		# }
@@ -1575,7 +1635,7 @@
 	focus = {
 		id = DH1_jiangzaiwaijunmingyousuobushou
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = -3
+		x = -2
 		y = 1
 		cost = 1
 		relative_position_id = DH1_yixiandemiling
@@ -1693,7 +1753,7 @@
 	focus = {
 		id = DH1_jugongjincusierhouyi
 		icon = GFX_focus_ITA_corpo_volontari_della_liberta
-		x = 4
+		x = 2
 		y = 1
 		cost = 1
 		relative_position_id = DH1_yixiandemiling
@@ -2055,14 +2115,15 @@
 	focus = {
 		id = DH1_zongtizhan
 		icon = GFX_goal_generic_major_war
-		x = 35
-		y = 0
+		relative_position_id = DH1_jiaqianglianluo
+		x = 7
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 20
 		}
-		available = {
-			has_completed_focus = DH1_gengduoyaoqiu
+		prerequisite = {
+			focus = DH1_gengduoyaoqiu
 		}
 		
 		cancel_if_invalid = yes
@@ -2109,7 +2170,7 @@
 	focus = {
 		id = DH1_jingong
 		icon = GFX_focus_generic_provoke_border_clashes
-		x = 4
+		x = 2
 		y = 1
 		cost = 5
 		relative_position_id = DH1_yuanzhengkaishi
@@ -2178,7 +2239,7 @@
 	focus = {
 		id = DH1_nanyacidalu
 		icon = GFX_focus_attack_india
-		x = 2
+		x = 1
 		y = 1
 		cost = 5
 		relative_position_id = DH1_qinsuanzhimingzhe
@@ -2262,7 +2323,7 @@
 		id = DH1_fuchifeizhoufanzhimingdouzheng
 		icon = GFX_focus_generic_africa_liberation
 		x = -3
-		y = 2
+		y = 1
 		cost = 10
 		relative_position_id = DH1_qinsuanzhimingzhe
 		prerequisite = {
@@ -2296,11 +2357,14 @@
 		id = DH1_xiananyang
 		icon = GFX_focus_ninghai
 		x = 0
-		y = 1
+		y = 2
 		cost = 10
-		relative_position_id = DH1_zhongnanbandao
+		relative_position_id = DH1_qinsuanzhimingzhe
 		prerequisite = {
 			focus = DH1_zhongnanbandao
+		}
+		prerequisite = {
+			focus = DH1_nanyacidalu
 		}
 		ai_will_do = { 
 			base = 0
@@ -2415,8 +2479,8 @@
 	focus = {
 		id = DH1_yuanjiao
 		icon = GFX_focus_generic_diplomatic_treaty
-		x = -4
-		y = 1
+		x = -2
+		y = 2
 		cost = 5
 		relative_position_id = DH1_yuanzhengkaishi
 		prerequisite = {
@@ -2642,8 +2706,8 @@
 	focus = {
 		id = DH1_chukoushiyouhexiangjiao
 		icon = GFX_goal_generic_trade
-		x = -5
-		y = 3
+		x = -1
+		y = 1
 		cost = 5
 		relative_position_id = DH1_yuanjiao
 		prerequisite = {

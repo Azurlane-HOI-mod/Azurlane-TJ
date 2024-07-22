@@ -719,20 +719,17 @@ characters={
 		    }
 				
 			available= {
-			if = { 	limit = { tag = BFL }
-            NOT = {
-			has_completed_focus = BFL_kelimulinshibian }
-			available = {
-			if = {
-			limit = { tag = BFL }
+				if = { 	
+					limit = { tag = BFL }
+					NOT = {
+						has_completed_focus = BFL_kelimulinshibian 
+					}
+					OR = {
+						has_country_flag = BFL_zzpianzhidu_on
+						has_completed_focus = BFL_24
+					}
+				}
 			}
-			OR = {
-			has_country_flag = BFL_zzpianzhidu_on
-			has_completed_focus = BFL_24
-			}
-			}
-			}
-		    }
 		}
 		
 		corps_commander = {
