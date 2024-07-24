@@ -1151,308 +1151,308 @@ DOH_industry_decision_category = {
 }
 
 DOH_decision_debug_category = {
-	DOH_decision_add_touzi = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				has_completed_focus = DOH_jinjigaige
-			}
-		}
-		cost = 10
-		available = {
-			num_of_civilian_factories_available_for_projects > 0
-		}
-		complete_effect = {
-			custom_effect_tooltip = "增加1点投资"
-			effect_tooltip = {
-				add_dynamic_modifier = {
-					modifier = DOH_fake_add_touzi
-				}
-			}
-			add_to_variable = {
-				var:DOH_touzi = 1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_rm_touzi = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				AND = {
-					check_variable = {
-						var:DOH_touzi > 0
-					}
-					has_completed_focus = DOH_jinjigaige
-				}
-			}
-		}
-		cost = 10
-		complete_effect = {
-			custom_effect_tooltip = "减少1点投资"
-			effect_tooltip = {
-				remove_dynamic_modifier = {
-					modifier = DOH_fake_add_touzi
-				}
-			}
-			add_to_variable = {
-				var:DOH_touzi = -1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_add_gonggongkaizhi = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				has_completed_focus = DOH_shehuibaozhang
-			}
-		}
-		cost = 10
-		available = {
-			num_of_civilian_factories_available_for_projects > 0
-		}
-		complete_effect = {
-			custom_effect_tooltip = "增加1点公共开支"
-			effect_tooltip = {
-				add_dynamic_modifier = {
-					modifier = DOH_fake_add_gonggongkaizhi
-				}
-			}
-			add_to_variable = {
-				var:DOH_gonggongkaizhi = 1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_rm_gonggongkaizhi = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				AND = {
-					check_variable = {
-						var:DOH_gonggongkaizhi > 0
-					}
-					has_completed_focus = DOH_shehuibaozhang
-				}
-			}
-		}
-		cost = 10
-		complete_effect = {
-			custom_effect_tooltip = "减少1点公共开支"
-			effect_tooltip = {
-				remove_dynamic_modifier = {
-					modifier = DOH_fake_add_gonggongkaizhi
-				}
-			}
-			add_to_variable = {
-				var:DOH_gonggongkaizhi = -1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_add_keyanjinfei = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				has_completed_focus = DOH_rencaiyinjin
-			}
-		}
-		cost = 10
-		available = {
-			num_of_civilian_factories_available_for_projects > 0
-		}
-		complete_effect = {
-			custom_effect_tooltip = "增加1点额外科研经费"
-			effect_tooltip = {
-				add_dynamic_modifier = {
-					modifier = DOH_fake_add_keyanjinfen
-				}
-			}
-			add_to_variable = {
-				var:DOH_keyanjinfei = 1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_rm_keyanjinfei = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				AND = {
-					check_variable = {
-						var:DOH_keyanjinfei > 0
-					}
-					has_completed_focus = DOH_rencaiyinjin
-				}
-			}
-		}
-		cost = 10
-		complete_effect = {
-			custom_effect_tooltip = "减少1点额外科研经费"
-			effect_tooltip = {
-				remove_dynamic_modifier = {
-					modifier = DOH_fake_add_keyanjinfen
-				}
-			}
-			add_to_variable = {
-				var:DOH_keyanjinfei = -1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_add_junshijinfei = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		available = {
-			num_of_civilian_factories_available_for_projects > 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				has_completed_focus = DOH_jinjigaige
-			}
-		}
-		cost = 10
-		complete_effect = {
-			custom_effect_tooltip = "增加1点额外生产经费"
-			effect_tooltip = {
-				add_dynamic_modifier = {
-					modifier = DOH_fake_add_junshijinfei
-				}
-			}
-			add_to_variable = {
-				var:DOH_junshijinfei = 1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_rm_junshijinfei = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				AND = {
-					check_variable = {
-						var:DOH_junshijinfei > 0
-					}
-					has_completed_focus = DOH_jinjigaige
-				}
-			}
-		}
-		cost = 10
-		complete_effect = {
-			custom_effect_tooltip = "减少1点额外生产经费"
-			effect_tooltip = {
-				remove_dynamic_modifier = {
-					modifier = DOH_fake_add_junshijinfei
-				}
-			}
-			add_to_variable = {
-				var:DOH_junshijinfei = -1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_add_shichang = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				AND = {
-					check_variable = {
-						var:DOH_shichang < 15
-					}
-					has_completed_focus = DOH_shichanghuanjishu
-				}
-			}
-		}
-		cost = 10
-		complete_effect = {
-			custom_effect_tooltip = "增加1点市场开放程度"
-			effect_tooltip = {
-				add_dynamic_modifier = {
-					modifier = DOH_fake_add_shichangkaifang
-				}
-			}
-			add_to_variable = {
-				var:DOH_shichang = 1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
-	DOH_decision_rm_shichang = {
-		icon = xingdong
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			OR = {
-				is_debug = yes
-				AND = {
-					check_variable = {
-						var:DOH_shichang > 0
-					}
-					has_completed_focus = DOH_shichanghuanjishu
-				}
-			}
-		}
-		cost = 10
-		complete_effect = {
-			custom_effect_tooltip = "减少1点市场开放程度"
-			effect_tooltip = {
-				remove_dynamic_modifier = {
-					modifier = DOH_fake_add_shichangkaifang
-				}
-			}
-			add_to_variable = {
-				var:DOH_shichang = -1
-			}
-			DOH_mofifier_effect = yes
-			DOH_zhichilvchengfa_effect = yes
-		}
-	}
+# 	DOH_decision_add_touzi = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				has_completed_focus = DOH_jinjigaige
+# 			}
+# 		}
+# 		cost = 10
+# 		available = {
+# 			num_of_civilian_factories_available_for_projects > 0
+# 		}
+# 		complete_effect = {
+# 			custom_effect_tooltip = "增加1点投资"
+# 			effect_tooltip = {
+# 				add_dynamic_modifier = {
+# 					modifier = DOH_fake_add_touzi
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_touzi = 1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_rm_touzi = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				AND = {
+# 					check_variable = {
+# 						var:DOH_touzi > 0
+# 					}
+# 					has_completed_focus = DOH_jinjigaige
+# 				}
+# 			}
+# 		}
+# 		cost = 10
+# 		complete_effect = {
+# 			custom_effect_tooltip = "减少1点投资"
+# 			effect_tooltip = {
+# 				remove_dynamic_modifier = {
+# 					modifier = DOH_fake_add_touzi
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_touzi = -1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_add_gonggongkaizhi = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				has_completed_focus = DOH_shehuibaozhang
+# 			}
+# 		}
+# 		cost = 10
+# 		available = {
+# 			num_of_civilian_factories_available_for_projects > 0
+# 		}
+# 		complete_effect = {
+# 			custom_effect_tooltip = "增加1点公共开支"
+# 			effect_tooltip = {
+# 				add_dynamic_modifier = {
+# 					modifier = DOH_fake_add_gonggongkaizhi
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_gonggongkaizhi = 1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_rm_gonggongkaizhi = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				AND = {
+# 					check_variable = {
+# 						var:DOH_gonggongkaizhi > 0
+# 					}
+# 					has_completed_focus = DOH_shehuibaozhang
+# 				}
+# 			}
+# 		}
+# 		cost = 10
+# 		complete_effect = {
+# 			custom_effect_tooltip = "减少1点公共开支"
+# 			effect_tooltip = {
+# 				remove_dynamic_modifier = {
+# 					modifier = DOH_fake_add_gonggongkaizhi
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_gonggongkaizhi = -1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_add_keyanjinfei = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				has_completed_focus = DOH_rencaiyinjin
+# 			}
+# 		}
+# 		cost = 10
+# 		available = {
+# 			num_of_civilian_factories_available_for_projects > 0
+# 		}
+# 		complete_effect = {
+# 			custom_effect_tooltip = "增加1点额外科研经费"
+# 			effect_tooltip = {
+# 				add_dynamic_modifier = {
+# 					modifier = DOH_fake_add_keyanjinfen
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_keyanjinfei = 1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_rm_keyanjinfei = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				AND = {
+# 					check_variable = {
+# 						var:DOH_keyanjinfei > 0
+# 					}
+# 					has_completed_focus = DOH_rencaiyinjin
+# 				}
+# 			}
+# 		}
+# 		cost = 10
+# 		complete_effect = {
+# 			custom_effect_tooltip = "减少1点额外科研经费"
+# 			effect_tooltip = {
+# 				remove_dynamic_modifier = {
+# 					modifier = DOH_fake_add_keyanjinfen
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_keyanjinfei = -1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_add_junshijinfei = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		available = {
+# 			num_of_civilian_factories_available_for_projects > 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				has_completed_focus = DOH_jinjigaige
+# 			}
+# 		}
+# 		cost = 10
+# 		complete_effect = {
+# 			custom_effect_tooltip = "增加1点额外生产经费"
+# 			effect_tooltip = {
+# 				add_dynamic_modifier = {
+# 					modifier = DOH_fake_add_junshijinfei
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_junshijinfei = 1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_rm_junshijinfei = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				AND = {
+# 					check_variable = {
+# 						var:DOH_junshijinfei > 0
+# 					}
+# 					has_completed_focus = DOH_jinjigaige
+# 				}
+# 			}
+# 		}
+# 		cost = 10
+# 		complete_effect = {
+# 			custom_effect_tooltip = "减少1点额外生产经费"
+# 			effect_tooltip = {
+# 				remove_dynamic_modifier = {
+# 					modifier = DOH_fake_add_junshijinfei
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_junshijinfei = -1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_add_shichang = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				AND = {
+# 					check_variable = {
+# 						var:DOH_shichang < 15
+# 					}
+# 					has_completed_focus = DOH_shichanghuanjishu
+# 				}
+# 			}
+# 		}
+# 		cost = 10
+# 		complete_effect = {
+# 			custom_effect_tooltip = "增加1点市场开放程度"
+# 			effect_tooltip = {
+# 				add_dynamic_modifier = {
+# 					modifier = DOH_fake_add_shichangkaifang
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_shichang = 1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
+# 	DOH_decision_rm_shichang = {
+# 		icon = xingdong
+# 		ai_will_do = {
+# 			factor = 0
+# 		}
+# 		visible = {
+# 			OR = {
+# 				is_debug = yes
+# 				AND = {
+# 					check_variable = {
+# 						var:DOH_shichang > 0
+# 					}
+# 					has_completed_focus = DOH_shichanghuanjishu
+# 				}
+# 			}
+# 		}
+# 		cost = 10
+# 		complete_effect = {
+# 			custom_effect_tooltip = "减少1点市场开放程度"
+# 			effect_tooltip = {
+# 				remove_dynamic_modifier = {
+# 					modifier = DOH_fake_add_shichangkaifang
+# 				}
+# 			}
+# 			add_to_variable = {
+# 				var:DOH_shichang = -1
+# 			}
+# 			DOH_mofifier_effect = yes
+# 			DOH_zhichilvchengfa_effect = yes
+# 		}
+# 	}
 	DOH_debug_1 = {
 		icon = xingdong
 		cost = 0

@@ -1558,9 +1558,10 @@ focus_tree = {
         # }
 
         completion_reward = {
-            add_dynamic_modifier = {
-				modifier = DOH_guomuyixian
-			}   
+            # add_dynamic_modifier = {
+			# 	modifier = DOH_guomuyixian
+			# }   
+			add_ideas = DOH_guomuyixian_idea_0_DOH_guodayixianquanli
             add_popularity = { ideology = fascism popularity = 0.2 }
             set_politics = {
                 ruling_party = fascism
@@ -1609,10 +1610,27 @@ focus_tree = {
 
         completion_reward = {
             add_popularity = { ideology = fascism popularity = 0.25 }
-			add_to_variable = { DOH_guomuyixian_var_army_morale_factor = 0.08 }
-			add_to_variable = { DOH_guomuyixian_var_land_reinforce_rate = 0.1 }
-			add_to_variable = { DOH_guomuyixian_var_planning_speed = 0.15 }
-            custom_effect_tooltip = DOH_zhangkongsanjun_tt
+			# add_to_variable = { DOH_guomuyixian_var_army_morale_factor = 0.08 }
+			# add_to_variable = { DOH_guomuyixian_var_land_reinforce_rate = 0.1 }
+			# add_to_variable = { DOH_guomuyixian_var_planning_speed = 0.15 }
+            # custom_effect_tooltip = DOH_zhangkongsanjun_tt
+			if = {
+				limit = {
+					DOH = {
+						has_completed_focus = DOH_ducuyixian
+					}	
+				}
+				swap_ideas = {
+					remove_idea = DOH_guomuyixian_idea_1_DOH_ducuyixian
+					add_idea = DOH_guomuyixian_idea_1_complete
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = DOH_guomuyixian_idea_0_DOH_guodayixianquanli
+					add_idea = DOH_guomuyixian_idea_1_DOH_zhangkongsanjun
+				}
+			}
         }
     }
     focus = {
@@ -1637,9 +1655,26 @@ focus_tree = {
 				getzhg_event_dixingtezhi_se = yes
 				getzhg_event_xidetezhi_se = yes
 			}
-			add_to_variable = { DOH_guomuyixian_var_research_speed_factor = 0.15 }
-			add_to_variable = { DOH_guomuyixian_var_max_command_power = 50 }
-			custom_effect_tooltip = DOH_ducuyixian_tt
+			# # add_to_variable = { DOH_guomuyixian_var_research_speed_factor = 0.15 }
+			# # add_to_variable = { DOH_guomuyixian_var_max_command_power = 50 }
+			# custom_effect_tooltip = DOH_ducuyixian_tt
+			if = {
+				limit = {
+					DOH = {
+						has_completed_focus = DOH_zhangkongsanjun
+					}	
+				}
+				swap_ideas = {
+					remove_idea = DOH_guomuyixian_idea_1_DOH_zhangkongsanjun
+					add_idea = DOH_guomuyixian_idea_1_complete
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = DOH_guomuyixian_idea_0_DOH_guodayixianquanli
+					add_idea = DOH_guomuyixian_idea_1_DOH_ducuyixian
+				}
+			}
         }
     }
     focus = {
@@ -1701,10 +1736,14 @@ focus_tree = {
             }
             add_political_power = 350
             add_stability = 0.25
-			add_to_variable = { DOH_guomuyixian_var_political_power_factor = 0.1 }
-			add_to_variable = { DOH_guomuyixian_var_army_attack_factor = 0.25 }
-			add_to_variable = { DOH_guomuyixian_var_army_defence_factor = 0.25 }
-            custom_effect_tooltip = DOH_yixianwansui_tt
+			# add_to_variable = { DOH_guomuyixian_var_political_power_factor = 0.1 }
+			# add_to_variable = { DOH_guomuyixian_var_army_attack_factor = 0.25 }
+			# add_to_variable = { DOH_guomuyixian_var_army_defence_factor = 0.25 }
+            # custom_effect_tooltip = DOH_yixianwansui_tt
+			swap_ideas = {
+				remove_idea = DOH_guomuyixian_idea_1_complete
+				add_idea = DOH_guomuyixian_idea_2_yixianwansui
+			}
             hidden_effect = { news_event = aznews.13 }
         }
     }
