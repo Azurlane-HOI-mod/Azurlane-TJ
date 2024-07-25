@@ -649,14 +649,19 @@ DOH_decision_category = {
 			}
 		}
 		available = {
-			OR = {
-				BFL = {
+			AND = {
+				OR = {
+					BFL = {
+						NOT = {
+							has_government = communism
+						}
+					}
 					NOT = {
-						has_government = communism
+						country_exists = BFL
 					}
 				}
 				NOT = {
-					country_exists = BFL
+					has_country_flag = DOH_BFL_bifenggang_flag
 				}
 			}
 		}

@@ -1274,23 +1274,20 @@ country_event = {
 	title = DOH_loong_event.3002.t
 	desc = DOH_loong_event.3002.d
 	trigger = {
-		tag = DOH
-		has_country_flag = DOH_BFL_bifenggang_flag
-		BFL = {
-			has_government = communism
+		AND = {
+			tag = DOH
+			DOH = {
+				has_completed_focus = DOH_hongsedengta
+			}
+			has_country_flag = DOH_BFL_bifenggang_flag
+			BFL = {
+				has_government = communism
+			}
+			country_exists = BFL
 		}
 	}
 	option = {
 		name = DOH_loong_event.3002.a
-		trigger = {
-			CHY = {
-				has_focus_tree = chongying_new_focus
-				OR = {
-					has_completed_focus = CHY_chichen1
-					is_debug = yes
-				}
-			}
-		}
 		ai_chance = {
 			base = 10
 		}
@@ -1302,19 +1299,19 @@ country_event = {
 		}
 		DOH = {
 			BFL_sayousi = {
-				set_nationality = DOH
+				set_nationality = BFL
 			}
 			BFL_afuleer = {
-				set_nationality = DOH
+				set_nationality = BFL
 			}
 			BFL_shuixingjinian = {
-				set_nationality = DOH
+				set_nationality = BFL
 			}
 			BFL_kalangshitade = {
-				set_nationality = DOH
+				set_nationality = BFL
 			}
 			BFL_luoxiya = {
-				set_nationality = DOH
+				set_nationality = BFL
 			}
 		}
 		hidden_effect = {
