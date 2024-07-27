@@ -160,14 +160,17 @@ DOH_DH1_decision_category = {
 		cost = 0
 		days_remove = 10
 		remove_effect = {
-			DH1 = {
-				remove_ideas = DH1_AI_xiuyangshengxi
-				remove_ideas = DH1_AI_zhongshihaijun
-				remove_ideas = DH1_AI_zhongshikongjun
-				remove_ideas = DH1_AI_zhongshijingong
-				remove_ideas = DH1_AI_zhongshifangyu
+			custom_effect_tooltip = "撤销所有下达的指示。"
+			hidden_effect = {
+				DH1 = {
+					remove_ideas = DH1_AI_xiuyangshengxi
+					remove_ideas = DH1_AI_zhongshihaijun
+					remove_ideas = DH1_AI_zhongshikongjun
+					remove_ideas = DH1_AI_zhongshijingong
+					remove_ideas = DH1_AI_zhongshifangyu
+				}
+				clr_country_flag = DOH_DH1_xiadalezhishi
 			}
-			clr_country_flag = DOH_DH1_xiadalezhishi
 		}
 	}
 }

@@ -1,0 +1,98 @@
+add_namespace = az_DH1_yuanzheng_won_attacker
+add_namespace = az_DH1_yuanzheng_lost_attacker
+add_namespace = az_DH1_yuanzheng_won_defender
+add_namespace = az_DH1_yuanzheng_lost_defender
+country_event = {
+	id = az_DH1_yuanzheng_won_attacker.1
+	picture = GFX_aze_chaijun_nice
+	title = az_DH1_yuanzheng_won_attacker.t
+	desc = az_DH1_yuanzheng_won_attacker.d
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { 
+			save_event_target_as = our_state
+		}
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = {
+			save_event_target_as = their_state
+		}
+	}
+	option = {
+		name = az_DH1_yuanzheng_won_attacker.a
+		add_political_power = 50
+		add_war_support = .02
+		if = {
+			limit = {
+				check_variable = {
+					FROM.FROM.num_owned_states > 1
+				}
+			}
+			transfer_state = FROM.FROM.FROM
+		}
+		else = {
+			FROM.FROM = { ROOT = { annex_country = { target = PREV } } }
+		}
+	}
+}
+country_event = {
+	id = az_DH1_yuanzheng_lost_attacker.1
+	picture = GFX_aze_txluoen2
+	title = az_DH1_yuanzheng_lost_attacker.t
+	desc = az_DH1_yuanzheng_lost_attacker.d
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { 
+			save_event_target_as = our_state
+		}
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = {
+			save_event_target_as = their_state
+		}
+	}
+	option = {
+		name = az_DH1_yuanzheng_lost_attacker.a
+		add_political_power = -50
+	}
+}
+country_event = {
+	id = az_DH1_yuanzheng_won_defender.1
+	picture = GFX_aze_chaijun_nice
+	title = az_DH1_yuanzheng_won_defender.t
+	desc = az_DH1_yuanzheng_won_defender.d
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { 
+			save_event_target_as = our_state
+		}
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = {
+			save_event_target_as = their_state
+		}
+	}
+	option = {
+		name = az_DH1_yuanzheng_won_defender.a
+	}
+}
+country_event = {
+	id = az_DH1_yuanzheng_lost_defender.1
+	picture = GFX_aze_txluoen2
+	title = az_DH1_yuanzheng_lost_defender.t
+	desc = az_DH1_yuanzheng_lost_defender.d
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { 
+			save_event_target_as = our_state
+		}
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = {
+			save_event_target_as = their_state
+		}
+	}
+	option = {
+		name = az_DH1_yuanzheng_lost_defender.a
+	}
+}
