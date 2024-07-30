@@ -148,6 +148,9 @@ DOH_mofifier_effect = {
 			if = {
 				limit = {
 					nuclear_reactor > 0
+					OR = {
+						is_core_of = DOH
+					}
 				}
 				add_dynamic_modifier = {
 					modifier = DOH_hedian_state_modifier
@@ -466,7 +469,7 @@ doh_kexueyuan_effect = {
 		shared_speed_factor = DOH.num_subjects
 	}
 	multiply_variable = {
-		shared_speed_factor = 0.08
+		shared_speed_factor = 0.16
 	}
 	every_country = {
 		if = {
