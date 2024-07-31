@@ -343,22 +343,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = DOH_zzyf
-			effect_tooltip = {
-				if = {
-					limit = {
-						NOT = {
-							has_completed_focus = DOH_dulizizhudejungong
-						}
-					}
-					DOH_dongfangguguo_dengji = yes
-				}
-			}
-			hidden_effect = {
-				DOH_dongfangguguo_dengji = yes
-			}
 			every_military_industrial_organization = {
-				add_mio_size = 5
+				add_mio_size = 1
 			}
+			DOH_neibufenqi_jianqin_few_effect = yes
 		}
 	}
 	focus = {
@@ -853,6 +841,12 @@ focus_tree = {
 					human_wave_tactics_for_doh = 1
 					popup = no
 				}
+				custom_effect_tooltip = DOH_dashijiyoujizhan_tooltip
+				hidden_effect = {
+					set_technology = {
+						DOH_dashijiyoujizhan_tech = 1
+					}
+				}
 			}
 		}
 	}
@@ -887,6 +881,26 @@ focus_tree = {
 			add_potential_special_forces_tree = yes
 			add_potential_special_forces_tree = yes
 			DOH_neibufenqi_jianqin_effect = yes
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = DOH_wanguolaichao
+					}
+				}
+				effect_tooltip = {
+					if = {
+						limit = {
+							NOT = {
+								has_completed_focus = DOH_special_force
+							}
+						}
+						DOH_dongfangguguo_dengji = yes
+					}
+				}
+				hidden_effect = {
+					DOH_dongfangguguo_dengji = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -2658,6 +2672,9 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
+			every_military_industrial_organization = {
+				add_mio_size = 2
+			}
 			add_ideas = DOH_hailufuhe_idea_0
 			swap_ideas = {
 				remove_idea = DOH_dhgytx
@@ -3096,6 +3113,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_research_slot = 1
+			every_military_industrial_organization = {
+				add_mio_size = 2
+			}
 		}
 	}
 	focus = {
@@ -5491,6 +5511,27 @@ focus_tree = {
 				add_idea = DOH_tcsg
 			}
 			DOH_neibufenqi_jianqin_effect = yes
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = DOH_special_force
+					}
+				}
+				effect_tooltip = {
+					if = {
+						limit = {
+							NOT = {
+								has_completed_focus = DOH_wanguolaichao
+							}
+						}
+						DOH_dongfangguguo_dengji = yes
+					}
+				}
+				hidden_effect = {
+					DOH_dongfangguguo_dengji = yes
+				}
+			}
+
 		}
 	}
 	focus = {
