@@ -57,8 +57,8 @@
 		id = DH1_lvyouzhinan
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		relative_position_id = DH1_querentongshuai
-		x = 2
-		y = 1
+		x = 4
+		y = 0
 		cost = 5
 		
 		ai_will_do = {
@@ -149,7 +149,16 @@
 		prerequisite = {
 			focus = DH1_querentongshuai
 		}
-		x = 0
+		prerequisite = {
+			focus = DH1_pingdingpanluan
+		}
+		prerequisite = {
+			focus = DH1_lvyouzhinan
+		}
+		prerequisite = {
+			focus = DH1_xuewaiyu
+		}
+		x = 1
 		y = 1
 		cost = 7
 		
@@ -325,7 +334,7 @@
 			focus = DH1_dalikaifakuangchan
 		}
 		x = 1
-		y = 2
+		y = 1
 		cost = 4
 		
 		ai_will_do = {
@@ -391,7 +400,7 @@
 			focus = DH1_zhengdunjunji
 		}
 		x = 0
-		y = 1
+		y = 2
 		cost = 4
 		
 		ai_will_do = {
@@ -527,7 +536,7 @@
 		prerequisite = {
 			focus = DH1_beibeibeiqilexingnang
 		}
-		x = 0
+		x = 1
 		y = 1
 		cost = 4
 		
@@ -553,11 +562,11 @@
 	focus = {
 		id = DH1_shengchanjianshejidi
 		icon = GFX_focus_generic_self_management
-		relative_position_id = DH1_junkenhetuntian
+		relative_position_id = DH1_beibeibeiqilexingnang
 		prerequisite = {
-			focus = DH1_junkenhetuntian
+			focus = DH1_beibeibeiqilexingnang
 		}
-		x = 0
+		x = -1
 		y = 1
 		cost = 4
 		
@@ -595,8 +604,8 @@
 		prerequisite = {
 			focus = DH1_shengchanjianshejidi
 		}
-		x = -3
-		y = 1
+		x = -2
+		y = 2
 		cost = 10
 		
 		ai_will_do = {
@@ -649,19 +658,26 @@
 	focus = {
 		id = DH1_zhonghuaidongxi
 		icon = GFX_focus_generic_agricultural_subsidies
-		relative_position_id = DH1_shengchanjianshejidi
+		relative_position_id = DH1_beibeibeiqilexingnang
 		prerequisite = {
 			focus = DH1_shengchanjianshejidi
+		}
+		prerequisite = {
+			focus = DH1_junkenhetuntian
 		}
 		mutually_exclusive = {
 			focus = DH1_zhonghaodongxi
 		}
 		x = -1
-		y = 1
+		y = 2
 		cost = 10
 		
 		ai_will_do = {
-			factor = 5
+			base = 5
+			modifier = {
+				has_country_flag = DOH_DH1_kaishiyuanzheng_flag
+				add = -5
+			}
 		}
 		available = {
 			#date < 1939.01.01
@@ -718,19 +734,26 @@
 	focus = {
 		id = DH1_zhonghaodongxi
 		icon = GFX_focus_generic_agricultural_subsidies
-		relative_position_id = DH1_shengchanjianshejidi
+		relative_position_id = DH1_beibeibeiqilexingnang
 		prerequisite = {
 			focus = DH1_shengchanjianshejidi
+		}
+		prerequisite = {
+			focus = DH1_junkenhetuntian
 		}
 		mutually_exclusive = {
 			focus = DH1_zhonghuaidongxi
 		}
 		x = 1
-		y = 1
+		y = 2
 		cost = 10
 		
 		ai_will_do = {
-			factor = 5
+			base = 5
+			modifier = {
+				has_country_flag = DOH_DH1_kaishiyuanzheng_flag
+				add = 10
+			}
 		}
 		available = {
 			
@@ -823,7 +846,7 @@
 		prerequisite = {
 			focus = DH1_minshengjianshe
 		}
-		x = -2
+		x = 2
 		y = 1
 		cost = 10
 		
@@ -862,9 +885,9 @@
 		prerequisite = {
 			focus = DH1_jiaohuayuanzhumin
 		}
-		prerequisite = {
-			focus = DH1_qingqiuzhijiao
-		}
+		# prerequisite = {
+		# 	focus = DH1_qingqiuzhijiao
+		# }
 		x = 0
 		y = 2
 		cost = 3
@@ -1058,9 +1081,9 @@
 		icon = GFX_goal_generic_construct_civilian
 		relative_position_id = DH1_minshengjianshe
 		prerequisite = {
-			focus = DH1_minshengjianshe
+			focus = DH1_junkenhetuntian
 		}
-		x = 2
+		x = -2
 		y = 1
 		cost = 4
 		
@@ -1138,8 +1161,8 @@
 		prerequisite = {
 			focus = DH1_qingqiuzhijiao
 		}
-		x = -1
-		y = 2
+		x = 1
+		y = 1
 		cost = 3
 		
 		ai_will_do = {
@@ -1171,17 +1194,32 @@
 	focus = {
 		id = DH1_jiaqianglianluo
 		icon = GFX_goal_generic_improve_relations
-		x = 34
-		y = 0
+		x = 0
+		relative_position_id = DH1_beibeibeiqilexingnang
+		y = 5
 		cost = 5
 		
 		ai_will_do = {
 			factor = 10
 		}
 		available = {
-			
+			has_idea = DH1_idea_baohunpei
+			has_idea = DH1_tongyiyuyan
+			has_idea = DH1_idea_qinfenhaoxue
+			has_idea = DH1_idea_naire
+			OR = {
+				has_idea = DH1_zhonghaodongxi
+				has_idea = DH1_zhonghuaidongxi
+			}
+			OR = {
+				has_idea = DH1_ziligengshengdejundui
+				has_idea = DH1_baozhangjunfei
+			}
 		}
-		
+		prerequisite = {
+			focus = DH1_ziligengshengdejundui
+			focus = DH1_baozhangjunfei
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -1190,7 +1228,42 @@
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			add_research_slot = 1
 			add_political_power = 200
+			hidden_effect = {
+				remove_ideas = DH1_idea_baohunpei
+				remove_ideas = DH1_tongyiyuyan
+				remove_ideas = DH1_idea_qinfenhaoxue
+				remove_ideas = DH1_idea_naire
+				remove_ideas = DH1_zhonghaodongxi
+				remove_ideas = DH1_zhonghuaidongxi
+				remove_ideas = DH1_ziligengshengdejundui
+				remove_ideas = DH1_baozhangjunfei
+				if = {
+					limit = {
+						has_completed_focus = DH1_zhonghaodongxi
+					}
+					add_ideas = DH1_neizheng_1
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = DH1_zhonghuaidongxi
+					}
+					add_ideas = DH1_neizheng_2
+				}
+				if = {
+					limit = {
+						has_completed_focus = DH1_ziligengshengdejundui
+					}
+					add_ideas = DH1_junshi_1
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = DH1_baozhangjunfei
+					}
+					add_ideas = DH1_junshi_2
+				}
+			}
 		}
 	}
 	
@@ -1220,6 +1293,7 @@
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_political_power = 100
+			
 			DH1_xinrenjingtidu_up_10 = yes
 		}
 	}
@@ -1256,7 +1330,7 @@
 		id = DH1_gengduoyaoqiu
 		icon = GFX_focus_generic_concessions
 		x = 0
-		y = 1
+		y = 3
 		cost = 5
 		relative_position_id = DH1_jiaqianglianluo
 		prerequisite = {
@@ -1359,8 +1433,8 @@
 	focus = {
 		id = DH1_kuozhankongzhongluxian
 		icon = GFX_focus_generic_air_bases
-		x = -3
-		y = 1
+		x = 4
+		y = 3
 		cost = 3
 		relative_position_id = DH1_gengduoyaoqiu
 		prerequisite = {
@@ -1420,8 +1494,8 @@
 	focus = {
 		id = DH1_kuozhanhaiyunluxian
 		icon = GFX_goal_generic_navy_cruiser
-		x = 3
-		y = 1
+		x = -4
+		y = 3
 		cost = 3
 		relative_position_id = DH1_gengduoyaoqiu
 		prerequisite = {
@@ -1476,15 +1550,18 @@
 	focus = {
 		id = DH1_guojimaoyi
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 0
-		y = 3
+		x = 1
+		y = 1
 		cost = 5
-		relative_position_id = DH1_kuozhanhaiyunluxian
+		relative_position_id = DH1_yuanjiao
+		# prerequisite = {
+		# 	focus = DH1_kuozhanhaiyunluxian
+		# }
+		# prerequisite = {
+		# 	focus = DH1_zousitongdao
+		# }
 		prerequisite = {
-			focus = DH1_kuozhanhaiyunluxian
-		}
-		prerequisite = {
-			focus = DH1_zousitongdao
+			focus = DH1_yuanjiao
 		}
 		ai_will_do = {
 			factor = 6
@@ -1515,7 +1592,7 @@
 	focus = {
 		id = DH1_kuodajunxuyunshu
 		icon = GFX_focus_generic_railroad
-		x = -2
+		x = 2
 		y = 1
 		cost = 5
 		relative_position_id = DH1_ludilianjie
@@ -1553,7 +1630,7 @@
 	focus = {
 		id = DH1_zousitongdao
 		icon = GFX_focus_generic_supply_line
-		x = 2
+		x = -2
 		y = 1
 		cost = 5
 		relative_position_id = DH1_ludilianjie
@@ -1600,23 +1677,33 @@
 		id = DH1_yixiandemiling
 		icon = GFX_focus_yixian
 		x = 0
-		y = 3
+		y = 4
 		cost = 1
-		relative_position_id = DH1_kuozhankongzhongluxian
+		relative_position_id = DH1_gengduoyaoqiu
+		prerequisite = {
+			focus = DH1_kuozhankongzhongluxian
+		}
+		prerequisite = {
+			focus = DH1_kuozhanhaiyunluxian
+		}
+		prerequisite = {
+			focus = DH1_ludilianjie
+		}
 		# prerequisite = {
 		# 	focus = DH1_kuodajunxuyunshu
 		# }
 		# mutually_exclusive = {
 		# 	focus = DH1_jiangzaiwaijunmingyousuobushou
 		# }
-		prerequisite = {
-			focus = DH1_kuozhankongzhongluxian
-		}
+		# prerequisite = {
+		# 	focus = DH1_kuozhankongzhongluxian
+		# }
 		ai_will_do = {
 			factor = 20
 		}
 		available = {
 			has_country_flag = DH1_jieshoushouling
+			has_completed_focus = DH1_kuozhankongzhongluxian
 		}
 		
 		cancel_if_invalid = yes
@@ -1635,18 +1722,18 @@
 	focus = {
 		id = DH1_jiangzaiwaijunmingyousuobushou
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = -2
-		y = 1
+		x = 0
+		y = 5
 		cost = 1
-		relative_position_id = DH1_yixiandemiling
-		prerequisite = {
-			focus = DH1_yixiandemiling
-		}
+		relative_position_id = DH1_jiaohuayuanzhumin
+		# prerequisite = {
+		# 	focus = DH1_yixiandemiling
+		# }
 		mutually_exclusive = {
 			focus = DH1_jugongjincusierhouyi
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
 				has_game_rule = {
 					rule = DH1_ai_behavior
@@ -1670,7 +1757,7 @@
 			}
 		}
 		available = {
-
+			has_completed_focus = DH1_yixiandemiling
 		}
 		
 		cancel_if_invalid = yes
@@ -1690,8 +1777,8 @@
 	focus = {
 		id = DH1_xiangbentuzhengbing
 		icon = GFX_focus_manjiu
-		x = 0
-		y = 1
+		x = 1
+		y = 2
 		cost = 5
 		relative_position_id = DH1_ludilianjie
 		prerequisite = {
@@ -1723,12 +1810,12 @@
 	focus = {
 		id = DH1_zhaopingzhishimanjiu
 		icon = GFX_focus_generic_university_3
-		x = 0
-		y = 1
+		x = -1
+		y = 2
 		cost = 5
-		relative_position_id = DH1_xiangbentuzhengbing
+		relative_position_id = DH1_ludilianjie
 		prerequisite = {
-			focus = DH1_xiangbentuzhengbing
+			focus = DH1_ludilianjie
 		}
 		ai_will_do = {
 			factor = 10
@@ -1753,18 +1840,18 @@
 	focus = {
 		id = DH1_jugongjincusierhouyi
 		icon = GFX_focus_ITA_corpo_volontari_della_liberta
-		x = 2
-		y = 1
+		x = 0
+		y = 3
 		cost = 1
-		relative_position_id = DH1_yixiandemiling
-		prerequisite = {
-			focus = DH1_yixiandemiling
-		}
+		relative_position_id = DH1_chuansongjiaxiangxiaoqu
+		# prerequisite = {
+		# 	focus = DH1_yixiandemiling
+		# }
 		mutually_exclusive = {
 			focus = DH1_jiangzaiwaijunmingyousuobushou
 		}
 		ai_will_do = {
-			factor = 20
+			base = 20
 			modifier = {
 				has_game_rule = {
 					rule = DH1_ai_behavior
@@ -1774,7 +1861,7 @@
 			}
 		}
 		available = {
-			
+			has_completed_focus = DH1_yixiandemiling
 		}
 		
 		cancel_if_invalid = yes
@@ -1802,7 +1889,7 @@
 		id = DH1_jieshouwzhidao
 		icon = GFX_goal_generic_forceful_treaty
 		x = 0
-		y = 1
+		y = 3
 		cost = 4
 		relative_position_id = DH1_jugongjincusierhouyi
 		prerequisite = {
@@ -1832,11 +1919,14 @@
 		id = DH1_yuanzhengjundeweilai
 		icon = GFX_focus_donghuang
 		x = 0
-		y = 4
+		y = 6
 		cost = 7
 		relative_position_id = DH1_jugongjincusierhouyi
 		prerequisite = {
 			focus = DH1_jieshouwzhidao
+		}
+		mutually_exclusive = {
+			focus = DH1_xinanshibian
 		}
 		ai_will_do = {
 			factor = 1
@@ -1862,7 +1952,7 @@
 				can_puppet = yes
 				can_force_government = yes
 			}
-			add_ideas = DH1_weilai
+			#add_ideas = DH1_weilai
 			DOH = {
 				country_event = DH1_event.7
 			}
@@ -1950,7 +2040,7 @@
 		id = DH1_xinanshibian
 		icon = GFX_goal_generic_major_war
 		x = 0
-		y = 4
+		y = 6
 		cost = 5
 		relative_position_id = DH1_jiangzaiwaijunmingyousuobushou
 		prerequisite = {
@@ -1964,7 +2054,9 @@
 		available = {
 			
 		}
-		
+		mutually_exclusive = {
+			focus = DH1_yuanzhengjundeweilai
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -2112,46 +2204,50 @@
 		}
 	}
 
-	focus = {
-		id = DH1_zongtizhan
-		icon = GFX_goal_generic_major_war
-		relative_position_id = DH1_jiaqianglianluo
-		x = 7
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 20
-		}
-		prerequisite = {
-			focus = DH1_gengduoyaoqiu
-		}
+	# focus = {
+	# 	id = DH1_zongtizhan
+	# 	icon = GFX_goal_generic_major_war
+	# 	relative_position_id = DH1_yixiandemiling
+	# 	x = 0
+	# 	y = 2
+	# 	cost = 5
+	# 	ai_will_do = {
+	# 		factor = 20
+	# 	}
+	# 	prerequisite = {
+	# 		focus = DH1_yixiandemiling
+	# 	}
 		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+	# 	cancel_if_invalid = yes
+	# 	continue_if_invalid = no
+	# 	available_if_capitulated = no
 
 
 
-		#search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			add_ideas = DH1_zongtizhan_idea
-		}
-	}
+	# 	#search_filters = { FOCUS_FILTER_STABILITY }
+	# 	completion_reward = {
+	# 		add_ideas = DH1_zongtizhan_idea
+	# 	}
+	# }
 	focus = {
 		id = DH1_yuanzhengkaishi
 		icon = GFX_focus_SWE_refuge_from_war
+		relative_position_id = DH1_yixiandemiling
 		x = 0
-		y = 1
-		cost = 5
-		relative_position_id = DH1_zongtizhan
+		y = 2
+		cost = 3
 		prerequisite = {
-			focus = DH1_zongtizhan
+			focus = DH1_yixiandemiling
+			# focus = DH1_yuanzhengjundeweilai
+			# focus = DH1_xinanshibian
 		}
 		ai_will_do = {
 			factor = 20
 		}
 		available = {
-			has_completed_focus = DH1_beibeibeiqilexingnang
+			NOT = {
+				has_war_with = DOH
+			}
 		}
 		
 		cancel_if_invalid = yes
@@ -2164,13 +2260,54 @@
 		completion_reward = {
 			TY_lujunliluntupo = yes
 			set_technology = { guerrilla_tactics_for_doh = 1 popup = no }
+			#add_ideas = DH1_zongtizhan_idea
+			hidden_effect = {
+				remove_ideas = DH1_zousitongdao
+				remove_ideas = DH1_kuodajunxuyunshu
+			}
+			if = {
+					limit = {
+						has_idea = DH1_neizheng_1
+					}
+					swap_ideas = {
+						remove_idea = DH1_neizheng_1
+						add_idea = DH1_neizheng_11
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = DH1_neizheng_2
+					}
+					swap_ideas = {
+						remove_idea = DH1_neizheng_2
+						add_idea = DH1_neizheng_21
+					}
+				}
+				if = {
+					limit = {
+						has_idea = DH1_junshi_1
+					}
+					swap_ideas = {
+						remove_idea = DH1_junshi_1
+						add_idea = DH1_junshi_11
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = DH1_junshi_2
+					}
+					swap_ideas = {
+						remove_idea = DH1_neizheng_2
+						add_idea = DH1_neizheng_21
+					}
+				}
 		}
 	}
 
 	focus = {
 		id = DH1_jingong
 		icon = GFX_focus_generic_provoke_border_clashes
-		x = 2
+		x = 3
 		y = 1
 		cost = 5
 		relative_position_id = DH1_yuanzhengkaishi
@@ -2204,7 +2341,7 @@
 		id = DH1_qinsuanzhimingzhe
 		icon = GFX_focus_generic_support_the_left_right
 		x = 0
-		y = 1
+		y = 2
 		cost = 5
 		relative_position_id = DH1_jingong
 		prerequisite = {
@@ -2239,10 +2376,10 @@
 	focus = {
 		id = DH1_nanyacidalu
 		icon = GFX_focus_attack_india
-		x = 1
+		x = 0
 		y = 1
 		cost = 5
-		relative_position_id = DH1_qinsuanzhimingzhe
+		relative_position_id = DH1_donghuangzhiyuanjun
 		prerequisite = {
 			focus = DH1_qinsuanzhimingzhe
 		}
@@ -2318,53 +2455,66 @@
 			custom_effect_tooltip = DH1_zhongnanbandao_mission_tooltip
 		}
 	}
-
 	focus = {
-		id = DH1_fuchifeizhoufanzhimingdouzheng
-		icon = GFX_focus_generic_africa_liberation
-		x = -3
-		y = 1
-		cost = 10
+		id = DH1_donghuangzhiyuanjun
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 3
 		relative_position_id = DH1_qinsuanzhimingzhe
 		prerequisite = {
 			focus = DH1_qinsuanzhimingzhe
 		}
-		prerequisite = {
-			focus = DH1_yuanjiao
-		}
-		ai_will_do = {
-			factor = 5
-		}
 		available = {
-			has_army_manpower = {
-				size > 500000
-			}
+			has_army_manpower = { size > 50000 }
 		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-
-
-		#search_filters = { FOCUS_FILTER_STABILITY }
+		x = 1
+		y = 1
 		completion_reward = {
 			add_ideas = DH1_zhiyuanjun_idea
 		}
 	}
+	# focus = {
+	# 	id = DH1_fuchifeizhoufanzhimingdouzheng
+	# 	icon = GFX_focus_generic_africa_liberation
+	# 	x = -3
+	# 	y = 1
+	# 	cost = 10
+	# 	relative_position_id = DH1_qinsuanzhimingzhe
+	# 	# prerequisite = {
+	# 	# 	focus = DH1_qinsuanzhimingzhe
+	# 	# }
+	# 	# prerequisite = {
+	# 	# 	focus = DH1_yuanjiao
+	# 	# }
+	# 	ai_will_do = {
+	# 		factor = 5
+	# 	}
+	# 	available = {
+	# 		has_army_manpower = {
+	# 			size > 500000
+	# 		}
+	# 	}
+		
+	# 	cancel_if_invalid = yes
+	# 	continue_if_invalid = no
+	# 	available_if_capitulated = no
+
+
+
+	# 	#search_filters = { FOCUS_FILTER_STABILITY }
+	# 	completion_reward = {
+	# 		add_ideas = DH1_zhiyuanjun_idea
+	# 	}
+	# }
 
 	focus = {
 		id = DH1_xiananyang
 		icon = GFX_focus_ninghai
 		x = 0
-		y = 2
+		y = 1
 		cost = 10
-		relative_position_id = DH1_qinsuanzhimingzhe
+		relative_position_id = DH1_zhongnanbandao
 		prerequisite = {
 			focus = DH1_zhongnanbandao
-		}
-		prerequisite = {
-			focus = DH1_nanyacidalu
 		}
 		ai_will_do = { 
 			base = 0
@@ -2479,8 +2629,8 @@
 	focus = {
 		id = DH1_yuanjiao
 		icon = GFX_focus_generic_diplomatic_treaty
-		x = -2
-		y = 2
+		x = -3
+		y = 1
 		cost = 5
 		relative_position_id = DH1_yuanzhengkaishi
 		prerequisite = {
@@ -2501,7 +2651,8 @@
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_ideas = DH1_yuanjiao_idea
+			add_political_power = 200
+			#add_ideas = DH1_yuanjiao_idea
 		}
 	}
 	focus = {
@@ -2533,7 +2684,7 @@
 	focus = {
 		id = DH1_tiexuezhuangjiajishu
 		icon = GFX_fflag_TIX
-		x = -3
+		x = -1
 		y = 1
 		cost = 10
 		relative_position_id = DH1_qianshuguojixieyi
@@ -2569,7 +2720,7 @@
 		id = DH1_baiyinghangkonggongye
 		icon = GFX_fflag_BYG
 		x = -1
-		y = 1
+		y = 2
 		cost = 10
 		relative_position_id = DH1_qianshuguojixieyi
 		prerequisite = {
@@ -2627,7 +2778,7 @@
 		id = DH1_beiliandazongshenzuozhan
 		icon = GFX_fflag_BFL
 		x = 1
-		y = 1
+		y = 2
 		cost = 10
 		relative_position_id = DH1_qianshuguojixieyi
 		prerequisite = {
@@ -2667,7 +2818,7 @@
 	focus = {
 		id = DH1_laizidongfangdezhichi
 		icon = GFX_fflag_CHY
-		x = 3
+		x = 1
 		y = 1
 		cost = 10
 		relative_position_id = DH1_qianshuguojixieyi
@@ -2713,9 +2864,9 @@
 		prerequisite = {
 			focus = DH1_yuanjiao
 		}
-		prerequisite = {
-			focus = DH1_guojimaoyi
-		}
+		# prerequisite = {
+		# 	focus = DH1_guojimaoyi
+		# }
 		ai_will_do = {
 			factor = 6
 		}
@@ -2732,6 +2883,61 @@
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_ideas = DOH_ndhhsygs
+		}
+	}
+	focus = {
+		id = DH1_qianjin
+		icon = GFX_fflag_DOH
+		cost = 1
+		relative_position_id = DH1_yuanzhengkaishi
+		prerequisite = {
+			focus = DH1_qinsuanzhimingzhe
+		}
+		prerequisite = {
+			focus = DH1_qianshuguojixieyi
+		}
+		x = 0
+		y = 6
+		available = {
+			has_idea = DH1_qingsuanzhimingzhe_idea
+			has_idea = DH1_zhiyuanjun_idea
+			has_idea = DOH_ndhhsygs
+			has_idea = TIX_zjscl
+			OR = {
+				OR = {
+					is_ai = yes
+					has_completed_focus = DH1_xiananyang
+				}
+				date > 1943.1.1
+				threat > 0.75
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				remove_ideas = DH1_qingsuanzhimingzhe_idea
+				remove_ideas = DH1_zhiyuanjun_idea
+				remove_ideas = DOH_ndhhsygs
+				remove_ideas = TIX_zjscl
+			}
+			if = {
+				limit = {
+					has_idea = DH1_junshi_11
+				}
+				swap_ideas = {
+					remove_idea = DH1_junshi_11
+					add_idea = DH1_junshi_111
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DH1_junshi_21
+				}
+				swap_ideas = {
+					remove_idea = DH1_junshi_21
+					add_idea = DH1_junshi_211
+				}
+			}
+			custom_effect_tooltip = "（未完待续）"
 		}
 	}
 }
