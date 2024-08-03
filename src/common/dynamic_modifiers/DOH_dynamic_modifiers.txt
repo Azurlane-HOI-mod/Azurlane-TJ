@@ -154,6 +154,7 @@ DOH_hedian_state_modifier = {
 	icon = GFX_modifiers_generic_military_plans
 	local_building_slots = 1
 	local_org_regain = 0.2
+	nuclear_production_factor = 0.2
 	local_resources = 0.5
 	local_supplies = 0.3
 }
@@ -175,15 +176,17 @@ az_DOH_shuchu_target_modifier = {
 	cic_to_target_factor = var:shuchu_factor_to_doh
 	mic_to_target_factor = var:shuchu_factor_to_doh
 }
-# az_doh_fanshu_modifier = {
-# 	icon = GFX_idea_DOH_xdh
-# 	cic_to_overlord_factor = var:THIS.autonomy_range
-# 	mic_to_overlord_factor = var:THIS.autonomy_range
-# }
+az_doh_fanshu_modifier = {
+	icon = GFX_idea_DOH_xdh
+	cic_to_overlord_factor = var:ROOT.zizhichengdu
+	mic_to_overlord_factor = var:ROOT.zizhichengdu
+}
 az_doh_kexueyuan_modifier = {
 	icon = GFX_idea_generic_research_bonus
 	research_speed_factor = shared_speed_factor
 	license_subject_master_purchase_cost = -1
+	research_sharing_per_country_bonus = 1
+	research_sharing_per_country_bonus_factor = 1
 	naval_hit_chance = 0.15
 	global_building_slots = 1
 	land_night_attack = 0.1

@@ -3943,11 +3943,11 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			always = no
+
 		}
 		completion_reward = {
 			custom_effect_tooltip = DOH_chaogongtixi_tooltip
-			custom_effect_tooltip = "（还没做完）"
+			custom_effect_tooltip = doh_fanshu_desc
 		}
 	}
 	focus = {
@@ -3967,11 +3967,10 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			always = no
+			
 		}
 		completion_reward = {
 			custom_effect_tooltip = DOH_cijichaogongzhongxin_tooltip
-			custom_effect_tooltip = "（还没做完）"
 		}
 	}
 	focus = {
@@ -5425,7 +5424,7 @@ focus_tree = {
 	focus = {
 		id = DOH_junmingronghe
 		icon = GFX_goal_generic_construct_civilian
-		relative_position_id = DOH_special_force
+		relative_position_id = DOH_wanguolaichao
 		prerequisite = {
 			focus = DOH_huanxingjulong
 			focus = DOH_nanhaidezhuren
@@ -5436,7 +5435,7 @@ focus_tree = {
 			num_of_factories > 300
 		}
 		cost = 5
-		x = 13
+		x = 3
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = DOH_junmingronghe_tooltip
@@ -5462,7 +5461,7 @@ focus_tree = {
 			has_completed_focus = DOH_liangdanyixing
 		}
 		cost = 5
-		x = -3
+		x = 0
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = az_DOH_railway_organization_tooltip_2
@@ -5534,35 +5533,35 @@ focus_tree = {
 
 		}
 	}
-	focus = {
-		id = DOH_junmingronghe_fushuguo
-		icon = GFX_focus_DEN_no_regulations
-		relative_position_id = DOH_junmingronghe
-		# prerequisite = {
-		# 	focus = DOH_junmingronghe_jishugaijing
-		# }
-		# prerequisite = {
-		# 	focus = DOH_wanguolaichao
-		# }
-		# prerequisite = {
-		# 	focus = DOH_junmingronghe
-		# }
-		available = {
-			num_subjects > 0
-			OR = {
-				has_completed_focus = DOH_ziguyilai
-				has_completed_focus = DOH_chaogongzhidu
-			}
-			always = no
-		}
-		prerequisite = {
-			focus = DOH_junmingronghe
-		}
-		cost = 5
-		x = 0
-		y = 3
-		completion_reward = {
-			custom_effect_tooltip = "（还没做完）"
-		}
-	}
+	# focus = {
+	# 	id = DOH_junmingronghe_fushuguo
+	# 	icon = GFX_focus_DEN_no_regulations
+	# 	relative_position_id = DOH_junmingronghe
+	# 	# prerequisite = {
+	# 	# 	focus = DOH_junmingronghe_jishugaijing
+	# 	# }
+	# 	# prerequisite = {
+	# 	# 	focus = DOH_wanguolaichao
+	# 	# }
+	# 	# prerequisite = {
+	# 	# 	focus = DOH_junmingronghe
+	# 	# }
+	# 	available = {
+	# 		num_subjects > 0
+	# 		OR = {
+	# 			has_completed_focus = DOH_ziguyilai
+	# 			has_completed_focus = DOH_chaogongzhidu
+	# 		}
+	# 		always = no
+	# 	}
+	# 	prerequisite = {
+	# 		focus = DOH_junmingronghe
+	# 	}
+	# 	cost = 5
+	# 	x = 0
+	# 	y = 3
+	# 	completion_reward = {
+	# 		custom_effect_tooltip = "（还没做完）"
+	# 	}
+	# }
 }

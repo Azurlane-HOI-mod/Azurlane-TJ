@@ -1623,22 +1623,63 @@ DOH_decision_debug_category = {
 			}
 		}
 	}
-	# DOH_debug_8 = {
-	# 	icon = xingdong
-	# 	cost = 0
-	# 	ai_will_do = {
-	# 		factor = 0
-	# 	}
-	# 	visible = {
-	# 		is_debug = yes
-	# 		is_ai = no
-	# 	}
-	# 	complete_effect = {
-	# 		mio:az_DOH_railway_organization = {
-	# 			complete_mio_trait = DOH_zhiyuanzhuangbei_baozhanghouqin_trait
-	# 		}
-	# 	}
-	# }
+	DOH_debug_8 = {
+		icon = xingdong
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			is_debug = yes
+			is_ai = no
+		}
+		complete_effect = {
+			set_autonomy = {
+				target = CHY
+				autonomy_state = doh_fanshu
+			}
+		}
+	}
+
+	DOH_debug_9 = {
+		icon = xingdong
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			is_debug = yes
+			is_ai = no
+		}
+		complete_effect = {
+			DOH = {
+				complete_national_focus = DOH_chaogongzhidu
+				country_event = DOH_event.20
+			}
+			CHY = {
+				complete_national_focus = CHY_kuangredekuozhangzhuyi				
+			}
+		}
+	}
+	DOH_debug_10 = {
+		icon = xingdong
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			is_debug = yes
+			is_ai = no
+		}
+		complete_effect = {
+			DOH = {
+				country_event = DOH_event.20
+			}
+			CHY = {
+				complete_national_focus = CHY_kuangredekuozhangzhuyi				
+			}
+		}
+	}
 }
 
 DOH_duiwaitouzi_decision_category = {

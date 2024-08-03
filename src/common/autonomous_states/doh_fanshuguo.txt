@@ -1,24 +1,26 @@
 autonomy_state = {
 	id = doh_fanshu
-	default = no
+	default = yes
 	is_puppet = no
-	min_freedom_level = 0.9
 	manpower_influence = 0.5
 	use_overlord_color = yes
 	rule = {
 		can_not_declare_war = yes
 		can_decline_call_to_war = no
-		can_be_spymaster = no
 		contributes_operatives = yes
-		# can_send_volunteers = yes
-		# can_puppet = yes
+		can_puppet = yes
 	}
-	
+	min_freedom_level = 0
 	modifier = {
 		can_master_build_for_us = 1
 		master_ideology_drift = 1
         faction_trade_opinion_factor = 1
 		opinion_gain_monthly_same_ideology_factor = 0.2
+		puppet_cost_factor = -0.3
+		overlord_trade_cost_factor = -0.5
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.1
+		production_speed_buildings_factor = 0.2
 	}
 	
 	ai_subject_wants_higher = {
@@ -31,7 +33,7 @@ autonomy_state = {
 
 	allowed = {
 		OR = {
-			OVERLORD = { original_tag = DOH }
+			OVERLORD = { tag = DOH }
 			AND = {
 				DOH = {
 					has_completed_focus = DOH_cijichaogongzhongxin
@@ -40,11 +42,22 @@ autonomy_state = {
 			}
 		}
 	}
-
+	allowed_levels_filter = {
+		doh_fanshu
+	}
     can_take_level = {
 		always = no
 	}
 	can_lose_level = {
 		always = no
+	}
+	use_for_peace_conference_weight = {
+		base = 0
+		modifier = {
+			add = 10000
+			DOH = {
+				has_completed_focus = DOH_chaogongzhidu
+			}
+		}
 	}
 }

@@ -468,6 +468,19 @@ doh_kexueyuan_effect = {
 	set_variable = {
 		shared_speed_factor = DOH.num_subjects
 	}
+	if = {
+		limit = {
+			country_exists = DH1
+			DH1 = {
+				has_completed_focus = DH1_qianjin
+				controls_state = 323
+				controls_state = 324
+			}
+		}
+		add_to_variable = {
+			shared_speed_factor = 2
+		}
+	}
 	multiply_variable = {
 		shared_speed_factor = 0.16
 	}
@@ -507,49 +520,76 @@ doh_kexueyuan_effect = {
 	}
 }
 
-# d_DOH_fanshu_add_effect = {
-# 	every_country = {
-# 		limit = {
-# 			has_autonomy_state = doh_fanshu
-# 		}
-# 		set_variable = {
-# 			THIS.zizhichengdu = THIS.autonomy_ratio
-# 		}
-# 		multiply_variable = {
-# 			THIS.zizhichengdu = -1
-# 		}
-# 		add_to_variable = {
-# 			THIS.zizhichengdu = 1
-# 		}
-# 		multiply_variable = {
-# 			THIS.zizhichengdu = 0.3
-# 		}
-# 		add_dynamic_modifier = {
-# 			modifier = az_doh_fanshu_modifier
-# 			scope = THIS.overlord
-# 		}
-# 	}
-# }
-# d_DOH_fanshu_refresh_effect = {
-# 	every_country = {
-# 		limit = {
-# 			has_autonomy_state = doh_fanshu
-# 		}
-# 		set_variable = {
-# 			THIS.zizhichengdu = THIS.autonomy_ratio
-# 		}
-# 		multiply_variable = {
-# 			THIS.zizhichengdu = -1
-# 		}
-# 		add_to_variable = {
-# 			THIS.zizhichengdu = 1
-# 		}
-# 		multiply_variable = {
-# 			THIS.zizhichengdu = 0.3
-# 		}
-# 	}
-# }
+d_DOH_fanshu_add_effect = {
+	every_country = {
+		limit = {
+			has_autonomy_state = doh_fanshu
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = az_doh_fanshu_modifier
+				}
+			}
+		}
+		add_dynamic_modifier = {
+			modifier = az_doh_fanshu_modifier
+			#scope = THIS.overlord
+		}
+	}
+}
+d_DOH_fanshu_refresh_effect = {
+	every_country = {
+		limit = {
+			has_dynamic_modifier = {
+				modifier = az_doh_fanshu_modifier
+			}
+		}
+		set_variable = {
+			THIS.zizhichengdu = THIS.autonomy_ratio
+		}
+		multiply_variable = {
+			THIS.zizhichengdu = -1
+		}
+		add_to_variable = {
+			THIS.zizhichengdu = 1
+		}
+		multiply_variable = {
+			THIS.zizhichengdu = 0.4
+		}
+	}
+}
 
+d_DOH_fanshu_reload_effect = {
+	every_country = {
+		limit = {
+			DOH = {
+				has_completed_focus = DOH_chaogongtixi
+			}
+			is_subject_of = DOH
+			NOT = {
+				has_autonomy_state = doh_fanshu
+			}
+		}
+		set_autonomy = {
+			target = THIS
+			autonomy_state = doh_fanshu
+		}
+	}
+	every_country = {
+		limit = {
+			DOH = {
+				has_completed_focus = DOH_cijichaogongzhongxin
+			}
+			is_subject = yes
+			OVERLORD = {
+				has_autonomy_state = doh_fanshu
+			}
+		}
+		set_autonomy = {
+			target = THIS
+			autonomy_state = doh_fanshu
+		}
+	}
+}
 
 DOH_neibufenqi_jianqin_effect = {
 	multiply_variable = {
