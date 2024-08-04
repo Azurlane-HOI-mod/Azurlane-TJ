@@ -762,30 +762,39 @@ on_actions = {
 	on_unit_leader_level_up = {
 		effect = {
 			#约克城
-			if = {
-				limit = {
-					is_character = BYG_yuekecheng
-					skill > 4
-					skill < 6
+			every_country = {
+				BYG_yuekecheng = {
+					if = {
+						limit = {
+							skill > 4
+							skill < 6
+							NOT = {
+								has_character_flag = BYG_yuekecheng_upgrade_flag
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/BYG/yuekecheng2.png"} 
+							civilian = { large ="gfx/leaders/BYG/yuekecheng2.png" } 
+						}
+						set_character_flag = BYG_yuekecheng_upgrade_flag
+						unit_leader_event = getzhg_event.2701
+					}
 				}
-				set_portraits = { 
-					army = { large ="gfx/leaders/BYG/yuekecheng2.png"} 
-					civilian = { large ="gfx/leaders/BYG/yuekecheng2.png" } 
+				#哈曼
+				BYG_haman = {
+					if = {
+						limit = {
+							is_character = BYG_haman
+							skill > 4
+							skill < 6
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/BYG/haman2.png"} 
+							civilian = { large ="gfx/leaders/BYG/haman2.png" } 
+						}
+						unit_leader_event = getzhg_event.2702
+					}					
 				}
-				unit_leader_event = getzhg_event.2701
-			}
-			#哈曼
-			if = {
-				limit = {
-					is_character = BYG_haman
-					skill > 4
-					skill < 6
-				}
-				set_portraits = { 
-					army = { large ="gfx/leaders/BYG/haman2.png"} 
-					civilian = { large ="gfx/leaders/BYG/haman2.png" } 
-				}
-				unit_leader_event = getzhg_event.2702
 			}
 		}  
 	}
