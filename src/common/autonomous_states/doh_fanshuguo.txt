@@ -38,7 +38,9 @@ autonomy_state = {
 				DOH = {
 					has_completed_focus = DOH_cijichaogongzhongxin
 				}
-				has_autonomy_state = doh_fanshu
+				OVERLORD = {
+					has_autonomy_state = doh_fanshu
+				}
 			}
 		}
 	}
@@ -55,8 +57,18 @@ autonomy_state = {
 		base = 0
 		modifier = {
 			add = 10000
-			DOH = {
-				has_completed_focus = DOH_chaogongzhidu
+			AND = {
+				DOH = {
+					has_completed_focus = DOH_chaogongzhidu
+				}
+				OR = {
+					FROM = {
+						tag = DOH
+					}
+					FROM = {
+						has_autonomy_state = doh_fanshu
+					}
+				}
 			}
 		}
 	}
