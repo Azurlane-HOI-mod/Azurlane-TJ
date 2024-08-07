@@ -117,3 +117,56 @@ BFL_the_politburo_good_dynamic_modifier = {
 		political_advisor_cost_factor = BFL_the_politburo_political_advisor_cost_factor #-0.15 -> Freedom of Debate, Unity of Action
 		opinion_gain_monthly_same_ideology_factor = BFL_the_politburo_opinion_gain_monthly_same_ideology_factor #0.25 -> The Construction of Communism
 	}
+TIX_shusifangyustate = {
+	enable = { 
+		always = yes
+	}
+	remove_trigger = {
+		date > 1945.4.1
+	}
+	icon = GFX_modifiers_FIN_weapon_caches
+	army_core_attack_factor = 0.5
+	army_core_defence_factor = 2
+	army_org_factor = 0.1
+	land_reinforce_rate = 0.1
+	attrition = -0.4
+}
+
+TIX_xixianfangong = {
+	enable = { 
+		always = yes
+	}
+	remove_trigger = {
+		date > 1945.4.1
+	}
+	icon = GFX_modifiers_SOV_invaders_must_die
+	army_attack_factor = 0.5
+	army_defence_factor = 0.5
+	army_morale_factor = 0.1
+	attrition = -0.5
+}
+
+TIX_dongxianfangong = {
+	enable = { 
+		always = yes
+	}
+	remove_trigger = {
+		date > 1945.4.1
+	}
+	icon = GFX_modifiers_SOV_invaders_must_die
+	army_attack_factor = 0.75
+	army_defence_factor = 0.75
+	supply_consumption_factor = -0.2
+	attrition = -0.4
+}
+
+TIX_touruzuizhongbingqi = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_ETH_state_development
+	army_core_attack_factor = 1
+	army_core_defence_factor = 3
+	land_reinforce_rate = 0.1
+	attrition = -0.4
+}

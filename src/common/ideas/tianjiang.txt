@@ -1,6 +1,36 @@
 ideas = {
 	# 天降独有民族精神，防覆盖
 	country = {
+		TIX_guomintujidui_idea = {
+			picture = generic_neglected_military
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				conscription = 0.2
+				conscription_factor = 0.3
+			}
+		}
+		TIX_bolinzhisheng_idea = {
+			picture = generic_fascist_workers
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = no
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.5
+				industrial_capacity_factory = 1
+				industrial_capacity_dockyard = 1
+				production_factory_max_efficiency_factor = 0.8
+				production_factory_efficiency_gain_factor = 2
+			}
+		}
 		BFL_weidadeweiguozhanzheng_ai = {
 			picture = ideas_tank_BFL
 			allowed_civil_war = {

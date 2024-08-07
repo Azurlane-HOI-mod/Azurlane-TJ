@@ -1629,6 +1629,32 @@ TIX_neiwu = {
 			add_ideas = TIX_zongtizhan
 		}
 	}
+	TIX_nvwushenxingdong_jy = {
+		icon = SWI_expand_covert_operations
+		available = {
+			has_government = fascism
+			date > 1942.1.1
+			has_war_with = BFL
+			has_war_with = HUJ
+			has_war_with = BYG
+			NOT = { controls_state = 16 }
+			BFL = {
+			surrender_progress < 0.3
+			}
+			not = { has_country_flag = tix_nvwushenxingdongyishshi }
+		}
+		visible = {
+			not = { has_country_flag = tix_nvwushenxingdongyishshi }
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = tix_nvwushenxingdongyishshi
+			country_event = az_tianjiang.274
+		}
+	}
 }
 
 HUJ_neiwu = {
@@ -10706,6 +10732,67 @@ TIX_zhenyadikangstate = {
 				custom_effect_tooltip = TIX_dikangbeizhenya_tip
 				add_compliance = 10
 				add_resistance = -20
+			}
+		}
+	}
+}
+
+HUJ_zhanzhengdezhongjie = {
+	yaerta_jueyi = {
+		icon = generic_political_discourse
+		available = {
+			date > 1941.6.1
+			tag = HUJ
+			controls_state = 126
+			has_war_with = TIX
+			HUJ = {	is_in_faction_with = BYG }
+			NOT = { has_war_with = BFL }
+			surrender_progress < 0.3
+			TIX = {
+			surrender_progress > 0.1
+			has_war_with = BYG
+			}
+			BFL = {
+			has_war_with = TIX
+			surrender_progress < 0.3
+			}
+		}
+		visible = {
+			tag = HUJ
+			has_war_with = TIX
+			date > 1940.6.1
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = az_tianjiang.83
+		}
+	}
+	kongzhiita_jueyi = {
+		icon = generic_political_address
+		available = {
+			date > 1941.6.1
+			tag = HUJ
+			controls_state = 126
+			surrender_progress < 0.3
+			is_faction_leader = yes
+			is_in_faction_with = ITA
+		}
+		visible = {
+			tag = HUJ
+			country_exists = ITA
+			date > 1940.6.1
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_autonomy = {
+			target = ITA
+			autonomy_state = autonomy_integrated_puppet
 			}
 		}
 	}

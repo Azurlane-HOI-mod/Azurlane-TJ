@@ -6238,4 +6238,289 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = TIX_zuihoudefanpu
+		icon = GFX_focus_generic_armored_air_support
+		x = 0
+		y = 2
+		cost = 2
+		relative_position_id = TIX_xunfujuxiong
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_country_flag = TIX_zuihoufanpu_flag
+		}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			every_state = {
+			limit = {
+			is_core_of = TIX
+			}
+			add_dynamic_modifier = {
+			modifier = TIX_shusifangyustate
+			scope = TIX
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_bolinzhisheng
+		icon = GFX_focus_generic_full_social_mobilization
+		x = -2
+		y = 1
+		cost = 4
+		prerequisite = {
+			focus = TIX_zuihoudefanpu
+		}
+		relative_position_id = TIX_zuihoudefanpu
+		continue_if_invalid = yes
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_country_flag = TIX_zuihoufanpu_flag
+			surrender_progress > 0.1
+			not = { controls_state = 28 }
+		}
+		bypass = {
+			not = { controls_state = 64 }
+		}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = TIX_bolinzhisheng_idea
+			36 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			7 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			35 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			6 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			34 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			8 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			29 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			785 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			18 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+			16 = {
+			add_dynamic_modifier = {
+			modifier = TIX_xixianfangong
+			scope = TIX
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_wuchabiezhengbing
+		icon = GFX_focus_generic_fascist_troops
+		x = 2
+		y = 1
+		cost = 4
+		prerequisite = {
+			focus = TIX_zuihoudefanpu
+		}
+		relative_position_id = TIX_zuihoudefanpu
+		continue_if_invalid = yes
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_country_flag = TIX_zuihoufanpu_flag
+			surrender_progress > 0.15
+			not = { controls_state = 5 }
+			not = { controls_state = 807 }
+		}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = TIX_guomintujidui_idea
+			807 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			86 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			87 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			98 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			762 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			10 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			90 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			88 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			97 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			92 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			814 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+			189 = {
+			add_dynamic_modifier = {
+			modifier = TIX_dongxianfangong
+			scope = TIX
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_chongfantiexuezongbu
+		icon = GFX_aflag_TIX
+		x = 2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = TIX_bolinzhisheng
+		}
+		prerequisite = {
+			focus = TIX_wuchabiezhengbing
+		}
+		relative_position_id = TIX_bolinzhisheng
+		continue_if_invalid = yes
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_country_flag = TIX_zuihoufanpu_flag
+			controls_state = 64
+			surrender_progress > 0.25
+		}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			64 = {
+			add_dynamic_modifier = {
+			modifier = TIX_touruzuizhongbingqi
+			scope = TIX
+			}
+			}
+			4 = {
+			add_dynamic_modifier = {
+			modifier = TIX_touruzuizhongbingqi
+			scope = TIX
+			}
+			}
+			52 = {
+			add_dynamic_modifier = {
+			modifier = TIX_touruzuizhongbingqi
+			scope = TIX
+			}
+			}
+			55 = {
+			add_dynamic_modifier = {
+			modifier = TIX_touruzuizhongbingqi
+			scope = TIX
+			}
+			}
+			58 = {
+			add_dynamic_modifier = {
+			modifier = TIX_touruzuizhongbingqi
+			scope = TIX
+			}
+			}
+		}
+	}
 }
