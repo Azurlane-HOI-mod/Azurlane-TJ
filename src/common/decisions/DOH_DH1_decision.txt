@@ -24,7 +24,9 @@ DOH_DH1_decision_category = {
 		remove_effect = {
 			custom_effect_tooltip = DOH_DH1_kaishiyuanzheng_tooltip
 			hidden_effect = {
-				DH1 = { set_country_flag = DOH_DH1_kaishiyuanzheng_flag }				
+				DH1 = {
+					set_country_flag = DOH_DH1_kaishiyuanzheng_flag
+				}
 			}
 		}
 	}
@@ -45,9 +47,11 @@ DOH_DH1_decision_category = {
 			}
 		}
 		cost = 100
-		days_remove = 10
+		days_remove = 1
 		remove_effect = {
-			DH1 = { add_ideas = DH1_AI_zhongshijingong }
+			DH1 = {
+				add_ideas = DH1_AI_zhongshijingong
+			}
 			set_country_flag = DOH_DH1_xiadalezhishi
 		}
 	}
@@ -68,9 +72,11 @@ DOH_DH1_decision_category = {
 			}
 		}
 		cost = 100
-		days_remove = 10
+		days_remove = 1
 		remove_effect = {
-			DH1 = { add_ideas = DH1_AI_zhongshifangyu }
+			DH1 = {
+				add_ideas = DH1_AI_zhongshifangyu
+			}
 			set_country_flag = DOH_DH1_xiadalezhishi
 		}
 	}
@@ -91,9 +97,11 @@ DOH_DH1_decision_category = {
 			}
 		}
 		cost = 100
-		days_remove = 10
+		days_remove = 1
 		remove_effect = {
-			DH1 = { add_ideas = DH1_AI_zhongshihaijun }
+			DH1 = {
+				add_ideas = DH1_AI_zhongshihaijun
+			}
 			set_country_flag = DOH_DH1_xiadalezhishi
 		}
 	}
@@ -114,9 +122,11 @@ DOH_DH1_decision_category = {
 			}
 		}
 		cost = 100
-		days_remove = 10
+		days_remove = 1
 		remove_effect = {
-			DH1 = { add_ideas = DH1_AI_zhongshikongjun }
+			DH1 = {
+				add_ideas = DH1_AI_zhongshikongjun
+			}
 			set_country_flag = DOH_DH1_xiadalezhishi
 		}
 	}
@@ -137,9 +147,11 @@ DOH_DH1_decision_category = {
 			}
 		}
 		cost = 100
-		days_remove = 10
+		days_remove = 1
 		remove_effect = {
-			DH1 = { add_ideas = DH1_AI_xiuyangshengxi }
+			DH1 = {
+				add_ideas = DH1_AI_xiuyangshengxi
+			}
 			set_country_flag = DOH_DH1_xiadalezhishi
 		}
 	}
@@ -158,7 +170,7 @@ DOH_DH1_decision_category = {
 			has_country_flag = DOH_DH1_xiadalezhishi
 		}
 		cost = 0
-		days_remove = 10
+		days_remove = 1
 		remove_effect = {
 			custom_effect_tooltip = "撤销所有下达的指示。"
 			hidden_effect = {
@@ -170,6 +182,63 @@ DOH_DH1_decision_category = {
 					remove_ideas = DH1_AI_zhongshifangyu
 				}
 				clr_country_flag = DOH_DH1_xiadalezhishi
+			}
+		}
+	}
+	DOH_zhenghe_decision = {
+		icon = idea_hun_treaty_of_trianon
+		cost = 500
+		days_remove = 3
+		target_array = subjects
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				NOT = {
+					OR = {
+						tag = BFL
+						tag = HUJ
+						tag = SAD
+						tag = TIX
+						tag = BYG
+						tag = CHY
+						tag = YUW
+						tag = DOH
+						tag = DH1
+						tag = BLI
+						tag = SIR
+						tag = SR1
+						tag = SR2
+						tag = SR3
+						tag = SR4
+					}
+				}
+			}
+		}
+		visible = {
+			OR = {
+				DH1 = {
+					has_completed_focus = DH1_qianjin
+				}
+				is_debug = yes
+			}
+		}
+		available = {
+			
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					is_fully_controlled_by = FROM
+				}
+				add_core_of = DH1
+			}
+		}
+		remove_effect = {
+			DH1 = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
+				}
 			}
 		}
 	}

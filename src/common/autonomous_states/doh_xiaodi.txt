@@ -41,7 +41,18 @@ autonomy_state = {
 		}
 	}
 	use_for_peace_conference_weight = {
-		base = 100
+		base = 0
+		modifier = {
+			add = 100
+			OR = {
+				FROM = {
+					tag = DH1
+				}
+				FROM = {
+					tag = DOH
+				}
+			}
+		}
 		modifier = {
 			add = -100
 			DOH = {

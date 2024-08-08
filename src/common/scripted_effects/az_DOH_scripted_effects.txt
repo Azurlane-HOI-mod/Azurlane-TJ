@@ -465,24 +465,33 @@ d_DOH_self_duiwaishuchu_init = {
 }
 
 doh_kexueyuan_effect = {
-	set_variable = {
-		shared_speed_factor = DOH.num_subjects
-	}
+	# set_variable = {
+	# 	shared_speed_factor = 0
+	# }
 	if = {
 		limit = {
-			country_exists = DH1
-			DH1 = {
-				has_completed_focus = DH1_qianjin
-				controls_state = 323
-				controls_state = 324
+			DOH = {
+				all_subject_countries = {
+					if = {
+						limit = {
+							num_of_factories > 0
+						}
+						add_to_temp_variable = {
+							shared_speed_factor_temp = num_of_factories
+						}
+					}
+				}
 			}
 		}
-		add_to_variable = {
-			shared_speed_factor = 2
+		set_variable = {
+			var:shared_speed_factor = shared_speed_factor_temp
 		}
 	}
 	multiply_variable = {
-		shared_speed_factor = 0.16
+		shared_speed_factor = 0.01
+	}
+	multiply_variable = {
+		shared_speed_factor = 0.03
 	}
 	every_country = {
 		if = {

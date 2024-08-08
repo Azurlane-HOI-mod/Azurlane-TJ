@@ -19,7 +19,7 @@
 		id = DH1_querentongshuai
 		icon = GFX_focus_generic_treaty
 		x = 20
-		y = 0
+		y = 1
 		cost = 7
 		
 		ai_will_do = {
@@ -614,7 +614,7 @@
 		}
 		x = -2
 		y = 2
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 7
@@ -678,7 +678,7 @@
 		}
 		x = -1
 		y = 2
-		cost = 10
+		cost = 4
 		
 		ai_will_do = {
 			base = 5
@@ -718,7 +718,7 @@
 		}
 		x = 0
 		y = 1
-		cost = 10
+		cost = 4
 		
 		ai_will_do = {
 			factor = 5
@@ -754,7 +754,7 @@
 		}
 		x = 1
 		y = 2
-		cost = 10
+		cost = 4
 		
 		ai_will_do = {
 			base = 5
@@ -791,7 +791,7 @@
 		}
 		x = 0
 		y = 1
-		cost = 10
+		cost = 4
 		
 		ai_will_do = {
 			factor = 5
@@ -856,7 +856,7 @@
 		}
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {
 			factor = 8
@@ -1362,7 +1362,7 @@
 					has_war = yes
 					surrender_progress > 0.1
 				}
-				date > 1939.1.1
+				date > 1938.3.1
 			}
 		}
 		
@@ -2555,50 +2555,58 @@
 		completion_reward = {
 			custom_effect_tooltip = DH1_xiananyang_tooltip
 			hidden_effect = {
-				annex_country = {
-					target = INS
-					transfer_troops = yes
-				}
-				annex_country = {
-					target = PHI
-					transfer_troops = yes
-				}
-				
-				transfer_state = 738
-				transfer_state = 668
-				transfer_state = 721
+				# annex_country = {
+				# 	target = INS
+				# 	transfer_troops = yes
+				# }
+				# annex_country = {
+				# 	target = PHI
+				# 	transfer_troops = yes
+				# }
 				transfer_state = 667
-				transfer_state = 335
-				transfer_state = 672
-				transfer_state = 733
-				transfer_state = 711
-				transfer_state = 523
-				transfer_state = 737
-				transfer_state = 634
-				transfer_state = 673
-				transfer_state = 334
-				transfer_state = 333
-				transfer_state = 669
-				transfer_state = 640
-				transfer_state = 288
-				transfer_state = 671
-				transfer_state = 670
-				transfer_state = 741
-				transfer_state = 286
-				transfer_state = 868
-				transfer_state = 869
-				transfer_state = 289
-				transfer_state = 724
-				transfer_state = 336
-				transfer_state = 623
-				transfer_state = 327
 				transfer_state = 626
-				transfer_state = 628
-				transfer_state = 625
-				transfer_state = 627
-				transfer_state = 624
-				transfer_state = 422
-				transfer_state = 281
+				transfer_state = 623
+				transfer_state = 333
+				transfer_state = 673
+				transfer_state = 668
+				transfer_state = 738
+				transfer_state = 669
+
+				# transfer_state = 738
+				# transfer_state = 668
+				# transfer_state = 721
+				# transfer_state = 667
+				# transfer_state = 335
+				# transfer_state = 672
+				# transfer_state = 733
+				# transfer_state = 711
+				# transfer_state = 523
+				# transfer_state = 737
+				# transfer_state = 634
+				# transfer_state = 673
+				# transfer_state = 334
+				# transfer_state = 333
+				# transfer_state = 669
+				# transfer_state = 640
+				# transfer_state = 288
+				# transfer_state = 671
+				# transfer_state = 670
+				# transfer_state = 741
+				# transfer_state = 286
+				# transfer_state = 868
+				# transfer_state = 869
+				# transfer_state = 289
+				# transfer_state = 724
+				# transfer_state = 336
+				# transfer_state = 623
+				# transfer_state = 327
+				# transfer_state = 626
+				# transfer_state = 628
+				# transfer_state = 625
+				# transfer_state = 627
+				# transfer_state = 624
+				# transfer_state = 422
+				# transfer_state = 281
 
 				add_state_core = 738
 				add_state_core = 668
@@ -2980,7 +2988,36 @@
 				}
 			}
 			custom_effect_tooltip = DH1_qianjin_tt
-			custom_effect_tooltip = "（未完待续）"
+			#custom_effect_tooltip = "（未完待续）"
 		}
 	}
+	# focus = {
+	# 	id = DH1_qianjin_2
+	# 	icon = GFX_fflag_DOH
+	# 	cost = 1
+	# 	relative_position_id = DH1_qianjin
+	# 	prerequisite = {
+	# 		focus = DH1_qianjin
+	# 	}
+	# 	prerequisite = {
+	# 		focus = DH1_baiyinghangkonggongye
+	# 	}
+	# 	prerequisite = {
+	# 		focus = DH1_beiliandazongshenzuozhan
+	# 	}
+	# 	prerequisite = {
+	# 		focus = DH1_xiananyang
+	# 	}
+	# 	prerequisite = {
+	# 		focus = DH1_nanyacidalu
+	# 	}
+	# 	x = 0
+	# 	y = 1
+	# 	available = {
+			
+	# 	}
+	# 	completion_reward = {
+
+	# 	}
+	# }
 }
