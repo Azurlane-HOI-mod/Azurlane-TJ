@@ -1079,7 +1079,7 @@ country_event = {
 					tag = DOH
 					ratio > 3
 				}
-				add = 1000
+				add = 10000
 			}
 		}
 		declare_war_on = {
@@ -1103,33 +1103,33 @@ country_event = {
 	option = {
 		name = DOH_loong_event.2002.a
 		ai_chance = {
-			base = 5
+			base = 1
 			modifier = {
 				naval_strength_ratio = {
 					tag = DOH
 					ratio < 0.3
 				}
-				add = 5
+				factor = 5
 			}
 			modifier = {
 				DOH = {
 					has_completed_focus = DOH_chaogongzhidu
 				}
-				add = 5
+				factor = 5
 			}
 			modifier = {
 				naval_strength_ratio = {
 					tag = DOH
 					ratio < 1
 				}
-				add = 5
+				factor = 5
 			}
 			modifier = {
 				strength_ratio = {
 					tag = DOH
 					ratio < 0.33
 				}
-				add = 10
+				factor = 10
 			}
 		}
 		effect_tooltip = {
