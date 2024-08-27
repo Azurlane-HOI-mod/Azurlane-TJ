@@ -312,7 +312,17 @@ characters={
 				small="gfx/interface/ideas/idea_mengbiliai.png"
 			}
 		}		
-
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = mengbiliai
+			
+			traits = { trait_mengbiliai }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -323,9 +333,9 @@ characters={
 			}
 			legacy_id = 08011
 			traits = { trickster xunyang_army }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
 			planning_skill = 1
 			logistics_skill = 2
 		}
@@ -639,7 +649,16 @@ characters={
 				small="gfx/interface/ideas/idea_daqinghuayu.png"
 			}
 		}		
-
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = qiye
+			traits = { trait_daqinghuayu }
+			
+			ai_will_do = {
+				factor = 2
+			}
+		}
 		navy_leader = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1386,6 +1405,679 @@ characters={
 			defense_skill = 3
 			planning_skill = 3
 			logistics_skill = 4
+		}
+	}
+	BYG_malani = {
+		name = BYG_malani
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/malani.png"
+				small="gfx/interface/ideas/idea_malani.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BYG_luyisiweier = {
+		name = BYG_luyisiweier
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/luyisiweier.png"
+				small="gfx/interface/ideas/idea_luyisiweier.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	BYG_jinboli = {
+		name = BYG_jinboli
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/jinboli.png"
+				small="gfx/interface/ideas/idea_jinboli.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	BYG_bulisituoer = {
+		name = BYG_bulisituoer
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/bulisituoer.png"
+				small="gfx/interface/ideas/idea_bulisituoer.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BYG_bangkeshan = {
+		name = BYG_bangkeshan
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/bangkeshan.png"
+				small="gfx/interface/ideas/idea_bangkeshan.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  air_controller hangmu_navy }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+	BYG_biluokexi = {
+		name = BYG_biluokexi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/biluokexi.png"
+				small="gfx/interface/ideas/idea_bangkeshan.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BYG_bominghan = {
+		name = BYG_bominghan
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/bominghan.png"
+				small="gfx/interface/ideas/idea_bangkeshan.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_chaersiaosiben = {
+		name = BYG_chaersiaosiben
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/chaersiaosiben.png"
+				small="gfx/interface/ideas/idea_bangkeshan.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_danfo = {
+		name = BYG_danfo
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/danfo.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BYG_gelunbiya = {
+		name = BYG_gelunbiya
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/gelunbiya.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_duli = {
+		name = BYG_duli
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/duli.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 3
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BYG_hufeng = {
+		name = BYG_hufeng
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/hufeng.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BYG_jialifuniya = {
+		name = BYG_jialifuniya
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/jialifuniya.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_jiqi = {
+		name = BYG_jiqi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/jiqi.png"
+				small="gfx/interface/ideas/idea_daqinghuayu.png"
+			}
+		}		
+
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { seawolf qianting_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 4
+		}
+	}
+	BYG_keluoladuo = {
+		name = BYG_keluoladuo
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/keluoladuo.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_kunxi = {
+		name = BYG_kunxi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/kunxi.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	BYG_kupo = {
+		name = BYG_kupo
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/kupo.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_linuo = {
+		name = BYG_linuo
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/linuo.png"
+				small="gfx/interface/ideas/idea_linuo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BYG_masazhusai = {
+		name = BYG_masazhusai
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/masazhusai.png"
+				small="gfx/interface/ideas/idea_linuo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	BYG_nigulasi = {
+		name = BYG_nigulasi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/nigulasi.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_pulinsidun = {
+		name = BYG_pulinsidun
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/pulinsidun.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_saqieer = {
+		name = BYG_saqieer
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/saqieer.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_sipengsi = {
+		name = BYG_sipengsi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/sipengsi.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_tiannaxi = {
+		name = BYG_sipengsi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/tiannaxi.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BYG_weiqita = {
+		name = BYG_weiqita
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/weiqita.png"
+				small="gfx/interface/ideas/idea_mengbiliai.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BYG_wensensi = {
+		name = BYG_wensensi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/wensensi.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	BYG_xifunijiya = {
+		name = BYG_xifunijiya
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/xifunijiya.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BYG_ximusi = {
+		name = BYG_ximusi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/ximusi.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 		}
 	}
 }

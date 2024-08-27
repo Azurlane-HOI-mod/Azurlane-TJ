@@ -1059,8 +1059,8 @@ characters={
 		name = YUW_leimaer
 		portraits={
 			army = {
-				large="gfx/leaders/YUW/leimaer.png"
-				#small="gfx/interface/ideas/idea_leimaer.png"
+				large="gfx/leaders/YUW/lemaer.png"
+				small="gfx/interface/ideas/idea_lemaer.png"
 			}
 		}
 
@@ -1189,8 +1189,8 @@ characters={
 		name = YUW_xufolun
 		portraits={
 			army = {
-				large="gfx/leaders/YUW/xufolun.png"
-				#small="gfx/interface/ideas/idea_xufolun.png"
+				large="gfx/leaders/YUW/xvkufu.png"
+				small="gfx/interface/ideas/idea_xvkufu.png"
 			}
 		}
 
@@ -1367,6 +1367,78 @@ characters={
 			defense_skill = 3
 			planning_skill = 5
 			logistics_skill = 3
+		}
+	}
+	YUW_beiyade = {
+		name = YUW_beiyade
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/beiyade.png"
+				small="gfx/interface/ideas/idea_buleisite.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 2
+		}
+	}
+	YUW_guogan = {
+		name = YUW_guogan
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/guogan.png"
+				small="gfx/interface/ideas/idea_buleisite.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	YUW_sitelasibao = {
+		name = YUW_sitelasibao
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/sitelasibao.png"
+				small="gfx/interface/ideas/idea_buleisite.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
 		}
 	}
 }

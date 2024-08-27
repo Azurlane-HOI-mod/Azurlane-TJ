@@ -881,4 +881,28 @@ characters={
 			logistics_skill = 3
 		}
 	}
+	SAD_nabulesi = {
+		name = SAD_nabulesi
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/nabulesi.png"
+				#small="gfx/interface/ideas/idea_boerzhanuo.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 5
+		}
+	}
 }

@@ -62,9 +62,9 @@ characters={
 				}
 			}
 			traits = { winter_expert offensive_doctrine expert_delegator zhanlie_army }
-			skill = 4	
-			attack_skill = 2
-			defense_skill = 2
+			skill = 6	
+			attack_skill = 7
+			defense_skill = 6
 			planning_skill = 4
 			logistics_skill = 5
 		}
@@ -287,11 +287,11 @@ characters={
 			}
 			legacy_id = 05006
 			traits = { spotter seawolf quzhu_navy }
-			skill = 4
-			attack_skill = 5
-			defense_skill = 2
-			maneuvering_skill = 3
-			coordination_skill = 3
+			skill = 5
+			attack_skill = 6
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 4
 		}
 	}
 	BFL_weiyan = {
@@ -842,7 +842,11 @@ characters={
                 if = { 	limit = { tag = BFL }			
 				NOT = { has_completed_focus = BFL_wuhaishenxianghua } 
 				NOT = { has_country_flag = BFL_zzpianzhidu_on }
+				or = {
 				has_completed_focus = BFL_24
+				has_completed_focus = BFL_60
+				has_completed_focus = BFL_42
+				}
 		    }
 			}
 		}
@@ -1020,6 +1024,55 @@ characters={
 			defense_skill = 3
 			planning_skill = 2
 			logistics_skill = 3
+		}
+	}
+	BFL_gubixuefu = {
+		name = BFL_gubixuefu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/gubixuefu.png"
+				small="gfx/interface/ideas/idea_gubixuefu.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BFL_naximofu = {
+		name = BFL_naximofu
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/naximofu.png"
+				small="gfx/interface/ideas/idea_tashigan.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_navy }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 5
+			maneuvering_skill = 4
+			coordination_skill = 5
 		}
 	}
 }
