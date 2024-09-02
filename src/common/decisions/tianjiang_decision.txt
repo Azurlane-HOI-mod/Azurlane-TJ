@@ -1408,14 +1408,14 @@ TIX_neiwu = {
 			is_ai = no
 		}
 		available = {
-			has_completed_focus = TIX_tiexuedehansi
+			has_completed_focus = TIX_chongjiangongye
 			OR = {
 				has_completed_focus = TIX_tiexuededaolu
 				has_completed_focus = TIX_hexiexintiexue
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -1633,6 +1633,10 @@ TIX_neiwu = {
 		icon = SWI_expand_covert_operations
 		available = {
 			has_government = fascism
+			has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+			}
 			date > 1942.1.1
 			has_war_with = BFL
 			has_war_with = HUJ
@@ -9113,7 +9117,7 @@ TIX_bsmmanyidu = {
 		priority = 100
 		visible = {
 			has_country_leader = {
-				name = "俾斯麦"
+				character = TIX_bisimai
 				ruling_only = yes
 			}
 		}
@@ -10806,6 +10810,94 @@ HUJ_zhanzhengdezhongjie = {
 			target = ITA
 			autonomy_state = autonomy_integrated_puppet
 			}
+		}
+	}
+}
+
+TIX_quanlipingheng = {
+	TIX_tishijueyi_qlph = {
+		icon = eng_propaganda_campaigns
+		cost = 0
+		available = {
+		always = no
+		}
+		complete_effect = {
+		custom_effect_tooltip = TIX_tips_qlph
+		}
+	}
+	TIX_qlph_ai = {
+		icon = eng_propaganda_campaigns
+		cost = 0
+		visible = {
+		is_ai = yes
+		}
+		available = {
+		is_ai = yes
+		has_idea = TIX_fkAIbuff
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = TIX_balance
+				value = -0.65
+			}
+		}
+	}
+	TIX_zhichiguofangjun = {
+		icon = generic_tank
+		cost = 50
+		visible = {
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+			}
+		}
+		available = {
+		}
+		days_re_enable = 120
+		fire_only_once = no
+		complete_effect = {
+			add_power_balance_value = {
+				id = TIX_balance
+				value = -0.05
+			}
+		}
+		days_remove = 90
+		modifier = {
+			power_balance_weekly = -0.003
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	TIX_zhichidangweijun = {
+		icon = generic_assassination
+		cost = 50
+		visible = {
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+			}
+		}
+		available = {
+		}
+		days_re_enable = 120
+		fire_only_once = no
+		complete_effect = {
+			add_power_balance_value = {
+				id = TIX_balance
+				value = 0.05
+			}
+		}
+		days_remove = 90
+		modifier = {
+			power_balance_weekly = 0.003
+		}
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

@@ -1,0 +1,104 @@
+TIX_balance = {
+	initial_value = 0
+	left_side = TIX_left_side
+	right_side = TIX_right_side
+	decision_category = TIX_quanlipingheng
+	range = {
+		id = TIX_qiaomiaopingheng
+		min = -0.1
+		max = 0.1
+		modifier = {
+			political_power_gain = 0.5
+		}
+	}
+	side = {
+		id = TIX_left_side
+		icon = GFX_bop_aijier
+		range = {
+			id = TIX_zhenglunbuduan
+			min = -0.5
+			max = -0.1
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				planning_speed = 0.3
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = TIX_hunluanbukan
+			min = -0.95
+			max = -0.5
+			modifier = {
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+				planning_speed = 0.5
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = TIX_bengkuibianyuan
+			min = -1.0
+			max = -0.95
+			modifier = {
+				army_attack_factor = 0.35
+				army_defence_factor = 0.35
+				planning_speed = 0.8
+			}
+			on_activate = {
+				country_event = az_tianjiang.280
+			}
+		}
+	}
+	side = {
+		id = TIX_right_side
+		icon = GFX_bop_feiteliekaer
+		range = {
+			id = TIX_yizhangquanwei
+			min = 0.1
+			max = 0.5
+			modifier = {
+				political_power_factor = 0.1
+				army_org_factor = 0.2
+				army_morale_factor = 0.2
+				land_reinforce_rate = 0.02
+			}
+		}
+		range = {
+			id = TIX_kuodaquanli
+			min = 0.5
+			max = 0.95
+			modifier = {
+				political_power_factor = 0.15
+				army_org_factor = 0.3
+				army_morale_factor = 0.3
+				land_reinforce_rate = 0.04
+			}
+		}
+		range = {
+			id = TIX_junzhengducai
+			min = 0.95
+			max = 1
+			modifier = {
+				political_power_factor = 0.25
+				army_org_factor = 0.5
+				army_morale_factor = 0.5
+				land_reinforce_rate = 0.08
+			}
+			on_activate = {
+				country_event = az_tianjiang.282
+			}
+		}
+	}	
+		
+}

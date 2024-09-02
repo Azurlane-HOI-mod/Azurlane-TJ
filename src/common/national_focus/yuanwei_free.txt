@@ -450,7 +450,6 @@ focus_tree = {
 		relative_position_id = YUW_fangongzhunbei 
 		available_if_capitulated = yes
 		available = {
-			is_ai = no
 			controls_state = 16
 			OR = {
 			has_capitulated = yes
@@ -464,7 +463,13 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			set_country_flag = YUW_huiguibentu
+			country_event = az_tianjiang.279
+			if = {
+			limit = {
+			is_ai = no
+			}
 			load_focus_tree = yuanwei_focus
+			}
 		}
 	}
 	

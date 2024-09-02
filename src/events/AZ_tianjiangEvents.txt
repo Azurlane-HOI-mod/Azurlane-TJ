@@ -7673,6 +7673,10 @@ country_event = {
 	desc = "俾斯麦认为我们的参谋部效率过于低下，她决定亲自指挥部队。"
 	picture = GFX_aze_txluoen2
 	trigger = {
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
 		check_variable = {
 			var = tix_bsmmanyiduzhi
 			value = -8
@@ -7735,6 +7739,10 @@ country_event = {
 		any_country = {
 			has_war_with = TIX
 			is_major = yes
+		}
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
 		}
 		has_global_flag = MOD_azurlane_tianjiangjianniang
 	}
@@ -8595,6 +8603,10 @@ country_event = {
 	trigger = {
 		tag = TIX
 		has_government = fascism
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
 		date > 1943.1.1
 		has_war_with = BFL
 		has_war_with = HUJ
@@ -8604,6 +8616,7 @@ country_event = {
 		surrender_progress < 0.3
 		}
 		not = { has_country_flag = tix_nvwushenxingdongyishshi }
+		
 	}
 	fire_only_once = yes
 	immediate = {
@@ -8618,6 +8631,7 @@ country_event = {
 			var = tix_bsmmanyiduzhi
 			value = -15
 		}
+		remove_power_balance = { id = TIX_balance }
 		BFL = {
 		country_event = az_tianjiang.242
 		}
@@ -9438,6 +9452,7 @@ country_event = {
 		name = "军队会带领我们渡过难关！"
 		add_stability = -0.5
 		add_war_support = -0.5
+		remove_power_balance = { id = TIX_balance }
 		TIX_aijier = {
 			add_country_leader_role = {
 			country_leader = {
@@ -9470,6 +9485,7 @@ country_event = {
 		name = "元帅将确保国家的稳定！"
 		add_stability = -0.5
 		add_war_support = -0.5
+		remove_power_balance = { id = TIX_balance }
 		TIX_aogusite = {
 			add_country_leader_role = {
 			country_leader = {
@@ -9502,6 +9518,7 @@ country_event = {
 		name = "俾斯麦自有人选！"
 		add_stability = -0.5
 		add_war_support = -0.5
+		remove_power_balance = { id = TIX_balance }
 		TIX_laibixi = {
 			add_country_leader_role = {
 			country_leader = {
@@ -9600,5 +9617,479 @@ news_event = {
 	
 	option = {
 		name = "会赢吗"
+	}
+}
+
+country_event = {
+	id = az_tianjiang.278
+	title = "国防军与党卫军的冲突"
+	desc = az_tianjiang.278.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "无需担心"
+		set_power_balance = {
+				id = TIX_balance
+				left_side = TIX_left_side				# will keep the last set side if not specified
+				right_side = TIX_right_side				# will keep the last set side if not specified
+				set_default = yes				# whether or not to reset the power balance to the initial value, default = no
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.279
+	title = "领导层换任"
+	desc = "我们的领导人虽然带领我们解放了祖国，但她也彻底厌倦了战争与政治，也许我们该让另一位合适的舰娘来重建鸢尾。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "让伴尔维来吧"
+		YUW_banerwei = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = conservatism
+			traits = {
+				 trait_psh_xczy
+			}
+			}
+			promote_leader = yes
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.280
+	title = "腐败蔓延"
+	desc = "党卫军向元首发出了警告：由于国防军的影响力过大，军队内部已经开始产生更多的腐败，腓特烈卡尔希望即使制止腐败继续蔓延下去。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "听从她的建议"
+		add_power_balance_value = {
+				id = TIX_balance
+				value = 1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我并没有感觉到军队懈怠"
+		hidden_effect = {
+		country_event = { id = az_tianjiang.281 days = 7 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.281
+	title = "武装政变"
+	desc = "急报！党卫军对元首发起了武装政变，由于我们大部分军队都在外征战，内部完全依靠党卫军管治，我们几乎没有可用的部队来对抗党卫军！"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "俾斯麦凭借强大的个人实力消灭了叛军"
+		remove_power_balance = { id = TIX_balance }
+		add_political_power = -500
+		add_stability = -0.5
+		add_war_support = -0.8
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "俾斯麦不得不向党卫军妥协，成为台前的傀儡元首"
+		remove_power_balance = { id = TIX_balance }
+		TIX_feiteliekaer = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = nazism
+			traits = {
+				
+			}
+			}
+			promote_leader = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.282
+	title = "一人之下，万人之上"
+	desc = "党卫军的权利已经过度膨胀，多名国防军舰娘联名提议限制党卫军与其头目腓特烈·卡尔的权利，她们担心这可能会影响到前线战事。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "接受她们的请求"
+		add_power_balance_value = {
+				id = TIX_balance
+				value = -1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "这完全是无稽之谈"
+		hidden_effect = {
+		country_event = { id = az_tianjiang.283 days = 7 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.283
+	title = "头号目标俾斯麦"
+	desc = "一名身份可疑的舰娘径直走向了俾斯麦放置舰装的位置，并将一枚奇怪的物体塞了进去....这一切都被远处的一名蛮啾看到，它的决定将改变整个铁血的命运。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "是心智魔方制成的炸药！"
+		remove_power_balance = { id = TIX_balance }
+		add_timed_idea = { days = 1095 idea = TIX_junduibuzhong  }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "黄鸡不懂揪"
+		remove_power_balance = { id = TIX_balance }
+		TIX_xingdengbao = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				trait_psh_huanyuliesha
+				trait_psh_linshiyuanshou
+			}
+			}
+			promote_leader = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.284
+	title = "战争彻底爆发"
+	desc = "我们与碧蓝航线之间的战争彻底爆发，发展了多年的国防军终于得以施展拳脚。"
+	picture = GFX_aze_dai
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		date > 1939.1.1
+		tag = TIX
+		has_war_with = YUW
+		has_war_with = HUJ
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = "冲鸭"
+		custom_effect_tooltip = tix_qlphevent_tips1
+		add_ideas = TIX_gfjyoushi_idea
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.285
+	title = "初期战事结束"
+	desc = "我们轻松击败了鸢尾，这离不开国防军的优秀表现，但接下来的占领期内我们就需要党卫军的力量了。"
+	picture = GFX_aze_dai
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		tag = TIX
+		has_war_with = YUW
+		has_war_with = HUJ
+		controls_state = 16
+		YUW = {
+		has_capitulated = yes
+		}
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = "准备进行海狮计划"
+		custom_effect_tooltip = tix_qlphevent_tips2
+		swap_ideas = {
+			remove_idea = TIX_gfjyoushi_idea
+			add_idea = TIX_dwjyoushi_idea
+		}
+		add_power_balance_value = {
+				id = TIX_balance
+				value = -0.1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.286
+	title = "战争进入中期"
+	desc = "占领期内各地反抗都被党卫军粉碎了。如今我们已经全面向北联开战，这是我们至今为止面对过的敌人中最为强大的一个。"
+	picture = GFX_aze_dai
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		tag = TIX
+		has_war_with = HUJ
+		has_war_with = BFL
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = "我们三个月就可以击败北联！"
+		set_country_flag = { flag = tix_qlph_vsbfltime days = 180 value = 1 }
+		custom_effect_tooltip = tix_qlphevent_tips3
+		swap_ideas = {
+			remove_idea = TIX_dwjyoushi_idea
+			add_idea = TIX_gfjyoushi_idea
+		}
+		add_power_balance_value = {
+				id = TIX_balance
+				value = 0.05
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.287
+	title = "战争陷入僵持阶段"
+	desc = "我们的军队在北联遭受了巨大的挫折，每前进一步都要付出巨大的伤亡。"
+	picture = GFX_aze_dai
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		date > 1942.1.1
+		not = { controls_state = 219 }
+		not = { controls_state = 217 }
+		tag = TIX
+		has_war_with = HUJ
+		has_war_with = BFL
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		not = { has_country_flag = tix_qlph_vsbfltime }
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = "我们不会失败！"
+		custom_effect_tooltip = tix_qlphevent_tips4
+		swap_ideas = {
+			remove_idea = TIX_gfjyoushi_idea
+			add_idea = TIX_dwjyoushi_idea
+		}
+		add_power_balance_value = {
+				id = TIX_balance
+				value = 0.1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.288
+	title = "战争进入后期"
+	desc = "我们的军队在北联遭受了巨大的挫折，每前进一步都要付出巨大的伤亡。"
+	picture = GFX_aze_dai
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		date > 1943.1.1
+		not = { controls_state = 219 }
+		not = { controls_state = 217 }
+		tag = TIX
+		has_war_with = BYG
+		has_war_with = HUJ
+		has_war_with = BFL
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		not = { has_country_flag = tix_qlph_vsbfltime }
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+	}
+	option = {
+		name = "战争还没有结束！"
+		custom_effect_tooltip = tix_qlphevent_tips5
+		swap_ideas = {
+			remove_idea = TIX_dwjyoushi_idea
+			add_idea = TIX_dwjyoushibig_idea
+		}
+		add_power_balance_value = {
+				id = TIX_balance
+				value = 0.2
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.289
+	title = "击败北联"
+	desc = "我们的军队终于击败了庞大的北方联合，国防军将享受无尽的荣誉！"
+	picture = GFX_aze_hit
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		tag = TIX
+		has_completed_focus = TIX_zhifujuxiong
+		or = {
+		BFL = { has_capitulated = yes }
+		BFL = { is_subject_of = TIX }
+		BFL = { country_exists = no }
+		}
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+	}
+	option = {
+		name = "这都是国防军的功劳"
+		custom_effect_tooltip = tix_qlphevent_tips6
+		add_power_balance_value = {
+				id = TIX_balance
+				value = -0.6
+		}
+		remove_ideas = TIX_dwjyoushi_idea
+		remove_ideas = TIX_dwjyoushibig_idea
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.290
+	title = "击败皇家"
+	desc = "海狮行动取得了成功，我们成功击败了皇家！"
+	picture = GFX_aze_hit
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		tag = TIX
+		has_completed_focus = TIX_danzehuozhanzheng
+		or = {
+		HUJ = { has_capitulated = yes }
+		HUJ = { is_subject_of = TIX }
+		HUJ = { country_exists = no }
+		}
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+	}
+	option = {
+		name = "这都是国防军的功劳"
+		custom_effect_tooltip = tix_qlphevent_tips7
+		add_power_balance_value = {
+				id = TIX_balance
+				value = -0.6
+		}
+		remove_ideas = TIX_dwjyoushi_idea
+		remove_ideas = TIX_dwjyoushibig_idea
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.291
+	title = "战争进入末期"
+	desc = "铁血的失败似乎已经是板上钉钉的事实了，我们已经无力回天...."
+	picture = GFX_aze_dai
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		date > 1943.1.1
+		not = { controls_state = 219 }
+		not = { controls_state = 217 }
+		tag = TIX
+		has_war_with = BYG
+		has_war_with = HUJ
+		has_war_with = BFL
+		has_war_with = YUW
+		not = { controls_state = 16 }
+		not = { controls_state = 206 }
+		has_government = fascism
+		has_completed_focus = TIX_tiexuededaolu
+		not = { has_country_flag = tix_qlph_vsbfltime }
+		has_country_leader = {
+			character = TIX_bisimai
+			ruling_only = yes
+		}
+	}
+	option = {
+		name = "我们还有最后的办法..."
+		custom_effect_tooltip = tix_qlphevent_tips8
+		add_power_balance_value = {
+				id = TIX_balance
+				value = 0.6
+		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 }
