@@ -1,23 +1,29 @@
-doh_fanshu_peace = {
-	enable = {
-        OR = {
-			AND = {
-				tag = DOH
-				has_completed_focus = DOH_chaogongzhidu
+peace_ai_desires = {
+	doh_fanshu_peace = {
+		peace_action_type = { puppet }
+		enable = {
+			FROM = {
+				OR = {
+					AND = {
+						tag = DOH
+						has_completed_focus = DOH_chaogongzhidu
+					}
+					has_autonomy_state = doh_fanshu
+				}
 			}
-			has_autonomy_state = doh_fanshu
 		}
-    }
-	puppet_all = {
-        base = 1000
-    }
-	puppet_state = {
-        base = 100
+		ai_desire = 1000
 	}
-	take_states = {
-		base = 0
-	}
-	annex = {
-        base = 0
+	doh_junfa_peace = {
+		peace_action_type = { take_states }
+		enable = {
+			FROM = {
+				tag = DOH
+			}
+			FROM.FROM.FROM = {
+				is_core_of = DOH
+			}
+		}
+		ai_desire = 10086
 	}
 }

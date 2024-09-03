@@ -145,6 +145,9 @@ DH1_decision_category = {
 			OR = {
 				controls_state = 605
 				any_allied_country = {
+					NOT = {
+						tag = DOH
+					}
 					controls_state = 605
 				}
 			}
@@ -171,6 +174,37 @@ DH1_decision_category = {
 						}
 						add_core_of = ROOT
 					}
+					custom_effect_tooltip = "移除所有远征军效果，远征决议将不可用。"
+					set_cosmetic_tag = DH1_xinanshibian
+					hidden_effect = {
+						remove_ideas = DH1_neizheng_1
+						remove_ideas = DH1_neizheng_11
+						remove_ideas = DH1_neizheng_111
+						remove_ideas = DH1_neizheng_2
+						remove_ideas = DH1_neizheng_21
+						remove_ideas = DH1_neizheng_211
+						remove_ideas = DH1_junshi_1
+						remove_ideas = DH1_junshi_11
+						remove_ideas = DH1_junshi_111
+						remove_ideas = DH1_qingsuanzhimingzhe_idea
+						remove_ideas = DH1_zhiyuanjun_idea
+						remove_ideas = DOH_ndhhsygs
+						remove_ideas = TIX_zjscl
+						remove_ideas = DH1_zousitongdao
+						remove_ideas = DH1_kuodajunxuyunshu
+						remove_ideas = DH1_idea_baohunpei
+						remove_ideas = DH1_tongyiyuyan
+						remove_ideas = DH1_idea_qinfenhaoxue
+						remove_ideas = DH1_idea_naire
+						remove_ideas = DH1_zhonghaodongxi
+						remove_ideas = DH1_zhonghuaidongxi
+						remove_ideas = DH1_ziligengshengdejundui
+						remove_ideas = DH1_baozhangjunfei
+						DH1_79shi = {
+							set_nationality = TAN
+						}
+					}
+					add_ideas = DH1_deguobuzheng_1
 				}
 				set_country_flag = DH1_xinanshibian_success
 			}
@@ -180,6 +214,7 @@ DH1_decision_category = {
 				}
 				DH1 = {
 					puppet = DOH
+					set_country_flag = DH1_xinanshibian_success
 				}
 			}
 			if = {
@@ -201,10 +236,40 @@ DH1_decision_category = {
 						add_core_of = ROOT
 					}
 				}
+				custom_effect_tooltip = "移除所有远征军效果，远征决议将不可用。"
+				hidden_effect = {
+					remove_ideas = DH1_neizheng_1
+						remove_ideas = DH1_neizheng_11
+						remove_ideas = DH1_neizheng_111
+						remove_ideas = DH1_neizheng_2
+						remove_ideas = DH1_neizheng_21
+						remove_ideas = DH1_neizheng_211
+						remove_ideas = DH1_junshi_1
+						remove_ideas = DH1_junshi_11
+						remove_ideas = DH1_junshi_111
+						remove_ideas = DH1_qingsuanzhimingzhe_idea
+						remove_ideas = DH1_zhiyuanjun_idea
+						remove_ideas = DOH_ndhhsygs
+						remove_ideas = TIX_zjscl
+						remove_ideas = DH1_zousitongdao
+						remove_ideas = DH1_kuodajunxuyunshu
+						remove_ideas = DH1_idea_baohunpei
+						remove_ideas = DH1_tongyiyuyan
+						remove_ideas = DH1_idea_qinfenhaoxue
+						remove_ideas = DH1_idea_naire
+						remove_ideas = DH1_zhonghaodongxi
+						remove_ideas = DH1_zhonghuaidongxi
+						remove_ideas = DH1_ziligengshengdejundui
+						remove_ideas = DH1_baozhangjunfei
+						DH1_79shi = {
+							set_nationality = TAN
+						}
+					}
 				CHY = {
 					puppet = DH1
 				}
 				set_country_flag = DH1_xinanshibian_success
+				add_ideas = DH1_deguobuzheng_2
 			}
 		}
 		timeout_effect = {

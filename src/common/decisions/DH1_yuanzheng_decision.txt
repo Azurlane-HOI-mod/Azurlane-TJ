@@ -53,6 +53,15 @@ DH1_decision_category = {
 		visible = {
 			ROOT = {
 				has_completed_focus = DH1_jingong
+				OR = {
+					NOT = {
+						has_country_flag = DH1_xinanshibian_success
+					}
+					AND = {
+						has_country_flag = DH1_xinanshibian_success
+						country_exists = DOH
+					}
+				}
 			}
 			FROM = {
 				exists = yes

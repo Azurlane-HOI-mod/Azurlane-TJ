@@ -1268,6 +1268,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+		available = {
+			NOT = {
+				has_idea = DH1_deguobuzheng_1
+			}
+			NOT = {
+				has_idea = DH1_deguobuzheng_2
+			}
+		}
 		completion_reward = {
 			country_event = DOH_event.1
 		}
@@ -1736,7 +1744,11 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 50
 			add_war_support = 0.2
-			DOH_yixian = {
+			every_character = {
+				limit = {
+					is_country_leader = yes
+					is_army_leader = yes
+				}
 				add_skill_level = 1
 				add_planning = 1
 				add_unit_leader_trait = brilliant_strategist
@@ -1807,7 +1819,14 @@ focus_tree = {
 				popularity = 0.1
 			}
 			add_political_power = 200
-			DOH_yixian = {
+			every_character = {
+				limit = {
+					is_country_leader = yes
+					OR = {
+						is_army_leader = yes
+						is_navy_leader = yes
+					}
+				}
 				getzhg_event_dixingtezhi_se = yes
 				getzhg_event_xidetezhi_se = yes
 			}
@@ -1906,7 +1925,17 @@ focus_tree = {
 				add_idea = DOH_guomuyixian_idea_2_yixianwansui
 			}
 			hidden_effect = {
-				news_event = aznews.13
+				if = {
+					limit = {
+						NOT = {
+							has_idea = DH1_deguobuzheng_1
+						}
+						NOT = {
+							has_idea = DH1_deguobuzheng_2
+						}
+					}
+					news_event = aznews.13
+				}
 			}
 		}
 	}
@@ -2069,6 +2098,15 @@ focus_tree = {
 									controls_state = 525
 								}
 								DOH = {
+									has_subject = CHY
+								}
+								DH1 = {
+									has_character = CHY_xuefeng
+								}
+								DH1 = {
+									controls_state = 525
+								}
+								DH1 = {
 									has_subject = CHY
 								}
 								NOT = {
