@@ -37,6 +37,7 @@ equipments = {
 			aluminium = 4
 			rubber = 1
 		}
+		
 		module_slots = {
 			fixed_main_weapon_slot = {
 				required = yes
@@ -190,6 +191,96 @@ equipments = {
 					plane_special_module_defense_turret
 				}
 			}
+		}
+		
+		module_count_limit = {
+			module = guided_anti_ship_missile
+			count < 2
+		}
+
+		module_count_limit = {
+			module = fixed_explosive_charge
+			count < 2
+		}
+
+		module_count_limit = {
+			module = self_sealing_fuel_tanks_small
+			count < 2
+		}
+
+		module_count_limit = {
+			module = non_strategic_materials_small
+			count < 2
+		}
+
+		module_count_limit = {
+			module = drop_tanks
+			count < 2
+		}
+
+		module_count_limit = {
+			module = dive_brakes_small
+			count < 2
+		}
+
+		module_count_limit = {
+			module = torpedo_mounting
+			count < 2
+		}
+
+		module_count_limit = {
+			module = tank_buster_1
+			count < 3
+		}
+
+		module_count_limit = {
+			module = tank_buster_2
+			count < 2
+		}
+
+		module_count_limit = {
+			module = small_bomb_bay
+			count < 3
+		}
+
+		module_count_limit = {
+			module = floats #can't put floats on carrier planes, that would be silly
+			count < 1
+		}
+
+		module_count_limit = {
+			module = recon_camera
+			count < 2
+		}
+
+		module_count_limit = {
+			category = nav_bomber_weapon
+			count < 2
+		}
+
+		module_count_limit = {
+			category = plane_special_module_bomb_sights
+			count < 2
+		}
+
+		module_count_limit = {
+			category = plane_special_module_radio_navigation
+			count < 2
+		}
+
+		module_count_limit = {
+			category = plane_special_module_air_ground_radar
+			count < 2
+		}
+
+		module_count_limit = {
+			category = plane_special_module_air_air_radar
+			count < 2
+		}
+
+		module_count_limit = {
+			category = plane_special_module_defense_turret
+			count < 2
 		}
 
 		default_modules = {
