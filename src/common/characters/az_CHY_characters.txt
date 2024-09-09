@@ -67,7 +67,20 @@ characters={
 			available = {
 				if = {
 					limit = { tag = CHY }
+					OR = {
 					has_completed_focus = CHY_sumi
+					has_completed_focus = CHY_chongyindeweilai
+					}
+				}
+
+			}
+			visible = {
+				if = {
+					limit = { tag = CHY }
+					OR = {
+					has_completed_focus = CHY_sumi
+					has_completed_focus = CHY_chongyindeweilai
+					}
 				}
 
 			}
@@ -124,7 +137,21 @@ characters={
 			available = {
 				if = {
 					limit = { tag = CHY }
+					OR = {
 					has_completed_focus = CHY_mingshidexiaomaipu
+					has_completed_focus = CHY_chongyindeweilai
+					}
+					NOT = { has_completed_focus = CHY_caifagaizao }
+				}
+
+			}
+			visible = {
+				if = {
+					limit = { tag = CHY }
+					OR = {
+					has_completed_focus = CHY_mingshidexiaomaipu
+					has_completed_focus = CHY_chongyindeweilai
+					}
 					NOT = { has_completed_focus = CHY_caifagaizao }
 				}
 
@@ -154,6 +181,12 @@ characters={
 					has_completed_focus = CHY_caifagaizao
 				}
 
+			}
+			visible = {
+				if = {
+					limit = { tag = CHY }
+					has_completed_focus = CHY_caifagaizao
+				}
 			}
 			traits = { trait_renmingongxiaoshe }
 
