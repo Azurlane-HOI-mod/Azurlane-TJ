@@ -237,8 +237,9 @@ DOH_dalianzaochuan_organization = {
 		equipment_bonus = {
 			build_cost_ic = -0.05
 			reliability = 0.15
-			max_strength = 0.2
+			max_strength = 0.1
 			surface_visibility = -0.1
+			armor_value = 0.10
 		}
 	}
 	add_trait = {
@@ -258,9 +259,11 @@ DOH_dalianzaochuan_organization = {
 		}
 		equipment_bonus = {
 			naval_light_gun_hit_chance_factor = 0.3
+			hg_attack = 0.1
 			naval_heavy_gun_hit_chance_factor = 0.3
-			surface_visibility = -0.3
+			surface_visibility = -0.10
 			night_penalty = -0.3
+			reliability = 0.15
 		}
 		on_complete = {
 			ROOT = {
@@ -382,12 +385,12 @@ DOH_hudong_organization = {
 			}
 		}
 		equipment_bonus = {
-			#build_cost_ic = 0.10
-			maximum_speed = 0.05
-			reliability = 0.05
+			build_cost_ic = 0.10
+			naval_speed = 0.15
 			max_strength = 0.25
 			sub_detection = 0.1
 			surface_visibility = -0.2
+			sub_attack = 0.25
 		}
 		production_bonus = {
 			production_capacity_factor = 0.05
@@ -416,6 +419,7 @@ DOH_hudong_organization = {
 			}
 		}
 		equipment_bonus = {
+			naval_speed = 0.15
 			build_cost_ic = -0.05
 			reliability = 0.15
 			sub_detection = 0.3
@@ -719,10 +723,10 @@ DOH_jiangnan_shipyard_group_organization = {
 			build_cost_ic = 0.05
 			max_strength = 0.1
 			maximum_speed = 0.1
-			surface_visibility = -0.2
+			surface_visibility = -0.1
 			carrier_size = 1
 			anti_air_attack = 0.1
-			night_penalty = -0.3
+			night_penalty = -0.1
 		}
 		production_bonus = {
 			production_capacity_factor = 0.05
@@ -748,12 +752,10 @@ DOH_jiangnan_shipyard_group_organization = {
 			}
 		}
 		equipment_bonus = {
-			maximum_speed = 0.05
-			reliability = 0.05
 			max_strength = 0.15
-			surface_visibility = -0.2
+			surface_visibility = -0.1
 			carrier_size = 1
-			anti_air_attack = 0.1
+			anti_air_attack = 0.25
 		}
 		production_bonus = {
 			production_capacity_factor = 0.05
@@ -868,10 +870,10 @@ DOH_dagu_shipyard_organization = {
 		}
 		equipment_bonus = {
 			build_cost_ic = 0.05
-			reliability = 0.15
 			maximum_speed = 0.2
 			surface_visibility = -0.1
 			surface_detection = 0.1
+			torpedo_attack = 0.20
 		}
 		on_complete = {
 			ROOT = {
@@ -894,11 +896,11 @@ DOH_dagu_shipyard_organization = {
 			}
 		}
 		equipment_bonus = {
-			build_cost_ic = 0.05
+			build_cost_ic = 0.10
 			maximum_speed = 0.2
-			reliability = 0.15
 			surface_visibility = -0.2
 			surface_detection = 0.2
+			naval_torpedo_hit_chance_factor = 0.20
 		}
 		on_complete = {
 			ROOT = {

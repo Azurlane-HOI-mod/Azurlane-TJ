@@ -1161,6 +1161,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 200
+			hidden_effect = {
+				DOH_guocehejueyikaifa_effect = yes
+			}
 		}
 	}
 	focus = {
@@ -2999,8 +3002,12 @@ focus_tree = {
 				size > 199
 			}
 			has_navy_size = {
-				size > 19
+				size > 9
 				type = capital_ship
+			}
+			has_navy_size = {
+				size > 9
+				type = carrier
 			}
 		}
 		select_effect = {
@@ -3066,6 +3073,9 @@ focus_tree = {
 				set_state_category = metropolis
 			}
 			595 = {
+				set_state_category = metropolis
+			}
+			743 = {
 				set_state_category = metropolis
 			}
 			hidden_effect = {
