@@ -159,7 +159,7 @@ characters={
 			traits = { trait_mingshi }
 
 			ai_will_do = {
-				factor = 0
+				factor = 200
 			}
 		}
 	}
@@ -497,7 +497,7 @@ characters={
 			
 			traits = { trait_xianghe }
 			ai_will_do = {
-				factor = 5
+				factor = 50
 			}
 		}
 		corps_commander = {
@@ -533,7 +533,7 @@ characters={
 			
 			traits = { trait_ruihe }
 			ai_will_do = {
-				factor = 5
+				factor = 50
 			}
 		}
 		corps_commander = {
@@ -1088,13 +1088,25 @@ characters={
         advisor = {
 			cost = 100
 			slot = navy_chief 
-			idea_token = chicheng
+			idea_token = bailong
 			traits = { trait_bailong }
             available = {
-			if = {
+				if = {
 					limit = { tag = CHY }
+					OR = {
 					has_completed_focus = CHY_sumi
-					NOT = { has_completed_focus = CHY_caifagaizao }
+					has_completed_focus = CHY_chongyindeweilai
+					}
+				}
+
+			}
+			visible = {
+				if = {
+					limit = { tag = CHY }
+					OR = {
+					has_completed_focus = CHY_sumi
+					has_completed_focus = CHY_chongyindeweilai
+					}
 				}
 
 			}
@@ -1500,7 +1512,7 @@ characters={
 			
 			traits = { trait_yunxian }
 			ai_will_do = {
-				factor = 5
+				factor = 50
 			}
 		}
 		field_marshal = {

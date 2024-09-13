@@ -205,6 +205,23 @@ characters={
 			planning_skill = 2
 			logistics_skill = 2
 		}
+		
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = taiyuan
+			available = {
+				if = {
+					limit = { tag = DOH }
+					has_completed_focus = DOH_junshigaige
+				}
+			}
+			traits = { trait_taiyuan }
+
+			ai_will_do = {
+				factor = 50
+			}
+		}
 	}
 	DOH_ninghai = {
 		name = DOH_ninghai
@@ -468,7 +485,7 @@ characters={
 					limit = {
 						tag = DOH
 					}
-					has_completed_focus = DOH_tiexueguwen
+					OR = { has_completed_focus = DOH_tiexueguwen hidden_trigger = { is_ai = yes } }
 				}
 			}
 			traits = { trickster career_officer xunyang_army }
@@ -485,7 +502,7 @@ characters={
 			available = {
 				if = {
 					limit = { tag = DOH }
-					has_completed_focus = DOH_tiexueguwen
+					OR = { has_completed_focus = DOH_tiexueguwen hidden_trigger = { is_ai = yes } }
 				}
 			}
 			traits = { trait_kelong_doh }
@@ -525,7 +542,7 @@ characters={
 			available = {
 				if = {
 					limit = { tag = DOH }
-					has_completed_focus = DOH_huangjiaguwen	 
+					OR = { has_completed_focus = DOH_huangjiaguwen hidden_trigger = { is_ai = yes } }	 
 				}
 			}
 			
@@ -558,26 +575,26 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-		advisor = {
-			cost = 50
-			slot = high_command
-			idea_token = 79shi
-			
-			available = {
-				if = {
-					limit = { tag = DOH }
-					has_completed_focus = DOH_lujunsilingtiba
-					
-					}
-					
-				}
-			
-			traits = { trait_DOH_79shi }
-
-			ai_will_do = {
-				factor = 0
-			}
-		}
+#		advisor = {
+#			cost = 50
+#			slot = high_command
+#			idea_token = 79shi
+#			
+#			available = {
+#				if = {
+#					limit = { tag = DOH }
+#					has_completed_focus = DOH_lujunsilingtiba
+#					
+#					}
+#					
+#				}
+#			
+#			traits = { trait_DOH_79shi }
+#
+#			ai_will_do = {
+#				factor = 0
+#			}
+#		}
 	}
 	DOH_97shi = {
 		name = DOH_97shi
@@ -601,27 +618,26 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-		advisor = {
-			cost = 50
-			slot = high_command
-			idea_token = 97shi
-			
-			available = {
-				if = {
-					limit = { tag = DOH }
-					has_completed_focus = DOH_lujunsilingtiba
-					
-					}
-					
-				}
-			
-			traits = { trait_DOH_97shi }
-
-			ai_will_do = {
-				factor = 50
-			}
-		}
-	}
+#		advisor = {
+#			cost = 50
+#			slot = high_command
+#			idea_token = 97shi
+#			
+#			available = {
+#				if = {
+#					limit = { tag = DOH }
+#					has_completed_focus = DOH_lujunsilingtiba
+#					
+#				}
+#			
+#			traits = { trait_DOH_97shi }
+#
+#			ai_will_do = {
+#				factor = 50
+#			}
+#		}
+#	}
+}
 	DOH_JS9 = {
 		name = DOH_JS9
 		portraits = { 
@@ -644,26 +660,26 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-		advisor = {
-			cost = 50
-			slot = high_command
-			idea_token = JS9
-			
-			available = {
-				if = {
-					limit = { tag = DOH }
-					has_completed_focus = DOH_lujunsilingtiba
-					
-					}
-					
-				
-			}
-			traits = { trait_DOH_JS9 }
-
-			ai_will_do = {
-				factor = 50
-			}
-		}
+#		advisor = {
+#			cost = 50
+#			slot = high_command
+#			idea_token = JS9
+#			
+#			available = {
+#				if = {
+#					limit = { tag = DOH }
+#					has_completed_focus = DOH_lujunsilingtiba
+#					
+#					}
+#					
+#				
+#			}
+#			traits = { trait_DOH_JS9 }
+#
+#			ai_will_do = {
+#				factor = 50
+#			}
+#		}
 	}
 	DOH_NZ75 = {
 		name = DOH_NZ75
@@ -687,26 +703,26 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-		advisor = {
-			cost = 50
-			slot = high_command
-			idea_token = NZ75
-			
-			available = {
-				if = {
-					limit = { tag = DOH }
-					has_completed_focus = DOH_lujunsilingtiba
-					
-					}
-					
-				}
-			
-			traits = { trait_DOH_NZ75 }
-
-			ai_will_do = {
-				factor = 50
-			}
-		}
+#		advisor = {
+#			cost = 50
+#			slot = high_command
+#			idea_token = NZ75
+#			
+#			available = {
+#				if = {
+#					limit = { tag = DOH }
+#					has_completed_focus = DOH_lujunsilingtiba
+#					
+#					}
+#					
+#				}
+#			
+#			traits = { trait_DOH_NZ75 }
+#
+#			ai_will_do = {
+#				factor = 50
+#			}
+#		}
 	}
 	DOH_QBU88 = {
 		name = DOH_QBU88
@@ -730,26 +746,26 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-		advisor = {
-			cost = 50
-			slot = high_command
-			idea_token = QBU88
-			
-			available = {
-				if = {
-					limit = { tag = DOH }
-					has_completed_focus = DOH_lujunsilingtiba
-					
-					}
-					
-				}
-			
-			traits = { trait_DOH_QBU88 }
-
-			ai_will_do = {
-				factor = 50
-			}
-		}
+#		advisor = {
+#			cost = 50
+#			slot = high_command
+#			idea_token = QBU88
+#			
+#			available = {
+#				if = {
+#					limit = { tag = DOH }
+#					has_completed_focus = DOH_lujunsilingtiba
+#					
+#					}
+#					
+#				}
+#			
+#			traits = { trait_DOH_QBU88 }
+#
+#			ai_will_do = {
+#				factor = 50
+#			}
+#		}
 	}
 	DOH_beifeng = {
 		name = DOH_beifeng
@@ -937,6 +953,16 @@ characters={
 				small="gfx/interface/ideas/idea_huajia.png"
 			} 
 		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = huajia
+			traits = { trait_huajia }
+
+			ai_will_do = {
+				factor = 25
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -960,6 +986,17 @@ characters={
 				large="gfx/leaders/DOH/dingan.png"
 				small="gfx/interface/ideas/idea_dingan.png"
 			} 
+		}
+		
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = dingan
+			traits = { trait_dingan }
+
+			ai_will_do = {
+				factor = 25
+			}
 		}
 
 		corps_commander = {
@@ -1002,6 +1039,23 @@ characters={
 			planning_skill = 2
 			logistics_skill = 1
 		}
+		
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = longwu
+			available = {
+				if = {
+					limit = { tag = DOH }
+					has_completed_focus = DOH_junshigaige
+				}
+			}
+			traits = { trait_longwu }
+
+			ai_will_do = {
+				factor = 50
+			}
+		}
 	}
 	DOH_feiyun = {
 		name = DOH_feiyun
@@ -1035,6 +1089,17 @@ characters={
 				large="gfx/leaders/DOH/jian.png"
 				small="gfx/interface/ideas/idea_jian.png"
 			} 
+		}
+		
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = jian
+			traits = { trait_jian }
+
+			ai_will_do = {
+				factor = 25
+			}
 		}
 
 		corps_commander = {
@@ -1102,6 +1167,23 @@ characters={
 			planning_skill = 2
 			logistics_skill = 2
 		}
+		
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = huanchang
+			available = {
+				if = {
+					limit = { tag = DOH }
+					has_completed_focus = DOH_junshigaige
+				}
+			}
+			traits = { trait_huanchang }
+
+			ai_will_do = {
+				factor = 50
+			}
+		}
 	}
 	DOH_yingrui_advisor = {
 		name = DOH_yingrui_advisor
@@ -1165,6 +1247,37 @@ characters={
 			traits = { trait_haerbin }
 			ai_will_do = {
 				factor = 50
+			}
+		}
+	}
+	DOH_shaoqian_advisor = {
+		name = DOH_shaoqian_advisor
+		portraits = { 
+			army = {
+				large="gfx/leaders/DOH/QBU88.png"
+				small="gfx/interface/ideas/idea_qbu88.png"
+			} 
+		}
+		advisor = {
+			cost = 400
+			slot = theorist
+			idea_token = QBU88
+			available = {
+				if = {
+					limit = { tag = DOH }
+					has_completed_focus = DOH_lujunsilingtiba
+                    }	
+				}
+			visible = {
+				if = {
+					limit = { tag = DOH }
+					has_completed_focus = DOH_lujunsilingtiba
+					}
+			}
+			traits = { trait_shaoqian_advisor }
+
+			ai_will_do = {
+				factor = 200
 			}
 		}
 	}
