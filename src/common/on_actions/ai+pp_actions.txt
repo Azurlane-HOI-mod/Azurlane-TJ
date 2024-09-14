@@ -10,4 +10,16 @@ on_actions = {
 				}
 		}
 	}
+	on_monthly = {
+		effect = {
+		IF = { OR = { not = { has_global_flag = tianchengzhaohuan } not = { has_global_flag = tianchengzhaohuan_not } } } 
+			every_country = {
+					limit = { 
+					has_character = CHY_tiancheng 
+					OR = { has_tech = radio_detection is_ai = yes }
+					}	
+					country_event = CHY_new1_shijian.48
+				}
+		}
+	}
 }
