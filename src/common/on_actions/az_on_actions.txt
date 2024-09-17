@@ -766,17 +766,17 @@ on_actions = {
 				BYG_yuekecheng = {
 					if = {
 						limit = {
-							skill > 4
-							skill < 6
+							skill > 5
+							skill < 7
 							NOT = {
-								has_character_flag = BYG_yuekecheng_upgrade_flag
+								has_character_flag = upgrade_get
 							}
 						}
 						set_portraits = { 
-							army = { large ="gfx/leaders/BYG/yuekecheng2.png"} 
-							civilian = { large ="gfx/leaders/BYG/yuekecheng2.png" } 
+							army = { large ="gfx/leaders/BYG/yuekecheng_g.png"} 
+							civilian = { large ="gfx/leaders/BYG/yuekecheng_g.png" } 
 						}
-						set_character_flag = BYG_yuekecheng_upgrade_flag
+						set_character_flag = upgrade_get
 						unit_leader_event = getzhg_event.2701
 					}
 				}
@@ -784,15 +784,138 @@ on_actions = {
 				BYG_haman = {
 					if = {
 						limit = {
-							is_character = BYG_haman
-							skill > 4
-							skill < 6
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
 						}
 						set_portraits = { 
-							army = { large ="gfx/leaders/BYG/haman2.png"} 
-							civilian = { large ="gfx/leaders/BYG/haman2.png" } 
+							army = { large ="gfx/leaders/BYG/haman_g.png"} 
+							civilian = { large ="gfx/leaders/BYG/haman_g.png" } 
 						}
+						set_character_flag = upgrade_get
 						unit_leader_event = getzhg_event.2702
+					}					
+				}
+				
+				DOH_anshan = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/anshan_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/anshan_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2703
+					}					
+				}
+				DOH_changchun = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/changchun_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/changchun_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2704
+					}					
+				}
+				DOH_taiyuan = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/taiyuan_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/taiyuan_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2705
+					}					
+				}
+				DOH_yixian = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/yixian_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/yixian_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2706
+					}					
+				}
+				DOH_ninghai = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/ninghai_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/ninghai_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2707
+					}					
+				}
+				DOH_pinghai = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/pinghai_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/pinghai_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2708
+					}					
+				}
+				DOH_zhenhai = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/zhenhai_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/zhenhai_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2709
 					}					
 				}
 			}
