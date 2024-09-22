@@ -1282,6 +1282,19 @@ focus_tree = {
 				}
 			}
 		}
+		bypass = {
+			IF = {
+				NOT = {
+					country_exists = CUB
+				}
+				NOT = {
+					country_exists = DOM
+				}
+				NOT = {
+					country_exists = HAI
+				}
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -1320,6 +1333,19 @@ focus_tree = {
 		ai_will_do = {
 			factor = 40
 		}
+		bypass = {
+			IF = {
+				NOT = {
+					country_exists = BRA
+				}
+				NOT = {
+					country_exists = COL
+				}
+				NOT = {
+					country_exists = VEN
+				}
+			}
+		}
 		available = {
 			if = {
 				limit = {
@@ -1355,6 +1381,7 @@ focus_tree = {
 			}
 			add_political_power = 50
 			add_manpower = 18000
+			set_global_flag = SIR_get_mainland_state
 		}
 	}
 	focus = {
@@ -1371,7 +1398,7 @@ focus_tree = {
 		relative_position_id = SIR_chuanjiao_nanmei
 		cost = 20
 		bypass = {
-			OR = {
+			IF = {
 				NOT = {
 					country_exists = ECU
 				}

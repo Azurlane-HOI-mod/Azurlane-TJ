@@ -574,3 +574,28 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = SIR_event.13
+	title = SIR_event.13.t
+	desc = SIR_event.13.d
+	picture = aze_sr1
+	trigger = {
+	tag = SIR
+	OR = { has_full_control_of_state = 307
+			has_full_control_of_state = 691
+			has_full_control_of_state = 695 }
+	NOT = { has_global_flag = SIR_get_mainland_state }
+	}
+	
+	option = {
+		name = SIR_event.13.a
+		ai_chance = {
+			factor = 5
+		}
+		set_global_flag = SIR_get_mainland_state
+		army_experience = 100
+		add_political_power = 200
+	}
+	
+}

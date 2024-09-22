@@ -2118,6 +2118,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 30
 		}
+		bypass = {
+			IF = {
+				NOT = {
+					country_exists = CHL
+				}
+			}
+		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			if = {
@@ -2127,6 +2134,7 @@ focus_tree = {
 				CHL = {
 					country_event = BLI_event.5
 				}
+				set_global_flag = BLI_get_mainland_state
 			}
 			else = {
 				transfer_state = 506
@@ -2145,6 +2153,19 @@ focus_tree = {
 		y = 1
 		prerequisite = {
 			focus = BLI_xindalu
+		}
+		bypass = {
+			IF = {
+				NOT = {
+					country_exists = ARG
+				}
+				NOT = {
+					country_exists = URG
+				}
+				NOT = {
+					country_exists = PAR
+				}
+			}
 		}
 		relative_position_id = BLI_xindalu
 		cost = 10
@@ -2191,6 +2212,19 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 30
+		}
+		bypass = {
+			IF = {
+				NOT = {
+					country_exists = ECU
+				}
+				NOT = {
+					country_exists = PRU
+				}
+				NOT = {
+					country_exists = BOL
+				}
+			}
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {

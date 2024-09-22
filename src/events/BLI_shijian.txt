@@ -560,3 +560,28 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = BLI_event.14
+	title = BLI_event.14.t
+	desc = BLI_event.14.d
+	picture = GFX_aze_buli
+	trigger = {
+	tag = BLI
+	OR = { has_full_control_of_state = 279
+			has_full_control_of_state = 507
+			has_full_control_of_state = 506 }
+	NOT = { has_global_flag = BLI_get_mainland_state }
+	}
+	
+	option = {
+		name = BLI_event.14.a
+		ai_chance = {
+			factor = 5
+		}
+		set_global_flag = BLI_get_mainland_state
+		army_experience = 100
+		add_political_power = 200
+	}
+	
+}
