@@ -108,6 +108,14 @@ scripted_gui = {
 				}
 				else = {
 					if = {
+						limit = {
+							has_global_flag = modoption_fengkuangai_on
+							not = { has_country_flag = fengkuangai_yixuanzeguo_flag }
+						}
+						set_country_flag = fengkuangai_yixuanzeguo_flag
+						country_event = az_tianjiang.292
+					}
+					if = {
 						limit = {	
 							has_global_flag = sirennandu2
 						}
@@ -647,6 +655,35 @@ scripted_gui = {
 					}
 				}
 			}
+			modoption_button9_on_click = {
+				if = {
+					limit = {
+						has_global_flag = modoption_tiantangzhizhan_on
+					}
+					clr_global_flag = modoption_tiantangzhizhan_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = no
+								is_ai = yes
+							}
+						}
+						remove_ideas = TY_yuanbanAI
+					}
+				}
+				else = {
+					set_global_flag = modoption_tiantangzhizhan_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = no
+								is_ai = yes
+							}
+						}
+						add_ideas = TY_yuanbanAI
+					}
+				}
+			}
 		}
 		triggers = {
 			modoption_button6_on_click_enabled = {
@@ -657,6 +694,9 @@ scripted_gui = {
 			}
 			modoption_button8_on_click_enabled = {
 				is_historical_focus_on = yes
+			}
+			modoption_button9_on_click_enabled = {
+				has_global_flag = modoption_fengkuangai_on
 			}
 			modoption_sirennandu1_click_enabled = {
 				NOT = { has_global_flag = sirennandu2 }
@@ -692,6 +732,9 @@ scripted_gui = {
 				NOT = { has_global_flag = az_gamestarted }
 			}
 			modoption_button8_on_visible = {
+				NOT = { has_global_flag = az_gamestarted }
+			}
+			modoption_button9_on_visible = {
 				NOT = { has_global_flag = az_gamestarted }
 			}
 			modoption_sirennandu_title_visible = {

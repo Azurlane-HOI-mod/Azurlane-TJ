@@ -9552,7 +9552,7 @@ country_event = {
 country_event = {
 	id = az_tianjiang.275
 	title = "等待俾斯麦恢复"
-	desc = "俾斯麦需要两到三个月的时间来恢复，我们必须争分夺秒坚持到她归来。"
+	desc = "俾斯麦需要大概半个月的时间来恢复，我们必须争分夺秒坚持到她归来。"
 	picture = GFX_aze_dai
 	is_triggered_only = yes
 	option = {
@@ -9563,7 +9563,7 @@ country_event = {
 			value = 500
 		}
 		hidden_effect = {
-		country_event = { id = az_tianjiang.276 days = 70 }
+		country_event = { id = az_tianjiang.276 days = 14 }
 		}
 		ai_chance = {
 			base = 100
@@ -10087,6 +10087,375 @@ country_event = {
 		add_power_balance_value = {
 				id = TIX_balance
 				value = 0.6
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.292
+	title = "重要说明！！！（疯狂AI）"
+	desc = az_tianjiang.292.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "查看额外词条"
+		country_event = az_tianjiang.293
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不添加或联机有人选点这个"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.293
+	title = "疯狂AI额外词条：舰娘对决"
+	desc = az_tianjiang.293.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_1
+		country_event = az_tianjiang.294
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.294
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.294
+	title = "疯狂AI额外词条：柴郡冲击"
+	desc = az_tianjiang.294.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_2
+		country_event = az_tianjiang.295
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.295
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.295
+	title = "疯狂AI额外词条：飞天舰娘"
+	desc = "机载舰娘拥有极强的作战能力，如果启用该词条，AI会使用强大的机载舰娘来确保制空权。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_3
+		country_event = az_tianjiang.296
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.296
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.296
+	title = "疯狂AI额外词条：钢铁之躯"
+	desc = "选择该词条后AI部队的HP会极大加强，这将导致AI的兵力损失减少，攻防数值越高其提升表现就越明显。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_4
+		country_event = az_tianjiang.297
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.297
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.297
+	title = "疯狂AI额外词条：高级智能"
+	desc = az_tianjiang.297.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_5
+		country_event = az_tianjiang.298
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.298
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.298
+	title = "疯狂AI额外词条：身份检验"
+	desc = "该词条将极大加强AI的反间谍效率与加密效果，玩家将很难对舰娘国制造合作政府或者压计划。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_6
+		country_event = az_tianjiang.299
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.299
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.299
+	title = "疯狂AI额外词条：次元传送"
+	desc = "AI将在38年6月之后定期获得火星兵，从396之后火星兵数量增加。火星装甲师编制固定且初始满装备+最高部队等级。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_7
+		country_event = az_tianjiang.300
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.300
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.300
+	title = "疯狂AI额外词条：身经百战"
+	desc = "选择该词条后AI会无视地形惩罚，甚至在部分地形获得正面修正。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_8
+		country_event = az_tianjiang.301
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.301
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.301
+	title = "疯狂AI额外词条：统治海洋"
+	desc = "AI会获得极为逆天的海军产出加成，不过不用担心卡顿问题，碧蓝MOD一直都很流畅。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_9
+		country_event = az_tianjiang.302
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.302
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.302
+	title = "疯狂AI额外词条：数值膨胀"
+	desc = "简单粗暴的AI攻防加成，会赢吗？"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_10
+		country_event = az_tianjiang.303
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.303
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.303
+	title = "疯狂AI额外词条：敌我差距"
+	desc = "选择该词条后，玩家的队友舰娘国AI会遭受debuff惩罚，与玩家不同阵营则不再受影响。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条"
+		set_global_flag = AZ_fengkuangAI_citiao_11
+		country_event = az_tianjiang.305
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看下一个"
+		country_event = az_tianjiang.305
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.304
+	title = "AI弱智"
+	desc = "检测为玩家队友舰娘国AI，吃debuff！"
+	picture = GFX_aze_dai
+	fire_only_once = yes
+	trigger = {
+		is_ai = yes
+		any_allied_country = {
+			is_ai = no
+		}
+		OR = {
+			has_idea = TY_fengkuangai
+			has_idea = TY_fengkuangai2
+			has_idea = TY_fengkuangai3
+		}
+		has_global_flag = AZ_fengkuangAI_citiao_11
+	}
+	option = {
+		name = "呀咩咯！"
+		add_ideas = TY_fkAI_AIduiyoudebuff
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.305
+	title = "疯狂AI额外词条：逆流而上"
+	desc = "选择该词条后，AI在与玩家对战时投降倾向过高后会获得极高的核心攻防buff（提前警告，比数值膨胀词条还高）。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "启用该词条，并查看最终事件"
+		set_global_flag = AZ_fengkuangAI_citiao_12
+		country_event = az_tianjiang.306
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不启用，查看最终事件"
+		country_event = az_tianjiang.306
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.306
+	title = "最终说明（点了这个再跑时间！！）"
+	desc = "如果你选择了全部词条，那么点击此事件选项后将所有AI的词条buff合为一个，同时解锁玩家增益决议，记得在任务决议读条结束前选好自己想要的加成！"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "终于可以开始塔塔开了！"
+		if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_1
+			has_global_flag = AZ_fengkuangAI_citiao_2
+			has_global_flag = AZ_fengkuangAI_citiao_3
+			has_global_flag = AZ_fengkuangAI_citiao_4
+			has_global_flag = AZ_fengkuangAI_citiao_5
+			has_global_flag = AZ_fengkuangAI_citiao_6
+			has_global_flag = AZ_fengkuangAI_citiao_7
+			has_global_flag = AZ_fengkuangAI_citiao_8
+			has_global_flag = AZ_fengkuangAI_citiao_9
+			has_global_flag = AZ_fengkuangAI_citiao_10
+			has_global_flag = AZ_fengkuangAI_citiao_11
+			has_global_flag = AZ_fengkuangAI_citiao_12
+			}
+			clr_global_flag = AZ_fengkuangAI_citiao_4
+			clr_global_flag = AZ_fengkuangAI_citiao_5
+			clr_global_flag = AZ_fengkuangAI_citiao_6
+			clr_global_flag = AZ_fengkuangAI_citiao_8
+			clr_global_flag = AZ_fengkuangAI_citiao_9
+			clr_global_flag = AZ_fengkuangAI_citiao_10
+			set_global_flag = AZ_fengkuangAI_citiao_ex
+			custom_effect_tooltip = "将AI的部分buff合体，走时间后显示"
+			every_country = {
+			limit = {
+			is_ai = no
+			}
+			activate_mission = AZ_fkAI_xuanzebuff_time
+			set_country_flag = AZ_fkAI_playertime
+			}
 		}
 		ai_chance = {
 			factor = 100

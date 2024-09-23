@@ -1,4 +1,223 @@
 tianjiang_aizuobi = {
+	ai_shusifangyu_FKaizuobi = {
+		available = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_12
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			any_enemy_country = {
+				is_ai = no
+			}
+			surrender_progress > 0.5
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = TY_fkAI_niliuershang
+		}
+	}
+	ai_fkAI_citiao = {
+		available = {
+			is_ai = yes
+			or = {
+			has_global_flag = AZ_fengkuangAI_citiao_4
+			has_global_flag = AZ_fengkuangAI_citiao_5
+			has_global_flag = AZ_fengkuangAI_citiao_6
+			has_global_flag = AZ_fengkuangAI_citiao_8
+			has_global_flag = AZ_fengkuangAI_citiao_9
+			has_global_flag = AZ_fengkuangAI_citiao_10
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			}
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_4
+			}
+			add_ideas = TY_fkAI_gangtiezhiqu
+			}
+			if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_5
+			}
+			add_ideas = TY_fkAI_gaojizhineng
+			every_character = {
+				add_unit_leader_trait = fkAI_gaojizhinneng	
+			}
+			}
+			if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_6
+			}
+			add_ideas = TY_fkAI_shenfenjianyan
+			}
+			if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_8
+			}
+			add_ideas = TY_fkAI_shenjingbaizhan
+			}
+			if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_9
+			}
+			add_ideas = TY_fkAI_tongzhihaiayng
+			}
+			if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_10
+			}
+			add_ideas = TY_fkAI_shuzhipengzhang
+			}
+			if = {
+			limit = {
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			}
+			add_ideas = TY_fkAI_zuizhonghetiex
+			every_character = {
+				add_unit_leader_trait = fkAI_gaojizhinneng	
+			}
+			}
+		}
+	}
+	ai_fkAIcitiao_huoxingbing = {
+		available = {
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			is_ai = yes
+			date > 1938.6.1
+			has_global_flag = AZ_fengkuangAI_citiao_7
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+				division_template = {
+					name = "火星装甲师" 			
+					is_locked = yes				
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						medium_armor = { x = 1 y = 3 }
+						medium_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+						mechanized = { x = 4 y = 2 }
+						mechanized = { x = 4 y = 3 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						medium_flame_tank = { x = 0 y = 1 }
+						light_tank_recon = { x = 0 y = 2 }
+						artillery = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+				    }
+				}
+			for_loop_effect = {
+				start = 0
+				end = 6
+				add = 1
+				capital_scope = {
+					create_unit = {
+						division = "name = \"火星装甲师\" division_template = \"火星装甲师\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	ai_fkAIcitiao_huoxingbing2 = {
+		available = {
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			is_ai = yes
+			date > 1939.6.1
+			is_puppet = no
+			has_global_flag = AZ_fengkuangAI_citiao_7
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		days_re_enable = 365
+		fire_only_once = no
+		complete_effect = {
+			for_loop_effect = {
+				start = 0
+				end = 12
+				add = 1
+				capital_scope = {
+					create_unit = {
+						division = "name = \"火星装甲师\" division_template = \"火星装甲师\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	ai_yuanban_shengji = {
+		available = {
+			date > 1939.1.1
+			is_ai = yes
+			has_global_flag = modoption_tiantangzhizhan_on
+			has_idea = TY_yuanbanAI
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			swap_ideas = {
+			remove_idea = TY_yuanbanAI
+			add_idea = TY_yuanbanAI2
+			}
+		}
+	}
 	ai_byg_ruzhan_fa = {
 		available = {
 			date > 1940.4.1
@@ -208,6 +427,124 @@ tianjiang_aizuobi = {
 			defense_bonus_against = 99.99
 		}
 	}
+	ai_jianngshi_zuobi5 = {
+		available = {
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			is_ai = yes
+			date > 1940.1.1
+			has_global_flag = AZ_fengkuangAI_citiao_2
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_technology = {
+				shipgirltech_jizaijianniang_2 = 1
+			}
+		}
+	}
+	ai_jianngshi_zuobi6 = {
+		available = {
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			is_ai = yes
+			date > 1940.6.1
+			has_global_flag = AZ_fengkuangAI_citiao_2
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+		}
+	}
+	ai_jianngshi_zuobi_7 = {
+		available = {
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			is_ai = yes
+			date > 1941.6.1
+			has_global_flag = AZ_fengkuangAI_citiao_2
+		}
+		visible = {
+			is_ai = yes
+		}
+		days_re_enable = 365
+		ai_will_do = {
+			factor = 10000
+		}
+		complete_effect = {
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+		}
+	}
+	ai_jianngshi_zuobi8 = {
+		available = {
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_3
+			is_puppet = no
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_technology = {
+				shipgirltech_jizaijianniang_1 = 1
+			}
+			air_experience = 500
+			add_tech_bonus = {
+				name = "飞机模块研究加成"
+				bonus = 100
+				uses = 10
+				ahead_reduction = 10
+				category = plane_modules_tech
+			}
+		}
+	}
 	ai_jianngshi_zuobi = {
 		available = {
 			OR = {
@@ -217,6 +554,7 @@ tianjiang_aizuobi = {
 			}
 			is_ai = yes
 			date > 1940.1.1
+			has_global_flag = AZ_fengkuangAI_citiao_1
 		}
 		visible = {
 			is_ai = yes
@@ -265,9 +603,6 @@ tianjiang_aizuobi = {
 			set_technology = {
 				shipgirltech_zuozhanlilun_3 = 1
 			}
-			set_technology = {
-				shipgirltech_jizaijianniang_2 = 1
-			}
 		}
 	}
 	ai_jianngshi_zuobi_2 = {
@@ -279,6 +614,7 @@ tianjiang_aizuobi = {
 			}
 			is_ai = yes
 			date > 1942.1.1
+			has_global_flag = AZ_fengkuangAI_citiao_1
 		}
 		visible = {
 			is_ai = yes
@@ -308,6 +644,7 @@ tianjiang_aizuobi = {
 			}
 			is_ai = yes
 			date > 1940.6.1
+			has_global_flag = AZ_fengkuangAI_citiao_1
 		}
 		visible = {
 			is_ai = yes
@@ -406,14 +743,6 @@ tianjiang_aizuobi = {
 					}
 				}
 			}
-			create_railway_gun = {
-				equipment = az_equipment_liechepao_1
-				name = "终极猫猫头"
-			}
-			create_railway_gun = {
-				equipment = az_equipment_liechepao_1
-				name = "终极猫猫头"
-			}
 		}
 	}
 	ai_jianngshi_zuobi_4 = {
@@ -425,6 +754,7 @@ tianjiang_aizuobi = {
 			}
 			is_ai = yes
 			date > 1941.6.1
+			has_global_flag = AZ_fengkuangAI_citiao_1
 		}
 		visible = {
 			is_ai = yes
@@ -444,10 +774,6 @@ tianjiang_aizuobi = {
 						owner = ROOT
 					}
 				}
-			}
-			create_railway_gun = {
-				equipment = az_equipment_liechepao_1
-				name = "终极猫猫头"
 			}
 		}
 	}
@@ -1016,6 +1342,30 @@ tianjiang_aizuobi = {
 				amount = 15000
 				producer = TIX
 			}
+		}
+	}
+	zuobi_tiexue_3 = {
+		available = {
+			tag = TIX
+			is_ai = yes
+			date > 1940.3.1
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		visible = {
+			tag = TIX
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 2
 		}
 	}
 	tix_huanzhuang = {

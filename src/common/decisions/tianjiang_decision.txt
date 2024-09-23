@@ -7014,6 +7014,10 @@ SAD_ITA = {
 			OR = {
 				has_war_with = SAD
 				is_in_faction_with = SAD
+				TIX = {
+					is_subject = yes
+				}
+				not = { country_exists = TIX }
 			}
 			has_government = democratic
 			tag = ITA
@@ -7023,6 +7027,10 @@ SAD_ITA = {
 					surrender_progress > 0.7
 				}
 				is_in_faction_with = SAD
+				TIX = {
+					is_subject = yes
+				}
+				not = { country_exists = TIX }
 			}
 		}
 		ai_will_do = {
@@ -10900,4 +10908,707 @@ TIX_quanlipingheng = {
 			factor = 0
 		}
 	}
+}
+
+AZ_fkAIplayerjiaqiang = {
+	az_wanjialingqufkAIbuff = {
+		icon = generic_form_nation
+		visible = {
+			is_ai = no
+			has_global_flag = modoption_tiantangzhizhan_on
+		}
+		available = {
+			is_ai = no
+			has_global_flag = modoption_tiantangzhizhan_on
+		}
+		fire_only_once = yes
+		complete_effect = {
+			if = {
+			limit = {
+			tag = TIX
+			}
+			add_ideas = TIX_fkAIbuff_player
+			}
+			if = {
+			limit = {
+			tag = SAD
+			}
+			add_ideas = SAD_fkAIbuff_player
+			}
+			if = {
+			limit = {
+			tag = CHY
+			}
+			add_ideas = CHY_fkAIbuff_player
+			}
+			if = {
+			limit = {
+			tag = YUW
+			}
+			add_ideas = YUW_fkAIbuff_player
+			}
+			if = {
+			limit = {
+			tag = BYG
+			}
+			add_ideas = BYG_fkAIbuff_player
+			}
+			if = {
+			limit = {
+			tag = HUJ
+			}
+			add_ideas = HUJ_fkAIbuff_player
+			}
+			if = {
+			limit = {
+			tag = DOH
+			}
+			add_ideas = DOH_fkAIbuff_player
+			}
+			if = {
+			limit = {
+			tag = BFL
+			}
+			add_ideas = BFL_fkAIbuff_player
+			}
+			
+		}
+
+		}
+		
+	AZ_fkAI_xuanzebuff_time = {
+		priority = 200
+		icon = generic_intelligence_operation
+		is_good = yes
+		activation = {
+			always = no
+		}
+		complete_effect = {
+			
+		}
+		available = {
+			is_ai = yes
+		}
+		days_mission_timeout = 30
+		timeout_effect = {
+			custom_effect_tooltip = "终止选择并获得加成"
+			clr_country_flag = AZ_fkAI_playertime
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_1
+			}
+			add_political_power = 1500
+			army_experience = 2000
+			navy_experience = 2000
+			air_experience = 2000
+			add_command_power = 500
+			custom_effect_tooltip = wz_earn_20000
+			add_to_variable = {
+				var = wz_sl
+				value = 20000
+			}
+			custom_effect_tooltip = get_zs_shuliang_200
+			add_to_variable = {
+				var = zs_sl
+				value = 200
+			}
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_2
+			}
+			set_technology = {
+				shipgirltech_quzhupao_1 = 1
+			}
+			set_technology = {
+				shipgirltech_xunyangpao_1 = 1
+			}
+			set_technology = {
+				shipgirltech_zhanliepao_1 = 1
+			}
+			set_technology = {
+				shipgirltech_jizaijianniang_1 = 1
+			}
+			add_tech_bonus = {
+				name = "超级火炮卡"
+				bonus = 10
+				uses = 10
+				ahead_reduction = 10
+				category = artillery
+			}
+			
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_3
+			}
+			add_tech_bonus = {
+				name = "超级卡车卡"
+				bonus = 10
+				uses = 3
+				ahead_reduction = 10
+				category = motorized_equipment
+			}
+			add_tech_bonus = {
+				name = "超级支援卡"
+				bonus = 10
+				uses = 5
+				ahead_reduction = 10
+				category = support_tech
+			}	air_equipment
+			add_tech_bonus = {
+				name = "超级飞机卡"
+				bonus = 10
+				uses = 5
+				ahead_reduction = 10
+				category = air_equipment
+			}
+			add_tech_bonus = {
+				name = "超级装甲卡"
+				bonus = 10
+				uses = 5
+				ahead_reduction = 10
+				category = armor
+			}
+			add_tech_bonus = {
+				name = "超级海军卡"
+				bonus = 10
+				uses = 5
+				ahead_reduction = 10
+				category = naval_equipment
+			}
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_4
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_5
+			}
+			activate_mission = AZ_fkAI_xuanzebuff_dafuweng
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_6
+			}
+			activate_mission = AZ_fkAI_xuanzebuff_dafuweng
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_7
+			}
+			add_ideas = TY_fkAI_yangjingxurui
+			activate_mission = AZ_fkAI_xuanzebuff_yangjingxurui
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_8
+			}
+			add_ideas = TY_fkAI_xianshoubisheng
+			activate_mission = AZ_fkAI_xuanzebuff_xianshoubisheng
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_9
+			}
+			add_nuclear_bombs = 10
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_10
+			}
+			add_ideas = TY_fkAI_jiandiweixing
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_11
+			}
+			add_ideas = TY_fkAI_woquandouyao
+			}
+			if = {
+			limit = {
+			has_country_flag = AZ_fkAI_xuanzebuff_12
+			}
+			activate_mission = AZ_fkAI_xuanzebuff_jianxiangzi
+			}
+		}
+	}
+	AZ_fkAI_xuanzebuff_jianxiangzi = {
+		icon = xzmf
+		always = no
+		activation = {
+			always = no
+		}
+		available = {
+			is_ai = yes
+		}
+		is_good = yes
+		days_mission_timeout = 120
+		timeout_effect = {
+			activate_mission = AZ_fkAI_xuanzebuff_jianxiangzi
+			hidden_effect = {
+				country_event = azevent.77
+			}
+		}
+	}
+	AZ_fkAI_xuanzebuff_xianshoubisheng = {
+		icon = generic_tank
+		activation = {
+			always = no
+		}
+		available = {
+			date > 1939.9.1
+			has_idea = TY_fkAI_xianshoubisheng
+		}
+		is_good = no
+		days_mission_timeout = 9999
+		complete_effect = {
+			activate_mission = AZ_fkAI_xuanzebuff_xianshoubisheng2
+			swap_ideas = {
+			remove_idea = TY_fkAI_xianshoubisheng
+			add_idea = TY_fkAI_xianshoubisheng2
+			}
+		}
+		timeout_effect = {
+			
+		}
+	}
+	AZ_fkAI_xuanzebuff_xianshoubisheng2 = {
+		icon = generic_tank
+		activation = {
+			always = no
+		}
+		available = {
+			date > 1941.2.1
+			has_idea = TY_fkAI_xianshoubisheng2
+		}
+		is_good = yes
+		days_mission_timeout = 9999
+		complete_effect = {
+			swap_ideas = {
+			remove_idea = TY_fkAI_xianshoubisheng2
+			add_idea = TY_fkAI_xianshoubisheng3
+			}
+		}
+		timeout_effect = {
+			
+		}
+	}
+	AZ_fkAI_xuanzebuff_yangjingxurui = {
+		icon = generic_tank
+		always = no
+		activation = {
+			always = no
+		}
+		available = {
+			is_ai = yes
+		}
+		is_good = yes
+		days_mission_timeout = 2170
+		timeout_effect = {
+			swap_ideas = {
+			remove_idea = TY_fkAI_yangjingxurui
+			add_idea = TY_fkAI_yangjingxurui2
+			}
+		}
+	}
+	AZ_fkAI_xuanzebuff_mofangdaheng = {
+		icon = gre_investment_decisions
+		always = no
+		activation = {
+			always = no
+		}
+		available = {
+			is_ai = yes
+		}
+		is_good = yes
+		days_mission_timeout = 120
+		timeout_effect = {
+			activate_mission = AZ_fkAI_xuanzebuff_mofangdaheng
+			custom_effect_tooltip = mf_shuliang_2
+			add_to_variable = {
+				var = xzmf_sl
+				value = 2
+			}
+		}
+	}
+	AZ_fkAI_xuanzebuff_dafuweng = {
+		icon = gre_paying_ifc_debt
+		always = no
+		activation = {
+			always = no
+		}
+		available = {
+			is_ai = yes
+		}
+		is_good = yes
+		days_mission_timeout = 180
+		timeout_effect = {
+			activate_mission = AZ_fkAI_xuanzebuff_dafuweng
+			if = {
+			limit = {
+				date < 1940.1.1
+			}
+			custom_effect_tooltip = wz_earn_10000
+			add_to_variable = {
+				var = wz_sl
+				value = 10000
+			}
+			}
+			if = {
+			limit = {
+				date > 1940.1.1
+				date < 1942.1.1
+			}
+			custom_effect_tooltip = wz_earn_20000
+			add_to_variable = {
+				var = wz_sl
+				value = 20000
+			}
+			}
+			if = {
+			limit = {
+				date > 1942.1.1
+			}
+			custom_effect_tooltip = wz_earn_40000
+			add_to_variable = {
+				var = wz_sl
+				value = 40000
+			}
+			}
+		}
+	}
+	AZ_fkAI_xuanzebuffkaishi_1 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_1
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	AZ_fkAI_xuanzebuffkaishi_2 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_2
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_3 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_3
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	AZ_fkAI_xuanzebuffkaishi_4 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_4
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+			hidden_effect = {
+			set_technology = {
+				shipgirltech_jizaijianniang_2 = 1
+			}
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_5 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_5
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_6 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_6
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_10 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_10
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_11 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_11
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_12 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_12
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_7 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_7
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_8 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_8
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
+	AZ_fkAI_xuanzebuffkaishi_9 = {
+		icon = eng_trade_unions_demand
+		fire_only_once = yes
+		visible = {
+			has_country_flag = AZ_fkAI_playertime
+		}
+		available = {
+			is_ai = no
+			custom_trigger_tooltip = {
+			tooltip = xuanzecishuxiaoyuliangci_fkAI
+			check_variable = {
+			var = az_fkai_player_jiacheng_cishu
+			value = 1
+			compare = less_than_or_equals
+			}
+			}
+		}
+		complete_effect = {
+			set_country_flag = AZ_fkAI_xuanzebuff_9
+			add_to_variable = {
+				var = az_fkai_player_jiacheng_cishu
+				value = 1
+			}
+		}
+	}
+	
 }
