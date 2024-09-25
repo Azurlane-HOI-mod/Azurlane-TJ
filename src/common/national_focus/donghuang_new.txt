@@ -5145,14 +5145,26 @@ focus_tree = {
 			custom_effect_tooltip = DOH_haianfangshou_tooltip
 			hidden_effect = {
 				load_oob = "DOH_haianfangshou"
-			}
-			if = {
+				if = {
 				limit = {
 					is_ai = yes
 				}
-				hidden_effect = {
 					load_oob = "DOH_haianfangshou_ai"
+			    }
+				if = {
+				limit = {
+					is_ai = yes
+					OR = {
+		                has_global_flag = AZ_fengkuangAI_citiao_10 
+		                has_global_flag = AZ_fengkuangAI_citiao_ex 
+		                }
 				}
+					load_oob = "DOH_haianfangshou_fengkuangai"
+					set_technology = { tech_engineers = 1 }
+					set_technology = { tech_field_hospital = 1 }
+					set_technology = { basic_light_tank_chassis = 1 }
+					
+			    }
 			}
 		}
 	}

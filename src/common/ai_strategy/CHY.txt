@@ -168,6 +168,7 @@ CHY_unit_production_army_before_1940 = {
 		NOT = {
 			has_idea = TY_dingzhenai
 		}
+		
 	}
 	abort = {
 	OR = {
@@ -175,6 +176,8 @@ CHY_unit_production_army_before_1940 = {
 		date > 1940.1.1
 		NOT = { country_exists = DOH }
 			has_idea = TY_dingzhenai
+			has_global_flag = AZ_fengkuangAI_citiao_10
+			has_global_flag = AZ_fengkuangAI_citiao_ex
 		}
 	}
 	
@@ -261,6 +264,10 @@ CHY_unit_production_army_after_1940 = {
 		NOT = { country_exists = DOH }
 		NOT = {
 			has_idea = TY_dingzhenai
+		}
+		OR = {
+			has_global_flag = AZ_fengkuangAI_citiao_10
+			has_global_flag = AZ_fengkuangAI_citiao_ex
 		}
 		}
 	}
@@ -792,9 +799,16 @@ strike_DOH = {
 	enable = {
 		has_war_with = DOH
 		date < 1938.2.1
+		OR = {
+			has_global_flag = AZ_fengkuangAI_citiao_10
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
 	}
 	abort = {
 		date > 1938.2.1
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
+		
 	}
 	
 	ai_strategy = {
@@ -1191,7 +1205,8 @@ CHY_hold_up_in_china = { #We got this far but there are bigger targets to worry 
 		613 = { # Nanjing
 			is_controlled_by = CHY
 		}
-
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 	}
 	abort_when_not_enabled = yes
 

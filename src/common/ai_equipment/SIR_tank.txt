@@ -421,3 +421,125 @@ SIR_medium_flame_tank = {
 		}
 	}
 }
+
+SIR_light_tanks = {
+	category = land
+	blocked_for = {}
+	available_for = { SIR }
+	roles = {
+		land_light_tank
+	}
+	priority = {
+		factor = 3000
+	}
+	basic_light_tank_default = { #Somua S35
+		priority = {
+			factor = 300
+			modifier = { 
+				has_tech = improved_light_tank_chassis
+				factor = 0 #let's not waste XP here
+			}
+		}
+		target_variant = {
+			match_value = 1000
+			type = light_tank_chassis_1
+			modules = {
+				main_armament_slot = tank_close_support_gun
+				turret_type_slot = tank_light_three_man_tank_turret
+				suspension_type_slot = tank_wheeled_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = easy_maintenance
+				special_type_slot_2 = extra_ammo_storage
+				special_type_slot_3 = extra_ammo_storage
+				special_type_slot_4 = extra_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+		allowed_modules = {
+			tank_heavy_machine_gun
+			tank_close_support_gun
+			tank_light_three_man_tank_turret
+			tank_wheeled_suspension
+			tank_riveted_armor
+			tank_diesel_engine
+			extra_ammo_storage
+			easy_maintenance
+		}
+	}
+	improved_light_tank_default = {#AMC 35
+		priority = {
+			factor = 400
+			modifier = { 
+				has_tech = advanced_light_tank_chassis
+				factor = 0 #let's not waste XP here
+			}
+		}
+		target_variant = {
+			match_value = 1000
+			type = light_tank_chassis_2
+			modules = {
+				main_armament_slot = tank_close_support_gun
+				turret_type_slot = tank_light_three_man_tank_turret
+				suspension_type_slot = tank_wheeled_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = easy_maintenance
+				special_type_slot_2 = extra_ammo_storage
+				special_type_slot_3 = extra_ammo_storage
+				special_type_slot_4 = extra_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+		allowed_modules = {
+			tank_heavy_machine_gun
+			tank_close_support_gun
+			tank_light_three_man_tank_turret
+			tank_wheeled_suspension
+			tank_riveted_armor
+			tank_diesel_engine
+			easy_maintenance
+			extra_ammo_storage
+		}
+	}
+	advanced_light_tank_default = { #SARL42
+		priority = {
+			factor = 500
+		}
+		target_variant = {
+			match_value = 1000
+			type = light_tank_chassis_3
+			modules = {
+				main_armament_slot = tank_close_support_gun
+				turret_type_slot = tank_light_three_man_tank_turret
+				suspension_type_slot = tank_wheeled_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = easy_maintenance
+				special_type_slot_2 = extra_ammo_storage
+				special_type_slot_3 = extra_ammo_storage
+				special_type_slot_4 = extra_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+		allowed_modules = {
+			tank_heavy_machine_gun
+			tank_close_support_gun
+			tank_light_three_man_tank_turret
+			tank_wheeled_suspension
+			tank_riveted_armor
+			tank_diesel_engine
+			extra_ammo_storage
+			easy_maintenance
+		}
+	}
+}

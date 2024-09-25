@@ -11032,11 +11032,17 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级火炮卡"
 				bonus = 10
-				uses = 10
+				uses = 12
 				ahead_reduction = 10
 				category = artillery
 			}
-			
+			add_tech_bonus = {
+				name = "超级步枪卡"
+				bonus = 10
+				uses = 6
+				ahead_reduction = 10
+				category = infantry_weapons
+			}
 			}
 			if = {
 			limit = {
@@ -11045,9 +11051,9 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级卡车卡"
 				bonus = 10
-				uses = 3
+				uses = 2
 				ahead_reduction = 10
-				category = motorized_equipment
+				category = cat_mechanized_equipment
 			}
 			add_tech_bonus = {
 				name = "超级支援卡"
@@ -11055,7 +11061,7 @@ AZ_fkAIplayerjiaqiang = {
 				uses = 5
 				ahead_reduction = 10
 				category = support_tech
-			}	air_equipment
+			}
 			add_tech_bonus = {
 				name = "超级飞机卡"
 				bonus = 10
@@ -11073,7 +11079,7 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级海军卡"
 				bonus = 10
-				uses = 5
+				uses = 8
 				ahead_reduction = 10
 				category = naval_equipment
 			}
@@ -11081,6 +11087,23 @@ AZ_fkAIplayerjiaqiang = {
 			if = {
 			limit = {
 			has_country_flag = AZ_fkAI_xuanzebuff_4
+			}
+			add_ideas = TY_fkAI_huolichongji
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
+			}
+			create_railway_gun = {
+				equipment = az_equipment_liechepao_1
+				name = "终极猫猫头"
 			}
 			create_railway_gun = {
 				equipment = az_equipment_liechepao_1
@@ -11129,7 +11152,7 @@ AZ_fkAIplayerjiaqiang = {
 			limit = {
 			has_country_flag = AZ_fkAI_xuanzebuff_9
 			}
-			add_nuclear_bombs = 10
+			add_nuclear_bombs = 30
 			}
 			if = {
 			limit = {
@@ -11161,7 +11184,7 @@ AZ_fkAIplayerjiaqiang = {
 			is_ai = yes
 		}
 		is_good = yes
-		days_mission_timeout = 120
+		days_mission_timeout = 30
 		timeout_effect = {
 			activate_mission = AZ_fkAI_xuanzebuff_jianxiangzi
 			hidden_effect = {
@@ -11240,13 +11263,13 @@ AZ_fkAIplayerjiaqiang = {
 			is_ai = yes
 		}
 		is_good = yes
-		days_mission_timeout = 120
+		days_mission_timeout = 80
 		timeout_effect = {
 			activate_mission = AZ_fkAI_xuanzebuff_mofangdaheng
-			custom_effect_tooltip = mf_shuliang_2
+			custom_effect_tooltip = mf_shuliang_5
 			add_to_variable = {
 				var = xzmf_sl
-				value = 2
+				value = 5
 			}
 		}
 	}
@@ -11260,23 +11283,12 @@ AZ_fkAIplayerjiaqiang = {
 			is_ai = yes
 		}
 		is_good = yes
-		days_mission_timeout = 180
+		days_mission_timeout = 90
 		timeout_effect = {
 			activate_mission = AZ_fkAI_xuanzebuff_dafuweng
 			if = {
 			limit = {
 				date < 1940.1.1
-			}
-			custom_effect_tooltip = wz_earn_10000
-			add_to_variable = {
-				var = wz_sl
-				value = 10000
-			}
-			}
-			if = {
-			limit = {
-				date > 1940.1.1
-				date < 1942.1.1
 			}
 			custom_effect_tooltip = wz_earn_20000
 			add_to_variable = {
@@ -11286,7 +11298,7 @@ AZ_fkAIplayerjiaqiang = {
 			}
 			if = {
 			limit = {
-				date > 1942.1.1
+				date > 1940.1.1
 			}
 			custom_effect_tooltip = wz_earn_40000
 			add_to_variable = {

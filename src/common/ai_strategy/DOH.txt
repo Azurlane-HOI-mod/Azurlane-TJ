@@ -192,10 +192,16 @@ DOH_unit_production_at_week = {
 		NOT = {
 			has_idea = TY_dingzhenai
 		}
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 	}
 	abort = {
-		num_of_military_factories > 150
+	    OR = {
+		    num_of_military_factories > 150
 			has_idea = TY_dingzhenai
+			has_global_flag = AZ_fengkuangAI_citiao_10 
+		    has_global_flag = AZ_fengkuangAI_citiao_ex 
+			}
 	}
 	
 	ai_strategy = {
@@ -273,15 +279,14 @@ DOH_unit_production_at_strong = {
 		original_tag = DOH
 	}
 	enable = {
+	NOT = { has_idea = TY_dingzhenai }
+	OR = {
 		num_of_military_factories > 149
-		NOT = {
-			has_idea = TY_dingzhenai
-		}
+		has_global_flag = AZ_fengkuangAI_citiao_10 
+		has_global_flag = AZ_fengkuangAI_citiao_ex 
 	}
-	abort = {
-		num_of_military_factories < 150
-			has_idea = TY_dingzhenai
 	}
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = role_ratio
@@ -647,6 +652,8 @@ DOH_hunker_down_now  = {
 		CHY = { has_war_with = BYG }
 		CHY = { has_war_with = YUW }
 		CHY = { has_war_with = HUJ }
+		has_global_flag = AZ_fengkuangAI_citiao_10 
+		has_global_flag = AZ_fengkuangAI_citiao_ex 
 		}
 	}
 
@@ -672,6 +679,39 @@ DOH_hunker_down_now  = {
 		id = "CHY"			
 		value = -200
 	}
+}
+
+strike_CHY_fengkuangAI = {
+    allowed = {
+		original_tag = DOH
+	}
+	enable = {
+		has_war_with = CHY
+		OR = {
+			has_global_flag = AZ_fengkuangAI_citiao_10
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = front_control
+
+		tag = CHY
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		tag = CHY		
+		value = 200
+	}
+
 }
 
 DOH_war_with_CHY_at_strong = {

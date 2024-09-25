@@ -149,7 +149,12 @@ country_event = {
 		ai_chance = {
 			factor = 5
 		}
-		create_wargoal = { target = PER type = take_state_focus }
+		BFL = {
+		declare_war_on = {
+			target = PER
+			type = annex_everything
+		}
+		}
 	}
 }
 country_event = {

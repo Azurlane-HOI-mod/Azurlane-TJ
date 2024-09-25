@@ -22,6 +22,8 @@ armor_default = {
 		num_of_military_factories < 150
 		country_exists = DOH
 		NOT = { has_country_flag = CHY_friend_with_doh }
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+			NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 			}
 		}
 		production_prio = {
@@ -32,6 +34,9 @@ armor_default = {
 		num_of_military_factories < 150
 		country_exists = DOH
 		NOT = { has_country_flag = CHY_friend_with_doh }
+			NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+			NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
+		
 			}
 		}
 		target_width = 42.0
@@ -159,6 +164,8 @@ armor_default = {
 		    num_of_military_factories > 150
 		    NOT = { country_exists = DOH }
 			has_country_flag = CHY_friend_with_doh 
+			has_global_flag = AZ_fengkuangAI_citiao_10 
+			has_global_flag = AZ_fengkuangAI_citiao_ex 
             }
 	        OR = {
 		has_idea = TY_fengkuangai
@@ -276,6 +283,8 @@ armor_default = {
 		num_of_military_factories > 150
 		NOT = { country_exists = DOH }
 		has_country_flag = CHY_friend_with_doh 
+			has_global_flag = AZ_fengkuangAI_citiao_10 
+			has_global_flag = AZ_fengkuangAI_citiao_ex 
     }
 	OR = {
 		has_idea = TY_fengkuangai
@@ -402,6 +411,8 @@ infantry_CHY = {
 		NOT = { has_idea = TY_fengkuangai }
 	NOT = { has_idea = TY_fengkuangai2 }
 	NOT = { has_idea = TY_fengkuangai3 }
+	NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+	NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 			}
 		}
 		production_prio = {
@@ -416,6 +427,8 @@ infantry_CHY = {
 		NOT = { has_idea = TY_fengkuangai }
 	NOT = { has_idea = TY_fengkuangai2 }
 	NOT = { has_idea = TY_fengkuangai3 }
+	NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+	NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 			}
 		}
 		target_width = 20.0
@@ -463,9 +476,12 @@ infantry_CHY = {
 		country_exists = DOH
 		NOT = { has_country_flag = CHY_friend_with_doh }
 		DOH = { is_ai = yes }
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+	    NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		OR = { has_idea = TY_fengkuangai 
 		has_idea = TY_fengkuangai2 
-		has_idea = TY_fengkuangai3 }
+		has_idea = TY_fengkuangai3 
+		}
 			}
 		}
 		production_prio = {
@@ -477,9 +493,13 @@ infantry_CHY = {
 		country_exists = DOH
 		NOT = { has_country_flag = CHY_friend_with_doh }
 		DOH = { is_ai = yes }
-		OR = { has_idea = TY_fengkuangai 
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+	    NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
+		OR = { 
+		has_idea = TY_fengkuangai 
 		has_idea = TY_fengkuangai2 
-		has_idea = TY_fengkuangai3 }
+		has_idea = TY_fengkuangai3 
+		}
 			}
 		}
 		target_width = 20.0
@@ -529,6 +549,8 @@ infantry_CHY = {
 		NOT = { has_idea = TY_fengkuangai }
 	NOT = { has_idea = TY_fengkuangai2 }
 	NOT = { has_idea = TY_fengkuangai3 }
+	NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+	NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		NOT = { DOH = { is_ai = yes } }
 			}
 		}
@@ -592,6 +614,8 @@ infantry_CHY = {
 		num_of_military_factories < 150
 		country_exists = DOH
 		NOT = { has_country_flag = CHY_friend_with_doh }
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+	    NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		OR = { has_idea = TY_fengkuangai 
 		has_idea = TY_fengkuangai2 
 		has_idea = TY_fengkuangai3 }
@@ -606,6 +630,8 @@ infantry_CHY = {
 		num_of_military_factories < 150
 		country_exists = DOH
 		NOT = { has_country_flag = CHY_friend_with_doh }
+		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+	    NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		OR = { has_idea = TY_fengkuangai 
 		has_idea = TY_fengkuangai2 
 		has_idea = TY_fengkuangai3 }
@@ -646,6 +672,69 @@ infantry_CHY = {
 			maintenance_company
 			field_hospital
 			light_armor
+		}
+	}
+	
+	infantry_1_CHY_fk_citiao = {
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		NOT = { has_country_flag = CHY_friend_with_doh }
+		OR = { has_global_flag = AZ_fengkuangAI_citiao_10 
+	    has_global_flag = AZ_fengkuangAI_citiao_ex 
+		}
+			}
+		}
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100
+			NOT = {	has_idea = TY_dingzhenai }
+		num_of_military_factories < 150
+		country_exists = DOH
+		NOT = { has_country_flag = CHY_friend_with_doh }
+		OR = { 
+		has_global_flag = AZ_fengkuangAI_citiao_10 
+	    has_global_flag = AZ_fengkuangAI_citiao_ex 
+		}
+			}
+		}
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 1.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			support = {
+				engineer = 1
+				artillery = 1
+				recon = 1
+				maintenance_company = 1
+				field_hospital = 1
+			}
+			
+			regiments = {
+				infantry = 8
+				artillery_brigade = 4
+				medium_armor = 1
+			}
+		}
+		
+		allowed_types = {
+			engineer
+			infantry
+			artillery
+			recon
+			artillery_brigade
+			maintenance_company
+			field_hospital
+			medium_armor
 		}
 	}
 	

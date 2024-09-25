@@ -2483,6 +2483,97 @@
 						NOT = {
 							has_idea = TY_dingzhenai
 						}
+						OR = { has_global_flag = AZ_fengkuangAI_citiao_10 
+	                    has_global_flag = AZ_fengkuangAI_citiao_ex 
+		            }
+					}
+					division_template = {
+						name = "关东边防师"
+						division_names_group = JAP_INF_01
+						regiments = {
+							artillery_brigade = {
+								x = 0
+								y = 0
+							}
+							artillery_brigade = {
+								x = 0
+								y = 1
+							}
+							artillery_brigade = {
+								x = 0
+								y = 2
+							}
+							artillery_brigade = {
+								x = 0
+								y = 3
+							}
+							medium_armor = {
+								x = 1
+								y = 0
+							}
+							infantry = {
+								x = 2
+								y = 0
+							}
+							infantry = {
+								x = 2
+								y = 1
+							}
+							infantry = {
+								x = 2
+								y = 2
+							}
+							infantry = {
+								x = 2
+								y = 3
+							}
+							infantry = {
+								x = 3
+								y = 0
+							}
+							infantry = {
+								x = 3
+								y = 1
+							}
+							infantry = {
+								x = 3
+								y = 2
+							}
+							infantry = {
+								x = 3
+								y = 3
+							}
+						}
+						support = {
+							engineer = {
+								x = 0
+								y = 0
+							}
+							artillery = {
+								x = 0
+								y = 1
+							}
+							recon = {
+								x = 0
+								y = 2
+							}
+							logistics_company = {
+								x = 0
+								y = 3
+							}
+							maintenance_company = {
+								x = 0
+								y = 4
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_idea = TY_dingzhenai }
+						NOT = { has_idea = TY_fengkuangai }
+						NOT = { has_idea = TY_fengkuangai2 }
+		                NOT = { has_idea = TY_fengkuangai3 }
 					}
 					division_template = {
 						name = "关东边防师"

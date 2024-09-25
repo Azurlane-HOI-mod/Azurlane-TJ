@@ -29,6 +29,10 @@ armor_default = {
 			NOT = {	has_idea = TY_dingzhenai }
 				NOT = { country_exists = BLI }
 			}
+			modifier = {
+				add = 100
+			 has_global_flag = modoption_historicalbossai_on 
+			}
 		}
 		target_width = 42
 		width_weight = 1
@@ -39,7 +43,7 @@ armor_default = {
 			match_value = 9000.0
 			support = {
 				engineer = 1
-				recon = 1
+				light_tank_recon = 1
 				medium_flame_tank = 1
 				signal_company = 1
 				anti_air = 1
@@ -55,7 +59,7 @@ armor_default = {
 			heavy_armor
 			heavy_tank_destroyer_brigade
 			engineer
-			recon
+			light_tank_recon
 			signal_company
 			medium_flame_tank
 			mechanized
@@ -123,6 +127,7 @@ infantry_SIR = {
 				add = 100
 			NOT = {	has_idea = TY_dingzhenai }
 		country_exists = BLI
+		NOT = { has_global_flag = modoption_historicalbossai_on }
 			}
 		}
 		production_prio = {
@@ -131,6 +136,7 @@ infantry_SIR = {
 				add = 100
 			NOT = {	has_idea = TY_dingzhenai }
 		country_exists = BLI
+		NOT = { has_global_flag = modoption_historicalbossai_on }
 			}
 		}
 		target_width = 20.0
@@ -174,6 +180,10 @@ infantry_SIR = {
 			NOT = {	has_idea = TY_dingzhenai }
 				NOT = { country_exists = BLI }
 			}
+			modifier = {
+				add = 100
+				has_global_flag = modoption_historicalbossai_on
+			}
 		}
 		production_prio = {
 			base = 0
@@ -181,6 +191,10 @@ infantry_SIR = {
 				add = 100
 			NOT = {	has_idea = TY_dingzhenai }
 				NOT = { country_exists = BLI }
+			}
+			modifier = {
+				add = 100
+				has_global_flag = modoption_historicalbossai_on
 			}
 		}
 		target_width = 42.0

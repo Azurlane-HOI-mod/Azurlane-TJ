@@ -172,10 +172,12 @@ SIR_unit_production_army_before_1940 = {
 		NOT = {
 			has_idea = TY_dingzhenai
 		}
+		NOT = { has_global_flag = modoption_historicalbossai_on }
 	}
 	abort = {
 		NOT = { country_exists = BLI }
 			has_idea = TY_dingzhenai
+			has_global_flag = modoption_historicalbossai_on 
 	}
 	
 	ai_strategy = {
@@ -271,10 +273,118 @@ SIR_unit_production_army_after_1940 = {
 		original_tag = SIR
 	}
 	enable = {
-	NOT = { country_exists = BLI }
-	NOT = {
-		has_idea = TY_dingzhenai
+    NOT = { country_exists = BLI }
+	NOT = { has_idea = TY_dingzhenai } 
+	has_global_flag = modoption_historicalbossai_on 
 	}
+	abort = {
+		has_global_flag = modoption_historicalbossai_on 
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = cavalry
+		value = -100
+	}
+
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = infantry
+		value = 400
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = infantry
+		value = 50
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = armor
+		value = 2000
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = armor
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_production_factor	#装备倾向
+		id = armor			
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_production_factor	#装备倾向
+		id = infantry			
+		value = 20
+	}
+	ai_strategy = {
+		type = equipment_production_factor	#装备倾向
+		id = anti_air			
+		value = 10
+	}
+	ai_strategy = {
+		type = equipment_production_factor	#装备倾向
+		id = land_heavy_tank_destroyer			
+		value = 500
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = land_heavy_tank
+		value = 1
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = land_heavy_tank_destroyer
+		value = 1
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1
+	}
+
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+	
+	ai_strategy = {
+        type = force_build_armies
+        value = 100
+    }
+}
+
+SIR_unit_production_army_historicalbossai_on = {
+    allowed = {
+		original_tag = SIR
+	}
+	enable = {
+    has_global_flag = modoption_historicalbossai_on 
 	}
 	abort_when_not_enabled = yes
 	

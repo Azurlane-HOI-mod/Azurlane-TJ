@@ -443,6 +443,190 @@ SAD_medium_tanks = {
 		}
 	}
 }
+
+SAD_medium_tank_destroyers = {
+	category = land
+	blocked_for = {}
+	available_for = { SAD }
+	roles = {
+		land_medium_tank_destroyer
+	}
+	priority = {
+		factor = 500
+	}
+	medium_tank_destroyer_1 = { #Somua S35
+		priority = {
+			factor = 300
+			modifier = { 
+				has_tech = improved_medium_tank_chassis
+				factor = 0 #let's not waste XP here
+			}
+		}
+		
+		target_variant = {
+			match_value = 1000
+			type = medium_tank_destroyer_chassis_1
+			modules = {
+				main_armament_slot = { 
+					any_of = { 
+						tank_high_velocity_cannon_3
+					    tank_heavy_cannon_3
+						tank_high_velocity_cannon_2
+			            tank_heavy_cannon_2
+					    tank_heavy_cannon
+					    tank_medium_cannon_2
+				    	tank_medium_cannon
+						tank_high_velocity_cannon
+					} 
+				}
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = easy_maintenance
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 10
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+		allowed_modules = {
+			tank_heavy_cannon_3
+			tank_heavy_cannon_2
+			tank_heavy_cannon
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_high_velocity_cannon_3
+			tank_high_velocity_cannon_2
+			tank_high_velocity_cannon
+			tank_medium_fixed_superstructure_turret
+			tank_christie_suspension
+		    tank_riveted_armor
+			tank_gasoline_engine
+            secondary_turret_small_cannon		
+            sloped_armor	
+			easy_maintenance
+		}
+	}
+	medium_tank_destroyer_2 = {#AMC 35
+		priority = {
+			factor = 400
+			modifier = { 
+				has_tech = advanced_medium_tank_chassis
+				factor = 0 #let's not waste XP here
+			}
+		}
+		
+		target_variant = {
+			match_value = 1000
+			type = medium_tank_destroyer_chassis_2
+			modules = {
+				main_armament_slot = { 
+					any_of = { 
+						tank_high_velocity_cannon_3
+					    tank_heavy_cannon_3
+						tank_high_velocity_cannon_2
+			            tank_heavy_cannon_2
+					    tank_heavy_cannon
+					    tank_medium_cannon_2
+				    	tank_medium_cannon
+						tank_high_velocity_cannon
+					} 
+				}
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = easy_maintenance
+				special_type_slot_4 = extra_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+		allowed_modules = {
+		    tank_heavy_cannon_3
+			tank_heavy_cannon_2
+			tank_heavy_cannon
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_high_velocity_cannon_3
+			tank_high_velocity_cannon_2
+			tank_high_velocity_cannon
+			tank_medium_fixed_superstructure_turret
+			tank_christie_suspension
+		    tank_riveted_armor
+			tank_gasoline_engine
+            secondary_turret_small_cannon		
+            extra_ammo_storage	
+			easy_maintenance
+		}
+	}
+	medium_tank_destroyer_3 = { #SARL42
+		priority = {
+			factor = 500
+			modifier = { 
+				NOT = { has_tech = advanced_medium_tank_chassis } 
+				factor = 0 #let's not waste XP here
+			}
+		}
+		
+		target_variant = {
+			match_value = 1000
+			type = medium_tank_destroyer_chassis
+			modules = {
+				main_armament_slot = { 
+					any_of = { 
+						tank_high_velocity_cannon_3
+					    tank_heavy_cannon_3
+						tank_high_velocity_cannon_2
+			            tank_heavy_cannon_2
+					    tank_heavy_cannon
+					    tank_medium_cannon_2
+				    	tank_medium_cannon
+						tank_high_velocity_cannon
+					} 
+				}
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = easy_maintenance
+				special_type_slot_4 = extra_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 0
+			}
+		}
+		allowed_modules = {
+		    tank_heavy_cannon_3
+			tank_heavy_cannon_2
+			tank_heavy_cannon
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_high_velocity_cannon_3
+			tank_high_velocity_cannon_2
+			tank_high_velocity_cannon
+			tank_medium_fixed_superstructure_turret
+			tank_christie_suspension
+		    tank_riveted_armor
+			tank_gasoline_engine
+            secondary_turret_small_cannon		
+            extra_ammo_storage	
+			easy_maintenance
+		}
+	}
+}
+
 SAD_medium_flame_tank = {
 	category = land
 

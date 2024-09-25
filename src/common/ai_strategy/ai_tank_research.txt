@@ -1565,6 +1565,68 @@ ai_naval_research_DOH_8 = {
 
 }
 
+ai_tank_research_1 = {
+	allowed = {
+		original_tag = SIR
+	}
+	enable = {
+		date > 1936.1.1
+	}
+
+	abort = {
+		has_tech = gwtank_chassis
+	}
+
+	ai_strategy = {
+		type = research_tech
+		id = 88 #gwtank_chassis
+		value = 2000
+	}
+}
+
+ai_heavy_tank_research_1 = {
+	allowed = {
+		original_tag = SIR
+	}
+	enable = {
+		has_tech = gwtank_chassis
+		date > 1936.1.1
+	}
+
+	abort = {
+		has_tech = basic_heavy_tank_chassis
+	}
+
+	ai_strategy = {
+		type = research_tech
+		id = 98 #basic_heavy_tank_chassis
+		value = 2000
+	}
+}
+
+ai_heavy_tank_research_2 = {
+	allowed = {
+	    OR = {
+		    original_tag = SIR
+			original_tag = BLI
+		}
+	}
+	enable = {
+		has_tech = basic_heavy_tank_chassis
+		date > 1936.1.1
+	}
+
+	abort = {
+		has_tech = improved_heavy_tank_chassis
+	}
+
+	ai_strategy = {
+		type = research_tech
+		id = 99 #improved_heavy_tank_chassis
+		value = 2000
+	}
+}
+
 ai_naval_submarine = {
 	allowed = {
 		OR = {
