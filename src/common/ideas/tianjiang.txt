@@ -3219,8 +3219,11 @@ ideas = {
 		TY_fkAI_AIduiyoudebuff = {
 			picture = fengkuangai
 			cancel = {
+				or = {
 				all_allied_country = {
 					is_ai = yes
+				}
+				is_in_faction = no
 				}
 			}
 			allowed_civil_war = {
@@ -3235,6 +3238,9 @@ ideas = {
 				land_reinforce_rate = -0.05
 				training_time_army_factor = 2
 			} 
+			on_remove = {
+				clr_country_flag = AZ_fengkuangAI_AIzhuanshudebuff_get
+			}
 		}
 		
 		TY_fkAI_niliuershang = {

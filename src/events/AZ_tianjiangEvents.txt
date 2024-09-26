@@ -10373,7 +10373,6 @@ country_event = {
 	title = "AI弱智"
 	desc = "检测为玩家队友舰娘国AI，吃debuff！"
 	picture = GFX_aze_dai
-	fire_only_once = yes
 	trigger = {
 		is_ai = yes
 		any_allied_country = {
@@ -10385,10 +10384,12 @@ country_event = {
 			has_idea = TY_fengkuangai3
 		}
 		has_global_flag = AZ_fengkuangAI_citiao_11
+		not = { has_country_flag = AZ_fengkuangAI_AIzhuanshudebuff_get }
 	}
 	option = {
 		name = "呀咩咯！"
 		add_ideas = TY_fkAI_AIduiyoudebuff
+		set_country_flag = AZ_fengkuangAI_AIzhuanshudebuff_get
 		ai_chance = {
 			factor = 100
 		}
