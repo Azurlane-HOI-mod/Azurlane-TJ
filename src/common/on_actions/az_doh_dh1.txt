@@ -1,6 +1,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			DOH_point_weekly_limit = yes
 			DOH = {
 				set_variable = {
 					var = DOH_touzi
@@ -8,19 +9,9 @@ on_actions = {
 					tooltip = "投资"
 				}
 				set_variable = {
-					var = DOH_touzi_effect
-					value = 0
-					tooltip = "投资影响"
-				}
-				set_variable = {
 					var = DOH_keyanjinfei
 					value = 0
 					tooltip = "额外科研经费"
-				}
-				set_variable = {
-					var = DOH_keyanjinfei_effect
-					value = 0
-					tooltip = "额外科研经费影响"
 				}
 				set_variable = {
 					var = DOH_junshijinfei
@@ -28,19 +19,9 @@ on_actions = {
 					tooltip = "额外生产经费"
 				}
 				set_variable = {
-					var = DOH_junshijinfei_effect
-					value = 0
-					tooltip = "额外生产经费影响"
-				}
-				set_variable = {
 					var = DOH_gonggongkaizhi
 					value = 0
 					tooltip = "公共开支"
-				}
-				set_variable = {
-					var = DOH_gonggongkaizhi_effect
-					value = 0
-					tooltip = "公共开支影响"
 				}
 				set_variable = {
 					var = DOH_shichang
@@ -48,44 +29,9 @@ on_actions = {
 					tooltip = "市场开放程度"
 				}
 				set_variable = {
-					var = DOH_shichang_effect
-					value = 0
-					tooltip = "市场开放程度影响"
-				}
-				set_variable = {
-					var = DOH_guimoxiaoyin
-					value = 0
-					tooltip = "规模效应"
-				}
-				set_variable = {
-					var = DOH_guimoxiaoyin_effect
-					value = 0
-					tooltip = "规模效应影响"
-				}
-				set_variable = {
-					var = DOH_zongjikaizhi
-					value = 0
-					tooltip = "总计开支"
-				}
-				set_variable = {
-					var = DOH_xiaofeipingyinxiang
-					value = 0
-					tooltip = "对消费品系数影响"
-				}
-				set_variable = {
-					var = DOH_xiaofeipingyinxiang_factor
-					value = 0.08
-					tooltip = "对消费品系数影响系数"
-				}
-				set_variable = {
 					var = DOH_zhichiduchengfa
 					value = -1
 					tooltip = "异议（原始）"
-				}
-				set_variable = {
-					var = extra_xiaofeiping
-					value = 0
-					tooltip = "额外消费品系数修正"
 				}
 				set_variable = {
 					var = DOH_gexinshengchanli
@@ -97,7 +43,8 @@ on_actions = {
 	}
 	on_weekly = {
 		effect = {
-			DOH_mofifier_effect = yes
+			DOH_modifier_effect = yes
+			DOH_point_weekly_limit = yes
 			if = {
 				limit = {
 					DOH = {

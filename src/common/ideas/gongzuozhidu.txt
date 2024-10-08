@@ -137,7 +137,10 @@ ideas = {
 			available = {
 					num_of_factories > 499
 					num_researched_technologies > 150
-					amount_research_slots > 5
+					OR = {
+						amount_research_slots > 5
+						has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+					}
 				
 			}
 			ai_will_do = {

@@ -1,0 +1,325 @@
+DOH_zongjikaizhi_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_touzi
+		}
+		add = t
+	}
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			k = var:DOH_keyanjinfei
+		}
+		add = k
+	}
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			j = var:DOH_junshijinfei
+		}
+		add = j
+	}
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			g = var:DOH_gonggongkaizhi
+		}
+		add = g
+	}
+}
+DOH_guimoxiaoyin_mtth = {
+	base = 0
+	modifier = {
+		AND = {
+			DOH = {
+				has_completed_focus = DOH_donghuanggongyetixi
+			}
+			DOH = {
+				num_of_factories > 299
+			}
+		}
+		add = DOH.num_of_civilian_factories
+	}
+	modifier = {
+		AND = {
+			DOH = {
+				has_completed_focus = DOH_donghuanggongyetixi
+			}
+			DOH = {
+				num_of_factories > 299
+			}
+		}
+		add = -299
+	}
+	modifier = {
+		always = yes
+		factor = 0.01
+	}
+}
+DOH_xiaofeipingyinxiang_factor_mtth = {
+	base = 0.08
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = mtth:DOH_guimoxiaoyin_mtth
+		}
+		multiply_temp_variable = {
+			t = 0.006
+		}
+		add = t
+	}
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = mtth:DOH_gexinshengchanli_mtth
+		}
+		divide_temp_variable = {
+			1 = t
+		}
+		factor = t
+	}
+}
+DOH_gexinshengchanli_mtth = {
+	base = 0
+	modifier = {
+		has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+		add = modifier@research_speed_factor
+	}
+	modifier = {
+		has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+		factor = DOH_gexinshengchanli
+	}
+	modifier = {
+		has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+		factor = 0.2
+	}
+	modifier = {
+		always = yes
+		add = 1
+	}
+}
+DOH_heqishengcai_mtth = {
+	base = 0
+	modifier = {
+		has_completed_focus = DOH_heqishengcai
+		set_temp_variable = {
+			t = DOH.stability
+		}
+		multiply_temp_variable = {
+			t = -0.2
+		}
+		add = t
+	}
+	modifier = {
+		has_completed_focus = DOH_heqishengcai
+		set_temp_variable = {
+			t = DOH.num_of_civilian_factories
+		}
+		multiply_temp_variable = {
+			t = -0.002
+		}
+		add = t
+	}
+}
+
+# 总计消费品
+DOH_xiaofeipingyinxiang_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = mtth:DOH_zongjikaizhi_mtth
+		}
+		add = t
+	}
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = mtth:DOH_xiaofeipingyinxiang_factor_mtth
+		}
+		factor = t
+	}
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = mtth:DOH_heqishengcai_mtth
+		}
+		add = t
+	}
+	modifier = {
+		has_completed_focus = DOH_liangdanyixing
+		set_temp_variable = {
+			t = var:DOH_hedian_counter
+		}
+		add = t
+	}
+	modifier = {
+		has_completed_focus = DOH_shichanghuanjishu
+		set_temp_variable = {
+			t = var:DOH_shichang
+		}
+		multiply_temp_variable = {
+			t =  -0.04
+		}
+		add = t
+	}
+}
+
+# 投资效果
+DOH_modifier_touzi_effect_1_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_touzi
+		}
+		multiply_temp_variable = {
+			t = 0.04
+		}
+		add = t
+	}
+}
+
+# 科研效果
+DOH_modifier_keyanjinfei_effect_1_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_keyanjinfei
+		}
+		multiply_temp_variable = {
+			t = 0.04
+		}
+		add = t
+	}
+}
+
+# 公共开支
+DOH_modifier_gonggongkaizhi_effect_1_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_gonggongkaizhi
+		}
+		multiply_temp_variable = {
+			t = 0.05
+		}
+		add = t
+	}
+}
+
+DOH_modifier_gonggongkaizhi_effect_2_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_gonggongkaizhi
+		}
+		multiply_temp_variable = {
+			t = 0.01
+		}
+		add = t
+	}
+}
+
+DOH_modifier_gonggongkaizhi_effect_3_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_gonggongkaizhi
+		}
+		multiply_temp_variable = {
+			t = 0.001
+		}
+		add = t
+	}
+}
+
+DOH_modifier_gonggongkaizhi_effect_4_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_gonggongkaizhi
+		}
+		multiply_temp_variable = {
+			t = -0.05
+		}
+		add = t
+	}
+}
+# 生产经费
+DOH_modifier_shengchanjinfei_effect_1_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH_junshijinfei
+		}
+		multiply_temp_variable = {
+			t = 0.04
+		}
+		add = t
+	}
+}
+# 规模效应额外产能
+DOH_modifier_guimoxiaoying_effect_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = mtth:DOH_guimoxiaoyin_mtth
+		}
+		multiply_temp_variable = {
+			t = 0.2
+		}
+		add = t
+	}
+}
+## 市场
+DOH_modifier_shichang_effect_1_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = mtth:DOH_shichang
+		}
+		multiply_temp_variable = {
+			t = 0.4
+		}
+		add = t
+	}
+}
+
+## 工业目标
+DOH_gongyemubiao_mtth = {
+	base = 0
+	modifier = {
+		always = yes
+		set_temp_variable = {
+			t = var:DOH.num_of_factories
+		}
+		add = t
+	}
+	modifier = {
+		always = yes
+		factor = 1.1
+	}
+	modifier = {
+		has_war = no
+		factor = 1.1
+	}
+	modifier = {
+		has_completed_focus = DOH_junmingronghe
+		factor = 1.1
+	}
+	modifier = {
+		has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+		factor = 1.1
+	}
+}

@@ -11,10 +11,16 @@ scripted_gui = {
 			az_doh_gui_touzi_add_one_click_enabled = {
 				has_completed_focus = DOH_jinjigaige
 				num_of_civilian_factories_available_for_projects > 5
+				check_variable = {
+					DOH_add_touzi_weekly_limit < 16
+				}
 			}
 			az_doh_gui_touzi_add_5_click_enabled = {
 				has_completed_focus = DOH_jinjigaige
 				num_of_civilian_factories_available_for_projects > 15
+				check_variable = {
+					DOH_add_touzi_weekly_limit < 16
+				}
 			}
 			az_doh_gui_touzi_subtract_one_click_enabled = {
 				has_completed_focus = DOH_jinjigaige
@@ -32,10 +38,16 @@ scripted_gui = {
 			az_doh_gui_gonggongkaizhi_add_one_click_enabled = {
 				has_completed_focus = DOH_shehuibaozhang
 				num_of_civilian_factories_available_for_projects > 5
+				check_variable = {
+					DOH_add_gonggongkaizhi_weekly_limit < 16
+				}
 			}
 			az_doh_gui_gonggongkaizhi_add_5_click_enabled = {
 				has_completed_focus = DOH_shehuibaozhang
 				num_of_civilian_factories_available_for_projects > 15
+				check_variable = {
+					DOH_add_gonggongkaizhi_weekly_limit < 16
+				}
 			}
 			az_doh_gui_gonggongkaizhi_subtract_one_click_enabled = {
 				has_completed_focus = DOH_shehuibaozhang
@@ -54,14 +66,20 @@ scripted_gui = {
 				has_completed_focus = DOH_rencaiyinjin
 				num_of_civilian_factories_available_for_projects > 5
 				check_variable = {
-					var:DOH_keyanjinfei < 30
+					var:DOH_keyanjinfei < 100
+				}
+				check_variable = {
+					DOH_add_keyanjinfei_weekly_limit < 16
 				}
 			}
 			az_doh_gui_keyanjinfei_add_5_click_enabled = {
 				has_completed_focus = DOH_rencaiyinjin
 				num_of_civilian_factories_available_for_projects > 15
 				check_variable = {
-					var:DOH_keyanjinfei < 26
+					var:DOH_keyanjinfei < 96
+				}
+				check_variable = {
+					DOH_add_keyanjinfei_weekly_limit < 16
 				}
 			}
 			az_doh_gui_keyanjinfei_subtract_one_click_enabled = {
@@ -80,10 +98,16 @@ scripted_gui = {
 			az_doh_gui_junshijinfei_add_one_click_enabled = {
 				has_completed_focus = DOH_donghuanggongyetixi
 				num_of_civilian_factories_available_for_projects > 5
+				check_variable = {
+					DOH_add_junshijinfei_weekly_limit < 16
+				}
 			}
 			az_doh_gui_junshijinfei_add_5_click_enabled = {
 				has_completed_focus = DOH_donghuanggongyetixi
 				num_of_civilian_factories_available_for_projects > 15
+				check_variable = {
+					DOH_add_junshijinfei_weekly_limit < 16
+				}
 			}
 			az_doh_gui_junshijinfei_subtract_one_click_enabled = {
 				has_completed_focus = DOH_donghuanggongyetixi
@@ -100,14 +124,14 @@ scripted_gui = {
 
 			az_doh_gui_shichang_add_one_click_enabled = {
 				check_variable = {
-					var:DOH_shichang < 15
+					var:DOH_shichang < 30
 				}
 				has_completed_focus = DOH_shichanghuanjishu
 			}
 			az_doh_gui_shichang_add_5_click_enabled = {
 				has_completed_focus = DOH_jinjigaige
 				check_variable = {
-					var:DOH_shichang < 10
+					var:DOH_shichang < 25
 				}
 				has_completed_focus = DOH_shichanghuanjishu
 			}
@@ -155,14 +179,20 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_touzi = 1
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_touzi_weekly_limit = 1
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_touzi_add_5_click = {
 				add_to_variable = {
 					var:DOH_touzi = 5
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_touzi_weekly_limit = 5
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -173,14 +203,14 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_touzi = -1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_touzi_subtract_5_click = {
 				add_to_variable = {
 					var:DOH_touzi = -5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -192,14 +222,20 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_gonggongkaizhi = 1
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_gonggongkaizhi_weekly_limit = 1
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_gonggongkaizhi_add_5_click = {
 				add_to_variable = {
 					var:DOH_gonggongkaizhi = 5
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_gonggongkaizhi_weekly_limit = 5
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -210,14 +246,14 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_gonggongkaizhi = -1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_gonggongkaizhi_subtract_5_click = {
 				add_to_variable = {
 					var:DOH_gonggongkaizhi = -5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -229,14 +265,20 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_keyanjinfei = 1
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_keyanjinfei_weekly_limit = 1
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_keyanjinfei_add_5_click = {
 				add_to_variable = {
 					var:DOH_keyanjinfei = 5
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_keyanjinfei_weekly_limit = 5
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -247,14 +289,14 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_keyanjinfei = -1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_keyanjinfei_subtract_5_click = {
 				add_to_variable = {
 					var:DOH_keyanjinfei = -5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -266,14 +308,20 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_junshijinfei = 1
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_junshijinfei_weekly_limit = 1
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_junshijinfei_add_5_click = {
 				add_to_variable = {
 					var:DOH_junshijinfei = 5
 				}
-				DOH_mofifier_effect = yes
+				add_to_variable = {
+					var:DOH_add_junshijinfei_weekly_limit = 5
+				}
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -284,14 +332,14 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_junshijinfei = -1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_junshijinfei_subtract_5_click = {
 				add_to_variable = {
 					var:DOH_junshijinfei = -5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -303,14 +351,14 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_shichang = 1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_shichang_add_5_click = {
 				add_to_variable = {
 					var:DOH_shichang = 5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -321,14 +369,14 @@ scripted_gui = {
 				add_to_variable = {
 					var:DOH_shichang = -1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_shichang_subtract_5_click = {
 				add_to_variable = {
 					var:DOH_shichang = -5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -343,7 +391,7 @@ scripted_gui = {
 				DOH = {
 					add_research_slot = -1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_gexinshengchanli_add_5_click = {
@@ -353,7 +401,7 @@ scripted_gui = {
 				DOH = {
 					add_research_slot = -5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
@@ -367,7 +415,7 @@ scripted_gui = {
 				DOH = {
 					add_research_slot = 1
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 			}
 			az_doh_gui_gexinshengchanli_subtract_5_click = {
@@ -377,7 +425,7 @@ scripted_gui = {
 				DOH = {
 					add_research_slot = 5
 				}
-				DOH_mofifier_effect = yes
+				DOH_modifier_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes
 				DOH_zhichilvchengfa_effect = yes

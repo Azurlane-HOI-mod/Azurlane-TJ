@@ -4,52 +4,53 @@ DOH_donghuangshiwu_idea = {
 	party_popularity_stability_factor = 1
 	stability_factor = -1
 	stability_weekly = -0.005
-	consumer_goods_factor = var:DOH_xiaofeipingyinxiang
-	local_resources_factor = DOH_touzi_effect
-	production_speed_buildings_factor = DOH_touzi_effect
-	cic_construction_boost = DOH_touzi_effect
 
-	research_speed_factor = DOH_keyanjinfei_effect
-	political_power_factor = DOH_keyanjinfei_effect
+	consumer_goods_factor = mtth:DOH_xiaofeipingyinxiang_mtth
 	
-	industrial_capacity_factory = DOH_junshijinfei_effect
-	industrial_capacity_dockyard = DOH_junshijinfei_effect
+	## 投资
+	local_resources_factor = mtth:DOH_modifier_touzi_effect_1_mtth
+	production_speed_buildings_factor = mtth:DOH_modifier_touzi_effect_1_mtth
+	cic_construction_boost = mtth:DOH_modifier_touzi_effect_1_mtth
 
-	boost_ideology_mission_factor = DOH_gonggongkaizhi_effect
-	intel_network_gain_factor = DOH_gonggongkaizhi_effect
-	naval_morale_factor = DOH_gonggongkaizhi_effect
-	intelligence_agency_defense = DOH_gonggongkaizhi_effect
-	industry_free_repair_factor = DOH_gonggongkaizhi_effect
-	enemy_operative_detection_chance_factor = DOH_gonggongkaizhi_effect
-	encryption_factor = DOH_gonggongkaizhi_effect
-	decryption_factor = DOH_gonggongkaizhi_effect
-	line_change_production_efficiency_factor = DOH_gonggongkaizhi_effect
-	industry_air_damage_factor = DOH_gonggongkaizhi_effect_m
-	own_operative_detection_chance_factor = DOH_gonggongkaizhi_effect_m
-	land_reinforce_rate = DOH_gonggongkaizhi_effect_2
-	repair_speed_factor = DOH_gonggongkaizhi_effect
-	stability_weekly_factor = DOH_gonggongkaizhi_effect_3
+	## 科研
+	research_speed_factor = mtth:DOH_modifier_keyanjinfei_effect_1_mtth
+	political_power_factor = mtth:DOH_modifier_keyanjinfei_effect_1_mtth
+	
+	## 生产
+	industrial_capacity_factory = mtth:DOH_modifier_shengchanjinfei_effect_1_mtth
+	industrial_capacity_dockyard = mtth:DOH_modifier_shengchanjinfei_effect_1_mtth
 
-	min_export = DOH_shichang_effect
-	trade_opinion_factor = DOH_shichang_effect
-	research_speed_factor = DOH_shichang_effect
+	## 规模效应（生产）
+	industrial_capacity_factory = mtth:DOH_modifier_guimoxiaoying_effect_mtth
+	industrial_capacity_dockyard = mtth:DOH_modifier_guimoxiaoying_effect_mtth
 
-	industrial_capacity_factory = DOH_guimoxiaoyin_effect
-	industrial_capacity_dockyard = DOH_guimoxiaoyin_effect
-	consumer_goods_factor = extra_xiaofeiping
-	consumer_goods_factor = DOH_shichang_effect_m
-	trade_opinion_factor = DOH_shichang_effect_m
+	## 市场
+	min_export = mtth:DOH_modifier_shichang_effect_1_mtth
+	trade_opinion_factor = mtth:DOH_modifier_shichang_effect_1_mtth
+	research_speed_factor = mtth:DOH_modifier_shichang_effect_1_mtth
 
-	consumer_goods_factor = var:DOH_hedian_counter
+
+	## 公共
+	boost_ideology_mission_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	intel_network_gain_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	naval_morale_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	intelligence_agency_defense = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	industry_free_repair_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	enemy_operative_detection_chance_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	encryption_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	decryption_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	repair_speed_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	production_factory_efficiency_gain_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+	line_change_production_efficiency_factor = mtth:DOH_modifier_gonggongkaizhi_effect_1_mtth
+
+	land_reinforce_rate = mtth:DOH_modifier_gonggongkaizhi_effect_2_mtth
+
+	stability_weekly_factor = mtth:DOH_modifier_gonggongkaizhi_effect_3_mtth
+
+	industry_air_damage_factor = mtth:DOH_modifier_gonggongkaizhi_effect_4_mtth
+	own_operative_detection_chance_factor = mtth:DOH_modifier_gonggongkaizhi_effect_4_mtth
 }
-DOH_fake_add_touzi = {
-	icon = GFX_idea_DOH_xdh
-    enable = { always = yes }
-	consumer_goods_factor = var:DOH_xiaofeipingyinxiang_factor
-	production_speed_buildings_factor = 0.04
-	local_resources_factor = 0.04
-	cic_construction_boost = 0.04
-}
+
 DOH_donghuangkuangyedaxue = {
 	icon = GFX_idea_DOH_xdh
     enable = { always = yes }
@@ -105,52 +106,6 @@ DOH_kejiaotixi_black = {
 	country_resource_chromium = var:DOH_hechenglianyouchang_counter_2
 }
 
-# DOH_fake_add_gonggongkaizhi = {
-# 	icon = GFX_idea_DOH_xdh
-#     enable = { always = yes }
-# 	consumer_goods_factor = var:DOH_xiaofeipingyinxiang_factor
-	
-# 	boost_ideology_mission_factor = 0.05
-# 	intel_network_gain_factor = 0.05
-# 	naval_morale_factor = 0.05
-# 	intelligence_agency_defense = 0.05
-# 	encryption_factor = 0.05
-# 	decryption_factor = 0.05
-# 	industry_free_repair_factor = 0.05
-# 	line_change_production_efficiency_factor = 0.05
-# 	industry_air_damage_factor = -0.05
-# 	own_operative_detection_chance_factor = -0.05
-# 	enemy_operative_detection_chance_factor = 0.05
-# 	land_reinforce_rate = 0.01
-# 	repair_speed_factor = 0.05
-# 	stability_weekly_factor = 0.001
-# }
-# DOH_fake_add_keyanjinfen = {
-# 	icon = GFX_idea_DOH_xdh
-#     enable = { always = yes }
-# 	consumer_goods_factor = var:DOH_xiaofeipingyinxiang_factor
-# 	research_speed_factor = 0.035
-# 	political_power_factor = 0.035
-# }
-# DOH_fake_add_junshijinfei = {
-# 	icon = GFX_idea_DOH_xdh
-#     enable = { always = yes }
-# 	consumer_goods_factor = var:DOH_xiaofeipingyinxiang_factor
-# 	industrial_capacity_factory = 0.035
-# 	industrial_capacity_dockyard = 0.035
-# }
-# DOH_fake_add_shichangkaifang = {
-# 	icon = GFX_idea_DOH_xdh
-#     enable = { always = yes }
-# 	min_export = 0.03
-# 	research_speed_factor = 0.03
-# 	consumer_goods_factor = -0.03
-# 	trade_opinion_factor = 0.03
-# }
-# DOH_hedian_modifier = {
-# 	icon = GFX_nuclear_reactor_medium
-# 	consumer_goods_factor = var:DOH_hedian_counter
-# }
 DOH_hedian_state_modifier = {
 	icon = GFX_modifiers_generic_military_plans
 	local_building_slots = 1

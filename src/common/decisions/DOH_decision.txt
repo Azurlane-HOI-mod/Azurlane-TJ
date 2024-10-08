@@ -38,29 +38,7 @@ DOH_decision_category = {
 			activate_mission = DOH_gongyeguihua_mission
 			set_country_flag = DOH_gongyeguihua_doing
 			set_variable = {
-				var:DOH_gongyeguihua_doing_goal = 1.1
-			}
-			if = {
-				limit = {
-					check_variable = {
-						DOH.num_of_factories < 450
-					}
-				}
-				set_variable = {
-					var:DOH_gongyeguihua_doing_goal = 450
-				}
-				subtract_from_variable = {
-					var:DOH_gongyeguihua_doing_goal = DOH.num_of_factories
-				}
-				multiply_variable = {
-					var:DOH_gongyeguihua_doing_goal = 0.001
-				}
-				add_to_variable = {
-					var:DOH_gongyeguihua_doing_goal = 1.1
-				}
-			}
-			multiply_variable = {
-				var:DOH_gongyeguihua_doing_goal = DOH.num_of_factories
+				var:DOH_gongyeguihua_doing_goal = mtth:DOH_gongyemubiao_mtth
 			}
 			round_variable = var:DOH_gongyeguihua_doing_goal
 		}
@@ -1390,7 +1368,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_touzi = 1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1421,7 +1399,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_touzi = -1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1450,7 +1428,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_gonggongkaizhi = 1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1481,7 +1459,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_gonggongkaizhi = -1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1510,7 +1488,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_keyanjinfei = 1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1541,7 +1519,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_keyanjinfei = -1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1570,7 +1548,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_junshijinfei = 1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1601,7 +1579,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_junshijinfei = -1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1632,7 +1610,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_shichang = 1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
@@ -1663,7 +1641,7 @@ DOH_decision_debug_category = {
 # 			add_to_variable = {
 # 				var:DOH_shichang = -1
 # 			}
-# 			DOH_mofifier_effect = yes
+# 			DOH_modifier_effect = yes
 # 			DOH_zhichilvchengfa_effect = yes
 # 		}
 # 	}
