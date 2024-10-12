@@ -2160,7 +2160,6 @@
 				add_planning = 2
 				add_logistics = 2
 				add_unit_leader_trait = brilliant_strategist
-				add_unit_leader_trait = expert_delegator
 				add_unit_leader_trait = logistics_wizard
 			}
 			every_unit_leader = {
@@ -2682,6 +2681,8 @@
 						NOT = { has_idea = TY_fengkuangai }
 						NOT = { has_idea = TY_fengkuangai2 }
 		                NOT = { has_idea = TY_fengkuangai3 }
+						NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
+		                NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 					}
 					division_template = {
 						name = "关东边防师"
@@ -2703,7 +2704,7 @@
 								x = 0
 								y = 3
 							}
-							light_armOR = {
+							light_armor = {
 								x = 1
 								y = 0
 							}

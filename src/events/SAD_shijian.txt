@@ -59,33 +59,24 @@ country_event = {
 		ai_chance = {
 			factor = 5
 		}
-		create_corps_commander = {
-			name = 天鹰
-			portrait_path = "gfx/leaders/SAD/tianying.png"
-			traits = { xuexixunsu hangmu_army }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
-		}
-		
+		random_army_leader = {
+				limit = {
+					has_id = 05407
+				}
+				add_skill_level = 3
+				add_attack = 2
+				add_planning = 2
+				add_logistics = 2
+				add_unit_leader_trait = brilliant_strategist
+			}
 	}
 	option = {
 		name = SAD_event.4.b
 		ai_chance = {
 			factor = 0
 		}
-		create_navy_leader = {
-			name = 天鹰
-			portrait_path = "gfx/leaders/SAD/tianying.png"
-			traits = { air_controller flight_deck_manager hangmu_navy }
-				skill = 4
-				attack_skill = 4
-				defense_skill = 4
-				logistics_skill = 3
-				planning_skill = 2
-		}
+		set_global_flag = tianyingfenshen
+		custom_effect_tooltip = tianyingfenshen_tootip
 	}
 }
 country_event = {

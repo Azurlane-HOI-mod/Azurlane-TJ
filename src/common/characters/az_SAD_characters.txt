@@ -716,6 +716,51 @@ characters={
 				factor = 10
 			}
 		}
+		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			legacy_id = 05407
+			traits = { hangmu_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		
+	}
+	SAD_tianyingnavy = {
+		name = SAD_tianyingnavy
+		portraits={
+			army = {
+			    large="gfx/leaders/SAD/tianying.png"
+				small="gfx/interface/ideas/idea_tianying.png"
+			}
+		}
+
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+				has_global_flag = tianyingfenshen 
+			}
+			traits = { hangmu_navy }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+		
 	}
 	SAD_xibeifeng = {
 		name = SAD_xibeifeng
