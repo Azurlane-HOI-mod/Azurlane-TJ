@@ -10423,6 +10423,63 @@ BYG_huoxingzhongdi = {
 			}
 		}
 	}
+	BYG_daxiaotiaozuobi_jy = {
+		icon = xingdong
+		cost = 0
+		priority = 100
+		fire_only_once = yes
+		visible = {
+			is_ai = yes
+			OR = {
+				has_completed_focus = BYG_ziyoudebian
+				has_completed_focus = BYG_chongzubaiyingguohui
+			}
+		}
+		available = {
+			has_government = democratic
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		complete_effect = {
+			complete_national_focus = BYG_wanzhengdewomen
+		}
+	}
+	BYG_kuodakeyan_jy = {
+		icon = xingdong
+		cost = 100
+		priority = 100
+		fire_only_once = yes
+		visible = {
+			OR = {
+				has_completed_focus = BYG_ziyoudebian
+				has_completed_focus = BYG_chongzubaiyingguohui
+			}
+		}
+		available = {
+			has_government = democratic
+			NOT = { has_idea = BYG_jjwjhyz }
+			NOT = { has_idea = BYG_jjwjhyz_1 }
+			NOT = { has_idea = BYG_jjwjhyz_2 }
+		}
+		ai_will_do = {
+			base = 100
+		}
+		complete_effect = {
+			add_research_slot = 1
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+			}
+		}
+	}
 	BYG_shehuibaozhangfa_jy = {
 		icon = xingdong
 		cost = 50
