@@ -514,7 +514,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_sairenjiehe
-		icon = GFX_goal_generic_special_forces
+		icon = GFX_focus_GER_wunderwaffe_inner_circle
 		x = -1
 		y = 1
 		prerequisite = {
@@ -640,7 +640,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_chongjiangongye
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_GER_the_four_year_plan_historical
 		x = 3
 		y = 0
 		cost = 7
@@ -656,6 +656,8 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			country_event = az_tianjiang.25
+			custom_effect_tooltip = GER_gain_autarkic_economy_lock_free_trade_tt
+			add_ideas = autarkic_economy
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -786,7 +788,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_namaoselai
-		icon = GFX_focus_focus_fra_maquis
+		icon = GFX_focus_GER_autarky_ambitions
 		x = 0
 		y = 1
 		prerequisite = {
@@ -894,7 +896,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_chenglihansijituan
-		icon = GFX_focus_usa_reestablish_the_gold_standard
+		icon = GFX_focus_GER_prioritize_the_four_year_plan
 		x = 0
 		y = 1
 		prerequisite = {
@@ -957,7 +959,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_jituanwaimaobu
-		icon = GFX_focus_CHL_silverworking
+		icon = GFX_focus_generic_currency_reforms
 		x = 2
 		y = 1
 		prerequisite = {
@@ -978,7 +980,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_tiexuedehansi
-		icon = GFX_focus_ger_revive_kaiserreich
+		icon = GFX_focus_GER_customs_union
 		x = 0
 		y = 1
 		prerequisite = {
@@ -1004,8 +1006,127 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = TIX_shixianzijizizu
+		icon = GFX_focus_GER_autarky_achieved
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIX_tiexuedehansi
+		}
+		relative_position_id = TIX_tiexuedehansi
+		cost = 5
+		available = {
+			all_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = steel
+					amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = steel
+						amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = aluminium
+					amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = aluminium
+						amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = oil
+					amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = oil
+						amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = tungsten
+					amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = tungsten
+						amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = chromium
+					amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = chromium
+						amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = rubber
+					amount > 49 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = rubber
+						amount > 49 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { #Notify that you will get an improved version of the Trade Law
+					NOT = { has_idea = autarkic_economy }
+				}
+				custom_effect_tooltip = GER_improve_autarkic_economy_tt
+			}
+			else = { #Get the improved version of the Trade Law
+				swap_ideas = {
+					remove_idea = autarkic_economy
+					add_idea = autarkic_economy_improved
+				}
+			}
+		}
+	}
+	focus = {
 		id = TIX_fazhanhaijun
-		icon = GFX_goal_generic_navy_battleship
+		icon = GFX_focus_GER_navy
 		x = 15
 		y = 0
 		cost = 5
@@ -1070,7 +1191,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_zhulijian
-		icon = GFX_focus_generic_navy_battleship2
+		icon = GFX_focus_generic_air_carrier
 		x = -1
 		y = 1
 		prerequisite = {
@@ -1144,6 +1265,7 @@ focus_tree = {
 				uses = 2
 				category = ss_tech
 			}
+			add_ideas = GER_rudeltaktik_ns
 		}
 	}
 	focus = {
@@ -1202,11 +1324,12 @@ focus_tree = {
 				category = naval_doctrine
 			}
 			remove_ideas = TIX_lrdhj
+			add_ideas = GER_seeherrschaft_ns
 		}
 	}
 	focus = {
 		id = TIX_jixuzjihua
-		icon = GFX_goal_generic_navy_battleship
+		icon = GFX_focus_GER_seeherrschaft
 		x = 0
 		y = 1
 		prerequisite = {
@@ -1227,8 +1350,8 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_tiexuedexingjun
-		icon = GFX_focus_generic_little_entente
-		x = 64
+		icon = GFX_focus_GER_army
+		x = 28
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -1238,6 +1361,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
+		relative_position_id = TIX_fanduibisimai
 		completion_reward = {
 			army_experience = 100
 			if = {
@@ -1403,6 +1527,7 @@ focus_tree = {
 					ahead_reduction = 1
 				}
 			}
+			add_ideas = GER_defense_of_the_reich_ns
 		}
 	}
 	focus = {
@@ -1671,6 +1796,7 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_ideas = TIX_txszx
+			add_ideas = GER_strengthened_supply_lines_ns
 			army_experience = 100
 			air_experience = 100
 			add_state_core = 28
@@ -1730,7 +1856,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_tiexuebubingban
-		icon = GFX_focus_generic_infiltration
+		icon = GFX_focus_GER_expand_ss_security_duties
 		x = -2
 		y = 1
 		relative_position_id = TIX_fazhanbubing
@@ -1781,7 +1907,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_fazhanzhuangjia
-		icon = GFX_goal_generic_army_tanks
+		icon = GFX_focus_generic_tank_assault
 		x = -4
 		y = 1
 		relative_position_id = TIX_tiexuedexingjun
@@ -2013,7 +2139,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_zhongshijidong
-		icon = GFX_goal_continuous_armor_production
+		icon = GFX_focus_generic_tank_assembly
 		x = 1
 		y = 1
 		cost = 7
@@ -2042,7 +2168,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_tankeshuliang
-		icon = GFX_focus_generic_tank_air_support
+		icon = GFX_focus_generic_mass_production
 		x = 0
 		y = 1
 		cost = 7
@@ -2063,7 +2189,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_huoliyuzhuangjia
-		icon = GFX_focus_generic_self_propelled_gun
+		icon = GFX_focus_generic_heavy_tank
 		x = -1
 		y = 1
 		cost = 7
@@ -2285,7 +2411,7 @@ focus_tree = {
 	focus = {
 		id = TIX_fanduibisimai
 		icon = GFX_focus_bisimai_prison
-		x = 24
+		x = 40
 		y = 0
 		cost = 3
 		mutually_exclusive = {
@@ -2318,10 +2444,10 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_chongjiandayihui
-		icon = GFX_focus_generic_self_management
+		icon = GFX_focus_GER_tend_to_the_future
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIX_fanduibisimai
 		}
@@ -2339,7 +2465,7 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 200
+			add_political_power = 150
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.15
@@ -2350,6 +2476,10 @@ focus_tree = {
 				long_name = "俾斯麦及其残党"
 				name = "俾斯麦及其残党"
 			}
+			add_timed_idea = {
+				idea = GER_clamp_down_on_fascism
+				days = 720
+			}
 		}
 	}
 	focus = {
@@ -2357,7 +2487,7 @@ focus_tree = {
 		icon = GFX_focus_ougenqinwang
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = TIX_chongjiandayihui
 		}
@@ -2370,7 +2500,7 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 300
+			add_political_power = 200
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.15
@@ -2378,6 +2508,7 @@ focus_tree = {
 			set_politics = {
 				ruling_party = neutrality
 			}
+			add_ideas = GER_national_revitalization_ns
 			hidden_effect = {
 				news_event = aznews.30
 			}
@@ -2456,13 +2587,13 @@ focus_tree = {
 	focus = {
 		id = TIX_xiaomiebaozheng
 		icon = GFX_aflag_SAD
-		x = 8
-		y = 4
+		x = 0
+		y = 2
 		cost = 5
 		prerequisite = {
 			focus = TIX_hebingadl
 		}
-		relative_position_id = TIX_jinburenshi
+		relative_position_id = TIX_tiexuefanjizhan
 		ai_will_do = {
 			factor = 9
 		}
@@ -2485,9 +2616,37 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = TIX_jinburenshi
-		icon = GFX_focus_z23
-		x = -8
+		id = TIX_tiaozhanhaishangbaquan
+		icon = GFX_aflag_HUJ
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_xiaomiebaozheng
+		}
+		relative_position_id = TIX_xiaomiebaozheng
+		will_lead_to_war_with = HUJ
+		bypass = {
+			not = { country_exists = HUJ }
+		}
+		ai_will_do = {
+			factor = 9
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_wargoal = {
+				target = HUJ
+				type = take_state_focus
+			}
+		}
+	}
+	focus = {
+		id = TIX_xiangzuozhuan
+		icon = GFX_focus_GER_legacy_of_the_spartacus_league
+		x = -16
 		y = 1
 		cost = 5
 		prerequisite = {
@@ -2495,10 +2654,238 @@ focus_tree = {
 		}
 		relative_position_id = TIX_hexiexintiexue
 		mutually_exclusive = {
-			focus = TIX_shouhuzuihaodeougen
+			focus = TIX_zhongjianlichang
 		}
 		ai_will_do = {
-			factor = 9
+			factor = 70
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.3
+			add_popularity = {
+				ideology = communism
+				popularity = 0.25
+			}
+		}
+	}
+	focus = {
+		id = TIX_baoshouxuanze
+		icon = GFX_focus_ger_reichskommisariats_historical
+		x = -3
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_xiangzuozhuan
+		}
+		relative_position_id = TIX_xiangzuozhuan
+		mutually_exclusive = {
+			focus = TIX_jinburenshi
+		}
+		ai_will_do = {
+			factor = 70
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 150
+			
+		}
+	}
+	focus = {
+		id = TIX_hongsediguoshexiang
+		icon = GFX_focus_generic_social_democracy
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_baoshouxuanze
+		}
+		relative_position_id = TIX_baoshouxuanze
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_shemianbisimai
+		icon = GFX_focus_baifangbisimai
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_baoshouxuanze
+		}
+		relative_position_id = TIX_baoshouxuanze
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = "铁血党"
+				name = "铁血党"
+			}
+			add_ideas = TIX_bsddjd2
+			remove_ideas = TIX_bsmdfk
+			random_army_leader = {
+				limit = {
+					has_id = 3001
+				}
+				add_unit_leader_trait = politically_connected
+				add_unit_leader_trait = expert_delegator
+				add_skill_level = 1
+			}
+		}
+	}
+	focus = {
+		id = TIX_zhengshijiegaunguojiaquanli
+		icon = GFX_focus_GER_establish_volkskommissariats
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_hongsediguoshexiang
+		}
+		prerequisite = {
+			focus = TIX_shemianbisimai
+		}
+		relative_position_id = TIX_shemianbisimai
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_tiexuejunzhengyitihua
+		icon = GFX_focus_GER_appease_the_wehrmacht
+		x = -2
+		y = 1
+		cost = 7
+		prerequisite = {
+			focus = TIX_zhengshijiegaunguojiaquanli
+		}
+		relative_position_id = TIX_zhengshijiegaunguojiaquanli
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_jianlijungongfuheti
+		icon = GFX_focus_GER_form_organization_todt
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = {
+			focus = TIX_zhengshijiegaunguojiaquanli
+		}
+		relative_position_id = TIX_zhengshijiegaunguojiaquanli
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_laibixijihua
+		icon = GFX_focus_GER_form_the_stasi
+		x = 2
+		y = 1
+		cost = 7
+		prerequisite = {
+			focus = TIX_zhengshijiegaunguojiaquanli
+		}
+		relative_position_id = TIX_zhengshijiegaunguojiaquanli
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_jianlirenminweiyuanxiaqu
+		icon = GFX_focus_GER_integrate_volkskommissariats
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_tiexuejunzhengyitihua
+		}
+		prerequisite = {
+			focus = TIX_jianlijungongfuheti
+		}
+		prerequisite = {
+			focus = TIX_laibixijihua
+		}
+		relative_position_id = TIX_jianlijungongfuheti
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_jinburenshi
+		icon = GFX_focus_z23
+		x = 3
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_xiangzuozhuan
+		}
+		relative_position_id = TIX_xiangzuozhuan
+		mutually_exclusive = {
+			focus = TIX_baoshouxuanze
+		}
+		ai_will_do = {
+			factor = 30
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2569,7 +2956,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_xiyingbiange
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_focus_GER_the_peoples_victory
 		x = 1
 		y = 1
 		cost = 5
@@ -2609,7 +2996,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_jingjigaizao
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_GER_stakhanovite_movement
 		x = -2
 		y = 1
 		cost = 10
@@ -2651,10 +3038,10 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_yubeilianhezuo
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_focus_GER_spheres_of_influence
 		x = 2
 		y = 1
-		cost = 10
+		cost = 8
 		prerequisite = {
 			focus = TIX_xiyingbiange
 		}
@@ -2705,9 +3092,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = TIX_shouhuzuihaodeougen
-		icon = GFX_focus_ougenqinwang
-		x = 8
+		id = TIX_zhongjianlichang
+		icon = GFX_focus_generic_monarchist_sentiment
+		x = 16
 		y = 1
 		cost = 5
 		prerequisite = {
@@ -2715,10 +3102,187 @@ focus_tree = {
 		}
 		relative_position_id = TIX_hexiexintiexue
 		mutually_exclusive = {
-			focus = TIX_jinburenshi
+			focus = TIX_xiangzuozhuan
 		}
 		ai_will_do = {
-			factor = 60
+			factor = 40
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.25
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = TIX_ziyoudetiexue
+		icon = GFX_focus_GER_all_for_the_front
+		x = 3
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_zhongjianlichang
+		}
+		relative_position_id = TIX_zhongjianlichang
+		mutually_exclusive = {
+			focus = TIX_shouhuzuihaodeougen
+		}--
+		ai_will_do = {
+			factor = 10
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.15
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.2
+			}
+		}
+	}
+	focus = {
+		id = TIX_gaoxuanju
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_ziyoudetiexue
+		}
+		relative_position_id = TIX_ziyoudetiexue
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = az_tianjiang.308
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+	}
+	focus = {
+		id = TIX_jinzhizhengzhipohai
+		icon = GFX_focus_generic_universal_suffrage
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_gaoxuanju
+		}
+		relative_position_id = TIX_gaoxuanju
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_jiaqiangfulizhengce
+		icon = GFX_focus_generic_welfare
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_gaoxuanju
+		}
+		relative_position_id = TIX_gaoxuanju
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_minzhuzhidun
+		icon = GFX_focus_ARG_defense_and_democracy
+		x = -1
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIX_jinzhizhengzhipohai
+		}
+		prerequisite = {
+			focus = TIX_jiaqiangfulizhengce
+		}
+		relative_position_id = TIX_jiaqiangfulizhengce
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = GER_the_shield_of_democracy_conservatism_welfare_and_democracy_idea
+		}
+	}
+	focus = {
+		id = TIX_zhongshenqiujin
+		icon = GFX_focus_bisimai_prison
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_minzhuzhidun
+		}
+		relative_position_id = TIX_minzhuzhidun
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_shouhuzuihaodeougen
+		icon = GFX_focus_ougenqinwang
+		x = -3
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_zhongjianlichang
+		}
+		relative_position_id = TIX_zhongjianlichang
+		mutually_exclusive = {
+			focus = TIX_ziyoudetiexue
+		}
+		ai_will_do = {
+			factor = 50
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2763,7 +3327,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_chongjianjunzhuzhi
-		icon = GFX_focus_generic_self_management
+		icon = GFX_focus_GER_monarchy_compromise
 		x = 0
 		y = 1
 		cost = 5
@@ -2919,7 +3483,7 @@ focus_tree = {
 	#######################################################################################################
 	focus = {
 		id = TIX_tiexuededaolu
-		icon = GFX_focus_ger_reichskommisariats
+		icon = GFX_focus_GER_remilitarize_the_rhineland_historical
 		x = 0
 		y = 1
 		relative_position_id = TIX_tiewanyuanshou
@@ -2956,6 +3520,9 @@ focus_tree = {
 					set_demilitarized_zone = no
 				}
 				42 = {
+					set_demilitarized_zone = no
+				}
+				978 = {
 					set_demilitarized_zone = no
 				}
 				add_named_threat = {
@@ -3086,7 +3653,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_tunbingaodili
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_focus_GER_anschluss_historical
 		x = -3
 		y = 1
 		relative_position_id = TIX_difangxifang
@@ -3107,11 +3674,17 @@ focus_tree = {
 		}
 		available = {
 			is_puppet = no
-			OR = {
-				has_army_manpower = {
-					size > 450000
-				}
-				is_ai = yes
+			if = {
+			limit = {
+				is_ai = no
+			}
+			has_army_manpower = { size > 499999 }
+			
+			custom_trigger_tooltip = {
+			 	tooltip = GER_anschluss_eq_trigger_tt
+			 	check_variable = { num_equipment_in_armies_k@infantry_equipment > 50 }
+			}
+			
 			}
 		}
 		bypass = {
@@ -3191,6 +3764,27 @@ focus_tree = {
 					}
 				}
 			}
+			effect_tooltip = {
+					custom_effect_tooltip = if_they_accept_tt
+					add_political_power = 150
+					add_stability = 0.2
+					add_war_support = 0.2
+					army_experience = 25
+					add_state_core = 4
+					add_state_core = 152
+					add_state_core = 153
+					add_state_core = 848
+					add_state_core = 975
+					add_state_core = 976
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					annex_country = { target = AUS transfer_troops = yes }
+												
+
+					custom_effect_tooltip = if_they_refuse_tt
+					create_wargoal = { target = AUS type = annex_everything }
+			}
 		}
 	}
 	focus = {
@@ -3234,11 +3828,22 @@ focus_tree = {
 			HUN = {
 				country_event = az_tianjiang.10
 			}
+			effect_tooltip = {
+					custom_effect_tooltip = if_they_accept_tt
+					set_autonomy = {
+						target = HUN
+						autonomy_state = autonomy_reichskommissariat
+					}				
+					HUN = { give_resource_rights = { receiver = TIX state = 43 }
+					give_resource_rights = { receiver = TIX state = 155 } }
+					custom_effect_tooltip = if_they_refuse_tt
+					create_wargoal = { target = HUN type = take_state_focus }
+			}
 		}
 	}
 	focus = {
 		id = TIX_budapeisiyanxi
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_generic_attack_hungary
 		x = -1
 		y = 1
 		relative_position_id = TIX_tunbingaodili
@@ -3277,7 +3882,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_zhongoujubian
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_GER_integrate_czechoslovakia
 		x = 0
 		y = 1
 		relative_position_id = TIX_jiaruhuohuimie
@@ -3313,7 +3918,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_shandongzhanzheng
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_focus_generic_attack_czechoslovakia
 		x = 0
 		y = 1
 		relative_position_id = TIX_budapeisiyanxi
@@ -3347,15 +3952,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			guojishengyu_down_10 = yes
-			add_named_threat = {
-				threat = 15
-				name = "煽动战争"
-			}
-			add_war_support = 0.2
-			create_wargoal = {
-				target = CZE
-				type = take_state_focus
-			}
+			add_named_threat = { threat = 10 name = "铁血威胁捷克臣服" }
+			custom_effect_tooltip = TIX_cze_weixie
 			HUJ = {
 				country_event = az_tianjiang.12
 				add_war_support = 0.1
@@ -3363,11 +3961,94 @@ focus_tree = {
 			YUW = {
 				add_war_support = 0.1
 			}
+			### CLAIMS
+			if = {
+				limit = {
+					69 = {
+						controller = {
+							NOT = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				add_state_claim = 69
+			}
+			if = {
+				limit = {
+					972 = {
+						controller = {
+							NOT = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				add_state_claim = 972
+			}
+			if = {
+				limit = {
+					74 = {
+						controller = {
+							NOT = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				add_state_claim = 74
+			}
+			if = {
+				limit = {
+					CZE = {
+						OR = {
+							is_subject = no
+							is_subject_of = ROOT
+						}
+					}
+				}
+				CZE = { country_event = { id = wuw_GER_diplomacy.117 days = 1 }}
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					annex_country = {
+						target = CZE
+						transfer_troops = yes
+					}
+
+					custom_effect_tooltip =  generic_skip_one_line_tt
+					every_state = {
+						limit = {
+							is_owned_and_controlled_by = CZE
+							OR = {
+								state = 69
+								state = 972
+								state = 74
+							}
+						}
+						add_core_of = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					CZE = {
+						is_subject = yes
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = CZE
+				}
+			}
 		}
 	}
 	focus = {
 		id = TIX_jiekesiluofakedemingyun
-		icon = GFX_goal_generic_territory_or_war
+		icon = GFX_focus_GER_fate_of_czechoslovakia
 		x = 2
 		y = 1
 		relative_position_id = TIX_zhongoujubian
@@ -3481,7 +4162,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_danzehuozhanzheng
-		icon = GFX_focus_POL_polish_revanchism
+		icon = GFX_focus_GER_danzig_or_war
 		x = 2
 		y = 1
 		relative_position_id = TIX_jiekesiluofakedemingyun
@@ -3523,6 +4204,11 @@ focus_tree = {
 				threat = 5
 				name = "但泽或战争"
 			}
+			custom_effect_tooltip = TIX_POL_butongyikeneng
+			country_event = {
+				id = az_tianjiang.236
+				days = 5
+			}
 			every_country = {
 				limit = {
 					original_tag = POL
@@ -3553,17 +4239,11 @@ focus_tree = {
 					country_event = az_tianjiang.17
 				}
 			}
-			hidden_effect = {
-				country_event = {
-					id = az_tianjiang.236
-					days = 5
-				}
-			}
 		}
 	}
 	focus = {
 		id = TIX_weisebaoxingdong
-		icon = GFX_goal_generic_more_territorial_claims
+		icon = GFX_focus_GER_operation_wesserubung
 		x = 0
 		y = 1
 		relative_position_id = TIX_danzehuozhanzheng
@@ -3596,6 +4276,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			guojishengyu_down_3 = yes
+			country_event = {
+				id = az_tianjiang.238
+				days = 3
+			}
 			create_wargoal = {
 				target = NOR
 				type = take_state_focus
@@ -3604,11 +4288,12 @@ focus_tree = {
 				target = DEN
 				type = take_state_focus
 			}
-			hidden_effect = {
-				country_event = {
-					id = az_tianjiang.238
-					days = 3
-				}
+			add_tech_bonus = {
+				name = tp_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = tp_tech
 			}
 		}
 	}
@@ -3667,7 +4352,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_di25haoyuanshouzhishi
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_GER_fate_of_yugoslavia
 		x = 4
 		y = 0
 		relative_position_id = TIX_diyiciweiyenazhongcai
@@ -3710,7 +4395,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_dierciweiyenazhongcai
-		icon = GFX_focus_generic_treaty
+		icon = GFX_focus_GER_subjugate_romanian_economy
 		x = 0
 		y = 1
 		relative_position_id = TIX_diyiciweiyenazhongcai
@@ -3958,7 +4643,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_didigongshi
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_GER_around_maginot
 		x = 0
 		y = 1
 		relative_position_id = TIX_lingtuzhihuan
@@ -4911,7 +5596,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_gangtiesanjiao
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_GER_the_proud_eagle_and_the_rising_dragon
 		x = 0
 		y = 1
 		relative_position_id = TIX_ziyuanhubu
@@ -4921,7 +5606,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = TIX_dongxizhouxian
 		}
-		cost = 10
+		cost = 7
 		ai_will_do = {
 			factor = 15
 		}
@@ -4953,7 +5638,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_dongxizhouxian
-		icon = GFX_goal_generic_major_alliance
+		icon = GFX_focus_generic_naval_invasion_tank
 		x = 0
 		y = 1
 		relative_position_id = TIX_chichengdejiangzuo
@@ -4963,7 +5648,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = TIX_gangtiesanjiao
 		}
-		cost = 10
+		cost = 7
 		ai_will_do = {
 			factor = 15
 		}
@@ -5749,14 +6434,484 @@ focus_tree = {
 	}
 	########################################################################################################
 	focus = {
+		id = TIX_xuanchengchisediguo
+		icon = GFX_focus_GER_hegemony_over_europe
+		x = 6
+		y = 0
+		cost = 5
+		prerequisite = {
+			focus = TIX_xiangzuozhuan
+			focus = TIX_zhongjianlichang
+		}
+		relative_position_id = TIX_jinburenshi
+		available = {
+			is_puppet = no
+			has_completed_focus = TIX_jianlirenminweiyuanxiaqu
+		}
+		mutually_exclusive = { focus = TIX_lianheruoxiaozhongzu focus = TIX_tiexuefanjizhan }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+				add_political_power = 50
+				add_war_support = 0.1
+				set_rule = {
+					can_create_factions = yes
+				}
+				create_faction = "赤色中轴"
+				set_cosmetic_tag = TIXdiguo
+				set_global_flag = TIX_created_chisezhongzhou
+				if = {
+					limit = {
+						has_global_flag = MOD_azurlane_tianjiangjianniang
+					}
+					51 = {
+						set_demilitarized_zone = no
+					}
+					42 = {
+						set_demilitarized_zone = no
+					}
+					978 = {
+						set_demilitarized_zone = no
+					}
+					add_named_threat = {
+						threat = 5
+						name = "进军莱茵兰"
+					}
+				}
+			if = {
+				limit = {
+					is_ai = yes
+					has_idea = TIX_fkAIbuff
+				}
+				set_technology = {
+					superior_firepower = 1
+				}
+				set_technology = {
+					mechanised_infantry = 1
+				}
+				division_template = {
+					name = "铁血重装甲师"
+					is_locked = yes
+					priority = 2
+					regiments = {
+						mechanized = {
+							x = 0
+							y = 0
+						}
+						mechanized = {
+							x = 0
+							y = 1
+						}
+						mechanized = {
+							x = 0
+							y = 2
+						}
+						mechanized = {
+							x = 0
+							y = 3
+						}
+						mechanized = {
+							x = 0
+							y = 4
+						}
+						mechanized = {
+							x = 1
+							y = 0
+						}
+						mechanized = {
+							x = 1
+							y = 1
+						}
+						mechanized = {
+							x = 1
+							y = 2
+						}
+						mechanized = {
+							x = 1
+							y = 3
+						}
+						mechanized = {
+							x = 1
+							y = 4
+						}
+						medium_armor = {
+							x = 2
+							y = 0
+						}
+						medium_armor = {
+							x = 2
+							y = 1
+						}
+						medium_armor = {
+							x = 2
+							y = 2
+						}
+						medium_armor = {
+							x = 2
+							y = 3
+						}
+						medium_armor = {
+							x = 2
+							y = 4
+						}
+						medium_armor = {
+							x = 3
+							y = 0
+						}
+						medium_armor = {
+							x = 3
+							y = 1
+						}
+						medium_armor = {
+							x = 3
+							y = 2
+						}
+						medium_armor = {
+							x = 3
+							y = 3
+						}
+						medium_armor = {
+							x = 3
+							y = 4
+						}
+						medium_armor = {
+							x = 4
+							y = 0
+						}
+					}
+					support = {
+						armored_car_recon = {
+							x = 0
+							y = 0
+						}
+						artillery = {
+							x = 0
+							y = 1
+						}
+						logistics_company = {
+							x = 0
+							y = 2
+						}
+						medium_flame_tank = {
+							x = 0
+							y = 3
+						}
+						engineer = {
+							x = 0
+							y = 4
+						}
+					}
+				}
+				for_loop_effect = {
+					start = 0
+					end = 20
+					add = 1
+					random_owned_controlled_state = {
+						limit = {
+							is_core_of = TIX
+						}
+						create_unit = {
+							division = "name = \"铁血重装甲师\" division_template = \"铁血重装甲师\" start_experience_factor = 0.35 start_equipment_factor = 1"
+							owner = ROOT
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = TIX
+					}
+					create_unit = {
+						division = "name = \"国防军精锐\" division_template = \"铁血重装甲师\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = TIX
+					}
+					create_unit = {
+						division = "name = \"国防军精锐\" division_template = \"铁血重装甲师\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = TIX
+					}
+					create_unit = {
+						division = "name = \"党卫军精锐\" division_template = \"铁血重装甲师\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = TIX
+					}
+					create_unit = {
+						division = "name = \"党卫军精锐\" division_template = \"铁血重装甲师\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = TIX
+					}
+					create_unit = {
+						division = "name = \"国防军精锐\" division_template = \"铁血重装甲师\" start_experience_factor = 0.35 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = TIX_beifangzuihoutongdie
+		icon = GFX_focus_generic_scandinavia_flags
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = TIX_xuanchengchisediguo
+		}
+		relative_position_id = TIX_xuanchengchisediguo
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			if = {
+			limit = {
+			country_exists = DEN
+			DEN = { is_puppet = no }
+			}
+			DEN = { country_event = az_tianjiang.307 }
+			}
+			if = {
+			limit = {
+			country_exists = NOR
+			NOR = { is_puppet = no }
+			}
+			NOR = { country_event = az_tianjiang.307 }
+			}
+			if = {
+			limit = {
+			country_exists = SWE
+			NOR = { is_puppet = no }
+			}
+			SWE = { country_event = az_tianjiang.307 }
+			}
+		}
+	}
+	focus = {
+		id = TIX_chihuaaodili
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIX_xuanchengchisediguo
+		}
+		relative_position_id = TIX_xuanchengchisediguo
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_dongfangshengcunkongjian
+		icon = GFX_focus_GER_subduing_the_baltic_states
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = TIX_xuanchengchisediguo
+		}
+		relative_position_id = TIX_xuanchengchisediguo
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_shandongzhongougeming
+		icon = GFX_focus_GER_integrate_czechoslovakia
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIX_chihuaaodili
+		}
+		prerequisite = {
+			focus = TIX_beifangzuihoutongdie
+		}
+		prerequisite = {
+			focus = TIX_dongfangshengcunkongjian
+		}
+		relative_position_id = TIX_beifangzuihoutongdie
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_yusadingjiemeng
+		icon = GFX_fflag_SAD
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIX_chihuaaodili
+		}
+		prerequisite = {
+			focus = TIX_beifangzuihoutongdie
+		}
+		prerequisite = {
+			focus = TIX_dongfangshengcunkongjian
+		}
+		relative_position_id = TIX_chihuaaodili
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_zhengfuboluodihaiguojia
+		icon = GFX_focus_generic_attack_baltics
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = TIX_chihuaaodili
+		}
+		prerequisite = {
+			focus = TIX_beifangzuihoutongdie
+		}
+		prerequisite = {
+			focus = TIX_dongfangshengcunkongjian
+		}
+		relative_position_id = TIX_dongfangshengcunkongjian
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_shuangchongweixie
+		icon = GFX_focus_GER_schlieffen_once_more
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = TIX_shandongzhongougeming
+		}
+		prerequisite = {
+			focus = TIX_yusadingjiemeng
+		}
+		prerequisite = {
+			focus = TIX_zhengfuboluodihaiguojia
+		}
+		relative_position_id = TIX_shandongzhongougeming
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_heiseliming
+		icon = GFX_focus_GER_end_european_communism
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = TIX_shandongzhongougeming
+		}
+		prerequisite = {
+			focus = TIX_yusadingjiemeng
+		}
+		prerequisite = {
+			focus = TIX_zhengfuboluodihaiguojia
+		}
+		relative_position_id = TIX_shandongzhongougeming
+		cost = 5
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = TIX_lianheruoxiaozhongzu
+		icon = GFX_focus_GER_realpolitik
+		x = 20
+		y = 0
+		cost = 5
+		prerequisite = {
+			focus = TIX_xiangzuozhuan
+			focus = TIX_zhongjianlichang
+		}
+		relative_position_id = TIX_jinburenshi
+		available = {
+			is_puppet = no
+			has_completed_focus = TIX_zhongshenqiujin
+		}
+		mutually_exclusive = { focus = TIX_tiexuefanjizhan focus = TIX_xuanchengchisediguo }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.1
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = "舰娘联合国"
+		}
+	}
+	focus = {
 		id = TIX_tiexuefanjizhan
 		icon = GFX_aflag_TIX
-		x = 8
-		y = 1
-		cost = 10
+		x = 13
+		y = 0
+		cost = 5
 		prerequisite = {
-			focus = TIX_jinburenshi
-			focus = TIX_shouhuzuihaodeougen
+			focus = TIX_xiangzuozhuan
+			focus = TIX_zhongjianlichang
 		}
 		relative_position_id = TIX_jinburenshi
 		available = {
@@ -5766,8 +6921,9 @@ focus_tree = {
 				has_completed_focus = TIX_chongxinqiyongbisimai
 			}
 		}
+		mutually_exclusive = { focus = TIX_lianheruoxiaozhongzu focus = TIX_xuanchengchisediguo }
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 		completion_reward = {
 			if = {
@@ -5786,6 +6942,9 @@ focus_tree = {
 						set_demilitarized_zone = no
 					}
 					42 = {
+						set_demilitarized_zone = no
+					}
+					978 = {
 						set_demilitarized_zone = no
 					}
 					add_named_threat = {
@@ -5813,6 +6972,9 @@ focus_tree = {
 						set_demilitarized_zone = no
 					}
 					42 = {
+						set_demilitarized_zone = no
+					}
+					978 = {
 						set_demilitarized_zone = no
 					}
 					add_named_threat = {
@@ -6015,7 +7177,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_jingongjieke
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_generic_attack_czechoslovakia
 		x = -2
 		y = 1
 		cost = 5
@@ -6109,11 +7271,17 @@ focus_tree = {
 				}
 				add_core_of = TIX
 			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				annex_country = { target = DEN transfer_troops = no }
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = DEN type = take_state_focus }
+			}
 		}
 	}
 	focus = {
 		id = TIX_qiangpoxiongyali
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_generic_attack_hungary
 		x = 0
 		y = 1
 		cost = 2
@@ -6141,6 +7309,58 @@ focus_tree = {
 				country_event = {
 					id = TIX_event.13
 					days = 1
+				}
+			}
+			effect_tooltip = {
+					custom_effect_tooltip = if_they_accept_tt
+					set_autonomy = {
+						target = HUN
+						autonomous_state = autonomy_integrated_puppet
+					}							
+					custom_effect_tooltip = if_they_refuse_tt
+					create_wargoal = { target = HUN type = take_state_focus }
+			}
+		}
+	}
+	focus = {
+		id = TIX_bubiandesudi
+		icon = GFX_aflag_YUW
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = TIX_qiangpoxiongyali
+		}
+		relative_position_id = TIX_qiangpoxiongyali
+		will_lead_to_war_with = YUW
+		available = {
+			is_puppet = no
+			not = { YUW = { has_government = ROOT } }
+		}
+		bypass = {
+			NOT = {
+				country_exists = YUW
+			}
+		}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_war_support = 0.2
+			create_wargoal = { target = YUW type = take_state_focus }
+			if = {
+				limit = {
+					YUW = {
+						is_in_faction = no
+						is_puppet = no
+						exists = yes
+					}
+				}
+				HUJ = {
+					country_event = TIX_event.11
 				}
 			}
 		}
@@ -6179,11 +7399,55 @@ focus_tree = {
 			add_state_core = 85
 			add_state_core = 807
 			add_state_core = 86
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				set_autonomy = {
+					target = POL
+					autonomy_state = autonomy_integrated_puppet
+				}
+				transfer_state = 85
+				transfer_state = 807
+				transfer_state = 86						
+				custom_effect_tooltip = if_they_refuse_tt
+				declare_war_on = { target = POL type = annex_everything }
+			}
+		}
+	}
+	focus = {
+		id = TIX_jiuzhengbeiliandecuowu
+		icon = GFX_aflag_BFL
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_danzehyuanqubaohu
+		}
+		relative_position_id = TIX_danzehyuanqubaohu
+		available = {
+			is_puppet = no
+			country_exists = BFL
+			not = { BFL = { has_government = ROOT } }
+		}
+		bypass = {
+			has_war_with = BFL
+		}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			create_wargoal = { target = BFL type = take_state_focus }
+			add_timed_idea = {
+				idea = TIX_sljh
+				days = 365
+			}
 		}
 	}
 	focus = {
 		id = TIX_hebingadl
-		icon = GFX_focus_generic_anti_fascist_diplomacy
+		icon = GFX_focus_GER_anschluss
 		x = 0
 		y = 1
 		cost = 8
@@ -6236,6 +7500,27 @@ focus_tree = {
 				AUS = {
 					country_event = az_tianjiang.2
 				}
+			}
+			effect_tooltip = {
+					custom_effect_tooltip = if_they_accept_tt
+					add_political_power = 150
+					add_stability = 0.2
+					add_war_support = 0.2
+					army_experience = 25
+					add_state_core = 4
+					add_state_core = 152
+					add_state_core = 153
+					add_state_core = 848
+					add_state_core = 975
+					add_state_core = 976
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					annex_country = { target = AUS transfer_troops = yes }
+												
+
+					custom_effect_tooltip = if_they_refuse_tt
+					create_wargoal = { target = AUS type = annex_everything }
 			}
 		}
 	}

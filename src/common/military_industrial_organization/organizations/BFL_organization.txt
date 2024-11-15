@@ -29,7 +29,7 @@
 @ship_cruiser_production_cost_factor = -0.1
 @ship_destroyer_production_cost_factor = -0.1
 @ship_submarine_production_cost_factor = -0.1
-@ship_production_capacity_factor = -0.15
+@ship_production_capacity_factor = -0.05
 @ship_mines_sweeping = 0.1
 @ship_mines_planting = 0.1
 
@@ -42,7 +42,7 @@
 @aircraft_3_X = 9
 @aircraft_3_Y = 4
 #BONUSES
-@aircraft_production_cost_factor = -0.1
+@aircraft_production_cost_factor = -0.05
 @aircraft_air_agility = 0.05
 @aircraft_air_defence = 0.1
 @aircraft_surface_detection = 0.15
@@ -88,10 +88,11 @@ BFL_morozov_design_bureau_organization = {
 		icon = GFX_idea_morozov_design_bureau
 		special_trait_background = yes
 
-		position = { x=@tank_1_X y=@tank_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
@@ -122,7 +123,7 @@ BFL_morozov_design_bureau_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_engine
 		special_trait_background = yes
 
-		position = { x=0 y=2 }  
+		position = { x=0 y=1 }  
 		relative_position_id = BFL_morozov_design_bureau_organization_up
 
 		visible = {
@@ -148,6 +149,83 @@ BFL_morozov_design_bureau_organization = {
 		}
 	}
 
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_174
+		name = BFL_merge_tank_plant
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Three FROM blocs to provide two different check marks in the UI
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			maximum_speed = @tank_max_speed
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_112
+		name = BFL_merge_tank_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=@tank_2_X y=@tank_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @tank_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_ural_heavy_machine_building_plant
+		name = BFL_merge_tank_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		special_trait_background = yes
+
+		position = { x=@tank_3_X y=@tank_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			soft_attack = @tank_soft_attack
+		}
+	}
+
 }
 
 BFL_astrov_design_bureau_organization = {
@@ -165,10 +243,11 @@ BFL_astrov_design_bureau_organization = {
 		icon = GFX_idea_astrov_design_bureau
 		special_trait_background = yes
 
-		position = { x=@tank_1_X y=@tank_1_Y }
+		position = { x=8 y=2 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
@@ -197,7 +276,7 @@ BFL_astrov_design_bureau_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_engine
 		special_trait_background = yes
 
-		position = { x=0 y=2 }  
+		position = { x=0 y=1 }  
 		relative_position_id = BFL_astrov_design_bureau_organization_up
 
 		visible = {
@@ -223,6 +302,83 @@ BFL_astrov_design_bureau_organization = {
 		}
 	}
 
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_174
+		name = BFL_merge_tank_plant
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Three FROM blocs to provide two different check marks in the UI
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			maximum_speed = @tank_max_speed
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_112
+		name = BFL_merge_tank_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=@tank_2_X y=@tank_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @tank_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_ural_heavy_machine_building_plant
+		name = BFL_merge_tank_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		special_trait_background = yes
+
+		position = { x=@tank_3_X y=@tank_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			soft_attack = @tank_soft_attack
+		}
+	}
+
 }
 
 BFL_okmo_organization = {
@@ -240,10 +396,11 @@ BFL_okmo_organization = {
 		icon = GFX_idea_okmo
 		special_trait_background = yes
 
-		position = { x=@tank_1_X y=@tank_1_Y }
+		position = { x=7 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
@@ -272,7 +429,7 @@ BFL_okmo_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_engine
 		special_trait_background = yes
 
-		position = { x=0 y=2 }  
+		position = { x=0 y=1 }  
 		relative_position_id = BFL_okmo_organization_up
 
 		visible = {
@@ -297,13 +454,90 @@ BFL_okmo_organization = {
 			base = 100
 		}
 	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_174
+		name = BFL_merge_tank_plant
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		position = { x=8 y=1 }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Three FROM blocs to provide two different check marks in the UI
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			maximum_speed = @tank_max_speed
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_112
+		name = BFL_merge_tank_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=8 y=2 }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @tank_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_ural_heavy_machine_building_plant
+		name = BFL_merge_tank_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		special_trait_background = yes
+
+		position = { x=8 y=3 }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			soft_attack = @tank_soft_attack
+		}
+	}
 	
 	
 }
 
 BFL_mytishchy_machine_building_plant_organization = {
 	include = generic_tank_refurbishment_plant_organization
-	icon = GFX_idea_SOV_mytishchy_machine_building_plant
+	icon = GFX_idea_BFL_mytishchy_machine_building_plant
 	
 	allowed = {	
 		tag = BFL
@@ -313,13 +547,14 @@ BFL_mytishchy_machine_building_plant_organization = {
 		token = BFL_mytishchy_machine_building_plant_organization_up
 		name = BFL_mytishchy_machine_building_plant_up
 		#icon = GFX_generic_mio_department_icon_facilities
-		icon = GFX_idea_SOV_mytishchy_machine_building_plant
+		icon = GFX_idea_BFL_mytishchy_machine_building_plant
 		special_trait_background = yes
 
-		position = { x=@tank_1_X y=@tank_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
@@ -348,7 +583,7 @@ BFL_mytishchy_machine_building_plant_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_engine
 		special_trait_background = yes
 
-		position = { x=0 y=2 }  
+		position = { x=0 y=1 }  
 		relative_position_id = BFL_mytishchy_machine_building_plant_organization_up
 
 		visible = {
@@ -373,11 +608,88 @@ BFL_mytishchy_machine_building_plant_organization = {
 			base = 100
 		}
 	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_174
+		name = BFL_merge_tank_plant
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Three FROM blocs to provide two different check marks in the UI
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			maximum_speed = @tank_max_speed
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_112
+		name = BFL_merge_tank_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=@tank_2_X y=@tank_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @tank_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_ural_heavy_machine_building_plant
+		name = BFL_merge_tank_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		special_trait_background = yes
+
+		position = { x=@tank_3_X y=@tank_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			soft_attack = @tank_soft_attack
+		}
+	}
 }
 
 BFL_kirov_organization = {
 	include = generic_heavy_tank_organization
-	icon = GFX_idea_SOV_kirov
+	icon = GFX_idea_BFL_kirov
 	
 	allowed = {	
 		original_tag = BFL
@@ -393,13 +705,14 @@ BFL_kirov_organization = {
 		token = BFL_kirov_organization_up
 		name = BFL_kirov_up
 		#icon = GFX_generic_mio_department_icon_facilities
-		icon = GFX_idea_SOV_kirov
+		icon = GFX_idea_BFL_kirov
 		special_trait_background = yes
 
-		position = { x=@tank_1_X y=@tank_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
@@ -428,7 +741,7 @@ BFL_kirov_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_engine
 		special_trait_background = yes
 
-		position = { x=0 y=2 }  
+		position = { x=0 y=1 }  
 		relative_position_id = BFL_kirov_organization_up
 
 		visible = {
@@ -451,6 +764,83 @@ BFL_kirov_organization = {
 		}
 		ai_will_do = {
 			base = 100
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_174
+		name = BFL_merge_tank_plant
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		position = { x=@tank_1_X y=@tank_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = { #Three FROM blocs to provide two different check marks in the UI
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			maximum_speed = @tank_max_speed
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_112
+		name = BFL_merge_tank_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=@tank_2_X y=@tank_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @tank_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_ural_heavy_machine_building_plant
+		name = BFL_merge_tank_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		special_trait_background = yes
+
+		position = { x=@tank_3_X y=@tank_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		equipment_bonus = {
+			soft_attack = @tank_soft_attack
 		}
 	}
 }
@@ -480,7 +870,7 @@ BFL_nevskoye_design_bureau_organization = {
 		icon = GFX_BLI_zaochuanchang_mio_icon_1
 		special_trait_background = yes
 
-		position = { x=8 y=4 }  
+		position = { x=7 y=4 }  
 
 		available = {
 			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi1_get } }
@@ -514,7 +904,7 @@ BFL_nevskoye_design_bureau_organization = {
 		icon = GFX_BLI_zaochuanchang_mio_icon_2
 		special_trait_background = yes
 
-		position = { x=9 y=4 }  
+		position = { x=8 y=4 }  
 
 		available = {
 			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi2_get } }
@@ -542,17 +932,17 @@ BFL_nevskoye_design_bureau_organization = {
 			}
 		}
 	}
-	add_trait = { #MTG version
+	add_trait = { 
 		token = BFL_nevskoye_design_bureau_organization_up
 		name = BFL_nevskoye_design_bureau_up
-		#icon = GFX_generic_mio_department_icon_facilities
 		icon = GFX_idea_nevskoye_design_bureau
 		special_trait_background = yes
 
-		position = { x=@ship_1_X y=@ship_1_Y }
+		position = { x=8 y=3 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -576,11 +966,103 @@ BFL_nevskoye_design_bureau_organization = {
 			navy_fuel_consumption_factor = -0.1
 		}
 	}
+
+	add_trait = { #MTG version
+		token = BFL_mio_trait_merge_plant_no_370
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			has_dlc = "Man the Guns"
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = naval_mines
+				}
+			}
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			mines_planting = @ship_mines_planting
+		}
+	}
+
+	add_trait = { #No-MTG version
+		token = BFL_mio_trait_merge_plant_no_370_no_mtg
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			NOT = { has_dlc = "Man the Guns" }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_5
+		name = BFL_merge_ship_plant_1_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+		special_trait_background = yes
+
+		position = { x=@ship_2_X y=@ship_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+
+		production_bonus = {
+			production_cost_factor = @ship_cruiser_production_cost_factor
+		}
+	}
 }
 
 BFL_rubin_design_bureau_organization = {
 	include = generic_raider_ship_organization
-	icon = GFX_idea_SOV_rubin_design_bureau
+	icon = GFX_idea_BFL_rubin_design_bureau
 	
 	allowed = {	
 		tag = BFL 
@@ -591,7 +1073,7 @@ BFL_rubin_design_bureau_organization = {
 		icon = GFX_BLI_zaochuanchang_mio_icon_1
 		special_trait_background = yes
 
-		position = { x=8 y=4 }  
+		position = { x=7 y=4 }  
 
 		available = {
 			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi1_get } }
@@ -625,7 +1107,7 @@ BFL_rubin_design_bureau_organization = {
 		icon = GFX_BLI_zaochuanchang_mio_icon_2
 		special_trait_background = yes
 
-		position = { x=9 y=4 }  
+		position = { x=8 y=4 }  
 
 		available = {
 			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi2_get } }
@@ -657,13 +1139,14 @@ BFL_rubin_design_bureau_organization = {
 		token = BFL_rubin_design_bureau_organization_up
 		name = BFL_rubin_design_bureau_up
 		#icon = GFX_generic_mio_department_icon_facilities
-		icon = GFX_idea_SOV_rubin_design_bureau
+		icon = GFX_idea_BFL_rubin_design_bureau
 		special_trait_background = yes
 
-		position = { x=@ship_1_X y=@ship_1_Y }
+		position = { x=8 y=3 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -687,18 +1170,110 @@ BFL_rubin_design_bureau_organization = {
 			navy_fuel_consumption_factor = -0.1
 		}
 	}
+
+	add_trait = { #MTG version
+		token = BFL_mio_trait_merge_plant_no_370
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			has_dlc = "Man the Guns"
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = naval_mines
+				}
+			}
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			mines_planting = @ship_mines_planting
+		}
+	}
+
+	add_trait = { #No-MTG version
+		token = BFL_mio_trait_merge_plant_no_370_no_mtg
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			NOT = { has_dlc = "Man the Guns" }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_5
+		name = BFL_merge_ship_plant_1_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+		special_trait_background = yes
+
+		position = { x=@ship_2_X y=@ship_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+
+		production_bonus = {
+			production_cost_factor = @ship_cruiser_production_cost_factor
+		}
+	}
 }
 
 BFL_black_sea_shipyard_organization = {
 	include = generic_black_sea_fleet_organization
-	icon = GFX_idea_SOV_black_sea_shipyard
+	icon = GFX_idea_BFL_black_sea_shipyard
 	add_trait = {  
 		token = bulizaochuanchang_1
 		name = bulizaochuanchang_1
 		icon = GFX_BLI_zaochuanchang_mio_icon_1
 		special_trait_background = yes
 
-		position = { x=8 y=4 }  
+		position = { x=8 y=3 }  
 
 		available = {
 			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi1_get } }
@@ -732,7 +1307,7 @@ BFL_black_sea_shipyard_organization = {
 		icon = GFX_BLI_zaochuanchang_mio_icon_2
 		special_trait_background = yes
 
-		position = { x=9 y=4 }  
+		position = { x=8 y=4 }  
 
 		available = {
 			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi2_get } }
@@ -797,13 +1372,14 @@ BFL_black_sea_shipyard_organization = {
 		token = BFL_black_sea_shipyard_organization_up
 		name = BFL_black_sea_shipyard_up
 		#icon = GFX_generic_mio_department_icon_facilities
-		icon = GFX_idea_SOV_black_sea_shipyard
+		icon = GFX_idea_BFL_black_sea_shipyard
 		special_trait_background = yes
 
-		position = { x=@ship_1_X y=@ship_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -826,11 +1402,103 @@ BFL_black_sea_shipyard_organization = {
 			navy_fuel_consumption_factor = -0.1
 		}
 	}
+
+	add_trait = { #MTG version
+		token = BFL_mio_trait_merge_plant_no_370
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			has_dlc = "Man the Guns"
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = naval_mines
+				}
+			}
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			mines_planting = @ship_mines_planting
+		}
+	}
+
+	add_trait = { #No-MTG version
+		token = BFL_mio_trait_merge_plant_no_370_no_mtg
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			NOT = { has_dlc = "Man the Guns" }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_5
+		name = BFL_merge_ship_plant_1_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+		special_trait_background = yes
+
+		position = { x=@ship_2_X y=@ship_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+
+		production_bonus = {
+			production_cost_factor = @ship_cruiser_production_cost_factor
+		}
+	}
 }
 
 BFL_sevastopol_marine_plant_organization = {
 	include = generic_refurbishment_repair_organization
-	icon = GFX_idea_SOV_sevastopol_marine_plant
+	icon = GFX_idea_BFL_sevastopol_marine_plant
 	add_trait = {  
 		token = bulizaochuanchang_1
 		name = bulizaochuanchang_1
@@ -931,13 +1599,14 @@ BFL_sevastopol_marine_plant_organization = {
 		token = BFL_sevastopol_marine_plant_organization_up
 		name = BFL_sevastopol_marine_plant_up
 		#icon = GFX_generic_mio_department_icon_facilities
-		icon = GFX_idea_SOV_sevastopol_marine_plant
+		icon = GFX_idea_BFL_sevastopol_marine_plant
 		special_trait_background = yes
 
-		position = { x=@ship_1_X y=@ship_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -963,6 +1632,98 @@ BFL_sevastopol_marine_plant_organization = {
 			refit_speed = 0.2
 		}
 
+	}
+
+	add_trait = { #MTG version
+		token = BFL_mio_trait_merge_plant_no_370
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			has_dlc = "Man the Guns"
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = naval_mines
+				}
+			}
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+
+		equipment_bonus = {
+			mines_planting = @ship_mines_planting
+		}
+	}
+
+	add_trait = { #No-MTG version
+		token = BFL_mio_trait_merge_plant_no_370_no_mtg
+		name = BFL_merge_ship_plant_4_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_mines
+		special_trait_background = yes
+
+		position = { x=@ship_1_X y=@ship_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+			NOT = { has_dlc = "Man the Guns" }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+		
+		production_bonus = {
+			production_cost_factor = @ship_production_capacity_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_5
+		name = BFL_merge_ship_plant_1_baltic
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+		special_trait_background = yes
+
+		position = { x=@ship_2_X y=@ship_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		limit_to_equipment_type = { mio_cat_eq_all_cruiser }
+
+		production_bonus = {
+			production_cost_factor = @ship_cruiser_production_cost_factor
+		}
 	}
 }
 
@@ -996,10 +1757,11 @@ BFL_mig_design_bureau_organization = {
 		icon = GFX_idea_mig_design_bureau
 		special_trait_background = yes
 
-		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		position = { x=9 y=1 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -1024,6 +1786,99 @@ BFL_mig_design_bureau_organization = {
 		}
 	}
 
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_28
+		name = BFL_merge_aircraft_plant_1
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		special_trait_background = yes
+
+		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_150
+		name = BFL_merge_aircraft_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+
+		position = { x=@aircraft_2_X y=@aircraft_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			FROM = {
+				add_resource = {
+					type = aluminium
+					amount = 3
+					state = 219
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_agility = @aircraft_air_agility
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_vef_plant
+		name = BFL_merge_aircraft_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_detection
+		special_trait_background = yes
+
+		position = { x=@aircraft_3_X y=@aircraft_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					name = BFL_mio_trait_merge_vef_plant
+					bonus = 1
+					uses = 1
+					category = radar_tech
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_defence = @aircraft_air_defence
+			surface_detection = @aircraft_surface_detection
+			sub_detection = @aircraft_sub_detection
+		}
+	}
+
 }
 
 BFL_ilyushin_design_bureau_organization = {
@@ -1041,10 +1896,11 @@ BFL_ilyushin_design_bureau_organization = {
 		icon = GFX_idea_ilyushin_design_bureau
 		special_trait_background = yes
 
-		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -1067,6 +1923,99 @@ BFL_ilyushin_design_bureau_organization = {
 			air_fuel_consumption_factor = -0.1
 		}
 	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_28
+		name = BFL_merge_aircraft_plant_1
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		special_trait_background = yes
+
+		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_150
+		name = BFL_merge_aircraft_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+
+		position = { x=@aircraft_2_X y=@aircraft_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			FROM = {
+				add_resource = {
+					type = aluminium
+					amount = 3
+					state = 219
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_agility = @aircraft_air_agility
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_vef_plant
+		name = BFL_merge_aircraft_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_detection
+		special_trait_background = yes
+
+		position = { x=@aircraft_3_X y=@aircraft_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					name = BFL_mio_trait_merge_vef_plant
+					bonus = 1
+					uses = 1
+					category = radar_tech
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_defence = @aircraft_air_defence
+			surface_detection = @aircraft_surface_detection
+			sub_detection = @aircraft_sub_detection
+		}
+	}
 }
 
 BFL_yakovlev_design_bureau_organization = {
@@ -1084,10 +2033,11 @@ BFL_yakovlev_design_bureau_organization = {
 		icon = GFX_idea_yakovlev_design_bureau
 		special_trait_background = yes
 
-		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -1110,6 +2060,99 @@ BFL_yakovlev_design_bureau_organization = {
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
 			air_fuel_consumption_factor = -0.1
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_28
+		name = BFL_merge_aircraft_plant_1
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		special_trait_background = yes
+
+		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_150
+		name = BFL_merge_aircraft_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+
+		position = { x=@aircraft_2_X y=@aircraft_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			FROM = {
+				add_resource = {
+					type = aluminium
+					amount = 3
+					state = 219
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_agility = @aircraft_air_agility
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_vef_plant
+		name = BFL_merge_aircraft_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_detection
+		special_trait_background = yes
+
+		position = { x=@aircraft_3_X y=@aircraft_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					name = BFL_mio_trait_merge_vef_plant
+					bonus = 1
+					uses = 1
+					category = radar_tech
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_defence = @aircraft_air_defence
+			surface_detection = @aircraft_surface_detection
+			sub_detection = @aircraft_sub_detection
 		}
 	}
 
@@ -1152,13 +2195,11 @@ BFL_tupolev_design_bureau_organization = {
 		icon = GFX_idea_tupolev_design_bureau
 		special_trait_background = yes
 
-		position = { x=-1 y=1 }
-		relative_position_id = generic_mio_trait_pressurized_cockpit
-
-		any_parent = { generic_mio_trait_pressurized_cockpit }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -1179,6 +2220,99 @@ BFL_tupolev_design_bureau_organization = {
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
 			air_fuel_consumption_factor = -0.1
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_28
+		name = BFL_merge_aircraft_plant_1
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		special_trait_background = yes
+
+		position = { x=@aircraft_1_X y=@aircraft_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_cost_factor = @aircraft_production_cost_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_150
+		name = BFL_merge_aircraft_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+
+		position = { x=@aircraft_2_X y=@aircraft_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			FROM = {
+				add_resource = {
+					type = aluminium
+					amount = 3
+					state = 219
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_agility = @aircraft_air_agility
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_vef_plant
+		name = BFL_merge_aircraft_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_detection
+		special_trait_background = yes
+
+		position = { x=@aircraft_3_X y=@aircraft_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+			FROM = {
+				add_tech_bonus = {
+					name = BFL_mio_trait_merge_vef_plant
+					bonus = 1
+					uses = 1
+					category = radar_tech
+				}
+			}
+		}
+
+		equipment_bonus = {
+			air_defence = @aircraft_air_defence
+			surface_detection = @aircraft_surface_detection
+			sub_detection = @aircraft_sub_detection
 		}
 	}
 }
@@ -1213,10 +2347,11 @@ BFL_grabin_design_bureau_organization = {
 		icon = GFX_idea_grabin_design_bureau
 		special_trait_background = yes
 
-		position = { x=@materiel_1_X y=@materiel_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -1237,6 +2372,80 @@ BFL_grabin_design_bureau_organization = {
 
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_172
+		name = BFL_merge_materiel_plant_1_artillery
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_artillery_production
+		special_trait_background = yes
+
+		position = { x=@materiel_1_X y=@materiel_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		production_bonus = {
+			production_cost_factor = @artillery_production_cost_factor
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_trait_merge_nkmz_plant
+		name = BFL_merge_materiel_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+		special_trait_background = yes
+
+		position = { x=@materiel_2_X y=@materiel_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = @materiel_production_efficiency_cap_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_magnitogorsk_metallurgical_plant
+		name = BFL_merge_materiel_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=@materiel_3_X y=@materiel_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @materiel_production_capacity_factor
 		}
 	}
 }
@@ -1287,10 +2496,11 @@ BFL_tula_arms_plant_organization = {
 		icon = GFX_idea_tula_arms_plant
 		special_trait_background = yes
 
-		position = { x=@materiel_1_X y=@materiel_1_Y }
+		position = { x=8 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -1316,8 +2526,7 @@ BFL_tula_arms_plant_organization = {
 		icon = GFX_generic_mio_department_icon_tank_general_armor
 		special_trait_background = yes
 
-		position = { x=0 y=-2 }  
-		relative_position_id = BFL_tula_arms_plant_organization_up
+		position = { x=9 y=1 }  
 		visible = {
 			FROM = { original_tag = BFL }
 		}
@@ -1348,8 +2557,7 @@ BFL_tula_arms_plant_organization = {
 		icon = GFX_generic_mio_department_icon_infantry_quality
 		special_trait_background = yes
 
-		position = { x=0 y=-1 }  
-		relative_position_id = BFL_tula_arms_plant_organization_up
+		position = { x=9 y=0 }  
 		visible = {
 			FROM = { original_tag = BFL }
 		}
@@ -1371,6 +2579,80 @@ BFL_tula_arms_plant_organization = {
 			base = 5
 		}
 	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_172
+		name = BFL_merge_materiel_plant_1_artillery
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_artillery_production
+		special_trait_background = yes
+
+		position = { x=@materiel_1_X y=@materiel_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		production_bonus = {
+			production_cost_factor = @artillery_production_cost_factor
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_trait_merge_nkmz_plant
+		name = BFL_merge_materiel_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+		special_trait_background = yes
+
+		position = { x=@materiel_2_X y=@materiel_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = @materiel_production_efficiency_cap_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_magnitogorsk_metallurgical_plant
+		name = BFL_merge_materiel_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=@materiel_3_X y=@materiel_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @materiel_production_capacity_factor
+		}
+	}
 }
 
 BFL_gaz_organization = {
@@ -1388,10 +2670,11 @@ BFL_gaz_organization = {
 		icon = GFX_idea_gaz
 		special_trait_background = yes
 
-		position = { x=@materiel_1_X y=@materiel_1_Y }
+		position = { x=9 y=0 }
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			has_completed_focus = BFL_junshiqiyeshenji
 		}
 
 		available = {
@@ -1410,5 +2693,79 @@ BFL_gaz_organization = {
 			reliability = 0.1
 			build_cost_ic = -0.2
 	}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_plant_no_172
+		name = BFL_merge_materiel_plant_1_artillery
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_department_icon_artillery_production
+		special_trait_background = yes
+
+		position = { x=@materiel_1_X y=@materiel_1_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		production_bonus = {
+			production_cost_factor = @artillery_production_cost_factor
+		}
+	}
+	
+	add_trait = { 
+		token = BFL_mio_trait_merge_nkmz_plant
+		name = BFL_merge_materiel_plant_2
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+		special_trait_background = yes
+
+		position = { x=@materiel_2_X y=@materiel_2_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+			
+		}
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = @materiel_production_efficiency_cap_factor
+		}
+	}
+
+	add_trait = { 
+		token = BFL_mio_trait_merge_magnitogorsk_metallurgical_plant
+		name = BFL_merge_materiel_plant_3
+		#icon = GFX_generic_mio_department_icon_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=@materiel_3_X y=@materiel_3_Y }
+		
+		visible = {
+			FROM = { original_tag = BFL }
+		}
+
+		available = {
+
+		}
+
+		on_complete = {
+
+		}
+
+		production_bonus = {
+			production_capacity_factor = @materiel_production_capacity_factor
+		}
 	}
 }
