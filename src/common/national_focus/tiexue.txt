@@ -6817,7 +6817,7 @@ focus_tree = {
 			focus = TIX_xuanchengchisediguo
 		}
 		relative_position_id = TIX_xuanchengchisediguo
-		cost = 5
+		cost = 8
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -6890,7 +6890,7 @@ focus_tree = {
 			focus = TIX_xuanchengchisediguo
 		}
 		relative_position_id = TIX_xuanchengchisediguo
-		cost = 5
+		cost = 8
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -6945,7 +6945,7 @@ focus_tree = {
 			focus = TIX_xuanchengchisediguo
 		}
 		relative_position_id = TIX_xuanchengchisediguo
-		cost = 5
+		cost = 8
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -7010,7 +7010,7 @@ focus_tree = {
 			focus = TIX_dongfangshengcunkongjian
 		}
 		relative_position_id = TIX_beifangzuihoutongdie
-		cost = 5
+		cost = 8
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -7052,7 +7052,38 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			
+			add_ai_strategy = {
+				type = alliance
+				id = "SAD"			
+				value = 500
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = SAD
+				value = 200
+			}
+			add_opinion_modifier = { target = SAD modifier = SOV_anti_capitalist_policies_good } 
+		SAD = {
+			add_ai_strategy = {
+				type = befriend
+				id = TIX			
+				value = 200
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "TIX"			
+				value = 500
+			}
+			add_opinion_modifier = { target = TIX modifier = SOV_anti_capitalist_policies_good } 
+		}
+		if = {
+		limit = {
+		SAD = { is_ai = yes  }
+		}
+		TIX = {
+			add_to_faction = SAD
+		}
+		}
 		}
 	}
 	focus = {
@@ -7070,7 +7101,7 @@ focus_tree = {
 			focus = TIX_dongfangshengcunkongjian
 		}
 		relative_position_id = TIX_dongfangshengcunkongjian
-		cost = 5
+		cost = 8
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -7078,7 +7109,51 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			
+			guojishengyu_down_3 = yes
+			add_named_threat = {
+				threat = 5
+				name = "吞并波罗的海国家"
+			}
+			if = {
+			limit = {
+			country_exists = LIT
+			LIT = { is_puppet = no }
+			}
+			LIT = { country_event = az_tianjiang.307 }
+			}
+			if = {
+			limit = {
+			country_exists = LAT
+			LAT = { is_puppet = no }
+			}
+			LAT = { country_event = az_tianjiang.307 }
+			}
+			if = {
+			limit = {
+			country_exists = EST
+			EST = { is_puppet = no }
+			}
+			EST = { country_event = az_tianjiang.307 }
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				set_autonomy = {
+					target = LIT
+					autonomous_state = az_autonomy_volkskommissariat
+				}
+				set_autonomy = {
+					target = NOR
+					autonomous_state = az_autonomy_volkskommissariat
+				}
+				set_autonomy = {
+					target = EST
+					autonomous_state = az_autonomy_volkskommissariat
+				}							
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = LIT type = take_state_focus }
+				create_wargoal = { target = LAT type = take_state_focus }
+				create_wargoal = { target = EST type = take_state_focus }
+			}
 		}
 	}
 	focus = {
@@ -7096,6 +7171,15 @@ focus_tree = {
 			focus = TIX_zhengfuboluodihaiguojia
 		}
 		relative_position_id = TIX_shandongzhongougeming
+		available = {
+			is_puppet = no
+			has_war = no
+		}
+		bypass = {
+			not = { country_exists = DEN }
+			not = { country_exists = NOR }
+			not = { country_exists = SWE }
+		}
 		cost = 7
 		available = {
 			is_puppet = no
@@ -7107,7 +7191,6 @@ focus_tree = {
 			country_exists = HUJ
 			country_exists = HOL
 			country_exists = BEL
-			country_exists = HOL
 			country_exists = LUX
 			}
 		}
@@ -7115,10 +7198,51 @@ focus_tree = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		ai_will_do = {
-			factor = 50
+			factor = 0
+			modifier = {
+				date > 1940.1.1
+				add = 50
+			}
 		}
 		completion_reward = {
-			
+			declare_war_on = {
+				target = HUJ
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = YUW
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					country_exists = HOL
+					not = { is_in_faction_with = HOL }
+				}
+				declare_war_on = {
+					target = HOL
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					country_exists = BEL
+					not = { is_in_faction_with = BEL }
+				}
+				declare_war_on = {
+					target = BEL
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					country_exists = LUX
+					not = { is_in_faction_with = LUX }
+				}
+				declare_war_on = {
+					target = LUX
+					type = annex_everything
+				}
+			}
 		}
 	}
 	focus = {
@@ -7149,7 +7273,14 @@ focus_tree = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		ai_will_do = {
-			factor = 50
+			factor = 0
+			modifier = {
+				date > 1941.6.1
+				controls_state = 14
+				controls_state = 16
+				controls_state = 19
+				add = 10
+			}
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -7163,6 +7294,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = MOL
+						not = { is_in_faction_with = MOL }
 					}
 					declare_war_on = {
 						target = MOL
@@ -7172,6 +7304,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = FIN
+						not = { is_in_faction_with = FIN }
 					}
 					declare_war_on = {
 						target = FIN
@@ -7181,6 +7314,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = LAT
+						not = { is_in_faction_with = LAT }
 					}
 					declare_war_on = {
 						target = LAT
@@ -7190,6 +7324,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = EST
+						not = { is_in_faction_with = EST }
 					}
 					declare_war_on = {
 						target = EST
@@ -7199,6 +7334,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = LIT
+						not = { is_in_faction_with = LIT }
 					}
 					declare_war_on = {
 						target = LIT
@@ -7208,6 +7344,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = UKR
+						not = { is_in_faction_with = UKR }
 					}
 					declare_war_on = {
 						target = UKR
@@ -7217,6 +7354,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = POL
+						not = { is_in_faction_with = POL }
 					}
 					declare_war_on = {
 						target = POL
@@ -7226,6 +7364,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = BLR
+						not = { is_in_faction_with = BLR }
 					}
 					declare_war_on = {
 						target = BLR
@@ -7235,6 +7374,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = ARM
+						not = { is_in_faction_with = ARM }
 					}
 					declare_war_on = {
 						target = ARM
@@ -7244,6 +7384,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = TMS
+						not = { is_in_faction_with = TMS }
 					}
 					declare_war_on = {
 						target = TMS
@@ -7253,6 +7394,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = AZR
+						not = { is_in_faction_with = AZR }
 					}
 					declare_war_on = {
 						target = AZR
@@ -7262,6 +7404,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = TAJ
+						not = { is_in_faction_with = TAJ }
 					}
 					declare_war_on = {
 						target = TAJ
@@ -7271,6 +7414,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = SMI
+						not = { is_in_faction_with = SMI }
 					}
 					declare_war_on = {
 						target = SMI
@@ -7280,6 +7424,7 @@ focus_tree = {
 				if = {
 					limit = {
 						country_exists = KAR
+						not = { is_in_faction_with = KAR }
 					}
 					declare_war_on = {
 						target = KAR

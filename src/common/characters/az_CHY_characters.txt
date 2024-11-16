@@ -1348,8 +1348,8 @@ characters={
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 1
 		}	
 	}
 	CHY_haifeng = {
@@ -1372,8 +1372,8 @@ characters={
 			skill = 2
 			attack_skill = 2
 			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
 		}	
 	}
 	CHY_gecheng = {
@@ -1629,7 +1629,7 @@ characters={
 					is_ai = no
 				}
 			}
-			traits = { hangmu_army organizer logistics inflexible_strategist }
+			traits = { hangmu_army organizer inflexible_strategist }
 			skill = 3
 			attack_skill = 3
 			defense_skill = 3
@@ -1677,7 +1677,7 @@ characters={
 					is_ai = no
 				}
 			}
-			traits = { zhanlie_army media_personality reckless }
+			traits = { zhanlie_army media_personality }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 1
@@ -1749,7 +1749,7 @@ characters={
 					is_ai = no
 				}
 			}
-			traits = { xunyang_army cautious }
+			traits = { xunyang_army trait_cautious }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 4
@@ -1914,6 +1914,84 @@ characters={
 			defense_skill = 4
 			planning_skill = 2
 			logistics_skill = 3
+		}	
+	}
+	#scientists
+	CHY_mingshi_sci = {
+		name = CHY_mingshi
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/mingshi.png"
+				small="gfx/interface/ideas/idea_mingshi.png"
+			}
+		}
+		
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist scientist_trait_resourceful }
+			skills = {
+				specialization_nuclear = 1
+			}
+		}
+	}
+	CHY_lingbo_sci = {
+		name = CHY_lingbo
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/lingbo.png"
+				small="gfx/interface/ideas/idea_lingbo.png"
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_artillery_specialist scientist_trait_fast_learner }
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}
+	CHY_xizhang_sci = {
+		name = CHY_xizhang
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/xizhang.png"
+				small="gfx/interface/ideas/idea_xizhang.png"
+			}
+		}	
+		scientist = {
+			traits = { scientist_trait_submarine_specialist scientist_trait_bright }
+			skills = {
+				specialization_naval = 2
+			}
+		}
+	}
+	CHY_shentong_sci = {
+		name = CHY_shentong
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/shentong.png"
+				small="gfx/interface/ideas/idea_shentong.png"
+			}
+		}	
+		scientist = {
+			traits = { scientist_trait_surface_ship_specialist scientist_trait_genius }
+			skills = {
+				specialization_naval = 3
+			}
+		}	
+	}
+	CHY_xinnong_sci = {
+		name = CHY_xinnong
+		portraits={
+			army = {
+				large="gfx/leaders/CHY/xinnong.png"
+				small="gfx/interface/ideas/idea_xinnong.png"
+			}
+		}		
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_jet_expert scientist_trait_genius }
+			skills = {
+				specialization_air = 3
+			}
 		}	
 	}
 }

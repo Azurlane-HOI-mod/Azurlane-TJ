@@ -2738,6 +2738,13 @@ focus_tree = {
 				}
 				add_core_of = SAD
 			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				annex_country = { target = ALB transfer_troops = no }
+
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = ALB type = take_state_focus }
+			}
 		}
 	}
 	focus = {
@@ -3614,6 +3621,16 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = sad_swiyuwganshekenenggao
+			effect_tooltip = {
+					custom_effect_tooltip = if_they_accept_tt
+					transfer_state = 846
+					add_stability = 0.1
+					add_war_support = 0.1
+					add_political_power = 50
+
+					custom_effect_tooltip = if_they_refuse_tt
+					declare_war_on = { target = YUW type = annex_everything }
+			}
 		}
 	}
 	focus = {
