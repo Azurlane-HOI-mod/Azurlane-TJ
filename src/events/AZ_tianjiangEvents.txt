@@ -249,12 +249,6 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NOT = { owns_state = 97 }
-			}
-			add_state_claim = 97 #BIALYSTOK (POL)
-		}
-		if = {
-			limit = {
 				NOT = { owns_state = 78 }
 			}
 			add_state_claim = 78 #BESSARABIA (ROM)
@@ -397,9 +391,9 @@ country_event = {
 		transfer_state = 88
 		transfer_state = 92
 		transfer_state = 72
+		transfer_state = 97
 		}
 		BFL = {
-		transfer_state = 97
 		transfer_state = 89
 		transfer_state = 91
 		transfer_state = 93
@@ -5601,8 +5595,15 @@ country_event = {
 		ai_chance = {
 			factor = 1
 			modifier = {
-			is_historical_focus_on = yes
 			TIX = { is_ai = yes }
+			factor = 100
+			}
+			modifier = {
+			is_historical_focus_on = yes
+			factor = 100
+			}
+			modifier = {
+			TIX = { has_completed_focus = TIX_baoshouxuanze }
 			factor = 100
 			}
 		}
@@ -10488,7 +10489,10 @@ country_event = {
 	option = {
 		name = "我莫得选择，因为我只是个小几把路人国家。"
 		TIX = {
-		annex_country = { target = ROOT transfer_troops = no }
+			set_autonomy = {
+				target = ROOT
+				autonomous_state = az_autonomy_volkskommissariat
+			}
 		}
 		ai_chance = {
 			factor = 100
@@ -10509,20 +10513,276 @@ country_event = {
 	id = az_tianjiang.308
 	title = "铁血共和国选举！"
 	desc = az_tianjiang.308.d
-	picture = GFX_aze_kaixuan
+	picture = GFX_aze_dai
 	is_triggered_only = yes
 	option = {
 		name = "大家更喜欢提子！"
-		
+		set_politics = {
+			ruling_party = democratic
+		}
+		TIX_tierpici = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = liberalism
+			traits = {
+				trait_tiexueyizhi_tizi
+				trait_bisimaideyichan
+			}
+			}
+			promote_leader = yes
+			}
+		}
 		ai_chance = {
 			base = 50
 		}
 	}
 	option = {
 		name = "选美因茨会给她的衣柜多加几件衣服吗？"
-		
+		set_politics = {
+			ruling_party = democratic
+		}
+		TIX_meiyinci = {
+			add_country_leader_role = {
+			country_leader = {
+			expire = "4999.1.1"
+			ideology = conservatism
+			traits = {
+				trait_wendingyouxian
+			}
+			}
+			promote_leader = yes
+			}
+		}
 		ai_chance = {
 			base = 50
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.310
+	title = "铁血援助我国反对势力"
+	desc = "铁血正在援助我国的反对势力，我们应该怎么办？"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = "我们无法与铁血对抗，只能服从她们..."
+		TIX = {
+			country_event = { id = az_tianjiang.4 days = 3}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "撒丁帝国会保护我们，大概..."
+		SAD = {
+			country_event = { id = az_tianjiang.145 days = 3}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.311
+	title = "铁血要求我国割让多地并接受对方统治！"
+	desc = "铁血提出了不可理喻的要求，我们该怎么办？"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "我们不是铁血的对手，只能接受"
+		TIX = {
+			country_event = { id = az_tianjiang.312 days = 3}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "皇家会保护我们！"
+		trigger = { 
+			country_exists = HUJ
+			HUJ = {
+			is_puppet = no
+			}
+		}
+		HUJ = {
+			country_event = { id = az_tianjiang.313 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = az_tianjiang.312
+	title = "波兰完全接受我国条件！"
+	desc = "难以置信！波兰竟然完全接受了我们的逆天条款！"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "太幸运"
+		set_autonomy = {
+			target = POL
+			autonomy_state = az_autonomy_volkskommissariat
+		}
+		transfer_state = 85
+		transfer_state = 807
+		transfer_state = 86
+		transfer_state = 98
+		transfer_state = 87
+		transfer_state = 97
+		transfer_state = 762
+		add_state_core = 85
+		add_state_core = 807
+		add_state_core = 86
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = az_tianjiang.313
+	title = "东欧危机"
+	desc = "铁血对波兰提出了不可理喻的要求，波兰正在寻求我们的帮助！"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "波兰的死活关我啥事？"
+		TIX = {
+			country_event = { id = az_tianjiang.312 days = 3}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我们只能接受让波兰割让领土"
+		custom_effect_tooltip = HUJ_dongouweijitips_baodu
+		TIX = {
+			country_event = { id = az_tianjiang.314 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "立刻保障波兰独立！"
+		give_guarantee = FROM
+		TIX = {
+			create_wargoal = { target = FROM type = take_state_focus }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.314
+	title = "皇家的提议"
+	desc = "皇家表示如果不附庸只吃地，那么她们可以代替波兰同意。"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "行吧"
+		guojishengyu_up_3 = yes
+		add_named_threat = {
+			threat = -10
+			name = "东欧危机后续-铁血让步"
+		}
+		transfer_state = 85
+		transfer_state = 807
+		transfer_state = 86
+		transfer_state = 98
+		transfer_state = 87
+		transfer_state = 97
+		transfer_state = 762
+		add_state_core = 85
+		add_state_core = 807
+		add_state_core = 86
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "不行，开战！"
+		add_named_threat = {
+			threat = 15
+			name = "东欧危机后续-全面战争"
+		}
+		custom_effect_tooltip = TIX_beilianjieru_dongouweiji
+		add_war_support = 0.05
+		add_state_core = 85
+		declare_war_on = { target = POL type = take_state_focus }
+		hidden_effect = {
+		news_event = { id = az_tianjiang.20 days = 1}
+		}
+		HUJ = {
+			create_wargoal = { target = TIX type = take_state_focus }
+		}
+		BFL = {
+			create_wargoal = { target = TIX type = take_state_focus }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.315
+	title = "中欧革命"
+	desc = "我们秘密联系了斯洛伐克独立分子与捷克反对势力在捷克境内搞破坏，在捷克内部一片乱的时候，我们的军队就能以平叛名义进入她们的领土了，而匈牙利则早就被我们的人控制了。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "你来真的？"
+		transfer_state = 69
+		transfer_state = 74
+		transfer_state = 972
+		transfer_state = 9
+		transfer_state = 75
+		transfer_state = 72
+		add_state_core = 69
+		add_state_core = 74
+		add_state_core = 972
+		add_state_core = 9
+		add_state_core = 75
+		set_autonomy = {
+		target = SLO
+		autonomy_state = az_autonomy_volkskommissariat
+		}
+		hidden_effect = {
+		SLO = {
+		transfer_state = 70
+		transfer_state = 71
+		add_state_core = 70
+		add_state_core = 71
+		}
+		HUJ = {
+		country_event = az_tianjiang.14
+		}
+		SAD = {
+		country_event = az_tianjiang.14
+		}
+		YUW = {
+		country_event = az_tianjiang.14
+		}
+		}
+		set_autonomy = {
+			target = HUN
+			autonomy_state = az_autonomy_volkskommissariat
+		}
+		HUN = {
+		transfer_state =664
+		transfer_state =73
+		}
+		ai_chance = {
+			factor = 100
 		}
 	}
 }

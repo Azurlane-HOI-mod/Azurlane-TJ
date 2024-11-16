@@ -703,4 +703,63 @@ leader_traits = {
 			}
 		}
 	}
+	trait_TIX_reichswerke_improved_2 = {
+		random = no
+
+		consumer_goods_factor = -0.1 
+		local_resources_factor = 0.1
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+		production_factory_efficiency_gain_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		production_lack_of_resource_penalty_factor = -0.15
+
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+			artillery = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	trait_TIX_hanz_building = {
+		random = no
+
+		production_speed_infrastructure_factor = 0.1
+		production_speed_rail_way_factor = 0.1
+		production_speed_industrial_complex_factor = 0.05
+		production_speed_bunker_factor = 0.1
+		production_speed_coastal_bunker_factor = 0.1
+		production_speed_arms_factory_factor = 0.1
+		global_building_slots = 1
+
+		military_industrial_organization_policy_cost = -0.75
+		military_industrial_organization_design_team_assign_cost = -0.5
+		military_industrial_organization_industrial_manufacturer_assign_cost = -0.5
+	}
+
+	trait_TIX_hanz_building_no_aat = {
+		random = no
+
+		production_speed_infrastructure_factor = 0.1
+		production_speed_rail_way_factor = 0.1
+		production_speed_industrial_complex_factor = 0.05
+		production_speed_coastal_bunker_factor = 0.1
+		production_speed_arms_factory_factor = 0.1
+		production_speed_bunker_factor = 0.1
+		global_building_slots = 1
+
+		tank_manufacturer_cost_factor = -0.35
+		materiel_manufacturer_cost_factor = -0.35
+		aircraft_manufacturer_cost_factor = -0.35
+		naval_manufacturer_cost_factor = -0.35
+	}
 }

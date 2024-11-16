@@ -600,6 +600,19 @@ ideas = {
 				political_power_gain = 1
 			}
 		}
+		TIX_ghgdyh = {
+			picture = generic_pp_unity_bonus
+			allowed_civil_war = {
+				always = yes
+			}			
+	
+			modifier = {
+				stability_factor = 0.25
+				political_power_gain = 1.5
+				democratic_drift = 0.1
+				political_advisor_cost_factor = -0.25
+			}
+		}
 		TIX_txngyh = {
 			picture = generic_pp_unity_bonus
 			allowed_civil_war = {
@@ -884,6 +897,129 @@ ideas = {
 				production_speed_radar_station_factor = 0.2
 			}
 		}
+		
+		TIX_the_shield_of_democracy_conservatism_welfare_and_democracy_idea = {
+			name = GER_the_shield_of_democracy_idea
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = GER_the_shield_of_democracy
+
+			modifier = {
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				drift_defence_factor = 0.5
+				high_command_cost_factor = -0.15
+				air_chief_cost_factor = -0.15
+				army_chief_cost_factor = -0.15
+				navy_chief_cost_factor = -0.15
+				mobilization_laws_cost_factor = -0.25
+				monthly_population = 0.2
+				defensive_war_stability_factor = 0.4
+				party_popularity_stability_factor = 0.25
+				send_volunteers_tension = -0.8
+				send_volunteer_size = 3
+				air_volunteer_cap = 3
+			}
+		}
+		
+		TIX_weirenquanerzhan_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = ETH_conservative_high_command
+
+			modifier = {
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+				army_attack_factor = 0.25
+				army_defence_factor = 0.25
+				drift_defence_factor = 0.5
+			}
+		}
+		
+		TIX_jingjifanrong_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = GER_wirtschaftswunder
+
+			modifier = {
+				line_change_production_efficiency_factor = 0.25
+				industrial_capacity_factory = 0.25
+				industrial_capacity_dockyard = 0.25
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		
+		TIX_jungongfuheti_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			picture = GER_wunderwaffen
+
+			modifier = {
+				consumer_goods_factor = 0.25
+				global_building_slots_factor = 0.25
+				production_speed_buildings_factor = 0.25
+				industrial_capacity_factory = 0.25
+				production_speed_arms_factory_factor = 0.25
+				production_speed_industrial_complex_factor = 0.25
+				military_industrial_organization_funds_gain = 0.75
+				industrial_concern_cost_factor = -0.5
+			}
+		}
+		
+		TIX_wzgfy = {
+			picture =  GER_aufrustung
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 0.35
+				army_defence_factor = 0.35
+				drift_defence_factor = 0.5
+				production_speed_infrastructure_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_air_base_factor = 0.3
+				production_speed_naval_base_factor = 0.3
+				production_speed_dockyard_factor = 0.15
+			}
+		}
+		
 	}
 
 	political_advisor = {
@@ -1129,6 +1265,12 @@ tank_manufacturer = {
 			allowed = {
 				original_tag = TIX
 			}
+
+			visible = {
+				NOT = { has_completed_focus = TIX_chenglihansijituan }
+			}
+
+			cost = 150
 			
 			research_bonus = {
 				industry = 0.05
@@ -1138,7 +1280,38 @@ tank_manufacturer = {
 			traits = { refinery_concern }
 			
 			ai_will_do = {
-				factor = 0
+				factor = 1
+			}
+		}
+
+		GER_ig_faben_improved = {
+			name = ig_faben
+			picture = ig_faben
+			allowed = {
+				original_tag = TIX
+			}
+
+
+			visible = {
+			    has_completed_focus = TIX_chenglihansijituan
+			}
+
+			cost = 150
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.1
+				production_speed_fuel_silo_factor = 0.1
+			}
+			
+			traits = { refinery_concern }
+			
+			ai_will_do = {
+				factor = 1
 			}
 		}
 		
@@ -1147,16 +1320,18 @@ tank_manufacturer = {
 			allowed = {
 				original_tag = TIX
 			}
+
+			cost = 150
 			
 			research_bonus = {
 				industry = 0.15
-				
 			}
-			ai_will_do = {
-				factor = 10
-			}
-			
+
 			traits = { industrial_concern }
+			
+			ai_will_do = {
+				factor = 2
+			}
 		}
 
 		siemens = {
@@ -1164,17 +1339,331 @@ tank_manufacturer = {
 			allowed = {
 				original_tag = TIX
 			}
+
+			cost = 150
 			
 			research_bonus = {
 				electronics = 0.15
 			}
 			
 			traits = { electronics_concern }
+		}
+
+		TIX_vereinigte_stahlwerke = {
+
+			picture = GER_vereinigte_stahlwerke
 			
-			ai_will_do = {
-				factor = 10
+			allowed = {
+				original_tag = TIX
 			}
-		}		
+			
+			cost = 150
+
+			research_bonus = {
+				excavation_tech = 0.15
+			}
+			
+			traits = { mining_company }
+		}
+
+		TIX_deutsche_reichsbahn = {
+
+			picture = GER_deutsche_reichsbahn
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {
+			    NOT = { has_completed_focus = TIX_chenglihansijituan }
+ 
+			}
+			
+			cost = 150
+
+			research_bonus = {
+				train_tech = 0.15
+			}
+			
+			traits = { railway_company }
+		}
+
+		TIX_deutsche_reichsbahn_improved = {
+			name = GER_deutsche_reichsbahn
+
+			picture = GER_deutsche_reichsbahn
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {
+                has_completed_focus = TIX_chenglihansijituan
+			}
+			
+			cost = 150
+
+			research_bonus = {
+				train_tech = 0.15
+			}
+
+			equipment_bonus = {
+				train_equipment_2 = {
+					build_cost_ic = -0.15 
+					#armor_value = 0.1
+					instant = yes
+				}
+			}
+			
+			traits = { improved_railway_company }
+		}
+
+		TIX_philipp_holzmann = {
+
+			picture = GER_philipp_holzmann
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {
+                NOT = { has_completed_focus = TIX_chenglihansijituan }
+			}
+			
+			cost = 150
+
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 5
+					is_historical_focus_on = yes
+				}
+			}
+
+			traits = { construction_company }
+		}
+
+		TIX_philipp_holzmann_improved = {
+			name = TIX_philipp_holzmann
+
+			picture = GER_philipp_holzmann
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {
+                has_completed_focus = TIX_chenglihansijituan 
+				NOT = { has_completed_focus = TIX_tiexuedehansi }
+			}
+			
+			cost = 150
+
+			research_bonus = {
+				construction_tech = 0.15
+			}
+			
+			traits = { GER_philipp_holzmann_trait }
+		}
+
+		TIX_hanz_building = {
+			name = TIX_hanz_building
+
+			picture = GER_philipp_holzmann
+			
+			allowed = {
+				original_tag = TIX
+				has_dlc = "Arms Against Tyranny"
+			}
+
+			visible = {
+                has_completed_focus = TIX_tiexuedehansi
+			}
+			
+			cost = 150
+
+			research_bonus = {
+				construction_tech = 0.15
+			}
+			
+			traits = { trait_TIX_hanz_building }
+		}
+
+		TIX_hanz_building_no_aat = {
+			name = TIX_hanz_building
+
+			picture = GER_philipp_holzmann
+			
+			allowed = {
+				original_tag = TIX
+				NOT = { has_dlc = "Arms Against Tyranny" }
+			}
+
+			visible = {
+			    has_completed_focus = TIX_tiexuedehansi
+			}
+			
+			cost = 150
+
+			research_bonus = {
+				construction_tech = 0.15
+			}
+			
+			traits = { trait_TIX_hanz_building_no_aat }
+		}
+
+		TIX_organization_todt = {
+
+			picture = GER_organization_todt
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {
+			    NOT = { has_completed_focus = TIX_chenglihansijituan }  
+			}
+			
+			cost = 75
+
+			ai_will_do = {
+				base = 10
+			}
+			
+			research_bonus = {
+				construction_tech = 0.15
+			}
+
+			traits = { GER_organization_todt_trait }
+		}
+
+		TIX_organization_todt_improved = {
+			name = TIX_organization_todt
+
+			picture = GER_organization_todt
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {
+			    has_completed_focus = TIX_chenglihansijituan 
+				NOT = { has_completed_focus = TIX_tiexuedehansi }
+			}
+			
+			cost = 75
+
+			ai_will_do = {
+				base = 20
+			}
+			
+			research_bonus = {
+				construction_tech = 0.15
+			}
+
+			traits = { GER_organization_todt_improved_trait }
+		}
+
+		TIX_rwe = {
+
+			picture = generic_energy_concern
+			
+			allowed = {
+				original_tag = TIX
+			}
+			
+			cost = 150
+
+			research_bonus = {
+				nuclear = 0.05
+			}
+			
+			traits = { energy_supply_company }
+		}
+		
+		TIX_reichswerke = {
+
+			picture = GER_reichswerke
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {
+			    NOT = { has_completed_focus = TIX_chenglihansijituan }
+			}
+
+			available = {
+ 
+			}
+			
+			cost = 150
+
+			research_bonus = {
+				excavation_tech = 0.05
+				industry = 0.05
+			}
+			
+			traits = { conglomerate }
+			
+			ai_will_do = { factor = 8 }
+			
+		}
+
+		TIX_reichswerke_improved = {
+			name = TIX_reichswerke_improved
+
+			picture = GER_reichswerke
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {	
+			    has_completed_focus = TIX_chenglihansijituan 
+				NOT = { has_completed_focus = TIX_tiexuedehansi }
+			}
+
+			available = {
+ 
+			}
+			
+			cost = 100
+
+			research_bonus = {
+				excavation_tech = 0.05
+				industry = 0.05
+			}
+			
+			traits = { GER_reichswerke_conglomerate }
+		}
+
+		TIX_reichswerke_improved_2 = {
+			name = TIX_reichswerke_improved_2
+
+			picture = GER_reichswerke
+			
+			allowed = {
+				original_tag = TIX
+			}
+
+			visible = {	
+                has_completed_focus = TIX_tiexuedehansi 
+			}
+
+			available = {
+ 
+			}
+			
+			cost = 100
+
+			research_bonus = {
+				excavation_tech = 0.15
+				industry = 0.15
+			}
+			
+			traits = { trait_TIX_reichswerke_improved_2 }
+		}
 	}
 	
 	materiel_manufacturer = {
