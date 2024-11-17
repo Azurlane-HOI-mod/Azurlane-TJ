@@ -305,32 +305,31 @@ SAD_hold_africa = {
 		original_tag = SAD
 	}
 	enable = {
-		is_in_faction_with = TIX 
+		date < 1941.6.1
 	}
 	abort = {
-		NOT = { country_exists = TIX }
+		date > 1941.6.1
 	}
 	
+	# Tripoli
 	ai_strategy = {
-		type = area_priority
-		id = africa
-		value = 1
+		type = theatre_distribution_demand_increase
+		id = 448
+		value = 2
 	}
-	ai_strategy = {
-        type = area_priority
-        id = suez
-        value = 200
-    }
-    ai_strategy = {
-        type = area_priority 
-        id = europe
-        value = 50
-    }
 
+	# Benghasi
 	ai_strategy = {
-		type = front_unit_request
-		area = suez
-		value = 60
+		type = theatre_distribution_demand_increase
+		id = 450
+		value = 2
+	}
+
+	# Alexandria
+	ai_strategy = {
+		type = theatre_distribution_demand_increase
+		id = 447
+		value = 2
 	}
 }
 
@@ -661,12 +660,24 @@ SAD_war_with_ETH = {
 	ai_strategy = {
 		type = front_unit_request
 		tag = ETH		
-		value = 200
+		value = 400
 	}
 	ai_strategy = {
 		type = invade
 		id = "ETH"			
-		value = 200
+		value = 400
+	}
+	ai_strategy = {
+		type = front_control
+
+		tag = ETH
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
 	}
 }
 
@@ -879,4 +890,92 @@ SAD_helpnor = {
 	}
 
 
+}
+
+SAD_trade_with_sweden = {
+	allowed = {
+		original_tag = SAD
+	}
+	enable = {
+		# if we're not communist and they're not communist
+		NOT = { has_government = communism }
+		NOT = { SWE = { has_government = communism } }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = SWE
+		value = 60
+	}
+}
+
+SAD_trade_with_germany = {
+	allowed = {
+		original_tag = SAD
+	}
+	enable = {
+		has_government = fascism
+		TIX = { has_government = fascism }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = TIX
+		value = 40
+	}
+}
+
+# lets not invade until we have europe
+SAD_dont_invade_NOR_until_YUW_falls = {
+	allowed = {
+		original_tag = SAD
+		is_historical_focus_on = yes
+	}
+
+	enable = {
+		has_war_together_with = TIX
+		date < 1942.1.1  # Italy should probably stay out of Norway for a while even if France has capitulated
+		#YUW = {
+		#	has_capitulated = no
+		#}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = NOR
+		value = -100
+	}
+}
+
+SAD_invasion_buffer = {
+	allowed = {
+		original_tag = SAD
+	}
+	enable = {
+		is_historical_focus_on = yes
+		date > 1942.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			156
+			117
+			849
+			157
+			2
+			162
+			161
+			### Oh no we forgot sicily! What could possibly go wrong.
+		}
+		ratio = 0.20
+		area = italy
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
 }

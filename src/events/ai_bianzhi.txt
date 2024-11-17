@@ -16,6 +16,11 @@ country_event = {
 		set_technology = { tech_military_police = 1 }
 		set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -117,7 +122,7 @@ country_event = {
 					medium_flame_tank = { x = 0 y = 1 }
 					light_tank_recon = { x = 0 y = 2 }
 					artillery = { x = 0 y = 3 }
-					anti_air = 	{ x = 0 y = 4 }
+					armored_maintenance = 	{ x = 0 y = 4 }
 				    }
 				}
 			}
@@ -140,11 +145,11 @@ country_event = {
 						motorized = { x = 3 y = 0 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						light_tank_recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 
@@ -163,11 +168,11 @@ country_event = {
 						artillery_brigade = { x = 2 y = 1 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -205,6 +210,66 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+				IF = {
+                    limit = { 
+                        14 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    14 = {
+                        add_building_construction = {
+                            type = naval_facility
+                            level = 1
+                            instant_build = yes
+                            province = 3552 # bulietani
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        19 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    19 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 9737 # boerduo
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        30 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    30 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 11465 # nante
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}
@@ -227,6 +292,11 @@ country_event = {
 		set_technology = { tech_military_police = 1 }
 		set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -327,6 +397,7 @@ country_event = {
 					support = {
 					armored_engineer = { x = 0 y = 0 }
 					medium_flame_tank = { x = 0 y = 1 }
+					helicopter_transport = { x = 0 y = 2 }
 				    }
 				}
 			division_template = {
@@ -355,6 +426,7 @@ country_event = {
 					support = {
 					armored_engineer = { x = 0 y = 0 }
 					medium_flame_tank = { x = 0 y = 1 }
+					helicopter_transport = { x = 0 y = 2 }
 				    }
 				}
 			}
@@ -377,11 +449,11 @@ country_event = {
 						motorized = { x = 3 y = 0 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						light_tank_recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+		             	logistics_company = { x = 0 y = 4 }
 					}
 				}
 
@@ -400,11 +472,11 @@ country_event = {
 						artillery_brigade = { x = 2 y = 1 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+		             	logistics_company = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -442,6 +514,66 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+				IF = {
+                    limit = { 
+                        119 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    119 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 3379 # beierfasite
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        132 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    132 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 6384 # livepool
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        126 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    126 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 6103 # london
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}
@@ -465,6 +597,11 @@ country_event = {
 			set_technology = { tech_military_police = 1 }
 			set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -561,6 +698,7 @@ country_event = {
 					}
 					support = {
 					medium_flame_tank = { x = 0 y = 0 }
+					helicopter_transport = { x = 0 y = 1 }
 					}
 					}
 					division_template = {
@@ -599,7 +737,7 @@ country_event = {
 							infantry = { x = 2 y = 2 }
 						}
 						support = {
-							armored_engineer = { x = 0 y = 0 }
+							engineer = { x = 0 y = 0 }
 							artillery = { x = 0 y = 1 }
 							}
 						}
@@ -608,7 +746,7 @@ country_event = {
 						limit = { has_idea = TY_dingzhenai
 					 }
 					division_template = {
-						name = "东煌小型步兵师" 			
+						name = "东煌小小型步兵师" 			
 						division_names_group = DOH_INF_01							
 						regiments = {
 							infantry = { x = 0 y = 0 }
@@ -624,7 +762,7 @@ country_event = {
 							infantry = { x = 2 y = 2 }
 						}
 						support = {
-							armored_engineer = { x = 0 y = 0 }
+							engineer = { x = 0 y = 0 }
 							artillery = { x = 0 y = 1 }
 							}
 						}
@@ -644,16 +782,16 @@ country_event = {
 								infantry = { x = 3 y = 0 }
 							}
 							support = {
-								armored_engineer = { x = 0 y = 0 }
+								engineer = { x = 0 y = 0 }
 								light_tank_recon = { x = 0 y = 1 }
 								artillery = { x = 0 y = 2 }
 								anti_air= { x = 0 y = 3 }
-								helicopter_transport = { x = 0 y = 4 }
+			                    logistics_company = { x = 0 y = 4 }
 							}
 						}
 		
 						division_template = {
-							name = "东煌小小型步兵师" 			
+							name = "东煌小小小型步兵师" 			
 							division_names_group = DOH_INF_01					
 							regiments = {
 								infantry = { x = 0 y = 0 }
@@ -667,11 +805,11 @@ country_event = {
 								artillery_brigade = { x = 2 y = 1 }
 							}
 							support = {
-								armored_engineer = { x = 0 y = 0 }
+								engineer = { x = 0 y = 0 }
 								recon = { x = 0 y = 1 }
 								artillery = { x = 0 y = 2 }
 								anti_air= { x = 0 y = 3 }
-								helicopter_transport = { x = 0 y = 4 }
+			                    logistics_company = { x = 0 y = 4 }
 							}
 						}
 					}
@@ -709,6 +847,86 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+				IF = {
+                    limit = { 
+                        613 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    613 = {
+                        add_building_construction = {
+                            type = naval_facility
+                            level = 1
+                            instant_build = yes
+                            province = 7014 # shanghai
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        744 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    744 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 7418 # xian
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        600 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    600 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 7199 #jiangxi
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        602 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    602 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 7097 # hunan
+                        }
+                    }
+                }
 				
 		ai_chance = {
 			factor = 100
@@ -733,6 +951,11 @@ country_event = {
 		set_technology = { tech_military_police = 1 }
 		set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -831,8 +1054,8 @@ country_event = {
 						medium_sp_anti_air_brigade = { x = 4 y = 2 }
 					}
 					support = {
-					helicopter_transport = { x = 0 y = 0 }
-					medium_flame_tank = { x = 0 y = 1 }
+					medium_flame_tank = { x = 0 y = 0 }
+					helicopter_transport = { x = 0 y = 1 }
 					}
 				}
 			}
@@ -855,11 +1078,11 @@ country_event = {
 						motorized = { x = 3 y = 0 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						light_tank_recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 
@@ -878,11 +1101,11 @@ country_event = {
 						artillery_brigade = { x = 2 y = 1 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -911,6 +1134,7 @@ country_event = {
 					support = {
 					armored_engineer = { x = 0 y = 0 }
 					medium_flame_tank = { x = 0 y = 1 }
+					helicopter_transport = { x = 0 y = 2 }
 				    }
 				}
 				division_template = {
@@ -965,6 +1189,86 @@ country_event = {
 						front_1_custom_slot = ship_light_medium_battery_2
 					}
 				}
+				IF = {
+                    limit = { 
+                        630 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    630 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 13051 # yuahansidunhuanjiao
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        379 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    379 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 4799 # neihuada
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        358 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    358 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 3894 # newyork
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        382 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    382 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 1827 # denver
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}
@@ -989,6 +1293,11 @@ country_event = {
 			set_technology = { motorized_rocket_unit = 1 } 
 			set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -1093,8 +1402,8 @@ country_event = {
 	
 					}
 					support = {
-					helicopter_transport = { x = 0 y = 0 }
-					medium_flame_tank = { x = 0 y = 1 }
+					medium_flame_tank = { x = 0 y = 0 }
+					helicopter_transport = { x = 0 y = 1 }
 					}
 				}
 				division_template = {
@@ -1125,6 +1434,7 @@ country_event = {
 					support = {
 						armored_engineer = { x = 0 y = 0 } 	
 						medium_flame_tank = { x = 0 y = 1 }
+						helicopter_transport = { x = 0 y = 2 }
 					}
 					}
 			}
@@ -1146,11 +1456,11 @@ country_event = {
 						infantry = { x = 3 y = 0 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						light_tank_recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 
@@ -1169,11 +1479,11 @@ country_event = {
 						artillery_brigade = { x = 2 y = 1 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -1211,6 +1521,88 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+
+				IF = {
+                    limit = { 
+                        137 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    137 = {
+                        add_building_construction = {
+                            type = naval_facility
+                            level = 1
+                            instant_build = yes
+                            province = 3686 # saiwasituoboer
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        572 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    572 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 4242 # cheliyabinsike
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        732 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    732 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 10660 #pamier
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        217 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    217 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 3529 # sidalingele
+                        }
+                    }
+                }
+
 		ai_chance = {
 			factor = 100
 		}
@@ -1234,6 +1626,11 @@ country_event = {
 			set_technology = { tech_military_police = 1 }
 			set_technology = { tech_maintenance_company = 1 }
 		    set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -1332,6 +1729,7 @@ country_event = {
 					}
 					support = {
 					medium_flame_tank = { x = 0 y = 0 }
+					helicopter_transport = { x = 0 y = 1 }
 					}
 				}
 				division_template = {
@@ -1340,17 +1738,18 @@ country_event = {
 					regiments = {
 						medium_armor = { x = 0 y = 0 }
 						medium_armor = { x = 0 y = 1 }
-						medium_armor = { x = 0 y = 2 }
-						medium_armor = { x = 0 y = 3 }
-						medium_tank_destroyer_brigade = { x = 1 y = 0 }
-						medium_sp_anti_air_brigade = { x = 1 y = 1 }
-						mechanized = { x = 2 y = 0 }
-						mechanized = { x = 2 y = 1 }
-						mechanized = { x = 2 y = 2 }
-						mechanized = { x = 2 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_tank_destroyer_brigade = { x = 2 y = 0 }
+						medium_sp_anti_air_brigade = { x = 2 y = 1 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
 					}
 				    support = {
 					medium_flame_tank = { x = 0 y = 0 }
+					helicopter_transport = { x = 0 y = 1 }
 					}
 				}
 			}
@@ -1373,11 +1772,11 @@ country_event = {
 						motorized = { x = 3 y = 0 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						light_tank_recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+	             		logistics_company = { x = 0 y = 4 }
 					}
 				}
 
@@ -1396,11 +1795,11 @@ country_event = {
 						artillery_brigade = { x = 2 y = 1 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+			            logistics_company = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -1438,6 +1837,87 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+
+				IF = {
+                    limit = { 
+                        56 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    56 = {
+                        add_building_construction = {
+                            type = naval_facility
+                            level = 1
+                            instant_build = yes
+                            province = 241 # weiliangang
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        52 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    52 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 692 # munihei
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        50 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    50 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 9517 #situjiate
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        59 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    59 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 6377 # hannuowei
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}
@@ -1465,6 +1945,11 @@ country_event = {
 			set_technology = { interwar_antitank = 1 }
 			set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -1567,6 +2052,7 @@ country_event = {
 					}
 					support = {
 					medium_flame_tank = { x = 0 y = 0 }
+					helicopter_transport = { x = 0 y = 1 }
 					}
 				}
 				division_template = {
@@ -1585,6 +2071,7 @@ country_event = {
 					}
 					support = {
 					medium_flame_tank = { x = 0 y = 0 }
+					helicopter_transport = { x = 0 y = 1 }
 					}
 				}
 				division_template = {
@@ -1640,11 +2127,11 @@ country_event = {
 						motorized = { x = 3 y = 0 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						light_tank_recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+		            	logistics_company = { x = 0 y = 4 }
 					}
 				}
 
@@ -1663,11 +2150,11 @@ country_event = {
 						artillery_brigade = { x = 2 y = 1 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+		            	logistics_company = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -1705,6 +2192,86 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+				IF = {
+                    limit = { 
+                        849 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    849 = {
+                        add_building_construction = {
+                            type = naval_facility
+                            level = 1
+                            instant_build = yes
+                            province = 11837 # talantuo
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        162 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    162 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 11833 # liwona
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        2 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    2 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 9904 #roma
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        157 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    157 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 925 # ankena
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}
@@ -1730,6 +2297,11 @@ country_event = {
 		set_technology = { tech_logistics_company = 1 }
 		set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -1831,8 +2403,8 @@ country_event = {
 					mechanized = { x = 4 y = 3 }
 				}
 				support = {
-				armored_engineer = { x = 0 y = 0 }
-				medium_flame_tank = { x = 0 y = 1 }
+				medium_flame_tank = { x = 0 y = 0 }
+				helicopter_transport = { x = 0 y = 1 }
 				}
 			}
 			division_template = {
@@ -1859,8 +2431,8 @@ country_event = {
 					infantry = { x = 4 y = 3 }
 				}
 				support = {
-				armored_engineer = { x = 0 y = 0 }
-				medium_flame_tank = { x = 0 y = 1 }
+				medium_flame_tank = { x = 0 y = 0 }
+				helicopter_transport = { x = 0 y = 1 }
 				}
 			}
 			division_template = {
@@ -1889,6 +2461,7 @@ country_event = {
 				support = {
 				armored_engineer = { x = 0 y = 0 }
 				medium_flame_tank = { x = 0 y = 1 }
+				helicopter_transport = { x = 0 y = 2 }
 				}
 			}
 			division_template = {
@@ -1897,23 +2470,23 @@ country_event = {
 				regiments = {
 					artillery_brigade = { x = 0 y = 0 }
 					artillery_brigade = { x = 0 y = 1 }
-					artillery_brigade = { x = 0 y = 2 }
-					artillery_brigade = { x = 0 y = 3 }
-					light_armor = { x = 1 y = 0 }
-					infantry = { x = 2 y = 0 }
-					infantry = { x = 2 y = 1 }
-					infantry = { x = 2 y = 2 }
-					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 1 y = 0 }
+					artillery_brigade = { x = 1 y = 1 }
+					light_armor = { x = 2 y = 0 }
 					infantry = { x = 3 y = 0 }
 					infantry = { x = 3 y = 1 }
 					infantry = { x = 3 y = 2 }
 					infantry = { x = 3 y = 3 }
+					infantry = { x = 4 y = 0 }
+					infantry = { x = 4 y = 1 }
+					infantry = { x = 4 y = 2 }
+					infantry = { x = 4 y = 3 }
 				}
 				support = {
-					armored_engineer = { x = 0 y = 0 }
+					engineer = { x = 0 y = 0 }
 					artillery = { x = 0 y = 1 }
 					recon = { x = 0 y = 2 }
-					armored_maintenance = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 3 }
 					}
 				}
 				division_template = {
@@ -1922,23 +2495,23 @@ country_event = {
 				regiments = {
 					artillery_brigade = { x = 0 y = 0 }
 					artillery_brigade = { x = 0 y = 1 }
-					artillery_brigade = { x = 0 y = 2 }
-					artillery_brigade = { x = 0 y = 3 }
-					medium_armor = { x = 1 y = 0 }
-					infantry = { x = 2 y = 0 }
-					infantry = { x = 2 y = 1 }
-					infantry = { x = 2 y = 2 }
-					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 1 y = 0 }
+					artillery_brigade = { x = 1 y = 1 }
+					medium_armor = { x = 2 y = 0 }
 					infantry = { x = 3 y = 0 }
 					infantry = { x = 3 y = 1 }
 					infantry = { x = 3 y = 2 }
 					infantry = { x = 3 y = 3 }
+					infantry = { x = 4 y = 0 }
+					infantry = { x = 4 y = 1 }
+					infantry = { x = 4 y = 2 }
+					infantry = { x = 4 y = 3 }
 				}
 				support = {
-					armored_engineer = { x = 0 y = 0 }
+					engineer = { x = 0 y = 0 }
 					artillery = { x = 0 y = 1 }
 					recon = { x = 0 y = 2 }
-					armored_maintenance = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 3 }
 					}
 				}
 				division_template = {
@@ -1956,7 +2529,7 @@ country_event = {
 						infantry = { x = 2 y = 2 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						artillery = { x = 0 y = 1 }
 						}
 					}
@@ -1981,11 +2554,11 @@ country_event = {
 					light_armor = { x = 4 y = 1 }
 				}
 				support = {
-				armored_engineer = { x = 0 y = 0 }
+				engineer = { x = 0 y = 0 }
 				artillery = { x = 0 y = 1 }
 				recon = { x = 0 y = 2 }
-				helicopter_transport = { x = 0 y = 3 }
-				field_hospital = { x = 0 y = 4 }
+				logistics_company = { x = 0 y = 3 }
+				medium_flame_tank = { x = 0 y = 4 }
 				}
 			}
 		 }
@@ -2008,11 +2581,11 @@ country_event = {
 				infantry = { x = 3 y = 0 }
 			}
 			support = {
-				armored_engineer = { x = 0 y = 0 }
+				engineer = { x = 0 y = 0 }
 				light_tank_recon = { x = 0 y = 1 }
 				artillery = { x = 0 y = 2 }
 				anti_air= { x = 0 y = 3 }
-				helicopter_transport = { x = 0 y = 4 }
+				logistics_company = { x = 0 y = 4 }
 			}
 		}
 
@@ -2031,11 +2604,11 @@ country_event = {
 				artillery_brigade = { x = 2 y = 1 }
 			}
 			support = {
-				armored_engineer = { x = 0 y = 0 }
+				engineer = { x = 0 y = 0 }
 				recon = { x = 0 y = 1 }
 				artillery = { x = 0 y = 2 }
 				anti_air= { x = 0 y = 3 }
-				helicopter_transport = { x = 0 y = 4 }
+				logistics_company = { x = 0 y = 4 }
 			}
 		}
 		}
@@ -2091,6 +2664,66 @@ country_event = {
 						front_1_custom_slot = ship_light_medium_battery_2
 					}
 				}
+				IF = {
+                    limit = { 
+                        531 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    531 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 7072 # osaka
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        282 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    282 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 1182 #tokyo
+                        }
+                    }
+                }
+				IF = {
+                    limit = { 
+                        532 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    532 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 10125 # mingguwu
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}
@@ -2113,6 +2746,11 @@ country_event = {
 		set_technology = { tech_logistics_company = 1 }
 		set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -2248,11 +2886,11 @@ country_event = {
 						artillery_brigade = { x = 2 y = 1 }
 					}
 					support = {
-						armored_engineer = { x = 0 y = 0 }
+						engineer = { x = 0 y = 0 }
 						recon = { x = 0 y = 1 }
 						artillery = { x = 0 y = 2 }
 						anti_air= { x = 0 y = 3 }
-						helicopter_transport = { x = 0 y = 4 }
+						logistics_company = { x = 0 y = 4 }
 					}
 				}
 			}
@@ -2309,6 +2947,58 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+				IF = {
+                    limit = { 
+                        270 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    270 = {
+                        add_building_construction = {
+                            type = naval_facility
+                            level = 1
+                            instant_build = yes
+                            province = 1280 # bulizhijia
+                        }
+                    }
+                }
+				IF = {
+                    506 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 12994 # antuofajiasita
+                        }
+                    }
+                }
+				IF = {
+
+                    279 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 650 #shendiyage
+                        }
+                    }
+                }
+				IF = {
+
+                    952 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 5228 # kepiyabo
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}
@@ -2331,6 +3021,11 @@ country_event = {
 		set_technology = { tech_logistics_company = 1 }
 		set_technology = { tech_maintenance_company = 1 }
 		set_technology = { tech_maintenance_company2 = 1 }
+		set_technology = { sp_armored_engineer_tech = 1 }
+		set_technology = { sp_armored_maintenance_tech = 1 }
+		set_technology = { sp_helicopter_med_evac_tech = 1 }
+		set_technology = { sp_helicopter_transport_pods_tech = 1 }
+		set_technology = { sp_armored_signal_tech = 1 }
 		complete_special_project = { project = sp:sp_land_flamethrower_tank }
 		complete_special_project = { project = sp:sp_land_military_engineering_vehicles }
 		complete_special_project = { project = sp:sp_air_helicopter }
@@ -2468,11 +3163,11 @@ country_event = {
 							motorized = { x = 3 y = 0 }
 						}
 						support = {
-							armored_engineer = { x = 0 y = 0 }
+							engineer = { x = 0 y = 0 }
 							light_tank_recon = { x = 0 y = 1 }
 							artillery = { x = 0 y = 2 }
 							anti_air= { x = 0 y = 3 }
-							helicopter_transport = { x = 0 y = 4 }
+		                 	logistics_company = { x = 0 y = 4 }
 						}
 					}
 	
@@ -2491,11 +3186,11 @@ country_event = {
 							artillery_brigade = { x = 2 y = 1 }
 						}
 						support = {
-							armored_engineer = { x = 0 y = 0 }
+							engineer = { x = 0 y = 0 }
 							recon = { x = 0 y = 1 }
 							artillery = { x = 0 y = 2 }
 							anti_air= { x = 0 y = 3 }
-							helicopter_transport = { x = 0 y = 4 }
+			                logistics_company = { x = 0 y = 4 }
 						}
 					}
 				}
@@ -2533,6 +3228,59 @@ country_event = {
 					military_police = { x = 0 y = 0 }
 					}
 				}
+
+				IF = {
+                    limit = { 
+                        696 = {
+                            is_fully_controlled_by = ROOT
+                            air_facility < 1
+                            land_facility < 1
+                            naval_facility < 1
+                            nuclear_facility < 1
+                        }
+                    }
+
+                    696 = {
+                        add_building_construction = {
+                            type = naval_facility
+                            level = 1
+                            instant_build = yes
+                            province = 13010 # baimuda
+                        }
+                    }
+                }
+				IF = {
+                    489 = {
+                        add_building_construction = {
+                            type = nuclear_facility
+                            level = 1
+                            instant_build = yes
+                            province = 1944 # suliya
+                        }
+                    }
+                }
+				IF = {
+
+                    307 = {
+                        add_building_construction = {
+                            type = land_facility
+                            level = 1
+                            instant_build = yes
+                            province = 8113 #jialajiasi
+                        }
+                    }
+                }
+				IF = {
+
+                    315 = {
+                        add_building_construction = {
+                            type = air_facility
+                            level = 1
+                            instant_build = yes
+                            province = 7622 # hawana
+                        }
+                    }
+                }
 		ai_chance = {
 			factor = 100
 		}

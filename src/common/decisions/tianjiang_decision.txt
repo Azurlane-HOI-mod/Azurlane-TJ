@@ -2869,6 +2869,12 @@ TIX_zhanhou = {
 			factor = 0
 			modifier = {
 				has_war = no
+				is_historical_focus_on = no
+				add = 100
+			}
+			modifier = {
+				is_historical_focus_on = yes
+				not = { country_exists = BFL }
 				add = 100
 			}
 		}
@@ -10915,11 +10921,14 @@ TIX_quanlipingheng = {
 		icon = eng_propaganda_campaigns
 		cost = 0
 		visible = {
-		is_ai = yes
+			is_ai = yes
 		}
 		available = {
-		is_ai = yes
-		has_idea = TIX_fkAIbuff
+			or = {
+			date > 1942.6.1
+			has_idea = TY_fengkuangai
+			}
+			is_ai = yes
 		}
 		fire_only_once = yes
 		ai_will_do = {
@@ -11160,6 +11169,18 @@ AZ_fkAIplayerjiaqiang = {
 				uses = 8
 				ahead_reduction = 10
 				category = naval_equipment
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 2.0
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 2.0
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 2.0
 			}
 			}
 			if = {

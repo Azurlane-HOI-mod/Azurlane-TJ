@@ -764,6 +764,34 @@ BYG_unit_buffer_for_europe = {
 
 		subtract_invasions_from_need = no
 	}
+	
+	ai_strategy = {
+		type = put_unit_buffers
+
+		order_id = 1
+
+		# north africa
+		states = {
+			290
+			461
+			459
+			460
+			458
+			665
+			448
+			449
+			450
+			451
+			452
+			447
+		}
+
+		ratio = 0.15
+
+		area = europe
+
+		subtract_invasions_from_need = yes
+	}
 }
 
 BYG_naval_invasions_please = {
@@ -1142,5 +1170,655 @@ BYG_wushibfl = {
 		type = ignore
 		id = "BFL"			
 		value = 500
+	}
+}
+
+BYG_ask_HUJ_YUW_for_access_before_war = {
+	allowed = {
+		tag = BYG
+	}
+	enable = {
+		date > 1940.9.9
+		NOT = {
+			OR = {
+				is_in_faction_with = HUJ
+				has_military_access_to = HUJ
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_desire
+		id = HUJ
+		target = military_access
+		value = 1000
+	}
+	ai_strategy = {
+		type = diplo_action_desire
+		id = YUW
+		target = military_access
+		value = 1000
+	}
+}
+
+BYG_focus_on_africa = {
+	allowed = { original_tag = BYG }
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = TIX
+		country_exists = WEX
+		OR = { # Check whole north-african coast
+			448 = { CONTROLLER = { has_war_with = ROOT } } # tripoli
+			450 = { CONTROLLER = { has_war_with = ROOT } } # benghazi
+			458 = { CONTROLLER = { has_war_with = ROOT } } # tunisia
+			461 = { CONTROLLER = { has_war_with = ROOT } } # casablanca
+			462 = { CONTROLLER = { has_war_with = ROOT } } # marrakech
+			459 = { CONTROLLER = { has_war_with = ROOT } } # algiers
+			460 = { CONTROLLER = { has_war_with = ROOT } } # constantine
+			665 = { CONTROLLER = { has_war_with = ROOT } } # gabès
+			449 = { CONTROLLER = { has_war_with = ROOT } } # el agheila
+			451 = { CONTROLLER = { has_war_with = ROOT } } # derna
+			452 = { CONTROLLER = { has_war_with = ROOT } } # matrouh
+			447 = { CONTROLLER = { has_war_with = ROOT } } # alexandria
+			446 = { CONTROLLER = { has_war_with = ROOT } } # cairo
+			290 = { CONTROLLER = { has_war_with = ROOT } } # spanish africa
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		area = africa
+		value = 60
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = 60
+	}
+}
+
+BYG_HUJ_sync_invasions_on_europe = {
+	allowed = {
+		#always = no
+		OR = {
+			tag = BYG
+			tag = HUJ
+		}
+	}
+
+	# only allow invasion on europe on every third month
+
+	enable = {
+		set_temp_variable = { days = global.num_days }
+		modulo_temp_variable = { days = 90 }
+		check_variable = { days < 60 }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		area = mainland_europe
+
+		ordertype = invasion
+		execute_order = no
+	}
+}
+
+BYG_take_out_italy_boost = {
+	allowed = {
+		original_tag = BYG
+		is_historical_focus_on = yes
+	}
+	enable = {
+		date > 1942.6.1
+		SAD = {
+			surrender_progress < 0.2
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = SAD
+		value = 150
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = italy
+		value = 600
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = italy
+		value = 3
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = north_africa
+		value = 400
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = normandy_landing_zone
+		value = -100
+	}
+}
+
+BYG_d_day_boost = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_war_with = TIX 
+		date > 1942.9.1
+		SAD = {
+			surrender_progress > 0.2
+		}
+	}
+	abort = {
+		OR = {
+			date > 1944.9.1 # if we haven't succeeded by now, kill Japan instead
+			AND = {
+				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris has been liberated
+				is_historical_focus_on = yes 
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = TIX
+		value = 200
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = normandy_landing_zone
+		value = 400
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = normandy_landing_zone
+		value = 5
+	}
+}
+
+BYG_torch_boost = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		country_exists = WEX 
+		has_war_with = TIX
+		date > 1942.5.1
+	}
+	abort = {
+		OR = {
+			date > 1943.9.1 # if we haven't succeeded by now, maybe try somewhere else
+			461 = { is_controlled_by_ROOT_or_ally = yes }
+			459 = { is_controlled_by_ROOT_or_ally = yes }
+		}
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = torch_landing_zone
+		value = 800
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = vichy_mainland
+		value = -200
+	}
+
+	ai_strategy = {
+		type = invasion_unit_request
+		area = torch_landing_zone
+		value = 2
+	}
+	ai_strategy = {
+		type = front_unit_request
+		area = torch_landing_zone
+		value = 1
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = WEX
+		value = 200 
+	}
+	ai_strategy = {
+		type = invade
+		id = WEX
+		value = 200
+	}
+}
+
+BYG_save_india = { # in the case where japan has beaten china and is moving on india we should step up
+	allowed = { original_tag = BYG }
+	enable = {
+		has_government = democratic
+		is_in_faction = no
+		has_war = no
+
+		CHY = {
+			or = {
+			has_war_with = RAJ
+			has_war_with = HUJ
+			}
+			NOT = { has_war_with = DOH }
+		}
+		or = {
+		RAJ = {
+			is_in_faction_with = HUJ
+			surrender_progress > 0.15
+		}
+		not = { country_exists = RAJ }
+		}
+	}
+	abort = {
+		OR = {
+			has_war_with = RAJ
+			is_in_faction_with = CHY
+			CHY = {
+				NOT = { has_war_with = RAJ }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "CHY"
+		value = 200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = "RAJ"
+		value = 200
+	}
+}
+
+BYG_lose_fateful_lightning_from_terribly_swift_sword = {
+
+	allowed = {
+		OR = {
+			tag = BYG
+			tag = HUJ # second breakfast protocol - activated
+		}
+	}
+	enable = {
+		country_exists = WEX
+		YUW = {
+			OR = {
+				has_capitulated = yes
+				controls_state = 16
+			}
+			has_war_with = TIX
+			is_in_faction_with = BYG
+		}
+		OR = {
+			AND = {
+				WEX = {
+					is_ai = no
+					has_war = no
+				}
+				is_historical_focus_on = yes
+				date > 1942.9.1
+			}
+			AND = {
+				OR = {
+					is_historical_focus_on = no
+					WEX = { has_war = yes }
+				}
+				date > 1942.6.1
+			}
+			AND = {
+				WEX = { is_ai = yes }
+				date > 1942.6.1
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = antagonize
+		id = WEX
+		value = 2500 # we hateses them filthy Vichy Frenches
+	}
+	ai_strategy = {
+		type = declare_war
+		id = WEX
+		value = 500 # we hateses them filthy Vichy Frenches. strategy >= 500 forces declaration
+	}
+}
+
+TIX_is_bad = {
+	allowed = {
+		tag = BYG
+	}
+
+	enable = {
+		TIX = {
+			exists = yes
+		}
+		NOT = { is_ally_with = TIX }
+		HUJ = {
+			has_war_with = TIX
+		}
+		has_government = democratic
+		HUJ = {
+			has_government = democratic
+		}
+		date > 1939.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = TIX
+		value = 100
+	}
+}
+
+BYG_produce_floating_harbors = {
+	allowed = {	original_tag = BYG }
+	enable = {
+		is_historical_focus_on = yes
+		date > 1941.1.1
+		has_war = yes
+		num_of_naval_factories > 25
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = floating_harbor # for floating harbors, 'unit_ratio' is actually not a ratio but an absolute desired number
+		value = 10
+	}
+}
+
+BYG_stay_away_from_my_pacific = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_war_with = CHY
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = pacific
+		value = 100
+	}
+}
+
+BYG_start_buffering_in_pacific = {
+	allowed = {
+		tag = BYG
+	}
+	enable = {
+		date > 1941.10.2
+		OR = {
+			has_war_with = CHY
+			has_war_with = DOH
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = put_unit_buffers
+
+		# pacific islands
+		states = {
+			633 #Marshall
+			632 #Wake
+			684 #Caroline
+			645 #Iwo Jima
+			638 #Guam
+			646 #Saipan
+		}
+
+		ratio = 0.12
+
+		area = pacific
+
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = no
+	}
+	
+	ai_strategy = {
+		type = put_unit_buffers
+
+		# pacific islands
+		states = {
+			633 #Marshall
+			632 #Wake
+			684 #Caroline
+			645 #Iwo Jima
+			638 #Guam
+			646 #Saipan
+		}
+
+		ratio = 0.12
+
+		area = pacific
+
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = no
+	}
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		# pacific islands
+		states = {
+			633 #Marshall
+			632 #Wake
+			684 #Caroline
+			645 #Iwo Jima
+			638 #Guam
+			646 #Saipan
+		}
+
+		ratio = 0.12
+		area = home_islands
+
+		subtract_invasions_from_need = yes
+		subtract_fronts_from_need = no
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		area = pacific
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		area = pacific
+		value = 2
+	}
+	
+	ai_strategy = {
+		type = naval_invasion_supremacy_weight
+		value = 50
+	}
+}
+
+BYG_sugar_daddy_for_HUJ = {
+	allowed = { original_tag = BYG }
+	enable = {
+		NOT = { has_war_with = HUJ }
+		has_government = democratic
+		HUJ = {
+			has_government = democratic
+			has_war = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = HUJ
+		value = 500
+	}
+}
+
+BYG_sugar_daddy_for_BFL = {
+	allowed = { original_tag = BYG }
+	enable = {
+		NOT = { has_war_with = BFL }
+		has_government = democratic
+		TIX = { has_government = fascism }
+		BFL = {
+			has_war_with = TIX
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = BFL
+		value = 500
+	}
+}
+
+BYG_dont_guarantee_SA_unless_everyhting_is_shit = {
+	allowed = { 
+		original_tag = BYG
+		has_dlc = "Trial of Allegiance"
+	}
+	enable = {
+		threat < 0.9
+
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = protect
+		id = CAN
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = MEX
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = GUA
+		value = -200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = HON
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = ELS
+		value = -200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = NIC
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = CUB
+		value = -200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = HAI
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = DOM
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = COS
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = PAN
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = COL
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = VEN
+		value = -200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = ECU
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = PRU
+		value = -200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = BOL
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = CHL
+		value = -200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = ARG
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = PAR
+		value = -200
+	}
+
+	ai_strategy = {
+		type = protect
+		id = URG
+		value = -200
+	}
+	ai_strategy = {
+		type = protect
+		id = BRA
+		value = -200
 	}
 }

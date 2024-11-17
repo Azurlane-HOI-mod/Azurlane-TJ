@@ -623,6 +623,19 @@ TIX_strike_BFL = {
 		execution_type = rush
 		execute_order = yes
 	}
+	
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 39 #Strategic Region ID - Eastern Poland
+		value = 20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 130 #Strategic Region ID - Ukraine
+		value = 20000 #value of stocked main front in active combat is usually around 35,000
+	}
+	
 }
 
 TIX_strike_BFL_aivsai = {
@@ -649,6 +662,18 @@ TIX_strike_BFL_aivsai = {
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
+	}
+	
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 39 #Strategic Region ID - Eastern Poland
+		value = 20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 130 #Strategic Region ID - Ukraine
+		value = 20000 #value of stocked main front in active combat is usually around 35,000
 	}
 }
 
@@ -802,38 +827,86 @@ TIX_area_priority = {
 	}
 }
 
-make_sure_poland_is_ganked_before_we_move = {
+# Make sure we deploy our breakthrough units against Poland
+TIX_blitzkrieg_poland = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		#is_historical_focus_on = yes
+		OR = {
+			focus_progress = {
+				focus = TIX_danzehuozhanzheng
+				progress > 0.01
+			}
+			has_war_with = POL
+		}
+	}
+	abort = {
+		OR = {
+			POL = {
+				has_capitulated = yes
+			}
+			has_war_with = HOL
+		}
+	}
+	ai_strategy = {
+		type = front_armor_score
+		id = POL
+		value = 100
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 87 # Lodz
+		state = 10 # Warsaw
+
+		value = 25 # +25%
+	}
+
+	ai_strategy = {
+		# Still need to defend at the maginot...
+		type = front_unit_request
+		state = 28  # Alsace-Lorraine
+		value = 30  # +30 %
+	}
+}
+
+TIX_make_sure_poland_is_ganked_before_we_move = {
     allowed = {
 		original_tag = TIX
 	}
 	enable = {
         has_completed_focus = TIX_sudetiaoyue
-		OR = {
-		    POL = { has_capitulated = no }
-			country_exists = POL 
-		}
+		has_war_with = POL
+		POL = { has_capitulated = no }
+		date < 1939.11.1
 	}
 	abort = {
-		date > 1940.1.1
+		OR = {
+			POL = {
+				has_capitulated = yes
+                days_since_capitulated > 8
+			}
+			not = { country_exists = POL }
+			date > 1939.11.1
+		}
 	}
 	
 	ai_strategy = {
-		type = prepare_for_war
-		id = "POL"
-		value = 200
+		type = declare_war
+		id = HOL
+		value = -2000
 	}
-	
 	ai_strategy = {
-		type = front_control
-
-		tag = POL
-
-		ratio = 0.1
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
+		type = declare_war
+		id = BEL
+		value = -2000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = LUX
+		value = -2000
 	}
 
 	ai_strategy = {
@@ -947,218 +1020,6 @@ TIX_war_YUW_no_ai = {
 	}
 }
 
-TIX_war_maginot_line = {
-    allowed = {
-		original_tag = TIX
-	}
-	enable = {
-		if = {
-			limit = {
-				has_completed_focus = TIX_yihuigaige
-			}
-			has_war_with = YUW
-			OR = {
-				POL = { has_capitulated = yes }
-				NOT = { country_exists = POL }
-		}			
-		}
-	}
-	abort = { 
-		OR = {
-			has_completed_focus = TIX_didigongshi 
-			has_war_with = HOL
-			has_war_with = LUX
-			has_war_with = BEL
-		}
-	} 
-	ai_strategy = {
-		type = front_unit_request
-		tag = YUW			
-		value = 300
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = "BEL"
-		value = 2000
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = "HOL"
-		value = 2000
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = "LUX"
-		value = 2000
-	}
-	ai_strategy = {
-		type = conquer		
-		id = "BEL"			
-		value = 100
-	}
-	ai_strategy = {
-		type = conquer		
-		id = "HOL"			
-		value = 100
-	}
-	ai_strategy = {
-		type = conquer		
-		id = "LUX"			
-		value = 100
-	}
-    ai_strategy = {
-		type = declare_war
-		id = "HOL"			
-		value = 2000 
-	}
-	ai_strategy = {
-		type = declare_war
-		id = "BEL"
-		value = 2000 
-	}
-	ai_strategy = {
-		type = declare_war
-		id = "LUX"
-		value = 2000 
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = HOL			
-		value = 3000
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = BEL			
-		value = 3000
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = LUX			
-		value = 3000
-	}
-	ai_strategy = {
-		type = front_control
-
-		state = 28 # close up maginot line
-
-		ratio = 0.25
-
-		priority = 300
-		ordertype = front
-		execution_type = careful
-	}
-}
-
-TIX_war_Low_Countries = {
-    allowed = {
-		original_tag = TIX
-	}
-	enable = {
-		OR = {
-		has_war_with = BEL
-		has_war_with = HOL
-		has_war_with = LUX
-		}
-	}
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = prepare_for_war
-		id = "BEL"
-		value = 200
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = "HOL"
-		value = 200
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = "LUX"
-		value = 200
-	}
-	ai_strategy = {
-		type = conquer		
-		id = "BEL"			
-		value = 100
-	}
-	ai_strategy = {
-		type = conquer		
-		id = "HOL"			
-		value = 100
-	}
-	ai_strategy = {
-		type = conquer		
-		id = "LUX"			
-		value = 100
-	}
-    ai_strategy = {
-		type = declare_war
-		id = "HOL"			
-		value = 2000 
-	}
-	ai_strategy = {
-		type = declare_war
-		id = "BEL"
-		value = 2000 
-	}
-	ai_strategy = {
-		type = declare_war
-		id = "LUX"
-		value = 2000 
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = HOL	
-		value = 200
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = BEL		
-		value = 200
-	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = LUX		
-		value = 200
-	}	
-	ai_strategy = {
-		type = front_control
-
-		tag = HOL
-
-		ratio = 0.25
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
-
-	ai_strategy = {
-		type = front_control
-
-		tag = BEL
-
-		ratio = 0.25
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
-	ai_strategy = {
-		type = front_control
-
-		tag = LUX
-
-		ratio = 0.25
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
-}
 
 TIX_invade_HUJ = {
     allowed = {
@@ -1615,27 +1476,28 @@ spain_help_TIX = {
 	}
 }
 
-#TIX_naval_invasions_NOR = {	
-#	allowed = { original_tag = TIX }
-#
-#	enable = {
-#		has_war_with = NOR
-#		NOR = { has_civil_war = no }
-#	}
-#
-#	abort_when_not_enabled = yes
-#
-#	ai_strategy = {
-#		type = invasion_unit_request
-#		tag = NOR
-#		value = 20
-#	}
-#	ai_strategy = {
-#		type = invasion_unit_request
-#		tag = DEN
-#		value = 10
-#	}
-#}
+# AI are not willing to invade if it is at war at its home against another country's home location (france...), unless it has a positive "invade" value
+TIX_enable_invasion_of_NOR = {
+	allowed = {
+		OR = {
+			original_tag = TIX
+		}
+	}
+	enable = {
+		# try to invade NOR if things are looking not so bad
+		OR = {
+			date < 1940.1.4
+			YUW = { has_capitulated = yes } # uh oh, maybe we need more units against YUW
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = NOR
+		value = 10
+	}
+}
 
 TIX_naval_invasions_DEN = {	
 	allowed = { original_tag = TIX }
@@ -1971,4 +1833,1078 @@ TIX_SIR_guanxi = {
 		id = SIR
 		value = 40
 	}
+}
+
+TIX_dont_join_gie_wars_early = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_in_faction_with = SAD
+		SAD = {
+			all_enemy_country = {
+				is_government_in_exile = yes
+			}
+		}
+	}
+	abort = {
+		OR = {
+			TIX = {
+				any_enemy_country = {
+					is_government_in_exile = no
+				}
+			}
+			SAD = {
+				any_enemy_country = {
+					is_government_in_exile = no
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+	    type = diplo_action_desire
+	    id = TIX
+	    value = -9999
+	    target = join_allies
+	}
+
+	ai_strategy = {
+	    type = diplo_action_acceptance
+	    id = SAD
+	    value = -9999
+	    target = call_allies
+	}
+}
+
+TIX_anschluss_rejected = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		country_exists = AUS
+	}
+	abort = {
+		NOT = {
+			country_exists = AUS
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = AUS
+		value = 300
+	}
+}
+
+AUS_yanwu_TIX = {
+	allowed = {
+		original_tag = AUS
+	}
+	enable = {
+		country_exists = TIX
+	}
+	abort = {
+		NOT = {
+			country_exists = TIX
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = TIX
+		value = 300
+	}
+}
+
+TIX_force_concentration_through_maginot_hurts_too_much = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		date < 1941.1.1  # Deactivate after some time
+		28 = { # Alsace-Lorraine
+			NOT = { is_controlled_by = TIX }
+
+			any_province_building_level = {  # Only if Maginot is actually fortified
+				province = {
+					all_provinces = yes
+					limit_to_border = yes
+				}
+				building = bunker
+				level > 5
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_concentration_front_factor
+		state = 28  # Alsace-Lorraine
+		ratio = 0.50     # Only if > 50 % of the front consists of Alsace-Lorraine. This should make it deactivate if the frontline extends around the maginot
+		value = -100
+	}
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 28 # Alsace-Lorraine
+		value = -100 # -100 % / Don't even consider targets here. Infantry and Artillery are better at dealing with the Maginot than tank formations are
+	}
+}
+
+TIX_invading_france_is_pointless_because_we_go_through_benelux_soon = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		if = {
+			limit = { NOT = { has_dlc = "Man the Guns" } }
+			NOT = { has_tech = landing_craft }
+		}
+		else = {
+			NOT = { has_tech = mtg_landing_craft }
+		}
+		date < 1940.1.1
+	}
+	abort = {
+		OR = {
+			has_tech = landing_craft
+			has_tech = mtg_landing_craft
+			date > 1940.1.1
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = YUW
+		value = -2000 # that low means not going for islands either
+	}
+
+	# danzig corridor is too small to be worth opening extra invasion front
+	ai_strategy = {
+		type = invade
+		id = POL
+		value = -500
+	}
+}
+
+AZ_AXIS_stay_away_from_the_royal_navy = {
+	enable = {
+		has_war_with = HUJ
+		date < 1942.1.1
+
+		OR = {
+			TIX = {
+				naval_strength_ratio = {
+					tag = HUJ
+  					ratio < 0.5
+  				}
+  			}
+
+			# if we manage to get a foothold in UK we must do what we can to exploit it! (checks coastal states)
+			divisions_in_state = { state = 127 size < 1 }
+			divisions_in_state = { state = 126 size < 1 }
+			divisions_in_state = { state = 125 size < 1 }
+			divisions_in_state = { state = 129 size < 1 }
+			divisions_in_state = { state = 130 size < 1 }
+			divisions_in_state = { state = 131 size < 1 }
+			divisions_in_state = { state = 123 size < 1 }
+			divisions_in_state = { state = 122 size < 1 }
+			divisions_in_state = { state = 132 size < 1 }
+			divisions_in_state = { state = 121 size < 1 }
+			divisions_in_state = { state = 136 size < 1 }
+			divisions_in_state = { state = 120 size < 1 }
+			divisions_in_state = { state = 133 size < 1 }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 18 #english channel
+		value = 600 # avoid doing missions as well
+	}
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 16 #around UK
+		value = 100
+	}
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 43 #around UK
+		value = 100
+	}
+}
+
+AZ_AXIS_care_less_about_making_friends = {
+
+	enable = {
+		has_government = fascism
+		is_in_faction = yes
+		manpower_per_military_factory < 3000
+		has_war = yes
+	}
+	abort = {
+		OR = {
+			NOT = { has_government = fascism }
+			is_in_faction = no
+			manpower_per_military_factory > 3000
+			has_war = no
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -9999
+	}
+}
+
+TIX_trade_with_italy = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_government = fascism
+		SAD = { has_government = fascism }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_trade_desire
+		id = SAD
+		value = 40
+	}
+}
+
+TIX_market_management_after_anschluss = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		not = { has_government = democratic }
+	}
+	abort_when_not_enabled = yes
+
+	# Time to start buffer for war
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = infantry
+		value = 200000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = support
+		value = 15000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = artillery
+		value = 15000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = anti_air
+		value = 15000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = anti_tank
+		value = 15000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = armor
+		value = 10000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = motorized
+		value = 20000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = train
+		value = 2000
+	}
+}
+
+TIX_prepare_for_weserubung = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		focus_progress = {
+			focus = TIX_weisebaoxingdong
+			progress > 0
+		}
+	}
+	abort = {
+		has_completed_focus = TIX_weisebaoxingdong
+		# Norway and Denmark are either defeated or have joined us (or at least not our enemies anymore)
+		NOR = {
+			OR = {
+				has_capitulated = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		DEN = {
+			OR = {
+				has_capitulated = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = invade
+		id = NOR
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = NOR
+		value = 100
+	}
+	ai_strategy = {
+		type = area_priority
+		id = just_norway
+		value = 50
+	}
+}
+
+TIX_no_no_definitely_not_planning_to_invade_norway = {
+	# This strategy is only to make the AI understand that it needs to prepare naval invasion of Norway before starting the Weserubung focus, because invasion takes longer time to prepare than the focus takes to complete.
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_completed_focus = TIX_danzehuozhanzheng
+		POL = { has_capitulated = yes }
+	}
+	abort = {
+		OR = {
+			has_completed_focus = TIX_weisebaoxingdong  # already at war so no need to prepare anymore
+			date > 1940.9.1  # just for safety, if things really go south
+		}
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = NOR
+		value = 100
+	}
+}
+
+# focus armor units on HOL and LUX
+TIX_around_the_maginot = {
+	allowed = {
+		original_tag = TIX
+		is_historical_focus_on = yes
+	}
+
+	enable = {
+		date < 1941.4.1
+		YUW = {
+			is_ai = yes
+		}
+
+		#uh oh, they are pushing
+		42 = {
+			is_controlled_by = TIX
+		}
+		978 = {
+			is_controlled_by = TIX
+		}
+
+		# both low countries fell
+		OR = {
+			HOL = {
+				has_capitulated = no
+			}
+			LUX = {
+				has_capitulated = no
+			}
+		}
+
+		# we are ready to declare war on low countries
+		OR = {
+			focus_progress = {
+				focus = TIX_didigongshi
+				progress > 0
+			}
+			AND = {
+				is_in_array = { potential_and_current_enemies = HOL }
+				is_in_array = { potential_and_current_enemies = LUX }
+			}
+		}
+		is_in_array = { potential_and_current_enemies = YUW }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_armor_score
+		id = YUW
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = HOL
+		value = 100
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = HOL
+		value = 1000
+	}
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = HOL
+		value = 200
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = LUX
+		value = 100
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = LUX
+		value = 1000
+	}
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = LUX
+		value = 200
+	}
+}
+
+#Pounce on BEL once the rest of the Low Countries are secured
+TIX_tanks_against_belgium = {
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		HOL = { has_capitulated = yes }
+		#LUX = { has_capitulated = yes }
+	}
+
+	abort = {
+		surrender_progress > 0.15 #Bring our metal bawkses home
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = BEL
+		value = 100
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = BEL
+		value = 1000
+	}
+	ai_strategy = {
+		type = force_concentration_front_factor
+		tag = BEL
+		value = 200
+	}
+}
+
+# lets not invade until we have europe
+TIX_dont_invade_until_YUW_falls = {
+	allowed = {
+		original_tag = TIX
+		is_historical_focus_on = yes
+	}
+
+	enable = {
+		date < 1941.3.1
+		YUW = {
+			has_capitulated = no
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request
+		country_trigger = {
+			NOT = { original_tag = NOR }  # We do want to allow invasion against norway
+		}
+
+		value = -100
+	}
+}
+
+TIX_blitzkrieg_benelux  = {
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		date < 1940.9.15 #Don't keep pushing wildly if we haven't capitulated benelux in 4 months - we lost anyway
+		OR = {
+			AND = {
+				focus_progress = {
+					focus = TIX_didigongshi
+					progress > 0.01
+				}
+				NOT = { has_war_with = HOL  }
+			}
+			AND = {
+				focus_progress = {
+					focus = TIX_didigongshi
+					progress > 0.01
+				}
+				NOT = { has_war_with = BEL  }
+			}
+			AND = {
+				focus_progress = {
+					focus = TIX_didigongshi
+					progress > 0.01
+				}
+				NOT = { has_war_with = LUX  }
+			}
+			AND = {
+				has_war_with = HOL
+				HOL = { has_capitulated = no }
+			}
+			AND = {
+				has_war_with = BEL
+				BEL = { has_capitulated = no }
+			}
+			AND = {
+				has_war_with = LUX
+				LUX = { has_capitulated = no }
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		tag = HOL
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+
+		tag = BEL
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_control
+
+		tag = LUX
+
+		ratio = 0.25
+
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = BEL
+
+		value = 50 # lets put more units, should be safe
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = HOL
+
+		value = 60 # lets put more units, should be safe
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = LUX
+
+		value = 50 # lets put more units, should be safe
+	}
+}
+
+TIX_blitz_france = {
+
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		date < 1940.9.1
+		HOL = { has_capitulated = yes }
+		is_historical_focus_on = yes
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = consider_weak
+		id = YUW
+		value = 25
+	}
+
+	ai_strategy = {
+		type = front_control
+
+		tag = YUW
+
+		ratio = 0.5
+
+		priority = 100
+		ordertype = front
+		execution_type = rush_weak
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 29 # Nord-Pas_de_Calais
+		state = 785 # Picardy
+		state = 16 # Ile de France
+		state = 15 # Normandy
+		# include Belgium as well even though we hopefully have already taken it
+		state = 6 # Vlaanderen
+		state = 34 # Wallonie
+		state = 977 # Antwerpen
+
+		value = 80 # +80%
+	}
+
+	ai_strategy = {
+		# Avoid the areas behind the Maginot line
+		type = force_concentration_target_weight
+		state = 18 # Champagne
+		state = 17 # Franche-Comte
+		state = 28 # Alsace-Lorraine
+		state = 27 # Bourgogne
+
+		value = -60 # -60%
+	}
+}
+
+TIX_tanks_in_the_snow = {
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		OR = {
+			focus_progress = {
+				focus = TIX_zhifujuxiong
+				progress > 0.01
+			}
+			has_completed_focus = TIX_zhifujuxiong
+		}
+	}
+
+	abort = {
+		surrender_progress > 0.1 #Bring our metal bawkses home
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = BFL
+		value = 300
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = BFL
+
+		value = 300
+	}
+
+	ai_strategy = { #TIX might be fighting GRE when Barbarossa needs to take place; prioritize BFL
+		type = prepare_for_war
+		id = BFL
+		value = 200
+	}
+}
+
+TIX_tanks_against_france = {
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		HOL = { has_capitulated = yes }
+		BEL = { has_capitulated = yes }
+		LUX = { has_capitulated = yes }
+	}
+
+	abort = {
+		surrender_progress > 0.15 #Bring our metal bawkses home
+	}
+
+	ai_strategy = {
+		type = front_armor_score
+		id = YUW
+		value = 100
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = YUW
+		value = 10
+	}
+}
+
+TIX_abandon_ship = {
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		surrender_progress > 0.25 #Bring our metal bawkses home
+	}
+
+	abort = {
+		surrender_progress < 0.25 #Bring our metal bawkses home
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = BFL
+
+		value = -40
+	}
+}
+
+TIX_normandy_buffer = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_historical_focus_on = yes
+		YUW = {
+			has_capitulated = yes
+		}
+		date < 1943.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			14
+			15
+			29
+			735
+			22
+		}
+		ratio = 0.11
+		area = normandy_landing_zone
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
+	}
+}
+
+TIX_invasion_buffer = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_historical_focus_on = yes
+		YUW = {
+			has_capitulated = yes
+		}
+		date > 1943.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		states = {
+			15
+			14
+			23
+			29
+			6
+		}
+		ratio = 0.20
+		area = normandy_landing_zone
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
+	}
+}
+
+TIX_pause_in_BFL = { #We got this far but our home is under siege
+	allowed = {
+		original_tag = TIX
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = BFL
+		BFL = { has_capitulated = no }
+		OR = {
+			surrender_progress > 0.15
+			16 = {
+				controller = {
+					has_war_with = TIX
+				}
+			}
+		}
+		date > 1942.1.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		tag = BFL
+
+		ratio = 0.60
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = YUW
+
+		value = 20 # omg no, the french
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		tag = BFL
+
+		value = -20 # FLEE
+	}
+}
+
+TIX_dont_act_on_danzig_if_things_went_south = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_war_with = CZE
+		date < 1940.6.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = POL
+		value = -2000
+	}
+}
+
+TIX_dont_send_half_the_army_to_finland_if_not_in_our_faction = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		FIN = { has_war_with = BFL }
+		has_war_with = BFL
+		NOT = { is_in_faction_with = FIN }
+		has_military_access_to = FIN
+		925 = { is_controlled_by = ROOT }  # Germany still controls Finnmark in Northern Norway
+
+		# Safety measures, if Soviets have lost Leningrad or Novgorod the Finnish and German frontlines are probably close to becoming one, and then we need to disable the strategy
+		195 = { is_controlled_by = BFL }  # Leningrad
+		263 = { is_controlled_by = BFL }  # Novgorod
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		# ratio of total armies in country to be buffered
+		ratio = 0.05
+
+		# states to put garrison orders (if no state is friendly, strat is invalid)
+		states = {
+			925  # Finnmark
+		}
+
+		# ai areas that the orders will use these buffers in
+		area = scandinavia
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+
+		# As long as the front touches any of these regions. I hope this doesn't mess up the bigger Eastern Front if the Finnish and German frontlines merge...
+		strategic_region = 13  # Eastern Finland
+		strategic_region = 277  # Northern Finland
+		strategic_region = 265  # East Karelia
+		strategic_region = 12  # Kola
+
+		value = -90
+	}
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = FIN
+		value = 200
+	}
+}
+
+TIX_protect_swedish_ore = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		NOT = { has_war_with = SWE }
+		SWE = { has_capitulated = no }
+
+		142 = { is_fully_controlled_by = ROOT }
+		110 = { is_fully_controlled_by = ROOT }
+		143 = { is_fully_controlled_by = ROOT }
+		144 = { is_fully_controlled_by = ROOT }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+
+		# ratio of total armies in country to be buffered
+		ratio = 0.05
+
+		# you can specify an order id. ratio of same orders ids will be share same ratio
+		order_id = 1
+
+		# states to put garrison orders (if no state is friendly, strat is invalid)
+		states = {
+			142
+			110
+			143
+			144
+		}
+
+		# ai areas that the orders will use these buffers in
+		area = europe
+	}
+}
+
+TIX_TEMP_avoid_sweden = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		country_exists = SWE
+		is_historical_focus_on = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = conquer
+		id = SWE
+		value = -999
+	}
+}
+
+# Prevent Nationalist Spain to join any faction on historical mode
+AZ_nationalist_spain_allies_nobody_on_historical = {
+	allowed = {
+		tag = SPR
+	}
+	enable = {
+		has_global_flag = scw_over
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = SPR_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
+			has_game_rule = {
+				rule = SPR_ai_behavior
+				option = NATIONALIST_HISTORICAL
+			}
+		}
+	}
+	abort = {
+		OR = {
+			TIX = {
+				AND = {
+					is_historical_focus_on = yes
+					date > 1944.1.1
+					OR = { 
+						NOT = { has_war_with = BFL } 
+						BFL = { has_capitulated = yes }
+					}
+				}
+			}
+			SPR = { has_war = yes }
+			SPR = { is_in_faction = yes }
+			TIX = { NOT = { has_government = fascism } }
+			HUJ = { NOT = { has_government = democratic } }
+		}
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = TIX
+		value = -500
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = HUJ
+		value = -500
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = BFL
+		value = -500
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = CHY
+		value = -500
+	}
+	
 }

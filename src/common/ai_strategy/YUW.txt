@@ -522,3 +522,187 @@ YUW_protect_maqinuo_ore = {
 	 }
 	
 }
+
+YUW_accept_BYG_access = {
+	allowed = {
+		tag = YUW # not original_tag to avoid Vichy weirdness
+	}
+	enable = {
+		date > 1940.9.9
+		BYG = {
+			is_ai = yes
+			NOT = {
+				OR = {
+					is_in_faction_with = YUW
+					has_military_access_to = YUW
+				}
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_acceptance
+		id = BYG
+		target = military_access
+		value = 1000
+	}
+}
+
+TUW_TIX_will_probably_join_SAD = {
+	# if SAD is going to war with us, consider TIX as a threat as well
+
+	allowed = {
+		original_tag = YUW
+	}
+
+	enable = {
+		TIX = {
+			has_government = fascism
+			NOT = {
+				has_war_with = YUW
+			}
+		}
+		SAD = {
+			has_government = fascism
+			OR = {
+				is_in_faction = no
+				is_in_faction_with = TIX
+			}
+			OR = {
+				# check if we are declaring on YUW
+				OR = {
+					has_war_with = YUW
+					is_justifying_wargoal_against = YUW
+					has_wargoal_against = YUW
+				}
+
+				# check if we are declaring on any guarantee of YUW
+				YUW = {
+					any_guaranteed_country = {
+						SAD = {
+							OR = {
+								has_war_with = PREV
+								is_justifying_wargoal_against = PREV
+								has_wargoal_against = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = TIX
+		value = 100
+	}
+}
+
+YUW_why_push_into_germany_their_food_is_horrible = {
+	allowed = {
+		original_tag = YUW
+	}
+	enable = {
+		date < 1941.1.1  # Deactivate after some time
+		surrender_progress < 0.01 # We haven't lost territories 
+		
+		# Once Germany launches some kind of attack on the low countries, or if they go somewhere dangerous, we can try if we want to
+		GER = { NOT = { has_war_with = BEL } }
+		GER = { NOT = { has_war_with = HOL } }
+		GER = { NOT = { has_war_with = CZE } }
+		GER = { NOT = { has_war_with = AUS } }
+		GER = { NOT = { has_war_with = BFL } }
+		GER = { NOT = { has_war_with = SAD } }
+
+
+		28 = { # Alsace-Lorraine
+			is_fully_controlled_by = ROOT
+		}
+
+		42 = { # Moselland
+			is_controlled_by = GER
+		}
+		978 = { # Baden
+			is_controlled_by = GER
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_concentration_front_factor
+		state = 42  # Moselland
+		state = 978  # Baden
+		ratio = 0.95  # Only if > 95 % of the front consists of these states. This should make it deactivate if the frontline extends around the maginot
+		value = -100
+	}
+
+	ai_strategy = {
+		type = front_control
+
+		state = 42 # Moselland
+		state = 978 # Baden
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+}
+
+YUW_benelux_will_surely_not_fall = {
+	allowed = { original_tag = YUW }
+	enable = {
+		has_war_with = TIX
+		date < 1940.8.1
+		OR = {
+			HOL = { has_capitulated = no }
+			BEL = { has_capitulated = no }
+		}
+	}
+
+	abort = {
+		OR = {
+			date > 1940.8.1
+			AND = {
+				HOL = { surrender_progress > 0.30 }
+				BEL = { surrender_progress > 0.30 }
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "HOL"
+		value = 50
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "BEL"
+		value = 50
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "LUX"
+		value = 50
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		# french states bordering benelux
+		states = {
+			29
+			785
+			18
+		}
+		ratio = 0.1
+		area = europe
+		subtract_invasions_from_need = no
+		subtract_fronts_from_need = yes
+	}
+}

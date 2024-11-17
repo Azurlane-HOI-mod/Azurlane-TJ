@@ -231,12 +231,6 @@ BFL_bangzhuxifang = {
 			
 		}
 	}
-
-	ai_strategy = {
-		type = send_volunteers_desire
-		id = "YUG"
-		value = 50
-	}
 	ai_strategy = {
 		type = send_volunteers_desire
 		id = "ROM"
@@ -271,6 +265,11 @@ claims_on_poland = {
 		type = ignore
 		id = "POL"	
 		value = 100
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "POL"
+		value = -100
 	}
 }
 
@@ -1194,4 +1193,590 @@ BFL_protect_sandacheng_ore = {
 	 	area = europe
 	 }
 	
+}
+
+BFL_home_land_is_safe = {
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = garrison
+		value = -25
+	}
+}
+
+BFL_scorched_earth_german_front_baltics = {
+
+	allowed = { original_tag = BFL }
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = TIX
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+			}
+		}
+		count_triggers = {
+			amount = 4 #if 4 baltic states are owned by an enemy, burn the rest of the Baltics
+			814 = { CONTROLLER = { has_war_with = BFL } }
+			11 = { CONTROLLER = { has_war_with = BFL } }
+			189 = { CONTROLLER = { has_war_with = BFL } }
+			815 = { CONTROLLER = { has_war_with = BFL } }
+			190 = { CONTROLLER = { has_war_with = BFL } }
+			809 = { CONTROLLER = { has_war_with = BFL } }
+			810 = { CONTROLLER = { has_war_with = BFL } }
+			808 = { CONTROLLER = { has_war_with = BFL } }
+			811 = { CONTROLLER = { has_war_with = BFL } }
+			13 = { CONTROLLER = { has_war_with = BFL } }
+			812 = { CONTROLLER = { has_war_with = BFL } }
+			813 = { CONTROLLER = { has_war_with = BFL } }
+			191 = { CONTROLLER = { has_war_with = BFL } }
+		}
+	}
+
+	abort = {
+		OR = {
+			NOT = { has_war_with = TIX }
+			strength_ratio = { tag = TIX ratio > 1.5 }
+			date > 1944.1.1
+		}
+	}
+
+	ai_strategy = {
+		type = scorched_earth_prio
+		id = BFL
+		states = {
+			814
+			11
+			189
+			815
+			190
+			809
+			810
+			808
+			811
+			13
+			812
+			813
+			191
+		}
+	}
+}
+
+BFL_scorched_earth_german_front_Poland = {
+
+	allowed = { original_tag = BFL }
+	enable = {
+		has_war_with = TIX
+		is_historical_focus_on = yes
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+			}
+		}
+		count_triggers = {
+			amount = 2 #if 2 states are owned by an enemy, burn the rest of the area
+			784 = { CONTROLLER = { has_war_with = BFL } }
+			96 = { CONTROLLER = { has_war_with = BFL } }
+			95 = { CONTROLLER = { has_war_with = BFL } }
+			94 = { CONTROLLER = { has_war_with = BFL } }
+			93 = { CONTROLLER = { has_war_with = BFL } }
+			91 = { CONTROLLER = { has_war_with = BFL } }
+			89 = { CONTROLLER = { has_war_with = BFL } }
+
+		}
+	}
+
+	abort = {
+		OR = {
+			NOT = { has_war_with = TIX }
+			strength_ratio = { tag = TIX ratio > 1.5 }
+			date > 1944.1.1
+		}
+	}
+
+	ai_strategy = {
+		type = scorched_earth_prio
+		id = BFL
+		states = {
+			784
+			96
+			95
+			94
+			93
+			91
+			89
+		}
+	}
+}
+
+BFL_scorched_earth_german_front_north = {
+
+	allowed = { original_tag = BFL }
+	enable = {
+		has_war_with = TIX
+		is_historical_focus_on = yes
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+			}
+		}
+		count_triggers = {
+			amount = 2 #if 2 states are owned by an enemy, burn the rest of the area
+			208 = { CONTROLLER = { has_war_with = BFL } }
+			209 = { CONTROLLER = { has_war_with = BFL } }
+			210 = { CONTROLLER = { has_war_with = BFL } }
+			195 = { CONTROLLER = { has_war_with = BFL } }
+			263 = { CONTROLLER = { has_war_with = BFL } }
+			246 = { CONTROLLER = { has_war_with = BFL } }
+
+
+		}
+	}
+
+	abort = {
+		OR = {
+			NOT = { has_war_with = TIX }
+			strength_ratio = { tag = TIX ratio > 1.5 }
+			date > 1944.1.1
+		}
+	}
+
+	ai_strategy = {
+		type = scorched_earth_prio
+		id = BFL
+		states = {
+			208
+			209
+			210
+			195
+			263
+			246
+		}
+	}
+}
+
+BFL_scorched_earth_german_front_center = {
+
+	allowed = { original_tag = BFL }
+	enable = {
+		has_war_with = TIX
+		is_historical_focus_on = yes
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+			}
+		}
+		count_triggers = {
+			amount = 4 #if 4 states are owned by an enemy, burn the rest of the area
+			207 = { CONTROLLER = { has_war_with = BFL } }
+			206 = { CONTROLLER = { has_war_with = BFL } }
+			204 = { CONTROLLER = { has_war_with = BFL } }
+			194 = { CONTROLLER = { has_war_with = BFL } }
+			201 = { CONTROLLER = { has_war_with = BFL } }
+			199 = { CONTROLLER = { has_war_with = BFL } }
+			202 = { CONTROLLER = { has_war_with = BFL } }
+			193 = { CONTROLLER = { has_war_with = BFL } }
+			241 = { CONTROLLER = { has_war_with = BFL } }
+			242 = { CONTROLLER = { has_war_with = BFL } }
+			243 = { CONTROLLER = { has_war_with = BFL } }
+			224 = { CONTROLLER = { has_war_with = BFL } }
+		}
+	}
+
+	abort = {
+		OR = {
+			NOT = { has_war_with = TIX }
+			strength_ratio = { tag = TIX ratio > 1.5 }
+			date > 1944.1.1
+		}
+	}
+
+	ai_strategy = {
+		type = scorched_earth_prio
+		id = BFL
+		states = {
+			207
+			206
+			204
+			194
+			201
+			199
+			202
+			193
+			241
+			242
+			243
+			224
+		}
+	}
+}
+
+BFL_scorched_earth_german_front_moscow = {
+
+	allowed = { original_tag = BFL }
+	enable = {
+		has_war_with = TIX
+		is_historical_focus_on = yes
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+			}
+		}
+		count_triggers = {
+			amount = 1 #if 1 states are owned by an enemy, burn the rest of the area
+			219 = { CONTROLLER = { has_war_with = BFL } }
+			246 = { CONTROLLER = { has_war_with = BFL } }
+			242 = { CONTROLLER = { has_war_with = BFL } }
+			205 = { CONTROLLER = { has_war_with = BFL } }
+			223 = { CONTROLLER = { has_war_with = BFL } }
+
+		}
+	}
+
+	abort = {
+		OR = {
+			NOT = { has_war_with = TIX }
+			strength_ratio = { tag = TIX ratio > 1.5 }
+			date > 1944.1.1
+		}
+		controls_state = 220
+		controls_state = 224
+		controls_state = 243
+		controls_state = 207
+		controls_state = 210
+	}
+
+	ai_strategy = {
+		type = scorched_earth_prio
+		id = BFL
+		states = {
+			219
+			246
+			242
+			205
+			223
+		}
+	}
+}
+
+BFL_scorched_earth_german_front_stalingrad = {
+
+	allowed = { original_tag = BFL }
+	enable = {
+		has_war_with = TIX
+		is_historical_focus_on = yes
+		NOT = { # please don't spend PP on blowing up your own stuff when you need it for manpower
+			has_manpower < 1000000
+			has_political_power < 200
+			OR = {
+				has_idea = volunteer_only
+				has_idea = limited_conscription
+			}
+		}
+		count_triggers = {
+			amount = 1 #if 1 states are owned by an enemy, burn the rest of the area
+			217 = { CONTROLLER = { has_war_with = BFL } }
+			265 = { CONTROLLER = { has_war_with = BFL } }
+			245 = { CONTROLLER = { has_war_with = BFL } }
+			238 = { CONTROLLER = { has_war_with = BFL } }
+			829 = { CONTROLLER = { has_war_with = BFL } }
+
+		}
+	}
+
+	abort = {
+		OR = {
+			NOT = { has_war_with = TIX }
+			strength_ratio = { tag = TIX ratio > 1.5 }
+			date > 1944.1.1
+		}
+		controls_state = 218
+		controls_state = 228
+		controls_state = 260
+		controls_state = 239
+	}
+
+	ai_strategy = {
+		type = scorched_earth_prio
+		id = BFL
+		states = {
+			217
+			265
+			245
+			238
+			829
+		}
+	}
+}
+
+BFL_dont_do_so_many_naval_invasions_please = {
+	allowed = { original_tag = BFL }
+
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = TIX
+		value = -50
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = FIN
+		value = -50
+	}
+}
+
+BFL_defend_blitzkrieg = {#Only perform careful attacks, we want to defend while germany has buffs.
+	allowed = {
+		original_tag = BFL
+	}
+
+	enable = {
+		date < 1942.8.1 #To space!
+		has_war_with = TIX
+		TIX = { has_idea = TIX_sljh }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		tag = TIX
+
+		ratio = 0.4
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no
+	}
+
+}
+
+BFL_defend_blitzkrieg_2  = {#Only perform careful attacks, we want to defend for a bit
+	allowed = {
+		original_tag = BFL
+	}
+
+	enable = {
+		date < 1942.8.1 #To space!
+		has_war_with = TIX
+		NOT = { TIX = { has_idea = TIX_sljh } }
+		is_historical_focus_on = yes
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		tag = TIX
+
+		ratio = 0.4
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+	}
+
+}
+
+###########################
+### avoid attacking the baltics until we have sent ultimatums
+###########################
+BFL_ultimatum_LIT = {
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		is_historical_focus_on = yes
+	}
+	abort = {
+		date > 1941.12.31 #If it's late then it's fine
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = LIT
+		value = -50
+	}
+	ai_strategy = {
+		type = conquer
+		id = LIT
+		value = -200
+	}
+}
+
+BFL_ultimatum_LAT = {
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		is_historical_focus_on = yes
+	}
+	abort = {
+		date > 1941.12.31 #If it's late then it's fine
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = LAT
+		value = -50
+	}
+	ai_strategy = {
+		type = conquer
+		id = LAT
+		value = -200
+	}
+}
+
+BFL_ultimatum_EST = {
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		is_historical_focus_on = yes
+	}
+	abort = {
+		date > 1941.12.31 #If it's late then it's fine
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = EST
+		value = -50
+	}
+	ai_strategy = {
+		type = conquer
+		id = EST
+		value = -200
+	}
+}
+
+###########################
+### avoid attacking Finland until we have sent ultimatum
+###########################
+
+BFL_ultimatum_FIN = {
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		is_historical_focus_on = yes
+		OR = {
+			NOT = { owns_state = 146 } #Karjala
+			146 = {
+				owner = { NOT = { is_in_faction_with = ROOT } }
+			}
+		}
+	}
+	abort = {
+		OR = {
+			date > 1941.12.31 #If it's late then it's fine
+			OR = {
+				owns_state = 146 #Karjala
+				146 = {
+					owner = { is_in_faction_with = ROOT }
+				}
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = FIN
+		value = -30
+	}
+	ai_strategy = {
+		type = conquer
+		id = FIN
+		value = -200
+	}
+}
+
+###### Don't start ww3 until Japan is defeated
+
+AZ_ALLIES_avoid_enemies_for_a_while_ww3 = {
+	allowed = {
+		OR = {
+			original_tag = HUJ
+			is_in_faction_with = HUJ
+		}
+	}
+	enable = {
+		is_historical_focus_on = yes
+		date > 1943.1.1
+		OR = {
+			has_war_with = TIX
+			has_war_with = CHY
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = conquer
+		id = PER
+		value = -200
+	}
+	ai_strategy = {
+		type = conquer
+		id = BFL
+		value = -200
+	}
+}
+
+#### FORCE CONCENTRATION
+
+# Spread out before barbarossa
+BFL_aifc_linear_defence = {
+	allowed = { original_tag = BFL }
+	enable = {
+		# We have split Poland up 
+		OR = {
+			owns_state = 96
+			owns_state = 95
+			owns_state = 94
+			owns_state = 93
+			owns_state = 92
+		}
+	}
+	abort = {
+		OR ={
+			# Winter Offensive, Right
+			date > 1941.12.1
+			# Desperate Defence
+			surrender_progress > 0.4
+		}
+	}
+
+	ai_strategy = {
+		type = force_concentration_factor
+		value = -100  # Just don't
+	}
 }
