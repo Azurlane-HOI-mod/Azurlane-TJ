@@ -1304,26 +1304,27 @@ TIX_jihua = {
 }
 
 TIX_neiwu = {
-	TIX_lbxjhua = {
-		icon = hongsegantan
-		available = {
-			has_completed_focus = TIX_chenglihansijituan
-			custom_trigger_tooltip = {
-				tooltip = hansizhaiquan_rengzaiyunzuo
-				OR = {
-					has_idea = TIX_hszq
-					has_idea = TIX_hszq_ex
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		fire_only_once = yes
-		complete_effect = {
-			country_event = az_tianjiang.50
-		}
-	}
+	#奖励转移至核心圈国策中
+	#TIX_lbxjhua = {
+	#	icon = hongsegantan
+	#	available = {
+	#		has_completed_focus = TIX_chenglihansijituan
+	#		custom_trigger_tooltip = {
+	#			tooltip = hansizhaiquan_rengzaiyunzuo
+	#			OR = {
+	#				has_idea = TIX_hszq
+	#				has_idea = TIX_hszq_ex
+	#			}
+	#		}
+	#	}
+	#	ai_will_do = {
+	#		factor = 100
+	#	}
+	#	fire_only_once = yes
+	#	complete_effect = {
+	#		country_event = az_tianjiang.50
+	#	}
+	#}
 	TIX_z23mz = {
 		icon = hongsegantan
 		available = {
@@ -1337,30 +1338,6 @@ TIX_neiwu = {
 		fire_only_once = yes
 		complete_effect = {
 			country_event = az_tianjiang.51
-		}
-	}
-	TIX_cliss = {
-		icon = generic_military
-		cost = 50
-		available = {
-			OR = {
-				has_completed_focus = TIX_tiewanyuanshou
-				has_government = neutrality
-			}
-			OR = {
-				has_country_leader = {
-					name = "俾斯麦"
-					ruling_only = yes
-				}
-				has_completed_focus = TIX_chongxinqiyongbisimai
-			}
-		}
-		ai_will_do = {
-			factor = 10000
-		}
-		fire_only_once = yes
-		complete_effect = {
-			add_ideas = TIX_ss
 		}
 	}
 	TIX_jzmzphd = {
@@ -1382,27 +1359,6 @@ TIX_neiwu = {
 		fire_only_once = yes
 		modifier = {
 			fascism_drift = 1
-		}
-	}
-	TIX_mimijingcha = {
-		cost = 50
-		icon = generic_police_action
-		available = {
-			OR = {
-				has_completed_focus = TIX_guojiayuanshoufa
-				has_completed_focus = TIX_chongxinqiyongbisimai
-			}
-			OR = {
-				has_government = fascism
-				has_government = neutrality
-			}
-		}
-		ai_will_do = {
-			factor = 10000
-		}
-		fire_only_once = yes
-		complete_effect = {
-			add_ideas = TIX_gaishitaibao
 		}
 	}
 	TIX_gongyekuozhangjueyi = {
@@ -1583,7 +1539,7 @@ TIX_neiwu = {
 				is_major = yes
 			}
 			or = {
-			has_government = fascism
+			has_completed_focus = TIX_lbx_quanmianzhanzhengyanjiang
 			has_completed_focus = TIX_laibixijihua
 			}
 			has_offensive_war = yes
@@ -1616,7 +1572,10 @@ TIX_neiwu = {
 				has_war_with = TIX
 				is_major = yes
 			}
-			has_government = fascism
+			or = {
+			has_completed_focus = TIX_lbx_quanmianzhanzhengyanjiang
+			has_completed_focus = TIX_laibixijihua
+			}
 			has_offensive_war = yes
 			threat > 0.5
 			OR = {

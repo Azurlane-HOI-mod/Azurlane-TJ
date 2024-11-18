@@ -163,9 +163,18 @@ ideas = {
 				production_speed_synthetic_refinery_factor = 0.25
 				production_speed_radar_station_factor = 0.15
 				ai_join_ally_desire_factor = -1000
+				custom_modifier_tooltip = TIX_bixuchanghuan_tips
 			}
 		}
-		
+		TIX_hszq_changhuan = {
+			picture = ger_mefo_bills
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_expected_value = 0.4
+			}
+		}
 		FIN_nsbq = {
 			picture = generic_intel_bonus
 			allowed_civil_war = {
@@ -485,6 +494,25 @@ ideas = {
 				army_morale_factor = 0.1
 			}
 		}
+		TIX_pjjgzyjy_idea = {
+			picture = generic_reserve_divisions
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				NOT = {
+					has_government = fascism	
+					}
+				NOT = {
+					has_government = neutrality	
+					}
+			}
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				breakthrough_factor = 0.08
+			}
+		}
 		TIX_gaishitaibao = {
 			picture = generic_secret_police
 			allowed_civil_war = {
@@ -506,6 +534,32 @@ ideas = {
 				required_garrison_factor = -0.2
 			}
 		}
+		
+		TIX_gaishitaibao_ex = {
+			name = TIX_gaishitaibao
+			picture = generic_secret_police
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				NOT = {
+					has_government = fascism	
+					}
+				NOT = {
+					has_government = neutrality	
+					}
+			}
+			modifier = {
+				operative_slot = 2
+				intelligence_agency_defense = 1.5
+				resistance_target = -0.3
+				resistance_growth = -0.4
+				required_garrison_factor = -0.25
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+		}
+		
 		TIX_jaegernotprogramm = {
 			allowed = {
 				always = no

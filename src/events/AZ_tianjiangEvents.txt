@@ -658,6 +658,9 @@ country_event = {
 		transfer_state = 85
 		transfer_state = 86
 		transfer_state = 807
+		add_state_core = 85
+		add_state_core = 86
+		add_state_core = 807
 		}
 		ai_chance = {
 			factor = 100
@@ -850,8 +853,11 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "这很划算"
-		add_political_power = -100
+		custom_effect_tooltip = TIX_bixuchanghuan_tips
 		add_timed_idea = { idea = TIX_hszq days = 1300 }
+		hidden_effect = {
+			country_event = { id = az_tianjiang.316 days = 1400 }
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -9475,6 +9481,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "军队会带领我们渡过难关！"
+		set_country_flag = TIX_bisimaihunmizhong
 		add_stability = -0.5
 		add_war_support = -0.5
 		remove_power_balance = { id = TIX_balance }
@@ -9508,6 +9515,7 @@ country_event = {
 	}
 	option = {
 		name = "元帅将确保国家的稳定！"
+		set_country_flag = TIX_bisimaihunmizhong
 		add_stability = -0.5
 		add_war_support = -0.5
 		remove_power_balance = { id = TIX_balance }
@@ -9541,6 +9549,7 @@ country_event = {
 	}
 	option = {
 		name = "俾斯麦自有人选！"
+		set_country_flag = TIX_bisimaihunmizhong
 		add_stability = -0.5
 		add_war_support = -0.5
 		remove_power_balance = { id = TIX_balance }
@@ -9608,6 +9617,7 @@ country_event = {
 			character = TIX_bisimai
 			ideology = nazism
 		}
+		clr_country_flag = TIX_bisimaihunmizhong
 		}
 	}
 	option = {
@@ -9625,6 +9635,10 @@ country_event = {
 		add_country_leader_trait = trait_psh_sirtixkejijiejing
 		hidden_effect = {
 		news_event = { id = az_tianjiang.277 days = 1}
+		}
+		trigger = {
+			has_government = fascism
+			is_subject = no
 		}
 		ai_chance = {
 			base = 100
@@ -10792,6 +10806,146 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.316
+	title = "偿还汉斯债券欠款"
+	desc = "汉斯集团要求我们偿还债款，我们无法拖欠。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "这一天还是来了"
+		add_timed_idea = { idea = TIX_hszq_changhuan days = 365 }
+		trigger = {
+			not = { has_completed_focus = TIX_agst_mczfzw }
+			not = { has_completed_focus = TIX_huanxingfeitelie }
+			not = { has_completed_focus = TIX_jianlijungongfuheti }
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = "我们通过其他方式免除了债务"
+		trigger = {
+			or = {
+			has_completed_focus = TIX_agst_mczfzw
+			has_completed_focus = TIX_huanxingfeitelie
+			has_completed_focus = TIX_jianlijungongfuheti
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.317
+	title = "铁血提议建立隔离线"
+	desc = "铁血想与我们签署一份互不侵犯条约，而代价仅仅是荷兰与卢森堡的欧陆领土。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "成交！"
+		TIX = {
+			country_event = { id = az_tianjiang.319 days = 2}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = "不能再放任铁血扩张了！"
+		TIX = {
+			country_event = { id = az_tianjiang.320 days = 2}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = "询问皇家的意见"
+		HUJ = {
+			country_event = { id = az_tianjiang.318 days = 1}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.318
+	title = "铁血提议建立隔离线"
+	desc = "铁血想与鸢尾签署一份互不侵犯条约，而代价仅仅是荷兰与卢森堡的欧陆领土。由于鸢尾请求我们的意见，所以我们如果同意，也会和铁血签署条约。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "成交！"
+		diplomatic_relation = {
+			country = TIX
+			relation = non_aggression_pact
+			active = yes
+		}
+		TIX = {
+			country_event = { id = az_tianjiang.319 days = 1}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = "不能再放任铁血扩张了！"
+		TIX = {
+			country_event = { id = az_tianjiang.320 days = 1}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.319
+	title = "鸢尾与皇家同意了我们的要求"
+	desc = "碧蓝航线已经同意了我们建立隔离线的要求。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "很好！"
+		diplomatic_relation = {
+			country = YUW
+			relation = non_aggression_pact
+			active = yes
+		}
+		transfer_state = 35
+		transfer_state = 36
+		transfer_state = 7
+		transfer_state = 8
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.320
+	title = "碧蓝航线拒绝了我们的要求"
+	desc = "碧蓝航线拒绝了我们的合理要求！"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "看来只能战争了！"
+		create_wargoal = { target = HOL type = take_state_focus }
+		create_wargoal = { target = BEL type = take_state_focus }
+		create_wargoal = { target = LUX type = take_state_focus }
+		create_wargoal = { target = YUW type = take_state_focus }
+		ai_chance = {
+			base = 100
 		}
 	}
 }

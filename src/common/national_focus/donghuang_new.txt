@@ -136,6 +136,9 @@ focus_tree = {
 				uses = 2
 				category = industry
 			}
+			set_technology = {
+				bba_early_transport_plane  = 1
+			}
 		}
 	}
 	focus = {
@@ -383,6 +386,7 @@ focus_tree = {
 				radio = 1
 				popup = no
 			}
+			
 		}
 	}
 	focus = {
@@ -410,43 +414,43 @@ focus_tree = {
 				idea = DOH_jiuquanshiyanjidi
 				days = 365
 			}
-			add_tech_bonus = {
-				name = "先进技术研究"
-				bonus = 3
-				uses = 2
-				ahead_reduction = 2
-				category = radar_tech
+			add_breakthrough_progress = {
+				value = 1.01
+				specialization = specialization_nuclear
 			}
-			add_tech_bonus = {
-				name = "先进技术研究"
-				bonus = 3
-				uses = 2
-				ahead_reduction = 2
-				category = computing_tech
-			}
-			add_tech_bonus = {
-				name = "先进技术研究"
-				bonus = 3
-				uses = 2
-				ahead_reduction = 2
-				category = rocketry
-			}
-			add_tech_bonus = {
-				name = "先进技术研究"
-				bonus = 1
-				uses = 1
-				ahead_reduction = 2
-				category = nuclear
-			}
+			# add_tech_bonus = {
+			# 	name = "先进技术研究"
+			# 	bonus = 3
+			# 	uses = 2
+			# 	ahead_reduction = 2
+			# 	category = radar_tech
+			# }
+			# add_tech_bonus = {
+			# 	name = "先进技术研究"
+			# 	bonus = 3
+			# 	uses = 2
+			# 	ahead_reduction = 2
+			# 	category = computing_tech
+			# }
+			# add_tech_bonus = {
+			# 	name = "先进技术研究"
+			# 	bonus = 3
+			# 	uses = 2
+			# 	ahead_reduction = 2
+			# 	category = rocketry
+			# }
+			# add_tech_bonus = {
+			# 	name = "先进技术研究"
+			# 	bonus = 1
+			# 	uses = 1
+			# 	ahead_reduction = 2
+			# 	category = nuclear
+			# }
 			756 = {
 				set_state_category = large_city
 				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
-					type = rocket_site
-					level = 5
-				}
-				add_building_construction = {
-					type = nuclear_reactor
+					type = nuclear_facility
 					level = 1
 				}
 			}
@@ -470,7 +474,7 @@ focus_tree = {
 				has_completed_focus = DOH_donghuangdeshidai
 				has_country_flag = shikongchuansuo_get
 			}
-			has_tech = nuclear_reactor
+			has_tech = commercial_nuclear_reactor_tech
 		}
 		completion_reward = {
 			custom_effect_tooltip = DOH_hedian_focus_tooltip
@@ -486,7 +490,7 @@ focus_tree = {
 				every_owned_state = {
 					if = {
 						limit = {
-							nuclear_reactor > 0
+							commercial_nuclear_reactor > 0
 						}
 						add_dynamic_modifier = {
 							modifier = DOH_hedian_state_modifier
@@ -805,10 +809,20 @@ focus_tree = {
 			focus = DOH_jingbingqiangjiang
 		}
 		relative_position_id = DOH_jingbingqiangjiang
+		available = {
+			has_full_control_of_state = 615
+		}
 		ai_will_do = {
 			factor = 3
 		}
 		completion_reward = {
+			615 = {
+				add_building_construction = {
+					type = land_facility
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 			add_doctrine_cost_reduction = {
 				name = "陆军新理论"
 				cost_reduction = 0.25
@@ -832,6 +846,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			TY_lujunliluntupo = yes
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 1.01
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -917,11 +935,22 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_dulizizhudejungong
 		}
+		available = {
+			has_full_control_of_state = 613
+		}
 		relative_position_id = DOH_dulizizhudejungong
 		ai_will_do = {
 			factor = 3
 		}
 		completion_reward = {
+			613 = {
+				add_building_construction = {
+					type = naval_facility
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			
 			set_technology = {
 				mtg_transport = 1
 			}
@@ -1004,6 +1033,10 @@ focus_tree = {
 				ahead_reduction = 3
 				category = naval_equipment
 			}
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 1.01
+			}
 		}
 	}
 	focus = {
@@ -1053,19 +1086,26 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_dulizizhudejungong
 		}
+		available = {
+			has_full_control_of_state = 744
+		}
 		relative_position_id = DOH_dulizizhudejungong
 		ai_will_do = {
 			factor = 3
 		}
 		completion_reward = {
-			# add_tech_bonus = {
-			#     name = "铁鸢"
-			#     bonus = 1.5
-			#     uses = 2
-			#     category = air_equipment
-			# }
-			set_technology = {
-				advanced_small_airframe = 1
+			add_tech_bonus = {
+				name = "铁鸢"
+				bonus = 2
+				uses = 3
+				category = plane_modules_tech
+			}
+			744 = {
+				add_building_construction = {
+					type = air_facility
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 1
 			}
 		}
 	}
@@ -1111,41 +1151,18 @@ focus_tree = {
 				limit = {
 					has_dlc = "By Blood Alone"
 				}
-				# add_tech_bonus = {
-				# name = "铁鸢"
-				# bonus = 1
-				# uses = 1
-				# category = light_air
-				# }
-				# add_tech_bonus = {
-				# name = "铁鸢"
-				# bonus = 1
-				# uses = 1
-				# category = medium_air
-				# }
-				# add_tech_bonus = {
-				# name = "铁鸢"
-				# bonus = 1
-				# uses = 2
-				# category = plane_modules_tech
-				# }
-				set_technology = {
-					advanced_medium_airframe = 1
-					advanced_large_airframe = 1
-				}
-			}
-			if = {
-				limit = {
-					not = {
-						has_dlc = "By Blood Alone"
-					}
-				}
 				add_tech_bonus = {
-					name = "铁鸢"
-					bonus = 1
-					uses = 4
-					category = cas_bomber
-					category = tactical_bomber
+				name = "铁鸢"
+				bonus = 2
+				uses = 3
+				category = plane_modules_tech
+				}
+				set_technology = {
+					improved_medium_airframe = 1
+				}
+				add_breakthrough_progress = {
+					specialization = specialization_air
+					value = 0.5
 				}
 			}
 		}
@@ -2535,6 +2552,31 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_research_slot = 1
+			add_political_power = -100
+			DOH_huajia = {
+				add_scientist_xp = {
+					experience = 300
+					specialization = specialization_air
+				}
+			}
+			DOH_jian = {
+				add_scientist_xp = {
+					experience = 300
+					specialization = specialization_land
+				}
+			}
+			DOH_dingan = {
+				add_scientist_xp = {
+					experience = 300
+					specialization = specialization_nuclear
+				}
+			}
+			DOH_zhenhai = {
+				add_scientist_xp = {
+					experience = 300
+					specialization = specialization_naval
+				}
+			}
 			custom_effect_tooltip = DOH_rencaiyinjin_tooltip
 		}
 	}
@@ -3165,9 +3207,8 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			add_research_slot = 1
 			every_military_industrial_organization = {
-				add_mio_size = 2
+				add_mio_size = 5
 			}
 		}
 	}
@@ -4189,9 +4230,7 @@ focus_tree = {
 				set_state_category = large_city
 			}
 			DOH_neibufenqi_jianqin_effect = yes
-			every_military_industrial_organization = {
-				add_mio_size = 3
-			}
+			
 			hidden_effect = {
 				set_victory_points = {
 					province = 12055					# 徐州

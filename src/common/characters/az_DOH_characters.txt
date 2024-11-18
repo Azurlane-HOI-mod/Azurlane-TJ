@@ -1,55 +1,60 @@
-characters={
+characters = {
 	DOH_yixian = {
 		name = DOH_yixian
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/yixian.png"
-				small="gfx/interface/ideas/idea_yixian.png"
+				large = "gfx/leaders/DOH/yixian.png"
+				small = "gfx/interface/ideas/idea_yixian.png"
 			}
 		}
 		advisor = {
 			cost = 100
 			slot = political_advisor
 			idea_token = yixian
-			traits = { trait_yixian }
-
+			traits = {
+				trait_yixian
+			}
 			ai_will_do = {
 				factor = 25
 			}
 		}
-
-		country_leader={
+		country_leader = {
 			ideology = despotism
 			traits = {
 				dhzh
 			}
-			expire="2000.1.1.1"
+			expire = "2000.1.1.1"
 		}
-
-		country_leader={
+		country_leader = {
 			ideology = fascism_ideology
 			traits = {
 				dhzh
 			}
-			expire="2000.1.1.1"
+			expire = "2000.1.1.1"
 		}
-		country_leader={
+		country_leader = {
 			ideology = liberalism
 			traits = {
 				dhzh
 			}
-			expire="2000.1.1.1"
+			expire = "2000.1.1.1"
 		}
 		field_marshal = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { politically_connected xunyang_army }
+			traits = {
+				politically_connected
+				xunyang_army
+			}
 			skill = 3
 			attack_skill = 3
 			defense_skill = 3
@@ -59,23 +64,27 @@ characters={
 	}
 	DOH_jiangjiang = {
 		name = DOH_jiangjiang
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/jiangjiang.png"
-				small="gfx/interface/ideas/idea_jiangjiang.png"
+				large = "gfx/leaders/DOH/jiangjiang.png"
+				small = "gfx/interface/ideas/idea_jiangjiang.png"
 			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { urban_assault_specialist }
+			traits = {
+				urban_assault_specialist
+			}
 			skill = 3
 			attack_skill = 3
 			defense_skill = 2
@@ -85,9 +94,10 @@ characters={
 		advisor = {
 			cost = 100
 			slot = air_chief
-			idea_token = jiangjiang 
-
-			traits = { trait_zhangzhejiangjiang }
+			idea_token = jiangjiang
+			traits = {
+				trait_zhangzhejiangjiang
+			}
 			ai_will_do = {
 				factor = 10
 			}
@@ -95,32 +105,42 @@ characters={
 	}
 	DOH_anshan = {
 		name = DOH_anshan
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/anshan.png"
-				small="gfx/interface/ideas/idea_anshan.png"
+				large = "gfx/leaders/DOH/anshan.png"
+				small = "gfx/interface/ideas/idea_anshan.png"
 			}
 		}
 		advisor = {
 			cost = 100
 			slot = political_advisor
 			idea_token = anshan
-			traits = { trait_anshan }
-
+			traits = {
+				trait_anshan
+			}
 			ai_will_do = {
 				factor = 10
 			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { armor_officer trait_mountaineer trait_engineer quzhu_army hill_fighter}
+			traits = {
+				armor_officer
+				trait_mountaineer
+				trait_engineer
+				quzhu_army
+				hill_fighter
+			}
 			skill = 3
 			attack_skill = 3
 			defense_skill = 3
@@ -130,23 +150,28 @@ characters={
 	}
 	DOH_changchun = {
 		name = DOH_changchun
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/changchun.png"
-				small="gfx/interface/ideas/idea_changchun.png"
+				large = "gfx/leaders/DOH/changchun.png"
+				small = "gfx/interface/ideas/idea_changchun.png"
 			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { jungle_rat quzhu_army }
+			traits = {
+				jungle_rat
+				quzhu_army
+			}
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -156,23 +181,29 @@ characters={
 	}
 	DOH_fushun = {
 		name = DOH_fushun
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/fushun.png"
-				small="gfx/interface/ideas/idea_fushun.png"
+				large = "gfx/leaders/DOH/fushun.png"
+				small = "gfx/interface/ideas/idea_fushun.png"
 			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { bearer_of_artillery trait_mountaineer quzhu_army }
+			traits = {
+				bearer_of_artillery
+				trait_mountaineer
+				quzhu_army
+			}
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -182,42 +213,50 @@ characters={
 	}
 	DOH_taiyuan = {
 		name = DOH_taiyuan
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/taiyuan.png"
-				small="gfx/interface/ideas/idea_taiyuan.png"
+				large = "gfx/leaders/DOH/taiyuan.png"
+				small = "gfx/interface/ideas/idea_taiyuan.png"
 			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { inflexible_strategist jungle_rat quzhu_army }
+			traits = {
+				inflexible_strategist
+				jungle_rat
+				quzhu_army
+			}
 			skill = 3
 			attack_skill = 1
 			defense_skill = 5
 			planning_skill = 2
 			logistics_skill = 2
 		}
-		
 		advisor = {
 			cost = 100
 			slot = high_command
 			idea_token = taiyuan
 			available = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_junshigaige
 				}
 			}
-			traits = { trait_taiyuan }
-
+			traits = {
+				trait_taiyuan
+			}
 			ai_will_do = {
 				factor = 50
 			}
@@ -225,32 +264,40 @@ characters={
 	}
 	DOH_ninghai = {
 		name = DOH_ninghai
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/ninghai.png"
-				small="gfx/interface/ideas/idea_ninghai.png"
+				large = "gfx/leaders/DOH/ninghai.png"
+				small = "gfx/interface/ideas/idea_ninghai.png"
 			}
 		}
 		advisor = {
 			cost = 100
 			slot = army_chief
 			idea_token = ninghai
-			traits = { trait_ninghai }
-
+			traits = {
+				trait_ninghai
+			}
 			ai_will_do = {
 				factor = 25
 			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { armor_officer brilliant_strategist xunyang_army }
+			traits = {
+				armor_officer
+				brilliant_strategist
+				xunyang_army
+			}
 			skill = 4
 			attack_skill = 4
 			defense_skill = 3
@@ -260,33 +307,40 @@ characters={
 	}
 	DOH_pinghai = {
 		name = DOH_pinghai
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/pinghai.png"
-				small="gfx/interface/ideas/idea_pinghai.png"
+				large = "gfx/leaders/DOH/pinghai.png"
+				small = "gfx/interface/ideas/idea_pinghai.png"
 			}
 		}
 		advisor = {
 			cost = 100
 			slot = theorist
 			idea_token = pinghai
-			
-			
-			traits = { trait_pinghai }
+			traits = {
+				trait_pinghai
+			}
 			ai_will_do = {
 				factor = 50
 			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { infantry_officer inflexible_strategist xunyang_army }
+			traits = {
+				infantry_officer
+				inflexible_strategist
+				xunyang_army
+			}
 			skill = 4
 			attack_skill = 3
 			defense_skill = 4
@@ -296,39 +350,46 @@ characters={
 	}
 	DOH_zhaohe = {
 		name = DOH_zhaohe
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/zhaohe.png"
-				small="gfx/interface/ideas/idea_zhaohe.png"
+				large = "gfx/leaders/DOH/zhaohe.png"
+				small = "gfx/interface/ideas/idea_zhaohe.png"
 			}
 		}
 		advisor = {
 			cost = 100
 			slot = high_command
 			idea_token = zhaohe
-			
 			available = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_junshigaige
 				}
 			}
-			traits = { trait_zhaohe }
-
+			traits = {
+				trait_zhaohe
+			}
 			ai_will_do = {
 				factor = 50
 			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { xunyang_army }
+			traits = {
+				xunyang_army
+			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -338,10 +399,10 @@ characters={
 	}
 	DOH_yingrui = {
 		name = DOH_yingrui
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/yingrui.png"
-				small="gfx/interface/ideas/idea_yingrui.png"
+				large = "gfx/leaders/DOH/yingrui.png"
+				small = "gfx/interface/ideas/idea_yingrui.png"
 			}
 		}
 		advisor = {
@@ -350,26 +411,34 @@ characters={
 			idea_token = yingrui
 			available = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_junshigaige
 				}
 			}
-			traits = { trait_yingrui }
-
+			traits = {
+				trait_yingrui
+			}
 			ai_will_do = {
 				factor = 50
 			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { xunyang_army }
+			traits = {
+				xunyang_army
+			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -377,25 +446,28 @@ characters={
 			logistics_skill = 2
 		}
 	}
-	DOH_xiaochicheng  = {
-		name = DOH_xiaochicheng 
-		portraits={
+	DOH_xiaochicheng = {
+		name = DOH_xiaochicheng
+		portraits = {
 			army = {
-				small="gfx/interface/ideas/idea_xiaochicheng.png"
+				small = "gfx/interface/ideas/idea_xiaochicheng.png"
 			}
 		}
 		advisor = {
 			cost = 100
 			slot = air_chief
-			idea_token = xiaochicheng 
+			idea_token = xiaochicheng
 			visible = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_youbuxiaochicheng
 				}
 			}
-			traits = { trait_xiaochicheng }
-
+			traits = {
+				trait_xiaochicheng
+			}
 			ai_will_do = {
 				factor = 10
 			}
@@ -403,9 +475,9 @@ characters={
 	}
 	DOH_nvzaoshen = {
 		name = DOH_nvzaoshen
-		portraits={
+		portraits = {
 			army = {
-				small="gfx/interface/ideas/idea_nvzaoshen.png"
+				small = "gfx/interface/ideas/idea_nvzaoshen.png"
 			}
 		}
 		advisor = {
@@ -414,12 +486,16 @@ characters={
 			idea_token = nvzaoshen
 			visible = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_baiyinggongchengshi
 				}
 			}
-			traits = { trait_nvzaoshen1 trait_nvzaoshen2 }
-
+			traits = {
+				trait_nvzaoshen1
+				trait_nvzaoshen2
+			}
 			ai_will_do = {
 				factor = 15
 			}
@@ -427,10 +503,10 @@ characters={
 	}
 	DOH_gelideli = {
 		name = DOH_gelideli
-		portraits={
+		portraits = {
 			army = {
 				large = "gfx/leaders/DOH/gelideli.png"
-				small="gfx/interface/ideas/idea_gelideli.png"
+				small = "gfx/interface/ideas/idea_gelideli.png"
 			}
 		}
 		advisor = {
@@ -440,12 +516,15 @@ characters={
 			idea_token = gelideli
 			visible = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_country_flag = DOH_yaoqinggelideli
 				}
 			}
-			traits = { trait_gelideli }
-
+			traits = {
+				trait_gelideli
+			}
 			ai_will_do = {
 				factor = 10
 			}
@@ -453,17 +532,24 @@ characters={
 		corps_commander = {
 			visible = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_country_flag = DOH_yaoqinggelideli
 				}
-				NOT = { has_character_flag = xiujia_doing } 
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			
-			traits = { quzhu_army }
+			traits = {
+				quzhu_army
+			}
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -473,10 +559,10 @@ characters={
 	}
 	DOH_kelong = {
 		name = DOH_kelong
-		portraits={
+		portraits = {
 			army = {
-			    large="gfx/leaders/DOH/kelong_donghuang.png"
-				small="gfx/interface/ideas/idea_kelong.png"
+				large = "gfx/leaders/DOH/kelong_donghuang.png"
+				small = "gfx/interface/ideas/idea_kelong.png"
 			}
 		}
 		corps_commander = {
@@ -485,10 +571,19 @@ characters={
 					limit = {
 						tag = DOH
 					}
-					OR = { has_completed_focus = DOH_tiexueguwen hidden_trigger = { is_ai = yes } }
+					OR = {
+						has_completed_focus = DOH_tiexueguwen
+						hidden_trigger = {
+							is_ai = yes
+						}
+					}
 				}
 			}
-			traits = { trickster career_officer xunyang_army }
+			traits = {
+				trickster
+				career_officer
+				xunyang_army
+			}
 			skill = 4
 			attack_skill = 4
 			defense_skill = 4
@@ -501,12 +596,20 @@ characters={
 			idea_token = kelong
 			available = {
 				if = {
-					limit = { tag = DOH }
-					OR = { has_completed_focus = DOH_tiexueguwen hidden_trigger = { is_ai = yes } }
+					limit = {
+						tag = DOH
+					}
+					OR = {
+						has_completed_focus = DOH_tiexueguwen
+						hidden_trigger = {
+							is_ai = yes
+						}
+					}
 				}
 			}
-			traits = { trait_kelong_doh }
-
+			traits = {
+				trait_kelong_doh
+			}
 			ai_will_do = {
 				factor = 15
 			}
@@ -514,21 +617,29 @@ characters={
 	}
 	DOH_naerxun = {
 		name = DOH_naerxun
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/naerxun.png"
-				small="gfx/interface/ideas/idea_naerxun.png"
+				large = "gfx/leaders/DOH/naerxun.png"
+				small = "gfx/interface/ideas/idea_naerxun.png"
 			}
-		} 
+		}
 		navy_leader = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { bold ironside zhanlie_navy }
+			traits = {
+				bold
+				ironside
+				zhanlie_navy
+			}
 			skill = 4
 			attack_skill = 4
 			defense_skill = 2
@@ -541,13 +652,20 @@ characters={
 			idea_token = naerxun
 			available = {
 				if = {
-					limit = { tag = DOH }
-					OR = { has_completed_focus = DOH_huangjiaguwen hidden_trigger = { is_ai = yes } }	 
+					limit = {
+						tag = DOH
+					}
+					OR = {
+						has_completed_focus = DOH_huangjiaguwen
+						hidden_trigger = {
+							is_ai = yes
+						}
+					}
 				}
 			}
-			
-			traits = { trait_naerxun_doh }
-
+			traits = {
+				trait_naerxun_doh
+			}
 			ai_will_do = {
 				factor = 7
 			}
@@ -555,17 +673,21 @@ characters={
 	}
 	DOH_79shi = {
 		name = DOH_79shi
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/79shi.png"
-				small="gfx/interface/ideas/idea_79shi.png"
-			} 
+				large = "gfx/leaders/DOH/79shi.png"
+				small = "gfx/interface/ideas/idea_79shi.png"
+			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
@@ -575,40 +697,44 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-#		advisor = {
-#			cost = 50
-#			slot = high_command
-#			idea_token = 79shi
-#			
-#			available = {
-#				if = {
-#					limit = { tag = DOH }
-#					has_completed_focus = DOH_lujunsilingtiba
-#					
-#					}
-#					
-#				}
-#			
-#			traits = { trait_DOH_79shi }
-#
-#			ai_will_do = {
-#				factor = 0
-#			}
-#		}
+		#		advisor = {
+		#			cost = 50
+		#			slot = high_command
+		#			idea_token = 79shi
+		#			
+		#			available = {
+		#				if = {
+		#					limit = { tag = DOH }
+		#					has_completed_focus = DOH_lujunsilingtiba
+		#					
+		#					}
+		#					
+		#				}
+		#			
+		#			traits = { trait_DOH_79shi }
+		#
+		#			ai_will_do = {
+		#				factor = 0
+		#			}
+		#		}
 	}
 	DOH_97shi = {
 		name = DOH_97shi
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/97shi.png"
-				small="gfx/interface/ideas/idea_97shi.png"
-			} 
+				large = "gfx/leaders/DOH/97shi.png"
+				small = "gfx/interface/ideas/idea_97shi.png"
+			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
@@ -618,39 +744,43 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-#		advisor = {
-#			cost = 50
-#			slot = high_command
-#			idea_token = 97shi
-#			
-#			available = {
-#				if = {
-#					limit = { tag = DOH }
-#					has_completed_focus = DOH_lujunsilingtiba
-#					
-#				}
-#			
-#			traits = { trait_DOH_97shi }
-#
-#			ai_will_do = {
-#				factor = 50
-#			}
-#		}
-#	}
-}
+		#		advisor = {
+		#			cost = 50
+		#			slot = high_command
+		#			idea_token = 97shi
+		#			
+		#			available = {
+		#				if = {
+		#					limit = { tag = DOH }
+		#					has_completed_focus = DOH_lujunsilingtiba
+		#					
+		#				}
+		#			
+		#			traits = { trait_DOH_97shi }
+		#
+		#			ai_will_do = {
+		#				factor = 50
+		#			}
+		#		}
+		#	}
+	}
 	DOH_JS9 = {
 		name = DOH_JS9
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/JS9.png"
-				small="gfx/interface/ideas/idea_js9.png"
-			} 
+				large = "gfx/leaders/DOH/JS9.png"
+				small = "gfx/interface/ideas/idea_js9.png"
+			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
@@ -660,40 +790,44 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-#		advisor = {
-#			cost = 50
-#			slot = high_command
-#			idea_token = JS9
-#			
-#			available = {
-#				if = {
-#					limit = { tag = DOH }
-#					has_completed_focus = DOH_lujunsilingtiba
-#					
-#					}
-#					
-#				
-#			}
-#			traits = { trait_DOH_JS9 }
-#
-#			ai_will_do = {
-#				factor = 50
-#			}
-#		}
+		#		advisor = {
+		#			cost = 50
+		#			slot = high_command
+		#			idea_token = JS9
+		#			
+		#			available = {
+		#				if = {
+		#					limit = { tag = DOH }
+		#					has_completed_focus = DOH_lujunsilingtiba
+		#					
+		#					}
+		#					
+		#				
+		#			}
+		#			traits = { trait_DOH_JS9 }
+		#
+		#			ai_will_do = {
+		#				factor = 50
+		#			}
+		#		}
 	}
 	DOH_NZ75 = {
 		name = DOH_NZ75
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/NZ75.png"
-				small="gfx/interface/ideas/idea_nz75.png"
-			} 
+				large = "gfx/leaders/DOH/NZ75.png"
+				small = "gfx/interface/ideas/idea_nz75.png"
+			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
@@ -703,40 +837,44 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-#		advisor = {
-#			cost = 50
-#			slot = high_command
-#			idea_token = NZ75
-#			
-#			available = {
-#				if = {
-#					limit = { tag = DOH }
-#					has_completed_focus = DOH_lujunsilingtiba
-#					
-#					}
-#					
-#				}
-#			
-#			traits = { trait_DOH_NZ75 }
-#
-#			ai_will_do = {
-#				factor = 50
-#			}
-#		}
+		#		advisor = {
+		#			cost = 50
+		#			slot = high_command
+		#			idea_token = NZ75
+		#			
+		#			available = {
+		#				if = {
+		#					limit = { tag = DOH }
+		#					has_completed_focus = DOH_lujunsilingtiba
+		#					
+		#					}
+		#					
+		#				}
+		#			
+		#			traits = { trait_DOH_NZ75 }
+		#
+		#			ai_will_do = {
+		#				factor = 50
+		#			}
+		#		}
 	}
 	DOH_QBU88 = {
 		name = DOH_QBU88
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/QBU88.png"
-				small="gfx/interface/ideas/idea_qbu88.png"
-			} 
+				large = "gfx/leaders/DOH/QBU88.png"
+				small = "gfx/interface/ideas/idea_qbu88.png"
+			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
@@ -746,44 +884,50 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 		}
-#		advisor = {
-#			cost = 50
-#			slot = high_command
-#			idea_token = QBU88
-#			
-#			available = {
-#				if = {
-#					limit = { tag = DOH }
-#					has_completed_focus = DOH_lujunsilingtiba
-#					
-#					}
-#					
-#				}
-#			
-#			traits = { trait_DOH_QBU88 }
-#
-#			ai_will_do = {
-#				factor = 50
-#			}
-#		}
+		#		advisor = {
+		#			cost = 50
+		#			slot = high_command
+		#			idea_token = QBU88
+		#			
+		#			available = {
+		#				if = {
+		#					limit = { tag = DOH }
+		#					has_completed_focus = DOH_lujunsilingtiba
+		#					
+		#					}
+		#					
+		#				}
+		#			
+		#			traits = { trait_DOH_QBU88 }
+		#
+		#			ai_will_do = {
+		#				factor = 50
+		#			}
+		#		}
 	}
 	DOH_beifeng = {
 		name = DOH_beifeng
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/beifeng.png"
-				small="gfx/interface/ideas/idea_beifeng.png"
-			} 
+				large = "gfx/leaders/DOH/beifeng.png"
+				small = "gfx/interface/ideas/idea_beifeng.png"
+			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { career_officer }
+			traits = {
+				career_officer
+			}
 			skill = 3
 			attack_skill = 3
 			defense_skill = 3
@@ -793,21 +937,27 @@ characters={
 	}
 	DOH_xifeng = {
 		name = DOH_xifeng
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/xifeng.png"
-				small="gfx/interface/ideas/idea_xifeng.png"
-			} 
+				large = "gfx/leaders/DOH/xifeng.png"
+				small = "gfx/interface/ideas/idea_xifeng.png"
+			}
 		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { career_officer }
+			traits = {
+				career_officer
+			}
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -817,22 +967,27 @@ characters={
 	}
 	DOH_haiqi = {
 		name = DOH_haiqi
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/haiqi.png"
-				small="gfx/interface/ideas/idea_haiqi.png"
-			} 
+				large = "gfx/leaders/DOH/haiqi.png"
+				small = "gfx/interface/ideas/idea_haiqi.png"
+			}
 		}
-
 		navy_leader = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { xunyang_navy }
+			traits = {
+				xunyang_navy
+			}
 			skill = 4
 			attack_skill = 3
 			defense_skill = 2
@@ -842,22 +997,27 @@ characters={
 	}
 	DOH_haitian = {
 		name = DOH_haitian
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/haitian.png"
-				small="gfx/interface/ideas/idea_haitian.png"
-			} 
+				large = "gfx/leaders/DOH/haitian.png"
+				small = "gfx/interface/ideas/idea_haitian.png"
+			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { xunyang_army }
+			traits = {
+				xunyang_army
+			}
 			skill = 3
 			attack_skill = 3
 			defense_skill = 2
@@ -868,8 +1028,9 @@ characters={
 			cost = 100
 			slot = navy_chief
 			idea_token = haitian
-			traits = { trait_haitian }
-			
+			traits = {
+				trait_haitian
+			}
 			ai_will_do = {
 				factor = 16
 			}
@@ -877,31 +1038,47 @@ characters={
 	}
 	DOH_zhenhai = {
 		name = DOH_zhenhai
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/zhenhai.png"
-				small="gfx/interface/ideas/idea_zhenhai.png"
-			} 
+				large = "gfx/leaders/DOH/zhenhai.png"
+				small = "gfx/interface/ideas/idea_zhenhai.png"
+			}
 		}
 		advisor = {
 			cost = 100
 			slot = political_advisor
 			idea_token = zhenhai
-			traits = { trait_zhenhai }
-
+			traits = {
+				trait_zhenhai
+			}
 			ai_will_do = {
 				factor = 8
 			}
 		}
+		scientist = {
+			traits = {
+				scientist_trait_surface_ship_specialist
+				scientist_trait_gifted_engineer
+			}
+			skills = {
+				specialization_naval = 1
+			}
+		}
 		navy_leader = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { hangmu_navy }
+			traits = {
+				hangmu_navy
+			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -911,33 +1088,38 @@ characters={
 	}
 	DOH_haerbin = {
 		name = DOH_haerbin
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/haerbin.png"
-				small="gfx/interface/ideas/idea_haerbin.png"
-			} 
+				large = "gfx/leaders/DOH/haerbin.png"
+				small = "gfx/interface/ideas/idea_haerbin.png"
+			}
 		}
 		advisor = {
 			cost = 100
 			slot = theorist
 			idea_token = haerbin
-			
-			
-			traits = { trait_haerbin }
+			traits = {
+				trait_haerbin
+			}
 			ai_will_do = {
 				factor = 50
 			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { xunyang_army }
+			traits = {
+				xunyang_army
+			}
 			skill = 3
 			attack_skill = 3
 			defense_skill = 2
@@ -947,31 +1129,48 @@ characters={
 	}
 	DOH_huajia = {
 		name = DOH_huajia
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/huajia.png"
-				small="gfx/interface/ideas/idea_huajia.png"
-			} 
+				large = "gfx/leaders/DOH/huajia.png"
+				small = "gfx/interface/ideas/idea_huajia.png"
+			}
 		}
 		advisor = {
 			cost = 100
 			slot = political_advisor
 			idea_token = huajia
-			traits = { trait_huajia }
-
+			traits = {
+				trait_huajia
+			}
 			ai_will_do = {
 				factor = 25
 			}
 		}
+		scientist = {
+			traits = {
+				scientist_trait_rocketry_specialist
+				scientist_trait_guidance_systems_expert
+				scientist_trait_brilliant_theorist
+			}
+			skills = {
+				specialization_air = 1
+			}
+		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { hangmu_army }
+			traits = {
+				hangmu_army
+			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -981,33 +1180,49 @@ characters={
 	}
 	DOH_dingan = {
 		name = DOH_dingan
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/dingan.png"
-				small="gfx/interface/ideas/idea_dingan.png"
-			} 
+				large = "gfx/leaders/DOH/dingan.png"
+				small = "gfx/interface/ideas/idea_dingan.png"
+			}
 		}
-		
+		scientist = {
+			traits = {
+				scientist_trait_nuclear_specialist
+				scientist_trait_fast_learner
+			}
+			skills = {
+				specialization_nuclear = 1
+			}
+		}
 		advisor = {
 			cost = 100
 			slot = political_advisor
 			idea_token = dingan
-			traits = { trait_dingan }
-
+			traits = {
+				trait_dingan
+			}
 			ai_will_do = {
 				factor = 25
 			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { organizer logistics_wizard hangmu_army }
+			traits = {
+				organizer
+				logistics_wizard
+				hangmu_army
+			}
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
@@ -1017,41 +1232,48 @@ characters={
 	}
 	DOH_longwu = {
 		name = DOH_longwu
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/longwu.png"
-				small="gfx/interface/ideas/idea_longwu.png"
-			} 
+				large = "gfx/leaders/DOH/longwu.png"
+				small = "gfx/interface/ideas/idea_longwu.png"
+			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { quzhu_army }
+			traits = {
+				quzhu_army
+			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 1
 		}
-		
 		advisor = {
 			cost = 100
 			slot = high_command
 			idea_token = longwu
 			available = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_junshigaige
 				}
 			}
-			traits = { trait_longwu }
-
+			traits = {
+				trait_longwu
+			}
 			ai_will_do = {
 				factor = 50
 			}
@@ -1059,22 +1281,27 @@ characters={
 	}
 	DOH_feiyun = {
 		name = DOH_feiyun
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/feiyun.png"
-				small="gfx/interface/ideas/idea_feiyun.png"
-			} 
+				large = "gfx/leaders/DOH/feiyun.png"
+				small = "gfx/interface/ideas/idea_feiyun.png"
+			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { quzhu_army }
+			traits = {
+				quzhu_army
+			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -1084,33 +1311,47 @@ characters={
 	}
 	DOH_jian = {
 		name = DOH_jian
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/jian.png"
-				small="gfx/interface/ideas/idea_jian.png"
-			} 
+				large = "gfx/leaders/DOH/jian.png"
+				small = "gfx/interface/ideas/idea_jian.png"
+			}
 		}
-		
 		advisor = {
 			cost = 100
 			slot = theorist
 			idea_token = jian
-			traits = { trait_jian_doh }
-
+			traits = {
+				trait_jian_doh
+			}
 			ai_will_do = {
 				factor = 25
 			}
 		}
-
+		scientist = {
+			traits = {
+				scientist_trait_artillery_specialist
+				scientist_trait_genius
+			}
+			skills = {
+				specialization_land = 3
+			}
+		}
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { xunyang_army }
+			traits = {
+				xunyang_army
+			}
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
@@ -1120,22 +1361,27 @@ characters={
 	}
 	DOH_huben = {
 		name = DOH_huben
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/huben.png"
-				small="gfx/interface/ideas/idea_huben.png"
-			} 
+				large = "gfx/leaders/DOH/huben.png"
+				small = "gfx/interface/ideas/idea_huben.png"
+			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { quzhu_army }
+			traits = {
+				quzhu_army
+			}
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -1145,41 +1391,48 @@ characters={
 	}
 	DOH_huanchang = {
 		name = DOH_huanchang
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/huanchang.png"
-				small="gfx/interface/ideas/idea_huanchang.png"
-			} 
+				large = "gfx/leaders/DOH/huanchang.png"
+				small = "gfx/interface/ideas/idea_huanchang.png"
+			}
 		}
-
 		corps_commander = {
-			visible = { 
-				NOT = { has_character_flag = xiujia_doing } 
+			visible = {
+				NOT = {
+					has_character_flag = xiujia_doing
+				}
 				OR = {
-					NOT = { tag = TAN }
+					NOT = {
+						tag = TAN
+					}
 					is_ai = no
 				}
 			}
-			traits = { zhanlie_army }
+			traits = {
+				zhanlie_army
+			}
 			skill = 3
 			attack_skill = 3
 			defense_skill = 3
 			planning_skill = 2
 			logistics_skill = 2
 		}
-		
 		advisor = {
 			cost = 100
 			slot = high_command
 			idea_token = huanchang
 			available = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_junshigaige
 				}
 			}
-			traits = { trait_huanchang }
-
+			traits = {
+				trait_huanchang
+			}
 			ai_will_do = {
 				factor = 50
 			}
@@ -1187,10 +1440,10 @@ characters={
 	}
 	DOH_yingrui_advisor = {
 		name = DOH_yingrui_advisor
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/yingrui.png"
-				small="gfx/interface/ideas/idea_yingrui.png"
+				large = "gfx/leaders/DOH/yingrui.png"
+				small = "gfx/interface/ideas/idea_yingrui.png"
 			}
 		}
 		advisor = {
@@ -1199,12 +1452,15 @@ characters={
 			idea_token = yingrui_advisor
 			available = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_junshigaige
 				}
 			}
-			traits = { trait_yingrui }
-
+			traits = {
+				trait_yingrui
+			}
 			ai_will_do = {
 				factor = 50
 			}
@@ -1212,19 +1468,19 @@ characters={
 	}
 	DOH_pinghai_advisor = {
 		name = DOH_pinghai_advisor
-		portraits={
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/pinghai.png"
-				small="gfx/interface/ideas/idea_pinghai.png"
+				large = "gfx/leaders/DOH/pinghai.png"
+				small = "gfx/interface/ideas/idea_pinghai.png"
 			}
 		}
 		advisor = {
 			cost = 100
 			slot = theorist
 			idea_token = pinghai
-			
-			
-			traits = { trait_pinghai }
+			traits = {
+				trait_pinghai
+			}
 			ai_will_do = {
 				factor = 50
 			}
@@ -1232,19 +1488,19 @@ characters={
 	}
 	DOH_haerbin_advisor = {
 		name = DOH_haerbin_advisor
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/haerbin.png"
-				small="gfx/interface/ideas/idea_haerbin.png"
-			} 
+				large = "gfx/leaders/DOH/haerbin.png"
+				small = "gfx/interface/ideas/idea_haerbin.png"
+			}
 		}
 		advisor = {
 			cost = 100
 			slot = theorist
 			idea_token = haerbin
-			
-			
-			traits = { trait_haerbin }
+			traits = {
+				trait_haerbin
+			}
 			ai_will_do = {
 				factor = 50
 			}
@@ -1252,11 +1508,11 @@ characters={
 	}
 	DOH_shaoqian_advisor = {
 		name = DOH_shaoqian_advisor
-		portraits = { 
+		portraits = {
 			army = {
-				large="gfx/leaders/DOH/QBU88.png"
-				small="gfx/interface/ideas/idea_qbu88.png"
-			} 
+				large = "gfx/leaders/DOH/QBU88.png"
+				small = "gfx/interface/ideas/idea_qbu88.png"
+			}
 		}
 		advisor = {
 			cost = 400
@@ -1264,85 +1520,26 @@ characters={
 			idea_token = QBU88
 			available = {
 				if = {
-					limit = { tag = DOH }
+					limit = {
+						tag = DOH
+					}
 					has_completed_focus = DOH_lujunsilingtiba
-                    }	
 				}
+			}
 			visible = {
 				if = {
-					limit = { tag = DOH }
-					has_completed_focus = DOH_lujunsilingtiba
+					limit = {
+						tag = DOH
 					}
+					has_completed_focus = DOH_lujunsilingtiba
+				}
 			}
-			traits = { trait_shaoqian_advisor }
-
+			traits = {
+				trait_shaoqian_advisor
+			}
 			ai_will_do = {
 				factor = 200
 			}
 		}
-	}
-
-	#scientists
-	DOH_dingan_sci = {
-		name = DOH_dingan
-		portraits = { 
-			army = {
-				large="gfx/leaders/DOH/dingan.png"
-				small="gfx/interface/ideas/idea_dingan.png"
-			} 
-		}	
-		scientist = {
-			traits = { scientist_trait_nuclear_specialist scientist_trait_fast_learner }
-			skills = {
-				specialization_nuclear = 1
-			}
-		}
-	}
-	DOH_jian_sci = {
-		name = DOH_jian
-		portraits = { 
-			army = {
-				large="gfx/leaders/DOH/jian.png"
-				small="gfx/interface/ideas/idea_jian.png"
-			} 
-		}
-	
-
-		scientist = {
-			traits = { scientist_trait_artillery_specialist scientist_trait_genius }
-			skills = {
-				specialization_land = 3
-			}
-		}
-	}
-	DOH_huajia_sci = {
-		name = DOH_huajia
-		portraits = { 
-			army = {
-				large="gfx/leaders/DOH/huajia.png"
-				small="gfx/interface/ideas/idea_huajia.png"
-			} 
-		}
-		scientist = {
-			traits = { scientist_trait_surface_ship_specialist scientist_trait_gifted_engineer }
-			skills = {
-				specialization_naval = 1
-			}
-		}
-	}
-	DOH_zhenhai_sci = {
-		name = DOH_zhenhai
-		portraits = { 
-			army = {
-				large="gfx/leaders/DOH/zhenhai.png"
-				small="gfx/interface/ideas/idea_zhenhai.png"
-			} 
-		}
-		scientist = {
-			traits = { scientist_trait_rocketry_specialist scientist_trait_guidance_systems_expert scientist_trait_brilliant_theorist }
-			skills = {
-				specialization_air = 1
-			}
-		}	
 	}
 }

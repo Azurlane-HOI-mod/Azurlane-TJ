@@ -310,3 +310,581 @@ country_event = {
 		create_wargoal = { target = HUN type = take_state_focus }
 	}
 }
+
+country_event = {
+	id = TIX_event.16
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_tizi
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_tizi_xiangshoudangxia }
+			}
+			activate_shine_on_focus = TIX_tizi_xiangshoudangxia
+			set_country_flag = { flag = TIX_tizi_focus_flag days = 140 value = 1 }
+			country_event = { id = TIX_event.17 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_tizi_bisimaigerenchongbai }
+				has_completed_focus = TIX_tizi_xiangshoudangxia
+			}
+			activate_shine_on_focus = TIX_tizi_bisimaigerenchongbai
+			set_country_flag = { flag = TIX_tizi_focus_flag2 days = 140 value = 1 }
+			country_event = { id = TIX_event.17 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_tizi_liyongsuijingzhengce }
+				has_completed_focus = TIX_tizi_bisimaigerenchongbai
+			}
+			activate_shine_on_focus = TIX_tizi_liyongsuijingzhengce
+			set_country_flag = { flag = TIX_tizi_focus_flag3 days = 140 value = 1 }
+			country_event = { id = TIX_event.17 days = 140 }
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot start new focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.17
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_tizi
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_tizi_xiangshoudangxia
+			}
+			complete_national_focus = {
+				focus = TIX_tizi_xiangshoudangxia
+				use_side_message = yes
+				originator_name = TIX_tierpici
+			}
+			clr_country_flag = TIX_tizi_focus_flag
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_tizi_bisimaigerenchongbai
+			}
+			complete_national_focus = {
+				focus = TIX_tizi_bisimaigerenchongbai
+				use_side_message = yes
+				originator_name = TIX_tierpici
+			}
+			clr_country_flag = TIX_tizi_focus_flag2
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_tizi_liyongsuijingzhengce
+			}
+			complete_national_focus = {
+				focus = TIX_tizi_liyongsuijingzhengce
+				use_side_message = yes
+				originator_name = TIX_tierpici
+			}
+			clr_country_flag = TIX_tizi_focus_flag3
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot complete focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.18
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_laibixi
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_lbx_weiheerzhan }
+			}
+			activate_shine_on_focus = TIX_lbx_weiheerzhan
+			set_country_flag = { flag = TIX_lbx_focus_flag days = 140 value = 1 }
+			country_event = { id = TIX_event.19 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_lbx_wanquankongzhimeiti }
+				has_completed_focus = TIX_lbx_weiheerzhan
+			}
+			activate_shine_on_focus = TIX_lbx_wanquankongzhimeiti
+			set_country_flag = { flag = TIX_lbx_focus_flag2 days = 140 value = 1 }
+			country_event = { id = TIX_event.19 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_lbx_quanmianzhanzhengyanjiang }
+				has_completed_focus = TIX_lbx_wanquankongzhimeiti
+			}
+			activate_shine_on_focus = TIX_lbx_quanmianzhanzhengyanjiang
+			set_country_flag = { flag = TIX_lbx_focus_flag3 days = 140 value = 1 }
+			country_event = { id = TIX_event.19 days = 140 }
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot start new focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.19
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_laibixi
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_lbx_weiheerzhan
+			}
+			complete_national_focus = {
+				focus = TIX_lbx_weiheerzhan
+				use_side_message = yes
+				originator_name = TIX_laibixi
+			}
+			clr_country_flag = TIX_lbx_focus_flag
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_lbx_wanquankongzhimeiti
+			}
+			complete_national_focus = {
+				focus = TIX_lbx_wanquankongzhimeiti
+				use_side_message = yes
+				originator_name = TIX_laibixi
+			}
+			clr_country_flag = TIX_lbx_focus_flag2
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_lbx_quanmianzhanzhengyanjiang
+			}
+			complete_national_focus = {
+				focus = TIX_lbx_quanmianzhanzhengyanjiang
+				use_side_message = yes
+				originator_name = TIX_laibixi
+			}
+			clr_country_flag = TIX_lbx_focus_flag3
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot complete focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.20
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_guofangjun
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_gfj_zjzdb }
+			}
+			activate_shine_on_focus = TIX_gfj_zjzdb
+			set_country_flag = { flag = TIX_gfj_focus_flag days = 140 value = 1 }
+			country_event = { id = TIX_event.21 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_gfj_pjjgzyjy }
+				has_completed_focus = TIX_gfj_zjzdb
+			}
+			activate_shine_on_focus = TIX_gfj_pjjgzyjy
+			set_country_flag = { flag = TIX_gfj_focus_flag2 days = 140 value = 1 }
+			country_event = { id = TIX_event.21 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_gfj_xdzz }
+				has_completed_focus = TIX_gfj_pjjgzyjy
+			}
+			activate_shine_on_focus = TIX_gfj_xdzz
+			set_country_flag = { flag = TIX_gfj_focus_flag3 days = 140 value = 1 }
+			country_event = { id = TIX_event.21 days = 140 }
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot start new focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.21
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_guofangjun
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_gfj_zjzdb
+			}
+			complete_national_focus = {
+				focus = TIX_gfj_zjzdb
+				use_side_message = yes
+				originator_name = TIX_aijier
+			}
+			clr_country_flag = TIX_gfj_focus_flag
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_gfj_pjjgzyjy
+			}
+			complete_national_focus = {
+				focus = TIX_gfj_pjjgzyjy
+				use_side_message = yes
+				originator_name = TIX_xingdengbao
+			}
+			clr_country_flag = TIX_gfj_focus_flag2
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_gfj_xdzz
+			}
+			complete_national_focus = {
+				focus = TIX_gfj_xdzz
+				use_side_message = yes
+				originator_name = TIX_aijier
+			}
+			clr_country_flag = TIX_gfj_focus_flag3
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot complete focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.22
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_dangweijun
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_dwj_bsmcfd }
+			}
+			activate_shine_on_focus = TIX_dwj_bsmcfd
+			set_country_flag = { flag = TIX_dwj_focus_flag days = 140 value = 1 }
+			country_event = { id = TIX_event.23 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_dwj_ysgyyq }
+				has_completed_focus = TIX_dwj_bsmcfd
+			}
+			activate_shine_on_focus = TIX_dwj_ysgyyq
+			set_country_flag = { flag = TIX_dwj_focus_flag2 days = 140 value = 1 }
+			country_event = { id = TIX_event.23 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_dwj_kzwzdwj }
+				has_completed_focus = TIX_dwj_ysgyyq
+			}
+			activate_shine_on_focus = TIX_dwj_kzwzdwj
+			set_country_flag = { flag = TIX_dwj_focus_flag3 days = 140 value = 1 }
+			country_event = { id = TIX_event.23 days = 140 }
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot start new focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.23
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_dangweijun
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_dwj_bsmcfd
+			}
+			complete_national_focus = {
+				focus = TIX_dwj_bsmcfd
+				use_side_message = yes
+				originator_name = TIX_feiteliekaer
+			}
+			clr_country_flag = TIX_dwj_focus_flag
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_dwj_ysgyyq
+			}
+			complete_national_focus = {
+				focus = TIX_dwj_ysgyyq
+				use_side_message = yes
+				originator_name = TIX_feiteliekaer
+			}
+			clr_country_flag = TIX_dwj_focus_flag2
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_dwj_kzwzdwj
+			}
+			complete_national_focus = {
+				focus = TIX_dwj_kzwzdwj
+				use_side_message = yes
+				originator_name = TIX_feiteliekaer
+			}
+			clr_country_flag = TIX_dwj_focus_flag3
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot complete focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.24
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_aogusite
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_agst_hsjtdhpy }
+			}
+			activate_shine_on_focus = TIX_agst_hsjtdhpy
+			set_country_flag = { flag = TIX_agst_focus_flag days = 140 value = 1 }
+			country_event = { id = TIX_event.25 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_agst_tzhkyjs }
+				has_completed_focus = TIX_agst_hsjtdhpy
+			}
+			activate_shine_on_focus = TIX_agst_tzhkyjs
+			set_country_flag = { flag = TIX_agst_focus_flag2 days = 140 value = 1 }
+			country_event = { id = TIX_event.25 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_agst_mczfzw }
+				has_completed_focus = TIX_agst_tzhkyjs
+			}
+			activate_shine_on_focus = TIX_agst_mczfzw
+			set_country_flag = { flag = TIX_agst_focus_flag3 days = 140 value = 1 }
+			country_event = { id = TIX_event.25 days = 140 }
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot start new focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.25
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_aogusite
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_agst_hsjtdhpy
+			}
+			complete_national_focus = {
+				focus = TIX_agst_hsjtdhpy
+				use_side_message = yes
+				originator_name = TIX_aogusite
+			}
+			clr_country_flag = TIX_agst_focus_flag
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_agst_tzhkyjs
+			}
+			complete_national_focus = {
+				focus = TIX_agst_tzhkyjs
+				use_side_message = yes
+				originator_name = TIX_aogusite
+			}
+			clr_country_flag = TIX_agst_focus_flag2
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_agst_mczfzw
+			}
+			complete_national_focus = {
+				focus = TIX_agst_mczfzw
+				use_side_message = yes
+				originator_name = TIX_aogusite
+			}
+			clr_country_flag = TIX_agst_focus_flag3
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot complete focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.26
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_u81
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_u81_mzzzhjxq }
+			}
+			activate_shine_on_focus = TIX_u81_mzzzhjxq
+			activate_shine_on_focus = TIX_fazhanhaijun
+			set_country_flag = { flag = TIX_u81_focus_flag days = 140 value = 1 }
+			country_event = { id = TIX_event.27 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_u81_jxzcntrhj }
+				has_completed_focus = TIX_u81_mzzzhjxq
+			}
+			activate_shine_on_focus = TIX_u81_jxzcntrhj
+			activate_shine_on_focus = TIX_pingweijian
+			activate_shine_on_focus = TIX_zhulijian
+			activate_shine_on_focus = TIX_hangmu
+			activate_shine_on_focus = TIX_qianting
+			set_country_flag = { flag = TIX_u81_focus_flag2 days = 140 value = 1 }
+			country_event = { id = TIX_event.27 days = 140 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_completed_focus = TIX_u81_lqzs }
+				has_completed_focus = TIX_u81_jxzcntrhj
+			}
+			activate_shine_on_focus = TIX_u81_lqzs
+			activate_shine_on_focus = TIX_xiaojianshengchan
+			activate_shine_on_focus = TIX_xinhaijun
+			activate_shine_on_focus = TIX_mokuaihuashengchan
+			set_country_flag = { flag = TIX_u81_focus_flag3 days = 140 value = 1 }
+			country_event = { id = TIX_event.27 days = 140 }
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot start new focus"
+		}
+	}
+}
+
+country_event = {
+	id = TIX_event.27
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_focus = TIX_hxjt_u81
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_u81_mzzzhjxq
+			}
+			complete_national_focus = {
+				focus = TIX_u81_mzzzhjxq
+				use_side_message = yes
+				originator_name = TIX_u81
+			}
+			clr_country_flag = TIX_u81_focus_flag
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_u81_jxzcntrhj
+			}
+			complete_national_focus = {
+				focus = TIX_u81_jxzcntrhj
+				use_side_message = yes
+				originator_name = TIX_u81
+			}
+			clr_country_flag = TIX_u81_focus_flag2
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = TIX_u81_lqzs
+			}
+			complete_national_focus = {
+				focus = TIX_u81_lqzs
+				use_side_message = yes
+				originator_name = TIX_u81
+			}
+			clr_country_flag = TIX_u81_focus_flag3
+		}
+		else = { #Debug logs
+			#log = "SOMETHING WENT WRONG WITH TODT's FOCUS BRANCH - Cannot complete focus"
+		}
+	}
+}

@@ -9,7 +9,7 @@ focus_tree = {
 	id = tiexue_focus
 	shared_focus = AL_zhuanyi
 	shared_focus = AL_gujun
-	shared_focus = AL_junshi
+	shared_focus = AL_junshi 
 	country = {
 		factor = 0
 		modifier = {
@@ -17,8 +17,12 @@ focus_tree = {
 			tag = TIX
 		}
 	}
+	inlay_window = {
+		id = tix_inner_circle_inlay_window
+		position = { x = 3900 y = 850 }
+	}
 	default = no
-	#sairenmod	
+	#sairenmod
 	focus = {
 		id = TIX_libingmoma_sr
 		icon = GFX_fflag_TIX
@@ -611,13 +615,12 @@ focus_tree = {
 	focus = {
 		id = TIX_libingmoma
 		icon = GFX_fflag_TIX
-		x = 12
+		x = 6
 		y = 1
 		relative_position_id = TIX_tiewanyuanshou
 		cost = 2
 		prerequisite = {
 			focus = TIX_tiewanyuanshou
-			focus = TIX_yinghuiougen
 		}
 		ai_will_do = {
 			factor = 1
@@ -883,14 +886,14 @@ focus_tree = {
 			focus = TIX_hansikafeichang
 		}
 		relative_position_id = TIX_hansikafeichang
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 9
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.15
+			add_political_power = 50
+			add_stability = 0.12
 			add_war_support = 0.08
 		}
 	}
@@ -995,7 +998,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_jituanwaimaobu
-		icon = GFX_focus_generic_currency_reforms
+		icon = GFX_focus_generic_devaluation
 		x = 2
 		y = 1
 		prerequisite = {
@@ -1210,6 +1213,26 @@ focus_tree = {
 		ai_will_do = {
 			factor = 3
 		}
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -1228,6 +1251,26 @@ focus_tree = {
 		}
 		relative_position_id = TIX_fazhanhaijun
 		cost = 5
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+		}
 		ai_will_do = {
 			factor = 3
 		}
@@ -1255,6 +1298,26 @@ focus_tree = {
 		}
 		relative_position_id = TIX_pingweijian
 		cost = 5
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+		}
 		ai_will_do = {
 			factor = 5
 		}
@@ -1276,6 +1339,26 @@ focus_tree = {
 		}
 		relative_position_id = TIX_fazhanhaijun
 		cost = 5
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+		}
 		ai_will_do = {
 			factor = 3
 		}
@@ -1302,6 +1385,26 @@ focus_tree = {
 		}
 		relative_position_id = TIX_fazhanhaijun
 		cost = 5
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+		}
 		ai_will_do = {
 			factor = 3
 		}
@@ -1328,6 +1431,26 @@ focus_tree = {
 		}
 		relative_position_id = TIX_fazhanhaijun
 		cost = 5
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+		}
 		ai_will_do = {
 			factor = 3
 		}
@@ -1342,16 +1465,35 @@ focus_tree = {
 				uses = 2
 				category = ss_tech
 			}
-			add_ideas = GER_rudeltaktik_ns
 		}
 	}
 	focus = {
 		id = TIX_mokuaihuashengchan
-		icon = GFX_goal_generic_wolf_pack
+		icon = GFX_focus_generic_midget_submarines
 		x = 0
 		y = 1
 		prerequisite = {
 			focus = TIX_qianting
+		}
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
 		}
 		relative_position_id = TIX_qianting
 		cost = 5
@@ -1383,6 +1525,26 @@ focus_tree = {
 		prerequisite = {
 			focus = TIX_hangmu
 		}
+		available = {	
+			or = {
+			not = { has_completed_focus = TIX_hxjt_u81 }
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+			or = {
+			has_completed_focus = TIX_hxjt_aogusite
+			not = { 
+			has_country_leader = {
+				character = TIX_bisimai
+				ruling_only = yes
+				} 
+			}
+			}
+		}
 		relative_position_id = TIX_qianting
 		cost = 10
 		ai_will_do = {
@@ -1412,6 +1574,9 @@ focus_tree = {
 		prerequisite = {
 			focus = TIX_xinhaijun
 		}
+		available = {	
+			
+		}
 		relative_position_id = TIX_xinhaijun
 		cost = 10
 		ai_will_do = {
@@ -1430,7 +1595,7 @@ focus_tree = {
 		icon = GFX_focus_GER_army
 		x = 28
 		y = 0
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 9
 		}
@@ -1440,7 +1605,7 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		relative_position_id = TIX_fanduibisimai
 		completion_reward = {
-			army_experience = 100
+			army_experience = 150
 			if = {
 				limit = {
 					has_global_flag = MOD_azurlane_sairenzhizai
@@ -1933,7 +2098,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TIX_tiexuebubingban
-		icon = GFX_focus_GER_expand_ss_security_duties
+		icon = GFX_focus_GER_appease_the_wehrmacht
 		x = -2
 		y = 1
 		relative_position_id = TIX_fazhanbubing
@@ -2345,8 +2510,8 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = TIX_fanduibisimai
 		}
-		cost = 10
-		ai_will_do = {
+		cost = 5
+		ai_will_do = { 
 			factor = 20
 		}
 		cancel_if_invalid = yes
@@ -2354,9 +2519,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
-		}
+		} 
 		completion_reward = {
-			add_political_power = 200
+			add_political_power = 120
 			set_party_name = {
 				ideology = fascism
 				long_name = "俾斯麦元首最忠实的铁血帝国党"
@@ -2373,7 +2538,7 @@ focus_tree = {
 		prerequisite = {
 			focus = TIX_yihuigaige
 		}
-		cost = 9
+		cost = 7
 		ai_will_do = {
 			factor = 11
 			modifier = {
@@ -2488,7 +2653,7 @@ focus_tree = {
 	focus = {
 		id = TIX_fanduibisimai
 		icon = GFX_focus_bisimai_prison
-		x = 40
+		x = 46
 		y = 0
 		cost = 3
 		mutually_exclusive = {
@@ -2950,6 +3115,7 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			custom_effect_tooltip = TIX_mianchuzhaiwu_tips
 			add_ideas = TIX_jungongfuheti_idea
 		}
 	}
@@ -2963,7 +3129,7 @@ focus_tree = {
 			focus = TIX_zhengshijiegaunguojiaquanli
 		}
 		relative_position_id = TIX_zhengshijiegaunguojiaquanli
-		available = {
+		available = { 
 			has_completed_focus = TIX_chongjiangongye
 		}
 		ai_will_do = {
@@ -3280,7 +3446,7 @@ focus_tree = {
 			focus = TIX_shouhuzuihaodeougen
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 0
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -3471,6 +3637,7 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.25
 			}
+			add_ideas = TIX_pjjgzyjy_idea
 		}
 	}
 	focus = {
@@ -3524,6 +3691,7 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			custom_effect_tooltip = TIX_mianchuzhaiwu_tips
 			custom_effect_tooltip = TIX_huanxingfeitelie_effect_tooltip
 			hidden_effect = {
 				country_event = TIX_event.9
@@ -4272,7 +4440,7 @@ focus_tree = {
 	focus = {
 		id = TIX_lingtuzhihuan
 		icon = GFX_goal_generic_dangerous_deal
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = TIX_jiekesiluofakedemingyun
 		#prerequisite = {focus = TIX_jiekesiluofakedemingyun }
@@ -4311,7 +4479,7 @@ focus_tree = {
 	focus = {
 		id = TIX_danzehuozhanzheng
 		icon = GFX_focus_GER_danzig_or_war
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = TIX_jiekesiluofakedemingyun
 		prerequisite = {
@@ -4392,9 +4560,10 @@ focus_tree = {
 	focus = {
 		id = TIX_weisebaoxingdong
 		icon = GFX_focus_GER_operation_wesserubung
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = TIX_danzehuozhanzheng
+		mutually_exclusive = { focus = TIX_beifanglianmeng }
 		prerequisite = {
 			focus = TIX_danzehuozhanzheng
 			focus = TIX_lingtuzhihuan
@@ -4446,9 +4615,69 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = TIX_beifanglianmeng
+		icon = GFX_focus_generic_scandinavia_flags
+		x = -1
+		y = 1
+		relative_position_id = TIX_danzehuozhanzheng
+		mutually_exclusive = { focus = TIX_weisebaoxingdong }
+		prerequisite = {
+			focus = TIX_danzehuozhanzheng
+			focus = TIX_lingtuzhihuan
+		}
+		cost = 5
+		will_lead_to_war_with = DEN
+		will_lead_to_war_with = NOR
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			has_war = no
+			has_completed_focus = TIX_tizi_liyongsuijingzhengce
+		}
+		bypass = {
+		}
+		completion_reward = {
+			guojishengyu_down_3 = yes
+			add_named_threat = {
+				threat = 5
+				name = "向北欧扩张"
+			}
+			if = {
+			limit = {
+			country_exists = DEN
+			DEN = { is_puppet = no }
+			}
+			DEN = { country_event = az_tianjiang.307 }
+			}
+			if = {
+			limit = {
+			country_exists = NOR
+			NOR = { is_puppet = no }
+			}
+			NOR = { country_event = az_tianjiang.307 }
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				set_autonomy = {
+					target = DEN
+					autonomous_state = autonomy_reichskommissariat
+				}
+				set_autonomy = {
+					target = NOR
+					autonomous_state = autonomy_reichskommissariat
+				}						
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = DEN type = take_state_focus }
+				create_wargoal = { target = NOR type = take_state_focus }
+
+			}
+		}
+	}
+	focus = {
 		id = TIX_diyiciweiyenazhongcai
 		icon = GFX_goal_generic_forceful_treaty
-		x = 1
+		x = 3
 		y = 1
 		relative_position_id = TIX_tunbingaodili
 		prerequisite = {
@@ -4632,7 +4861,7 @@ focus_tree = {
 	focus = {
 		id = TIX_sudetiaoyue
 		icon = GFX_goal_molotov_ribbentrop_pact
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = TIX_difangxifang
 		prerequisite = {
@@ -4659,6 +4888,8 @@ focus_tree = {
 			NOT = {
 				has_war_with = BFL
 			}
+			not = { has_completed_focus = TIX_hxjt_tizi }
+			not = { has_completed_focus = TIX_lingtuzhihuan }
 		}
 		completion_reward = {
 			guojishengyu_up_5 = yes
@@ -4742,9 +4973,11 @@ focus_tree = {
 		relative_position_id = TIX_didigongshi
 		prerequisite = {
 			focus = TIX_didigongshi
+			focus = TIX_jianligelixian
 		}
 		prerequisite = {
 			focus = TIX_weisebaoxingdong
+			focus = TIX_beifanglianmeng
 		}
 		cost = 3
 		will_lead_to_war_with = YUW
@@ -4762,6 +4995,7 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = TIX_yubilanhangxianjiaohao
 			}
+			NOT = { has_non_aggression_pact_with = YUW }
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -4792,8 +5026,9 @@ focus_tree = {
 	focus = {
 		id = TIX_didigongshi
 		icon = GFX_focus_GER_around_maginot
-		x = 0
+		x = 1
 		y = 1
+		mutually_exclusive = { focus = TIX_jianligelixian }
 		relative_position_id = TIX_lingtuzhihuan
 		prerequisite = {
 			focus = TIX_lingtuzhihuan
@@ -4852,10 +5087,59 @@ focus_tree = {
 					country_event = TIX_event.10
 				}
 			}
-			add_ai_strategy = {
-				type = declare_war
-				id = YUW
-				value = 200
+		}
+	}
+	focus = {
+		id = TIX_jianligelixian
+		icon = GFX_focus_generic_influence_benelux
+		x = -1
+		y = 1
+		relative_position_id = TIX_lingtuzhihuan
+		prerequisite = {
+			focus = TIX_lingtuzhihuan
+			focus = TIX_danzehuozhanzheng
+		}
+		mutually_exclusive = { focus = TIX_didigongshi }
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			has_war = no
+			has_completed_focus = TIX_tizi_liyongsuijingzhengce
+		}
+		bypass = {
+			or = {
+			YUW = {
+				has_completed_focus = YUW_didisanguodemingyun
+			}
+			AND = {
+			not = { country_exists = HOL }
+			not = { country_exists = LUX }
+			}
+			}
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			YUW = { country_event = az_tianjiang.317 }
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				diplomatic_relation = {
+					country = YUW
+					relation = non_aggression_pact
+					active = yes
+				}
+				transfer_state = 35
+				transfer_state = 36
+				transfer_state = 7
+				transfer_state = 8					
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = HOL type = take_state_focus }
+				create_wargoal = { target = BEL type = take_state_focus }
+				create_wargoal = { target = LUX type = take_state_focus }
+				create_wargoal = { target = YUW type = take_state_focus }
 			}
 		}
 	}
@@ -5576,7 +5860,7 @@ focus_tree = {
 	focus = {
 		id = TIX_dongfangmengyou
 		icon = GFX_focus_jap_spiritual_mobilization
-		x = -10
+		x = -11
 		y = 1
 		relative_position_id = TIX_tiexuededaolu
 		prerequisite = {
@@ -5857,7 +6141,7 @@ focus_tree = {
 	focus = {
 		id = TIX_beifangdejuxiong
 		icon = GFX_goal_generic_major_alliance
-		x = 9
+		x = 11
 		y = 1
 		relative_position_id = TIX_tiexuededaolu
 		prerequisite = {
@@ -7488,6 +7772,7 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			create_faction = "舰娘联合国"
+			custom_effect_tooltip = YUW_tips
 		}
 	}
 	focus = {
@@ -8396,6 +8681,1326 @@ focus_tree = {
 			modifier = TIX_touruzuizhongbingqi
 			scope = TIX
 			}
+			}
+		}
+	}
+	
+	#############################################################################核心圈子#####################################################################
+	focus = {
+		id = TIX_hexinjituan
+		icon = GFX_focus_baifangbisimai
+		x = 19
+		y = 1
+		relative_position_id = TIX_yihuigaige
+		cost = 5
+		prerequisite = {
+			focus = TIX_yihuigaige
+			focus = TIX_fanduibisimai
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			has_government = fascism
+			not = { has_completed_focus = TIX_fanduibisimai }
+			has_country_leader = {
+				ruling_only = yes
+				character = TIX_bisimai
+			}
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			custom_effect_tooltip = GER_fuhrerprinzip_inner_circle_tt
+			custom_effect_tooltip = TIX_xinyuanshou_wuhexinquan
+			add_political_power = 80
+			add_stability = 0.05
+			
+		}
+	}
+	focus = {
+		id = TIX_hxjt_tizi
+		icon = GFX_foucs_tierbici
+		x = -5
+		y = 1
+		relative_position_id = TIX_hexinjituan
+		cost = 2
+		prerequisite = {
+			focus = TIX_hexinjituan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = TIX_hxjt_laibixi }
+		available = {
+			has_government = fascism
+			has_country_leader = {
+				ruling_only = yes
+				character = TIX_bisimai
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIX_ascension_of_character_tt
+				CHARACTER = TIX_tierpici
+			}
+			custom_effect_tooltip = TIX_hexinquanzi_tizinl
+			hidden_effect = { 
+				country_event = { id = TIX_event.16 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_tizi_xiangshoudangxia
+		icon = GFX_focus_AUS_lawmaking_leniency
+		x = 0
+		y = 1
+		relative_position_id = TIX_hxjt_tizi
+		cost = 20
+		prerequisite = {
+			focus = TIX_hxjt_tizi
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_tizi_focus_flag
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_tierpici
+						FLAG_DAYS = [?TIX_tizi_focus_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_bisimai
+						FOCUS = TIX_hxjt_tizi
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "挖掘技术"
+				uses = 1
+				ahead_reduction = 2
+				category = excavation_tech
+			}
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 5
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = { 
+				country_event = { id = TIX_event.16 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_tizi_bisimaigerenchongbai
+		icon = GFX_focus_GER_expand_ss_security_duties
+		x = 0
+		y = 1
+		relative_position_id = TIX_tizi_xiangshoudangxia
+		cost = 20
+		prerequisite = {
+			focus = TIX_tizi_xiangshoudangxia
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_tizi_focus_flag2
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_tierpici
+						FLAG_DAYS = [?TIX_tizi_focus_flag2:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_tierpici
+						FOCUS = TIX_tizi_xiangshoudangxia
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "建筑科技"
+				uses = 1
+				ahead_reduction = 2
+				category = construction_tech
+			}
+			add_political_power = 200
+			add_stability = 0.3
+			add_war_support = 0.3
+			hidden_effect = { 
+				country_event = { id = TIX_event.16 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_tizi_liyongsuijingzhengce
+		icon = GFX_focus_GER_establish_protectorates_in_america
+		x = 0
+		y = 1
+		relative_position_id = TIX_tizi_bisimaigerenchongbai
+		cost = 20
+		prerequisite = {
+			focus = TIX_tizi_bisimaigerenchongbai
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_tizi_focus_flag3
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_tierpici
+						FLAG_DAYS = [?TIX_tizi_focus_flag3:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_tierpici
+						FOCUS = TIX_tizi_bisimaigerenchongbai
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = TIX_liyongsuijing_tips
+		}
+	}
+	
+	focus = {
+		id = TIX_hxjt_laibixi
+		icon = GFX_foucs_laibixi
+		x = -3
+		y = 1
+		relative_position_id = TIX_hexinjituan
+		cost = 2
+		prerequisite = {
+			focus = TIX_hexinjituan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = TIX_hxjt_tizi }
+		available = {
+			has_government = fascism
+			has_country_leader = {
+				ruling_only = yes
+				character = TIX_bisimai
+			}
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIX_ascension_of_character_tt
+				CHARACTER = TIX_laibixi
+			}
+			custom_effect_tooltip = TIX_hexinquanzi_lbxnl
+			hidden_effect = { 
+				country_event = { id = TIX_event.18 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_lbx_weiheerzhan
+		icon = GFX_focus_AUS_integrate_dnsap_remnants
+		x = 0
+		y = 1
+		relative_position_id = TIX_hxjt_laibixi
+		cost = 20
+		prerequisite = {
+			focus = TIX_hxjt_laibixi
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_lbx_focus_flag
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_laibixi
+						FLAG_DAYS = [?TIX_lbx_focus_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_bisimai
+						FOCUS = TIX_hxjt_laibixi
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "莱比锡计划"
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				random_select_amount = 6
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = { 
+				country_event = { id = TIX_event.18 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_lbx_wanquankongzhimeiti
+		icon = GFX_focus_GER_propaganda_master
+		x = 0
+		y = 1
+		relative_position_id = TIX_lbx_weiheerzhan
+		cost = 20
+		prerequisite = {
+			focus = TIX_lbx_weiheerzhan
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_lbx_focus_flag2
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_laibixi
+						FLAG_DAYS = [?TIX_lbx_focus_flag2:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_laibixi
+						FOCUS = TIX_lbx_weiheerzhan
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "莱比锡计划"
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			set_stability = 1.25
+			hidden_effect = { 
+				country_event = { id = TIX_event.18 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_lbx_quanmianzhanzhengyanjiang
+		icon = GFX_focus_GER_wunderwaffe
+		x = 0
+		y = 1
+		relative_position_id = TIX_lbx_wanquankongzhimeiti
+		cost = 20
+		prerequisite = {
+			focus = TIX_lbx_wanquankongzhimeiti
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_lbx_focus_flag3
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_laibixi
+						FLAG_DAYS = [?TIX_lbx_focus_flag3:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_laibixi
+						FOCUS = TIX_lbx_wanquankongzhimeiti
+					}
+					always = no
+				}
+			}
+			
+			
+		} 
+		completion_reward = {
+			set_war_support = 2
+			custom_effect_tooltip = TIX_jiesuozongtizhanjueyi_tips
+		}
+	}
+	
+	focus = {
+		id = TIX_hxjt_guofangjun
+		icon = GFX_foucs_aijier
+		x = -1
+		y = 1
+		relative_position_id = TIX_hexinjituan
+		cost = 2
+		prerequisite = {
+			focus = TIX_hexinjituan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = TIX_hxjt_dangweijun }
+		available = {
+			has_government = fascism
+			has_completed_focus = TIX_tiexuededaolu
+			has_country_leader = {
+				ruling_only = yes
+				character = TIX_bisimai
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIX_ascension_of_character_tt
+				CHARACTER = TIX_aijier
+			}
+			custom_effect_tooltip = {
+				localization_key = TIX_ascension_of_character_tt
+				CHARACTER = TIX_xingdengbao
+			}
+			custom_effect_tooltip = TIX_hexinquanzi_gfjnl
+			hidden_effect = { 
+				country_event = { id = TIX_event.20 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_gfj_zjzdb
+		icon = GFX_focus_generic_mechanized
+		x = 0
+		y = 1
+		relative_position_id = TIX_hxjt_guofangjun
+		cost = 20
+		prerequisite = {
+			focus = TIX_hxjt_guofangjun
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_gfj_focus_flag
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_aijier
+						FLAG_DAYS = [?TIX_gfj_focus_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_bisimai
+						FOCUS = TIX_hxjt_guofangjun
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = GER_panzergrenadier
+				ahead_reduction = 1
+				bonus = 1
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+			mio:TIX_auto_union_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.05
+			}
+			custom_effect_tooltip = TIX_xiayigehuanxdb_tips
+			hidden_effect = { 
+				country_event = { id = TIX_event.20 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_gfj_pjjgzyjy
+		icon = GFX_focus_GER_prussian_legacy
+		x = 0
+		y = 1
+		relative_position_id = TIX_gfj_zjzdb
+		cost = 20
+		prerequisite = {
+			focus = TIX_gfj_zjzdb
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_gfj_focus_flag2
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_xingdengbao
+						FLAG_DAYS = [?TIX_gfj_focus_flag2:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_aijier
+						FOCUS = TIX_gfj_zjzdb
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = { 
+			add_power_balance_value = {
+				id = TIX_balance
+				value = -0.05
+			}
+			add_ideas = TIX_pjjgzyjy_idea
+			set_country_flag = tix_xdbxiabanle
+			hidden_effect = { 
+				country_event = { id = TIX_event.20 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_gfj_xdzz
+		icon = GFX_focus_GER_appease_the_wehrmacht
+		x = 0
+		y = 1
+		relative_position_id = TIX_gfj_pjjgzyjy
+		cost = 20
+		prerequisite = {
+			focus = TIX_gfj_pjjgzyjy
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_gfj_focus_flag3
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_aijier
+						FLAG_DAYS = [?TIX_gfj_focus_flag3:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_xingdengbao
+						FOCUS = TIX_gfj_pjjgzyjy
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = { 
+			add_power_balance_value = {
+				id = TIX_balance
+				value = -0.1
+			}
+			army_experience = 100
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 1.5
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_hxjt_dangweijun
+		icon = GFX_foucs_feiteliekaer
+		x = 1
+		y = 1
+		relative_position_id = TIX_hexinjituan
+		cost = 2
+		prerequisite = {
+			focus = TIX_hexinjituan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = TIX_hxjt_guofangjun }
+		available = {
+			has_government = fascism
+			has_completed_focus = TIX_tiexuededaolu
+			has_country_leader = {
+				ruling_only = yes
+				character = TIX_bisimai
+			}
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIX_ascension_of_character_tt
+				CHARACTER = TIX_feiteliekaer
+			}
+			custom_effect_tooltip = TIX_hexinquanzi_ftlkenl
+			hidden_effect = { 
+				country_event = { id = TIX_event.22 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_dwj_bsmcfd
+		icon = GFX_focus_manjiu
+		x = 0
+		y = 1
+		relative_position_id = TIX_hxjt_dangweijun
+		cost = 20
+		prerequisite = {
+			focus = TIX_hxjt_dangweijun
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_dwj_focus_flag
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_feiteliekaer
+						FLAG_DAYS = [?TIX_dwj_focus_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_bisimai
+						FOCUS = TIX_hxjt_dangweijun
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_ideas = TIX_ss
+			hidden_effect = { 
+				country_event = { id = TIX_event.22 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_dwj_ysgyyq
+		icon = GFX_focus_GER_expand_gestapo
+		x = 0
+		y = 1
+		relative_position_id = TIX_dwj_bsmcfd
+		cost = 20
+		prerequisite = {
+			focus = TIX_dwj_bsmcfd
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_dwj_focus_flag2
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_feiteliekaer
+						FLAG_DAYS = [?TIX_dwj_focus_flag2:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_feiteliekaer
+						FOCUS = TIX_dwj_bsmcfd
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_power_balance_value = {
+				id = TIX_balance
+				value = 0.05
+			}
+			add_ideas = TIX_gaishitaibao
+			hidden_effect = { 
+				country_event = { id = TIX_event.22 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_dwj_kzwzdwj
+		icon = GFX_focus_GER_hegemony_of_the_ss
+		x = 0
+		y = 1
+		relative_position_id = TIX_dwj_ysgyyq
+		cost = 20
+		prerequisite = {
+			focus = TIX_dwj_ysgyyq
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_dwj_focus_flag3
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_feiteliekaer
+						FLAG_DAYS = [?TIX_dwj_focus_flag3:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_feiteliekaer
+						FOCUS = TIX_dwj_ysgyyq
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_power_balance_value = {
+				id = TIX_balance
+				value = 0.1
+			}
+			swap_ideas = {
+			remove_idea = TIX_gaishitaibao
+			add_idea = TIX_gaishitaibao_ex
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_hxjt_aogusite
+		icon = GFX_foucs_aogusite
+		x = 3
+		y = 1
+		relative_position_id = TIX_hexinjituan
+		cost = 2
+		prerequisite = {
+			focus = TIX_hexinjituan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = TIX_hxjt_u81 }
+		available = {
+			has_government = fascism
+			has_completed_focus = TIX_chongjiangongye
+			has_country_leader = {
+				ruling_only = yes
+				character = TIX_bisimai
+			}
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIX_ascension_of_character_tt
+				CHARACTER = TIX_aogusite
+			}
+			custom_effect_tooltip = TIX_hexinquanzi_agstnl
+			hidden_effect = { 
+				country_event = { id = TIX_event.24 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_agst_hsjtdhpy
+		icon = GFX_focus_GER_optimize_reich_labour_service
+		x = 0
+		y = 1
+		relative_position_id = TIX_hxjt_aogusite
+		cost = 20
+		prerequisite = {
+			focus = TIX_hxjt_aogusite
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_agst_focus_flag
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_aogusite
+						FLAG_DAYS = [?TIX_agst_focus_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_bisimai
+						FOCUS = TIX_hxjt_aogusite
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			mio:TIX_messerschmitt_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.05
+
+					#unlock_mio_trait_tooltip = 
+					#unlock_mio_trait_tooltip = 
+			}
+			mio:TIX_junkers_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.05
+
+					#unlock_mio_trait_tooltip = 
+					#unlock_mio_trait_tooltip = 
+				}
+			hidden_effect = { 
+				country_event = { id = TIX_event.24 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_agst_tzhkyjs
+		icon = GFX_focus_GER_amerikabomber
+		x = 0
+		y = 1
+		relative_position_id = TIX_agst_hsjtdhpy
+		cost = 20
+		prerequisite = {
+			focus = TIX_agst_hsjtdhpy
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_agst_focus_flag2
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_aogusite
+						FLAG_DAYS = [?TIX_agst_focus_flag2:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_aogusite
+						FOCUS = TIX_agst_hsjtdhpy
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = GER_aeronautical_research_institute
+				bonus = 0.5
+				uses = 3
+				category = air_equipment
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.8
+			}
+			hidden_effect = { 
+				country_event = { id = TIX_event.24 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_agst_mczfzw
+		icon = GFX_focus_generic_currency_reforms
+		x = 0
+		y = 1
+		relative_position_id = TIX_agst_tzhkyjs
+		cost = 20
+		prerequisite = {
+			focus = TIX_agst_tzhkyjs
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_agst_focus_flag3
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_aogusite
+						FLAG_DAYS = [?TIX_agst_focus_flag3:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_aogusite
+						FOCUS = TIX_agst_tzhkyjs
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = TIX_mianchuzhaiwu_tips
+		}
+	}
+	
+	focus = {
+		id = TIX_hxjt_u81
+		icon = GFX_foucs_u81
+		x = 5
+		y = 1
+		relative_position_id = TIX_hexinjituan
+		cost = 2
+		prerequisite = {
+			focus = TIX_hexinjituan
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = TIX_hxjt_aogusite }
+		available = {
+			has_government = fascism
+			has_completed_focus = TIX_chongjiangongye
+			has_country_leader = {
+				ruling_only = yes
+				character = TIX_bisimai
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = TIX_ascension_of_character_tt
+				CHARACTER = TIX_u81
+			}
+			custom_effect_tooltip = TIX_hexinquanzi_u81nl
+			hidden_effect = { 
+				country_event = { id = TIX_event.26 days = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_u81_mzzzhjxq
+		icon = GFX_focus_GER_panzerschiff
+		x = 0
+		y = 1
+		relative_position_id = TIX_hxjt_u81
+		cost = 20
+		prerequisite = {
+			focus = TIX_hxjt_u81
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_u81_focus_flag
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_u81
+						FLAG_DAYS = [?TIX_u81_focus_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_bisimai
+						FOCUS = TIX_hxjt_u81
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = TIX_zidongwanchenghaijunguoce_tips
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 4
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 4
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			hidden_effect = { 
+				country_event = { id = TIX_event.26 days = 1 }
+				complete_national_focus = TIX_fazhanhaijun
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_u81_jxzcntrhj
+		icon = GFX_focus_GER_wirtschaftswunder
+		x = 0
+		y = 1
+		relative_position_id = TIX_u81_mzzzhjxq
+		cost = 20
+		prerequisite = {
+			focus = TIX_u81_mzzzhjxq
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_u81_focus_flag2
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_u81
+						FLAG_DAYS = [?TIX_u81_focus_flag2:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_u81
+						FOCUS = TIX_u81_mzzzhjxq
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = TIX_zidongwanchenghaijunguoce_tips
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 4
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 4
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			hidden_effect = { 
+				country_event = { id = TIX_event.26 days = 1 }
+				complete_national_focus = TIX_pingweijian
+				complete_national_focus = TIX_zhulijian
+				complete_national_focus = TIX_hangmu
+				complete_national_focus = TIX_qianting
+			}
+		}
+	}
+	
+	focus = {
+		id = TIX_u81_lqzs
+		icon = GFX_focus_generic_trade_interdiction
+		x = 0
+		y = 1
+		relative_position_id = TIX_u81_jxzcntrhj
+		cost = 20
+		prerequisite = {
+			focus = TIX_u81_jxzcntrhj
+		}
+		ai_will_do = {
+			factor = 0 
+		} 
+		available = { 
+			if = { #ADVISOR WORKING ON THE FOCUS (Show progress)
+				limit = {
+					has_country_flag = TIX_u81_focus_flag3
+				}
+				set_temp_variable = { temp_focus_days = 20 } #For tooltip purposes
+				multiply_temp_variable = { temp_focus_days = 7 } #The constant uses focus cost which is in weeks, so convert to days
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = TIX_u81
+						FLAG_DAYS = [?TIX_u81_focus_flag3:days]
+					}
+					always = no 
+				}
+			}
+			else = { #NOT BEEN WORKED ON (Just Explain)
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = TIX_u81
+						FOCUS = TIX_u81_jxzcntrhj
+					}
+					always = no
+				}
+			}
+			
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = TIX_zidongwanchenghaijunguoce_tips
+			add_ideas = GER_rudeltaktik_ns
+			hidden_effect = {
+			complete_national_focus = TIX_xiaojianshengchan
+			complete_national_focus = TIX_xinhaijun
+			complete_national_focus = TIX_mokuaihuashengchan
 			}
 		}
 	}
