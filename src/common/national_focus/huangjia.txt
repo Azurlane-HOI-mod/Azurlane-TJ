@@ -675,6 +675,10 @@ focus_tree = {
 			army_experience = 250
 			custom_effect_tooltip = "允许解锁第二条陆军学说路线"
 			set_country_flag = TY_army_liluntupo
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 1.0
+			}
 			set_technology = {
 				tactical_withdrawal_huj = 1
 				popup = no
@@ -1126,6 +1130,10 @@ focus_tree = {
 				uses = 6
 				category = naval_equipment
 			}
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 1.5
+			}
 		}
 	}
 	focus = {
@@ -1509,6 +1517,10 @@ focus_tree = {
 			army_experience = 50
 			air_experience = 50
 			add_war_support = 0.2
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 2.5
+			}
 			add_ideas = HUJ_cxrbl
 		}
 	}
@@ -4317,6 +4329,10 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			TY_kongjunliluntupo = yes
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 1.5
+			}
 			add_ideas = HUJ_hjly
 		}
 	}
