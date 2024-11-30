@@ -303,7 +303,7 @@ focus_tree = {
 		icon = GFX_goal_generic_scientific_exchange
 		x = 0
 		y = 3
-		cost = 6
+		cost = 1
 		prerequisite = {
 			focus = DOH_xuexichongying
 		}
@@ -321,7 +321,7 @@ focus_tree = {
 			factor = 5
 		}
 		completion_reward = {
-			add_research_slot = 1
+			unlock_decision_tooltip = DOH_xuxinghaoxue_decision
 			#add_ideas = DOH_xxxx
 		}
 	}
@@ -476,7 +476,7 @@ focus_tree = {
 				has_completed_focus = DOH_donghuangdeshidai
 				has_country_flag = shikongchuansuo_get
 			}
-			has_tech = commercial_nuclear_reactor_tech
+			is_special_project_completed = sp:sp_commercial_nuclear_reactor
 		}
 		completion_reward = {
 			custom_effect_tooltip = DOH_hedian_focus_tooltip
@@ -678,6 +678,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			add_breakthrough_progress = {
+				value = 1.01
+				specialization = specialization_land
+			}
 			if = {
 				limit = {
 					has_completed_focus = DOH_hailufuhe
@@ -741,6 +745,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			add_breakthrough_progress = {
+				value = 0.50
+				specialization = specialization_naval
+			}
 			navy_experience = 25
 			set_technology = {
 				basic_ship_hull_heavy = 1
@@ -1170,7 +1178,7 @@ focus_tree = {
 				}
 				add_breakthrough_progress = {
 					specialization = specialization_air
-					value = 0.5
+					value = 1.5
 				}
 			}
 		}
@@ -3215,6 +3223,7 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
+			add_research_slot = 1
 			every_military_industrial_organization = {
 				add_mio_size = 5
 			}
@@ -3626,7 +3635,7 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_zhengyankaishijie
 		}
-		cost = 2
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}
@@ -3657,7 +3666,7 @@ focus_tree = {
 		relative_position_id = DOH_ziguyilai
 		x = -8
 		y = 0
-		cost = 2
+		cost = 1
 		ai_will_do = {
 			factor = 10
 		}

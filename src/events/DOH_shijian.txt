@@ -542,7 +542,19 @@ country_event = {
 		ai_chance = {
 			factor = 9
 		}
-		create_faction = "东亚反暴政联盟"
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						has_global_flag = AZ_fengkuangAI_citiao_11
+					}
+					DOH = {
+						is_ai = yes
+					}
+				}
+			}
+			create_faction = "东亚反暴政联盟"
+		}
 		add_war_support = 0.2
 		set_autonomy = {
 			target = NEP

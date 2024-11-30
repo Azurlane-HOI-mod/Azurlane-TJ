@@ -1,4 +1,41 @@
 DOH_decision_category = {
+	DOH_xuxinghaoxue_decision = {
+		icon = xingdong
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 1939.1.1
+				add = 10
+			}
+		}
+		visible = {
+			OR = {
+				has_completed_focus = DOH_dongfangdexiaoxuesheng
+				is_debug = yes
+			}
+		}
+		days_remove = 1095
+		complete_effect = {
+			add_research_slot = 3
+		}
+		remove_effect = {
+			add_research_slot = -3
+			add_breakthrough_progress = {
+				value = 1.01
+				specialization = specialization_air
+			}
+			add_breakthrough_progress = {
+				value = 1.01
+				specialization = specialization_land
+			}
+			add_breakthrough_progress = {
+				value = 0.50
+				specialization = specialization_nuclear
+			}
+		}
+		fire_only_once = yes
+		cost = 1000
+	}
 	DOH_display_fake_decision = {
 		icon = xingdong
 		ai_will_do = {
