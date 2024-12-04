@@ -272,7 +272,10 @@ DOH_dalianzaochuan_organization = {
 		}
 		available = {
 			FROM = {
-				num_of_naval_factories > 85
+				OR = {
+					num_of_naval_factories > 85
+					has_completed_focus = DOH_dalianlvshun
+				}
 				has_tech = keyantech_daodan
 			}
 		}

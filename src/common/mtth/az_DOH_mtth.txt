@@ -1,5 +1,5 @@
 DOH_zongjikaizhi_mtth = {
-	base = 1
+	base = 0.01
 	modifier = {
 		always = yes
 		set_temp_variable = {
@@ -303,14 +303,27 @@ DOH_modifier_shichang_effect_1_mtth = {
 	modifier = {
 		always = yes
 		set_temp_variable = {
-			t = mtth:DOH_shichang
+			t = var:DOH_shichang
 		}
 		multiply_temp_variable = {
-			t = 0.4
+			t = 0.02
 		}
 		add = t
 	}
 }
+# DOH_modifier_shichang_effect_2_mtth = {
+# 	base = 0
+# 	modifier = {
+# 		always = yes
+# 		set_temp_variable = {
+# 			t = var:DOH_modifier_shichang_effect_1_mtth
+# 		}
+# 		multiply_temp_variable = {
+# 			t = 0.4
+# 		}
+# 		add = t
+# 	}
+# }
 
 ## 工业目标
 DOH_gongyemubiao_mtth = {

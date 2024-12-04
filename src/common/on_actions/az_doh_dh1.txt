@@ -92,4 +92,25 @@ on_actions = {
 			}
 		}
 	}
+	on_new_term_election = {
+		effect = {
+			add_country_leader_role = {
+				character = DOH_jiangjiang
+				promote_leader = yes
+				country_leader = {
+					ideology = liberalism
+					expire = "2001.1.1.1"
+					traits = {
+
+					}
+				}
+			}
+			country_event = {
+				id = DOH_loong_event.5101
+				days = 3
+				random_days = 3
+			}
+			add_political_power = -100
+		}
+	}
 }

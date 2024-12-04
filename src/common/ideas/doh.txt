@@ -63,6 +63,30 @@ ideas = {
 	}
 	
 	hidden_ideas = {
+		DOH_zujianxingzhengtuandui_idea = {
+			modifier = {
+				mobilization_laws_cost_factor = -0.50
+				trade_laws_cost_factor = -0.50
+				economy_cost_factor = -0.50
+				political_advisor_cost_factor = -0.50
+				tank_manufacturer_cost_factor = -0.50
+				naval_manufacturer_cost_factor = -0.50
+				aircraft_manufacturer_cost_factor = -0.50
+				materiel_manufacturer_cost_factor = -0.50
+				industrial_concern_cost_factor = -0.50
+				theorist_cost_factor = -0.50
+				army_chief_cost_factor = -0.50
+				navy_chief_cost_factor = -0.50
+				air_chief_cost_factor = -0.50
+				high_command_cost_factor = -0.50
+			}			
+		}
+		DOH_maoxianwangfushun = {
+			modifier = {
+				political_power_factor = -0.1
+				command_power_gain_mult = -0.2
+			}			
+		}
 		DOH_stop_cic = {
 			modifier = {
 				cic_construction_boost_factor = -2
@@ -782,6 +806,7 @@ ideas = {
 				production_speed_buildings_factor = 0.3
 				global_building_slots_factor = 0.75
 				production_speed_infrastructure_factor = 0.3
+				production_speed_facility_factor = 0.3
 			}
 		}
 		DOH_idea_jishushengji = {
@@ -792,12 +817,31 @@ ideas = {
 			}
 			modifier = {
 				line_change_production_efficiency_factor = 0.5
-				industrial_capacity_factory = 0.2
-				industrial_capacity_dockyard = 0.2
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
 				production_factory_max_efficiency_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.25
 			}
 		}
+
+		DOH_idea_renrenxiaidexindonghuang = {
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.5
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.25
+				research_speed_factor = 0.1
+				surrender_limit = 0.2
+				improve_relations_maintain_cost_factor = -0.5
+			}
+		}
+
 		DOH_fsfz = {
 			picture = generic_foreign_capital
 
@@ -881,6 +925,27 @@ ideas = {
 				army_org_factor = 0.15
 				conscription = 0.025
 				production_speed_buildings_factor = 0.15
+			}
+		}
+		DOH_idea_renrenxiaidexindonghuang_1 = {
+			picture = DOH_xdh
+
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				line_change_production_efficiency_factor = 0.5
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.25
+				research_speed_factor = 0.2
+				surrender_limit = 0.2
+				improve_relations_maintain_cost_factor = -0.5
+
+				opinion_gain_monthly_factor = 0.35
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
 			}
 		}
 		DOH_xdh = {
@@ -1078,6 +1143,50 @@ ideas = {
 				army_defence_factor = 0.1
 			}
 		}
+		DOH_huolibuzukongjuzheng = {
+			picture = haerbin_huolibuzukongjuzheng
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				army_org_factor = -0.10
+				recon_factor = -0.10
+				army_org_regain = -0.05
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					soft_attack = 0.15
+				}
+				rocket_artillery_equipment = {
+					soft_attack = 0.15
+				}
+				motorized_rocket_equipment = {
+					soft_attack = 0.15
+				}
+				super_heavy_artillery_equipment = {
+					soft_attack = 0.10
+				}
+				self_propelled_super_heavy_artillery_equipment = {
+					soft_attack = 0.10
+				}
+			}
+
+		}
+		DOH_sixiangjiaoyu = {
+			picture = FRA_national_mobilization_focus
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				army_attack_factor = 0.05
+				army_core_attack_factor = 0.10
+				command_abilities_cost_factor = -0.5
+				army_org = 0.25
+				org_loss_at_low_org_factor = -0.1
+				breakthrough_factor = 0.15
+				experience_loss_factor = 0.15
+			}
+		}
 		DOH_dhgytx = {
 			picture = man_five_year_plan_industry
 			allowed_civil_war = {
@@ -1267,6 +1376,18 @@ ideas = {
 				}
 			}
 		}
+
+		DOH_kuojunbeizhan = {
+			picture = man_five_year_plan_industry
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_dockyard_factor = 0.35
+				production_speed_arms_factory_factor = 0.35
+				production_speed_industrial_complex_factor = -0.25
+			}
+		}
 		# DOH_yyhj = {
 		# 	picture = eng_steady_as_she_goes
 		# 	allowed_civil_war = {
@@ -1361,6 +1482,7 @@ ideas = {
 				global_building_slots_factor = 0.4
 				production_speed_buildings_factor = 0.15
 				production_speed_infrastructure_factor = 0.3
+				production_speed_facility_factor = 0.3
 			}
 		}
 		DOH_mzzy = {

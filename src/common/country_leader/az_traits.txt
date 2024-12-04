@@ -282,6 +282,99 @@ leader_traits = {
 		high_command_cost_factor = -0.33
 		political_advisor_cost_factor = -0.33
 	}
+	# 炮火，倾泻如瀑
+	paohuo_qinxierupu = {
+		random = no
+		army_artillery_attack_factor = 0.15
+		army_armor_attack_factor = 0.15
+		breakthrough_factor = 0.15
+		war_support_factor = 0.25
+		recruitable_population = 0.02 
+	}
+	# 纵横方圆
+	zonghengfangyuan = {
+		random = no
+		army_attack_factor = 0.05
+		army_defence_factor = 0.05
+		max_planning = 0.25
+		planning_speed = 0.15
+		stability_factor = 0.15
+		attrition = -0.1
+		supply_consumption_factor = -0.1
+	}
+	# 诈谋奇计
+	zhamouqiji = {
+		random = no
+		recon_factor = 0.15
+		land_night_attack = 0.15
+		naval_night_attack = 0.1
+		carrier_night_traffic = 0.1
+		navy_visibility = -0.1
+		targeted_modifier = {
+			tag = CHY
+			defence = 0.15
+		}
+	}
+	# 深受欢迎的实权元首
+	shenshouhuanyingdeshiquanyuanshou = {
+		random = no
+		stability_factor = 0.25
+		justify_war_goal_time = -0.25
+		war_support_factor = 0.15
+		surrender_limit = 0.15
+	}
+	# 勇无不克
+	yongwubuke = {
+		random = no
+		supply_consumption_factor = 0.05
+		army_speed_factor = 0.15
+		planning_speed = 0.25
+		army_attack_factor = 0.20
+		army_defence_factor = 0.20
+		experience_loss_factor = 0.2
+		org_loss_at_low_org_factor = -0.1
+		wounded_chance_factor = 0.15
+	}
+	# 勇无不克-2
+	yongwubuke_2 = {
+		random = no
+		supply_consumption_factor = 0.05
+		army_speed_factor = 0.15
+		planning_speed = 0.25
+		experience_loss_factor = 0.2
+		org_loss_at_low_org_factor = -0.1
+		wounded_chance_factor = 0.15
+	}
+	# 文曲星
+	wenquxing = {
+		random = no
+		political_power_factor = 0.15
+		research_speed_factor = 0.15
+		stability_factor = 0.15
+		war_support_factor = 0.30
+		industrial_capacity_factory = 0.05
+	}
+	# 因势利导
+	yingshilidao = {
+		random = no
+		max_planning = 0.08
+		planning_speed = 0.15
+		operation_cost = -0.2
+	}
+	# 姜太公钓鱼法（自称）
+	jiangtaigongdiaoyufa = {
+		random = no
+		navy_max_range_factor = 0.15
+		intelligence_agency_defense = 0.50
+	}
+	# 明鉴万里
+	mingjianwanli = {
+		random = no
+		industrial_capacity_factory = 0.1
+		production_speed_buildings_factor = 0.1
+		political_power_cost = -0.15
+		consumer_goods_factor = -0.1
+	}
 	#引风者
 	yfz = {
 		random = no
@@ -289,12 +382,51 @@ leader_traits = {
 		mobilization_speed = 0.25
 		political_power_factor = 0.1
 	}
+	# 光荣的引路人
+	grdylr = {
+		random = no
+		research_speed_factor = 0.15
+		production_speed_facility_factor = 0.2
+		mechanized_defence_factor = 0.15
+		specialization_air_speed_factor = 0.15
+		communism_drift = 0.01
+		equipment_bonus = {
+			rocket_artillery_equipment = {
+				soft_attack = 0.2
+				build_cost_ic = -0.3
+			}
+			motorized_rocket_equipment = {
+				soft_attack = 0.2
+				build_cost_ic = -0.1
+			}
+			ballistic_missile_equipment = {
+				air_range = 0.1
+				maximum_speed = 0.1
+				air_agility = 0.1
+				build_cost_ic = -0.15
+			}
+		}
+	}
 	#人民的逸仙
 	rmdyx = {
 		random = no
 		production_factory_efficiency_gain_factor = 0.1
-		conscription_factor = 0.02
+		conscription = 0.02
+		production_speed_buildings_factor = 0.10
 		political_power_factor = 0.15
+	}
+	# 积极防御
+	jijifangyu = {
+		random = no
+		army_defence_factor = 0.15
+		army_core_defence_factor = 0.30
+		breakthrough_factor = 0.15
+		max_dig_in = 8
+		dig_in_speed_factor = 0.2
+		recon_factor_while_entrenched = 0.2
+		navy_screen_defence_factor = 0.15
+		offensive_war_stability_factor = -0.5
+		defensive_war_stability_factor = 0.5
 	}
 	#矜持的玫瑰
 	jcdmg = {

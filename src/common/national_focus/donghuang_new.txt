@@ -20,11 +20,10 @@ focus_tree = {
 		id = DOH_chenglikeyanzu
 		icon = GFX_goal_tfv_generic_tech_sharing
 		relative_position_id = DOH_zhengyankaishijie
-		x = 0
-		y = 1
+		x = 22
+		y = 0
 		cost = 7
 		prerequisite = {
-			focus = DOH_zhengyankaishijie
 		}
 		ai_will_do = {
 			factor = 10
@@ -137,7 +136,7 @@ focus_tree = {
 				category = industry
 			}
 			set_technology = {
-				bba_early_transport_plane  = 1
+				bba_early_transport_plane = 1
 			}
 		}
 	}
@@ -386,21 +385,17 @@ focus_tree = {
 				radio = 1
 				popup = no
 			}
-			
 		}
 	}
 	focus = {
 		id = DOH_xianjingjishuyanfa
-		icon = GFX_focus_generic_university_3
-		relative_position_id = DOH_wuxiandianjishu
-		x = 1
-		y = 1
+		icon = GFX_focus_research2
+		relative_position_id = DOH_chenglikeyanzu
+		x = 6
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 10
-		}
-		prerequisite = {
-			focus = DOH_wuxiandianjishu
 		}
 		available = {
 			OR = {
@@ -453,14 +448,105 @@ focus_tree = {
 					type = nuclear_facility
 					level = 1
 					instant_build = yes
+					province = 7971
+				}
+				add_building_construction = {
+					type = supply_node
+					level = 1
 					province = 12820
+				}
+			}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				path = {
+					12820
+					7971
+					2028
+					5100
+					12327
+					5057
+					12732
+					2022
+					12797
+					12882
+					531
+					4295
+					4167
+					7418
 				}
 			}
 		}
 	}
 	focus = {
-		id = DOH_liangdanyixing
+		id = DOH_daheiyu
+		icon = GFX_focus_generic_midget_submarines
+		relative_position_id = DOH_xianjingjishuyanfa
+		x = 2
+		y = 3
+		cost = 1
+		prerequisite = {
+			focus = DOH_liangdanyixing
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = "（还没做完）"
+		}
+	}
+	focus = {
+		id = DOH_heianwuqi
 		icon = GFX_focus_wonderweapons
+		relative_position_id = DOH_xianjingjishuyanfa
+		x = 0
+		y = 3
+		cost = 1
+		prerequisite = {
+			focus = DOH_liangdanyixing
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = "（还没做完）"
+		}
+	}
+	focus = {
+		id = DOH_zhijianren
+		icon = GFX_focus_wonderweapons
+		relative_position_id = DOH_heianwuqi
+		x = -1
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = DOH_dongfeng
+		}
+		prerequisite = {
+			focus = DOH_heianwuqi
+		}
+		prerequisite = {
+			focus = DOH_daheiyu
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = "（还没做完）"
+		}
+	}
+	focus = {
+		id = DOH_liangdanyixing
+		icon = GFX_focus_generic_nuclear_development
 		relative_position_id = DOH_xianjingjishuyanfa
 		x = 0
 		y = 1
@@ -473,7 +559,7 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				has_completed_focus = DOH_donghuangdeshidai
+				has_completed_focus = DOH_shanhejinxiu
 				has_country_flag = shikongchuansuo_get
 			}
 			is_special_project_completed = sp:sp_commercial_nuclear_reactor
@@ -746,7 +832,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_breakthrough_progress = {
-				value = 0.50
+				value = 0.5
 				specialization = specialization_naval
 			}
 			navy_experience = 25
@@ -964,7 +1050,6 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 			}
-			
 			set_technology = {
 				mtg_transport = 1
 			}
@@ -1139,12 +1224,14 @@ focus_tree = {
 			factor = 3
 		}
 		available = {
+			always = no
 			has_completed_focus = DOH_xianjingjishuyanfa
-			has_completed_focus = DOH_donghuangdeshidai
+			has_completed_focus = DOH_shanhejinxiu
 			has_tech = advanced_rocket_engines
 		}
 		completion_reward = {
 			add_ideas = DOH_dongfeng_idea_0
+			custom_effect_tooltip = "（还没做完）"
 		}
 	}
 	focus = {
@@ -1168,10 +1255,10 @@ focus_tree = {
 					has_dlc = "By Blood Alone"
 				}
 				add_tech_bonus = {
-				name = "铁鸢"
-				bonus = 2
-				uses = 3
-				category = plane_modules_tech
+					name = "铁鸢"
+					bonus = 2
+					uses = 3
+					category = plane_modules_tech
 				}
 				set_technology = {
 					improved_medium_airframe = 1
@@ -1187,7 +1274,7 @@ focus_tree = {
 	focus = {
 		id = DOH_zhengyankaishijie
 		icon = GFX_goal_generic_demand_territory
-		x = 27
+		x = 22
 		y = 1
 		cost = 4
 		ai_will_do = {
@@ -1246,7 +1333,7 @@ focus_tree = {
 		id = DOH_shiyichangji
 		icon = GFX_goal_generic_intelligence_exchange
 		relative_position_id = DOH_zhengyankaishijie
-		x = -13
+		x = 0
 		y = 1
 		prerequisite = {
 			focus = DOH_zhengyankaishijie
@@ -1296,7 +1383,7 @@ focus_tree = {
 	focus = {
 		id = DOH_xuexizhilv
 		icon = GFX_goal_generic_scientific_exchange
-		x = -3
+		x = -7
 		y = 1
 		prerequisite = {
 			focus = DOH_shiyichangji
@@ -1322,9 +1409,367 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = DOH_daduoshu
+		relative_position_id = DOH_yubeilianjiaoliu
+		prerequisite = {
+			focus = DOH_yubeilianjiaoliu
+		}
+		mutually_exclusive = {
+			focus = DOH_jijifangyu
+			focus = DOH_pingwenxuanze
+			focus = DOH_ewairenxuan
+		}
+		available = {
+			always = no
+		}
+		icon = GFX_focus_anshan
+		cost = 700
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_country_leader_role = {
+				character = DOH_anshan
+				promote_leader = yes
+				country_leader = {
+					ideology = leninism
+					expire = "2001.1.1.1"
+					traits = {
+						grdylr
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DOH_jijifangyu
+		relative_position_id = DOH_yubeilianjiaoliu
+		prerequisite = {
+			focus = DOH_yubeilianjiaoliu
+		}
+		available = {
+			always = no
+		}
+		mutually_exclusive = {
+			focus = DOH_pingwenxuanze
+			focus = DOH_ewairenxuan
+			focus = DOH_daduoshu
+		}
+		icon = GFX_focus_taiyuan
+		cost = 700
+		x = 1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_country_leader_role = {
+				character = DOH_taiyuan
+				promote_leader = yes
+				country_leader = {
+					ideology = leninism
+					expire = "2001.1.1.1"
+					traits = {
+						jijifangyu
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DOH_pingwenxuanze
+		relative_position_id = DOH_yubeilianjiaoliu
+		icon = GFX_focus_another_yixian
+		prerequisite = {
+			focus = DOH_yubeilianjiaoliu
+		}
+		mutually_exclusive = {
+			focus = DOH_jijifangyu
+			focus = DOH_ewairenxuan
+			focus = DOH_daduoshu
+		}
+		available = {
+			always = no
+		}
+		cost = 700
+		x = -3
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			if = {
+				limit = {
+					NOT = {
+						DOH_yixian = {
+							is_country_leader = yes
+						}
+					}
+				}
+				add_country_leader_role = {
+					character = DOH_yixian
+					promote_leader = yes
+					country_leader = {
+						ideology = leninism
+						expire = "2001.1.1.1"
+						traits = {
+							dhzh
+							rmdyx
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					DOH_yixian = {
+						is_country_leader = yes
+					}
+				}
+				add_country_leader_trait = rmdyx
+			}
+		}
+	}
+	focus = {
+		id = DOH_ewairenxuan
+		relative_position_id = DOH_yubeilianjiaoliu
+		icon = GFX_focus_haerbin
+		prerequisite = {
+			focus = DOH_yubeilianjiaoliu
+		}
+		mutually_exclusive = {
+			focus = DOH_jijifangyu
+			focus = DOH_pingwenxuanze
+			focus = DOH_daduoshu
+		}
+		available = {
+			NOT = {
+				country_exists = DH1
+			}
+			always = no
+		}
+		cost = 700
+		x = 3
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_country_leader_role = {
+				character = DOH_haerbin
+				promote_leader = yes
+				country_leader = {
+					ideology = leninism
+					expire = "2001.1.1.1"
+					traits = {
+						paohuo_qinxierupu
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DOH_wunianjihua
+		relative_position_id = DOH_yubeilianjiaoliu
+		icon = GFX_fflag_BFL
+		available = {
+			NOT = {
+				has_completed_focus = DOH_ewairenxuan
+			}
+		}
+		prerequisite = {
+			focus = DOH_jijifangyu
+			focus = DOH_pingwenxuanze
+			focus = DOH_ewairenxuan
+			focus = DOH_daduoshu
+		}
+		mutually_exclusive = {
+			# focus = DOH_wunianjihua
+			focus = DOH_junshiyouxian
+			focus = DOH_fenyongdangxian
+			focus = DOH_yindaoyuzhichi
+			focus = DOH_junhengfazhan
+		}
+		cost = 5
+		x = -2
+		y = 2
+		completion_reward = {
+			add_timed_idea = {
+				idea = DOH_kuojunbeizhan
+				days = 90
+			}
+			BFL = {
+				country_event = {
+					id = DOH_loong_event.4001
+					days = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = DOH_junshiyouxian
+		relative_position_id = DOH_yubeilianjiaoliu
+		available = {
+			NOT = {
+				has_completed_focus = DOH_ewairenxuan
+			}
+		}
+		prerequisite = {
+			focus = DOH_jijifangyu
+			focus = DOH_pingwenxuanze
+			focus = DOH_ewairenxuan
+			focus = DOH_daduoshu
+		}
+		mutually_exclusive = {
+			focus = DOH_wunianjihua
+			# focus = DOH_junshiyouxian
+			focus = DOH_fenyongdangxian
+			focus = DOH_yindaoyuzhichi
+			focus = DOH_junhengfazhan
+		}
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		cost = 5
+		x = 0
+		y = 2
+		completion_reward = {
+			add_timed_idea = {
+				idea = DOH_kuojunbeizhan
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = DOH_junhengfazhan
+		relative_position_id = DOH_yubeilianjiaoliu
+		icon = GFX_focus_generic_modernize_industry
+		available = {
+			NOT = {
+				has_completed_focus = DOH_ewairenxuan
+			}
+		}
+		prerequisite = {
+			focus = DOH_jijifangyu
+			focus = DOH_pingwenxuanze
+			focus = DOH_ewairenxuan
+			focus = DOH_daduoshu
+		}
+		mutually_exclusive = {
+			focus = DOH_wunianjihua
+			focus = DOH_junshiyouxian
+			focus = DOH_fenyongdangxian
+			focus = DOH_yindaoyuzhichi
+			# focus = DOH_junhengfazhan
+		}
+		cost = 5
+		x = -4
+		y = 2
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4
+			}
+		}
+	}
+	focus = {
+		id = DOH_pinghaidejunduijianshefangan
+		relative_position_id = DOH_yubeilianjiaoliu
+		icon = GFX_focus_pinghai
+		cost = 9
+		prerequisite = {
+			focus = DOH_wunianjihua
+			focus = DOH_junshiyouxian
+			focus = DOH_junhengfazhan
+			focus = DOH_yindaoyuzhichi
+			focus = DOH_fenyongdangxian
+		}
+		mutually_exclusive = {
+			focus = DOH_zhenhaidetiyi
+			focus = DOH_haerbindejianyi
+		}
+		x = -2
+		y = 3
+		completion_reward = {
+			add_ideas = DOH_sixiangjiaoyu
+			add_doctrine_cost_reduction = {
+				name = "平海的军队建设方案"
+				cost_reduction = 0.25
+				uses = 3
+				category = cat_mass_assault
+			}
+		}
+	}
+	focus = {
+		id = DOH_zhenhaidetiyi
+		relative_position_id = DOH_yubeilianjiaoliu
+		icon = GFX_focus_zhenhai
+		cost = 9
+		prerequisite = {
+			focus = DOH_wunianjihua
+			focus = DOH_junshiyouxian
+			focus = DOH_junhengfazhan
+			focus = DOH_yindaoyuzhichi
+			focus = DOH_fenyongdangxian
+		}
+		mutually_exclusive = {
+			focus = DOH_pinghaidejunduijianshefangan
+			focus = DOH_haerbindejianyi
+		}
+		x = 0
+		y = 3
+		completion_reward = {
+			every_army_leader = {
+				add_skill_level = 1
+				add_planning = 2
+			}
+			add_doctrine_cost_reduction = {
+				name = "镇海的提议"
+				cost_reduction = 0.25
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = DOH_haerbindejianyi
+		relative_position_id = DOH_yubeilianjiaoliu
+		icon = GFX_SOV_soviet_artillery_ccp_2d_sov_compatibility
+		cost = 9
+		prerequisite = {
+			focus = DOH_wunianjihua
+			focus = DOH_junshiyouxian
+			focus = DOH_junhengfazhan
+			focus = DOH_yindaoyuzhichi
+			focus = DOH_fenyongdangxian
+		}
+		mutually_exclusive = {
+			focus = DOH_pinghaidejunduijianshefangan
+			focus = DOH_zhenhaidetiyi
+		}
+		x = 2
+		y = 3
+		completion_reward = {
+			add_ideas = DOH_huolibuzukongjuzheng
+			add_doctrine_cost_reduction = {
+				name = "哈尔滨的提议"
+				cost_reduction = 0.25
+				uses = 2
+				category = cat_superior_firepower
+			}
+		}
+	}
+	focus = {
 		id = DOH_yubeilianjiaoliu
 		icon = GFX_fflag_BFL
-		x = -1
+		x = 4
 		y = 1
 		prerequisite = {
 			focus = DOH_xuexizhilv
@@ -1345,25 +1790,48 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			set_politics = {
+				ruling_party = communism
+			}
 			add_popularity = {
 				ideology = communism
 				popularity = 0.2
+			}
+			country_event = {
+				id = DOH_loong_event.5001
+				days = 3
+				random_days = 3
 			}
 		}
 	}
 	focus = {
 		id = DOH_yindaoyuzhichi
 		icon = GFX_goal_tripartite_pact
-		x = -1
+		x = 2
 		y = 2
-		prerequisite = {
-			focus = DOH_yubeilianjiaoliu
-		}
-		relative_position_id = DOH_yubeilianjiaoliu
-		cost = 7
+		cost = 5
 		ai_will_do = {
 			factor = 10
 		}
+		prerequisite = {
+			focus = DOH_jijifangyu
+			focus = DOH_pingwenxuanze
+			focus = DOH_ewairenxuan
+			focus = DOH_daduoshu
+		}
+		available = {
+			NOT = {
+				has_completed_focus = DOH_ewairenxuan
+			}
+		}
+		mutually_exclusive = {
+			focus = DOH_wunianjihua
+			focus = DOH_junshiyouxian
+			focus = DOH_fenyongdangxian
+			# focus = DOH_yindaoyuzhichi
+			focus = DOH_junhengfazhan
+		}
+		relative_position_id = DOH_yubeilianjiaoliu
 		completion_reward = {
 			add_manpower = 500000
 			custom_effect_tooltip = DOH_yindaoyuzhichi_effect_tooltip
@@ -1531,19 +1999,18 @@ focus_tree = {
 		id = DOH_renminwansui
 		icon = GFX_focus_por_workers_of_iberia
 		x = 0
-		y = 1
-		prerequisite = {
-			focus = DOH_yubeilianjiaoliu
-		}
+		y = 4
 		relative_position_id = DOH_yubeilianjiaoliu
 		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
+		prerequisite = {
+			focus = DOH_pinghaidejunduijianshefangan
+			focus = DOH_zhenhaidetiyi
+			focus = DOH_haerbindejianyi
+		}
 		completion_reward = {
-			set_politics = {
-				ruling_party = communism
-			}
 			add_ideas = DOH_rmws
 			add_popularity = {
 				ideology = communism
@@ -1554,12 +2021,12 @@ focus_tree = {
 	focus = {
 		id = DOH_quanfangmianhezuo
 		icon = GFX_focus_SWE_refuge_for_revolutionaries
-		x = -1
-		y = 1
-		prerequisite = {
-			focus = DOH_xindonghuang
-		}
-		relative_position_id = DOH_xindonghuang
+		x = 1
+		y = 3
+		# prerequisite = {
+		# 	focus = DOH_xindonghuang
+		# }
+		relative_position_id = DOH_renminwansui
 		cost = 3
 		available = {
 			OR = {
@@ -1594,7 +2061,7 @@ focus_tree = {
 	focus = {
 		id = DOH_xingjiandaxue
 		icon = GFX_focus_NOR_moscows_education_centers
-		x = -1
+		x = 0
 		y = 1
 		prerequisite = {
 			focus = DOH_quanfangmianhezuo
@@ -1618,7 +2085,7 @@ focus_tree = {
 	focus = {
 		id = DOH_guguozhihui
 		icon = GFX_focus_generic_support_the_left_right
-		x = 3
+		x = 7
 		y = 1
 		prerequisite = {
 			focus = DOH_shiyichangji
@@ -1658,7 +2125,7 @@ focus_tree = {
 	focus = {
 		id = DOH_yuhuangjiajiaoliu
 		icon = GFX_fflag_HUJ
-		x = 1
+		x = -4
 		y = 1
 		prerequisite = {
 			focus = DOH_xuexizhilv
@@ -1680,17 +2147,165 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = democratic
+				popularity = 0.25
+			}
+			set_politics = {
+				ruling_party = democratic
+			}
+			add_popularity = {
+				ideology = democratic
 				popularity = 0.2
 			}
 		}
 	}
 	focus = {
-		id = DOH_yinruwaizi
-		icon = GFX_focus_generic_the_giant_wakes
-		x = 0
+		id = DOH_yihuizhidu
+		icon = GFX_focus_generic_improve_the_administration
+		x = -2
 		y = 1
 		prerequisite = {
 			focus = DOH_yuhuangjiajiaoliu
+		}
+		mutually_exclusive = {
+			focus = DOH_zongtongzhidu
+		}
+		relative_position_id = DOH_yuhuangjiajiaoliu
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			custom_effect_tooltip = "（还没做完）"
+		}
+	}
+	focus = {
+		id = DOH_zujianneige
+		icon = GFX_goal_generic_major_alliance
+		x = -2
+		y = 3
+		prerequisite = {
+			focus = DOH_yihuizhidu
+		}
+		mutually_exclusive = {
+		}
+		relative_position_id = DOH_yuhuangjiajiaoliu
+		cost = 7
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = DOH_zongtongzhidu
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = DOH_yuhuangjiajiaoliu
+		}
+		mutually_exclusive = {
+			focus = DOH_yihuizhidu
+		}
+		relative_position_id = DOH_yuhuangjiajiaoliu
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_completed_focus = DOH_baiyinggongchengshi
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 24
+			}
+		}
+	}
+	focus = {
+		id = DOH_xuanju
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 3
+		prerequisite = {
+			focus = DOH_zongtongzhidu
+		}
+		mutually_exclusive = {
+		}
+		relative_position_id = DOH_yuhuangjiajiaoliu
+		cost = 7
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			hold_election = ROOT
+		}
+	}
+	focus = {
+		id = DOH_pingdengminzhurenai
+		icon = GFX_goal_liberty
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = DOH_xuanju
+			focus = DOH_zujianneige
+		}
+		prerequisite = {
+			focus = DOH_xishoujishu
+		}
+		mutually_exclusive = {
+		}
+		relative_position_id = DOH_yuhuangjiajiaoliu
+		cost = 7
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_cic = 10000
+			swap_ideas = {
+				remove_idea = DOH_idea_jishushengji
+				add_idea = DOH_idea_renrenxiaidexindonghuang
+			}
+		}
+	}
+	focus = {
+		id = DOH_yinruwaizi
+		icon = GFX_focus_mex_privatisation
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = DOH_yihuizhidu
+			focus = DOH_zongtongzhidu
 		}
 		relative_position_id = DOH_yuhuangjiajiaoliu
 		cost = 10
@@ -1706,12 +2321,39 @@ focus_tree = {
 				type = arms_factory
 				level = 15
 			}
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.25
+		}
+	}
+	focus = {
+		id = DOH_xishoujishu
+		icon = GFX_goal_generic_production2
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = DOH_yinruwaizi
+			focus = DOH_zhuanzhuchukou
+		}
+		relative_position_id = DOH_yinruwaizi
+		cost = 7
+		available = {
+			num_of_factories > 299
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = DOH_idea_jishushengji
+			add_tech_bonus = {
+				name = "吸收技术"
+				bonus = 1
+				uses = 2
+				category = industry
 			}
-			set_politics = {
-				ruling_party = democratic
+			add_tech_bonus = {
+				name = "吸收技术"
+				bonus = 1
+				uses = 2
+				category = electronics
 			}
 		}
 	}
@@ -1721,7 +2363,8 @@ focus_tree = {
 		x = 1
 		y = 2
 		prerequisite = {
-			focus = DOH_yuhuangjiajiaoliu
+			focus = DOH_yihuizhidu
+			focus = DOH_zongtongzhidu
 		}
 		relative_position_id = DOH_yuhuangjiajiaoliu
 		cost = 7
@@ -1734,14 +2377,268 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = DOH_kuodayixianquanli
-		icon = GFX_goal_generic_demand_territory
-		x = 0
-		y = 1
+		id = DOH_youjijiehe
+		icon = GFX_focus_generic_fascist_propaganda
 		cost = 5
 		relative_position_id = DOH_guguozhihui
 		prerequisite = {
 			focus = DOH_guguozhihui
+		}
+		mutually_exclusive = {
+			focus = DOH_baohuyixian
+		}
+		x = -3
+		y = 1
+		completion_reward = {
+			add_political_power = -150
+			set_politics = {
+				ruling_party = fascism
+			}
+		}
+	}
+	focus = {
+		id = DOH_weimuzhihou
+		icon = GFX_focus_zhenhai
+		cost = 5
+		relative_position_id = DOH_youjijiehe
+		mutually_exclusive = {
+			focus = DOH_haerbindayuanshuai
+		}
+		prerequisite = {
+			focus = DOH_youjijiehe
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_country_leader_role = {
+				character = DOH_zhenhai
+				promote_leader = yes
+				country_leader = {
+					ideology = fascism_ideology
+					expire = "2001.1.1.1"
+					traits = {
+						zonghengfangyuan
+					}
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = DOH_haerbindayuanshuai
+		icon = GFX_focus_haerbin
+		cost = 5
+		relative_position_id = DOH_youjijiehe
+		available = {
+			NOT = {
+				country_exists = DH1
+			}
+		}
+		prerequisite = {
+			focus = DOH_youjijiehe
+		}
+		mutually_exclusive = {
+			focus = DOH_weimuzhihou
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			add_country_leader_role = {
+				character = DOH_haerbin
+				promote_leader = yes
+				country_leader = {
+					ideology = fascism_ideology
+					expire = "2001.1.1.1"
+					traits = {
+						paohuo_qinxierupu
+					}
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = DOH_zhuoyanquanju
+		icon = GFX_goal_generic_position_armies
+		cost = 5
+		relative_position_id = DOH_weimuzhihou
+		prerequisite = {
+			focus = DOH_weimuzhihou
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			add_country_leader_trait = zhamouqiji
+		}
+	}
+	focus = {
+		id = DOH_youxianjunfei
+		icon = GFX_focus_generic_combined_arms
+		cost = 5
+		relative_position_id = DOH_haerbindayuanshuai
+		prerequisite = {
+			focus = DOH_haerbindayuanshuai
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = DOH_kuojunbeizhan
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = DOH_zujianxingzhengbandi
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		cost = 5
+		relative_position_id = DOH_youjijiehe
+		prerequisite = {
+			focus = DOH_zhuoyanquanju
+			focus = DOH_kuaisugongyehua
+			focus = DOH_youxianjunfei
+			focus = DOH_fenyongdangxian
+		}
+		prerequisite = {
+			focus = DOH_youjijiehe
+		}
+		x = 0
+		y = 3
+		completion_reward = {
+			add_research_slot = 1
+			add_timed_idea = {
+				idea = DOH_zujianxingzhengtuandui_idea
+				days = 7
+			}
+			add_political_power = -100
+		}
+	}
+	focus = {
+		id = DOH_kuaisugongyehua
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5
+		relative_position_id = DOH_weimuzhihou
+		prerequisite = {
+			focus = DOH_weimuzhihou
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			748 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+				}
+			}
+			750 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+				}
+			}
+			602 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = DOH_fenyongdangxian
+		icon = GFX_SOV_consolidate_power_ccp_2d_sov_compatibility
+		cost = 5
+		relative_position_id = DOH_haerbindayuanshuai
+		prerequisite = {
+			focus = DOH_haerbindayuanshuai
+			focus = DOH_ewairenxuan
+		}
+		mutually_exclusive = {
+			focus = DOH_wunianjihua
+			focus = DOH_junshiyouxian
+			# focus = DOH_fenyongdangxian
+			focus = DOH_yindaoyuzhichi
+			focus = DOH_junhengfazhan
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = DOH_fenyongdangxian
+					}
+					NOT = {
+						has_completed_focus = DOH_ewairenxuan
+					}
+				}
+				effect_tooltip = {
+					add_country_leader_trait = yongwubuke_2
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = DOH_fenyongdangxian
+				}
+				add_country_leader_trait = yongwubuke
+			}
+			if = {
+				limit = {
+					has_completed_focus = DOH_ewairenxuan
+				}
+				add_country_leader_trait = yongwubuke_2
+			}
+		}
+	}
+	focus = {
+		id = DOH_donghuangdeyewang
+		icon = GFX_focus_usa_tank_destroyer_doctrine
+		cost = 7
+		relative_position_id = DOH_guguozhihui
+		prerequisite = {
+			focus = DOH_weidalingxiu
+			focus = DOH_yixianwansui
+		}
+		x = 0
+		y = 6
+		completion_reward = {
+			add_war_support = 0.5
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = DOH_weidalingxiu
+		icon = GFX_focus_NOR_empower_sivorg
+		cost = 4
+		relative_position_id = DOH_youjijiehe
+		prerequisite = {
+			focus = DOH_zujianxingzhengbandi
+		}
+		x = 0
+		y = 4
+		completion_reward = {
+			add_political_power = 350
+			add_country_leader_trait = shenshouhuanyingdeshiquanyuanshou
+		}
+	}
+	focus = {
+		id = DOH_kuodayixianquanli
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		cost = 2
+		relative_position_id = DOH_baohuyixian
+		prerequisite = {
+			focus = DOH_baohuyixian
 		}
 		ai_will_do = {
 			factor = 10
@@ -1769,15 +2666,85 @@ focus_tree = {
 			}
 		}
 	}
+	#保护逸仙
+	focus = {
+		id = DOH_baohuyixian
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 3
+		y = 1
+		cost = 5
+		relative_position_id = DOH_guguozhihui
+		prerequisite = {
+			focus = DOH_guguozhihui
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		mutually_exclusive = {
+			focus = DOH_youjijiehe
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = DOH_qxfdp
+				days = 90
+			}
+		}
+	}
+	focus = {
+		id = DOH_douzhengdejiaoxun
+		icon = GFX_focus_generic_women_in_military
+		x = -2
+		y = 1
+		cost = 2
+		relative_position_id = DOH_baohuyixian
+		prerequisite = {
+			focus = DOH_baohuyixian
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		available = {
+			NOT = {
+				has_idea = DOH_qxfdp
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 300
+		}
+	}
+	focus = {
+		id = DOH_sirenjingbeidui
+		icon = GFX_focus_manjiu
+		x = 2
+		y = 1
+		cost = 2
+		relative_position_id = DOH_baohuyixian
+		prerequisite = {
+			focus = DOH_baohuyixian
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		available = {
+			NOT = {
+				has_idea = DOH_qxfdp
+			}
+		}
+		completion_reward = {
+			add_ideas = DOH_sirenjingbeidui
+		}
+	}
 	focus = {
 		id = DOH_xianzibingfa
 		icon = GFX_focus_generic_little_entente
-		x = -2
-		y = 1
-		cost = 5
+		x = -1
+		y = 2
+		cost = 4
 		relative_position_id = DOH_kuodayixianquanli
 		prerequisite = {
-			focus = DOH_kuodayixianquanli
+			focus = DOH_zhangkongsanjun
 		}
 		ai_will_do = {
 			factor = 100
@@ -1801,11 +2768,36 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = DOH_xieyibenzizhuan
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		cost = 4
+		relative_position_id = DOH_ducuyixian
+		prerequisite = {
+			focus = DOH_ducuyixian
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 200
+			DOH_yixian = {
+				getzhg_event_dixingtezhi_se = yes
+				getzhg_event_xidetezhi_se = yes
+			}
+		}
+	}
+	focus = {
 		id = DOH_zhangkongsanjun
 		icon = GFX_focus_generic_little_entente
-		x = 2
+		x = -1
 		y = 1
-		cost = 5
+		cost = 4
 		relative_position_id = DOH_kuodayixianquanli
 		prerequisite = {
 			focus = DOH_kuodayixianquanli
@@ -1844,9 +2836,9 @@ focus_tree = {
 	focus = {
 		id = DOH_ducuyixian
 		icon = GFX_goal_generic_scientific_exchange
-		x = 0
+		x = 1
 		y = 1
-		cost = 5
+		cost = 4
 		relative_position_id = DOH_kuodayixianquanli
 		prerequisite = {
 			focus = DOH_kuodayixianquanli
@@ -1897,10 +2889,10 @@ focus_tree = {
 		id = DOH_xindonghuang
 		icon = GFX_fflag_DOH
 		x = 0
-		y = 3
+		y = 6
 		prerequisite = {
 			focus = DOH_renminwansui
-			focus = DOH_yinruwaizi
+			focus = DOH_pingdengminzhurenai
 		}
 		relative_position_id = DOH_xuexizhilv
 		cost = 7
@@ -1919,8 +2911,21 @@ focus_tree = {
 					add_idea = DOH_xdh_people
 				}
 			}
+			else_if = {
+				limit = {
+					DOH = {
+						has_completed_focus = DOH_pingdengminzhurenai
+					}
+				}
+				swap_ideas = {
+					remove_idea = DOH_idea_renrenxiaidexindonghuang
+					add_idea = DOH_idea_renrenxiaidexindonghuang_1
+				}
+			}
 			else = {
-				add_ideas = DOH_xdh
+				effect_tooltip = {
+					add_ideas = DOH_xdh
+				}
 			}
 		}
 	}
@@ -1928,17 +2933,14 @@ focus_tree = {
 		id = DOH_yixianwansui
 		icon = GFX_focus_yixian
 		x = 0
-		y = 1
-		cost = 7
-		relative_position_id = DOH_ducuyixian
-		prerequisite = {
-			focus = DOH_ducuyixian
-		}
+		y = 3
+		cost = 4
+		relative_position_id = DOH_kuodayixianquanli
 		prerequisite = {
 			focus = DOH_xianzibingfa
 		}
 		prerequisite = {
-			focus = DOH_zhangkongsanjun
+			focus = DOH_xieyibenzizhuan
 		}
 		ai_will_do = {
 			factor = 5
@@ -1983,18 +2985,19 @@ focus_tree = {
 	focus = {
 		id = DOH_nvhuangdexunyou
 		icon = GFX_focus_yixian
-		x = 1
-		y = 1
-		prerequisite = {
-			focus = DOH_yixianwansui
-		}
-		relative_position_id = DOH_yixianwansui
+		x = 2
+		y = 0
+		# prerequisite = {
+		# 	focus = DOH_yixianwansui
+		# }
+		relative_position_id = DOH_weilenvhuang
 		cost = 3
 		available = {
 			OR = {
 				has_idea = DOH_dfgg4
 				has_idea = DOH_dfgg5
 			}
+			has_completed_focus = DOH_yixianwansui
 		}
 		ai_will_do = {
 			factor = 10
@@ -2027,7 +3030,7 @@ focus_tree = {
 	focus = {
 		id = DOH_zhongxijiehe
 		icon = GFX_focus_generic_monarchy_2
-		x = 1
+		x = 0
 		y = 1
 		prerequisite = {
 			focus = DOH_nvhuangdexunyou
@@ -2062,16 +3065,14 @@ focus_tree = {
 	focus = {
 		id = DOH_baochiweishe
 		icon = GFX_goal_anschluss
-		relative_position_id = DOH_special_force
+		relative_position_id = DOH_donghuangdeshidai
 		prerequisite = {
-			focus = DOH_haijunjianshe
-			focus = DOH_lujunxinlilun
-			focus = DOH_tieyuan
+			focus = DOH_donghuangdeshidai
 		}
 		mutually_exclusive = {
 			focus = DOH_jijikuozhang
 		}
-		x = -3
+		x = -2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -2086,18 +3087,18 @@ focus_tree = {
 	focus = {
 		id = DOH_jijikuozhang
 		icon = GFX_goal_demand_sudetenland
-		relative_position_id = DOH_special_force
+		relative_position_id = DOH_donghuangdeshidai
 		prerequisite = {
-			focus = DOH_haijunjianshe
-			focus = DOH_lujunxinlilun
-			focus = DOH_tieyuan
+			focus = DOH_donghuangdeshidai
 		}
 		mutually_exclusive = {
 			focus = DOH_baochiweishe
 		}
-		x = 3
+		x = 2
 		y = 1
 		cost = 5
+		available = {
+		}
 		ai_will_do = {
 			factor = 5
 		}
@@ -2111,11 +3112,11 @@ focus_tree = {
 		cost = 3
 		prerequisite = {
 			focus = DOH_xindonghuang
-			focus = DOH_yixianwansui
+			focus = DOH_donghuangdeyewang
 		}
-		relative_position_id = DOH_shiyichangji
+		relative_position_id = DOH_zhengyankaishijie
 		x = 0
-		y = 5
+		y = 13
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -2193,6 +3194,7 @@ focus_tree = {
 			add_dynamic_modifier = {
 				modifier = DOH_donghuangshiwu_idea
 			}
+			complete_national_focus = DOH_dongfangxinzhixu
 		}
 	}
 	focus = {
@@ -2581,7 +3583,7 @@ focus_tree = {
 					specialization = specialization_land
 				}
 			}
-			DOH_dingan = {
+			DOH_taiyuan = {
 				add_scientist_xp = {
 					experience = 300
 					specialization = specialization_nuclear
@@ -2598,7 +3600,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DOH_donghuanggongyetixi
-		icon = GFX_focus_generic_tankette
+		icon = GFX_focus_generic_mass_production
 		cost = 4
 		prerequisite = {
 			focus = DOH_jiansheguojia
@@ -2689,28 +3691,19 @@ focus_tree = {
 			598 = {
 				set_state_category = large_city
 			}
-			620 = {
-				set_state_category = large_city
-			}
-			745 = {
-				set_state_category = metropolis
-			}
 		}
 	}
 	focus = {
 		id = DOH_gongtongfuyu
 		icon = GFX_focus_SWE_socialist_reforms
 		cost = 5
-		relative_position_id = DOH_hongsedengta
-		prerequisite = {
-			focus = DOH_hongsedengta
-		}
+		relative_position_id = DOH_quanfangmianhezuo
 		available = {
 			has_completed_focus = DOH_renminwansui
 			num_of_factories > 800
 		}
-		x = 0
-		y = 1
+		x = -2
+		y = 0
 		completion_reward = {
 			add_ideas = DOH_gongtongfuyu_economy
 			DOH_neibufenqi_jianqin_few_effect = yes
@@ -2719,13 +3712,13 @@ focus_tree = {
 	focus = {
 		id = DOH_hongsedengta
 		icon = GFX_focus_ETH_callout_to_the_world
-		x = -1
+		x = 0
 		y = 1
-		prerequisite = {
-			focus = DOH_huanxingjulong
-		}
-		relative_position_id = DOH_huanxingjulong
+		relative_position_id = DOH_gongtongfuyu
 		cost = 5
+		prerequisite = {
+			focus = DOH_gongtongfuyu
+		}
 		available = {
 			has_completed_focus = DOH_renminwansui
 			has_offensive_war = no
@@ -2759,25 +3752,37 @@ focus_tree = {
 	focus = {
 		id = DOH_hailufuhe
 		icon = GFX_focus_SWE_coastal_support
-		x = 7
-		y = 2
+		x = -6
+		y = 0
 		prerequisite = {
-			focus = DOH_huanxingjulong
+			focus = DOH_donghuangdeshidai
 		}
-		prerequisite = {
-			focus = DOH_nanhaidezhuren
-		}
-		prerequisite = {
-			focus = DOH_special_force
-		}
-		relative_position_id = DOH_special_force
+		relative_position_id = DOH_shanhejinxiu
 		cost = 5
 		ai_will_do = {
 			factor = 15
 		}
+		available = {
+			has_completed_focus = DOH_huanxingjulong
+			has_completed_focus = DOH_nanhaidezhuren
+			has_completed_focus = DOH_special_force
+		}
 		completion_reward = {
-			every_military_industrial_organization = {
-				add_mio_size = 2
+			743 = {
+				set_state_category = metropolis
+			}
+			743 = {
+				add_building_construction = {
+					type = naval_base
+					level = 10
+					province = 10000
+				}
+			}
+			hidden_effect = {
+				set_victory_points = {
+					province = 10000					# 青岛
+					value = 20
+				}
 			}
 			add_ideas = DOH_hailufuhe_idea_0
 			swap_ideas = {
@@ -2801,20 +3806,21 @@ focus_tree = {
 	focus = {
 		id = DOH_sichouzhilu
 		icon = GFX_goal_generic_propaganda
-		x = 4
+		x = -4
 		y = 2
-		cost = 3
+		cost = 2
 		prerequisite = {
 			focus = DOH_hailufuhe
 		}
 		prerequisite = {
-			focus = DOH_donghuangdeshidai
+			focus = DOH_shanhejinxiu
 		}
-		relative_position_id = DOH_donghuangdeshidai
+		relative_position_id = DOH_shanhejinxiu
 		ai_will_do = {
 			factor = 10
 		}
 		available = {
+			has_completed_focus = DOH_shisanchaogudu
 			has_full_control_of_state = 622
 			controls_state = 283
 			controls_state = 754
@@ -2879,13 +3885,22 @@ focus_tree = {
 			}
 			build_railway = {
 				level = 2
+				build_only_on_allied = yes
 				path = {
+					12820
+					7971
+					2028
+					5100
+					12327
+					5057
 					12732
-					10490
-					10750
-					10796
-					10834
-					7940
+					2022
+					12797
+					12882
+					531
+					4295
+					4167
+					7418
 				}
 			}
 			756 = {
@@ -2895,21 +3910,21 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
+			}
+			616 = {
 				add_building_construction = {
 					type = supply_node
 					level = 1
-					province = 1778
+					province = 8127
 					instant_build = yes
 				}
-			}
-			build_railway = {
-				level = 2
-				path = {
-					1778
-					7971
-					5076
-					2099
-					10750
+				build_railway = {
+					level = 2
+					path = {
+						5057
+						7511
+						8127
+					}
 				}
 			}
 			760 = {
@@ -2930,17 +3945,40 @@ focus_tree = {
 				build_railway = {
 					level = 2
 					start_province = 4709
-					target_province = 1778
+					target_province = 12820
 				}
 			}
-			744 = {
-				set_state_category = metropolis
+			619 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 2015
+				}
+				build_railway = {
+					level = 2
+					start_province = 4709
+					target_province = 2015
+				}
+			}
+			618 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 4823
+				}
+				build_railway = {
+					level = 2
+					path = {
+						4709
+						10674
+						10691
+						12737
+					}
+				}
 			}
 			hidden_effect = {
-				set_victory_points = {
-					province = 7418					# 西安
-					value = 30
-				}
 				set_victory_points = {
 					province = 2022					# 兰州
 					value = 20
@@ -2994,7 +4032,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DOH_yuanyanghaijun
-		icon = GFX_focus_ARG_study_the_battle_of_the_river_plate
+		icon = GFX_focus_GER_graf_zeppelin
 		x = -1
 		y = 1
 		cost = 4
@@ -3033,7 +4071,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = DOH_hailufuhe
-			focus = DOH_junmingronghe_jishugaijing
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -3088,6 +4125,9 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			every_military_industrial_organization = {
+				add_mio_size = 5
+			}
 			every_navy_leader = {
 				add_skill_level = 2
 				add_maneuver = 3
@@ -3138,14 +4178,7 @@ focus_tree = {
 			595 = {
 				set_state_category = metropolis
 			}
-			743 = {
-				set_state_category = metropolis
-			}
 			hidden_effect = {
-				set_victory_points = {
-					province = 10000					# 青岛
-					value = 20
-				}
 				set_victory_points = {
 					province = 7191					# 杭州
 					value = 20
@@ -3212,12 +4245,12 @@ focus_tree = {
 	focus = {
 		id = DOH_gaodengxuefu
 		icon = GFX_focus_generic_university_1
-		x = -7
-		y = 2
+		x = 6
+		y = 0
 		prerequisite = {
-			focus = DOH_huanxingjulong
+			focus = DOH_donghuangdeshidai
 		}
-		relative_position_id = DOH_special_force
+		relative_position_id = DOH_shanhejinxiu
 		cost = 5
 		ai_will_do = {
 			factor = 15
@@ -3225,7 +4258,7 @@ focus_tree = {
 		completion_reward = {
 			add_research_slot = 1
 			every_military_industrial_organization = {
-				add_mio_size = 5
+				add_mio_size = 2
 			}
 		}
 	}
@@ -3277,12 +4310,10 @@ focus_tree = {
 	focus = {
 		id = DOH_minzhikaiqi
 		icon = GFX_focus_generic_military_academy
-		x = -3
+		x = 2
 		y = 2
 		prerequisite = {
 			focus = DOH_gaodengxuefu
-			focus = DOH_gongtongfuyu
-			focus = DOH_xianchuyiqie
 		}
 		relative_position_id = DOH_gaodengxuefu
 		cost = 2
@@ -3347,7 +4378,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = DOH_gaodengxuefu
-			focus = DOH_donghuangdeshidai
+			focus = DOH_shanhejinxiu
 		}
 		relative_position_id = DOH_gaodengxuefu
 		x = 1
@@ -3480,14 +4511,11 @@ focus_tree = {
 		id = DOH_guangronghemengxiangdeyuanzheng
 		icon = GFX_focus_focus_fra_revolution_utmost
 		x = 0
-		y = 19
+		y = 8
 		prerequisite = {
-			focus = DOH_donghuangdeshidai
+			focus = DOH_shanhejinxiu
 		}
-		prerequisite = {
-			focus = DOH_dashanghai
-		}
-		relative_position_id = DOH_zhengyankaishijie
+		relative_position_id = DOH_donghuangdeshidai
 		cost = 5
 		# allow_branch = {
 		# 	num_of_factories > 1000
@@ -3583,15 +4611,15 @@ focus_tree = {
 	focus = {
 		id = DOH_weilenvhuang
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 1
-		y = 1
-		prerequisite = {
-			focus = DOH_huanxingjulong
-		}
-		relative_position_id = DOH_huanxingjulong
+		x = -1
+		y = 3
+		relative_position_id = DOH_weidalingxiu
 		cost = 5
 		available = {
-			has_completed_focus = DOH_yixianwansui
+			OR = {
+				has_completed_focus = DOH_yixianwansui
+				has_completed_focus = DOH_weidalingxiu
+			}
 		}
 		ai_will_do = {
 			factor = 15
@@ -3614,7 +4642,10 @@ focus_tree = {
 			factor = 15
 		}
 		available = {
-			has_completed_focus = DOH_yixianwansui
+			OR = {
+				has_completed_focus = DOH_yixianwansui
+				has_completed_focus = DOH_weidalingxiu
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -3626,18 +4657,18 @@ focus_tree = {
 	focus = {
 		id = DOH_ziguyilai
 		icon = GFX_focus_chi_one_china_policy
-		relative_position_id = DOH_zhengyankaishijie
-		x = 14
-		y = 6
+		relative_position_id = DOH_dongfangxinzhixu
+		x = 2
+		y = 1
 		mutually_exclusive = {
 			focus = DOH_chaogongzhidu
-		}
-		prerequisite = {
-			focus = DOH_zhengyankaishijie
 		}
 		cost = 1
 		ai_will_do = {
 			factor = 10
+		}
+		prerequisite = {
+			focus = DOH_dongfangxinzhixu
 		}
 		available = {
 			has_completed_focus = DOH_dongfangliming
@@ -3661,11 +4692,25 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = DOH_dongfangxinzhixu
+		icon = GFX_focus_chi_one_china_policy
+		cost = 1
+		relative_position_id = DOH_chenglikeyanzu
+		x = 0
+		available = {
+			always = no
+			has_completed_focus = DOH_dongfangliming
+		}
+		y = 19
+		completion_reward = {
+		}
+	}
+	focus = {
 		id = DOH_chaogongzhidu
 		icon = GFX_focus_chi_one_china_policy
-		relative_position_id = DOH_ziguyilai
-		x = -8
-		y = 0
+		relative_position_id = DOH_dongfangxinzhixu
+		x = -2
+		y = 1
 		cost = 1
 		ai_will_do = {
 			factor = 10
@@ -3674,7 +4719,7 @@ focus_tree = {
 			focus = DOH_ziguyilai
 		}
 		prerequisite = {
-			focus = DOH_zhengyankaishijie
+			focus = DOH_dongfangxinzhixu
 		}
 		available = {
 			has_completed_focus = DOH_dongfangliming
@@ -3703,9 +4748,9 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_chaogongzhidu
 		}
-		relative_position_id = DOH_chaogongzhidu
-		x = 0
-		y = 1
+		relative_position_id = DOH_dongfangxinzhixu
+		x = -4
+		y = 2
 		cost = 5
 		available = {
 			OR = {
@@ -3773,9 +4818,9 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_ziguyilai
 		}
-		relative_position_id = DOH_ziguyilai
-		x = 0
-		y = 1
+		relative_position_id = DOH_dongfangxinzhixu
+		x = 4
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -3841,9 +4886,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = DOH_yaoqiuchenfu
 		}
-		relative_position_id = DOH_ziguyilai
-		x = -3
-		y = 1
+		relative_position_id = DOH_dongfangxinzhixu
+		x = 1
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -3861,9 +4906,9 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_chaogongzhidu
 		}
-		relative_position_id = DOH_chaogongzhidu
-		x = 3
-		y = 1
+		relative_position_id = DOH_dongfangxinzhixu
+		x = -1
+		y = 2
 		cost = 5
 		mutually_exclusive = {
 			focus = DOH_rishenzhidi
@@ -3903,9 +4948,9 @@ focus_tree = {
 			focus = DOH_ziguyilai
 			focus = DOH_chaogongzhidu
 		}
-		relative_position_id = DOH_chaogongzhidu
-		x = 4
-		y = 2
+		relative_position_id = DOH_dongfangxinzhixu
+		x = 0
+		y = 3
 		cost = 5
 		available = {
 			has_subject = CHY
@@ -3953,9 +4998,9 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_chaogongzhidu
 		}
-		relative_position_id = DOH_chaogongzhidu
-		x = 2
-		y = 2
+		relative_position_id = DOH_dongfangxinzhixu
+		x = -2
+		y = 3
 		cost = 3
 		ai_will_do = {
 			factor = 1
@@ -4057,7 +5102,6 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-
 		}
 		completion_reward = {
 			custom_effect_tooltip = DOH_chaogongtixi_tooltip
@@ -4080,7 +5124,6 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			
 		}
 		completion_reward = {
 			custom_effect_tooltip = DOH_cijichaogongzhongxin_tooltip
@@ -4092,9 +5135,9 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_ziguyilai
 		}
-		relative_position_id = DOH_ziguyilai
-		x = -2
-		y = 2
+		relative_position_id = DOH_dongfangxinzhixu
+		x = 2
+		y = 3
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -4212,7 +5255,7 @@ focus_tree = {
 		id = DOH_donghuangdeshidai
 		icon = GFX_focus_donghuang
 		x = 0
-		y = 2
+		y = 19
 		cost = 3
 		ai_will_do = {
 			factor = 6
@@ -4220,11 +5263,7 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_huanxingjulong
 		}
-		prerequisite = {
-			focus = DOH_special_force
-			focus = DOH_nanhaidezhuren
-		}
-		relative_position_id = DOH_special_force
+		relative_position_id = DOH_zhengyankaishijie
 		available = {
 			num_of_factories > 600
 		}
@@ -4234,6 +5273,19 @@ focus_tree = {
 				add_idea = DOH_ggkf_1
 			}
 			remove_ideas = DOH_nbjs
+		}
+	}
+	focus = {
+		id = DOH_shanhejinxiu
+		icon = GFX_goal_jinxiuheshan
+		cost = 2
+		relative_position_id = DOH_donghuangdeshidai
+		prerequisite = {
+			focus = DOH_donghuangdeshidai
+		}
+		x = 0
+		y = 2
+		completion_reward = {
 			614 = {
 				set_state_category = large_city
 			}
@@ -4247,7 +5299,6 @@ focus_tree = {
 				set_state_category = large_city
 			}
 			DOH_neibufenqi_jianqin_effect = yes
-			
 			hidden_effect = {
 				set_victory_points = {
 					province = 12055					# 徐州
@@ -4284,10 +5335,6 @@ focus_tree = {
 				set_victory_points = {
 					province = 7222					# 合肥
 					value = 20
-				}
-				set_victory_points = {
-					province = 4619					# 武汉
-					value = 40
 				}
 				set_victory_points = {
 					province = 7101					# 常德
@@ -4327,13 +5374,13 @@ focus_tree = {
 	focus = {
 		id = DOH_dashanghai
 		icon = GFX_goal_generic_propaganda
-		x = 0
+		x = -2
 		y = 2
-		cost = 3
+		cost = 2
 		prerequisite = {
-			focus = DOH_donghuangdeshidai
+			focus = DOH_shanhejinxiu
 		}
-		relative_position_id = DOH_donghuangdeshidai
+		relative_position_id = DOH_shanhejinxiu
 		ai_will_do = {
 			factor = 10
 		}
@@ -4390,13 +5437,13 @@ focus_tree = {
 	focus = {
 		id = DOH_tianfuzhiguo
 		icon = GFX_goal_generic_propaganda
-		x = -2
-		y = 2
-		cost = 3
+		x = -3
+		y = 1
+		cost = 2
 		prerequisite = {
-			focus = DOH_donghuangdeshidai
+			focus = DOH_shanhejinxiu
 		}
-		relative_position_id = DOH_donghuangdeshidai
+		relative_position_id = DOH_shanhejinxiu
 		ai_will_do = {
 			factor = 10
 		}
@@ -4426,15 +5473,31 @@ focus_tree = {
 				build_railway = {
 					level = 2
 					start_province = 6999
+					target_province = 4925
+				}
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 4925
+					instant_build = yes
+				}
+				build_railway = {
+					level = 2
+					start_province = 6999
 					target_province = 9843
 				}
+			}
+			build_railway = {
+				level = 2
+				start_province = 6999
+				target_province = 7101
 			}
 			605 = {
 				set_state_category = metropolis
 			}
 			hidden_effect = {
 				set_victory_points = {
-					province = 6999					# 常德
+					province = 6999					# 重庆
 					value = 40
 				}
 				set_victory_points = {
@@ -4455,13 +5518,13 @@ focus_tree = {
 	focus = {
 		id = DOH_qianniandidu
 		icon = GFX_goal_generic_propaganda
-		x = -4
+		x = 4
 		y = 2
-		cost = 3
+		cost = 2
 		prerequisite = {
-			focus = DOH_donghuangdeshidai
+			focus = DOH_shanhejinxiu
 		}
-		relative_position_id = DOH_donghuangdeshidai
+		relative_position_id = DOH_shanhejinxiu
 		ai_will_do = {
 			factor = 10
 		}
@@ -4529,15 +5592,132 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = DOH_jingchudadi
+		icon = GFX_goal_generic_propaganda
+		x = -1
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = DOH_shanhejinxiu
+		}
+		relative_position_id = DOH_shanhejinxiu
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_full_control_of_state = 620
+		}
+		completion_reward = {
+			620 = {
+				set_state_category = large_city
+			}
+			build_railway = {
+				level = 2
+				start_province = 4619
+				target_province = 7418
+			}
+			build_railway = {
+				level = 2
+				start_province = 4619
+				target_province = 1628
+			}
+			hidden_effect = {
+				set_victory_points = {
+					province = 4619					# 武汉
+					value = 40
+				}
+			}
+		}
+	}
+	focus = {
+		id = DOH_dalianlvshun
+		icon = GFX_goal_generic_propaganda
+		x = 1
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = DOH_shanhejinxiu
+		}
+		relative_position_id = DOH_shanhejinxiu
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_full_control_of_state = 745
+		}
+		completion_reward = {
+			745 = {
+				set_state_category = metropolis
+			}
+			745 = {
+				add_building_construction = {
+					type = naval_base
+					level = 8
+					province = 1150
+				}
+			}
+			hidden_effect = {
+				set_victory_points = {
+					province = 1150					# 大连
+					value = 30
+				}
+			}
+		}
+	}
+	focus = {
+		id = DOH_shisanchaogudu
+		icon = GFX_goal_generic_propaganda
+		x = 3
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = DOH_shanhejinxiu
+		}
+		relative_position_id = DOH_shanhejinxiu
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_full_control_of_state = 744
+		}
+		completion_reward = {
+			744 = {
+				set_state_category = metropolis
+			}
+			744 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 6
+				}
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = air_base
+					level = 10
+				}
+			}
+			build_railway = {
+				level = 2
+				start_province = 7418
+				target_province = 7101
+			}
+			hidden_effect = {
+				set_victory_points = {
+					province = 7418					# 西安
+					value = 30
+				}
+			}
+		}
+	}
+	focus = {
 		id = DOH_heijinsansheng
 		icon = GFX_goal_generic_propaganda
 		x = 2
 		y = 2
-		cost = 3
+		cost = 2
 		prerequisite = {
-			focus = DOH_donghuangdeshidai
+			focus = DOH_shanhejinxiu
 		}
-		relative_position_id = DOH_donghuangdeshidai
+		relative_position_id = DOH_shanhejinxiu
 		ai_will_do = {
 			factor = 10
 		}
@@ -4636,10 +5816,6 @@ focus_tree = {
 					value = 20
 				}
 				set_victory_points = {
-					province = 1150					# 大连
-					value = 30
-				}
-				set_victory_points = {
 					province = 10433					# 哈尔滨
 					value = 30
 				}
@@ -4694,9 +5870,6 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_nanhaiziyuankaifa
 		}
-		prerequisite = {
-			focus = DOH_jiansheguojia
-		}
 		relative_position_id = DOH_nanhaiziyuankaifa
 		cost = 3
 		ai_will_do = {
@@ -4733,6 +5906,16 @@ focus_tree = {
 			592 = {
 				set_state_category = megalopolis
 			}
+			build_railway = {
+				level = 2
+				start_province = 1047
+				target_province = 7199
+			}
+			build_railway = {
+				level = 2
+				start_province = 1047
+				target_province = 7137
+			}
 			hidden_effect = {
 				set_victory_points = {
 					province = 1047					# 广州
@@ -4750,9 +5933,6 @@ focus_tree = {
 		cost = 3
 		ai_will_do = {
 			factor = 10
-		}
-		prerequisite = {
-			focus = DOH_zhengyankaishijie
 		}
 		available = {
 			has_full_control_of_state = 591
@@ -4852,8 +6032,8 @@ focus_tree = {
 	focus = {
 		id = DOH_nanhaidezhuren
 		icon = GFX_goal_generic_demand_territory
-		x = 8
-		y = 0
+		x = -1
+		y = 1
 		prerequisite = {
 			focus = DOH_nanhaishiyougongsi
 		}
@@ -4863,7 +6043,7 @@ focus_tree = {
 		prerequisite = {
 			focus = DOH_zaochuanjishugexin
 		}
-		relative_position_id = DOH_huanxingjulong
+		relative_position_id = DOH_zaochuanjishugexin
 		cost = 5
 		ai_will_do = {
 			factor = 5
@@ -4885,17 +6065,21 @@ focus_tree = {
 			591 = {
 				set_state_category = large_city
 			}
+			build_railway = {
+				level = 2
+				start_province = 1070
+				target_province = 7137
+			}
 			DOH_neibufenqi_jianqin_effect = yes
 		}
 	}
 	focus = {
 		id = DOH_weishejunfa
 		icon = GFX_goal_generic_demand_territory
-		x = 10
-		y = 1
+		x = 3
+		y = 5
 		cost = 5
 		prerequisite = {
-			focus = DOH_zhengyankaishijie
 		}
 		ai_will_do = {
 			factor = 5
@@ -4904,7 +6088,6 @@ focus_tree = {
 				add = 15
 			}
 		}
-		relative_position_id = DOH_zhengyankaishijie
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -5206,25 +6389,30 @@ focus_tree = {
 			hidden_effect = {
 				load_oob = "DOH_haianfangshou"
 				if = {
-				limit = {
-					is_ai = yes
-				}
+					limit = {
+						is_ai = yes
+					}
 					load_oob = "DOH_haianfangshou_ai"
-			    }
-				if = {
-				limit = {
-					is_ai = yes
-					OR = {
-		                has_global_flag = AZ_fengkuangAI_citiao_10 
-		                has_global_flag = AZ_fengkuangAI_citiao_ex 
-		                }
 				}
+				if = {
+					limit = {
+						is_ai = yes
+						OR = {
+							has_global_flag = AZ_fengkuangAI_citiao_10
+							has_global_flag = AZ_fengkuangAI_citiao_ex
+						}
+					}
 					load_oob = "DOH_haianfangshou_fengkuangai"
-					set_technology = { tech_engineers = 1 }
-					set_technology = { tech_field_hospital = 1 }
-					set_technology = { basic_light_tank_chassis = 1 }
-					
-			    }
+					set_technology = {
+						tech_engineers = 1
+					}
+					set_technology = {
+						tech_field_hospital = 1
+					}
+					set_technology = {
+						basic_light_tank_chassis = 1
+					}
+				}
 			}
 		}
 	}
@@ -5294,13 +6482,10 @@ focus_tree = {
 	focus = {
 		id = DOH_jiejinanmin
 		icon = GFX_focus_generic_concessions
-		relative_position_id = DOH_zhengyankaishijie
-		x = 10
-		y = 2
+		relative_position_id = DOH_fangfanjinlin
+		x = 0
+		y = 1
 		cost = 5
-		prerequisite = {
-			focus = DOH_zhengyankaishijie
-		}
 		prerequisite = {
 			focus = DOH_beishang
 			focus = DOH_nanxia
@@ -5547,18 +6732,16 @@ focus_tree = {
 	focus = {
 		id = DOH_junmingronghe
 		icon = GFX_goal_generic_construct_civilian
-		relative_position_id = DOH_wanguolaichao
+		relative_position_id = DOH_wuxiandianjishu
 		prerequisite = {
-			focus = DOH_huanxingjulong
-			focus = DOH_nanhaidezhuren
-			focus = DOH_special_force
-			focus = DOH_wanguolaichao
+			focus = DOH_wuxiandianjishu
 		}
 		available = {
+			has_completed_focus = DOH_huanxingjulong
 			num_of_factories > 300
 		}
 		cost = 5
-		x = 3
+		x = 1
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = DOH_junmingronghe_tooltip
@@ -5595,13 +6778,13 @@ focus_tree = {
 		icon = GFX_focus_FIN_oy_alkoholiliike
 		relative_position_id = DOH_hailufuhe
 		prerequisite = {
-			focus = DOH_junmingronghe_jishugaijing
+			focus = DOH_hailufuhe
 		}
 		available = {
-			num_of_factories > 800
+			num_of_factories > 900
 		}
 		cost = 2
-		x = 3
+		x = -2
 		y = 2
 		completion_reward = {
 			custom_effect_tooltip = DOH_junmingronghe_duiwaishuchu_tooltip
@@ -5653,7 +6836,6 @@ focus_tree = {
 					DOH_dongfangguguo_dengji = yes
 				}
 			}
-
 		}
 	}
 	# focus = {
