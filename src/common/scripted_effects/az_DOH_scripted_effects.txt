@@ -188,9 +188,15 @@ DOH_modifier_effect = {
 }
 
 DOH_zhichilvchengfa_effect = {
+	set_variable = {
+		DOH_zhichiduchengfa_t = var:DOH_zhichiduchengfa
+	}
+	multiply_variable = {
+		DOH_zhichiduchengfa_t = -0.01
+	}
 	add_popularity = {
 		ideology = neutrality
-		popularity = var:DOH_zhichiduchengfa
+		popularity = var:DOH_zhichiduchengfa_t
 	}
 }
 

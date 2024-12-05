@@ -1695,6 +1695,11 @@ focus_tree = {
 			focus = DOH_zhenhaidetiyi
 			focus = DOH_haerbindejianyi
 		}
+		available = {
+			NOT = {
+				has_completed_focus = DOH_haerbindayuanshuai
+			}
+		}
 		x = -2
 		y = 3
 		completion_reward = {
@@ -1722,6 +1727,11 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = DOH_pinghaidejunduijianshefangan
 			focus = DOH_haerbindejianyi
+		}
+		available = {
+			NOT = {
+				has_completed_focus = DOH_haerbindayuanshuai
+			}
 		}
 		x = 0
 		y = 3
@@ -1753,6 +1763,11 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = DOH_pinghaidejunduijianshefangan
 			focus = DOH_zhenhaidetiyi
+		}
+		available = {
+			NOT = {
+				has_completed_focus = DOH_haerbindayuanshuai
+			}
 		}
 		x = 2
 		y = 3
@@ -2997,7 +3012,7 @@ focus_tree = {
 				has_idea = DOH_dfgg4
 				has_idea = DOH_dfgg5
 			}
-			has_completed_focus = DOH_yixianwansui
+			has_completed_focus = DOH_donghuangdeyewang
 		}
 		ai_will_do = {
 			factor = 10
@@ -3268,7 +3283,7 @@ focus_tree = {
 					democratic > 0.5
 				}
 				AND = {
-					has_completed_focus = DOH_yixianwansui
+					has_completed_focus = DOH_donghuangdeyewang
 					fascism > 0.5
 				}
 				hidden_trigger = {
@@ -3290,7 +3305,7 @@ focus_tree = {
 					}
 					if = {
 						limit = {
-							has_completed_focus = DOH_yixianwansui
+							has_completed_focus = DOH_donghuangdeyewang
 						}
 						add_popularity = {
 							ideology = fascism
@@ -3343,7 +3358,7 @@ focus_tree = {
 					democratic > 0.8
 				}
 				AND = {
-					has_completed_focus = DOH_yixianwansui
+					has_completed_focus = DOH_donghuangdeyewang
 					fascism > 0.8
 				}
 				hidden_trigger = {
@@ -3366,7 +3381,7 @@ focus_tree = {
 					}
 					if = {
 						limit = {
-							has_completed_focus = DOH_yixianwansui
+							has_completed_focus = DOH_donghuangdeyewang
 						}
 						add_popularity = {
 							ideology = fascism
@@ -4285,7 +4300,7 @@ focus_tree = {
 			factor = 6
 		}
 		bypass = {
-			has_completed_focus = DOH_yixianwansui
+			has_completed_focus = DOH_donghuangdeyewang
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -4461,7 +4476,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_idea = DOH_dhzztx
-				has_completed_focus = DOH_yixianwansui
+				has_completed_focus = DOH_donghuangdeyewang
 			}
 		}
 		relative_position_id = DOH_gaodengxuefu
@@ -4484,7 +4499,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = DOH_yixianwansui
+						has_completed_focus = DOH_donghuangdeyewang
 					}
 					remove_ideas = DOH_mzkq
 					remove_ideas = DOH_donghuangyikedaxue_idea
@@ -4617,7 +4632,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			OR = {
-				has_completed_focus = DOH_yixianwansui
+				has_completed_focus = DOH_donghuangdeyewang
 				has_completed_focus = DOH_weidalingxiu
 			}
 		}
@@ -4643,7 +4658,7 @@ focus_tree = {
 		}
 		available = {
 			OR = {
-				has_completed_focus = DOH_yixianwansui
+				has_completed_focus = DOH_donghuangdeyewang
 				has_completed_focus = DOH_weidalingxiu
 			}
 		}
@@ -6162,7 +6177,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_completed_focus = DOH_xindonghuang
-				has_completed_focus = DOH_yixianwansui
+				has_completed_focus = DOH_donghuangdeyewang
 			}
 		}
 		ai_will_do = {
