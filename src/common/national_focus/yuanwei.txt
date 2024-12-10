@@ -13,7 +13,7 @@ focus_tree = {
 	default = no
 	continuous_focus_position = {
 		x = 1100
-		y = 1700
+		y = 2700
 	}
 	focus = {
 		id = YUW_yifengmixin
@@ -82,6 +82,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			hidden_effect = {
+				remove_dynamic_modifier = { modifier = YUW_ywlj_dynamic_modifier }
 				start_civil_war = {
 					ruling_party = communism
 					ideology = fascism
@@ -323,6 +324,7 @@ focus_tree = {
 			}
 			hidden_effect = {
 				load_focus_tree = yuanwei_c_focus
+				remove_dynamic_modifier = { modifier = YUW_ywlj_dynamic_modifier }
 			}
 		}
 	}
@@ -4189,7 +4191,7 @@ focus_tree = {
 	focus = {
 		id = YUW_jiuciweizhiderongren
 		icon = GFX_focus_focus_fra_fascist_threat
-		x = 6
+		x = 8
 		y = 0
 		relative_position_id = YUW_jichujianshe
 		cost = 3
@@ -4999,7 +5001,7 @@ focus_tree = {
 	focus = {
 		id = YUW_jichujianshe
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 3
+		x = -6
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -5352,6 +5354,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = YUW_yongwangzhiqian
+		allow_branch = {
+			has_global_flag = MOD_azurlane_sairenzhizai
+		}
 		available = {
 			OR = {
 				has_completed_focus = YUW_jiuciweizhiderongren
@@ -6414,13 +6419,13 @@ focus_tree = {
 	focus = {
 		id = YUW_yidapianlan
 		icon = GFX_fflag_YUW
-		x = 6
-		y = 0
+		x = 8
+		y = 5
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
 		cost = 2
-		relative_position_id = YUW_guafenruishi
+		relative_position_id = YUW_jiuciweizhiderongren
 		search_filters = {
 			FOCUS_FILTER_ANNEXATION
 		}
@@ -9620,4 +9625,1554 @@ focus_tree = {
 			}
 		}
 	}
+	#################################################军事线重做############################################################
+	focus = {
+		id = YUW_1
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = 2
+		y = 8
+		relative_position_id = YUW_jichujianshe
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		available = {
+			OR = {
+				has_completed_focus = YUW_jiuciweizhiderongren
+				has_completed_focus = YUW_buliuxuedeneizhan
+				has_completed_focus = YUW_yuanweikuozhangzhuyi
+				has_completed_focus = YUW_chedijingjigaige
+				has_completed_focus = YUW_qishituandedashengzhan
+				has_completed_focus = YUW_chongjianwangguo
+				has_completed_focus = YUW_xingyunqiyuan
+				has_completed_focus = YUW_yuwengdeli
+				has_completed_focus = YUW_weiyouzhandou
+			}
+		}
+		cost = 5
+		bypass = {
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			army_experience = 50
+			air_experience = 50
+			navy_experience = 50
+			custom_effect_tooltip = AZ_lishitiaozhan_on
+			effect_tooltip = {
+				country_event = YUW_event.135
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = modoption_historicalbossai_on
+					}
+					country_event = YUW_event.135
+				}
+			}
+		}
+	}
+	focus = {
+		id = YUW_2
+		icon = GFX_focus_generic_torpedo_production
+		x = -16
+		y = 1
+		relative_position_id = YUW_1
+		mutually_exclusive = { focus = YUW_3 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_air_mission_efficiency = 0.05 }
+			add_to_variable = { YUW_air_range_factor = 0.05 }
+			add_to_variable = { YUW_air_night_penalty = -0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_1
+			}
+			}
+			swap_ideas = {
+			remove_idea = YUW_yuanweilujunfangshouweizhu_idea
+			add_idea = YUW_yuanweilujunjingongweizhu_idea
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_3
+		icon = GFX_goal_generic_military_sphere
+		x = 2
+		y = 0
+		relative_position_id = YUW_2
+		mutually_exclusive = { focus = YUW_2 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		available = {
+
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+			has_completed_focus = YUW_weiyouzhandou
+			factor = 0
+			}
+		}
+		completion_reward = {
+			add_to_variable = { YUW_air_mission_efficiency = 0.05 }
+			add_to_variable = { YUW_air_range_factor = 0.05 }
+			add_to_variable = { YUW_air_night_penalty = -0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_1
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_4
+		icon = GFX_focus_generic_multi_role_aircraft
+		x = -2
+		y = 1
+		relative_position_id = YUW_2
+		prerequisite = {
+			focus = YUW_2
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_air_cas_efficiency = 0.1 }
+			add_to_variable = { YUW_air_cas_present_factor = 0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_2
+			}
+			}
+			add_tech_bonus = {
+				name = "飞行器研发"
+				bonus = 1
+				uses = 2
+				category = air_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_5
+		icon = GFX_focus_generic_long_range_aircraft
+		x = 0
+		y = 1
+		relative_position_id = YUW_2
+		prerequisite = {
+			focus = YUW_2
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "中型飞行器研发"
+				bonus = 1
+				uses = 2
+				category = medium_air
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_6
+		icon = GFX_focus_generic_air_defense
+		x = 0
+		y = 1
+		relative_position_id = YUW_3
+		prerequisite = {
+			focus = YUW_3
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				
+				prioritize = { 16 } #niederösterreich
+
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				
+				prioritize = { 29 } #niederösterreich
+
+				add_building_construction = {
+					type = anti_air_building
+					level = 5
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				
+				prioritize = { 18 } #niederösterreich
+
+				add_building_construction = {
+					type = anti_air_building
+					level = 5
+					instant_build = yes
+				}	
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_7
+		icon = GFX_focus_generic_aircraft_production
+		x = 2
+		y = 1
+		relative_position_id = YUW_3
+		prerequisite = {
+			focus = YUW_3
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_air_superiority_efficiency = 0.1 }
+			add_to_variable = { YUW_air_intercept_efficiency = 0.1 }
+			add_to_variable = { YUW_air_night_penalty = -0.05 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_5
+			}
+			}
+			add_tech_bonus = {
+				name = "飞行器研发"
+				bonus = 1
+				uses = 2
+				category = air_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_8
+		icon = GFX_focus_generic_tank_air_support
+		x = 0
+		y = 1
+		relative_position_id = YUW_4
+		prerequisite = {
+			focus = YUW_4
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_air_mission_efficiency = 0.1 }
+			add_to_variable = { YUW_air_cas_efficiency = 0.15 }
+			add_to_variable = { YUW_air_cas_present_factor = 0.15 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_3
+			}
+			}
+			TY_kongjunliluntupo = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_9
+		icon = GFX_focus_SWE_marauder_bombers
+		x = 0
+		y = 1
+		relative_position_id = YUW_5
+		prerequisite = {
+			focus = YUW_5
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_air_range_factor = 0.15 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_4
+			}
+			}
+			add_tech_bonus = {
+				name = "大型飞机研究"
+				bonus = 1
+				uses = 2
+				category = heavy_air
+				ahead_reduction = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_10
+		icon = GFX_focus_generic_energy
+		x = 0
+		y = 1
+		relative_position_id = YUW_6
+		prerequisite = {
+			focus = YUW_6
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "雷达科技"
+				bonus = 1
+				uses = 3
+				category = radar_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_11
+		icon = GFX_focus_generic_copy_plane_designs
+		x = 0
+		y = 1
+		relative_position_id = YUW_7
+		prerequisite = {
+			focus = YUW_7
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_air_mission_efficiency = 0.1 }
+			add_to_variable = { YUW_air_superiority_efficiency = 0.15 }
+			add_to_variable = { YUW_air_intercept_efficiency = 0.15 }
+			add_to_variable = { YUW_air_night_penalty = -0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_6
+			}
+			}
+			add_tech_bonus = {
+				name = "飞机模块研发"
+				bonus = 1
+				uses = 3
+				category = plane_modules_tech
+			}
+			TY_kongjunliluntupo = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_12
+		icon = GFX_focus_generic_military_mission
+		x = -6
+		y = 1
+		relative_position_id = YUW_1
+		mutually_exclusive = { focus = YUW_13 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_training_time_army_factor = -0.1 }
+			add_to_variable = { YUW_planning_speed = 0.15 }
+			add_to_variable = { YUW_max_planning = 0.1 }
+			add_to_variable = { YUW_experience_loss_factor = -0.05 }
+			add_to_variable = { YUW_land_reinforce_rate = -0.02 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_7
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_13
+		icon = GFX_focus_generic_little_entente
+		x = 2
+		y = 0
+		relative_position_id = YUW_12
+		mutually_exclusive = { focus = YUW_12 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			add_to_variable = { YUW_army_speed_factor = 0.05 }
+			add_to_variable = { YUW_recon_factor = 0.15 }
+			add_to_variable = { YUW_org_loss_when_moving = -0.1 }
+			add_to_variable = { YUW_army_org_factor = 0.05 }
+			add_to_variable = { YUW_army_morale_factor = -0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_8
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_14
+		icon = GFX_focus_BRA_air_force
+		x = -3
+		y = 1
+		relative_position_id = YUW_12
+		prerequisite = {
+			focus = YUW_12
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_special_forces_attack_factor = 0.2 }
+			add_to_variable = { YUW_special_forces_defence_factor = 0.2 }
+			add_to_variable = { YUW_recon_factor = 0.25 }
+			add_to_variable = { YUW_supply_consumption_factor = -0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_9
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_15
+		icon = GFX_focus_ICE_hrafninn_flygur
+		x = -1
+		y = 1
+		relative_position_id = YUW_12
+		prerequisite = {
+			focus = YUW_12
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_conscription_factor = -0.15 }
+			add_to_variable = { YUW_training_time_army_factor = -0.1 }
+			add_to_variable = { YUW_planning_speed = 0.15 }
+			add_to_variable = { YUW_max_planning = 0.1 }
+			add_to_variable = { YUW_experience_loss_factor = -0.15 }
+			add_to_variable = { YUW_org_loss_when_moving = -0.15 }
+			add_to_variable = { YUW_industrial_capacity_factory = 0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_10
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_16
+		icon = GFX_focus_GER_demonstration_of_military_achievements
+		x = 1
+		y = 1
+		relative_position_id = YUW_12
+		prerequisite = {
+			focus = YUW_12
+			focus = YUW_13
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_ideas = YUW_jtwd_idea
+		}
+	}
+	
+	focus = {
+		id = YUW_17
+		icon = GFX_focus_generic_manpower
+		x = 1
+		y = 1
+		relative_position_id = YUW_13
+		prerequisite = {
+			focus = YUW_13
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_training_time_army_factor = -0.1 }
+			add_to_variable = { YUW_army_attack_factor = 0.1 }
+			add_to_variable = { YUW_army_defence_factor = 0.1 }
+			add_to_variable = { YUW_recon_factor = 0.25 }
+			add_to_variable = { YUW_army_org_factor = 0.1 }
+			add_to_variable = { YUW_supply_consumption_factor = -0.2 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_13
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_18
+		icon = GFX_focus_generic_horse_studs
+		x = 3
+		y = 1
+		relative_position_id = YUW_13
+		prerequisite = {
+			focus = YUW_13
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_conscription_factor = 0.2 }
+			add_to_variable = { YUW_army_org_factor = 0.1 }
+			add_to_variable = { YUW_land_reinforce_rate = 0.02 }
+			add_to_variable = { YUW_org_loss_when_moving = -0.15 }
+			add_to_variable = { YUW_experience_loss_factor = -0.2 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_14
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_19
+		icon = GFX_focus_jinbuli
+		x = -1
+		y = 1
+		relative_position_id = YUW_14
+		prerequisite = {
+			focus = YUW_14
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_special_forces_attack_factor = 0.1 }
+			add_to_variable = { YUW_special_forces_defence_factor = 0.1 }
+			add_to_variable = { YUW_recon_factor = 0.15 }
+			add_to_variable = { YUW_supply_consumption_factor = -0.1 }
+			add_to_variable = { YUW_org_loss_when_moving = -0.1 }
+			add_to_variable = { YUW_army_speed_factor = 0.05 }
+			add_to_variable = { YUW_invasion_preparation = -0.5 }
+			add_to_variable = { YUW_amphibious_invasion = 0.3 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_11
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_20
+		icon = GFX_focus_AUS_osterreichische_gebirgsjager
+		x = 1
+		y = 1
+		relative_position_id = YUW_14
+		prerequisite = {
+			focus = YUW_14
+		}
+		prerequisite = {
+			focus = YUW_15
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_conscription_factor = -0.1 }
+			add_to_variable = { YUW_army_attack_factor = 0.25 }
+			add_to_variable = { YUW_army_defence_factor = 0.25 }
+			add_to_variable = { YUW_army_org_factor = 0.25 }
+			add_to_variable = { YUW_army_morale_factor = 0.3 }
+			add_to_variable = { YUW_planning_speed = 0.25 }
+			add_to_variable = { YUW_supply_consumption_factor = -0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_12
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_21
+		icon = GFX_focus_generic_winter_warfare
+		x = 1
+		y = 1
+		relative_position_id = YUW_15
+		prerequisite = {
+			focus = YUW_16
+		}
+		prerequisite = {
+			focus = YUW_15
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			swap_ideas = {
+			remove_idea = YUW_jtwd_idea
+			add_idea = YUW_jtwd_idea_zhiliang
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_22
+		icon = GFX_focus_generic_full_social_mobilization
+		x = 1
+		y = 1
+		relative_position_id = YUW_16
+		prerequisite = {
+			focus = YUW_16
+		}
+		prerequisite = {
+			focus = YUW_17
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			swap_ideas = {
+			remove_idea = YUW_jtwd_idea
+			add_idea = YUW_jtwd_idea_shuliang
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_23
+		icon = GFX_focus_generic_limited_social_mobilization
+		x = 1
+		y = 1
+		relative_position_id = YUW_17
+		prerequisite = {
+			focus = YUW_18
+		}
+		prerequisite = {
+			focus = YUW_17
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_army_attack_factor = 0.1 }
+			add_to_variable = { YUW_army_defence_factor = 0.1 }
+			add_to_variable = { YUW_army_org_factor = 0.1 }
+			add_to_variable = { YUW_army_morale_factor = 0.1 }
+			add_to_variable = { YUW_training_time_army_factor = -0.1 }
+			add_to_variable = { YUW_planning_speed = 0.2 }
+			add_to_variable = { YUW_max_planning = 0.1 }
+			add_to_variable = { YUW_invasion_preparation = -0.5 }
+			add_to_variable = { YUW_amphibious_invasion = 0.3 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_15
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_24
+		icon = GFX_focus_COG_force_publique_mutiny
+		x = 1
+		y = 1
+		relative_position_id = YUW_18
+		prerequisite = {
+			focus = YUW_18
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_non_core_manpower = 0.15 }
+			add_to_variable = { YUW_max_command_power = 25 }
+			add_to_variable = { YUW_industrial_capacity_factory = 0.1 }
+			add_to_variable = { YUW_army_speed_factor = 0.05 }
+			add_to_variable = { YUW_conscription_factor = 0.1 }
+			add_to_variable = { YUW_army_morale_factor = 0.05 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_16
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_25
+		icon = GFX_focus_generic_army_doctrines_2
+		x = 6
+		y = 1
+		relative_position_id = YUW_1
+		mutually_exclusive = { focus = YUW_26 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = "陆军学说"
+				cost_reduction = 0.75
+				uses = 2
+				category = land_doctrine
+			}
+			add_ideas = YUW_fyz
+		}
+	}
+	
+	focus = {
+		id = YUW_26
+		icon = GFX_focus_generic_tank_assault
+		x = 2
+		y = 0
+		relative_position_id = YUW_25
+		mutually_exclusive = { focus = YUW_25 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = "机动作战学说加成"
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_mobile_warfare
+			}
+			add_ideas = YUW_ydz
+		}
+	}
+	
+	focus = {
+		id = YUW_27
+		icon = GFX_goal_generic_allies_build_infantry
+		x = -3
+		y = 1
+		relative_position_id = YUW_25
+		prerequisite = {
+			focus = YUW_25
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "步兵装备"
+				bonus = 2
+				uses = 1
+				category = infantry_weapons
+				ahead_reduction = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_28
+		icon = GFX_focus_generic_anti_tank_guns
+		x = -1
+		y = 1
+		relative_position_id = YUW_25
+		prerequisite = {
+			focus = YUW_25
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "火炮装备"
+				bonus = 2
+				uses = 1
+				category = artillery
+				ahead_reduction = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_29
+		icon = GFX_focus_generic_military_academy
+		x = 1
+		y = 1
+		relative_position_id = YUW_25
+		prerequisite = {
+			focus = YUW_25
+			focus = YUW_26
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_land_doctrine_cost_factor = -0.3 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_17
+			}
+			}
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = "陆军学说"
+				cost_reduction = 0.75
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_30
+		icon = GFX_focus_generic_license_production
+		x = 1
+		y = 1
+		relative_position_id = YUW_26
+		prerequisite = {
+			focus = YUW_26
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "装甲研发"
+				bonus = 2
+				uses = 1
+				category = armor
+				ahead_reduction = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_31
+		icon = GFX_focus_generic_mechanized
+		x = 3
+		y = 1
+		relative_position_id = YUW_26
+		prerequisite = {
+			focus = YUW_26
+		}
+		available = {
+
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "机械化步兵"
+				bonus = 0.75
+				uses = 2
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_32
+		icon = GFX_focus_CONGO_copper_cartridges
+		x = -1
+		y = 1
+		relative_position_id = YUW_27
+		prerequisite = {
+			focus = YUW_27
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			mio:YUW_renault_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.1
+					#unlock_mio_trait_tooltip = 
+			}
+			mio:YUW_hotchkiss_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.1
+					#unlock_mio_trait_tooltip = 
+			}
+			mio:YUW_apx_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.1
+					#unlock_mio_trait_tooltip = 
+			}
+			mio:YUW_mas_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.1
+					#unlock_mio_trait_tooltip = 
+			}
+			mio:YUW_schneider_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.25
+					add_mio_research_bonus = 0.1
+					#unlock_mio_trait_tooltip = 
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_33
+		icon = GFX_focus_SWE_let_fly_all_guns
+		x = 1
+		y = 1
+		relative_position_id = YUW_27
+		prerequisite = {
+			focus = YUW_27
+		}
+		prerequisite = {
+			focus = YUW_28
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_army_infantry_attack_factor = 0.3 }
+			add_to_variable = { YUW_army_infantry_defence_factor = 0.3 }
+			add_to_variable = { YUW_army_artillery_attack_factor = 0.3 }
+			add_to_variable = { YUW_army_artillery_defence_factor = 0.3 }
+			add_to_variable = { YUW_army_armor_attack_factor = 0.1 }
+			add_to_variable = { YUW_mechanized_defence_factor = 0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_18
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_34
+		icon = GFX_goal_generic_army_artillery
+		x = 1
+		y = 1
+		relative_position_id = YUW_28
+		prerequisite = {
+			focus = YUW_28
+		}
+		prerequisite = {
+			focus = YUW_29
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_max_planning = 0.15 }
+			add_to_variable = { YUW_planning_speed = 0.25 }
+			add_to_variable = { YUW_land_doctrine_cost_factor = -0.3 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_19
+			}
+			}
+			custom_effect_tooltip = "允许解锁第二条陆军学说路线"
+			set_country_flag = TY_army_liluntupo
+			set_technology = {
+				backhand_blow_for_yuw = 1
+				popup = no
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_35
+		icon = GFX_goal_generic_army_tanks
+		x = 1
+		y = 1
+		relative_position_id = YUW_29
+		prerequisite = {
+			focus = YUW_29
+		}
+		prerequisite = {
+			focus = YUW_30
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_recon_factor = 0.15 }
+			add_to_variable = { YUW_org_loss_when_moving = -0.1 }
+			add_to_variable = { YUW_land_doctrine_cost_factor = -0.3 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_20
+			}
+			}
+			custom_effect_tooltip = "允许解锁第二条陆军学说路线"
+			set_country_flag = TY_army_liluntupo
+			set_technology = {
+				backhand_blow_for_yuw = 1
+				popup = no
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_36
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+		x = 1
+		y = 1
+		relative_position_id = YUW_30
+		prerequisite = {
+			focus = YUW_30
+		}
+		prerequisite = {
+			focus = YUW_31
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_army_armor_attack_factor = 0.15 }
+			add_to_variable = { YUW_army_armor_defence_factor = 0.2 }
+			add_to_variable = { YUW_mechanized_attack_factor = 0.2 }
+			add_to_variable = { YUW_mechanized_defence_factor = 0.15 }
+			add_to_variable = { YUW_army_infantry_attack_factor = 0.15 }
+			add_to_variable = { YUW_army_infantry_defence_factor = 0.15 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_21
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_37
+		icon = GFX_focus_generic_truck
+		x = 1
+		y = 1
+		relative_position_id = YUW_31
+		prerequisite = {
+			focus = YUW_31
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_to_variable = { YUW_army_speed_factor = 0.1 }
+			add_to_variable = { YUW_motorized_attack_factor = 0.2 }
+			add_to_variable = { YUW_motorized_defence_factor = 0.2 }
+			add_to_variable = { YUW_training_time_army_factor = -0.15 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_22
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_38
+		icon = GFX_focus_GER_graf_zeppelin
+		x = 16
+		y = 1
+		relative_position_id = YUW_1
+		mutually_exclusive = { focus = YUW_39 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			navy_experience = 75
+			add_tech_bonus = {
+				name = "海军研究"
+				bonus = 0.5
+				uses = 3
+				category = naval_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_39
+		icon = GFX_focus_generic_navy_battleship2
+		x = 2
+		y = 0
+		relative_position_id = YUW_38
+		mutually_exclusive = { focus = YUW_38 }
+		prerequisite = {
+			focus = YUW_1
+		}
+		available = {
+
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 75
+			add_tech_bonus = {
+				name = "海军研究"
+				bonus = 0.5
+				uses = 3
+				category = naval_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_40
+		icon = GFX_focus_generic_air_carrier
+		x = -2
+		y = 1
+		relative_position_id = YUW_38
+		prerequisite = {
+			focus = YUW_38
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "航母研发"
+				bonus = 1
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_41
+		icon = GFX_focus_generic_cruiser2
+		x = 0
+		y = 1
+		relative_position_id = YUW_38
+		prerequisite = {
+			focus = YUW_38
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "巡洋舰研发"
+				bonus = 1
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_42
+		icon = GFX_goal_generic_navy_battleship
+		x = 0
+		y = 1
+		relative_position_id = YUW_39
+		prerequisite = {
+			focus = YUW_39
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = "战列舰研发"
+				bonus = 1
+				uses = 2
+				category = bb_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_43
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = YUW_39
+		prerequisite = {
+			focus = YUW_39
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = "存在舰队"
+				cost_reduction = 0.5
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_44
+		icon = GFX_focus_generic_air_bases
+		x = 0
+		y = 1
+		relative_position_id = YUW_40
+		prerequisite = {
+			focus = YUW_40
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_naval_speed_factor = 0.05 }
+			add_to_variable = { YUW_sortie_efficiency = 0.15 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_23
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = YUW_45
+		icon = GFX_goal_generic_navy_cruiser
+		x = 0
+		y = 1
+		relative_position_id = YUW_41
+		prerequisite = {
+			focus = YUW_41
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_naval_speed_factor = 0.05 }
+			add_to_variable = { YUW_screening_efficiency = 0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_24
+			}
+			}
+			TY_haijunliluntupo = yes
+		}
+	}
+	
+	focus = {
+		id = YUW_46
+		icon = GFX_focus_SMB_blue_water_fleet
+		x = 0
+		y = 1
+		relative_position_id = YUW_42
+		prerequisite = {
+			focus = YUW_42
+		}
+		available = {
+
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_naval_speed_factor = 0.05 }
+			add_to_variable = { YUW_navy_max_range_factor = 0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_25
+			}
+			}
+			TY_haijunliluntupo = yes
+		}
+	}
+	
+	focus = { 
+		id = YUW_47
+		icon = GFX_focus_GER_panzerschiff
+		x = 0
+		y = 1
+		relative_position_id = YUW_43
+		prerequisite = {
+			focus = YUW_43
+		}
+		available = {
+
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_to_variable = { YUW_naval_speed_factor = 0.05 }
+			add_to_variable = { YUW_screening_efficiency = 0.1 }
+			effect_tooltip = {
+			swap_ideas = {
+			remove_idea = YUW_ywlj_idea1
+			add_idea = YUW_ywlj_idea1_24
+			}
+			}
+		}
+	}
+	
+	focus = { 
+		id = YUW_48
+		icon = GFX_focus_generic_surrender
+		x = 1
+		y = 1
+		relative_position_id = YUW_1
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = YUW_1
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = {
+					localization_key = YUW_tzdkxiaodebuff
+				}
+				always = no
+			}
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = YUW_ywlj_dynamic_modifier }
+		}
+	}
+	
 }

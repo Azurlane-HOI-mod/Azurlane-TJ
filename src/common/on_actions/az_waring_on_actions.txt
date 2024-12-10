@@ -202,4 +202,215 @@ on_actions = {
 		}
 
 	}
+	on_capitulation = { 
+		effect = {
+			if = {
+				limit = { 
+					date > 1941.6.1
+					tag = TIX
+					has_government = fascism
+					is_puppet = no
+					not = { controls_state = 64 }
+					not = { country_exists = WEX }
+					has_global_flag = yaertahuiyi_chenggong
+					has_war_with = BFL
+					has_war_with = BYG
+					has_war_with = HUJ
+					BFL = {
+					surrender_progress < 0.2
+					}
+					HUJ = {
+					surrender_progress < 0.3
+					}
+					BYG = {
+					surrender_progress < 0.1
+					}
+				}	
+				white_peace = { 
+					tag = HUJ
+				}
+				white_peace = { 
+					tag = BYG
+				}
+				white_peace = { 
+					tag = BFL
+				}
+				white_peace = { 
+					tag = YUW
+				}
+				white_peace = { 
+					tag = SAD
+				}
+				TIX_z23 = {
+					set_nationality = TIX
+				}
+				set_cosmetic_tag = TIX
+				TIX = {
+				add_country_leader_role = {
+				Character = TIX_z23
+				Promote_leader = yes
+				Country_leader = {
+					ideology = leninism
+					expire = "2000.1.1.1"
+					traits = {
+						jjdxxs
+						}
+					}
+				}
+				}
+		retire_character = TIX_xipeiershangjiang
+		release_on_controlled = CZE
+		release_on_controlled = AUS
+		release_on_controlled = NOR
+		release_on_controlled = DEN
+		release_on_controlled = HOL
+		release_on_controlled = BEL
+		release_on_controlled = LUX
+		CZE = {
+		annex_country = { target = SLO transfer_troops = no }
+		transfer_state = 73
+		transfer_state = 664
+		}
+		POL = {
+		transfer_state = 5
+		transfer_state = 63
+		transfer_state = 68
+		transfer_state = 66
+		transfer_state = 67
+		transfer_state = 85
+		transfer_state = 86
+		transfer_state = 807
+		transfer_state = 87
+		transfer_state = 98
+		transfer_state = 10
+		transfer_state = 762
+		transfer_state = 90
+		transfer_state = 88
+		transfer_state = 92
+		transfer_state = 97
+		add_state_core = 5
+		add_state_core = 63
+		add_state_core = 68
+		add_state_core = 66
+		add_state_core = 67
+		}
+		GER = {
+		set_cosmetic_tag = XTIX
+		recruit_character = TIX_xipeiershangjiang
+		add_country_leader_role = {
+			character = TIX_xipeiershangjiang
+			promote_leader = yes
+			country_leader = {
+				expire = "4999.1.1"
+				ideology = liberalism
+				traits = {
+						
+				}
+			}
+			}
+		set_capital = { state = 51 }
+		transfer_state = 59
+		transfer_state = 55
+		transfer_state = 56
+		transfer_state = 57
+		transfer_state = 51
+		transfer_state = 42
+		transfer_state = 54
+		transfer_state = 50
+		transfer_state = 52
+		transfer_state = 53
+		transfer_state = 58
+		transfer_state = 909
+		transfer_state = 978
+		add_state_core = 58
+		add_state_core = 59
+		add_state_core = 55
+		add_state_core = 56
+		add_state_core = 57
+		add_state_core = 51
+		add_state_core = 42
+		add_state_core = 54
+		add_state_core = 50
+		add_state_core = 52
+		add_state_core = 53
+		add_state_core = 909
+		add_state_core = 978
+		}
+		51 = {
+		set_demilitarized_zone = yes
+		}
+		42 = {
+		set_demilitarized_zone = yes
+		}
+		BFL = {
+		#annex_country = { target = FIN transfer_troops = no }
+		annex_country = { target = UKR transfer_troops = no }
+		annex_country = { target = LAT transfer_troops = no }
+		annex_country = { target = EST transfer_troops = no }
+		annex_country = { target = BLR transfer_troops = no }
+		annex_country = { target = AZR transfer_troops = no }
+		annex_country = { target = GEO transfer_troops = no }
+		annex_country = { target = LIT transfer_troops = no }
+		transfer_state = 188
+		transfer_state = 763
+		transfer_state = 78
+		transfer_state = 80
+		transfer_state = 766
+		add_state_core = 763
+		set_autonomy = {
+			target = TIX
+			autonomy_state = autonomy_integrated_puppet
+		}
+		set_autonomy = {
+			target = POL
+			autonomy_state = autonomy_integrated_puppet
+		}
+		set_autonomy = {
+			target = CZE
+			autonomy_state = autonomy_integrated_puppet
+		}
+		set_autonomy = {
+			target = HUN
+			autonomy_state = autonomy_integrated_puppet
+		}
+		set_autonomy = {
+			target = ROM
+			autonomy_state = autonomy_integrated_puppet
+		}
+		}
+		set_province_name = { id = 6332 name = "萨悠斯格勒" }
+		BYG = {
+		set_autonomy = {
+			target = GER
+			autonomy_state = autonomy_integrated_puppet
+		}
+		}
+		DEN = {
+		set_cosmetic_tag = DEN
+		add_popularity = { ideology = democratic popularity = 0.3 }
+		set_politics = {
+			ruling_party = democratic
+		}
+		}
+		GER = {
+		add_popularity = { ideology = democratic popularity = 0.75 }
+		load_oob = GER_1939_nsb
+		}
+		add_popularity = { ideology = communism popularity = 0.75 }
+		news_event = { id = az_tianjiang.89 days = 1}
+		} 
+		
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					tag = YUW
+					not = { has_government = communism }
+				}
+				complete_national_focus = YUW_48
+			}
+		}
+	}
 }
