@@ -1,0 +1,120 @@
+sp_az_DOH_yunzaihuojian = {
+	specialization = specialization_air
+	icon = GFX_sp_rockets_icbm
+	project_tags = sp_tag_rocket
+	complexity = sp_complexity.large
+	breakthrough_cost = {
+		specialization_air = 1
+	}
+	resource_cost = {
+		resources = {
+			steel = 9
+			aluminium = 9
+			chromium = 9
+		}
+	}
+	visible = {
+		OR = {
+			FROM = {
+				tag = DOH
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+			}
+			FROM = {
+				tag = DOH
+				is_debug = yes
+			}
+		}
+	}
+	available = {
+		OR = {
+			FROM = {
+				num_of_factories > 2000
+				is_special_project_completed = sp:sp_rockets_medium_range_ballistic_missile
+			}
+			FROM = {
+				tag = DOH
+				is_debug = yes
+			}
+		}
+	}
+	ai_will_do = {
+		base = 1
+	}
+	prototype_time = sp_time.prototype.medium
+	project_output = {
+		country_effects = {
+			DOH_neibufenqi_jianqin_effect = yes
+			add_breakthrough_points = {
+				specialization = specialization_air
+				value = 3
+			}
+		}
+	}
+	generic_prototype_rewards = {
+		sp_rockets_scientist_xp_generic_reward
+		sp_rockets_onsite_explosion_generic_reward
+		sp_rockets_generic_major_breakthrough_reward
+		sp_rockets_generic_avionics_advancements_reward
+		sp_air_generic_reward_scientist_xp_1
+		sp_air_generic_reward_scientist_xp_2
+		sp_air_generic_reward_scientist_xp_3
+		sp_air_generic_reward_major_progress_1
+		sp_air_generic_reward_major_progress_2
+		sp_air_generic_reward_major_progress_3
+		sp_air_generic_reward_test_failure_1
+		sp_air_generic_reward_test_failure_2
+		sp_air_generic_reward_test_failure_3
+	}
+	unique_prototype_rewards = {
+		sp_rocket_dianhuo_reward = {
+			fire_only_once = yes
+			threshold = {
+				min = 70
+				max = 90
+			}
+			weight = {
+				base = 10
+			}
+			option = {
+				token = sp_rocket_dianhuo_reward_guiling
+				iteration_output = {
+					facility_state_effects = {
+						damage_building = {
+							tags = facility
+							damage = 0.1
+							province = var:facility_province_id
+						}
+					}
+					country_effects = {
+						FROM = {
+							add_project_progress_ratio = constant:sp_progress.loss.medium
+						}
+						add_breakthrough_points = {
+							specialization = specialization_air
+							value = 1
+						}
+						add_political_power = -100
+					}
+				}
+			}
+			option = {
+				token = sp_rocket_dianhuo_reward_kuaisudiedai
+				iteration_output = {
+					facility_state_effects = {
+						damage_building = {
+							tags = facility
+							damage = 0.1
+							province = var:facility_province_id
+						}
+					}
+					country_effects = {
+						FROM = {
+							add_project_progress_ratio = constant:sp_progress.gain.low
+						}
+						add_political_power = -100
+					}
+				}
+			}
+		}
+	}
+}

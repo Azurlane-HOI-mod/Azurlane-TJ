@@ -63,6 +63,11 @@ ideas = {
 	}
 	
 	hidden_ideas = {
+		DOH_zhilihuanghe_cost_idea = {
+			modifier = {
+				civilian_factory_use = 60
+			}
+		}
 		DOH_zujianxingzhengtuandui_idea = {
 			modifier = {
 				mobilization_laws_cost_factor = -0.50
@@ -155,7 +160,7 @@ ideas = {
 				static_anti_air_damage_factor = 0.5
 			}
 			equipment_bonus = {
-				guided_missile_equipment = {
+				ballistic_missile_equipment = {
 					air_range = 0.5
 					air_defence = 0.5
 					air_agility = 1
@@ -179,18 +184,18 @@ ideas = {
 				static_anti_air_damage_factor = 1
 			}
 			equipment_bonus = {
-				guided_missile_equipment = {
+				ballistic_missile_equipment = {
 					air_range = 1
 					air_agility = 3
 					maximum_speed = 5
 					air_defence = 2
 				}
 				rocket_artillery_equipment = {
-					soft_attack = 0.20
+					soft_attack = 0.30
 					maximum_speed = 0.5
 				}
 				motorized_rocket_equipment = {
-					soft_attack = 0.30
+					soft_attack = 0.35
 					maximum_speed = 0.5
 					fuel_consumption_factor = -0.2
 				}
@@ -238,13 +243,13 @@ ideas = {
 		DOH_feitianmeng_idea = {
 			picture = GFX_experimental_rockets_medium
 			modifier = {
-				civilian_intel_factor = 5
-				army_intel_factor = 5
-				navy_intel_factor = 5
-				air_intel_factor = 5
-				naval_detection = 1
+				civilian_intel_factor = 1
+				army_intel_factor = 1
+				navy_intel_factor = 1
+				air_intel_factor = 1
+				naval_detection = 0.5
 				navy_submarine_detection_factor = 0.05
-				air_detection = 1
+				air_detection = 0.5
 			}
 		}
 		DOH_chijiaoyisheng_idea = {
@@ -794,6 +799,7 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.15
 				global_building_slots_factor = 0.35
+				production_speed_facility_factor = 0.3
 			}
 		}
 		DOH_ggkf_1 = {
@@ -857,6 +863,7 @@ ideas = {
 				line_change_production_efficiency_factor = 0.15
 				production_factory_efficiency_gain_factor = 0.15
 				production_speed_infrastructure_factor = 0.3
+				production_speed_facility_factor = 0.3
 			}
 		}
 		DOH_kddpfcj = {
