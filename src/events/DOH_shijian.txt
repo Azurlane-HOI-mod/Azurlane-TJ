@@ -11,7 +11,7 @@ country_event = {
 	option = {
 		name = DOH_event.1.a
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				check_variable = {
 					var = affect_from_bfl
@@ -21,9 +21,23 @@ country_event = {
 				add = 100
 			}
 			modifier = {
-				has_game_rule = {
-					rule = DOH_ai_behavior
-					option = DOH_red_focus_1
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_1
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_2
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_3
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_4
+					}
 				}
 				add = 10000
 			}
@@ -33,7 +47,7 @@ country_event = {
 	option = {
 		name = DOH_event.1.b
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				check_variable = {
 					var = affect_from_huj
@@ -43,16 +57,36 @@ country_event = {
 				add = 100
 			}
 			modifier = {
-				has_game_rule = {
-					rule = DOH_ai_behavior
-					option = DOH_red_focus_2
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_1
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_2
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_3
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_4
+					}
 				}
 				add = 10000
 			}
 			modifier = {
-				has_game_rule = {
-					rule = DOH_ai_behavior
-					option = DOH_blue_focus
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_blue_focus_1
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_blue_focus_2
+					}
 				}
 				add = 10000
 			}
@@ -76,11 +110,25 @@ country_event = {
 	option = {
 		name = DOH_event.2.a
 		ai_chance = {
-			factor = 5
+			base = 5
 			modifier = {
-				has_game_rule = {
-					rule = DOH_ai_behavior
-					option = DOH_red_focus_2
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_1
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_2
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_3
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_4
+					}
 				}
 				add = 10000
 			}
@@ -109,11 +157,17 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 			modifier = {
-				has_game_rule = {
-					rule = DOH_ai_behavior
-					option = DOH_blue_focus
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_blue_focus_1
+					}
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_blue_focus_2
+					}
 				}
 				add = 10000
 			}
@@ -244,7 +298,7 @@ country_event = {
 	option = {
 		name = DOH_event.3.a
 		ai_chance = {
-			factor = 5
+			base = 5
 		}
 		add_popularity = { ideology = communism popularity = 0.1 }
 		DOH_anshan = {
@@ -282,7 +336,7 @@ country_event = {
 	option = {
 		name = DOH_event.4.a
 		ai_chance = {
-			factor = 5
+			base = 5
 		}
 		add_popularity = { ideology = communism popularity = 0.1 }
 		DOH_yixian = {
@@ -314,7 +368,7 @@ country_event = {
 	option = {
 		name = DOH_event.5.a
 		ai_chance = {
-			factor = 5
+			base = 5
 		}
 		add_popularity = { ideology = democratic popularity = 0.1 }
 		DOH_yixian = {
@@ -334,7 +388,7 @@ country_event = {
 	option = {
 		name = DOH_event.6.a
 		ai_chance = {
-			factor = 5
+			base = 5
 		}
 		add_tech_bonus = {
 			name = "全方面合作"
@@ -452,7 +506,7 @@ country_event = {
 	option = {
 		name = DOH_event.8.a
 		ai_chance = {
-			factor = 8
+			base = 8
 		}
 		DOH = { annex_country = { target = FROM transfer_troops = yes } }
 	}
@@ -466,7 +520,7 @@ country_event = {
 	option = {
 		name = DOH_event.9.a
 		ai_chance = {
-			factor = 8
+			base = 8
 		}
 	}
 }
@@ -479,14 +533,14 @@ country_event = {
 	option = {
 		name = DOH_event.10.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		DOH = { country_event = DOH_event.11 }
 	}
 	option = {
 		name = DOH_event.10.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		DOH = { country_event = DOH_event.12 }
 	}
@@ -500,7 +554,7 @@ country_event = {
 	option = {
 		name = DOH_event.11.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		transfer_state = 326
 		transfer_state = 729
@@ -515,7 +569,7 @@ country_event = {
 	option = {
 		name = DOH_event.12.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		create_wargoal = { target = HUJ type = take_state_focus }
 		create_wargoal = { target = POR type = take_state_focus }
@@ -530,21 +584,21 @@ country_event = {
 	option = {
 		name = DOH_event.13.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		DOH = { country_event = DOH_event.14 }
 	}
 	option = {
 		name = DOH_event.13.b
 		ai_chance = {
-			factor = 4
+			base = 4
 		}
 		DOH = { country_event = DOH_event.15 }
 	}
 	option = {
 		name = DOH_event.13.c
 		ai_chance = {
-			factor = 2
+			base = 2
 		}
 		DOH = { country_event = DOH_event.16 }
 	}
@@ -558,7 +612,7 @@ country_event = {
 	option = {
 		name = DOH_event.14.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		transfer_state = 671
 		transfer_state = 728
@@ -576,14 +630,14 @@ country_event = {
 	option = {
 		name = DOH_event.15.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		transfer_state = 728
 	}
 	option = {
 		name = DOH_event.15.b
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		create_wargoal = { target = YUW type = take_state_focus }
 	}
@@ -597,7 +651,7 @@ country_event = {
 	option = {
 		name = DOH_event.16.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		create_wargoal = { target = YUW type = take_state_focus }
 
@@ -612,14 +666,14 @@ country_event = {
 	option = {
 		name = DOH_event.17.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		DOH = { country_event = DOH_event.18 }
 	}
 	option = {
 		name = DOH_event.17.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		DOH = { country_event = DOH_event.19 }
 	}
@@ -633,7 +687,7 @@ country_event = {
 	option = {
 		name = DOH_event.18.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		transfer_state = 609
 		transfer_state = 611
@@ -664,7 +718,7 @@ country_event = {
 	option = {
 		name = DOH_event.19.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_war_support = 0.15
 	}
@@ -681,7 +735,7 @@ country_event = {
 	option = {
 		name = DOH_event.20.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		if = {
 			limit = {
@@ -803,7 +857,7 @@ country_event = {
 	option = {
 		name = DOH_event.21.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_war_support = -0.1
 		DOH_baojiaweiguo_dengji = yes
@@ -823,7 +877,7 @@ country_event = {
 	option = {
 		name = DOH_event.22.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_war_support = -0.1
 		DOH_baojiaweiguo_dengji = yes
@@ -843,7 +897,7 @@ country_event = {
 	option = {
 		name = DOH_event.23.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_war_support = -0.05
 		DOH_baojiaweiguo_dengji = yes
@@ -863,7 +917,7 @@ country_event = {
 	option = {
 		name = DOH_event.24.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_war_support = -0.05
 		DOH_baojiaweiguo_dengji = yes
@@ -897,7 +951,7 @@ country_event = {
 	option = {
 		name = DOH_event.25.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_war_support = -0.05
 		DOH_baojiaweiguo_dengji = yes
@@ -948,7 +1002,7 @@ country_event = {
 	option = {
 		name = DOH_event.26.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_war_support = -0.1
 		DOH_baojiaweiguo_dengji = yes
@@ -977,7 +1031,7 @@ country_event = {
 	option = {
 		name = DOH_event.27.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_ideas = DOH_dhzztx
 		every_unit_leader = {
@@ -994,7 +1048,7 @@ country_event = {
 	option = {
 		name = DOH_event.28.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		army_experience = 25
 		add_political_power = 100
@@ -1012,7 +1066,7 @@ country_event = {
 	option = {
 		name = DOH_event.29.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_political_power = var:tunbingjunfa_costpp
 		if = {
@@ -1043,7 +1097,7 @@ country_event = {
 	option = {
 		name = DOH_event.30.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		custom_effect_tooltip = available_political_advisor
 		show_ideas_tooltip = gelideli
@@ -1062,7 +1116,7 @@ country_event = {
 	option = {
 		name = DOH_event.3001.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_offsite_building = { type = industrial_complex level = 5 }
 	}
@@ -1086,7 +1140,7 @@ country_event = {
 	option = {
 		name = DOH_event.31.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_timed_idea = {
 			idea = DOH_idea_jfdfbzf
@@ -1099,7 +1153,7 @@ country_event = {
 	option = {
 		name = DOH_event.31.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		add_timed_idea = {
 			idea = DOH_idea_jfdfbzf
@@ -1120,7 +1174,7 @@ country_event = {
 	option = {
 		name = DOH_event.3101.a
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		army_experience = 50
 		custom_effect_tooltip = wz_earn_18000
@@ -1131,7 +1185,7 @@ country_event = {
 	option = {
 		name = DOH_event.3101.b
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		army_experience = 50
 		add_stability = 0.15
@@ -1147,7 +1201,7 @@ country_event = {
 	option = {
 		name = DOH_event.3102.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		add_ideas = DOH_idea_qldxztx
 	}
@@ -1162,7 +1216,7 @@ country_event = {
 	option = {
 		name = DOH_loong_event.1001.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		custom_effect_tooltip = DOH_loong_event.1001.at
 		add_timed_idea = {
@@ -1211,7 +1265,7 @@ country_event = {
 	option = {
 		name = DOH_loong_event.1002.a
 		ai_chance = {
-			factor = 9
+			base = 9
 		}
 		custom_effect_tooltip = DOH_loong_event.1002.at
 		add_stability = -0.15
@@ -1579,6 +1633,15 @@ country_event = {
 		complete_national_focus = DOH_daduoshu
 		ai_chance = {
 			base = 50
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_1
+					}
+				}
+				add = 10000
+			}
 		}
 	}
 	option = {
@@ -1586,6 +1649,15 @@ country_event = {
 		complete_national_focus = DOH_pingwenxuanze
 		ai_chance = {
 			base = 50
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_2
+					}
+				}
+				add = 10000
+			}
 		}
 	}
 	option = {
@@ -1593,6 +1665,15 @@ country_event = {
 		complete_national_focus = DOH_jijifangyu
 		ai_chance = {
 			base = 50
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_3
+					}
+				}
+				add = 10000
+			}
 		}
 	}
 	option = {
@@ -1605,6 +1686,15 @@ country_event = {
 		}
 		ai_chance = {
 			base = 50
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = DOH_ai_behavior
+						option = DOH_red_focus_4
+					}
+				}
+				add = 10000
+			}
 		}
 	}
 }

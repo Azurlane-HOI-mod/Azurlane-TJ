@@ -88,6 +88,10 @@ DOH_tongyonghangkong_organization = {
 			has_completed_focus = DOH_tieyuan
 		}
 	}
+	equipment_type = {
+		helicopter_equipment
+		motorbike_equipment
+	}
 }
 
 DOH_baotoudiyijixiechang_organization = {
@@ -296,11 +300,11 @@ DOH_dalianzaochuan_organization = {
 	}
 	available = {
 		owner = {
-			AND = {
-				num_of_factories > 225
-				num_of_naval_factories > 60
-				has_completed_focus = DOH_zaochuanjishugexin
-			}
+			# AND = {
+			# 	num_of_factories > 225
+			# 	num_of_naval_factories > 60
+			has_completed_focus = DOH_zaochuanjishugexin
+			#  }
 			controls_state = 745
 			OR = {
 				has_completed_focus = DOH_xindonghuang
@@ -483,7 +487,7 @@ DOH_hudong_organization = {
 ## 武昌造船厂
 DOH_wuchangzaochuanchang_organization = {
 	include = generic_submarine_organization
-	icon = GFX_idea_generic_sea_focused_navy
+	icon = GFX_idea_generic_navy_submarines
 	allowed = {
 		tag = DOH
 	}
@@ -1054,6 +1058,12 @@ DOH_taiyuan_arsenal_organization = {
 	icon = GFX_idea_generic_artillery_manufacturer_1
 	allowed = {
 		tag = DOH
+	}
+	equipment_type = {
+		artillery_equipment
+		rocket_artillery_equipment
+		self_propelled_super_heavy_artillery_equipment
+		super_heavy_artillery_equipment
 	}
 	available = {
 		owner = {

@@ -1,24 +1,19 @@
 DOH_historical = {
 	name = "DOH_historical"
 	desc = "DOH_historical_desc"
-
 	allowed = {
 		original_tag = DOH
 	}
 	enable = {
-	has_global_flag = MOD_azurlane_tianjiangjianniang
+		#has_global_flag = MOD_azurlane_tianjiangjianniang
 		OR = {
 			is_historical_focus_on = yes
 			has_game_rule = {
 				rule = DOH_ai_behavior
-				option = DOH_historical_focus
+				option = DOH_black_focus_1
 			}
 		}
 	}
-	abort = {
-		has_completed_focus = DOH_baochiweishe
-	}
-
 	ai_national_focuses = {
 		DOH_junshigaige
 		DOH_weishejunfa
@@ -44,7 +39,6 @@ DOH_historical = {
 		DOH_xuexibaiying
 		DOH_dongfangdexiaoxuesheng
 		DOH_dulizizhudejungong
-		
 		DOH_dongfangliming
 		DOH_xiandaihuazhimeng
 		DOH_rencaiyinjin
@@ -55,37 +49,30 @@ DOH_historical = {
 		DOH_ziligengsheng
 		DOH_shehuibaozhang
 		DOH_donghuanggongyetixi
-		
 		DOH_huanxingjulong
 		DOH_weilenvhuang
 		DOH_xianchuyiqie
 		DOH_gaodengxuefu
 		DOH_minzhikaiqi
-
 		DOH_faxiantianranqi
 		DOH_nanhaishiyougongsi
 		DOH_jianshedaolian
-
 		DOH_haijunjianshe
 		DOH_zaochuanjishugexin
-
 		DOH_nanhaidezhuren
 		DOH_jingbingqiangjiang
 		DOH_lujunxinlilun
 		DOH_liluntupo
 		DOH_tiexueguwen
 		DOH_huangjiaguwen
-
 		DOH_donghuangdeshidai
 		DOH_dashanghai
 		DOH_tianfuzhiguo
 		DOH_qianniandidu
 		DOH_heijinsansheng
 		DOH_sichouzhilu
-
 		DOH_yuanyanghaijun
 		DOH_yunshujiandui
-		
 		#DOH_aoranzili
 		DOH_baochiweishe
 		# #1936
@@ -129,29 +116,27 @@ DOH_historical = {
 		# DOH_jiachangbanshi #49
 		# DOH_shikejingjie #70
 	}
-
 	research = {
-		cat_medium_armor = 50.0	
+		cat_medium_armor = 50
 	}
-
 	# Keep small, as it is used as a factor for some things (such as research needs)
 	# Recommended around 1.0. Useful for relation between plans
 	weight = {
-		factor = 1.0
+		factor = 1
 		modifier = {
-			factor = 1.0
+			factor = 1
 		}
 	}
 }
+
 DOH_red = {
 	name = "DOH_red"
 	desc = "DOH_red_desc"
-
 	allowed = {
 		original_tag = DOH
 	}
 	enable = {
-		has_global_flag = MOD_azurlane_tianjiangjianniang
+		#has_global_flag = MOD_azurlane_tianjiangjianniang
 		OR = {
 			has_game_rule = {
 				rule = DOH_ai_behavior
@@ -161,12 +146,16 @@ DOH_red = {
 				rule = DOH_ai_behavior
 				option = DOH_red_focus_2
 			}
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_red_focus_3
+			}
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_red_focus_4
+			}
 		}
 	}
-	abort = {
-		has_completed_focus = DOH_xianchuyiqie
-	}
-
 	ai_national_focuses = {
 		DOH_junshigaige
 		DOH_weishejunfa
@@ -190,7 +179,6 @@ DOH_red = {
 		DOH_xuexibaiying
 		DOH_dongfangdexiaoxuesheng
 		DOH_dulizizhudejungong
-		
 		DOH_dongfangliming
 		DOH_xiandaihuazhimeng
 		DOH_rencaiyinjin
@@ -201,70 +189,63 @@ DOH_red = {
 		DOH_ziligengsheng
 		DOH_shehuibaozhang
 		DOH_donghuanggongyetixi
-		
 		DOH_huanxingjulong
 		DOH_weilenvhuang
 		DOH_xianchuyiqie
 		DOH_gaodengxuefu
 		DOH_minzhikaiqi
-
 		DOH_faxiantianranqi
 		DOH_nanhaishiyougongsi
 		DOH_jianshedaolian
-
 		DOH_haijunjianshe
 		DOH_zaochuanjishugexin
-
 		DOH_nanhaidezhuren
 		DOH_jingbingqiangjiang
 		DOH_lujunxinlilun
 		DOH_liluntupo
 		DOH_tiexueguwen
 		DOH_huangjiaguwen
-
 		DOH_donghuangdeshidai
 		DOH_dashanghai
 		DOH_tianfuzhiguo
 		DOH_qianniandidu
 		DOH_heijinsansheng
 		DOH_sichouzhilu
-
 		DOH_yuanyanghaijun
 		DOH_yunshujiandui
-
 	}
-
 	research = {
-		cat_medium_armor = 50.0	
+		cat_medium_armor = 50
 	}
-
 	# Keep small, as it is used as a factor for some things (such as research needs)
 	# Recommended around 1.0. Useful for relation between plans
 	weight = {
-		factor = 1.0
+		factor = 1
 		modifier = {
-			factor = 1.0
+			factor = 1
 		}
 	}
 }
-DOH_red = {
+
+DOH_blue = {
 	name = "DOH_blue"
 	desc = "DOH_blue_desc"
-
 	allowed = {
 		original_tag = DOH
 	}
 	enable = {
-	has_global_flag = MOD_azurlane_tianjiangjianniang
-	has_game_rule = {
-		rule = DOH_ai_behavior
-		option = DOH_blue_focus
+		# has_global_flag = MOD_azurlane_tianjiangjianniang
+		OR = {
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_blue_focus_1
+			}
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_blue_focus_2
+			}
+		}
 	}
-	}
-	abort = {
-		has_completed_focus = DOH_xianchuyiqie
-	}
-
 	ai_national_focuses = {
 		DOH_junshigaige
 		DOH_weishejunfa
@@ -288,7 +269,6 @@ DOH_red = {
 		DOH_xuexibaiying
 		DOH_dongfangdexiaoxuesheng
 		DOH_dulizizhudejungong
-		
 		DOH_dongfangliming
 		DOH_xiandaihuazhimeng
 		DOH_rencaiyinjin
@@ -299,48 +279,37 @@ DOH_red = {
 		DOH_ziligengsheng
 		DOH_shehuibaozhang
 		DOH_donghuanggongyetixi
-		
 		DOH_huanxingjulong
 		DOH_weilenvhuang
 		DOH_xianchuyiqie
 		DOH_gaodengxuefu
 		DOH_minzhikaiqi
-
 		DOH_faxiantianranqi
 		DOH_nanhaishiyougongsi
 		DOH_jianshedaolian
-
 		DOH_haijunjianshe
 		DOH_zaochuanjishugexin
-
 		DOH_nanhaidezhuren
 		DOH_jingbingqiangjiang
 		DOH_lujunxinlilun
 		DOH_liluntupo
 		DOH_tiexueguwen
 		DOH_huangjiaguwen
-
 		DOH_donghuangdeshidai
 		DOH_dashanghai
 		DOH_tianfuzhiguo
 		DOH_qianniandidu
 		DOH_heijinsansheng
 		DOH_sichouzhilu
-
 		DOH_yuanyanghaijun
 		DOH_yunshujiandui
 	}
-
-	research = {
-		cat_medium_armor = 50.0	
-	}
-
 	# Keep small, as it is used as a factor for some things (such as research needs)
 	# Recommended around 1.0. Useful for relation between plans
 	weight = {
 		factor = 0.2
 		modifier = {
-			factor = 1.0
+			factor = 1
 		}
 	}
 }
