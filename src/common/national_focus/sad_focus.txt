@@ -1316,7 +1316,6 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = -300
 			SAD_junfei_army = yes
 			army_experience = 50
 			add_doctrine_cost_reduction = {
@@ -1324,6 +1323,10 @@ focus_tree = {
 				cost_reduction = 0.25
 				uses = 2
 				category = land_doctrine
+			}
+			if = {
+			limit = {
+				is_ai = yes
 			}
 			mio:SAD_fiat_organization = {
 				add_mio_size = 1
@@ -1342,6 +1345,7 @@ focus_tree = {
 			}
 			mio:SAD_officine_meccaniche_organization = {
 				add_mio_size = 1
+			}
 			}
 		}
 	}
