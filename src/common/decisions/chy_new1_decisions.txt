@@ -533,10 +533,17 @@ CHY_taipinyangzhanzhen_category = {
 			controls_state = 629
 			controls_state = 284 
 			controls_state = 285 
-			controls_state = 517 
-			controls_state = 335 
+			controls_state = 517  
 			controls_state = 327 
 			controls_state = 423
+			OR = {
+			controls_state = 335
+			IF = {
+			NOT = { INS = { controls_state = 335 } }
+			NOT = { HUJ = { controls_state = 335 } }
+			NOT = { HOL = { controls_state = 335 } }
+			}
+			}
 		}
 		visible = {
 			tag = CHY
@@ -568,10 +575,17 @@ CHY_taipinyangzhanzhen_category = {
 		    controls_state = 629 
 			controls_state = 284 
 			controls_state = 285 
-			controls_state = 517 
-			controls_state = 335 
+			controls_state = 517  
 			controls_state = 327 
 			controls_state = 423
+			OR = {
+			controls_state = 335
+			IF = {
+			NOT = { INS = { controls_state = 335 } }
+			NOT = { HUJ = { controls_state = 335 } }
+			NOT = { HOL = { controls_state = 335 } }
+			}
+			}
             BYG = { is_in_faction_with = HUJ }
 			OR = { 
 				has_country_flag = CHY_bygwar_1

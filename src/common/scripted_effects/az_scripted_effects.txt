@@ -548,6 +548,8 @@ TY_kongjunliluntupo = {
 }		
 
 shaixuan_leader_seffect = {
+	clear_array = ROOT.az_leader_list_array_temp_0
+	clear_array = ROOT.az_leader_list_array_temp_1
 	clear_array = ROOT.az_leader_list_array
 	every_unit_leader = {
 		set_variable = { THIS.xiujia_leader_wuzi_cost = THIS.num_traits }
@@ -584,7 +586,7 @@ shaixuan_leader_seffect = {
 					NOT = { has_character_flag = zhaopinzhihuiguan }
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}	
@@ -608,7 +610,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -632,7 +634,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -656,7 +658,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -680,7 +682,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -716,7 +718,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}	
@@ -740,7 +742,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -764,7 +766,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -788,7 +790,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -810,7 +812,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -834,7 +836,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -870,7 +872,7 @@ shaixuan_leader_seffect = {
 					
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -897,7 +899,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -924,7 +926,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -951,7 +953,7 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
@@ -977,10 +979,257 @@ shaixuan_leader_seffect = {
 					}
 				}
 				add_to_array = {
-					ROOT.az_leader_list_array = THIS
+					ROOT.az_leader_list_array_temp_0 = THIS
 				}
 			}
 		}
-		
 	}
+
+
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_0
+				value = THIS.id
+			}
+			ROOT = {
+				AND = {
+					NOT = { has_country_flag = leader_shaixuan_dengji_1_3 }
+					NOT = { has_country_flag = leader_shaixuan_dengji_4_6 }
+					NOT = { has_country_flag = leader_shaixuan_dengji_7_9 } 
+					NOT = { has_country_flag = leader_shaixuan_dengji_over_9 }
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array_temp_1 = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_0
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dengji_1_3
+			}
+			THIS = {
+				skill < 4
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array_temp_1 = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_0
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dengji_4_6
+			}
+			THIS = {
+				skill > 3
+				skill < 7
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array_temp_1 = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_0
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dengji_7_9
+			}
+			THIS = {
+				skill > 6
+				skill < 10
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array_temp_1 = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_0
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dengji_over_9
+			}
+			THIS = {
+				skill > 9
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array_temp_1 = THIS
+		}
+	}
+
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				AND = {
+					NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+					NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+					NOT = { has_country_flag = leader_shaixuan_dujia_600 } 
+					NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+					NOT = { has_country_flag = leader_shaixuan_dujia_1000 } 
+					NOT = { has_country_flag = leader_shaixuan_dujia_1200 } 
+					NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dujia_200
+			}
+			THIS = {
+				check_variable = {
+					var:xiujia_leader_wuzi_cost = 200
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dujia_400
+			}
+			THIS = {
+				check_variable = {
+					var:xiujia_leader_wuzi_cost = 400
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dujia_600
+			}
+			THIS = {
+				check_variable = {
+					var:xiujia_leader_wuzi_cost = 600
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dujia_800
+			}
+			THIS = {
+				check_variable = {
+					var:xiujia_leader_wuzi_cost = 800
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dujia_1000
+			}
+			THIS = {
+				check_variable = {
+					var:xiujia_leader_wuzi_cost = 1000
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dujia_over_1200
+			}
+			THIS = {
+				check_variable = {
+					var:xiujia_leader_wuzi_cost = 1200
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+	every_unit_leader = {
+		limit = {
+			is_in_array = {
+				array = ROOT.az_leader_list_array_temp_1
+				value = THIS.id
+			}
+			ROOT = {
+				has_country_flag = leader_shaixuan_dujia_1200
+			}
+			THIS = {
+				check_variable = {
+					var:xiujia_leader_wuzi_cost > 1201
+				}
+			}
+		}
+		add_to_array = {
+			ROOT.az_leader_list_array = THIS
+		}
+	}
+
 }

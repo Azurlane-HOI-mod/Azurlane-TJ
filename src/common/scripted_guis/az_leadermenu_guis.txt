@@ -789,6 +789,290 @@ scripted_gui = {
 					ROOT = { clr_country_flag = leader_shaixuan_qianting }
 				}
 			}
+
+			leader_shaixuan_btn8_click = {
+				if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dengji_1_3 }
+								NOT = { has_country_flag = leader_shaixuan_dengji_4_6 }
+								NOT = { has_country_flag = leader_shaixuan_dengji_7_9 } 
+								NOT = { has_country_flag = leader_shaixuan_dengji_over_9 }
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dengji_1_3 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								has_country_flag = leader_shaixuan_dengji_1_3
+								NOT = { has_country_flag = leader_shaixuan_dengji_4_6 }
+								NOT = { has_country_flag = leader_shaixuan_dengji_7_9 } 
+								NOT = { has_country_flag = leader_shaixuan_dengji_over_9 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dengji_1_3
+						#clr_country_flag = leader_shaixuan_dengji_4_6
+						clr_country_flag = leader_shaixuan_dengji_7_9
+						clr_country_flag = leader_shaixuan_dengji_over_9
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dengji_4_6 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dengji_1_3 }
+								has_country_flag = leader_shaixuan_dengji_4_6
+								NOT = { has_country_flag = leader_shaixuan_dengji_7_9 } 
+								NOT = { has_country_flag = leader_shaixuan_dengji_over_9 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dengji_1_3
+						clr_country_flag = leader_shaixuan_dengji_4_6
+						#clr_country_flag = leader_shaixuan_dengji_7_9
+						clr_country_flag = leader_shaixuan_dengji_over_9
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dengji_7_9 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dengji_1_3 }
+								NOT = { has_country_flag = leader_shaixuan_dengji_4_6 }
+								has_country_flag = leader_shaixuan_dengji_7_9
+								NOT = { has_country_flag = leader_shaixuan_dengji_over_9 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dengji_1_3
+						clr_country_flag = leader_shaixuan_dengji_4_6
+						clr_country_flag = leader_shaixuan_dengji_7_9
+						#clr_country_flag = leader_shaixuan_dengji_over_9
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dengji_over_9 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dengji_1_3 }
+								NOT = { has_country_flag = leader_shaixuan_dengji_4_6 }
+								NOT = { has_country_flag = leader_shaixuan_dengji_7_9 }
+								has_country_flag = leader_shaixuan_dengji_over_9
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dengji_1_3
+						clr_country_flag = leader_shaixuan_dengji_4_6
+						clr_country_flag = leader_shaixuan_dengji_7_9
+						clr_country_flag = leader_shaixuan_dengji_over_9
+					}
+				}
+			}
+			
+			leader_shaixuan_btn9_click = {
+				if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_600 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_1000 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_1200 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+							}
+						}
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dujia_200 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								has_country_flag = leader_shaixuan_dujia_200
+								NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_600 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_1000 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_1200 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						#clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dujia_400 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+								has_country_flag = leader_shaixuan_dujia_400
+								NOT = { has_country_flag = leader_shaixuan_dujia_600 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_1000 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_1200 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						#clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dujia_600 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+								has_country_flag = leader_shaixuan_dujia_600
+								NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_1000 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_1200 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						#clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dujia_800 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_600 }
+								has_country_flag = leader_shaixuan_dujia_800
+								NOT = { has_country_flag = leader_shaixuan_dujia_1000 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_1200 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						#clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dujia_1000 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_600 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+								has_country_flag = leader_shaixuan_dujia_1000
+								NOT = { has_country_flag = leader_shaixuan_dujia_1200 } 
+								NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						#clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dujia_1200 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_600 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_1000 }
+								has_country_flag = leader_shaixuan_dujia_1200
+								NOT = { has_country_flag = leader_shaixuan_dujia_over_1200 }
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						#clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
+					ROOT = { set_country_flag = leader_shaixuan_dujia_over_1200 }
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							AND = {
+								NOT = { has_country_flag = leader_shaixuan_dujia_200 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_400 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_600 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_800 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_1000 }
+								NOT = { has_country_flag = leader_shaixuan_dujia_1200 }
+								has_country_flag = leader_shaixuan_dujia_over_1200
+							}
+						}
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
+				}
+			}
 			az_leadermenu_shaixuan_quanxuan_button_click = {
 				if = {
 					limit = {
@@ -809,6 +1093,22 @@ scripted_gui = {
 					clr_country_flag = leader_shaixuan_xunyang
 					clr_country_flag = leader_shaixuan_quzhu
 					clr_country_flag = leader_shaixuan_qianting 
+
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dengji_1_3
+						clr_country_flag = leader_shaixuan_dengji_4_6
+						clr_country_flag = leader_shaixuan_dengji_7_9
+						clr_country_flag = leader_shaixuan_dengji_over_9
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
+					}
 				}
 				else = {
 					ROOT = { 
@@ -819,6 +1119,22 @@ scripted_gui = {
 						set_country_flag = leader_shaixuan_xunyang
 						set_country_flag = leader_shaixuan_quzhu
 						set_country_flag = leader_shaixuan_qianting 
+					}
+
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dengji_1_3
+						clr_country_flag = leader_shaixuan_dengji_4_6
+						clr_country_flag = leader_shaixuan_dengji_7_9
+						clr_country_flag = leader_shaixuan_dengji_over_9
+					}
+					ROOT = {
+						clr_country_flag = leader_shaixuan_dujia_200
+						clr_country_flag = leader_shaixuan_dujia_400
+						clr_country_flag = leader_shaixuan_dujia_600
+						clr_country_flag = leader_shaixuan_dujia_800
+						clr_country_flag = leader_shaixuan_dujia_1000
+						clr_country_flag = leader_shaixuan_dujia_1200
+						clr_country_flag = leader_shaixuan_dujia_over_1200
 					}
 				}
 				
