@@ -285,11 +285,11 @@ leader_traits = {
 	# 炮火，倾泻如瀑
 	paohuo_qinxierupu = {
 		random = no
-		army_artillery_attack_factor = 0.15
+		army_artillery_attack_factor = 0.3
 		army_armor_attack_factor = 0.15
-		breakthrough_factor = 0.15
-		war_support_factor = 0.25
-		recruitable_population = 0.02 
+		breakthrough_factor = 0.3
+		conscription = 0.02
+		war_support_weekly_factor = 0.01
 	}
 	# 纵横方圆
 	zonghengfangyuan = {
@@ -385,33 +385,39 @@ leader_traits = {
 	# 光荣的引路人
 	grdylr = {
 		random = no
-		research_speed_factor = 0.15
+		research_speed_factor = 0.3
 		production_speed_facility_factor = 0.2
-		mechanized_defence_factor = 0.15
-		specialization_air_speed_factor = 0.15
+		specialization_air_speed_factor = 0.5
 		communism_drift = 0.01
 		equipment_bonus = {
 			rocket_artillery_equipment = {
-				soft_attack = 0.2
-				build_cost_ic = -0.3
+				soft_attack = 0.5
+				build_cost_ic = -0.1
 			}
 			motorized_rocket_equipment = {
-				soft_attack = 0.2
+				soft_attack = 0.5
 				build_cost_ic = -0.1
 			}
 			ballistic_missile_equipment = {
-				air_range = 0.1
-				maximum_speed = 0.1
+				air_range = 0.5
+				maximum_speed = 0.2
+				air_agility = 0.1
+				build_cost_ic = -0.15
+			}
+			nuclear_missile_equipment = {
+				air_range = 0.5
+				maximum_speed = 0.2
 				air_agility = 0.1
 				build_cost_ic = -0.15
 			}
 		}
 	}
+	# 鞍山级领舰
 	anshanjilingjian = {
 		random = no
 		navy_max_range_factor = 0.15
 		equipment_bonus = {
-			destroyer = {
+			screen_ship = {
 				max_strength = 0.10
 				max_organisation = 0.20
 			}
@@ -424,6 +430,7 @@ leader_traits = {
 		conscription = 0.02
 		production_speed_buildings_factor = 0.10
 		political_power_factor = 0.15
+		
 	}
 	# 积极防御
 	jijifangyu = {

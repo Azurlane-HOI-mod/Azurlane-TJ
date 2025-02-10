@@ -263,6 +263,12 @@ DOH_dalianzaochuan_organization = {
 			max_strength = 0.1
 			surface_visibility = -0.1
 			armor_value = 0.1
+			naval_speed = 0.3
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
 		}
 	}
 	add_trait = {
@@ -284,11 +290,12 @@ DOH_dalianzaochuan_organization = {
 			}
 		}
 		equipment_bonus = {
-			naval_light_gun_hit_chance_factor = 0.3
+			build_cost_ic = -0.05
+			lg_attack = 0.1
 			hg_attack = 0.1
+			naval_light_gun_hit_chance_factor = 0.3
 			naval_heavy_gun_hit_chance_factor = 0.3
 			surface_visibility = -0.1
-			night_penalty = -0.3
 			reliability = 0.15
 			armor_value = 0.1
 		}
@@ -455,6 +462,7 @@ DOH_hudong_organization = {
 			naval_speed = 0.15
 			build_cost_ic = -0.05
 			reliability = 0.15
+			surface_visibility = -0.1
 			sub_detection = 0.3
 		}
 		production_bonus = {
@@ -770,7 +778,6 @@ DOH_jiangnan_shipyard_group_organization = {
 			surface_visibility = -0.1
 			carrier_size = 1
 			anti_air_attack = 0.1
-			night_penalty = -0.1
 		}
 		production_bonus = {
 			production_capacity_factor = 0.05
@@ -800,6 +807,7 @@ DOH_jiangnan_shipyard_group_organization = {
 			surface_visibility = -0.1
 			carrier_size = 1
 			anti_air_attack = 0.25
+			naval_torpedo_hit_chance_factor = 0.2
 		}
 		production_bonus = {
 			production_capacity_factor = 0.05

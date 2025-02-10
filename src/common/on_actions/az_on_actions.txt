@@ -918,6 +918,40 @@ on_actions = {
 						unit_leader_event = getzhg_event.2709
 					}					
 				}
+				DOH_fushun = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/fushun_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/fushun_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2710
+					}					
+				}
+				DOH_huajia = {
+					if = {
+						limit = {
+							skill > 6
+							skill < 8
+							NOT = {
+								has_character_flag = upgrade_get
+							}
+						}
+						set_portraits = { 
+							army = { large ="gfx/leaders/DOH/huajia_g.png"} 
+							civilian = { large ="gfx/leaders/DOH/huajia_g.png" } 
+						}
+						set_character_flag = upgrade_get
+						unit_leader_event = getzhg_event.2711
+					}					
+				}
 			}
 		}  
 	}
