@@ -1439,6 +1439,30 @@ characters={
 			logistics_skill = 2
 		}
 	}
+	YUW_dipulaikesi = {
+		name = YUW_dipulaikesi
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/dipulaikesi.png"
+				small="gfx/interface/ideas/idea_buleisite.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
 
 	#scientists
 	YUW_sitelasibao_sci = {

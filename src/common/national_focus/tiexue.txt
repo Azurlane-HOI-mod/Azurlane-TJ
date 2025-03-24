@@ -547,7 +547,7 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			guojishengyu_down_5 = yes
-			custom_effect_tooltip = TIX_jiesuochaoshikong_tips
+			#custom_effect_tooltip = TIX_jiesuochaoshikong_tips
 			add_breakthrough_progress = {
 				specialization = specialization_nuclear
 				value = 1.0
@@ -575,6 +575,12 @@ focus_tree = {
 					owner = ROOT
 				}
 			}
+			mio:TIX_henschel_organization = {
+				add_mio_size = 1
+				unlock_mio_trait_tooltip  = {
+					trait = TIX_mio_danbingchaoshikongzhuangzhi
+				}
+			}
 		}
 	}
 	focus = {
@@ -598,7 +604,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			guojishengyu_down_10 = yes
-			custom_effect_tooltip = TIX_jiesuochaoshikong_tips
+			#custom_effect_tooltip = TIX_jiesuochaoshikong_tips
 			add_breakthrough_progress = {
 				specialization = specialization_nuclear
 				value = 1.0
@@ -628,6 +634,12 @@ focus_tree = {
 				create_unit = {
 					division = "name = \"反重力步兵演习兵团\" division_template = \"反重力步兵师\" start_experience_factor = 0.5 start_equipment_factor = 1"
 					owner = ROOT
+				}
+			}
+			mio:TIX_henschel_organization = {
+				add_mio_size = 1
+				unlock_mio_trait_tooltip  = {
+					trait = TIX_mio_danbingchaoshikongzhuangzhi
 				}
 			}
 		}
@@ -1807,9 +1819,11 @@ focus_tree = {
 		}
 		available = {
 			has_war = yes
-			OR = {
+			if = {
+				limit = {
+					is_ai = no
+				}
 				has_air_experience > 200
-				is_ai = yes
 			}
 		}
 		cancel_if_invalid = yes
@@ -2134,8 +2148,14 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = TIX_jiesuoguangleng_tips
+			#custom_effect_tooltip = TIX_jiesuoguangleng_tips
 			add_ideas = TIX_txsbbb
+			mio:TIX_mauser_organization = {
+				add_mio_funds = 500
+				unlock_mio_trait_tooltip  = {
+					trait = TIX_mio_guanglengwuqi
+				}
+			}
 		}
 	}
 	focus = {
@@ -2189,13 +2209,34 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = TIX_zhuangjiagongzao_tip
+			#custom_effect_tooltip = TIX_zhuangjiagongzao_tip
 			add_tech_bonus = {
 				name = "铁血装甲"
 				bonus = 1.5
 				uses = 2
 				category = armor
 			}
+			every_military_industrial_organization = {
+				limit = {
+					owner = ROOT
+					OR = {
+					is_military_industrial_organization = TIX_porsche_organization
+					is_military_industrial_organization = TIX_henschel_organization
+					is_military_industrial_organization = TIX_man_organization
+					is_military_industrial_organization = TIX_daimler_benz_organization
+					}
+				}
+				add_mio_funds = 200
+				unlock_mio_trait_tooltip  = {
+					trait = TIX_mio_tiexuezhuangjiagongzao
+				}
+			}
+			#mio:TIX_porsche_organization = {
+				#add_mio_funds = 200
+			#	unlock_mio_trait_tooltip  = {
+			#		trait = TIX_mio_tiexuezhuangjiagongzao
+				#}
+			#}
 		}
 	}
 	focus = {
@@ -3474,7 +3515,7 @@ focus_tree = {
 			focus = TIX_shouhuzuihaodeougen
 		}
 		ai_will_do = {
-			factor = 0
+			factor = 40
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -4258,6 +4299,21 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = az_tianjiang.11
+			custom_effect_tooltip = kenengdejiangli_tips
+			effect_tooltip = {
+				add_stability = 0.1
+				add_war_support = 0.1
+				transfer_state = 69
+				transfer_state = 74
+				transfer_state = 972
+				add_state_core = 69
+				add_state_core = 74
+				add_state_core = 972
+				HUN = {
+				transfer_state =664
+				transfer_state =73
+				}
+			}
 		}
 	}
 	focus = {
@@ -4456,6 +4512,17 @@ focus_tree = {
 					name = "奥尔良协定"
 				}
 				country_event = az_tianjiang.13
+				custom_effect_tooltip = kenengdejiangli_tips
+				effect_tooltip = {
+					add_stability = 0.1
+					add_war_support = 0.1
+					transfer_state = 9
+					transfer_state = 75
+					set_autonomy = {
+						target = SLO
+						autonomy_state = autonomy_reichskommissariat
+					}
+				}
 				hidden_effect = {
 					news_event = {
 						id = az_tianjiang.15
@@ -4502,6 +4569,20 @@ focus_tree = {
 			POL = {
 				country_event = az_tianjiang.16
 			}
+			custom_effect_tooltip = kenengdejiangli_tips
+				effect_tooltip = {
+					transfer_state = 85
+					transfer_state = 86
+					transfer_state = 807
+					add_state_core = 85
+					add_state_core = 86
+					add_state_core = 807
+					POL = {
+						transfer_state = 70
+						transfer_state = 71
+						transfer_state = 73
+					}
+				}
 		}
 	}
 	focus = {
@@ -4582,6 +4663,12 @@ focus_tree = {
 				YUW = {
 					country_event = az_tianjiang.17
 				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_refuse_tt
+				add_war_support = 0.05
+				add_state_core = 85
+				declare_war_on = { target = POL type = take_state_focus }
 			}
 		}
 	}
@@ -4753,6 +4840,14 @@ focus_tree = {
 				name = "第一次维也纳仲裁"
 			}
 			country_event = az_tianjiang.21
+			custom_effect_tooltip = kenengdejiangli_tips
+				effect_tooltip = {
+					add_political_power = 50
+					add_war_support = 0.1
+					SAD = {
+						annex_country = { target = YUG transfer_troops = no  }
+					}
+				}
 		}
 	}
 	focus = {
@@ -4842,6 +4937,16 @@ focus_tree = {
 			ROM = {
 				country_event = az_tianjiang.23
 			}
+			custom_effect_tooltip = kenengdejiangli_tips
+				effect_tooltip = {
+					add_political_power = 100
+					add_war_support = 0.1
+					set_autonomy = {
+						target = ROM
+						autonomy_state = autonomy_reichskommissariat
+					}
+					ROM = { give_resource_rights = { receiver = TIX state = 46 } }
+				}
 		}
 	}
 	focus = {
@@ -7344,6 +7449,24 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = az_tianjiang.315
+			custom_effect_tooltip = kenengdejiangli_tips
+			effect_tooltip = {
+				transfer_state = 69
+				transfer_state = 74
+				transfer_state = 972
+				transfer_state = 9
+				transfer_state = 75
+				transfer_state = 72
+				add_state_core = 69
+				add_state_core = 74
+				add_state_core = 972
+				add_state_core = 9
+				add_state_core = 75
+				set_autonomy = {
+					target = SLO
+					autonomy_state = az_autonomy_volkskommissariat
+				}
+			}
 		}
 	}
 	focus = {
@@ -7800,7 +7923,573 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			create_faction = "舰娘联合国"
-			custom_effect_tooltip = YUW_tips
+		}
+	}
+	focus = {
+		id = TIX_yaoqingzhongouguojia
+		icon = GFX_focus_AUS_invite_the_entente
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_lianheruoxiaozhongzu
+		}
+		relative_position_id = TIX_lianheruoxiaozhongzu
+		available = {
+			is_puppet = no
+			has_government = democratic
+			is_faction_leader = yes
+		}
+		bypass = {
+			not = { country_exists = AUS }
+			not = { country_exists = CZE }
+			not = { country_exists = HUN }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = AUS
+					AUS = { is_subject = no }
+				}
+				AUS = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = CZE
+					CZE = { is_subject = no }
+				}
+				CZE = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = HUN
+					HUN = { is_subject = no }
+				}
+				HUN = {
+					country_event = az_tianjiang.321
+				}
+			}
+		}
+	}
+	focus = {
+		id = TIX_yaoqingdidiguojia
+		icon = GFX_focus_generic_influence_benelux
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_lianheruoxiaozhongzu
+		}
+		relative_position_id = TIX_lianheruoxiaozhongzu
+		bypass = {
+			not = { country_exists = HOL }
+			not = { country_exists = BEL }
+			not = { country_exists = LUX }
+		}
+		available = {
+			is_puppet = no
+			has_government = democratic
+			is_faction_leader = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = HOL
+					HOL = { is_subject = no }
+				}
+				HOL = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = BEL
+					BEL = { is_subject = no }
+				}
+				BEL = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = LUX
+					LUX = { is_subject = no }
+				}
+				LUX = {
+					country_event = az_tianjiang.321
+				}
+			}
+		}
+	}
+	focus = {
+		id = TIX_yaoqingbeiouguojia
+		icon = GFX_focus_generic_scandinavia_flags
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_lianheruoxiaozhongzu
+		}
+		relative_position_id = TIX_lianheruoxiaozhongzu
+		available = {
+			is_puppet = no
+			has_government = democratic
+			is_faction_leader = yes
+		}
+		bypass = {
+			not = { country_exists = DEN }
+			not = { country_exists = NOR }
+			not = { country_exists = SWE }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = DEN
+					DEN = { is_subject = no }
+				}
+				DEN = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = NOR
+					NOR = { is_subject = no }
+				}
+				NOR = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = SWE
+					SWE = { is_subject = no }
+				}
+				SWE = {
+					country_event = az_tianjiang.321
+				}
+			}
+		}
+	}
+	focus = {
+		id = TIX_yaoqingbaerganguojia
+		icon = GFX_focus_AUS_invite_the_entente
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_yaoqingzhongouguojia
+		}
+		prerequisite = {
+			focus = TIX_yaoqingdidiguojia
+		}
+		prerequisite = {
+			focus = TIX_yaoqingbeiouguojia
+		}
+		relative_position_id = TIX_yaoqingzhongouguojia
+		available = {
+			is_puppet = no
+			has_government = democratic
+			is_faction_leader = yes
+		}
+		bypass = {
+			not = { country_exists = YUG }
+			not = { country_exists = ROM }
+			not = { country_exists = BUL }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = YUG
+					YUG = { is_subject = no }
+				}
+				YUG = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = ROM
+					ROM = { is_subject = no }
+				}
+				ROM = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = BUL
+					BUL = { is_subject = no }
+				}
+				BUL = {
+					country_event = az_tianjiang.321
+				}
+			}
+		}
+	}
+	focus = {
+		id = TIX_yaoqingdongouguojia
+		icon = GFX_focus_generic_polish_deal
+		x = 3
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_yaoqingzhongouguojia
+		}
+		prerequisite = {
+			focus = TIX_yaoqingdidiguojia
+		}
+		prerequisite = {
+			focus = TIX_yaoqingbeiouguojia
+		}
+		relative_position_id = TIX_yaoqingzhongouguojia
+		available = {
+			is_puppet = no
+			has_government = democratic
+			is_faction_leader = yes
+		}
+		bypass = {
+			not = { country_exists = POL }
+			not = { country_exists = LIT }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = POL
+					POL = { is_subject = no }
+				}
+				POL = {
+					country_event = az_tianjiang.321
+				}
+			}
+			if = {
+				limit = {
+					country_exists = LIT
+					LIT = { is_subject = no }
+				}
+				LIT = {
+					country_event = az_tianjiang.321
+				}
+			}
+		}
+	}
+	focus = {
+		id = TIX_hechengdatiexue
+		icon = GFX_fflag_TIX
+		x = 1
+		y = 1
+		cost = 71.5
+		prerequisite = {
+			focus = TIX_yaoqingbaerganguojia
+		}
+		prerequisite = {
+			focus = TIX_yaoqingdongouguojia
+		}
+		relative_position_id = TIX_yaoqingbaerganguojia
+		available = {
+			is_puppet = no
+			has_government = democratic
+			is_faction_leader = yes
+			has_war = no
+			any_other_country = {
+				OR = {
+					tag = AUS
+					tag = CZE
+					tag = HUN
+					tag = DEN
+					tag = NOR
+					tag = SWE
+					tag = HOL
+					tag = BEL
+					tag = LUX
+					tag = ROM
+					tag = YUG
+					tag = BUL
+					tag = POL
+					tag = LIT
+					}
+				is_in_faction_with = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			set_cosmetic_tag = TIX_LB
+			custom_effect_tooltip = TIX_hechengdatiexue_tips
+			hidden_effect = {
+			if = {
+				limit = {
+					any_other_country = {
+					tag = AUS
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = AUS transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = AUS
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = CZE
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = CZE transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = CZE
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = HUN
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = HUN transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = HUN
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = DEN
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = DEN transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = DEN
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = NOR
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = NOR transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = NOR
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = SWE
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = SWE transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = SWE
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = HOL
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = HOL transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = HOL
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = BEL
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = BEL transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = BEL
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = LUX
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = LUX transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = LUX
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = YUG
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = YUG transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = YUG
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = ROM
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = ROM transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = ROM
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = BUL
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = BUL transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = BUL
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = POL
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = POL transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = POL
+					}
+					add_core_of = TIX
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+					tag = LIT
+					is_in_faction_with = TIX
+					is_ai = yes
+					}
+				}
+				TIX = { 
+					annex_country = { target = LIT transfer_troops = yes  }  
+				}
+				every_state = {
+					limit = {
+						is_core_of = LIT
+					}
+					add_core_of = TIX
+				}
+			}
+		}
 		}
 	}
 	focus = {
@@ -8432,7 +9121,7 @@ focus_tree = {
 		icon = GFX_focus_generic_armored_air_support
 		x = 0
 		y = 2
-		cost = 2
+		cost = 0.4
 		relative_position_id = TIX_xunfujuxiong
 		available = {
 			is_puppet = no
@@ -8463,7 +9152,7 @@ focus_tree = {
 		icon = GFX_focus_generic_full_social_mobilization
 		x = -2
 		y = 1
-		cost = 4
+		cost = 3
 		prerequisite = {
 			focus = TIX_zuihoudefanpu
 		}
@@ -8555,7 +9244,7 @@ focus_tree = {
 		icon = GFX_focus_generic_fascist_troops
 		x = 2
 		y = 1
-		cost = 4
+		cost = 3
 		prerequisite = {
 			focus = TIX_zuihoudefanpu
 		}

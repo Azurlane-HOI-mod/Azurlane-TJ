@@ -2,6 +2,10 @@
 	id = chongying_new_focus
 	country = {
 		factor = 0
+		modifier = {
+			tag = CHY
+			add = 200
+		}
 	}
 	default = no
 	continuous_focus_position = {
@@ -295,7 +299,6 @@
 				name = "建造技术"
 				bonus = 1
 				uses = 1
-				ahead_reduction = 2
 				category = construction_tech
 			}
 			swap_ideas = {
@@ -368,14 +371,14 @@
 					is_core_of = CHY
 					free_building_slots = {
 						building = dockyard
-						size > 3
+						size > 2
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -384,14 +387,14 @@
 					is_core_of = CHY
 					free_building_slots = {
 						building = dockyard
-						size > 3
+						size > 2
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -417,8 +420,7 @@
 			add_tech_bonus = {
 				name = "生产技术"
 				bonus = 1
-				uses = 2
-				ahead_reduction = 1
+				uses = 1
 				category = dispersed_industry_category
 				category = concentrated_industry_category
 			}
@@ -445,13 +447,6 @@
 		available_if_capitulated = no
 		completion_reward = {
 			add_ideas = CHY_chongyinggongye
-			add_tech_bonus = {
-				name = "工业技术"
-				bonus = 1
-				uses = 1
-				category = industry
-				ahead_reduction = 1
-			}
 		}
 	}
 	focus = {
@@ -526,7 +521,6 @@
 				bonus = 2
 				uses = 2
 				category = excavation_tech
-				ahead_reduction = 2
 			}
 		}
 	}
@@ -569,7 +563,7 @@
 			add_tech_bonus = {
 				name = "电子管技术"
 				bonus = 2
-				uses = 2
+				uses = 1
 				category = electronics
 			}
 		}
@@ -593,9 +587,8 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = "计算机技术"
-				bonus = 2
+				bonus = 1
 				uses = 2
-				ahead_reduction = 1
 				category = computing_tech
 			}
 		}
@@ -642,7 +635,6 @@
 				name = "雷达技术"
 				bonus = 2
 				uses = 2
-				ahead_reduction = 1
 				category = radar_tech
 			}
 		}
@@ -668,7 +660,6 @@
 				name = "原子能研究"
 				bonus = 2
 				uses = 2
-				ahead_reduction = 2
 				category = nuclear
 			}
 		}
@@ -694,7 +685,6 @@
 				name = "火箭研究"
 				bonus = 2
 				uses = 2
-				ahead_reduction = 1
 				category = rocketry
 			}
 		}
@@ -734,7 +724,7 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = "航母研究"
-				bonus = 1.5
+				bonus = 1
 				uses = 2
 				category = cv_tech
 			}
@@ -779,7 +769,7 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = "巡洋舰研究"
-				bonus = 1.5
+				bonus = 1
 				uses = 2
 				category = cl_tech
 			}
@@ -792,10 +782,7 @@
 		y = 2
 		cost = 4
 		available = {
-			OR = {
-				num_of_civilian_factories_available_for_projects > 20
-				is_ai = yes
-			}
+			num_of_civilian_factories_available_for_projects > 20
 		}
 		ai_will_do = {
 			factor = 3
@@ -859,7 +846,7 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = "驱逐舰研究"
-				bonus = 1.5
+				bonus = 1
 				uses = 2
 				category = dd_tech
 			}
@@ -872,10 +859,7 @@
 		y = 2
 		cost = 4
 		available = {
-			OR = {
-				num_of_civilian_factories_available_for_projects > 10
-				is_ai = yes
-			}
+			num_of_civilian_factories_available_for_projects > 10
 		}
 		ai_will_do = {
 			factor = 3
@@ -916,7 +900,7 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = "潜艇研究"
-				bonus = 1.5
+				bonus = 1
 				uses = 2
 				category = ss_tech
 			}
@@ -961,7 +945,7 @@
 		completion_reward = {
 			add_tech_bonus = {
 				name = "战列舰研究"
-				bonus = 1.5
+				bonus = 1
 				uses = 2
 				category = bb_tech
 			}
@@ -984,10 +968,7 @@
 		continue_if_invalid = no
 		available_if_capitulated = no
 		available = {
-			OR = {
-				num_of_civilian_factories_available_for_projects > 35
-				is_ai = yes
-			}
+			num_of_civilian_factories_available_for_projects > 35
 		}
 		select_effect = {
 			set_country_flag = chy_wz
@@ -1077,10 +1058,7 @@
 		y = 3
 		cost = 7
 		available = {
-			OR = {
-				num_of_civilian_factories_available_for_projects > 30
-				is_ai = yes
-			}
+			num_of_civilian_factories_available_for_projects > 30
 		}
 		ai_will_do = {
 			factor = 3
@@ -1175,7 +1153,6 @@
 				name = "先进步兵装备"
 				bonus = 1.5
 				uses = 1
-				ahead_reduction = 1
 				category = infantry_weapons
 			}
 		}
@@ -1221,7 +1198,6 @@
 				name = "先进火炮装备"
 				bonus = 1.5
 				uses = 1
-				ahead_reduction = 1
 				category = artillery
 			}
 		}
@@ -1330,7 +1306,6 @@
 				name = "先进坦克装备"
 				bonus = 1.5
 				uses = 1
-				ahead_reduction = 1
 				category = cat_medium_armor
 				category = cat_light_armor
 				category = cat_heavy_armor
@@ -1673,7 +1648,6 @@
 					name = "小型飞机研究"
 					bonus = 2
 					uses = 1
-					ahead_reduction = 1
 					category = light_air
 				}
 			}
@@ -1685,7 +1659,6 @@
 					name = "中型飞机研究"
 					bonus = 2
 					uses = 1
-					ahead_reduction = 1
 					category = medium_air
 				}
 			}
@@ -2137,34 +2110,25 @@
 						has_id = 07003
 					}
 				}
-				add_skill_level = 2
-				add_attack = 1
-				add_planning = 1
-				add_logistics = 1
+				add_skill_level = 1
 			}
 			every_navy_leader = {
 				limit = {
 					has_trait = hangmu_navy
 				}
-				add_skill_level = 2
-				add_attack = 1
-				add_planning = 1
-				add_logistics = 1
+				add_skill_level = 1
 			}
 			random_army_leader = {
 				limit = {
 					has_id = 07003
 				}
-				add_skill_level = 3
-				add_attack = 2
-				add_planning = 2
-				add_logistics = 2
+				add_skill_level = 1
 				add_unit_leader_trait = brilliant_strategist
 				add_unit_leader_trait = logistics_wizard
 			}
-			every_unit_leader = {
-				add_skill_level = 1
-			}
+			#every_unit_leader = {
+			#	add_skill_level = 1
+			#}
 			swap_ideas = {
 				add_idea = CHY_cyjn2
 				remove_idea = CHY_cyjn
@@ -3668,7 +3632,7 @@
 			}
 			add_timed_idea = {
 				idea = JAP_tora_tora_tora_idea
-				days = 500
+				days = 90
 			}
 			if = {
 				limit = {

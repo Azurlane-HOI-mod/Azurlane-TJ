@@ -984,6 +984,16 @@ focus_tree = {
 				days = 1
 			}
 			add_ideas = SPR_seized_gold_reserves
+			effect_tooltip = {
+				custom_effect_tooltip = kenengdejiangli_tips
+				add_political_power = 50
+				add_stability = 0.1
+				add_war_support = 0.1
+				transfer_state = 165
+				transfer_state = 290
+				transfer_state = 699
+				transfer_state = 783
+			}
 		}
 	}
 	focus = {
@@ -1025,6 +1035,12 @@ focus_tree = {
 					id = YUW_event.27
 					days = 1
 				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				annex_country = { target = SPR transfer_troops = no }
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = SPR type = annex_everything }
 			}
 		}
 	}
@@ -1109,6 +1125,26 @@ focus_tree = {
 					days = 1
 				}
 			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				army_experience = 50
+				add_stability = 0.2
+				add_war_support = 0.2
+				transfer_state = 34
+				transfer_state = 980
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = HOL type = take_state_focus }
+				create_wargoal = { target = BEL type = take_state_focus }
+				create_wargoal = { target = LUX type = take_state_focus }
+				HUJ = {
+					add_political_power = -100
+					add_stability = -0.1
+					add_war_support = 0.5
+					give_guarantee = BEL
+					give_guarantee = HOL
+					give_guarantee = LUX
+				}
+			}
 		}
 	}
 	focus = {
@@ -1156,6 +1192,18 @@ focus_tree = {
 					days = 1
 				}
 			}
+			effect_tooltip = {
+				custom_effect_tooltip = kenengdejiangli_tips
+				add_political_power = 100
+				add_war_support = 0.3
+				TIX = {
+					add_political_power = 150
+					add_war_support = 0.3
+					add_state_claim = 295
+					add_state_claim = 538
+					add_state_claim = 718
+				}
+			}
 		}
 	}
 	focus = {
@@ -1200,6 +1248,28 @@ focus_tree = {
 			country_event = {
 				id = YUW_event.33
 				days = 1
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = kenengdejiangli_tips
+				transfer_state = 6
+				transfer_state = 35
+				transfer_state = 309
+				transfer_state = 695
+				transfer_state = 977
+				annex_country = { target = LUX transfer_troops = no }
+				TIX = {
+					add_stability = 0.1
+					transfer_state = 7
+					transfer_state = 36
+					transfer_state = 295
+					transfer_state = 538
+					transfer_state = 718
+					transfer_state = 888
+					transfer_state = 889
+					transfer_state = 890
+					transfer_state = 768
+					transfer_state = 769
+				}
 			}
 		}
 	}
@@ -1250,6 +1320,18 @@ focus_tree = {
 				country_event = {
 					id = YUW_event.39
 					days = 1
+				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = kenengdejiangli_tips
+				add_stability = 0.05
+				army_experience = 25
+				transfer_state = 845
+				transfer_state = 847
+				transfer_state = 3
+				SAD = {
+					transfer_state = 846
+					transfer_state = 151
 				}
 			}
 		}
@@ -1324,6 +1406,27 @@ focus_tree = {
 					days = 1
 				}
 			}
+			effect_tooltip = {
+				custom_effect_tooltip = kenengdejiangli_tips
+				transfer_state = 700
+				transfer_state = 701
+				transfer_state = 274
+				transfer_state = 558
+				transfer_state = 454
+				transfer_state = 455
+				transfer_state = 453
+				transfer_state = 298
+				transfer_state = 900
+				transfer_state = 901
+				transfer_state = 902
+				SAD = {
+					add_war_support = 0.2
+					transfer_state = 269
+					transfer_state = 183
+					transfer_state = 116
+					transfer_state = 659
+				}
+			}
 		}
 	}
 	focus = {
@@ -1363,6 +1466,12 @@ focus_tree = {
 					id = YUW_event.27
 					days = 1
 				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				annex_country = { target = SIA transfer_troops = no }
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = SIA type = annex_everything }
 			}
 		}
 	}
@@ -1648,6 +1757,26 @@ focus_tree = {
 					id = YUW_event.36
 					days = 1
 				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				TIX = {
+					add_political_power = -200
+					add_war_support = -0.5
+					add_ideas = disarmed_nation
+					add_ideas = civilian_economy
+					51 = {
+						set_demilitarized_zone = yes
+					}
+					42 = {
+						set_demilitarized_zone = yes
+					}
+				}
+				custom_effect_tooltip = if_they_refuse_tt
+				add_state_claim = 51
+				add_state_claim = 42
+				add_war_support = 0.2
+				create_wargoal = { target = TIX type = take_state_focus }
 			}
 		}
 	}
@@ -6535,7 +6664,7 @@ focus_tree = {
 		icon = GFX_goal_anschluss
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = YUW_zhengyipanguan
 		prerequisite = {
 			focus = YUW_zhengyipanguan
@@ -6553,7 +6682,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
+			country_event = YUW_event.136
 		}
 	}
 	focus = {
@@ -6608,7 +6737,7 @@ focus_tree = {
 		icon = GFX_goal_generic_demand_territory
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = YUW_shenquanzhengzhi
 		prerequisite = {
 			focus = YUW_shenquanzhengzhi
@@ -6626,7 +6755,8 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
+			add_political_power = 200
+			add_war_support = 0.2
 		}
 	}
 	focus = {
@@ -7958,6 +8088,15 @@ focus_tree = {
 					days = 1
 				}
 			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				add_ideas = YUW_jtjh
+				SAD = {
+					add_ideas = SAD_shengdishouhuzhe_idea
+				}
+				custom_effect_tooltip = if_they_refuse_tt
+				declare_war_on = { target = SAD type = annex_everything }
+			}
 			HUJ = {
 				add_ai_strategy = {
 					type = antagonize
@@ -8046,6 +8185,16 @@ focus_tree = {
 					id = YUW_event.27
 					days = 1
 				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				annex_country = { target = SIA transfer_troops = no }
+				annex_country = { target = PHI transfer_troops = no }
+				annex_country = { target = INS transfer_troops = no }
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = SIA type = annex_everything }
+				create_wargoal = { target = PHI type = annex_everything }
+				create_wargoal = { target = INS type = annex_everything }
 			}
 		}
 	}

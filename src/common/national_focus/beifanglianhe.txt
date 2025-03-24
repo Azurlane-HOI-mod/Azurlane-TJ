@@ -777,7 +777,13 @@
 		completion_reward = {
 			army_experience = 50
 			add_ideas = BFL_wwdzs
-			custom_effect_tooltip = BFL_wuweizhuangjiajiesuo_tip
+			#custom_effect_tooltip = BFL_wuweizhuangjiajiesuo_tip
+			mio:BFL_tula_arms_plant_organization = {
+				add_mio_funds = 500
+				unlock_mio_trait_tooltip  = {
+					trait = BFL_mio_wuweizhuangjia
+				}
+			}
 			custom_effect_tooltip = unlock_propaganda_campaign_tt
 			unlock_decision_tooltip = SOV_propaganda_heroes_forward
 			custom_effect_tooltip = propaganda_campaign_requirement_tt
@@ -802,7 +808,13 @@
 		completion_reward = {
 			army_experience = 50
 			BFL_lujunjianshe_dengji = yes
-			custom_effect_tooltip = BFL_xiaoxingxianquanjiesuo_tip
+			#custom_effect_tooltip = BFL_xiaoxingxianquanjiesuo_tip
+			mio:BFL_tula_arms_plant_organization = {
+				add_mio_funds = 500
+				unlock_mio_trait_tooltip  = {
+					trait = BFL_mio_xiaoxingcibaoxianquan
+				}
+			}
 			custom_effect_tooltip = unlock_propaganda_campaign_tt
 			unlock_decision_tooltip = SOV_propaganda_death_to_invaders
 			custom_effect_tooltip = propaganda_campaign_requirement_tt
@@ -1172,7 +1184,7 @@
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			BFL_lujunjianshe_dengji = yes
-			custom_effect_tooltip = BFL_shengjizhuangjiazhizaoshang_tip
+			#custom_effect_tooltip = BFL_shengjizhuangjiazhizaoshang_tip
 			custom_effect_tooltip = "获得8支由中型坦克构成的装甲师"
 						#T-34 tank template
 						if = {
@@ -1356,6 +1368,22 @@
 					}	
 				}
 			}
+			every_military_industrial_organization = {
+				limit = {
+					owner = ROOT
+					OR = {
+					is_military_industrial_organization = BFL_morozov_design_bureau_organization
+					is_military_industrial_organization = BFL_astrov_design_bureau_organization
+					is_military_industrial_organization = BFL_okmo_organization
+					is_military_industrial_organization = BFL_mytishchy_machine_building_plant_organization
+					is_military_industrial_organization = BFL_kirov_organization
+					}
+				}
+				add_mio_funds = 200
+				unlock_mio_trait_tooltip  = {
+					trait = BFL_mio_daguimoshengchan_2
+				}
+			}
 			custom_effect_tooltip = unlock_propaganda_campaign_tt
 			unlock_decision_tooltip = SOV_propaganda_fight_to_the_last
 			custom_effect_tooltip = propaganda_campaign_requirement_tt
@@ -1531,9 +1559,11 @@
 		
 		cost = 7
 		available = {
-			OR = {
-            is_ai = yes
-			has_navy_experience > 499
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_navy_experience > 499
 			}
 		}
 		ai_will_do = {
@@ -1573,9 +1603,11 @@
 		x = -1
 		y = 1
 		available = {
-			OR = {
-            is_ai = yes
-			has_navy_experience > 999
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_navy_experience > 999
 			}
 		}
 		cost = 7
@@ -1624,9 +1656,11 @@
 		
 		cost = 7
 		available = {
-			OR = {
-            is_ai = yes
-			has_navy_experience > 499
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_navy_experience > 499
 			}
 		}
 		ai_will_do = {
@@ -1658,9 +1692,11 @@
 		
 		cost = 7
 		available = {
-			OR = {
-            is_ai = yes
-			has_navy_experience > 999
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_navy_experience > 999
 			}
 		}
 		ai_will_do = {
@@ -2457,18 +2493,23 @@
 		completion_reward = {
 			guojishengyu_down_1 = yes
 			PER = { country_event = { id = BFL_event.6 days = 1 } }
-			add_state_claim = 419	
-			add_state_claim = 420
-			add_state_claim = 421
-			add_state_claim = 413
-			add_state_claim = 411
-			add_state_claim = 417
-			add_state_claim = 266
-			add_state_claim = 418
-			add_state_claim = 416
-			add_state_claim = 414
-			add_state_claim = 410
-			add_state_claim = 412
+			every_state = {
+				limit = {
+					is_core_of = PER
+				}
+				add_claim_by = ROOT
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				BFL = { 
+					annex_country = { target = PER transfer_troops = yes }
+				}
+				custom_effect_tooltip = if_they_refuse_tt
+				declare_war_on = {
+					target = PER
+					type = annex_everything
+				}
+			}
 		}
 	}
 	focus = {  
@@ -2542,8 +2583,23 @@
 		completion_reward = {
 			guojishengyu_down_1 = yes
 			AFG = { country_event = { id = BFL_event.17 days = 1 } }
-			add_state_claim = 267
-			add_state_claim = 415
+			every_state = {
+				limit = {
+					is_core_of = AFG
+				}
+				add_claim_by = ROOT
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				BFL = { 
+					annex_country = { target = AFG transfer_troops = yes }
+				}
+				custom_effect_tooltip = if_they_refuse_tt
+				declare_war_on = {
+					target = AFG
+					type = annex_everything
+				}
+			}
 		}
 	}
 	focus = {  
@@ -2618,6 +2674,18 @@
 			}
 			LIT = {
 			country_event = az_tianjiang.28
+			}
+			custom_effect_tooltip = kenengdejiangli_tips
+			effect_tooltip = {
+				transfer_state = 766
+				transfer_state = 78
+				transfer_state = 80
+				transfer_state = 146
+				transfer_state = 722
+				transfer_state = 147
+				annex_country = { target = EST transfer_troops = no }
+				annex_country = { target = LAT transfer_troops = no }
+				annex_country = { target = LIT transfer_troops = no }
 			}
 		}
 	}
@@ -3492,11 +3560,12 @@
 		relative_position_id = BFL_kongjunjianshe
 		cost = 10
 		available = {
-			OR = {
-            is_ai = yes
-			has_air_experience > 299
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_air_experience > 299
 			}
-			
 		}
 		ai_will_do = {
 			factor = 7
@@ -3559,9 +3628,11 @@
 		cost = 10
 		available = {
 			NOT = { has_country_flag = BFL_zzpianzhidu_on }
-			OR = {
-            is_ai = yes
-			has_air_experience > 499
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_air_experience > 499
 			}
 		}
 		ai_will_do = {

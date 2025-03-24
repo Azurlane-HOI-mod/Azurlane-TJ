@@ -825,40 +825,40 @@ DOH_decision_category = {
 		}
 	}
 
-	# DOH_feitianmeng_zhunbei = {
-	# 	icon = xingdong
-	# 	fire_only_once = yes
-	# 	visible = {
-	# 		OR = {
-	# 			is_debug = yes
-	# 			has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
-	# 		}
-	# 	}
-	# 	available = {
-	# 		num_of_factories > 2000
-	# 		has_tech = advanced_rocket_engines
-	# 		756 = {
-	# 			rocket_site > 0
-	# 		}
-	# 		amount_research_slots > 2
-	# 		always = no
-	# 	}
-	# 	cost = 500
-	# 	days_remove = 300
-	# 	modifier = {
-	# 		consumer_goods_factor = 1.6
-	# 		research_speed_factor = -0.15
-	# 	}
-	# 	complete_effect = {
-	# 		add_research_slot = -2
-	# 	}
-	# 	remove_effect = {
-	# 		set_country_flag = DOH_feitianmeng_flag
-	# 		add_research_slot = 2
-	# 		custom_effect_tooltip = "运载火箭研制成功"
-	# 		DOH_neibufenqi_jianqin_effect = yes
-	# 	}
-	# }
+	DOH_feitianmeng_zhunbei = {
+		icon = xingdong
+		fire_only_once = yes
+		visible = {
+			OR = {
+				is_debug = yes
+				has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+			}
+		}
+		available = {
+			num_of_factories > 2000
+			has_tech = advanced_rocket_engines
+			756 = {
+				rocket_site > 0
+			}
+			amount_research_slots > 2
+			always = no
+		}
+		cost = 500
+		days_remove = 300
+		modifier = {
+			consumer_goods_factor = 1.6
+			research_speed_factor = -0.15
+		}
+		complete_effect = {
+			add_research_slot = -2
+		}
+		remove_effect = {
+			set_country_flag = DOH_feitianmeng_flag
+			add_research_slot = 2
+			custom_effect_tooltip = "运载火箭研制成功"
+			DOH_neibufenqi_jianqin_effect = yes
+		}
+	}
 	DOH_BFL_bifenggang_decision = {
 		icon = xingdong
 		ai_will_do = {
@@ -1988,15 +1988,6 @@ DOH_duiwaitouzi_decision_category = {
 				set_country_flag = DOH_shuchu_civ_doing_flag
 				set_variable = {
 					var:DOH_has_shuchu_civ = 0
-				}
-				set_variable = {
-					var:DOH_has_shuchu_factroies = 0
-				}
-				set_variable = {
-					var:shuchu_factor = 0
-				}
-				set_variable = {
-					var:shuchu_factor_to_doh = 0
 				}
 			}
 			set_variable = {

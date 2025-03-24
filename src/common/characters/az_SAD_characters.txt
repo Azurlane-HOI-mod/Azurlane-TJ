@@ -371,7 +371,17 @@ characters={
 				small="gfx/interface/ideas/idea_abuluqi.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = abuluqi
+			traits = { trait_abuluqi }
 
+			ai_will_do = {
+				factor = 8
+				
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -606,6 +616,16 @@ characters={
 			army = {
 				large="gfx/leaders/SAD/dafenqi.png"
 				small="gfx/interface/ideas/idea_dafenqi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = dafenqi
+			traits = { trait_dafenqi }
+
+			ai_will_do = {
+				factor = 12
 			}
 		}
 		navy_leader = {
@@ -931,6 +951,16 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/SAD/nabulesi.png"
+				small="gfx/interface/ideas/idea_nabulesi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = nabulesi
+			traits = { trait_nabulesi }
+			ai_will_do = {
+				factor = 10
 			}
 		}
 		corps_commander = {
@@ -942,14 +972,118 @@ characters={
 				}
 			}
 			traits = { xunyang_army }
-			skill = 4
-			attack_skill = 4
-			defense_skill = 5
-			planning_skill = 3
+			skill = 5
+			attack_skill = 5
+			defense_skill = 6
+			planning_skill = 5
 			logistics_skill = 5
 		}
 	}
-
+	SAD_lafeier = {
+		name = SAD_lafeier
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/lafeier.png"
+				small="gfx/interface/ideas/idea_lafeier.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = lafeier
+			traits = { trait_lafeier }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_army }
+			skill = 5
+			attack_skill = 7
+			defense_skill = 6
+			planning_skill = 4
+			logistics_skill = 6
+		}
+	}
+	SAD_balaka = {
+		name = SAD_balaka
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/balaka.png"
+				small="gfx/interface/ideas/idea_lafeier.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { qianting_navy }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+	}
+	SAD_batuoluomeiao = {
+		name = SAD_batuoluomeiao
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/batuoluomeiao.png"
+				small="gfx/interface/ideas/idea_batuoluomeiao.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	SAD_jiaosuai = {
+		name = SAD_jiaosuai
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/jiaosuai.png"
+				small="gfx/interface/ideas/idea_jiaosuai.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
 	#scientists
 	SAD_xibeifeng_sci = {
 		name = SAD_xibeifeng

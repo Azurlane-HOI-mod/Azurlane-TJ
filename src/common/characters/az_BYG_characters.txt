@@ -652,11 +652,11 @@ characters={
 		advisor = {
 			cost = 100
 			slot = navy_chief
-			idea_token = qiye
+			idea_token = daqinghuayu
 			traits = { trait_daqinghuayu }
 			
 			ai_will_do = {
-				factor = 2
+				factor = 10
 			}
 		}
 		navy_leader = {
@@ -887,7 +887,7 @@ characters={
 			
 			traits = { trait_dahuangfeng }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1655,6 +1655,16 @@ characters={
 				small="gfx/interface/ideas/idea_danfo.png"
 			}
 		}		
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = duli
+			traits = { trait_duli }
+			
+			ai_will_do = {
+				factor = 16
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -2080,7 +2090,54 @@ characters={
 			logistics_skill = 1
 		}
 	}
-
+	BYG_yindiannabolisi = {
+		name = BYG_yindiannabolisi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/yindiannabolisi.png"
+				small="gfx/interface/ideas/idea_danfo.png"
+			}
+		}		
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 5
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BYG_sheshuiyu = {
+		name = BYG_sheshuiyu
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/sheshuiyu.png"
+				small="gfx/interface/ideas/idea_daqinghuayu.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { seawolf qianting_navy }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 4
+		}
+	}
         #scientists
 	BYG_hailunna_sci = {
 		name = BYG_hailunna

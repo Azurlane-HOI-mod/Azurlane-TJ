@@ -2164,6 +2164,12 @@ country_event = {
 		transfer_state = 656
 		transfer_state = 658
 		transfer_state = 799
+		transfer_state = 992
+		transfer_state = 1014
+		transfer_state = 294
+		transfer_state = 1015
+		transfer_state = 1016
+		transfer_state = 293
 		set_autonomy = {
 			target = IRQ
 			autonomy_state = autonomy_reichskommissariat
@@ -10944,6 +10950,80 @@ country_event = {
 		create_wargoal = { target = BEL type = take_state_focus }
 		create_wargoal = { target = LUX type = take_state_focus }
 		create_wargoal = { target = YUW type = take_state_focus }
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.321
+	title = "铁血邀请我们加入她们的阵营"
+	desc = "铁血正在邀请我们加入她们的阵营，她们保证会保护我们的安全。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "好耶"
+		FROM = {
+			add_to_faction = ROOT
+		}
+		TIX = {
+			country_event = { id = az_tianjiang.322 days = 1 }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_government = democratic
+				factor = 100
+			}
+			modifier = {
+				tag = AUS
+				factor = 100
+			}
+			modifier = {
+				tag = ROM
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = "不可以"
+		TIX = {
+			country_event = { id = az_tianjiang.323 days = 2 }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				not = { has_government = democratic }
+				not = { tag = AUS }
+				factor = 100
+			}
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.322
+	title = az_tianjiang.322.t
+	desc = az_tianjiang.322.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "好的"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.323
+	title = az_tianjiang.323.t
+	desc = az_tianjiang.323.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "好吧"
 		ai_chance = {
 			base = 100
 		}

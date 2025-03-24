@@ -1,6 +1,56 @@
 ideas = {
 	# 天降独有民族精神，防覆盖
 	country = {
+		HUJ_xunhuatuzhu_idea = {
+			picture = ARG_military_government
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				non_core_manpower = 0.15
+				mobilization_speed = 0.25
+				resistance_target = -0.2
+				resistance_growth = -0.5
+				required_garrison_factor = -0.25
+			}
+		}
+		HUJ_quanqiuzhengfu_idea = {
+			picture = eng_the_sun_never_sets
+			allowed_civil_war = {
+				always = yes
+			}
+			rule = {
+				can_use_kamikaze_pilots = yes
+			}
+			modifier = {
+				generate_wargoal_tension = -0.5
+				justify_war_goal_time = -0.5
+				acclimatization_cold_climate_gain_factor = 0.5
+				acclimatization_hot_climate_gain_factor = 0.5
+				army_attack_against_major_factor = 0.1
+				army_attack_against_minor_factor = 0.2
+				army_breakthrough_against_major_factor = 0.1
+				army_breakthrough_against_minor_factor = 0.2
+			}
+		}
+		BYG_meishiheping_idea = {
+			picture = ARG_maintain_neutrality
+			allowed_civil_war = {
+				always = yes
+			}
+			rule = {
+				can_not_declare_war = yes
+			}
+			modifier = {
+				generate_wargoal_tension = 1
+				enemy_justify_war_goal_time = 1
+				guarantee_cost = 100
+				lend_lease_tension = 1
+				send_volunteers_tension = 1
+				army_core_attack_factor = 1
+				army_core_defence_factor = 1
+			}
+		}
 		TIX_dwjyoushibig_idea = {
 			name = TIX_dwjyoushi_idea
 			picture = generic_fascism_drift_bonus

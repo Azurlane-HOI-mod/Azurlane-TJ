@@ -1435,6 +1435,107 @@ characters={
 		}
 	}
 
+	HUJ_yuanchou = {
+		name = HUJ_yuanchou
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/yuanchou.png"
+				small="gfx/interface/ideas/idea_yuanchou.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = yuanchou
+			traits = { trait_yuanchou }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_navy }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+
+	HUJ_sikula = {
+		name = HUJ_sikula
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/sikula.png"
+				small="gfx/interface/ideas/idea_sikula.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = sikula
+			traits = { trait_sikula }
+			available = {
+					if = {
+						limit = { 
+							tag = HUJ
+						}
+						has_completed_focus = HUJ_chuanshouzhandouzhishi
+					}
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+
+	HUJ_hemin = {
+		name = HUJ_hemin
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/hemin.png"
+				small="gfx/interface/ideas/idea_sikula.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
 	#scientists
 	HUJ_chaijun_sci = {
 		name = HUJ_chaijun

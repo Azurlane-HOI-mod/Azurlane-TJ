@@ -61,36 +61,36 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = YUW_event.44
-	title = "打扰一下！"
-	desc = "广告时间！觉得塞壬的AI后期强度不够？那你可以来试试由下划线人_制作的战双帕弥什MOD，绝对打得爽，后期更有挑战！创意工坊搜素”战双“就能搜到噢！"
-	picture = GFX_report_event_generic_read_write
-	trigger = {
-	is_ai = no
-	has_war = no
-	date > 1937.6.1
-	OR = {
-	tag = YUW
-	is_in_faction_with = YUW
-	}
-	}
-	fire_only_once = yes
-	option = {
-		name = "啊好好好"
-		add_political_power = 20
-	}
-	option = {
-		name = "还会有广告出现吗？"
-		add_war_support = 0.05
-		custom_effect_tooltip = yuw_guanggaoshijian
-	}
-	option = {
-		name = "其实我早就玩过你的MOD啦"
-		set_country_flag = yuw_caidantank
-		army_experience = 10
-	}
-}
+#country_event = {
+#	id = YUW_event.44
+#	title = "打扰一下！"
+#	desc = "广告时间！觉得塞壬的AI后期强度不够？那你可以来试试由下划线人_制作的战双帕弥什MOD，绝对打得爽，后期更有挑战！创意工坊搜素”战双“就能搜到噢！"
+#	picture = GFX_report_event_generic_read_write
+#	trigger = {
+#	is_ai = no
+#	has_war = no
+#	date > 1937.6.1
+#	OR = {
+#	tag = YUW
+#	is_in_faction_with = YUW
+#	}
+#	}
+#	fire_only_once = yes
+#	option = {
+#		name = "啊好好好"
+#		add_political_power = 20
+#	}
+#	option = {
+#		name = "还会有广告出现吗？"
+#		add_war_support = 0.05
+#		custom_effect_tooltip = yuw_guanggaoshijian
+#	}
+#	option = {
+#		name = "其实我早就玩过你的MOD啦"
+#		set_country_flag = yuw_caidantank
+#		army_experience = 10
+#	}
+#}
 
 news_event = {
 	id = YUW_event.43
@@ -4794,6 +4794,22 @@ country_event = {
 		complete_national_focus = YUW_37
 		ai_chance = {
 			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = YUW_event.136
+	title = "新的选举？"
+	desc = "国内许多人认为现在的鸢尾就是最好的，没必要进行新的选举了。"
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "享受当下吧！"
+		add_political_power = 200
+		add_stability = 0.2
+		ai_chance = {
+			factor = 100
 		}
 	}
 }

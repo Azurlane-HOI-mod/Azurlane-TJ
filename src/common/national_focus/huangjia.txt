@@ -2666,10 +2666,10 @@ focus_tree = {
 			focus = HUJ_zhuanzhuyuzhimindishiwu
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 30
 			modifier = {
 				date > 1936.8.1
-				add = 10
+				add = 50
 			}
 		}
 		cancel_if_invalid = yes
@@ -3562,98 +3562,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = HUJ_lianhesading
-		icon = GFX_fflag_SAD
-		x = -1
-		y = 1
-		cost = 3
-		prerequisite = {
-			focus = HUJ_nvwangrongguang
-		}
-		relative_position_id = HUJ_nvwangrongguang
-		mutually_exclusive = {
-			focus = HUJ_xiangtiexueshihao
-		}
-		ai_will_do = {
-			factor = 3
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		#search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			SAD = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 2
-				}
-				add_offsite_building = {
-					type = dockyard
-					level = 2
-				}
-			}
-		}
-	}
-	focus = {
-		id = HUJ_xiangtiexueshihao
-		icon = GFX_fflag_TIX
-		x = 1
-		y = 1
-		cost = 3
-		prerequisite = {
-			focus = HUJ_nvwangrongguang
-		}
-		relative_position_id = HUJ_nvwangrongguang
-		mutually_exclusive = {
-			focus = HUJ_lianhesading
-		}
-		ai_will_do = {
-			factor = 3
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		#search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			TIX = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 2
-				}
-				add_offsite_building = {
-					type = dockyard
-					level = 2
-				}
-			}
-		}
-	}
-	focus = {
-		id = HUJ_baodayuanwei
-		icon = GFX_focus_generic_italy_first
-		x = 1
-		y = 1
-		cost = 5
-		prerequisite = {
-			focus = HUJ_xiangtiexueshihao
-			focus = HUJ_lianhesading
-		}
-		relative_position_id = HUJ_lianhesading
-		ai_will_do = {
-			factor = 3
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		#search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-			create_wargoal = {
-				target = YUW
-				type = annex_everything
-				expire = 0
-			}
-		}
-	}
-	focus = {
 		id = HUJ_bilanhangxiankeyanzu
 		icon = GFX_goal_generic_scientific_exchange
 		x = -1
@@ -3774,7 +3682,7 @@ focus_tree = {
 			focus = HUJ_zhuanzhuyuzhimindishiwu
 		}
 		ai_will_do = {
-			factor = 0
+			factor = 10
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -3793,7 +3701,7 @@ focus_tree = {
 		icon = GFX_focus_yanzhan
 		x = -1
 		y = 2
-		cost = 3
+		cost = 7
 		relative_position_id = HUJ_daposhufu
 		prerequisite = {
 			focus = HUJ_daposhufu
@@ -3990,7 +3898,7 @@ focus_tree = {
 		icon = GFX_focus_qiaozhiwushi
 		x = 1
 		y = 2
-		cost = 10
+		cost = 5
 		relative_position_id = HUJ_daposhufu
 		prerequisite = {
 			focus = HUJ_daposhufu
@@ -5160,6 +5068,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
+		bypass = {
+			not = { has_government = democratic }
+		}
 		completion_reward = {
 			set_rule = {
 				can_send_volunteers = yes
@@ -5193,9 +5104,13 @@ focus_tree = {
 			OR = {
 				threat > 0.8
 				has_war = yes
+				not = { has_government = democratic }
 			}
-			YUW = {
-				has_added_tension_amount > 50
+			OR = {
+				not = { has_government = democratic }
+				YUW = {
+					has_added_tension_amount > 50
+				}
 			}
 		}
 		allow_branch = {
@@ -5232,9 +5147,13 @@ focus_tree = {
 			OR = {
 				threat > 0.8
 				has_war = yes
+				not = { has_government = democratic }
 			}
-			TIX = {
-				has_added_tension_amount > 50
+			OR = {
+				not = { has_government = democratic }
+				TIX = {
+					has_added_tension_amount > 50
+				}
 			}
 		}
 		search_filters = {
@@ -5280,9 +5199,13 @@ focus_tree = {
 			OR = {
 				threat > 0.8
 				has_war = yes
+				not = { has_government = democratic }
 			}
-			BFL = {
-				has_added_tension_amount > 50
+			OR = {
+				not = { has_government = democratic }
+				BFL = {
+					has_added_tension_amount > 50
+				}
 			}
 		}
 		allow_branch = {
@@ -5328,9 +5251,13 @@ focus_tree = {
 			OR = {
 				threat > 0.8
 				has_war = yes
+				not = { has_government = democratic }
 			}
-			BYG = {
-				has_added_tension_amount > 50
+			OR = {
+				not = { has_government = democratic }
+				BYG = {
+					has_added_tension_amount > 50
+				}
 			}
 		}
 		allow_branch = {
@@ -5367,9 +5294,13 @@ focus_tree = {
 			OR = {
 				threat > 0.8
 				has_war = yes
+				not = { has_government = democratic }
 			}
-			DOH = {
-				has_added_tension_amount > 50
+			OR = {
+				not = { has_government = democratic }
+				DOH = {
+					has_added_tension_amount > 50
+				}
 			}
 		}
 		allow_branch = {
@@ -5406,9 +5337,13 @@ focus_tree = {
 			OR = {
 				threat > 0.8
 				has_war = yes
+				not = { has_government = democratic }
 			}
-			CHY = {
-				has_added_tension_amount > 50
+			OR = {
+				not = { has_government = democratic }
+				CHY = {
+					has_added_tension_amount > 50
+				}
 			}
 		}
 		allow_branch = {
@@ -5445,7 +5380,14 @@ focus_tree = {
 		relative_position_id = HUJ_julongjuexing
 		continue_if_invalid = yes
 		available = {
-			always = no
+			date > 1943.1.1
+			has_war = no
+		}
+		bypass = {
+			or = {
+				not = { country_exists = SIR }
+				has_war_with = SIR
+			}
 		}
 		cost = 10
 		allow_branch = {
@@ -5455,8 +5397,10 @@ focus_tree = {
 			factor = 0
 		}
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
-			#create_wargoal = { target = SIR type = take_state_focus }
+			create_wargoal = {
+				target = SIR
+				type = annex_everything
+			}
 		}
 	}
 	focus = {
@@ -5469,6 +5413,12 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_jixuyihuizhi
 			focus = HUJ_daposhufu
+		}
+		available = {
+			or = {
+				has_completed_focus = HUJ_baochichuantong
+				has_completed_focus = HUJ_nvwangrongguang
+			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -5641,11 +5591,31 @@ focus_tree = {
 				}
 				add_country_leader_trait = rgnw
 			}
-			add_political_power = -300
 			swap_ideas = {
 				remove_idea = HUJ_yilishabainvwang
 				add_idea = HUJ_yilishabainvwang_xianming
 			}
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				every_other_country = {
+					limit = {
+						is_subject_of = HUJ
+					}
+					set_politics = { ruling_party = fascism } 
+					add_popularity = { ideology = fascism popularity = 0.6 }
+				}
+			}else = {
+				every_other_country = {
+					limit = {
+						is_subject_of = HUJ
+					}
+					set_politics = { ruling_party = neutrality } 
+					add_popularity = { ideology = neutrality popularity = 0.6 }
+				}
+			}
+			
 		}
 	}
 	focus = {
@@ -5939,6 +5909,107 @@ focus_tree = {
 				days = 1
 			}
 			country_event = HUJ_event.6
+		}
+	}
+	focus = {
+		id = HUJ_jiaruchisezhongzhou
+		icon = GFX_fflag_TIX
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = HUJ_nvwangrongguang
+		}
+		available = {
+			is_puppet = no
+			if = {
+				limit = {
+					is_ai = no
+				}
+				has_government = neutrality
+			}
+			custom_trigger_tooltip = {
+				tooltip = "铁血国创建了赤色中轴"
+				has_global_flag = TIX_created_chisezhongzhou
+				TIX = {
+					is_faction_leader = yes
+				}
+			}
+		}
+		mutually_exclusive = { focus = HUJ_heisehangxian }
+		relative_position_id = HUJ_nvwangrongguang
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			TIX = {
+				add_to_faction = HUJ
+			}
+		}
+	}
+
+	focus = {
+		id = HUJ_heisehangxian
+		icon = GFX_fflag_HUJ
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = HUJ_nvwangrongguang
+		}
+		mutually_exclusive = { focus = HUJ_jiaruchisezhongzhou }
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = HUJ_nvwangrongguang
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = HUJ_quanqiuzhengfu
+		icon = GFX_focus_SWE_revoke_militia_law
+		x = 1
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = HUJ_heisehangxian
+			focus = HUJ_jiaruchisezhongzhou
+		}
+		relative_position_id = HUJ_heisehangxian
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = HUJ_quanqiuzhengfu_idea
+		}
+	}
+
+	focus = {
+		id = HUJ_xunhuatuzhu
+		icon = GFX_focus_AFG_royal_guard
+		x = 0
+		y = 1
+		cost = 8
+		prerequisite = {
+			focus = HUJ_nvwangqinzheng
+		}
+		relative_position_id = HUJ_nvwangqinzheng
+		ai_will_do = {
+			factor = 20
+		}
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = HUJ_xunhuatuzhu_idea
 		}
 	}
 }

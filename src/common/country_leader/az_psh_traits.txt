@@ -129,7 +129,7 @@ leader_traits = {
 	#凯撒
 	trait_psh_diwangweiya = { 
 		random = no
-		army_attack_factor = 0.1
+		army_attack_factor = 0.15
 		planning_speed = 0.3
 	}
 	#阿尔及利亚
@@ -229,15 +229,15 @@ leader_traits = {
 	#雷戈洛
 	trait_gongzhuyutuzigongjue = {
 		random = no
-		army_attack_factor = 0.03
-		army_speed_factor = 0.02
+		army_attack_factor = 0.05
+		army_speed_factor = 0.05
 		army_morale_factor = 0.15
 	}
 	#戈里齐亚
 	trait_psh_huanxiangziyu = {
 		random = no
-		army_speed_factor = 0.02
-		army_defence_factor = 0.1
+		army_speed_factor = 0.03
+		army_defence_factor = 0.12
 	}
 	#鸢尾之愿
 	trait_psh_yuanweizhiyuan = {
@@ -402,6 +402,9 @@ leader_traits = {
 		command_power_gain_mult = -0.4
 		mobilization_speed = 0.5
 		resistance_growth = -0.5
+		weekly_casualties_war_support = 0.01
+		weekly_convoys_war_support = 0.01
+		weekly_bombing_war_support = 0.01
 	}
 	#塞壬-铁血科技结晶
 	trait_psh_sirtixkejijiejing = {
@@ -414,6 +417,12 @@ leader_traits = {
 		max_planning = 0.25
 		experience_loss_factor = -0.3
 		experience_gain_army_factor = 0.25
+		army_attack_against_major_factor = 0.1
+		army_attack_against_minor_factor = 0.2
+		army_defence_against_major_factor = 0.1
+		army_defence_against_minor_factor = 0.2
+		army_breakthrough_against_major_factor = 0.1
+		army_breakthrough_against_minor_factor = 0.2
 	}
 	#蒙彼利埃
 	trait_mengbiliai = {
@@ -536,12 +545,64 @@ leader_traits = {
 		army_core_attack_factor = 0.35
 		army_core_defence_factor = 0.35
 	}
-
-
-
-
-
-
-
+	#斯库拉
+	trait_sikula = {
+		random = no
+		surrender_limit = 0.05
+		army_core_attack_factor = 0.25
+		army_core_defence_factor = 0.25
+	}
+	#怨仇
+	trait_yuanchou = {
+		random = no
+		air_mission_efficiency = 0.05 
+		air_night_penalty = -0.2
+		air_range_factor = 0.15
+		sortie_efficiency = 0.25
+		navy_carrier_air_attack_factor = 0.25
+		navy_carrier_air_targetting_factor = 0.25
+	}
+	#拉斐尔
+	trait_lafeier = {
+		random = no
+		consumer_goods_factor = -0.2
+		research_speed_factor = 0.2
+		industrial_capacity_dockyard = 0.2
+	}
+	#达芬奇
+	trait_dafenqi = {
+		random = no
+		experience_gain_navy = 0.3
+		mines_planting_by_fleets_factor = 0.25
+		naval_enemy_fleet_size_ratio_penalty_factor = 0.25
+		naval_retreat_chance = 0.15
+		naval_mines_damage_factor = 0.3
+		naval_retreat_speed_after_initial_combat = 0.5
+	}
+	#那不勒斯
+	trait_nabulesi = {
+		random = no
+		global_building_slots_factor = 0.15
+		industry_air_damage_factor = -0.25
+		static_anti_air_damage_factor = 0.25
+		static_anti_air_hit_chance_factor = 0.25
+	}
+	#阿布鲁奇
+	trait_abuluqi = {
+		random = no
+		land_reinforce_rate = 0.02
+		org_loss_when_moving = -0.12
+		experience_gain_army_factor = 0.15
+	}
+	#独立
+	trait_duli = {
+		random = no
+		experience_gain_navy = 0.3
+		naval_enemy_retreat_chance = -0.3
+		navy_carrier_air_agility_factor = 0.3
+		navy_carrier_air_attack_factor = 0.3
+		carrier_capacity_penalty_reduction = -0.5
+		air_carrier_night_penalty_reduction_factor = 0.2
+	}
 
 }

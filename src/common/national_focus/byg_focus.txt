@@ -117,8 +117,14 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = jiesuobubingpeijian_byg
+			#ustom_effect_tooltip = jiesuobubingpeijian_byg
 			add_ideas = BYG_jldzb
+			mio:BYG_springfield_armory_organization = {
+				add_mio_funds = 500
+				unlock_mio_trait_tooltip  = {
+					trait = BYG_mio_jiguangpeijian
+				}
+			}
 		}
 	}
 	focus = {
@@ -177,12 +183,18 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = jiesuopaobingpeijian_byg
+			#custom_effect_tooltip = jiesuopaobingpeijian_byg
 			add_tech_bonus = {
 				name = "协同炮击"
 				bonus = 1.5
 				uses = 1
 				category = artillery
+			}
+			mio:BYG_rock_island_arsenal_organization = {
+				add_mio_funds = 500
+				unlock_mio_trait_tooltip  = {
+					trait = BYG_mio_weixingyindao
+				}
 			}
 		}
 	}
@@ -867,8 +879,27 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = jiesuofeijipeijian_byg
+			#custom_effect_tooltip = jiesuofeijipeijian_byg
 			add_ideas = BYG_kdxt
+			every_military_industrial_organization = {
+				limit = {
+					owner = ROOT
+					OR = {
+					is_military_industrial_organization = BYG_north_american_aviation_organization
+					is_military_industrial_organization = BYG_lockheed_organization
+					is_military_industrial_organization = BYG_douglas_aircraft_company_organization
+					is_military_industrial_organization = BYG_boeing_organization
+					is_military_industrial_organization = BYG_grumman_organization
+					}
+				}
+				add_mio_funds = 500
+				unlock_mio_trait_tooltip  = {
+					trait = BYG_mio_yingxingpeijian
+				}
+				unlock_mio_trait_tooltip  = {
+					trait = BYG_mio_wangsheshengji
+				}
+			}
 		}
 	}
 	focus = {
@@ -3410,14 +3441,14 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_ideas = BYG_hlqk
-			custom_effect_tooltip = BYG_huolixianzhijiechu_tooltip
 			hidden_effect = {
 				set_rule = {
-					can_only_justify_war_on_threat_country = no
 					can_declare_war_on_same_ideology = yes
+					can_only_justify_war_on_threat_country = no
 				}
 			}
+			add_ideas = BYG_hlqk
+			custom_effect_tooltip = BYG_huolixianzhijiechu_tooltip
 		}
 	}
 	focus = {
@@ -4007,6 +4038,9 @@ focus_tree = {
 		completion_reward = {
 			guojishengyu_down_3 = yes
 			create_faction = "新联邦"
+			set_rule = {
+				can_create_factions = yes
+			}
 			every_country = {
 				limit = {
 					NOT = {
@@ -4100,7 +4134,11 @@ focus_tree = {
 			focus = BYG_quanqiugongshi
 		}
 		available = {
-			always = NO
+			SAD = {
+				has_government = fascism
+				is_in_faction = no
+				is_puppet = no
+			}
 		}
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
@@ -4116,6 +4154,9 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			BYG = {
+				add_to_faction = SAD
+			}
 		}
 	}
 	focus = {
@@ -5428,7 +5469,6 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			create_faction = "白鹰-碧蓝航线"
-			custom_effect_tooltip = YUW_tips
 		}
 	}
 	focus = {
@@ -5531,7 +5571,7 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
+			add_ideas = BYG_meishiheping_idea
 		}
 	}
 	focus = {
@@ -5931,7 +5971,6 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
 			create_wargoal = {
 				target = SIR
 				type = annex_everything
@@ -6668,7 +6707,6 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			create_faction = "白鹰-碧蓝航线"
-			custom_effect_tooltip = YUW_tips
 		}
 	}
 	focus = {
@@ -6946,12 +6984,12 @@ focus_tree = {
 		will_lead_to_war_with = BFL
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
+			add_ideas = BYG_meishiheping_idea
 		}
 	}
 	focus = {
 		id = BYG_manhadunjihua
-		icon = GFX_focus_wonderweapons
+		icon = GFX_focus_generic_nuclear_development
 		x = 0
 		y = 2
 		relative_position_id = BYG_wanzhengdewomen
