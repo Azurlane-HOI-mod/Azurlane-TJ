@@ -5121,7 +5121,11 @@ focus_tree = {
 			has_war_with = YUW
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
+			modifier = {
+				date > 1940.1.1
+				add = 10
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -5167,12 +5171,16 @@ focus_tree = {
 			has_war_with = TIX
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 			modifier = {
 				YUW = {
 					has_government = fascism
 				}
 				factor = 0
+			}
+			modifier = {
+				date > 1940.1.1
+				add = 10
 			}
 		}
 		completion_reward = {
@@ -5216,7 +5224,7 @@ focus_tree = {
 			has_war_with = BFL
 		}
 		ai_will_do = {
-			factor = 3
+			factor = 0
 			modifier = {
 				OR = {
 					has_war_with = TIX
@@ -5225,6 +5233,10 @@ focus_tree = {
 					}
 				}
 				factor = 0
+			}
+			modifier = {
+				date > 1940.1.1
+				add = 3
 			}
 		}
 		completion_reward = {
@@ -5269,6 +5281,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				date > 1940.1.1
+				add = 3
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -5311,7 +5327,11 @@ focus_tree = {
 			has_war_with = DOH
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
+			modifier = {
+				date > 1940.1.1
+				add = 1
+			}
 		}
 		completion_reward = {
 			create_wargoal = {
@@ -5357,12 +5377,16 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		ai_will_do = {
-			factor = 2
+			factor = 0
 			modifier = {
 				YUW = {
 					has_government = fascism
 				}
 				factor = 0
+			}
+			modifier = {
+				date > 1940.1.1
+				add = 2
 			}
 		}
 		completion_reward = {

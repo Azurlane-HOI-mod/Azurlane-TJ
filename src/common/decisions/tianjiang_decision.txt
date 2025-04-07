@@ -479,8 +479,10 @@ BFL_neiwu = {
 	BFL_gyexiandaihua2 = {
 		icon = generic_factory
 		available = {
-			OR = {
-				is_ai = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
 				num_of_controlled_factories > 120
 			}
 			has_idea = BFL_luohoudegongye1
@@ -517,8 +519,10 @@ BFL_neiwu = {
 			NOT = {
 				has_idea = BFL_swjq
 			}
-			OR = {
-				is_ai = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
 				num_of_controlled_factories > 240
 			}
 			has_idea = BFL_luohoudegongye2
