@@ -423,6 +423,7 @@ BFL_neiwu = {
 			factor = 1
 			modifier = {
 				OR = {
+					has_idea = BFL_fkAIbuff
 					date > 1940.10.15
 					TIX = {
 						is_ai = no
@@ -3338,11 +3339,6 @@ TIX_zongduxiaqujueyi = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-
-			country_event = {
-				id = wuw_GER_reichskommissariats.3
-				hours = 0
-			}
 		}
 	}
 	TIX_reichskommissariat_niederlande = {
@@ -3504,11 +3500,7 @@ TIX_zongduxiaqujueyi = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-
-			country_event = {
-				id = wuw_GER_reichskommissariats.2
-				hours = 0
-			}	
+			
 		}
 	}
 	TIX_reichskommissariat_poland = {
@@ -7294,7 +7286,7 @@ BYG_nuke = {
 			is_puppet = no
 			has_war_with = CHY
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			CHY = {
@@ -7355,7 +7347,7 @@ BYG_nuke = {
 			is_puppet = no
 			has_war_with = CHY
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			CHY = {
@@ -7416,7 +7408,7 @@ BYG_nuke = {
 			is_puppet = no
 			has_war_with = CHY
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			CHY = {
@@ -7481,7 +7473,7 @@ BYG_nuke = {
 			is_puppet = no
 			has_war_with = CHY
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			CHY = {
@@ -7546,7 +7538,7 @@ BYG_nuke = {
 			is_puppet = no
 			has_war_with = CHY
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			CHY = {
@@ -7636,7 +7628,7 @@ BYG_nuke = {
 				has_tech = jet_engines
 			}
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			NOT = {
@@ -7697,7 +7689,7 @@ BYG_nuke = {
 				has_tech = jet_engines
 			}
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			NOT = {
@@ -7758,7 +7750,7 @@ BYG_nuke = {
 				has_tech = jet_engines
 			}
 			OR = {
-				has_tech = nukes
+				has_tech = thermonuclear_bombs
 				is_ai = yes
 			}
 			NOT = {
@@ -10963,6 +10955,33 @@ HUJ_zhanzhengdezhongjie = {
 			}
 		}
 	}
+	gansheirq_jueyi = {
+		icon = generic_political_address
+		available = {
+			date > 1941.4.1
+			tag = HUJ
+			controls_state = 126
+			surrender_progress < 0.3
+			is_faction_leader = yes
+			IRQ = {
+				is_puppet = no
+				has_government = fascism
+			}
+		}
+		visible = {
+			tag = HUJ
+			country_exists = IRQ
+			date > 1941.1.1
+			not = { has_war_with = IRQ }
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			declare_war_on = { target = IRQ type = puppet_wargoal_focus }
+		}
+	}
 }
 
 TIX_quanlipingheng = {
@@ -11185,7 +11204,7 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级步枪卡"
 				bonus = 10
-				uses = 6
+				uses = 10
 				ahead_reduction = 10
 				category = infantry_weapons
 			}
@@ -11197,7 +11216,7 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级卡车卡"
 				bonus = 10
-				uses = 2
+				uses = 5
 				ahead_reduction = 10
 				category = cat_mechanized_equipment
 			}
@@ -11211,7 +11230,7 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级飞机卡"
 				bonus = 10
-				uses = 5
+				uses = 8
 				ahead_reduction = 10
 				category = air_equipment
 			}
@@ -11231,15 +11250,15 @@ AZ_fkAIplayerjiaqiang = {
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_land
-				value = 2.0
+				value = 5.0
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_naval
-				value = 2.0
+				value = 5.0
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_air
-				value = 2.0
+				value = 5.0
 			}
 			}
 			if = {

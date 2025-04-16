@@ -127,24 +127,24 @@ ideas = {
 				NOT = { has_war_with = TIX }
 			}
 			modifier = {
-				army_strength_factor = 0.2
+				army_strength_factor = 0.5
 				army_org_factor = 0.5
 				army_morale_factor = 0.5
 				land_reinforce_rate = 0.25
-				army_core_attack_factor = 0.8
+				army_core_attack_factor = 1
 				army_core_defence_factor = 2
 				planning_speed = -1
 				max_planning = -0.8
 			}
 			targeted_modifier = {
 				tag = TIX
-				attack_bonus_against = 0.8
-				defense_bonus_against = 2.3
+				attack_bonus_against = 1.2
+				defense_bonus_against = 2.5
 			}
 			targeted_modifier = {
 				tag = SAD
-				attack_bonus_against = 0.8
-				defense_bonus_against = 2.3
+				attack_bonus_against = 1.2
+				defense_bonus_against = 2.5
 			}
 		}
 		
@@ -1755,8 +1755,8 @@ ideas = {
 			}
 			targeted_modifier = {
 				tag = DOH
-				attack_bonus_against = 1
-				defense_bonus_against = 1
+				attack_bonus_against = 2.5
+				defense_bonus_against = 2.5
 			}
 			targeted_modifier = {
 				tag = HUJ
@@ -2824,7 +2824,7 @@ ideas = {
 				army_defence_factor = 3
 				army_org_factor = 3
 				army_morale_factor = 3
-				army_strength_factor = 1
+				army_strength_factor = 5
 			} 
 		}
 		
@@ -2836,9 +2836,9 @@ ideas = {
 			modifier = {
 				army_attack_factor = 10
 				army_defence_factor = 10
-				army_org_factor = 3
-				army_morale_factor = 3
-				army_strength_factor = 5
+				army_org_factor = 8
+				army_morale_factor = 5
+				army_strength_factor = 9
 			} 
 		}
 		
@@ -2938,8 +2938,8 @@ ideas = {
 			}
 			targeted_modifier = {
 				tag = DOH
-				attack_bonus_against = 2
-				defense_bonus_against = 2
+				attack_bonus_against = 3
+				defense_bonus_against = 3
 			}
 			targeted_modifier = {
 				tag = HUJ
@@ -3200,7 +3200,9 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_strength_factor = 1
+				army_org_factor = 1.5
+				army_morale_factor = 2
+				army_strength_factor = 9
 			} 
 		}
 		
@@ -3308,13 +3310,10 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_attack_factor = -3
-				army_defence_factor = -3
-				army_org_factor = -2
-				army_morale_factor = -2
-				supply_consumption_factor = 0.5
-				land_reinforce_rate = -0.05
-				training_time_army_factor = 2
+				army_attack_against_major_factor = -0.5
+				army_breakthrough_against_major_factor = -1
+				army_org_factor = -1
+				training_time_army_factor = 1
 			} 
 			on_remove = {
 				clr_country_flag = AZ_fengkuangAI_AIzhuanshudebuff_get
@@ -3343,7 +3342,9 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_strength_factor = 3
+				army_strength_factor = 9.5
+				army_org_factor = 2
+				army_morale_factor = 2
 				planning_speed = 10
 				line_change_production_efficiency_factor = 0.8
 				max_command_power = 500

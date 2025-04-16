@@ -1,4 +1,14 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			SIR = {
+				country_event = az_tianjiang.324
+			}
+			BLI = {
+				country_event = az_tianjiang.324
+			}
+		}
+	}
 	on_daily_TIX = { 
 		effect = {
 			if = {
@@ -182,6 +192,12 @@ on_actions = {
 			target = GER
 			autonomy_state = autonomy_integrated_puppet
 		}
+		}
+		HUJ = {
+			set_autonomy = {
+				target = IRQ
+				autonomy_state = autonomy_integrated_puppet
+			}
 		}
 		DEN = {
 		set_cosmetic_tag = DEN
