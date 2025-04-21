@@ -781,7 +781,7 @@ tianjiang_aizuobi = {
 		available = {
 			tag = TIX
 			is_ai = yes
-			date > 1938.1.1
+			#date > 1938.3.1
 		}
 		visible = {
 			tag = TIX
@@ -792,6 +792,48 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = yes
 		complete_effect = {
+			create_equipment_variant = {
+			name = "IV号坦克"
+			type = medium_tank_chassis_2
+			design_team = mio:TIX_daimler_benz_organization
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = easy_maintenance
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = secondary_turret_small_cannon
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 0
+			}
+			}
+			create_equipment_variant = {
+				name = "黑豹"
+				type = medium_tank_chassis_3
+				design_team = mio:TIX_daimler_benz_organization
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_medium_cannon_2
+					turret_type_slot = tank_medium_three_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = tank_radio_1
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = secondary_turret_small_cannon
+					special_type_slot_4 = secondary_turret_small_cannon
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 4
+					tank_nsb_armor_upgrade = 4
+				}
+				}
 			add_equipment_to_stockpile = {
 				type = medium_tank_chassis
 				amount = 6000
