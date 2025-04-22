@@ -403,7 +403,6 @@ BFL_neiwu = {
 				has_country_flag = BFL_zzpianzhidu_on
 			}
 			has_country_flag = bflgaige2
-			has_completed_focus = BFL_zongshenzuozhan
 			if = {
 				limit = {
 					is_ai = no
@@ -412,6 +411,7 @@ BFL_neiwu = {
 					has_war_with = BFL
 				}
 				has_army_experience > 300
+				has_completed_focus = BFL_zongshenzuozhan
 			}
 		}
 		visible = {
@@ -1979,6 +1979,9 @@ BFL_weiguozz = {
 			NOT = {
 				has_country_flag = BFL_baoweisb
 			}
+		}
+		cancel_trigger = {
+			has_war = no
 		}
 		complete_effect = {
 			country_event = az_tianjiang.52
@@ -8607,11 +8610,13 @@ YUW_quanlipingheng = {
 			}
 		}
 		available = {
+			has_completed_focus = YUW_tingzhiyaoyan
+		}
+		cancel_trigger = {
 			OR = {
-				NOT = {
+				not = {
 					has_idea = YUW_daxuanqiandejingzheng
 				}
-				has_completed_focus = YUW_tingzhiyaoyan
 				has_war = yes
 				is_ai = yes
 			}
@@ -8642,11 +8647,13 @@ YUW_quanlipingheng = {
 			always = no
 		}
 		available = {
+			has_completed_focus = YUW_tingzhiyaoyan
+		}
+		cancel_trigger = {
 			OR = {
-				NOT = {
+				not = {
 					has_idea = YUW_daxuanqiandejingzheng
 				}
-				has_completed_focus = YUW_tingzhiyaoyan
 				has_war = yes
 				is_ai = yes
 			}
@@ -8673,9 +8680,11 @@ YUW_quanlipingheng = {
 			always = no
 		}
 		available = {
+			has_country_flag = buqujinjun_beizhizhi
+		}
+		cancel_trigger = {
 			OR = {
-				has_country_flag = buqujinjun_beizhizhi
-				NOT = {
+				not = {
 					has_idea = YUW_daxuanqiandejingzheng
 				}
 				has_war = yes
@@ -8703,9 +8712,11 @@ YUW_quanlipingheng = {
 			always = no
 		}
 		available = {
+			has_country_flag = buqujinjun_beizhizhi
+		}
+		cancel_trigger = {
 			OR = {
-				has_country_flag = buqujinjun_beizhizhi
-				NOT = {
+				not = {
 					has_idea = YUW_daxuanqiandejingzheng
 				}
 				has_war = yes
@@ -8744,9 +8755,11 @@ YUW_quanlipingheng = {
 			always = no
 		}
 		available = {
+			has_country_flag = yuwzuipaineizhan_zhongzhi
+		}
+		cancel_trigger = {
 			OR = {
-				has_country_flag = yuwzuipaineizhan_zhongzhi
-				NOT = {
+				not = {
 					has_idea = YUW_daxuanqiandejingzheng
 				}
 				has_war = yes
@@ -8796,11 +8809,15 @@ YUW_quanlipingheng = {
 		}
 		available = {
 			OR = {
-				NOT = {
-					has_idea = YUW_daxuanqiandejingzheng
-				}
 				has_completed_focus = YUW_cuobaiyinmou
 				has_completed_focus = YUW_daibudunkeerke
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				not = {
+					has_idea = YUW_daxuanqiandejingzheng
+				}
 				has_war = yes
 				is_ai = yes
 			}
@@ -11329,7 +11346,7 @@ AZ_fkAIplayerjiaqiang = {
 			limit = {
 			has_country_flag = AZ_fkAI_xuanzebuff_9
 			}
-			add_nuclear_bombs = 30
+			add_offsite_building = { type = industrial_complex level = 40 }
 			}
 			if = {
 			limit = {

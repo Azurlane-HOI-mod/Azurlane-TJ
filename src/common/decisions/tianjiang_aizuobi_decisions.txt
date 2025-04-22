@@ -903,6 +903,58 @@ tianjiang_aizuobi = {
 			add_political_power = 1000
 		}
 	}
+	zuobi_beilian_4 = {
+		available = {
+			tag = BFL
+			is_ai = yes
+			not = { has_global_flag = AZ_lishitiaozhan_on }
+			has_completed_focus = BFL_29
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			} 
+		}
+		visible = {
+			tag = BFL
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			complete_national_focus = BFL_31
+			complete_national_focus = BFL_32
+		}
+	}
+	zuobi_beilian_5 = {
+		available = {
+			tag = BFL
+			is_ai = yes
+			has_completed_focus = BFL_zongshenzuozhan
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+		}
+		visible = {
+			tag = BFL
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			complete_national_focus = BFL_fazhanzhuangjia #49
+			complete_national_focus = BFL_qiequtiexuetuzhi #35
+			complete_national_focus = BFL_t34shengchan #56
+			complete_national_focus = BFL_gangtiehongliu #42
+			complete_national_focus = BFL_liluntupo
+		}
+	}
 	zuobi_baiying = {
 		available = {
 			tag = BYG
