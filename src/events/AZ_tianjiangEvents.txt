@@ -2114,6 +2114,15 @@ country_event = {
 		DEN = {
 			load_focus_tree = generic_focus
 		}
+		if = {
+			limit = {
+				country_exists = NOR
+			}
+			set_autonomy = {
+				target = NOR
+				autonomy_state = autonomy_reichskommissariat
+			}
+		}
 		news_event = { id = az_tianjiang.74 days = 1}
 		add_named_threat = { threat = -200 name = "光荣和平" }
 		transfer_state = 28
@@ -10855,5 +10864,278 @@ country_event = {
 		ai_chance = {
 			base = 100
 		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.325
+	title = "世界大战的失败者"
+	desc = "由于我们节节败退，皇家与鸢尾已经失去了抵抗能力，我们将被迫与铁血签订停战协定。"
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "我军败了！"
+		add_named_threat = { threat = -999 name = "新秩序" }
+		add_political_power - 500
+		add_stability = -0.5
+		add_war_support = -1
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.326
+	title = "新秩序"
+	desc = az_tianjiang.326.d
+	picture = GFX_aze_txbsm
+	is_triggered_only = yes
+	option = {
+		name = "铁血赢得了最终的胜利！"
+		if = {
+		limit = {
+		NOT = { has_global_flag = tix_guifanweixitudile }
+		}
+		transfer_state = 785
+		transfer_state = 806
+		transfer_state = 19
+		transfer_state = 23
+		transfer_state = 30
+		transfer_state = 14
+		transfer_state = 15
+		transfer_state = 16
+		transfer_state = 24
+		transfer_state = 27
+		transfer_state = 18
+		transfer_state = 17
+		}
+		hidden_effect = {
+		TIX = {
+		add_ideas = TIX_xinzhixu
+		}
+		SAD = {
+		add_ideas = TIX_xinzhixu
+		}
+		HUJ = {
+		add_ideas = TIX_xinzhixu
+		}
+		BYG = {
+		add_ideas = TIX_xinzhixu
+		}
+		YUW = {
+		add_ideas = TIX_xinzhixu
+		}
+		WEX = {
+		add_ideas = TIX_xinzhixu
+		}
+		BFL = {
+		add_ideas = TIX_xinzhixu
+		}
+		DEN = {
+			load_focus_tree = generic_focus
+		}
+		news_event = { id = az_tianjiang.328 days = 1}
+		add_named_threat = { threat = -999 name = "新秩序" }
+		transfer_state = 28
+		transfer_state = 8
+		transfer_state = 845
+		transfer_state = 3
+		transfer_state = 151
+		transfer_state = 29
+		transfer_state = 446
+		transfer_state = 772
+		transfer_state = 539
+		transfer_state = 660
+		transfer_state = 773
+		transfer_state = 548
+		transfer_state = 904
+		transfer_state = 547
+		transfer_state = 903
+		transfer_state = 905
+		transfer_state = 546
+		transfer_state = 771
+		transfer_state = 770
+		transfer_state = 981
+		transfer_state = 774
+		if = {
+			limit = {
+				country_exists = YUW
+			}
+			YUW = {
+				transfer_state = 274
+				transfer_state = 700
+				transfer_state = 298
+				transfer_state = 701
+				transfer_state = 902
+				transfer_state = 558
+				transfer_state = 900
+				transfer_state = 901
+			}
+		}
+		HUJ = {
+			release_on_controlled = SCO
+			release_on_controlled = WLS
+			release_on_controlled = IRE
+			release_on_controlled = BRM
+			release_on_controlled = MAL
+			release_on_controlled = PAK
+			release_on_controlled = RJP
+			release_on_controlled = KAS
+			release_on_controlled = KHL
+			release_on_controlled = WIS
+			release_on_controlled = CIP
+			release_on_controlled = HYD
+			release_on_controlled = KOL
+			release_on_controlled = MPU
+			release_on_controlled = MYS
+			release_on_controlled = RAS
+		}
+		HUJ = {
+			release_on_controlled = RAJ
+		}
+		ENG = {
+			load_focus_tree = tix_zdxq_focus
+			transfer_state = 123
+			transfer_state = 127
+			transfer_state = 338
+			transfer_state = 126
+			transfer_state = 125
+			transfer_state = 128
+			transfer_state = 129
+			transfer_state = 130
+			transfer_state = 132
+			transfer_state = 131
+			transfer_state = 931
+		}
+		set_autonomy = {
+			target = ENG
+			autonomy_state = autonomy_reichskommissariat
+		}
+		set_autonomy = {
+			target = SCO
+			autonomy_state = autonomy_reichskommissariat
+		}
+		set_autonomy = {
+			target = WLS
+			autonomy_state = autonomy_reichskommissariat
+		}
+		set_autonomy = {
+			target = IRE
+			autonomy_state = autonomy_reichskommissariat
+		}
+		if = {
+			limit = {
+				country_exists = NOR
+			}
+			set_autonomy = {
+				target = NOR
+				autonomy_state = autonomy_reichskommissariat
+			}
+		}
+		SAD = {
+		transfer_state = 735
+		transfer_state = 1
+		transfer_state = 114
+		transfer_state = 458
+		transfer_state = 665
+		transfer_state = 851
+		transfer_state = 846
+		transfer_state = 847
+		transfer_state = 116
+		transfer_state = 183
+		transfer_state = 268
+		transfer_state = 269
+		transfer_state = 454
+		transfer_state = 455
+		transfer_state = 553
+		transfer_state = 554
+		transfer_state = 680
+		transfer_state = 453
+		transfer_state = 907
+		transfer_state = 447
+		transfer_state = 452
+		transfer_state = 552
+		transfer_state = 456
+		transfer_state = 457
+		transfer_state = 767
+		transfer_state = 551
+		transfer_state = 883
+		transfer_state = 886
+		transfer_state = 549
+		transfer_state = 887
+		transfer_state = 884
+		transfer_state = 885
+		transfer_state = 775
+		transfer_state = 677
+		transfer_state = 906
+		transfer_state = 659
+		transfer_state = 765
+		transfer_state = 656
+		transfer_state = 658
+		transfer_state = 799
+		transfer_state = 992
+		transfer_state = 1014
+		transfer_state = 294
+		transfer_state = 1015
+		transfer_state = 1016
+		transfer_state = 293
+		set_autonomy = {
+			target = IRQ
+			autonomy_state = autonomy_reichskommissariat
+		}
+		set_autonomy = {
+			target = SAU
+			autonomy_state = autonomy_reichskommissariat
+		}
+		annex_country = { target = GRE transfer_troops = no }
+		}
+		annex_country = { target = HOL transfer_troops = no }
+		annex_country = { target = BEL transfer_troops = no }
+		annex_country = { target = COG transfer_troops = no }
+		white_peace = { 
+			tag = HUJ
+		}
+		white_peace = { 
+			tag = BYG
+			message = tix_yuhujyihecg2
+		}
+		
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.327
+	title = "制裁弱智阿富汗"
+	desc = "阿富汗的神秘国策需要得到制裁"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = AFG
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "不用控制台是看不见这个事件的"
+		load_focus_tree = generic_focus
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+news_event = {
+	id = az_tianjiang.328
+	title = az_tianjiang.328.t
+	desc = az_tianjiang.328.d
+	picture = GFX_az_tx1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = az_tianjiang.328.a
 	}
 }

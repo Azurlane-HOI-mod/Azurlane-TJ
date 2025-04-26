@@ -9774,6 +9774,207 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = YUW_zhudongchujispr
+		icon = GFX_focus_focus_fra_intervention_spain
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = YUW_waijaoyehenjiandan
+		}
+		relative_position_id = YUW_waijaoyehenjiandan
+		available = {
+			is_puppet = no
+			has_global_flag = scw_over
+			has_country_leader = {
+				character = YUW_mojiaduoer
+				ruling_only = yes
+			}
+		}
+		bypass = {
+			OR = {
+				not = { country_exists = POR }
+				POR = { is_subject = yes }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_5 = yes
+			POR = {
+				country_event = {
+					id = YUW_event.27
+					days = 1
+				}
+			}
+			every_country = {
+				limit = {
+					original_tag = SPR
+					owns_state = 41
+				}
+				country_event = {
+					id = YUW_event.27
+					days = 1
+				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				annex_country = { target = SPR transfer_troops = no }
+				annex_country = { target = POR transfer_troops = no }
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = SPR type = annex_everything }
+				create_wargoal = { target = POR type = annex_everything }
+			}
+		}
+	}
+	focus = {
+		id = YUW_chenredatiezhongdong
+		icon = GFX_focus_IRQ_liberate_levant
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = YUW_waijaoyehenjiandan
+		}
+		relative_position_id = YUW_waijaoyehenjiandan
+		available = {
+			is_puppet = no
+			date > 1939.1.1
+			has_country_leader = {
+				character = YUW_mojiaduoer
+				ruling_only = yes
+			}
+		}
+		bypass = {
+			OR = {
+				not = { country_exists = SAU }
+				SAU = { is_subject = yes }
+			}
+			OR = {
+				not = { country_exists = IRQ }
+				IRQ = { is_subject = yes }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_down_5 = yes
+			SAU = {
+				country_event = {
+					id = YUW_event.27
+					days = 1
+				}
+			}
+			IRQ = {
+				country_event = {
+					id = YUW_event.27
+					days = 1
+				}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				annex_country = { target = SAU transfer_troops = no }
+				annex_country = { target = IRQ transfer_troops = no }
+				custom_effect_tooltip = if_they_refuse_tt
+				create_wargoal = { target = SAU type = annex_everything }
+				create_wargoal = { target = IRQ type = annex_everything }
+			}
+		}
+	}
+	focus = {
+		id = YUW_chuanshuohuhuannanmei
+		icon = GFX_focus_BRA_us_of_south_america
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = YUW_waijaoyehenjiandan
+		}
+		relative_position_id = YUW_waijaoyehenjiandan
+		available = {
+			is_puppet = no
+			date > 1939.3.1
+			has_country_leader = {
+				character = YUW_mojiaduoer
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = BRA
+				}
+				create_wargoal = { target = BRA type = annex_everything }
+				create_wargoal = { target = VEN type = annex_everything }
+				create_wargoal = { target = COL type = annex_everything }
+				create_wargoal = { target = BOL type = annex_everything }
+				create_wargoal = { target = PAR type = annex_everything }
+				create_wargoal = { target = URG type = annex_everything }
+				create_wargoal = { target = ARG type = annex_everything }
+				create_wargoal = { target = CHL type = annex_everything }
+			}
+			if = {
+				limit = {
+					OR = {
+						SIR = {
+							has_war_with = BLI
+						}
+						SIR = { has_full_control_of_state = 302 }
+					}
+				}
+				create_wargoal = { target = SIR type = annex_everything }
+				create_wargoal = { target = BLI type = annex_everything }
+			}
+		}
+	}
+	focus = {
+		id = YUW_xianxiashiguangjieshule
+		icon = GFX_focus_GER_establish_protectorates_in_america
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = YUW_chuanshuohuhuannanmei
+		}
+		prerequisite = {
+			focus = YUW_zhudongchujispr
+		}
+		prerequisite = {
+			focus = YUW_chenredatiezhongdong
+		}
+		relative_position_id = YUW_chenredatiezhongdong
+		available = {
+			is_puppet = no
+			has_war_with_major = yes
+			has_country_leader = {
+				character = YUW_mojiaduoer
+				ruling_only = yes
+			}
+			any_enemy_country = {
+				is_major = yes
+				war_length_with = {
+					tag = YUW
+					months > 2
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = YUW_seseshensheng
+		}
+	}
 	#################################################军事线重做############################################################
 	focus = {
 		id = YUW_1

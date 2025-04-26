@@ -3062,6 +3062,8 @@ TIX_zhanhou = {
 			is_puppet = no
 			has_government = fascism
 			is_faction_leader = yes
+			any_war_score > 29
+			longest_war_length > 24
 			OR = {
 				HUJ = {
 					is_faction_leader = yes
@@ -3132,6 +3134,149 @@ TIX_zhanhou = {
 						id = az_tianjiang.70
 						days = 3
 					}
+				}
+			}
+		}
+	}
+	TIX_qiangzhibaiyinghetan = {
+		icon = generic_operation
+		visible = {
+			is_puppet = no
+		}
+		available = {
+			date > 1941.1.1
+			is_puppet = no
+			has_government = fascism
+			is_faction_leader = yes
+			any_war_score > 49
+			longest_war_length > 12
+			HUJ = {
+				has_war_with = TIX
+				is_in_faction_with = BYG
+			}
+			BYG = {
+				has_war_with = TIX
+				is_in_faction_with = HUJ
+			}
+			OR = {
+				YUW = {
+					has_capitulated = yes
+				}
+				NOT = {
+					country_exists = YUW
+				}
+			}
+			OR = {
+				BFL = {
+					has_capitulated = yes
+				}
+				NOT = {
+					country_exists = BFL
+				}
+				BFL = {
+					NOT = {
+						controls_state = 217
+					}
+					NOT = {
+						controls_state = 219
+					}
+					NOT = {
+						controls_state = 195
+					}
+				}
+			}
+			OR = {
+				HUJ = {
+					has_capitulated = yes
+				}
+				if = {
+					custom_trigger_tooltip = {
+						tooltip = TIX_states_HUJ_controlled
+						126 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						121 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						133 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						132 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						130 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						128 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						123 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						113 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						119 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+						127 = {
+							is_controlled_by_ROOT_or_subject = yes
+						}
+					}
+				}
+			}
+			surrender_progress < 0.05
+			SAD = {
+				is_in_faction_with = TIX
+				surrender_progress < 0.1
+			}
+			WEX = {
+				is_subject_of = TIX
+				surrender_progress < 0.4
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 126
+				state = 121
+				state = 133
+				state = 132
+				state = 130
+				state = 128
+				state = 123
+				state = 113
+				state = 119
+				state = 127
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = az_tianjiang.326
+			if = {
+				limit = {
+					country_exists = HUJ
+				}
+				HUJ = {
+					country_event = az_tianjiang.325
+				}
+			}
+			if = {
+				limit = {
+					country_exists = BYG
+				}
+				BYG = {
+					country_event = az_tianjiang.325
+				}
+			}
+			if = {
+				limit = {
+					country_exists = YUW
+				}
+				YUW = {
+					country_event = az_tianjiang.325
 				}
 			}
 		}
@@ -6778,26 +6923,62 @@ TIX_zongduxiaqujueyi = {
 			}
 			OR = {
 				TIX = {
-					controls_state = 415
+					controls_state = 1000
 				}
 				any_other_country = {
 					is_in_faction_with = TIX
 					NOT = {
 						tag = BFL
 					}
-					controls_state = 415
+					controls_state = 1000
 				}
 			}
 			OR = {
 				TIX = {
-					controls_state = 267
+					controls_state = 1001
 				}
 				any_other_country = {
 					is_in_faction_with = TIX
 					NOT = {
 						tag = BFL
 					}
-					controls_state = 267
+					controls_state = 1001
+				}
+			}
+			OR = {
+				TIX = {
+					controls_state = 1004
+				}
+				any_other_country = {
+					is_in_faction_with = TIX
+					NOT = {
+						tag = BFL
+					}
+					controls_state = 1004
+				}
+			}
+			OR = {
+				TIX = {
+					controls_state = 1002
+				}
+				any_other_country = {
+					is_in_faction_with = TIX
+					NOT = {
+						tag = BFL
+					}
+					controls_state = 1002
+				}
+			}
+			OR = {
+				TIX = {
+					controls_state = 1003
+				}
+				any_other_country = {
+					is_in_faction_with = TIX
+					NOT = {
+						tag = BFL
+					}
+					controls_state = 1003
 				}
 			}
 		}
@@ -6849,8 +7030,11 @@ TIX_zongduxiaqujueyi = {
 				transfer_state = 416
 				transfer_state = 414
 				transfer_state = 410
-				transfer_state = 415
-				transfer_state = 267
+				transfer_state = 1000
+				transfer_state = 1001
+				transfer_state = 1002
+				transfer_state = 1003
+				transfer_state = 1004
 				add_state_core = 419
 				add_state_core = 421
 				add_state_core = 413
@@ -6863,8 +7047,11 @@ TIX_zongduxiaqujueyi = {
 				add_state_core = 416
 				add_state_core = 414
 				add_state_core = 410
-				add_state_core = 415
-				add_state_core = 267
+				add_state_core = 1000
+				add_state_core = 1001
+				add_state_core = 1002
+				add_state_core = 1003
+				add_state_core = 1004
 				TIX = {
 					puppet = PREV
 					set_autonomy = {
