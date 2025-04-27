@@ -2092,6 +2092,20 @@ country_event = {
 		transfer_state = 17
 		}
 		hidden_effect = {
+		if = {
+			limit = {
+				country_exists = LIT
+				LIT = { has_war_with = TIX }
+			}
+			annex_country = LIT
+		}
+		if = {
+			limit = {
+				country_exists = POL
+				POL = { has_war_with = TIX }
+			}
+			annex_country = POL
+		}
 		TIX = {
 		add_ideas = TIX_guangrongheping
 		}
@@ -10937,6 +10951,7 @@ country_event = {
 		}
 		news_event = { id = az_tianjiang.328 days = 1}
 		add_named_threat = { threat = -999 name = "新秩序" }
+		transfer_state = 932
 		transfer_state = 28
 		transfer_state = 8
 		transfer_state = 845
@@ -10960,6 +10975,20 @@ country_event = {
 		transfer_state = 774
 		if = {
 			limit = {
+				country_exists = LIT
+				LIT = { has_war_with = TIX }
+			}
+			annex_country = { target = LIT transfer_troops = no }
+		}
+		if = {
+			limit = {
+				country_exists = POL
+				POL = { has_war_with = TIX }
+			}
+			annex_country = { target = POL transfer_troops = no }
+		}
+		if = {
+			limit = {
 				country_exists = YUW
 			}
 			YUW = {
@@ -10974,6 +11003,7 @@ country_event = {
 			}
 		}
 		HUJ = {
+			set_capital = 276
 			release_on_controlled = SCO
 			release_on_controlled = WLS
 			release_on_controlled = IRE
@@ -11007,6 +11037,17 @@ country_event = {
 			transfer_state = 132
 			transfer_state = 131
 			transfer_state = 931
+			add_state_core = 123
+			add_state_core = 127
+			add_state_core = 338
+			add_state_core = 126
+			add_state_core = 125
+			add_state_core = 128
+			add_state_core = 129
+			add_state_core = 130
+			add_state_core = 132
+			add_state_core = 131
+			add_state_core = 931
 		}
 		set_autonomy = {
 			target = ENG
