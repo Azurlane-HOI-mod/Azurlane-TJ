@@ -10061,7 +10061,34 @@ focus_tree = {
 			army_experience = 100
 			add_breakthrough_progress = {
 				specialization = specialization_land
-				value = 1.5
+				value = 2.0
+			}
+			hidden_effect = {
+			if = {
+				limit = {
+					power_balance_value = {
+						id = TIX_balance
+						value < -0.15
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = 	land_facility
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			}
+			effect_tooltip = {
+				custom_effect_tooltip = TIX_qlph_tips_gfjzdgc
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = 	land_facility
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
 		}
 	}

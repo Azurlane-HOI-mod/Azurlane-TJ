@@ -1496,6 +1496,13 @@ country_event = {
 	option = {
 		name = "我不能接受！"
 		add_ideas = BFL_beilianbeijibai
+		if = {
+			limit = {
+				has_war_with = TIX
+				TIX = { is_faction_leader = yes }
+			}
+			TIX = { country_event = az_tianjiang.330  days = 1 }
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -2118,6 +2125,8 @@ country_event = {
 		}
 		BYG = {
 		add_ideas = TIX_guangrongheping
+		transfer_state = 309
+		transfer_state = 101
 		}
 		YUW = {
 		add_ideas = TIX_guangrongheping
@@ -10936,6 +10945,8 @@ country_event = {
 		}
 		BYG = {
 		add_ideas = TIX_xinzhixu
+		transfer_state = 309
+		transfer_state = 101
 		}
 		YUW = {
 		add_ideas = TIX_xinzhixu
@@ -11178,5 +11189,659 @@ news_event = {
 	major = yes
 	option = {
 		name = az_tianjiang.328.a
+	}
+}
+
+news_event = {
+	id = az_tianjiang.329
+	title = az_tianjiang.329.t
+	desc = az_tianjiang.329.d
+	picture = GFX_az_tx1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = az_tianjiang.329.a
+	}
+}
+
+country_event = {
+	id = az_tianjiang.330
+	title = "北联被击败了"
+	desc = "目前我们已经彻底战胜了北联，我们是应该乘胜追击，彻底消灭北联，还是就此停手，与北联议和？"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "让北联投降吧（推荐选项）"
+	hidden_effect = {
+		set_global_flag = beilian_bengkui
+		news_event = { id = az_tianjiang.329 days = 1}
+		white_peace = { 
+			tag = BFL
+			message = tix_yubflhetan
+		}
+		transfer_state = 195
+		transfer_state = 137
+		BFL = {
+			release_on_controlled = BLR
+			release_on_controlled = UKR
+		}
+		if = {
+			limit = {
+				country_exists = ROM
+				ROM = { is_in_faction_with = TIX }
+			}
+			ROM = {
+				transfer_state = 80
+				transfer_state = 78
+				transfer_state = 766
+			}
+		}
+		BLR = {
+			set_cosmetic_tag = DF_reichskommissariat
+			load_focus_tree = tix_zdxq_focus
+			set_state_controller = 94
+			set_state_controller = 95
+			set_state_controller = 204
+			set_state_controller = 206
+			set_state_controller = 207
+			set_state_controller = 241
+			set_state_controller = 194
+			set_state_controller = 96
+			TIX = {
+				puppet = PREV
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_integrated_puppet
+					}
+				}
+				else = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_reichskommissariat
+					}
+				}
+			}
+			create_country_leader = {
+				name = "Hinrich Lohse"
+				desc = "POLITICS_HINRICH_LOHSE_DESC"
+				picture = GFX_portrait_Hinrich_Lohse
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 94
+							state = 95
+							state = 96
+							state = 204
+							state = 206
+							state = 207
+							state = 241
+						}
+						is_owned_by = TIX
+					}
+					BLR = {
+						transfer_state = PREV
+					}
+				}
+			}
+		}
+		UKR = {
+			set_state_controller = 93
+			set_state_controller = 91
+			set_state_controller = 89
+			set_state_controller = 199
+			set_state_controller = 201
+			set_state_controller = 198
+			set_state_controller = 202
+			set_state_controller = 193
+			set_state_controller = 192
+			set_state_controller = 203
+			set_state_controller = 197
+			set_state_controller = 225
+			set_state_controller = 259
+			set_state_controller = 226
+			set_state_controller = 196
+			set_state_controller = 200
+			set_state_controller = 221
+			set_state_controller = 228
+			set_state_controller = 227
+			transfer_state = 834
+			transfer_state = 93
+			transfer_state = 91
+			transfer_state = 89
+			TIX = {
+				puppet = PREV
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+			set_cosmetic_tag = UKR_reichskommissariat
+			load_focus_tree = tix_zdxq_focus
+			create_country_leader = {
+				name = "Erich Koch"
+				desc = "POLITICS_HINRICH_LOHSE_DESC"
+				picture = GFX_portrait_Erich_Koch
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+				}
+			}
+		}
+		RKO = {
+			set_capital = {
+				state = 808
+			}
+			set_cosmetic_tag = BLDH_reichskommissariat
+			load_focus_tree = tix_zdxq_focus
+			transfer_state = 811
+			transfer_state = 812
+			transfer_state = 813
+			transfer_state = 13
+			transfer_state = 191
+			add_state_core = 12
+			add_state_core = 808
+			add_state_core = 809
+			add_state_core = 810
+			add_state_core = 190
+			add_state_core = 189
+			add_state_core = 815
+			add_state_core = 11
+			add_state_core = 784
+			add_state_core = 814
+			transfer_state = 12
+			transfer_state = 808
+			transfer_state = 809
+			transfer_state = 810
+			transfer_state = 190
+			transfer_state = 189
+			transfer_state = 815
+			transfer_state = 11
+			transfer_state = 784
+			transfer_state = 814
+			TIX = {
+				puppet = PREV
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_integrated_puppet
+					}
+				}
+				else = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_reichskommissariat
+					}
+				}
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 811
+							state = 812
+							state = 813
+							state = 13
+							state = 191
+							state = 12
+							state = 808
+							state = 809
+							state = 810
+							state = 190
+							state = 189
+							state = 815
+							state = 11
+							state = 784
+							state = 814
+						}
+						is_owned_by = TIX
+					}
+					EST = {
+						transfer_state = PREV
+					}
+				}
+			}
+		}
+		RKM = {
+			set_capital = {
+				state = 219
+			}
+			#set_cosmetic_tag = MSK_reichskommissariat
+			load_focus_tree = tix_zdxq_focus
+			transfer_state = 208
+			transfer_state = 244
+			transfer_state = 263
+			transfer_state = 258
+			transfer_state = 254
+			transfer_state = 222
+			transfer_state = 220
+			transfer_state = 224
+			transfer_state = 243
+			transfer_state = 254
+			transfer_state = 223
+			transfer_state = 253
+			transfer_state = 248
+			transfer_state = 351
+			transfer_state = 219
+			transfer_state = 242
+			transfer_state = 247
+			transfer_state = 264
+			transfer_state = 246
+			transfer_state = 210
+			transfer_state = 209
+			transfer_state = 205
+			transfer_state = 252
+			transfer_state = 214
+			transfer_state = 255
+			transfer_state = 257
+			transfer_state = 260
+			transfer_state = 240
+			transfer_state = 879
+			transfer_state = 880
+			add_state_core = 208
+			add_state_core = 244
+			add_state_core = 263
+			add_state_core = 258
+			add_state_core = 254
+			add_state_core = 222
+			add_state_core = 220
+			add_state_core = 224
+			add_state_core = 243
+			add_state_core = 254
+			add_state_core = 223
+			add_state_core = 253
+			add_state_core = 248
+			add_state_core = 351
+			add_state_core = 219
+			add_state_core = 242
+			add_state_core = 247
+			add_state_core = 264
+			add_state_core = 246
+			add_state_core = 210
+			add_state_core = 209
+			add_state_core = 205
+			add_state_core = 252
+			add_state_core = 214
+			add_state_core = 255
+			add_state_core = 257
+			add_state_core = 260
+			add_state_core = 240
+			add_state_core = 879
+			add_state_core = 880
+			TIX = {
+				puppet = PREV
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "Death or Dishonor"
+						}
+					}
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_integrated_puppet
+					}
+				}
+				else = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_reichskommissariat
+					}
+				}
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 208
+							state = 244
+							state = 263
+							state = 258
+							state = 254
+							state = 222
+							state = 220
+							state = 224
+							state = 243
+							state = 254
+							state = 223
+							state = 253
+							state = 248
+							state = 351
+							state = 219
+							state = 242
+							state = 247
+							state = 264
+							state = 246
+							state = 210
+							state = 209
+							state = 205
+							state = 252
+							state = 214
+							state = 255
+							state = 257
+							state = 260
+							state = 240
+						}
+						is_owned_by = TIX
+					}
+					LAT = {
+						transfer_state = PREV
+					}
+				}
+			}
+		}
+		AZR = {
+			set_capital = {
+				state = 398
+			}
+			transfer_state = 825
+			transfer_state = 262
+			transfer_state = 397
+			transfer_state = 400
+			transfer_state = 399
+			transfer_state = 249
+			transfer_state = 833
+			transfer_state = 398
+			transfer_state = 581
+			transfer_state = 256
+			transfer_state = 250
+			transfer_state = 251
+			transfer_state = 652
+			transfer_state = 651
+			add_state_core = 825
+			add_state_core = 262
+			add_state_core = 397
+			add_state_core = 400
+			add_state_core = 399
+			add_state_core = 249
+			add_state_core = 833
+			add_state_core = 398
+			add_state_core = 581
+			add_state_core = 256
+			add_state_core = 250
+			add_state_core = 251
+			add_state_core = 652
+			add_state_core = 651
+			TIX = {
+				puppet = PREV
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+			set_cosmetic_tag = BEM_reichskommissariat
+			load_focus_tree = tix_zdxq_focus
+		}
+		GEO = {
+			set_capital = {
+				state = 234
+			}
+			transfer_state = 229
+			transfer_state = 230
+			transfer_state = 231
+			transfer_state = 826
+			transfer_state = 827
+			transfer_state = 828
+			transfer_state = 821
+			transfer_state = 232
+			transfer_state = 233
+			transfer_state = 234
+			transfer_state = 235
+			add_state_core = 229
+			add_state_core = 230
+			add_state_core = 231
+			add_state_core = 826
+			add_state_core = 827
+			add_state_core = 828
+			add_state_core = 821
+			add_state_core = 232
+			add_state_core = 233
+			add_state_core = 234
+			add_state_core = 235
+			TIX = {
+				puppet = PREV
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+			set_cosmetic_tag = GJS_reichskommissariat
+			load_focus_tree = tix_zdxq_focus
+		}
+		ARM = {
+			set_capital = {
+				state = 217
+			}
+			transfer_state = 236
+			transfer_state = 237
+			transfer_state = 238
+			transfer_state = 217
+			transfer_state = 218
+			transfer_state = 245
+			transfer_state = 265
+			transfer_state = 829
+			transfer_state = 239
+			transfer_state = 401
+			transfer_state = 407
+			transfer_state = 406
+			add_state_core = 236
+			add_state_core = 237
+			add_state_core = 238
+			add_state_core = 217
+			add_state_core = 218
+			add_state_core = 245
+			add_state_core = 265
+			add_state_core = 829
+			add_state_core = 239
+			add_state_core = 401
+			add_state_core = 407
+			add_state_core = 406
+			TIX = {
+				puppet = PREV
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+			set_cosmetic_tag = FEJ_reichskommissariat
+			load_focus_tree = tix_zdxq_focus
+		}
+		FIN = {
+			transfer_state = 145
+			transfer_state = 111
+			transfer_state = 149
+			transfer_state = 150
+			transfer_state = 148
+			transfer_state = 722
+			transfer_state = 146
+			transfer_state = 215
+			transfer_state = 213
+			transfer_state = 216
+			transfer_state = 147
+			transfer_state = 926
+			transfer_state = 927
+			transfer_state = 928
+			transfer_state = 929
+			transfer_state = 930
+			add_state_core = 213
+			add_state_core = 215
+			add_state_core = 216
+			TIX = {
+				puppet = PREV
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		if = {
+			limit = { 
+				DOH = { controls_state = 328 }
+			 }
+			 DOH = {
+				transfer_state = 408
+				add_state_core = 408
+				transfer_state = 409
+				add_state_core = 409
+				transfer_state = 657
+				add_state_core = 657
+				transfer_state = 560
+				add_state_core = 560
+				transfer_state = 561
+				add_state_core = 561
+				transfer_state = 563
+				add_state_core = 563
+				transfer_state = 562
+				transfer_state = 574
+				transfer_state = 877
+				transfer_state = 644
+				transfer_state = 874
+				transfer_state = 822
+				transfer_state = 637
+			 }
+		}
+		if = {
+			limit = { 
+				CHY = { controls_state = 328 }
+			 }
+			 CHY = {
+				transfer_state = 408
+				transfer_state = 409
+				transfer_state = 657
+				transfer_state = 560
+				transfer_state = 561
+				transfer_state = 563
+				transfer_state = 562
+				transfer_state = 574
+				transfer_state = 877
+				transfer_state = 644
+				transfer_state = 874
+				transfer_state = 822
+				transfer_state = 637
+			 }
+		}
+		if = {
+			limit = {
+				country_exists = CHY
+			}
+			CHY = {
+				transfer_state = 655
+			 }
+		}
+		if = {
+			limit = {
+				country_exists = BYG
+			}
+			BYG = {
+				transfer_state = 875
+			 }
+		}
+		if = {
+			limit = {
+				CHY = { has_war_with = BFL }
+			}
+			CHY = {
+				white_peace = { 
+					tag = BFL
+				}
+			}
+		}
+		if = {
+			limit = {
+				DOH = { has_war_with = BFL }
+			}
+			DOH = {
+				white_peace = { 
+					tag = BFL
+				}
+			}
+		}
+		BFL = {
+			release_on_controlled = KAZ
+		}
+		KAZ = {
+			set_cosmetic_tag = KAZ_zhongyalianmeng
+			transfer_state = 823
+			transfer_state = 584
+			transfer_state = 831
+			transfer_state = 832
+			transfer_state = 585
+			transfer_state = 830
+			transfer_state = 742
+			transfer_state = 405
+			transfer_state = 732
+			add_state_core = 823
+			add_state_core = 584
+			add_state_core = 831
+			add_state_core = 832
+			add_state_core = 585
+			add_state_core = 830
+			add_state_core = 742
+			add_state_core = 405
+			add_state_core = 732
+		}
+		if = {
+			limit = {
+				OR = {
+					AFG = { is_subject_of = BFL }
+					not = { country_exists = AFG }
+				}
+			}
+			BFL = {
+				annex_country = { target = AFG transfer_troops = no }
+				release_on_controlled = AFG
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					PER = { is_subject_of = BFL }
+					not = { country_exists = PER }
+				}
+			}
+			BFL = {
+				annex_country = { target = PER transfer_troops = no }
+				release_on_controlled = PER
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					TUR = { is_subject_of = BFL }
+					not = { country_exists = TUR }
+				}
+			}
+			BFL = {
+				annex_country = { target = TUR transfer_troops = no }
+				release_on_controlled = TUR
+			}
+		}
+	}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们必须彻底消灭北联的残余势力！"
+		add_political_power = -300
+		add_war_support = 0.5
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
