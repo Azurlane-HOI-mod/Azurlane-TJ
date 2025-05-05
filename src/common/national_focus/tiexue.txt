@@ -8776,8 +8776,14 @@ focus_tree = {
 		relative_position_id = TIX_tiexuefanjizhan
 		available = {
 			is_puppet = no
-			controls_state = 69
-			controls_state = 74
+			OR = {
+				controls_state = 69
+				has_government = communism
+			}
+			OR = {
+				controls_state = 74
+				has_government = communism
+			}
 			OR = {
 				has_army_manpower = {
 					size > 550000

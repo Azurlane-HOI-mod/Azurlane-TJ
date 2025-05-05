@@ -119,7 +119,14 @@ BFL_sayousi = {
 	}
 	enable = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
-			has_global_flag = modoption_historicalbossai_on
+			OR = {
+				has_global_flag = modoption_historicalbossai_on
+				
+				has_game_rule = {
+					rule = BFL_ai_behavior
+					option = BFL_historical_sayousi_focus
+				}
+			}
 	}
 	abort = {
 		has_completed_focus = BFL_68

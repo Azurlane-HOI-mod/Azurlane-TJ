@@ -398,14 +398,16 @@ focus_tree = {
 		cost = 10
 		relative_position_id = TIX_jianlitiexuetongzhi
 		available = {
-			always = no
+			has_global_flag = beilian_bengkui
+			has_war_with = BFL
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			#custom_effect_tooltip = YUW_tips
+			army_experience = 200
+			add_war_support = 0.5
 		}
 	}
 	
@@ -418,14 +420,16 @@ focus_tree = {
 		relative_position_id = TIX_xianruweiji
 		prerequisite = { focus = TIX_xianruweiji }
 		available = {
-			always = no
+			has_global_flag = beilian_bengkui
+			has_war_with = BFL
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			#custom_effect_tooltip = YUW_tips
+			add_stability = 0.3
+			add_political_power = 200
 		}
 	}
 	
@@ -438,14 +442,15 @@ focus_tree = {
 		relative_position_id = TIX_xianruweiji
 		prerequisite = { focus = TIX_xianruweiji }
 		available = {
-			always = no
+			has_global_flag = beilian_bengkui
+			has_war_with = BFL
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			#custom_effect_tooltip = YUW_tips
+			add_political_power = 300
 		}
 	}
 	
@@ -459,14 +464,15 @@ focus_tree = {
 		prerequisite = { focus = TIX_zhaojizhongchengpai }
 		prerequisite = { focus = TIX_laizibolindemingling }
 		available = {
-			always = no
+			has_global_flag = beilian_bengkui
+			has_war_with = BFL
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			#custom_effect_tooltip = YUW_tips
+			add_ideas = TIX_jdzy
 		}
 	}
 	
@@ -480,14 +486,15 @@ focus_tree = {
 		prerequisite = { focus = TIX_zhaojizhongchengpai }
 		prerequisite = { focus = TIX_laizibolindemingling }
 		available = {
-			always = no
+			has_global_flag = beilian_bengkui
+			has_war_with = BFL
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			#custom_effect_tooltip = YUW_tips
+			add_ideas = TIX_gaishitaibao
 		}
 	}
 	
@@ -501,14 +508,18 @@ focus_tree = {
 		prerequisite = { focus = TIX_jiaomiexiwang }
 		prerequisite = { focus = TIX_womencongweiliqu }
 		available = {
-			always = no
+			has_global_flag = beilian_bengkui
+			has_war_with = BFL
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			#custom_effect_tooltip = YUW_tips
+			swap_ideas = {
+				remove_idea = TIX_gaishitaibao
+				add_idea = TIX_gaishitaibao_ex
+			}
 		}
 	}
 	

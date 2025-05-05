@@ -4859,6 +4859,7 @@ country_event = {
 		add_to_faction = DOH
 		}
 		DOH = {
+			set_country_flag = DOH_lishiguoce_jiarubilan
 			add_ai_strategy = {
 			type = befriend
 			id = HUJ			
@@ -11845,3 +11846,244 @@ country_event = {
 		}
 	}
 }
+
+country_event = { 
+	id = az_tianjiang.331
+	title ="退出碧蓝航线"
+	desc = "我们的意识形态始终与碧蓝航线存在分歧，在彻底击败了赤色中轴之后，也许是时候离开了。"
+	#picture = GFX_aze_kelifulan
+	trigger = {
+		tag = DOH
+		has_country_flag = DOH_lishiguoce_jiarubilan
+		not = { has_government = democratic }
+		OR = {
+			is_in_faction_with = BYG
+			is_in_faction_with = HUJ
+		}
+		HUJ = { is_subject = no }
+		BYG = { is_subject = no }
+		is_faction_leader= no
+		OR = {
+		country_exists = GER
+		NOT = { country_exists = TIX }
+		TIX = {
+		is_puppet = yes
+		}
+		TIX = {
+		has_war = no
+		}
+		TIX = {
+		has_government = democratic
+		}
+		}
+		OR = {
+		NOT = { country_exists = SAD }
+		SAD = {
+		is_puppet = yes
+		}
+		SAD = {
+		has_war = no
+		}
+		SAD = {
+		has_government = democratic
+		}
+		country_exists = ITA
+		}
+		OR = {
+			NOT = { country_exists = CHY }
+			CHY = {
+				is_puppet = yes
+			}
+			CHY = {
+				has_war = no
+			}
+			CHY = {
+				has_government = democratic
+			}
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "我们是新时代的敌人"
+		create_faction = "东亚联盟"
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们与碧蓝航线有着共同的理想"
+		add_popularity = { ideology = democratic popularity = 0.3 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.332
+	title = "最后准备"
+	desc = az_tianjiang.332.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "等我们抓到了哈曼，这一切便会结束"
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "波特兰在哪里？"
+		set_country_flag = BYG_zhuabubotelan
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.333
+	title = "红与白的终幕"
+	desc = az_tianjiang.333.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "白鹰重归稳定"
+		create_country_leader = {
+			name = "克利夫兰"
+			picture = "kelifulan.jpg"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				zyqs
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.5
+		}
+		complete_national_focus = BYG_kuodaqishituanguimo
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.334
+	title = "赤色流星的轨迹"
+	desc = az_tianjiang.334.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			every_state = { 
+				limit = {
+				is_core_of = BYG
+				}
+				add_core_of = USA
+				add_core_of = USB
+				add_core_of = CSA
+			}
+			BYG_botelan= {
+						remove_country_leader_role = {
+							ideology = socialism
+						}
+						remove_country_leader_role = {
+							ideology = stalinism
+						}
+						remove_country_leader_role = {
+							ideology = fascism_ideology
+						}
+						remove_country_leader_role = {
+							ideology = liberalism
+						}
+						remove_country_leader_role = {
+							ideology = despotism
+						}
+						remove_country_leader_role = {
+							ideology = leninism
+						}
+						remove_country_leader_role = {
+							ideology = marxism
+						}
+				set_nationality = USB
+			}
+			BYG_huonululu= {
+				set_nationality = USB
+			}
+			BYG_haman= {
+				set_nationality = USB
+			}
+			BYG_mingniabolisi= {
+				set_nationality = USB
+			}
+			USB = {
+				set_cosmetic_tag = USB1
+				load_oob = BYG_neizhanfenbu_2
+				set_capital = { state = 395 }
+				add_war_support = 1
+				add_popularity = { ideology = communism popularity = 1 } 
+					set_politics = {
+						ruling_party = communism
+					}
+				set_party_name = { ideology = communism long_name = "白鹰共产党" name = "白鹰共产党" }
+				transfer_state = 261
+				transfer_state = 369
+				transfer_state = 393
+				transfer_state = 396
+				transfer_state = 394
+				transfer_state = 395
+				transfer_state = 373
+				transfer_state = 392
+				transfer_state = 389
+				transfer_state = 391
+				transfer_state = 390
+				transfer_state = 384
+				transfer_state = 383
+				BYG_botelan= {
+					add_country_leader_role = {
+						country_leader = {
+							expire = "4999.1.1"
+							ideology = marxism
+							traits = {
+								trait_botelan
+							}
+						}
+						promote_leader = yes
+						}
+				}
+				}
+
+			}
+	}
+	option = {
+		name = "碾碎她们！"
+		declare_war_on = { target = USB type = annex_everything }
+		create_country_leader = {
+			name = "克利夫兰"
+			picture = "kelifulan.jpg"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				zyqs
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		complete_national_focus = BYG_kuodaqishituanguimo
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+	

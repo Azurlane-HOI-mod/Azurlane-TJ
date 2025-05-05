@@ -184,6 +184,7 @@ TIX_xiaoxueshengjueqi = {
 		TIX_guangkaiyanlu
 		TIX_hexiexintiexue
 		#z23
+		TIX_xiangzuozhuan
 		TIX_jinburenshi
 		TIX_gongchanzhuyijiaoyu
 		TIX_gongchanzhuyixuanchuan
@@ -219,6 +220,72 @@ TIX_xiaoxueshengjueqi = {
 		value = 111
 	}
 }
+
+TIX_chisetiexuediguo = {
+	name = "TIX_chisetiexuediguo"
+	desc = "TIX_chisetiexuediguo_desc"
+
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		
+			has_game_rule = {
+				rule = TIX_ai_behavior
+				option = TIX_chisetiexuediguo
+			}
+		
+	}
+	abort = {
+		has_completed_focus = TIX_xuanchengchisediguo
+	}
+
+	ai_national_focuses = {
+		#1936
+		TIX_chongjiangongye
+		TIX_fanduibisimai
+		TIX_chongjiandayihui
+		TIX_yinghuiougen
+		TIX_yanlunziyou
+		TIX_guangkaiyanlu
+		TIX_hexiexintiexue
+		#niulunbao
+		TIX_xiangzuozhuan
+		TIX_baoshouxuanze
+		TIX_hongsediguoshexiang
+		TIX_shemianbisimai
+		TIX_zhengshijiegaunguojiaquanli
+		TIX_tiexuejunzhengyitihua
+		TIX_jianlijungongfuheti
+		TIX_laibixijihua
+		TIX_jianlirenminweiyuanxiaqu
+		TIX_xuanchengchisediguo
+	}
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+}
+
 TIX_ougenguilai = {
 	name = "TIX_ougenguilai"
 	desc = "TIX_ougenguilai_desc"
@@ -248,6 +315,7 @@ TIX_ougenguilai = {
 		TIX_guangkaiyanlu
 		TIX_hexiexintiexue
 		#ougen
+		TIX_zhongjianlichang
 		TIX_shouhuzuihaodeougen
 		TIX_zhidugaige
 		TIX_chongjianjunzhuzhi
@@ -273,6 +341,69 @@ TIX_ougenguilai = {
 		TIX_danzehyuanqubaohu
 		TIX_hebingadl
 		TIX_xiaomiebaozheng
+	}
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+}
+
+TIX_ziyoudetiexue = {
+	name = "TIX_ziyoudetiexue"
+	desc = "TIX_ziyoudetiexue_desc"
+
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		
+			has_game_rule = {
+				rule = TIX_ai_behavior
+				option = TIX_ziyoudetiexue
+			}
+		
+	}
+	abort = {
+		has_completed_focus = TIX_lianheruoxiaozhongzu
+	}
+	
+	ai_national_focuses = {
+		#1936
+		TIX_chongjiangongye
+		TIX_fanduibisimai
+		TIX_chongjiandayihui
+		TIX_yinghuiougen
+		TIX_yanlunziyou
+		TIX_guangkaiyanlu
+		TIX_hexiexintiexue
+		#lanxian
+		TIX_zhongjianlichang
+		TIX_ziyoudetiexue
+		TIX_gaoxuanju
+		TIX_jinzhizhengzhipohai
+		TIX_jiaqiangfulizhengce
+		TIX_minzhuzhidun
+		TIX_zhongshenqiujin
+		TIX_lianheruoxiaozhongzu
 	}
 	research = {
 		infantry_weapons = 50.0

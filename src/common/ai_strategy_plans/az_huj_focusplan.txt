@@ -245,7 +245,7 @@ HUJ_daochexian = {
 			}
 	}
 	abort = {
-		has_completed_focus = HUJ_junminpingdeng
+		has_completed_focus = HUJ_huangjiadezhanshi
 	}
 
 	ai_national_focuses = {
@@ -253,18 +253,76 @@ HUJ_daochexian = {
 		HUJ_nvpuxunlian
 		HUJ_neiwunvpu
 		HUJ_nvpucanting
-		HUJ_neiwuweizhu
-		HUJ_nvpukeyanzu
 		HUJ_tegongnvpu
+		HUJ_tegongweizhu
 		#政治线
 		HUJ_daposhufu
 		HUJ_nvwanghuweijun
 		HUJ_gaizaoyanzhan
 		HUJ_zhongyonghuangshi
-		HUJ_huangjiadezhanshi
 		HUJ_nvwangqinzheng
-		#HUJ_jinchidewang
+		HUJ_zhuanzhuyuzhimindishiwu
+		HUJ_weijiyishi
+		HUJ_jianshezhimindi
 		HUJ_junminpingdeng
+		HUJ_huangjiadezhanshi
+	}
+
+	research = {
+		cat_medium_armor = 50.0
+		cat_mechanized_equipment = 50.0
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	
+}
+
+HUJ_hongxian = {
+	name = "HUJ_hongxian"
+	desc = "HUJ_hongxian_desc"
+
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+			has_game_rule = {
+				rule = HUJ_ai_behavior
+				option = HUJ_hongxian
+			}
+	}
+	abort = {
+		has_completed_focus = HUJ_waijiaoxipai
+	}
+
+	ai_national_focuses = {
+		#先点女仆线
+		HUJ_nvpuxunlian
+		HUJ_neiwunvpu
+		HUJ_nvpucanting
+		HUJ_tegongnvpu
+		HUJ_tegongweizhu
+		#政治线
+		HUJ_weicengshexiangdedaolu
+		HUJ_kuodasixiangchuanbo
+		HUJ_yaoqiuxiudingquanlifaan
+		HUJ_nvpugongzuozhidu
+		HUJ_nvpucanzhengquanli
+		HUJ_chenglinvpugonghui
+		HUJ_jiaruneigeyihui
+		HUJ_mimixingdong
+		HUJ_nvpubigong
+		HUJ_huangshidemingyun
+		HUJ_nvpulianmeng
+		HUJ_waijiaoxipai
 	}
 
 	research = {

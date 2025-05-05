@@ -6094,19 +6094,12 @@ focus_tree = {
 		bypass = {
 			tag = USB
 		}
-		select_effect = {
-			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag			#This focus cannot be canceled
-		}
 		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
-			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
 			set_cosmetic_tag = USB1
-			add_stability = 0.4
-			add_war_support = 0.5
 			add_popularity = {
 				ideology = communism
 				popularity = 0.5
@@ -6174,7 +6167,6 @@ focus_tree = {
 			focus = BYG_yuanbendewomen
 		}
 		available = {
-			always = no
 			has_government = communism
 			NOT = {
 				has_country_flag = baiyingneizhaweiji
@@ -6185,17 +6177,29 @@ focus_tree = {
 			}
 		}
 		select_effect = {
+			country_event = az_tianjiang.332
 			set_country_flag = SOV_paranoia_do_not_cancel_focus_flag			#This focus cannot be canceled
 		}
-		cost = 15
+		cost = 5
 		ai_will_do = {
 			factor = 0
 		}
 		completion_reward = {
-			custom_effect_tooltip = YUW_tips
+			custom_effect_tooltip = jiuguoxingdong_tip
+			effect_tooltip = {
+				country_event = az_tianjiang.332
+			}
+			custom_effect_tooltip = jiuguoxingdong_tip2
+			custom_effect_tooltip = BYG_zhengbainshibian_neizhan_tips
+			if = {
+				limit = {
+					has_country_flag = BYG_zhuabubotelan
+				}
+				country_event = az_tianjiang.333
+			}else = {
+				country_event = az_tianjiang.334
+			}
 			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
-			add_political_power = 200
-			add_stability = 0.3
 			add_popularity = {
 				ideology = communism
 				popularity = -0.5
