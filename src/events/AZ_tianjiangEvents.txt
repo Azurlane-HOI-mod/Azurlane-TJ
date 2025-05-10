@@ -1867,6 +1867,16 @@ country_event = {
 	option = {
 		name = "领土维持现状"
 		add_political_power = -100
+		every_state = {
+			limit = {
+				is_core_of = YUW
+				NOT = {
+					is_controlled_by = YUW
+				}
+			}
+			add_resistance = 20
+			add_compliance = -20
+		}
 		ai_chance = {
 			factor = 0
 		}
@@ -1892,6 +1902,16 @@ country_event = {
 		name = "执行安东行动"
 		add_political_power = -500
 		annex_country = { target = WEX transfer_troops = no }
+		every_state = {
+			limit = {
+				is_core_of = YUW
+				NOT = {
+					is_controlled_by = YUW
+				}
+			}
+			add_resistance = 40
+			add_compliance = -40
+		}
 		ai_chance = {
 			factor = 0
 		}
@@ -2081,6 +2101,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "终于可以歇一歇了"
+		set_global_flag = guangrongheping_shishi
 		if = {
 		limit = {
 		NOT = { has_global_flag = tix_guifanweixitudile }
@@ -2487,6 +2508,8 @@ country_event = {
 		BYG = {	is_faction_leader = yes }
 		}
 		surrender_progress > 0.4
+		not = { has_global_flag = guangrongheping_shishi }
+		not = { has_global_flag = xinzhixu_shishi }
 	}
 	fire_only_once = yes
 	option = {
@@ -2687,7 +2710,7 @@ country_event = {
 country_event = { 
 	id = az_tianjiang.84
 	title ="雅尔塔会议"
-	desc = "战争即将结束，皇家邀请我们参与雅尔塔会议，共同商讨铁血以及欧洲的未来。"
+	desc = "战争即将结束，皇家邀请我们参与雅尔塔会议，共同商讨铁血以及欧洲的未来。(提示：如果要游玩冷战内容，最好参加雅尔塔会议)"
 	picture = GFX_aze_start
 	is_triggered_only = yes
 	option = {
@@ -5121,6 +5144,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "......"
+		set_global_flag = chy_touxiang_shishi
 		white_peace = { 
 			tag = HUJ
 		}
@@ -5213,6 +5237,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "......"
+		set_global_flag = chy_touxiang_shishi
 		white_peace = { 
 			tag = HUJ
 		}
@@ -5328,6 +5353,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "烤鸡明明也是可以战斗的！"
+		set_global_flag = chy_touxiang_shishi
 		white_peace = { 
 			tag = HUJ
 		}
@@ -7498,6 +7524,7 @@ country_event = {
 		controls_state = 206
 		controls_state = 202
 		has_war_with = BFL
+		not = { has_completed_focus = TIX_coldwar_12 }
 	}
 	fire_only_once = yes
 	option = {
@@ -7569,6 +7596,7 @@ country_event = {
 		date > 1942.2.1
 		is_ai = no
 		}
+		not = { has_completed_focus = TIX_coldwar_12 }
 	}
 	fire_only_once = yes
 	option = {
@@ -7595,6 +7623,7 @@ country_event = {
 			is_major = yes
 		}
 		has_global_flag = MOD_azurlane_tianjiangjianniang
+		not = { has_completed_focus = TIX_coldwar_12 }
 	}
 	fire_only_once = yes
 	option = {
@@ -7626,6 +7655,7 @@ country_event = {
 			ruling_only = yes
 		}
 		has_global_flag = MOD_azurlane_tianjiangjianniang
+		not = { has_completed_focus = TIX_coldwar_12 }
 	}
 	fire_only_once = yes
 	option = {
@@ -8301,6 +8331,7 @@ country_event = {
 		BFL = {
 		surrender_progress < 0.2
 		}
+		not = { has_completed_focus = TIX_coldwar_12 }
 	}
 	fire_only_once = yes
 	option = {
@@ -8501,7 +8532,7 @@ country_event = {
 		surrender_progress < 0.3
 		}
 		not = { has_country_flag = tix_nvwushenxingdongyishshi }
-		
+		not = { has_completed_focus = TIX_coldwar_12 }
 	}
 	fire_only_once = yes
 	immediate = {
@@ -9256,7 +9287,7 @@ country_event = {
 
 country_event = {
 	id = az_tianjiang.271
-	title = "历史挑战，启动！"
+	title = "历史挑战，启动！（与冷战内容存在冲突）"
 	desc = az_tianjiang.271.d
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
@@ -10934,6 +10965,7 @@ country_event = {
 		transfer_state = 18
 		transfer_state = 17
 		}
+		set_global_flag = xinzhixu_shishi
 		hidden_effect = {
 		TIX = {
 		add_ideas = TIX_xinzhixu
@@ -11225,6 +11257,14 @@ country_event = {
 		BFL = {
 			release_on_controlled = BLR
 			release_on_controlled = UKR
+		}
+		if = {
+			limit = {
+				KUR = { is_subject_of = BFL }
+			}
+			BFL = {
+				annex_country = { target = KUR transfer_troops = no }
+			}
 		}
 		if = {
 			limit = {
@@ -11695,25 +11735,20 @@ country_event = {
 				DOH = { controls_state = 328 }
 			 }
 			 DOH = {
-				transfer_state = 408
-				add_state_core = 408
-				transfer_state = 409
-				add_state_core = 409
-				transfer_state = 657
-				add_state_core = 657
-				transfer_state = 560
-				add_state_core = 560
-				transfer_state = 561
-				add_state_core = 561
 				transfer_state = 563
+				transfer_state = 561
+				transfer_state = 657
+				transfer_state = 560
+				transfer_state = 409
+				transfer_state = 408
+				transfer_state = 655
 				add_state_core = 563
-				transfer_state = 562
-				transfer_state = 574
-				transfer_state = 877
-				transfer_state = 644
-				transfer_state = 874
-				transfer_state = 822
-				transfer_state = 637
+				add_state_core = 561
+				add_state_core = 657
+				add_state_core = 560
+				add_state_core = 409
+				add_state_core = 408
+				add_state_core = 655
 			 }
 		}
 		if = {
@@ -11721,19 +11756,13 @@ country_event = {
 				CHY = { controls_state = 328 }
 			 }
 			 CHY = {
-				transfer_state = 408
-				transfer_state = 409
+				transfer_state = 563
+				transfer_state = 561
 				transfer_state = 657
 				transfer_state = 560
-				transfer_state = 561
-				transfer_state = 563
-				transfer_state = 562
-				transfer_state = 574
-				transfer_state = 877
-				transfer_state = 644
-				transfer_state = 874
-				transfer_state = 822
-				transfer_state = 637
+				transfer_state = 409
+				transfer_state = 408
+				transfer_state = 655
 			 }
 		}
 		if = {
@@ -11818,6 +11847,9 @@ country_event = {
 			BFL = {
 				annex_country = { target = PER transfer_troops = no }
 				release_on_controlled = PER
+			}
+			PER = {
+				transfer_state = 420
 			}
 		}
 		if = {
@@ -12083,6 +12115,385 @@ country_event = {
 		complete_national_focus = BYG_kuodaqishituanguimo
 		ai_chance = {
 			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.335
+	title = "终焉黎明"
+	desc = az_tianjiang.335.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "战争结束了，对吗？"
+		add_political_power = 25
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.336
+	title = "集体安全法案"
+	desc = az_tianjiang.336.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "做好最坏的打算"
+		add_ideas = BYG_jtaqfa_1
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.337
+	title = "集体安全法案"
+	desc = az_tianjiang.337.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "做好最坏的打算"
+		add_ideas = BYG_jtaqfa_2
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.338
+	title = "来自白鹰的外交使团"
+	desc = "白鹰的外交官们已经抵达首都，她们希望在未来可能爆发的战争中，东煌选择保持中立，不帮助任何一方。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "事实上，我们现在就在这么做"
+		BYG = { country_event =  { id = az_tianjiang.339 days = 1 } }
+		trigger = { 
+			is_faction_leader = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们会保持中立原则"
+		create_faction = "东亚联盟"
+		BYG = { country_event =  { id = az_tianjiang.339 days = 1 } }
+		trigger = { 
+			is_in_faction_with = BFL
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "我们会始终与北联保持一致"
+		BYG = { country_event =  { id = az_tianjiang.340 days = 1 } }
+		trigger = { 
+			is_in_faction_with = BFL
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "那得看局势变化了"
+		BYG = { country_event = { id = az_tianjiang.340 days = 1 } }
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.339
+	title = "东煌的回应"
+	desc = "东煌表示不希望战争爆发，并且她们会维持中立原则。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "东煌最好这样"
+		add_political_power = 75
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.340
+	title = "东煌的回应"
+	desc = "东煌表示会根据局势变化进行外交调整，这样的答复明显很模糊。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "东煌最好保持中立"
+		add_political_power = 75
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "也许我们应该先发制人"
+		complete_national_focus = BYG_coldwar_18
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.341
+	title = "黑暗时代"
+	desc = az_tianjiang.341.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "我们别无选择"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.342
+	title = "大国博弈"
+	desc = az_tianjiang.342.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "和平会持续多久？"
+		add_political_power = 100
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.343
+	title = "奶油色的困局"
+	desc = az_tianjiang.343.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "进退两难"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.344
+	title = "超时空风暴"
+	desc = az_tianjiang.344.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "成败在此一举"
+		custom_effect_tooltip = chaoshikongqidong_tips
+		hidden_effect = {
+			load_oob = BYG_chaoshikongfengbao
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.345
+	title = "暗流涌动"
+	desc = az_tianjiang.345.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "已经有人坐不住了"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.346
+	title = "暗潮将至"
+	desc = az_tianjiang.346.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "让她们知道谁才是欧洲的主人"
+		unlock_decision_category_tooltip = TIX_sanbodikangstate_zhenya
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.347
+	title = "赤旗飘扬之时"
+	desc = az_tianjiang.347.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "未来属于我们"
+		add_political_power = 50
+		add_stability = 0.1
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.348
+	title = "来自北联的外交使团"
+	desc = "虽然我们与北联之间有一些小摩擦，但北联希望我们与她们保持一致，共同对抗真正的敌人。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "我们将与北联同行"
+		BFL = { country_event =  { id = az_tianjiang.349 days = 1 } }
+		BFL = {
+			add_to_faction = DOH
+		}
+		trigger = { 
+			has_government = communism
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们会保持中立原则"
+		BFL = { country_event =  { id = az_tianjiang.339 days = 1 } }
+		trigger = { 
+			not = { has_government = communism }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.349
+	title = "东煌的回应"
+	desc = "东煌表示会支持我们的事业，与我们共进退。"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "太好了！"
+		add_political_power = 50
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.350
+	title = "永夜行军"
+	desc = az_tianjiang.350.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "我们会回来的"
+		add_war_support = 0.3
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.351
+	title = "致命冲击"
+	desc = az_tianjiang.351.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "为了北联！"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.352
+	title = "钢铁之花绽放时"
+	desc = az_tianjiang.352.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "稳固的统治"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.353
+	title = "我会永远盯着你"
+	desc = az_tianjiang.353.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "“我会一直看着你们的”"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.354
+	title = "战争已然改变"
+	desc = az_tianjiang.354.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "时代变了"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.355
+	title = "重新审视与撒丁的关系"
+	desc = "与撒丁的领土争端导致边境局势正在逐渐升级，我们未来应该如何应对与撒丁的关系？"
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = "撒丁会屈从于我们的武力之下，维持现状就好"
+		add_political_power = 100
+		add_stability = 0.1
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "撒丁越界了，她们将付出代价！"
+		add_political_power = -500
+		add_stability = -0.3
+		SAD = {
+			create_faction = "地中海霸权"
+		}
+		declare_war_on = { target = SAD type = take_state_focus }
+		ai_chance = {
+			factor = 0
 		}
 	}
 }

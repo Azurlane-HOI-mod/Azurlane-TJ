@@ -18,7 +18,10 @@ BFL_historical = {
 		NOT = { has_global_flag = modoption_historicalbossai_on }
 	}
 	abort = {
-		has_completed_focus = BFL_beijiyanjiuyuan
+		OR = {
+			has_completed_focus = BFL_beijiyanjiuyuan
+			has_global_flag = beilian_bengkui
+		}
 	}
 
 	ai_national_focuses = {

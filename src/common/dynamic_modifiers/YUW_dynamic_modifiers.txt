@@ -216,3 +216,22 @@ YUW_ywlj_dynamic_modifier = {
 		non_core_manpower = YUW_non_core_manpower
 		conscription_factor = YUW_conscription_factor
 }
+
+BYG_youjidui_state = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_generic_resistance
+	remove_trigger = {
+		ROOT = {
+			has_state_flag = TIX_dikangyibeizhenya_2
+		}
+	}
+	resistance_target = 0.3
+	resistance_growth = 0.5
+	resistance_activity = 1
+	required_garrison_factor = 0.5
+	resistance_damage_to_garrison = 0.5
+	resistance_decay = -0.5
+	compliance_growth = -0.2
+}

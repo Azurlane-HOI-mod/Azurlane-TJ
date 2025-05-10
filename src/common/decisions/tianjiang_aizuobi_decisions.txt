@@ -391,42 +391,6 @@ tianjiang_aizuobi = {
 			complete_national_focus = TIX_zhifujuxiong
 		}
 	}
-	ai_tix_jinzhitaoke = {
-		available = {
-			date > 1940.1.1
-			tag = TIX
-			is_puppet = no
-			OR = {
-				has_idea = TY_fengkuangai
-				has_idea = TY_fengkuangai2
-				has_idea = TY_fengkuangai3
-			}
-			is_ai = yes
-			has_government = fascism
-			has_global_flag = MOD_azurlane_tianjiangjianniang
-			YUW = {
-				is_ai = no
-			}
-			BFL = {
-				is_ai = yes
-			}
-			has_war_with = BFL
-		}
-		visible = {
-			is_ai = yes
-			tag = TIX
-		}
-		ai_will_do = {
-			factor = 10000
-		}
-		fire_only_once = yes
-		days_remove = 999
-		targeted_modifier = {
-			tag = BFL
-			attack_bonus_against = 99.99
-			defense_bonus_against = 99.99
-		}
-	}
 	ai_jianngshi_zuobi5 = {
 		available = {
 			OR = {

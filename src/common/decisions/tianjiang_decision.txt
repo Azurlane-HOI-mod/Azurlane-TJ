@@ -1182,134 +1182,6 @@ TIX_jihua = {
 			defense_bonus_against = 0.4
 		}
 	}
-	TIX_bksy = {
-		icon = generic_prepare_civil_war
-		visible = {
-			is_ai = yes
-		}
-		available = {
-			is_ai = yes
-			has_government = fascism
-			OR = {
-				has_war_with = AUS
-				has_war_with = CZE
-				has_war_with = ROM
-				has_war_with = HUN
-			}
-			OR = {
-				AUS = {
-					is_ai = no
-				}
-				CZE = {
-					is_ai = no
-				}
-				ROM = {
-					is_ai = no
-				}
-				HUN = {
-					is_ai = no
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 9999
-		fire_only_once = yes
-		targeted_modifier = {
-			tag = AUS
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-		targeted_modifier = {
-			tag = CZE
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-		targeted_modifier = {
-			tag = ROM
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-		targeted_modifier = {
-			tag = HUN
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-		targeted_modifier = {
-			tag = YUW
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-		targeted_modifier = {
-			tag = HUJ
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-		targeted_modifier = {
-			tag = BFL
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-		targeted_modifier = {
-			tag = SAD
-			attack_bonus_against = 99.9
-			defense_bonus_against = 99.9
-		}
-	}
-	TIX_pjlb = {
-		icon = generic_prepare_civil_war
-		visible = {
-			is_ai = yes
-		}
-		available = {
-			is_ai = yes
-			has_government = fascism
-			OR = {
-				HOL = {
-					is_ai = no
-					has_war_with = TIX
-				}
-				BEL = {
-					is_ai = no
-					has_war_with = TIX
-				}
-				LUX = {
-					is_ai = no
-					has_war_with = TIX
-				}
-				POL = {
-					is_ai = no
-					has_war_with = TIX
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		days_remove = 9999
-		fire_only_once = yes
-		targeted_modifier = {
-			tag = BEL
-			attack_bonus_against = 9.99
-			defense_bonus_against = 9.99
-		}
-		targeted_modifier = {
-			tag = HOL
-			attack_bonus_against = 9.99
-			defense_bonus_against = 9.99
-		}
-		targeted_modifier = {
-			tag = LUX
-			attack_bonus_against = 9.99
-			defense_bonus_against = 9.99
-		}
-		targeted_modifier = {
-			tag = POL
-			attack_bonus_against = 9.99
-			defense_bonus_against = 9.99
-		}
-	}
 }
 
 TIX_neiwu = {
@@ -1621,8 +1493,10 @@ TIX_neiwu = {
 			surrender_progress < 0.3
 			}
 			not = { has_country_flag = tix_nvwushenxingdongyishshi }
+			not = { has_completed_focus = TIX_coldwar_12 }
 		}
 		visible = {
+			not = { has_completed_focus = TIX_coldwar_12 }
 			not = { has_country_flag = tix_nvwushenxingdongyishshi }
 		}
 		ai_will_do = {
@@ -1967,6 +1841,7 @@ BFL_weiguozz = {
 		priority = 100
 		activation = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
+			not = { has_global_flag = beilian_bengkui }
 			tag = BFL
 			any_country = {
 				has_war_with = BFL
@@ -2597,11 +2472,6 @@ YUW_fangong = {
 	YUW_yaoqiuguishun = {
 		icon = generic_operation
 		visible = {
-			NOT = {
-				WEX = {
-					has_completed_focus = WEX_chpnghuoxinsheng
-				}
-			}
 		}
 		available = {
 			OR = {
@@ -3024,10 +2894,10 @@ TIX_zhanhou = {
 				NOT = {
 					country_exists = HUJ
 				}
+				NOT = {
+					has_war_with = HUJ
+				}
 				date > 1942.6.1
-			}
-			NOT = {
-				has_war_with = HUJ
 			}
 			country_exists = WEX
 			WEX = {
@@ -3036,7 +2906,7 @@ TIX_zhanhou = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
 			modifier = {
 				OR = {
 					date > 1944.1.1
@@ -3099,7 +2969,7 @@ TIX_zhanhou = {
 			surrender_progress < 0.05
 			SAD = {
 				is_in_faction_with = TIX
-				surrender_progress < 0.1
+				surrender_progress < 0.2
 			}
 			WEX = {
 				is_subject_of = TIX
@@ -11136,6 +11006,8 @@ HUJ_zhanzhengdezhongjie = {
 			tag = HUJ
 			has_war_with = TIX
 			date > 1940.6.1
+			not = { has_global_flag = guangrongheping_shishi }
+			not = { has_global_flag = xinzhixu_shishi }
 		}
 		ai_will_do = {
 			factor = 10000
@@ -11196,6 +11068,65 @@ HUJ_zhanzhengdezhongjie = {
 		fire_only_once = yes
 		complete_effect = {
 			declare_war_on = { target = IRQ type = puppet_wargoal_focus }
+		}
+	}
+	guixiang_huj_jueyi = {
+		icon = eng_puppet_usa
+		available = {
+			is_puppet = no
+			is_in_faction_with = BYG
+			has_war_with = TIX
+			OR = {
+				country_exists = ENG
+				country_exists = SCO
+				country_exists = IRE
+				country_exists = WLS
+			}
+		}
+		visible = {
+			tag = HUJ
+			has_global_flag = xinzhixu_shishi
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SCO
+						is_core_of = IRE
+						is_core_of = WLS
+					}
+				}
+				add_core_of = HUJ
+			}
+		}
+	}
+	guixiang_huj_jueyi2 = {
+		icon = eng_install_government
+		available = {
+			is_puppet = no
+			is_in_faction_with = BYG
+			ENG = { has_capitulated = yes }
+			SCO = { has_capitulated = yes }
+			IRE = { has_capitulated = yes }
+			WLS = { has_capitulated = yes }
+		}
+		visible = {
+			tag = HUJ
+			has_global_flag = xinzhixu_shishi
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = { target = ENG transfer_troops = no }
+			annex_country = { target = SCO transfer_troops = no }
+			annex_country = { target = IRE transfer_troops = no }
+			annex_country = { target = WLS transfer_troops = no }
 		}
 	}
 }
@@ -12016,4 +11947,925 @@ AZ_fkAIplayerjiaqiang = {
 		}
 	}
 	
+}
+
+TIX_sanbodikangstate_zhenya = {
+	TIX_sanbodikangstate_zhenya_jy = {
+		icon = generic_brainwash
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		targets_dynamic = yes
+		highlight_color_while_active = 1
+		days_remove = 90
+		cost = 100
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+		}
+		visible = {
+			FROM = {
+				NOT = {
+					has_state_flag = TIX_zhengzaiqingchudikang
+				}
+				has_state_flag = byg_dikangzuzhizhengzaihuodong
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = TIX_zhengzaiqingchudikang
+			}
+			FROM = {
+				has_state_flag = byg_dikangzuzhizhengzaihuodong
+			}
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {
+			set_country_flag = TIX_zhengzaiqingchudikang
+		}
+		remove_effect = {
+			clr_country_flag = TIX_zhengzaiqingchudikang
+			FROM = {
+				set_state_flag = TIX_dikangyibeizhenya_2
+				custom_effect_tooltip = TIX_dikangbeizhenya_tip2
+			}
+		}
+	}
+}
+
+BYG_sanbodikangstate = {
+	BYG_sanbodikangstate_jy = {
+		icon = generic_civil_support
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		targets_dynamic = yes
+		highlight_color_while_active = 1
+		days_remove = 30
+		cost = 50
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+		}
+		visible = {
+			has_completed_focus = BYG_coldwar_22
+			FROM = {
+				OR = {
+					is_controlled_by = WEX
+					is_controlled_by = ENG
+					is_controlled_by = RKN
+					is_controlled_by = RKG
+					AND = {
+						is_core_of = CZE
+						is_controlled_by = TIX
+					}
+					AND = {
+						is_core_of = POL
+						is_controlled_by = TIX
+					}
+				}
+				NOT = {
+					has_state_flag = TIX_dikangyibeizhenya_2
+					has_state_flag = byg_dikangzuzhizhengzaihuodong
+				}
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BYG_zhengzaisanbodikang
+			}
+			FROM = {
+				OR = {
+					is_controlled_by = WEX
+					is_controlled_by = ENG
+					is_controlled_by = RKN
+					is_controlled_by = RKG
+					AND = {
+						is_core_of = CZE
+						is_controlled_by = TIX
+					}
+					AND = {
+						is_core_of = POL
+						is_controlled_by = TIX
+					}
+				}
+				NOT = {
+					has_state_flag = TIX_dikangyibeizhenya_2
+					has_state_flag = byg_dikangzuzhizhengzaihuodong
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		modifier = {
+			command_power_gain = -0.1
+		}
+		complete_effect = {
+			set_country_flag = BYG_zhengzaisanbodikang
+		}
+		remove_effect = {
+			clr_country_flag = BYG_zhengzaisanbodikang
+			FROM = {
+				set_state_flag = byg_dikangzuzhizhengzaihuodong
+				custom_effect_tooltip = BYG_jiaqiangdangdidikangzuzhi
+				add_resistance = 5
+				add_compliance = -10
+				add_dynamic_modifier = {
+					modifier = BYG_youjidui_state
+				}
+			}
+		}
+	}
+}
+
+BFL_zhimingchongji_jyz = {
+	BFL_zhimingchongji_jy_1 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = AZR }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = AZR transfer_troops = no }
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			AZR = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 120
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_2 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = ARM }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = ARM transfer_troops = no }
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			ARM = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 120
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_3 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = RKM }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = RKM transfer_troops = no }
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 120
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			RKM = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 180
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_4 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = GEO }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = GEO transfer_troops = no }
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			GEO = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 180
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_5 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = RKO }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = RKO transfer_troops = no }
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = RKO
+						is_core_of = EST
+					}
+				}
+				add_core_of = BFL
+			}
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			RKO = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 240
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_6 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = BLR }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = BLR transfer_troops = no }
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = BLR
+					}
+				}
+				add_core_of = BFL
+			}
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			BLR = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 240
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_7 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = UKR }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = UKR transfer_troops = no }
+			transfer_state = 137
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = UKR
+					}
+				}
+				add_core_of = BFL
+			}
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			UKR = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 240
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_8 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = FIN }
+			}
+		}
+		complete_effect = {
+			annex_country = { target = FIN transfer_troops = no }
+			transfer_state = 195
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			FIN = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 365
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_zhimingchongji_jy_9 = {
+		icon = generic_protection
+		activation = {
+			always = no
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				not = { country_exists = ROM }
+			}
+		}
+		complete_effect = {
+			transfer_state = 80
+			transfer_state = 78
+			transfer_state = 766
+			if = {
+				limit = {
+					has_idea = BFL_zhimingchongji
+				}
+				modify_timed_idea = {
+					idea = BFL_zhimingchongji
+					days = 60
+				}
+			}else = {
+				add_political_power = 100
+			}
+		}
+		available = {
+			ROM = {
+				has_capitulated = yes
+			}
+		}
+		days_mission_timeout = 365
+		is_good = no
+		timeout_effect = {
+			add_war_support = -0.1
+		}
+	}
+	BFL_hebaotix_1 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 763 }
+			TIX = { has_war_with = BFL }
+			763 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 763
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 763
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_2 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 66 }
+			TIX = { has_war_with = BFL }
+			66 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 66
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 66
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_3 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 64 }
+			TIX = { has_war_with = BFL }
+			64 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 64
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 64
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_4 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 58 }
+			TIX = { has_war_with = BFL }
+			58 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 58
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 58
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_5 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 59 }
+			TIX = { has_war_with = BFL }
+			59 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 59
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 59
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_6 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 55 }
+			TIX = { has_war_with = BFL }
+			55 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 55
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 55
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_7 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 51 }
+			TIX = { has_war_with = BFL }
+			51 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 51
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 51
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_8 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 50 }
+			TIX = { has_war_with = BFL }
+			50 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 50
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 50
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_9 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 52 }
+			TIX = { has_war_with = BFL }
+			52 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 52
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 52
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+	BFL_hebaotix_10 = {
+		icon = eng_trade_unions_demand
+		cost = 100
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			not = { has_country_flag = BFL_jiaozhunmubiao }
+			not = { controls_state = 4 }
+			TIX = { has_war_with = BFL }
+			4 = {
+				is_owned_and_controlled_by = TIX
+				any_neighbor_state = { 
+					is_controlled_by = BFL
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 4
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 5
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = BFL_jiaozhunmubiao
+		}
+		cancel_effect = {
+			add_political_power = 100
+			clr_country_flag = BFL_jiaozhunmubiao
+		}
+		remove_effect = {
+			clr_country_flag = BFL_jiaozhunmubiao
+			custom_effect_tooltip = BFL_hebao_dangdi_tips
+			launch_nuke = {
+				state = 4
+				controller = TIX
+				use_nuke = yes
+				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
 }

@@ -1,6 +1,318 @@
 ideas = {
 	# 天降独有民族精神，防覆盖
 	country = {
+		TIX_yuanshouzhiguo2 = {
+			name = TIX_yuanshouzhiguo
+			picture = GER_german_military
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				drift_defence_factor = 5
+				political_power_factor = 0.25
+				stability_factor = 0.3
+				war_support_factor = 0.5
+				compliance_growth = 0.3
+				resistance_decay = 0.5
+				conscription_factor = 0.2
+				monthly_population = 0.5
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+			}
+		}
+		TIX_yuanshouzhiguo = {
+			picture = GER_german_military
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				drift_defence_factor = 5
+				political_power_factor = 0.25
+				stability_factor = 0.3
+				war_support_factor = 0.5
+				compliance_growth = 0.2
+				resistance_decay = 0.4
+			}
+		}
+		TIX_qingzhushengli = {
+			picture = generic_political_support
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_war = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.2
+				consumer_goods_expected_value = 0.1
+				fascism_drift = 0.1
+				drift_defence_factor = 5
+				political_power_factor = 0.5
+				stability_factor = 0.5
+				stability_weekly = 0.01
+				war_support_factor = 1
+				war_support_weekly = 0.025
+			}
+		}
+		BFL_zhimingchongji = {
+			picture = RAJ_private_military_complex
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 0.3
+				army_core_attack_factor = 0.8
+				army_core_defence_factor = 1.2
+				land_reinforce_rate = 0.2
+				breakthrough_factor = 0.5
+				army_attack_against_major_factor = 0.2
+				army_attack_against_minor_factor = 0.3
+				army_breakthrough_against_major_factor = 0.2
+				army_breakthrough_against_minor_factor = 0.3
+			}
+		}
+		BFL_daguimoshengchan = {
+			picture = ARG_war_division
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.33
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.33
+					instant = yes
+				}
+				motorized_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			    mechanized_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		BFL_shangweishibai = {
+			picture = ARG_construction_guilds
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 3
+				production_factory_max_efficiency_factor = 2
+				production_factory_efficiency_gain_factor = 5
+				line_change_production_efficiency_factor = 5
+			}
+		}
+		BFL_gangtiezhishi = {
+			picture = SWE_land_air_warfare
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+				org_loss_when_moving = -0.15
+				planning_speed = 0.4
+				max_planning = 0.2
+				air_mission_efficiency = 0.25
+				air_cas_present_factor = 0.3
+			}
+		}
+		BFL_zhengzaixiandaihua = {
+			picture = SOV_purged_junior_army_officers
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = -0.5
+				army_defence_factor = -0.5
+				army_org_factor = -0.5
+				army_morale_factor = -0.5
+				planning_speed = -0.5
+				max_planning = -0.5
+				air_mission_efficiency = -0.5
+				air_cas_present_factor = -0.5
+			}
+		}
+		BFL_jinghuhui = {
+			picture = SOV_soviet_railways
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				trade_opinion_factor = 1
+			}
+		}
+		BFL_gengduojishujiaohuan = {
+			picture = SOV_atomic_bomb_project
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				special_project_speed_factor = 0.15
+			}
+		}
+		BFL_yuanzhufeizhou = {
+			name = BFL_yuanzhutiexue
+			picture = generic_economic_increase
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.5
+				production_speed_buildings_factor = 0.5
+			}
+		}
+		BFL_lengzhanqianxian = {
+			picture = ger_the_great_red_menace
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+			}
+			targeted_modifier = {
+				tag = BYG
+				attack_bonus_against = 0.3
+			}
+			targeted_modifier = {
+				tag = HUJ
+				attack_bonus_against = 0.3
+			}
+			targeted_modifier = {
+				tag = YUW
+				attack_bonus_against = 0.3
+			}
+		}
+		BFL_yuanzhutiexue = {
+			picture = generic_economic_increase
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = 0.01
+				war_support_weekly = 0.025
+				industrial_capacity_factory = 0.5
+			}
+		}
+		cold_war_idea_tjjn = {
+			picture = generic_rocket_bonus
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				OR = {
+					has_war_with = BYG
+					has_war_with = TIX
+					has_war_with = BFL
+				}
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				special_project_speed_factor = 0.1
+				production_speed_facility_factor = 0.1
+				send_volunteer_size = 3
+				send_volunteers_tension = -1
+				generate_wargoal_tension = 1
+				justify_war_goal_time = 100
+				defensive_war_stability_factor = 1
+			}
+		}
+		BYG_zyzsdt = {
+			picture = CHL_unified_in_spirit
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				subversive_activites_upkeep = -0.5
+				opinion_gain_monthly_factor = 0.5
+				trade_opinion_factor = 1
+			}
+		}
+		BYG_jtaqfa_1 = {
+			picture = raj_heavy_vehicles_factory_avadi
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = BFL
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+		BYG_jtaqfa_2 = {
+			picture = raj_heavy_vehicles_factory_avadi
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = TIX
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+		BYG_hjcnqk = {
+			picture = NORDIC_navy_democratic
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_dockyard = 2.5
+			}
+		}
+		BYG_kdqbjg = {
+			picture = RAJ_a_policy_of_silence
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				operative_slot = 4
+			}
+		}
+		BYG_zhkyry = {
+			picture = RAJ_uranium_tipped_bullets
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+		BYG_ozfxjh = {
+			picture = generic_economic_increase
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = -0.4
+				production_speed_buildings_factor = 0.25
+			}
+		}
 		HUJ_xunhuatuzhu_idea = {
 			picture = ARG_military_government
 			allowed_civil_war = {

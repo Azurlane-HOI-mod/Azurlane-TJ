@@ -10758,4 +10758,369 @@ focus_tree = {
 			}
 		}
 	}
+###########################################################coldwar#####################################################
+	focus = {
+		id = TIX_coldwar_1
+		icon = GFX_fflag_TIX
+		x = 0
+		y = 2
+		cost = 2
+		available = {
+			is_puppet = no
+			has_government = fascism
+			OR = {
+				has_global_flag = guangrongheping_shishi
+				has_global_flag = xinzhixu_shishi
+			}
+		}
+		relative_position_id = TIX_weisebaoxingdong
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = TIX_coldwar_2
+		icon = GFX_focus_generic_royal_wedding
+		x = -5
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_1
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_war = no
+		}
+		relative_position_id = TIX_coldwar_1
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_timed_idea = { idea = TIX_qingzhushengli days = 120 }
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_3
+		icon = GFX_focus_bisimai
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_1
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_1
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = TIX_yuanshouzhiguo
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_4
+		icon = GFX_focus_generic_subjugation
+		x = 5
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_1
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_1
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = az_tianjiang.352
+			every_state = {
+				limit = {
+					is_controlled_by = TIX
+					not = { is_core_of = TIX }
+				}
+				add_resistance = -5
+				add_compliance = 10
+			}
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_5
+		icon = GFX_focus_generic_total_war
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_2
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_2
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = TIX_qingzhushengli
+				}
+				modify_timed_idea = {
+					idea = TIX_qingzhushengli
+					days = 120
+				}
+			}else = {
+				add_timed_idea = {
+					idea = TIX_qingzhushengli
+					days = 120
+				}
+			}
+			every_state = {
+				limit = {
+					is_controlled_by = TIX
+					not = { is_core_of = TIX }
+				}
+				add_resistance = -10
+			}
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_6
+		icon = GFX_foucs_aijier
+		x = 2
+		y = 1
+		cost = 7
+		prerequisite = {
+			focus = TIX_coldwar_2
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_2
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			TIX_aijier = {
+				add_skill_level = 2
+			}
+			TIX_xingdengbao = {
+				add_skill_level = 2
+			}
+			add_power_balance_value = {
+				id = TIX_balance
+				value = -0.2
+			}
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_7
+		icon = GFX_focus_GER_the_supreme_leader
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = TIX_coldwar_3
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_3
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_political_power = 200
+			add_victory_points = {
+				province = 6521
+				value = 30
+			}
+			set_province_name = {
+				id = 6521
+				name = "日耳曼尼亚"
+			}
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_8
+		icon = GFX_focus_FIN_parmis_devils
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_4
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_4
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			custom_effect_tooltip = TIX_jiesuozhanlingfaan_dfzyxq_tips
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_9
+		icon = GFX_focus_SWE_hygienic_housing
+		x = 2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = TIX_coldwar_4
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_4
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = az_tianjiang.353
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_10
+		icon = GFX_fflag_SAD
+		x = 2
+		y = 1
+		cost = 5
+		will_lead_to_war_with = SAD
+		prerequisite = {
+			focus = TIX_coldwar_5
+		}
+		prerequisite = {
+			focus = TIX_coldwar_6
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_5
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = az_tianjiang.355
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_11
+		icon = GFX_focus_GER_european_confederation
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_7
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_7
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = TIX_yuanshouzhiguo
+				add_idea = TIX_yuanshouzhiguo2
+			}
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_12
+		icon = GFX_focus_RAJ_special_economic_zones
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_8
+		}
+		prerequisite = {
+			focus = TIX_coldwar_9
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+		}
+		relative_position_id = TIX_coldwar_8
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+						character = TIX_bisimai
+						ruling_only = yes
+					}
+				}
+				custom_effect_tooltip = TIX_bsmmanyidu_shangsheng
+				add_to_variable = {
+					var = tix_bsmmanyiduzhi
+					value = 50
+				}
+			}
+			custom_effect_tooltip = TIX_buhuizaichufafumianshijian_tips
+		}
+	}
+
+	focus = {
+		id = TIX_coldwar_13
+		icon = GFX_focus_generic_spread_fascism
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = TIX_coldwar_10
+		}
+		prerequisite = {
+			focus = TIX_coldwar_11
+		}
+		prerequisite = {
+			focus = TIX_coldwar_12
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_war = no
+		}
+		relative_position_id = TIX_coldwar_11
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = az_tianjiang.354
+			add_ideas = cold_war_idea_tjjn
+		}
+	}
+
 }

@@ -183,3 +183,29 @@ HUJ_quyuzizhizhidu = {
 		}
 	}
 }
+
+TIX_dfzyxq_final = {
+	icon = 11
+	sound_effect = "Martial_Law_Interface_Harsh_Quotas_Occupation"
+
+	visible = {
+		is_puppet = no
+		original_tag = TIX
+		has_completed_focus = TIX_coldwar_8
+	}
+	available = {
+		FROM = { capital_scope = { is_on_continent = europe } }
+	}
+	state_modifier = {
+		resistance_target 				= -0.3
+		compliance_gain 				= 0.02
+		required_garrison_factor 		= -0.3
+		enemy_operative_detection_chance_over_occupied_tag = 0.33
+		enemy_intel_network_gain_factor_over_occupied_tag = -0.33 
+	}
+
+
+	ai_will_do = {
+		base = 800
+	}
+}
