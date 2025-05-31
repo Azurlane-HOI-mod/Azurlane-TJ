@@ -2526,7 +2526,7 @@ country_event = {
 		country_event = { id = az_tianjiang.81 days = 1 }
 		retire_character = SAD_tuolichaili
 		ITA = {
-		set_cosmetic_tag = NSAD
+		#set_cosmetic_tag = NSAD
 		recruit_character = SAD_tuolichaili
 		add_country_leader_role = {
 			character = SAD_tuolichaili
@@ -8920,7 +8920,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "无言，图之"
-		add_political_power = 200
+		add_political_power = 100
 		custom_effect_tooltip = bfldaqingxi_tips
 		BFL_dqx_dengji = yes
 		complete_national_focus = BFL_55
@@ -12494,6 +12494,176 @@ country_event = {
 		declare_war_on = { target = SAD type = take_state_focus }
 		ai_chance = {
 			factor = 0
+		}
+	}
+}
+
+unit_leader_event = {
+	id = az_tianjiang.356
+	title = "永恒的誓约"
+	desc = az_tianjiang.356.d
+	is_triggered_only = yes
+	immediate = {
+		THIS = {
+			set_character_flag = shiyue_yes
+		}
+	}
+	option = {
+		trigger = {
+			THIS = {
+				is_army_leader = yes
+			}
+		}
+		name = "执子之手，与子偕老"
+		THIS = {
+			add_attack = 2
+			add_defense = 2
+			add_max_trait = 1
+			add_unit_leader_trait = trait_shiyue
+		}
+	}
+	option = {
+		trigger = {
+			THIS = {
+				is_navy_leader = yes
+			}
+		}
+		name = "执子之手，与子偕老"
+		THIS = {
+			add_attack = 2
+			add_defense = 2
+			add_max_trait = 1
+			add_unit_leader_trait = trait_shiyue2
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.357
+	title = "不要玩这个势力！"
+	desc = "不要玩！不要玩！不要玩！重要的事情重复三遍，该势力是一个背景板势力，不仅没有什么可玩内容，在代码上甚至不算舰娘国家，因此不要游玩！"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "好吧"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.358
+	title = "制裁弱智刚果"
+	desc = "我才不关心非洲的小几把国！"
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = yes
+	trigger = {
+	tag = COG
+	is_ai = yes
+	date > 1936.1.1
+	}
+	option = {
+		name = "不用控制台是看不见这个事件的"
+		load_focus_tree = generic_focus
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.359
+	title = "企业：第一部分"
+	desc = az_tianjiang.359.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "下一页"
+		country_event = az_tianjiang.360
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.360
+	title = "企业：第二部分"
+	desc = az_tianjiang.360.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "下一页"
+		country_event = az_tianjiang.361
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.361
+	title = "企业：第三部分"
+	desc = az_tianjiang.361.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "END"
+		BYG_qiye = {
+			add_unit_leader_trait = trait_shiyue_qiye
+		}
+		custom_effect_tooltip = wenanzhaoxin_tips
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.362
+	title = "俾斯麦：第一部分"
+	desc = az_tianjiang.362.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "下一页"
+		country_event = az_tianjiang.363
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.363
+	title = "俾斯麦：第二部分"
+	desc = az_tianjiang.363.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "下一页"
+		country_event = az_tianjiang.364
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.364
+	title = "俾斯麦：第三部分"
+	desc = az_tianjiang.364.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "END"
+		TIX_bisimai = {
+			add_unit_leader_trait = trait_shiyue_bisimai
+		}
+		custom_effect_tooltip = wenanzhaoxin_tips
+		ai_chance = {
+			base = 100
 		}
 	}
 }

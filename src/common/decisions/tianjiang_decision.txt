@@ -885,6 +885,9 @@ TIX_jihua = {
 			NOT = {
 				has_country_flag = BFL_meibeimiao
 			}
+			NOT = {
+				has_global_flag = beilian_bengkui
+			}
 		}
 		complete_effect = {
 			add_political_power = 500
@@ -893,11 +896,14 @@ TIX_jihua = {
 			set_country_flag = BFL_beimiaole
 		}
 		available = {
-			BFL = {
-				OR = {
-					exists = no
-					has_capitulated = yes
-					is_in_faction_with = TIX
+			OR = {
+				has_global_flag = beilian_bengkui
+				BFL = {
+					OR = {
+						exists = no
+						has_capitulated = yes
+						is_in_faction_with = TIX
+					}
 				}
 			}
 		}
@@ -922,11 +928,14 @@ TIX_jihua = {
 			set_country_flag = BFL_gggg
 		}
 		available = {
-			BFL = {
-				OR = {
-					exists = no
-					has_capitulated = yes
-					is_in_faction_with = TIX
+			OR = {
+				has_global_flag = beilian_bengkui
+				BFL = {
+					OR = {
+						exists = no
+						has_capitulated = yes
+						is_in_faction_with = TIX
+					}
 				}
 			}
 		}
@@ -2300,6 +2309,9 @@ BFL_weiguozz = {
 			}
 		}
 		days_remove = 400
+		cancel_trigger = {
+			has_war = no
+		}
 		available = {
 			date > 1942.6.1
 			has_defensive_war = yes
@@ -2333,9 +2345,10 @@ BFL_weiguozz = {
 			add_war_support = 0.4
 		}
 		modifier = {
-			army_core_attack_factor = 0.5
+			army_core_attack_factor = 1
 			army_attack_factor = 0.35
 			army_defence_factor = 0.35
+			breakthrough_factor = 0.3
 		}
 		remove_effect = {
 			add_political_power = 200
@@ -7128,6 +7141,7 @@ SAD_ITA = {
 			country_exists = ITA
 		}
 		available = {
+			surrender_progress < 0.1
 			OR = {
 				has_war_with = ITA
 				is_in_faction_with = ITA
@@ -7137,7 +7151,7 @@ SAD_ITA = {
 			is_in_faction_with = TIX
 			OR = {
 				ITA = {
-					surrender_progress > 0.9
+					has_capitulated = yes
 				}
 				is_in_faction_with = ITA
 			}
@@ -9282,6 +9296,50 @@ ALL_luxianzhinan = {
 			country_event = az_tianjiang.266
 		}
 	}
+	BYG_qiye_jbsj_jy = {
+		visible = {
+			original_tag = BYG
+		}
+		available = {
+			is_ai = no
+			has_government = democratic
+			is_puppet = no
+			BYG_qiye = {
+				is_country_leader = yes
+				has_character_flag = shiyue_yes
+			}
+			has_completed_focus = BYG_minzhudangshengli
+			has_completed_focus = BYG_ziyoudebian
+			OR = {
+				has_completed_focus = BYG_coldwar_1
+				has_completed_focus = BYG_coldwar_27
+			}
+		}
+		complete_effect = {
+			country_event = az_tianjiang.359
+		}
+	}
+
+	TIX_bsm_jbsj_jy = {
+		visible = {
+			original_tag = TIX
+		}
+		available = {
+			is_ai = no
+			has_government = fascism
+			is_puppet = no
+			TIX_bisimai = {
+				is_country_leader = yes
+				has_character_flag = shiyue_yes
+			}
+			has_completed_focus = TIX_yihuigaige
+			has_completed_focus = TIX_difangxifang
+			has_completed_focus = TIX_coldwar_1
+		}
+		complete_effect = {
+			country_event = az_tianjiang.362
+		}
+	}
 }
 
 TIX_bsmmanyidu = {
@@ -9406,7 +9464,9 @@ TIX_bsmmanyidu = {
 			}
 		}
 		available = {
-			controls_state = 808
+			808 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 		days_mission_timeout = 90
 		is_good = no
@@ -9432,8 +9492,12 @@ TIX_bsmmanyidu = {
 			}
 		}
 		available = {
-			controls_state = 206
-			controls_state = 94
+			206 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			94 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 		days_mission_timeout = 90
 		is_good = no
@@ -9460,8 +9524,12 @@ TIX_bsmmanyidu = {
 			}
 		}
 		available = {
-			controls_state = 202
-			controls_state = 226
+			202 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			226 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 		days_mission_timeout = 90
 		is_good = no
@@ -9488,9 +9556,15 @@ TIX_bsmmanyidu = {
 			}
 		}
 		available = {
-			controls_state = 242
-			controls_state = 223
-			controls_state = 224
+			242 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			223 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			224 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 		days_mission_timeout = 120
 		is_good = no
@@ -9517,9 +9591,15 @@ TIX_bsmmanyidu = {
 			}
 		}
 		available = {
-			controls_state = 137
-			controls_state = 221
-			controls_state = 227
+			137 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			221 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			227 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 		days_mission_timeout = 150
 		is_good = no
@@ -9545,9 +9625,15 @@ TIX_bsmmanyidu = {
 			}
 		}
 		available = {
-			controls_state = 195
-			controls_state = 219
-			controls_state = 217
+			195 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			219 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			217 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
 		}
 		days_mission_timeout = 400
 		is_good = no
@@ -12865,6 +12951,55 @@ BFL_zhimingchongji_jyz = {
 				controller = TIX
 				use_nuke = yes
 				nuke_type = thermonuclear_bomb 
+			}
+		}
+	}
+}
+
+YUW_sanbosese = {
+	YUW_sanbosese_jy = {
+		icon = eng_propaganda_campaigns
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		highlight_color_while_active = 1
+		days_remove = 30
+		cost = 50
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+		}
+		visible = {
+			has_completed_focus = YUW_buyetinghaodemang
+			FROM = {
+				not = { has_state_flag = yuw_sanbolefushi_state }
+				is_owned_and_controlled_by = YUW
+				not = { is_core_of = YUW }
+			}
+		}
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = YUW
+				not = { is_core_of = YUW }
+				not = { has_state_flag = yuw_sanbolefushi_state }
+			}
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		modifier = {
+			political_power_cost = 0.1
+		}
+		remove_effect = {
+			FROM = {
+				set_state_flag = yuw_sanbolefushi_state
+				add_resistance = -40
+				add_compliance = 20
+				add_dynamic_modifier = {
+					modifier = YUW_sesefushi_state
+					scope = YUW
+				}
 			}
 		}
 	}

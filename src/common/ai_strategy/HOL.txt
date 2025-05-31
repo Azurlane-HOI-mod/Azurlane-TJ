@@ -1,0 +1,163 @@
+HOL_base_airplane_production = {
+	# HOL is not excluded from the default strats, this just adds on top
+	allowed = {
+		original_tag = HOL
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 200  # Need high value because their focus on aviation is otherwise so low...
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = small_plane_cas_airframe
+		value = 50
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 40
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = -10
+	}
+}
+
+HOL_extended_airplane_production = {
+	allowed = {
+		original_tag = HOL
+	}
+	enable = {
+		num_of_military_factories > 9
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = small_plane_airframe
+		value = 60
+	}
+}
+
+HOL_unit_production_at_strong = {
+    allowed = {
+		original_tag = HOL
+	}
+    
+	enable = {
+		OR = {
+			num_of_military_factories > 150
+			date > 1940.1.1	
+   		 }
+	NOT = {
+		has_idea = TY_dingzhenai
+	}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = infantry
+		value = 200
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = infantry
+		value = 200
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = armor
+		value = 800
+	}
+	ai_strategy = {
+		type = template_prio	#修改模板倾向
+		id = armor
+		value = 800
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1
+	}
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 10000
+	}
+	
+	ai_strategy = {
+        type = force_build_armies
+        value = 100
+    }
+}
+
+HOL_befriend_TIX = {
+    allowed = {
+		original_tag = HOL
+	}
+	enable = {
+		has_government = fascism
+		TIX = { has_government = fascism }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = "TIX"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "TIX"			
+		value = 200
+	}	
+}
+
+HOL_befriend_HUJ = {
+    allowed = {
+		original_tag = HOL
+	}
+	enable = {
+		has_government = democratic
+		HUJ = { has_government = democratic }
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = befriend
+		id = "HUJ"			
+		value = 40
+	}
+	ai_strategy = {
+		type = alliance
+		id = "HUJ"			
+		value = 100
+	}	
+}

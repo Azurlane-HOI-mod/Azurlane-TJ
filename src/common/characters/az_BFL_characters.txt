@@ -1075,6 +1075,57 @@ characters={
 			coordination_skill = 5
 		}
 	}
+	BFL_kashan = {
+		name = BFL_kashan
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/kashan.png"
+				small="gfx/interface/ideas/idea_kashan.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist zhanlie_army }
+			skill = 4
+			
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+
+	BFL_aoliege = {
+		name = BFL_aoliege
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/aoliege.png"
+				small="gfx/interface/ideas/idea_aoliege.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist xunyang_army }
+			skill = 3
+			
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
 
 	#scientists
 	BFL_kuersike_sci = {

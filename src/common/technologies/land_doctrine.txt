@@ -16,12 +16,18 @@ technologies = {
 		
 		category_all_armor = {
 			breakthrough = 0.20
+			max_strength = 1
 		}
-		
+		category_all_infantry = {
+			max_strength = 3
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 		category_cavalry = {
 			breakthrough = 0.20
 		}
-		
+
 		planning_speed = 0.5
 		army_speed_factor = 0.10
 		enable_tactic = tactic_unexpected_thrust
@@ -119,8 +125,14 @@ technologies = {
 		}
 		category_all_armor = {
 			maximum_speed = 0.1
+			max_strength = 1
 		}
-		
+		category_all_infantry = {
+			max_strength = 3
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 	
 		enable_tactic = tactic_elastic_defense
 		
@@ -170,36 +182,20 @@ technologies = {
 		xor={
 			armored_spearhead
 		}
-		motorized = {
+		category_mobile_and_mobile_combat_sup = {
 			maximum_speed = 0.1
 			default_morale = 0.2
-					}
-		armored_car = {
+		}
+		recon = {
+			maximum_speed = 0.15
+		}
+		mot_recon = {
 			maximum_speed = 0.1
-			default_morale = 0.2
-					}
-		mot_artillery_brigade = {
+		}
+		armored_car_recon = {
 			maximum_speed = 0.1
-			default_morale = 0.2
-					}
-		mot_anti_tank_brigade = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-					}
-		mot_anti_air_brigade = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-					}
-		mechanized = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-					}
-		amphibious_mechanized = {
-			maximum_speed = 0.1
-			default_morale = 0.2
-					}
-		
-		
+		}
+
 		path = {
 			leads_to_tech = mass_motorization 
 			research_cost_coeff = 1
@@ -220,41 +216,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				not = {
-					has_army_experience > 120
-				}
-				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
-
-			modifier = {
-				tag = GER
-				factor = 2
-			}
-			modifier = {
-				OR = {
-				tag = SAD
-				tag = HUJ
-				tag = YUW
-				tag = TIX
-				tag = BYG
-				tag = CHY
-                tag = BLI
-                tag = SIR
-				tag = BFL
-				tag = DOH
-				}
-				factor = 2
-			}
+			factor = 0
 		}
 		
 		ai_research_weights = {
@@ -270,9 +232,9 @@ technologies = {
 		xp_unlock_cost = 100
 		category_all_infantry = {
 			max_organisation = 10
-					}	
+		}	
 		
-				path = {
+		path = {
 			leads_to_tech = mechanised_offensive 
 			research_cost_coeff = 1
 		}
@@ -319,26 +281,19 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 100
 
-		motorized = {
-			max_organisation = 15
-			
-		}
-		mechanized = {
-			max_organisation = 15
-		}
-		amphibious_mechanized = {
+		category_vehicle_infantry = {
 			max_organisation = 15
 		}
 		
 		armored_car = {
-			max_organisation = 3
+			max_organisation = 3	
 		}
 
 		category_tanks = {
 			max_organisation = 3
 		}
-	
-armored_car_recon = {
+		
+		armored_car_recon = {
 			battalion_mult = {
 				category = category_all_armor
 				breakthrough = 0.10
@@ -400,7 +355,7 @@ armored_car_recon = {
 			max_organisation = 3
 			breakthrough = 0.20
 		}
-				
+		
 		enable_tactic = tactic_blitz
 		
 	
@@ -524,20 +479,13 @@ armored_car_recon = {
 			default_morale = 0.1
 			max_organisation = 7
 		}
-
+		category_vehicle_infantry = {
+			max_organisation = 5
+		}
 		enable_tactic = tactic_breakthrough
 		
-		motorized = {
-			max_organisation = 5
-		}
-		mechanized = {
-			max_organisation = 5
-		}
-		amphibious_mechanized = {
-			max_organisation = 5
-		}		
 
-		
+				
 		path = {
 			leads_to_tech = kampfgruppe 
 			research_cost_coeff = 1
@@ -586,12 +534,20 @@ armored_car_recon = {
 		xp_research_type = army
 		xp_unlock_cost = 100
 		category_all_infantry = {
+			max_strength = 4
 			default_morale = 0.2
 			max_organisation = 10
 		}
-				# faster planning
+		# faster planning
 		planning_speed = 0.2
-additional_brigade_column_size = 1
+		additional_brigade_column_size = 1
+		category_all_armor = {
+			supply_consumption = -0.04
+			max_strength = 2
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 		
 		enable_tactic = tactic_overwhelming_fire
 		
@@ -696,21 +652,6 @@ additional_brigade_column_size = 1
 				not = { ai_air_doctrine_tier_2_trigger = yes }
 				factor = 0.5
 			}
-			modifier = {
-			    OR = {
-				tag = SAD
-				tag = HUJ
-				tag = YUW
-				tag = TIX
-				tag = BYG
-				tag = CHY
-                tag = BLI
-                tag = SIR
-				tag = BFL
-				tag = DOH
-				}
-				factor = 2
-			}
 		}
 		
 		ai_research_weights = {
@@ -777,7 +718,7 @@ additional_brigade_column_size = 1
 			default_morale = 0.2
 			breakthrough = 0.20
 		}
-				
+		
 		doctrine = yes	
 		research_cost = 4.5
 		
@@ -821,7 +762,7 @@ additional_brigade_column_size = 1
 		xor={
 			firebrigades
 		}
-		
+
 		
 		conscription = 0.02
 		
@@ -846,25 +787,7 @@ additional_brigade_column_size = 1
 		}
 		
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				not = {
-					has_army_experience > 120
-				}
-				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.15
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				tag = GER
-				factor = 3
-			}
+			factor = 0
 		}
 		
 		ai_research_weights = {
@@ -922,6 +845,7 @@ additional_brigade_column_size = 1
 		resistance_damage_to_garrison_on_our_occupied_states = 0.1 
 
 		enable_tactic = tactic_guerrilla_tactics
+		enable_tactic = tactic_sf_ambush
 		
 		doctrine = yes	
 		research_cost = 4.5
@@ -971,6 +895,16 @@ additional_brigade_column_size = 1
 			 soft_attack = 0.1
 		}
 		
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_all_infantry = {
+			max_strength = 3
+		}
+		category_artillery = {
+			max_strength = 1
+		}
+
 		enable_tactic = tactic_barrage
 			
 		doctrine = yes	
@@ -1049,8 +983,14 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		category_all_infantry = {
 			defense = 0.10
+			max_strength = 3
 		}
-		
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 		enable_tactic = tactic_elastic_defense
 		
 		
@@ -1133,6 +1073,7 @@ additional_brigade_column_size = 1
 				}
 				factor = 0.8
 			}
+			factor = 20
 			modifier = {
 				not = { ai_air_doctrine_tier_1_trigger = yes }
 				factor = 0.5
@@ -1140,22 +1081,6 @@ additional_brigade_column_size = 1
 			modifier = {
 				not = { ai_air_doctrine_tier_2_trigger = yes }
 				factor = 0.75
-			}
-			factor = 20
-			modifier = {
-			    OR = {
-				tag = SAD
-				tag = HUJ
-				tag = YUW
-				tag = TIX
-				tag = BYG
-				tag = CHY
-                tag = BLI
-                tag = SIR
-				tag = BFL
-				tag = DOH
-				}
-				factor = 2
 			}
 		}
 		
@@ -1222,7 +1147,7 @@ additional_brigade_column_size = 1
 		xor = {
 			intergrated_support
 		}
-		
+
 		category_line_artillery = {
 			default_morale = 0.2
 		}
@@ -1230,7 +1155,7 @@ additional_brigade_column_size = 1
 		category_cavalry = {
 			default_morale = 0.2
 		}
-
+		
 		signal_company = {
 			battalion_mult = {
 				category = category_artillery
@@ -1259,21 +1184,7 @@ additional_brigade_column_size = 1
 		}
 		
 		ai_will_do = {
-			modifier = {
-				not = {
-					has_army_experience > 120
-				}
-				factor = 0.8
-			}
-			factor = 20
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.5
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.75
-			}
+			factor = 0
 		}
 		
 		ai_research_weights = {
@@ -1284,8 +1195,9 @@ additional_brigade_column_size = 1
 	overwhelming_firepower = {
 		xp_research_type = army
 		xp_unlock_cost = 100
+
 		category_line_artillery = {
-			soft_attack = 0.10
+			soft_attack = 0.15
 		}
 		coordination_bonus = 0.05
 
@@ -1339,8 +1251,14 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		category_all_armor = {
 			breakthrough = 0.10
+			max_strength = 1
 		}
-		
+		category_all_infantry = {
+			max_strength = 4
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 		
 		enable_tactic = tactic_blitz
 		
@@ -1411,6 +1329,7 @@ additional_brigade_column_size = 1
 		
 		doctrine = yes	
 		research_cost = 4.5
+		enable_tactic = tactic_sf_barrage
 		
 		categories = {
 			land_doctrine
@@ -1438,21 +1357,6 @@ additional_brigade_column_size = 1
 			modifier = {
 				not = { ai_air_doctrine_tier_2_trigger = yes }
 				factor = 0.5
-			}
-			modifier = {
-			    OR = {
-				tag = SAD
-				tag = HUJ
-				tag = YUW
-				tag = TIX
-				tag = BYG
-				tag = CHY
-                tag = BLI
-                tag = SIR
-				tag = BFL
-				tag = DOH
-				}
-				factor = 2
 			}
 		}
 		
@@ -1636,15 +1540,16 @@ additional_brigade_column_size = 1
 		}
 
 		category_all_infantry = { 
-			soft_attack = 0.05 
+			soft_attack = 0.15 
 		}
 		category_artillery = { 
-			soft_attack = 0.05
+			soft_attack = 0.15
 		}
 		path = {
 			leads_to_tech = forward_observers 
 			research_cost_coeff = 1
 		}
+		enable_tactic = tactic_sf_barrage
 
 		
 		doctrine = yes	
@@ -1662,21 +1567,7 @@ additional_brigade_column_size = 1
 		}
 		
 		ai_will_do = {
-			factor = 20
-			modifier = {
-				not = {
-					has_army_experience > 120
-				}
-				factor = 0.8
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_1_trigger = yes }
-				factor = 0.25
-			}
-			modifier = {
-				not = { ai_air_doctrine_tier_2_trigger = yes }
-				factor = 0.5
-			}
+			factor = 0
 		}
 		
 		ai_research_weights = {
@@ -1691,7 +1582,7 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		category_recon = {
 			recon = 1
-					}
+		}
 		
 		path = {
 			leads_to_tech = advanced_firebases 
@@ -1812,12 +1703,12 @@ additional_brigade_column_size = 1
 		}
 		
 		category_all_infantry = { 
-			soft_attack = 0.05
-			hard_attack = 0.05
+			soft_attack = 0.1 
+			hard_attack = 0.1
 		}
 		category_artillery = { 
-			soft_attack = 0.05
-			hard_attack = 0.05
+			soft_attack = 0.1
+			hard_attack = 0.1
 		}
 		enable_tactic = tactic_breakthrough
 				
@@ -1870,9 +1761,18 @@ additional_brigade_column_size = 1
 		category_cavalry = {
 			supply_consumption = -0.02
 		}
-	
-		max_dig_in = 10
-		dig_in_speed_factor = 0.25 #25% bonus
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_all_infantry = {
+			max_strength = 3
+		}
+		category_artillery = {
+			max_strength = 1
+		}
+
+		max_dig_in = 25
+		dig_in_speed_factor = 0.5 #25% bonus
 		
 		
 		path = {
@@ -1921,6 +1821,7 @@ additional_brigade_column_size = 1
 		
 		#planning max bonus increase
 		max_planning = 0.1
+		planning_speed = 0.2
 		command_power_gain = 0.25
 
 		doctrine = yes	
@@ -1967,7 +1868,8 @@ additional_brigade_column_size = 1
 			defense = 0.10
 			max_organisation = 10
 		}
-		
+		max_dig_in = 10
+		dig_in_speed_factor = 0.25 #25% bonus
 		path = {
 			leads_to_tech = grand_assault 
 			research_cost_coeff = 1
@@ -2010,7 +1912,17 @@ additional_brigade_column_size = 1
 			breakthrough = 0.10
 			soft_attack = 0.05
 		}
-				
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_all_infantry = {
+			max_strength = 3
+		}
+		category_artillery = {
+			max_strength = 1
+		}
+		max_planning = 0.1
+
 		enable_tactic = tactic_planned_attack
 		
 		path = {
@@ -2067,21 +1979,15 @@ additional_brigade_column_size = 1
 			infantry_offensive
 		}
 	
-		motorized = {
+		category_vehicle_infantry = {
 			max_organisation = 5
 		}
 		armored_car = {
 			max_organisation = 5
 		}
-		mechanized = {
-			max_organisation = 5
-		}
-		amphibious_mechanized = {
-			max_organisation = 5
-		}
-
-		additional_brigade_column_size = 1
 		
+		additional_brigade_column_size = 1
+
 		enable_tactic = tactic_blitz
 		enable_tactic = tactic_elastic_defense
 		
@@ -2122,16 +2028,8 @@ additional_brigade_column_size = 1
 				factor = 0.65
 			}
 			modifier = {
-			    OR = {
-				tag = SAD
-				tag = HUJ
-				tag = YUW
-				tag = TIX
-				tag = BYG
-				tag = BFL
-				tag = DOH
-				}
-				factor = 2
+				tag = CHY
+				factor = 0
 			}
 		}
 		
@@ -2198,6 +2096,7 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		category_all_infantry = {
 			max_organisation = 5
+			max_strength = 4
 		}
 		category_tanks = {
 			max_organisation = 1
@@ -2205,7 +2104,14 @@ additional_brigade_column_size = 1
 		armored_car = {
 			max_organisation = 1
 		}
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 		coordination_bonus = 0.1
+		enable_tactic = tactic_sf_barrage
 		
 		path = {
 			leads_to_tech = assault_breakthrough 
@@ -2309,7 +2215,7 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		max_planning = 0.1
 		max_command_power = 30
-
+		
 		logistics_company = {
 			battalion_mult = {
 				category = category_all_infantry
@@ -2423,6 +2329,10 @@ additional_brigade_column_size = 1
 			breakthrough = 0.1
 		}
 
+		category_cavalry = {
+			breakthrough = 0.05
+		}
+
 		additional_brigade_column_size = 1
 		
 		enable_tactic = tactic_infantry_charge
@@ -2463,10 +2373,16 @@ additional_brigade_column_size = 1
 				factor = 0.65
 			}
 			modifier = {
-				tag = CHY
-                tag = BLI
-                tag = SIR
-				factor = 4
+				tag = YUW
+				factor = 0
+			}
+			modifier = {
+				tag = HUJ
+				factor = 0
+			}
+			modifier = {
+				tag = SAD
+				factor = 0
 			}
 		}
 		
@@ -2543,10 +2459,22 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		supply_consumption_factor = -0.10
 		command_power_gain_mult = 0.15
-
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_artillery = {
+			max_strength = 1
+		}
+		category_all_infantry = {
+			max_strength = 4
+		}
 		recon = {
 			battalion_mult = {
 				category = category_light_infantry
+				soft_attack = 0.05
+			}
+			battalion_mult = {
+				category = category_cavalry
 				soft_attack = 0.05
 			}
 		}
@@ -2555,7 +2483,7 @@ additional_brigade_column_size = 1
 			leads_to_tech = night_assault_tactics 
 			research_cost_coeff = 1
 		}
-
+		
 		doctrine = yes	
 		research_cost = 4.5
 		
@@ -2599,7 +2527,7 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		#reduce land night combat penalty
 		land_night_attack = 0.25 # negates half of base penalty
-		
+	
 	
 		path = {
 			leads_to_tech = attritional_containment 
@@ -2709,7 +2637,7 @@ additional_brigade_column_size = 1
 		
 		category_recon = { 
 			recon = 1 
-					} 
+		} 
 
 		doctrine = yes	
 		research_cost = 4.5
@@ -2761,9 +2689,18 @@ additional_brigade_column_size = 1
 			research_cost_coeff = 1
 		}
 		
-				land_reinforce_rate = 0.02
+		land_reinforce_rate = 0.02
 		minimum_training_level = -0.1
 		weekly_casualties_war_support = 0.001
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_all_infantry = {
+			max_strength = 3
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 
 		doctrine = yes	
 		research_cost = 2.25
@@ -2806,7 +2743,7 @@ additional_brigade_column_size = 1
 			leads_to_tech = defence_in_depth
 			research_cost_coeff = 1
 		}
-		
+
 		doctrine = yes	
 		research_cost = 4.5
 		
@@ -2847,12 +2784,21 @@ additional_brigade_column_size = 1
 	defence_in_depth = {
 		xp_research_type = army
 		xp_unlock_cost = 100
-		max_dig_in = 5
+		max_dig_in = 10
 
 		category_light_infantry = {
 			max_organisation = 5
-					}
-		
+		}
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_all_infantry = {
+			max_strength = 3
+		}
+		category_artillery = {
+			max_strength = 1
+		}
+
 		path = {
 			leads_to_tech = large_front_operations
 			research_cost_coeff = 1
@@ -2898,11 +2844,12 @@ additional_brigade_column_size = 1
 			peoples_army
 		}
 
-supply_consumption_factor = -0.10
+		supply_consumption_factor = -0.10
 
-additional_brigade_column_size = 1
+		additional_brigade_column_size = 1
 
 		enable_tactic = tactic_relentless_assault
+		enable_tactic = tactic_sf_barrage
 		
 		path = {
 			leads_to_tech = deep_operations
@@ -2958,18 +2905,8 @@ additional_brigade_column_size = 1
 				factor = 0.75
 			}
 			modifier = {
-				OR = {
-				tag = SAD
-				tag = HUJ
-				tag = YUW
-				tag = TIX
-				tag = BYG
-				tag = BFL
-				tag = CHY
-                tag = BLI
-                tag = SIR
-				}
-				factor = 2
+				tag = DOH
+				factor = 0
 			}
 		}
 		
@@ -2985,7 +2922,7 @@ additional_brigade_column_size = 1
 		armored_car = {
 			max_organisation = 2
 		}
-				
+
 		xp_research_type = army
 		xp_unlock_cost = 100
 		enable_tactic = tactic_blitz
@@ -3038,6 +2975,16 @@ additional_brigade_column_size = 1
 		xp_unlock_cost = 100
 		max_planning = 0.10
 		land_reinforce_rate = 0.05
+
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_all_infantry = {
+			max_strength = 4
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 
 		enable_tactic = tactic_elastic_defense
 		
@@ -3152,6 +3099,9 @@ additional_brigade_column_size = 1
 			max_organisation = 1
 			breakthrough = 0.10
 		}
+		category_cavalry = {
+			breakthrough = 0.05
+		}
 		
 		enable_tactic = tactic_breakthrough
 		
@@ -3211,26 +3161,17 @@ additional_brigade_column_size = 1
 			default_morale = 0.1
 		}	
 
-		mechanized = {
+		category_vehicle_infantry = {
 			max_organisation = 10
 			default_morale = 0.1
 		}
-		motorized = {
-			max_organisation = 10
-			default_morale = 0.1
-		}	
-		amphibious_mechanized = {
-			max_organisation = 10
-			default_morale = 0.1
-}	
-		
 		armored_car_recon = {
 			battalion_mult = {
 				category = category_light_infantry
 				max_organisation = 1
 				add = yes
 			}
-		}	
+		}
 		
 		path = {
 			leads_to_tech = continuous_offensive
@@ -3352,7 +3293,7 @@ additional_brigade_column_size = 1
 			cat_mass_assault
 		}
 
-military_police = {
+		military_police = {
 			battalion_mult = {
 				category = category_cavalry
 				suppression = 0.35 #Mp also has a mult
@@ -3395,10 +3336,9 @@ military_police = {
 				}
 			}
 			modifier = {
-			    tag = DOH
-				factor = 2
+				tag = BFL
+				factor = 0
 			}
-
 		}
 		
 		ai_research_weights = {
@@ -3453,6 +3393,7 @@ military_police = {
 		xp_unlock_cost = 100
 		category_all_infantry = {
 			max_organisation = 10
+			max_strength = 4
 		}
 		category_tanks = {
 			max_organisation = 2
@@ -3460,7 +3401,12 @@ military_police = {
 		armored_car = {
 			max_organisation = 2
 		}
-		
+		category_all_armor = {
+			max_strength = 1
+		}
+		category_artillery = {
+			max_strength = 1
+		}
 		
 		path = {
 			leads_to_tech = human_wave_offensive
@@ -3546,7 +3492,7 @@ military_police = {
 		xp_research_type = army
 		xp_unlock_cost = 100
 		out_of_supply_factor = -0.30
-				category_army = {
+		category_army = {
 			default_morale = 0.2
 		}
 		

@@ -605,6 +605,7 @@ NZL_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 	}
 }
+
 RAJ_ai_behavior = {
 	name = "RAJ_AI_BEHAVIOR"
 	group = "RULE_GROUP_AI_BEHAVIOR"
@@ -615,11 +616,13 @@ RAJ_ai_behavior = {
 		desc = "RULE_OPTION_DEFAULT_AI_DESC"
 	}
 
+	#GOE ONLY
 	option = {
 		name = GOE_HISTORICAL
 		text = "RULE_OPTION_GOE_HISTORICAL"
 		desc = "RULE_OPTION_GOE_HISTORICAL_RAJ_AI_DESC"
 		required_dlc = "Graveyard of Empires"
+		allow_achievements = yes
 	}
 
 	option = {
@@ -627,6 +630,7 @@ RAJ_ai_behavior = {
 		text = "RULE_OPTION_GOE_INDIA_UNITED"
 		desc = "RULE_OPTION_GOE_INDIA_UNITED_RAJ_AI_DESC"
 		required_dlc = "Graveyard of Empires"
+		allow_achievements = yes
 	}
 
 	option = {
@@ -665,33 +669,43 @@ RAJ_ai_behavior = {
 	}
 
 	option = {
+		name = GOE_INDIA_COMMUNISM_URBAN
+		text = "RULE_OPTION_GOE_INDIA_COMMUNISM_URBAN"
+		desc = "RULE_OPTION_DEMOCRATIC_HISTORICAL_RAJ_AI_DESC"
+		required_dlc = "Graveyard of Empires"
+	}
+
+	option = {
+		name = GOE_INDIA_LOYALTY 
+		text = "RULE_OPTION_OBEDIENCE"
+		desc = "RULE_OPTION_DEMOCRATIC_HISTORICAL_RAJ_AI_DESC"
+		required_dlc = "Graveyard of Empires"
+	}
+
+	#END GOE
+
+	#TFV ONLY
+	option = {
 		name = COMMUNIST
 		text = "RULE_OPTION_COMMUNIST"
 		desc = "RULE_OPTION_COMMUNIST_RAJ_AI_DESC"
+		exclude_dlc = "Graveyard of Empires"
 	}
 	option = {
 		name = DEMOCRATIC_HISTORICAL
 		text = "RULE_OPTION_HISTORICAL"
 		desc = "RULE_OPTION_DEMOCRATIC_HISTORICAL_RAJ_AI_DESC"
 		allow_achievements = yes
+		exclude_dlc = "Graveyard of Empires"
 	}
 	option = {
 		name = FASCIST
 		text = "RULE_OPTION_FASCIST"
 		desc = "RULE_FASCIST_RAJ_AI_DESC"
+		exclude_dlc = "Graveyard of Empires"
 	}
 
-	option = {
-		name = FASCIST
-		text = "RULE_OPTION_FASCIST"
-		desc = "RULE_FASCIST_RAJ_AI_DESC"
-	}
-
-	option = {
-		name = HISTORICAL
-		text = "RULE_OPTION_FASCIST"
-		desc = "RULE_FASCIST_RAJ_AI_DESC"
-	}
+	#END TFV
 	option = {
 		name = RANDOM
 		text = "RULE_OPTION_RANDOM"

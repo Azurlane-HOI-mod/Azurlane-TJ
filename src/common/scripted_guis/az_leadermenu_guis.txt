@@ -41,7 +41,16 @@ scripted_gui = {
 			az_single_leader_xiuchangjia_visible = {
 				always = NO
 			}
-			
+			az_single_leader_shiyue_click_enabled = {
+				NOT = { has_character_flag = xiujia_doing }
+				#is_assigned = no
+				check_variable = {
+					ROOT.jz_sl > 0
+				}
+				THIS = {
+					not = { has_character_flag = shiyue_yes }
+				}
+			} 
 			az_single_leader_xiujia_click_enabled = {
 				NOT = { has_character_flag = xiujia_doing }
 				is_assigned = no
@@ -652,6 +661,13 @@ scripted_gui = {
 					unit_leader_event = getzhg_event.24
 					
 				} 
+			}
+
+			az_single_leader_shiyue_click = {
+				add_to_variable = {
+					ROOT.jz_sl = -1
+				}	
+				PREV = { unit_leader_event = az_tianjiang.356 } 
 			}
 			
 		}

@@ -1,0 +1,878 @@
+unique_id = az_achievements
+az_romaempire_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	      tag = SAD
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		is_puppet = no
+		has_completed_focus = SAD_chongzhudiguorongguang
+    }    
+}
+az_diguolianbang_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		    tag = HUJ
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		is_puppet = no
+		has_completed_focus = HUJ_tongzhibabuliedianhuj
+    }    
+}
+az_nvpuguoji_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = HUJ
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		is_puppet = no
+		has_government = communism
+		has_completed_focus = HUJ_nvpulianmeng
+    }    
+}
+az_ouzhoulianmeng_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = TIX
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		is_puppet = no
+		has_government = democratic
+		has_completed_focus = TIX_hechengdatiexue
+    }    
+}
+az_sidengfen_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		    tag = BYG
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_country_flag = baiyingneizhaweiji
+		country_exists = USA
+		country_exists = USB
+		country_exists = CSA
+    }    
+}
+
+az_qingjiegong_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = BFL
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		custom_trigger_tooltip = {
+			tooltip = pianzhidu_dayudengyu50
+			check_variable = {
+				var = az_pianzhidu
+				value = 49
+				compare = greater_than_or_equals
+			}
+		}
+    }    
+}
+
+az_tiexuefanjizhan_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = TIX
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_completed_focus = TIX_zuihoudefanpu
+    }    
+}
+
+az_hongyizhujiao_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = YUW
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		custom_trigger_tooltip = {
+			tooltip = lisailiu_yincangxian_yes
+			has_completed_focus = YUW_shenshengshiming
+			has_country_flag = lyjs_fubibeituifan
+			has_completed_focus = YUW_shenglikaixuan
+			has_completed_focus = YUW_xingfenzhidu
+		}
+    }    
+}
+
+az_weicengshexiangdedaolu_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = CHY
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		custom_trigger_tooltip = {
+			tooltip = touxiangxuanbeilian_chy_yes
+			has_global_flag = chy_touxiang_shishi
+			is_subject_of = BFL
+		}
+    }    
+}
+
+az_tankexiangyouyidongwulimi_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		    tag = TIX
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_idea = TIX_bsmweicao
+    }    
+}
+
+az_buyaodaraowosese_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = YUW
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_completed_focus = YUW_xianxiashiguangjieshule
+		has_defensive_war = yes
+    }    
+}
+
+az_tangyingwang_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = YUW
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_completed_focus = YUW_chenglilinshizhengfu
+    }    
+}
+
+az_tongsinimiao_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = TIX
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		is_in_faction_with = SAD
+    has_war_with = ITA
+    }    
+}
+
+az_julongjuexing_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = DOH
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		num_of_factories > 1500
+    has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
+    has_completed_focus = DOH_wanguolaichao
+    has_completed_focus = DOH_special_force
+    }    
+}
+
+az_qingchihebaodan_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+	    	tag = BYG
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+      has_completed_focus = BYG_manhadunjihua
+      custom_trigger_tooltip = {
+        tooltip = byg_yonghedanrangchytouxiang_yes
+        has_global_flag = chy_touxiang_shishi
+      }
+    }    
+}
+
+az_qiguanwuguo_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+    not = { has_global_flag = modoption_dingzhenai_on }
+    has_full_control_of_state = 62
+    has_full_control_of_state = 59
+    has_full_control_of_state = 15
+    has_full_control_of_state = 933
+    has_full_control_of_state = 219
+    has_full_control_of_state = 529
+    }    
+}
+
+az_zhihuanwang_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        OR = {
+          tag = TIX
+          tag = YUW
+          tag = HUJ
+          tag = BFL
+          tag = SAD
+          tag = BYG
+          tag = DOH
+          tag = CHY
+        }
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+       all_army_leader = {
+          has_character_flag = shiyue_yes
+        }
+        all_navy_leader = {
+          has_character_flag = shiyue_yes
+       }
+    }    
+}
+
+az_yuekeji_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+      has_character = BYG_yuekecheng
+      has_character = HUJ_yuekegongjue
+      has_character = HUJ_yueke
+      has_character = TIX_yueke
+    }    
+}
+
+az_qiongbingduwu_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+      has_idea = tot_economic_mobilisation
+      OR = {
+        has_idea = all_adults_serve
+        has_idea = scraping_the_barrel
+      }
+      has_idea = keyancezhong_junshi
+      has_idea = gongzuozhidu_1
+      has_idea = zengjiajunfei
+      has_idea = junshicanmou
+      OR = {
+         has_idea = lujunkuobian
+         has_idea = haijundajian
+      }
+    }    
+}
+
+az_tingzhantiaoyue_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+         OR = {
+         tag = TIX
+         tag = BYG
+         tag = HUJ
+        }
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+      has_global_flag = guangrongheping_shishi
+    }    
+}
+
+az_lengzhanredou_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+        OR = {
+        tag = BFL
+        tag = BYG
+        }
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+      OR = {
+        has_completed_focus = BFL_coldwar_20
+        has_completed_focus = BYG_coldwar_25
+      }
+    }    
+}
+
+az_tno_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+        tag = TIX
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+      is_puppet = no
+      has_government = fascism
+      has_completed_focus = TIX_feixuzhixia
+      has_global_flag = xinzhixu_shishi
+      has_completed_focus = TIX_coldwar_13
+    }    
+}
+
+az_bfldachongzhuang_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+        tag = BFL
+    }
+    
+    happened = {
+      not = { has_global_flag = modoption_dingzhenai_on }
+      is_puppet = no
+      has_government = communism
+      has_global_flag = beilian_bengkui
+      has_completed_focus = BFL_coldwar_22
+      has_full_control_of_state = 219
+      not = { country_exists = BLR }
+      not = { country_exists = UKR }
+      not = { country_exists = RKO }
+      not = { country_exists = RKM }
+      not = { country_exists = AZR }
+      not = { country_exists = GEO }
+      not = { country_exists = ARM }
+    }    
+}
+
+az_womendehai_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = SAD
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      is_puppet = no
+      has_government = fascism
+      not = { is_in_faction_with = TIX }
+      not = { is_in_faction_with = BFL }
+      has_completed_focus = SAD_xindediguo
+      owns_state = 2
+      owns_state = 16
+      owns_state = 126
+      owns_state = 41
+      owns_state = 4
+      owns_state = 797
+      owns_state = 907
+      owns_state = 454
+      OR = {
+        not = { country_exists = HUJ }
+        HUJ = { is_subject_of = SAD }
+      }
+      OR = {
+        not = { country_exists = YUW }
+        YUW = { is_subject_of = SAD }
+      }
+      OR = {
+        not = { country_exists = YUG }
+        YUG = { is_subject_of = SAD }
+      }
+      OR = {
+        not = { country_exists = AUS }
+        AUS = { is_subject_of = SAD }
+      }
+      OR = {
+        not = { country_exists = TUR }
+        TUR = { is_subject_of = SAD }
+      }
+      OR = {
+        not = { country_exists = GRE }
+        GRE = { is_subject_of = SAD }
+      }
+    }    
+}
+
+az_dishangtianguo_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = YUW
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      is_puppet = no
+      OR = {
+        has_government = neutrality
+        has_government = democratic
+      }
+      has_completed_focus = YUW_wanchengshiming
+      controls_state = 171
+      controls_state = 2
+      controls_state = 454
+      OR = {
+        not = { country_exists = BFL }
+        BFL = { is_subject_of = YUW }
+      }
+      OR = {
+        not = { country_exists = TIX }
+        TIX = { is_subject_of = YUW }
+      }
+    }    
+}
+
+az_minglingyuzhengfu_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = BFL
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      is_puppet = no
+      has_government = communism
+      not = { has_global_flag = beilian_bengkui }
+      custom_trigger_tooltip = {
+        tooltip = bfl_zhengfuouzhou_yes
+         OR = {
+           not = { country_exists = YUW }
+           YUW = { is_subject_of = BFL }
+           YUW = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = POR }
+           POR = { is_subject_of = BFL }
+           POR = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = SAD }
+           SAD = { is_subject_of = BFL }
+           SAD = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = HOL }
+           HOL = { is_subject_of = BFL }
+           HOL = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = BEL }
+           BEL = { is_subject_of = BFL }
+           BEL = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = LUX }
+           LUX = { is_subject_of = BFL }
+           LUX = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = TIX }
+           TIX = { is_subject_of = BFL }
+           TIX = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = SWI }
+           SWI = { is_subject_of = BFL }
+           SWI = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = AUS }
+           AUS = { is_subject_of = BFL }
+           AUS = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = CZE }
+           CZE = { is_subject_of = BFL }
+           CZE = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = DEN }
+           DEN = { is_subject_of = BFL }
+           DEN = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = HUN }
+           HUN = { is_subject_of = BFL }
+           HUN = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = YUG }
+           YUG = { is_subject_of = BFL }
+           YUG = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = POL }
+           POL = { is_subject_of = BFL }
+           POL = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = ROM }
+           ROM = { is_subject_of = BFL }
+           ROM = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = BUL }
+           BUL = { is_subject_of = BFL }
+           BUL = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = GRE }
+           GRE = { is_subject_of = BFL }
+           GRE = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = ALB }
+           ALB = { is_subject_of = BFL }
+           ALB = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = TUR }
+           TUR = { is_subject_of = BFL }
+           TUR = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = SWE }
+           SWE = { is_subject_of = BFL }
+           SWE = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = NOR }
+           NOR = { is_subject_of = BFL }
+           NOR = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = EST }
+           EST = { is_subject_of = BFL }
+           EST = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = LAT }
+           LAT = { is_subject_of = BFL }
+           LAT = { has_capitulated = yes }
+        }
+        OR = {
+           not = { country_exists = LIT }
+           LIT = { is_subject_of = BFL }
+           LIT = { has_capitulated = yes }
+        }
+      }
+    }    
+}
+
+az_shututonggui_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = TIX
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      is_puppet = no
+      has_government = communism
+      has_country_leader = {
+				character = TIX_niulunbao
+				ruling_only = yes
+			}
+      OR = {
+        not = { country_exists = BFL }
+        BFL = { is_subject_of = TIX }
+      }
+      OR = {
+        not = { country_exists = YUW }
+        YUW = { is_subject_of = TIX }
+      }
+    }    
+}
+
+az_shandianzhan_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = TIX
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      is_puppet = no
+      has_government = fascism
+      date < 1941.1.1
+      4 = { is_core_of = TIX }
+      OR = {
+        not = { country_exists = BFL }
+        BFL = { is_subject_of = TIX }
+      }
+      OR = {
+        not = { country_exists = YUW }
+        YUW = { is_subject_of = TIX }
+      }
+      OR = {
+        not = { country_exists = HUJ }
+        HUJ = { is_subject_of = TIX }
+      }
+    }    
+}
+
+az_yidapianlan_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+        tag = YUW
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      has_global_flag = AZ_fengkuangAI_citiao_ex
+      is_puppet = no
+      date < 1940.6.1
+      owns_state = 64
+      owns_state = 2
+      owns_state = 126
+      owns_state = 113
+      OR = {
+        not = { country_exists = TIX }
+        TIX = { is_subject_of = YUW }
+      }
+      OR = {
+        not = { country_exists = SAD }
+        SAD = { is_subject_of = YUW }
+      }
+      OR = {
+        not = { country_exists = HUJ }
+        HUJ = { is_subject_of = YUW }
+      }
+    }    
+}
+
+az_julongfengbao_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+        tag = DOH
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      has_global_flag = AZ_fengkuangAI_citiao_ex
+      is_puppet = no
+      date < 1938.1.1
+      not = { has_completed_focus = DOH_xianfazhiren }
+      has_full_control_of_state = 716
+      has_full_control_of_state = 527
+      has_full_control_of_state = 525
+      OR = {
+        not = { country_exists = CHY }
+        CHY = { is_subject_of = DOH }
+      }
+    }    
+}
+
+az_gaobaoqichuan_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+        tag = TIX
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      has_global_flag = AZ_fengkuangAI_citiao_ex
+      is_puppet = no
+      has_government = fascism
+      not = { has_completed_focus = TIX_zuihoudefanpu }
+      OR = {
+        not = { country_exists = YUW }
+        YUW = { is_subject_of = TIX }
+        YUW = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = BFL }
+        BFL = { is_subject_of = TIX }
+        BFL = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = HUJ }
+        HUJ = { is_subject_of = TIX }
+        HUJ = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = DOH }
+        DOH = { is_subject_of = TIX }
+        DOH = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = BYG }
+        BYG = { is_subject_of = TIX }
+        BYG = { has_capitulated = yes }
+      }
+    }    
+}
+
+az_zhanxinjiyuan_cj = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        is_historical_focus_on = yes
+        tag = BFL
+    }
+    
+    happened = {
+      has_global_flag = modoption_fengkuangai_on
+      has_global_flag = AZ_fengkuangAI_citiao_ex
+      is_puppet = no
+      has_government = communism
+      not = { has_global_flag = beilian_bengkui }
+      OR = {
+        not = { country_exists = YUW }
+        YUW = { is_subject_of = BFL }
+        YUW = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = TIX }
+        TIX = { is_subject_of = BFL }
+        TIX = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = HUJ }
+        HUJ = { is_subject_of = BFL }
+        HUJ = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = SAD }
+        SAD = { is_subject_of = BFL }
+        SAD = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = CHY }
+        CHY = { is_subject_of = BFL }
+        CHY = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = BYG }
+        BYG = { is_subject_of = BFL }
+        BYG = { has_capitulated = yes }
+      }
+      OR = {
+        not = { country_exists = DOH }
+        DOH = { is_subject_of = BFL }
+        DOH = { has_capitulated = yes }
+        DOH = { 
+          has_government = communism
+          is_in_faction_with = BFL 
+        }
+      }
+    }    
+}

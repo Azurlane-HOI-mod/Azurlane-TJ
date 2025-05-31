@@ -709,7 +709,7 @@ ideas = {
 				land_doctrine_cost_factor = 0.5
 				naval_doctrine_cost_factor = 0.5
 				air_doctrine_cost_factor = 0.5
-				justify_war_goal_time = 2
+				justify_war_goal_time = 10
 			}
 		}
 		
@@ -729,7 +729,7 @@ ideas = {
 				land_doctrine_cost_factor = 0.5
 				naval_doctrine_cost_factor = 0.5
 				air_doctrine_cost_factor = 0.5
-				justify_war_goal_time = 1
+				justify_war_goal_time = 8
 			}
 		}
 		
@@ -747,6 +747,7 @@ ideas = {
 				land_doctrine_cost_factor = 0.2
 				naval_doctrine_cost_factor = 0.2
 				air_doctrine_cost_factor = 0.2
+				justify_war_goal_time = 5
 			}
 		}
 		
@@ -2574,8 +2575,8 @@ ideas = {
 				NOT = { has_war_with = BFL }
 			}
 			modifier = {
-				resistance_target = 0.1
-				resistance_growth = 0.1
+				resistance_target = 0.5
+				resistance_growth = 0.5
 			}
 			
 		}
@@ -2598,6 +2599,7 @@ ideas = {
 				stability_factor = -0.15
 				war_support_factor = 0.15
 				command_power_gain_mult = 0.5
+				war_support_factor = -0.3
 			}
 			
 		}
@@ -2980,16 +2982,17 @@ ideas = {
 				has_government = communism
 			}
 			modifier = {
-				political_power_cost = 0.1
-				drift_defence_factor = -0.1
-				stability_factor = -0.05
-				war_support_factor = -0.1
-				command_power_gain = -0.1
-				max_command_power = -5
-				army_org_factor = -0.1
-				army_morale_factor = -0.05
-				planning_speed = -0.1
-				max_planning = -0.05
+				political_power_cost = 0.3
+				drift_defence_factor = -0.3
+				stability_factor = -0.1
+				war_support_factor = -0.2
+				command_power_gain = -0.3
+				max_command_power = -15
+				army_org_factor = -0.3
+				army_morale_factor = -0.15
+				planning_speed = -0.3
+				max_planning = -0.15
+				production_speed_buildings_factor = -0.1
 			}
 		}
 		
@@ -3000,16 +3003,17 @@ ideas = {
 				has_government = communism
 			}
 			modifier = {
-				political_power_cost = 0.2
-				drift_defence_factor = -0.2
-				stability_factor = -0.1
-				war_support_factor = -0.2
-				command_power_gain = -0.2
-				max_command_power = -20
-				army_org_factor = -0.2
-				army_morale_factor = -0.1
-				planning_speed = -0.2
-				max_planning = -0.1
+				political_power_cost = 0.4
+				drift_defence_factor = -0.4
+				stability_factor = -0.2
+				war_support_factor = -0.3
+				command_power_gain = -0.4
+				max_command_power = -25
+				army_org_factor = -0.4
+				army_morale_factor = -0.25
+				planning_speed = -0.4
+				max_planning = -0.25
+				production_speed_buildings_factor = -0.15
 			}
 		}
 		
@@ -3020,16 +3024,17 @@ ideas = {
 				has_government = communism
 			}
 			modifier = {
-				political_power_cost = 0.3
-				drift_defence_factor = -0.4
-				stability_factor = -0.2
-				war_support_factor = -0.3
-				command_power_gain = -0.4
+				political_power_cost = 0.5
+				drift_defence_factor = -0.5
+				stability_factor = -0.3
+				war_support_factor = -0.4
+				command_power_gain = -0.5
 				max_command_power = -40
-				army_org_factor = -0.3
-				army_morale_factor = -0.2
-				planning_speed = -0.3
-				max_planning = -0.2
+				army_org_factor = -0.5
+				army_morale_factor = -0.4
+				planning_speed = -0.5
+				max_planning = -0.4
+				production_speed_buildings_factor = -0.2
 			}
 		}
 		
@@ -3040,18 +3045,19 @@ ideas = {
 				has_government = communism
 			}
 			modifier = {
-				political_power_cost = 0.5
-				drift_defence_factor = -0.5
-				stability_factor = -0.3
+				political_power_cost = 0.6
+				drift_defence_factor = -0.6
+				stability_factor = -0.4
 				war_support_factor = -0.5
-				command_power_gain = -0.5
+				command_power_gain = -0.6
 				max_command_power = -50
-				army_org_factor = -0.4
-				army_morale_factor = -0.3
-				planning_speed = -0.4
-				max_planning = -0.3
+				army_org_factor = -0.6
+				army_morale_factor = -0.5
+				planning_speed = -0.6
+				max_planning = -0.5
 				stability_weekly = -0.001
 				war_support_weekly = -0.002
+				production_speed_buildings_factor = -0.25
 			}
 		}
 		
@@ -3062,18 +3068,19 @@ ideas = {
 				has_government = communism
 			}
 			modifier = {
-				political_power_cost = 0.75
-				drift_defence_factor = -0.6
-				stability_factor = -0.4
+				political_power_cost = 0.8
+				drift_defence_factor = -0.8
+				stability_factor = -0.5
 				war_support_factor = -0.6
 				command_power_gain = -0.7
-				max_command_power = -75
-				army_org_factor = -0.5
-				army_morale_factor = -0.4
-				planning_speed = -0.5
-				max_planning = -0.4
+				max_command_power = -60
+				army_org_factor = -0.7
+				army_morale_factor = -0.6
+				planning_speed = -0.7
+				max_planning = -0.6
 				stability_weekly = -0.003
 				war_support_weekly = -0.005
+				production_speed_buildings_factor = -0.3
 			}
 		}
 		
@@ -3085,20 +3092,43 @@ ideas = {
 			}
 			modifier = {
 				political_power_cost = 1
-				drift_defence_factor = -0.8
-				stability_factor = -0.5
-				war_support_factor = -0.7
+				drift_defence_factor = -0.9
+				stability_factor = -0.8
+				war_support_factor = -0.8
 				command_power_gain = -0.8
-				max_command_power = -90
-				army_org_factor = -0.7
-				army_morale_factor = -0.5
-				planning_speed = -0.7
-				max_planning = -0.5
+				max_command_power = -80
+				army_org_factor = -0.8
+				army_morale_factor = -0.8
+				planning_speed = -0.8
+				max_planning = -1
 				stability_weekly = -0.005
 				war_support_weekly = -0.01
+				production_speed_buildings_factor = -0.35
 			}
 		}
 		
+		BFL_dqx_0ex = {
+			picture = SOV_conspiracy_in_the_academy_army
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				political_power_cost = 3
+				drift_defence_factor = -1
+				stability_factor = 0.5
+				war_support_factor = -1
+				command_power_gain = -0.9
+				max_command_power = -100
+				army_org_factor = -1
+				army_morale_factor = -1
+				planning_speed = -1
+				max_planning = -1
+				stability_weekly = 0.001
+				war_support_weekly = -0.01
+				production_speed_buildings_factor = -0.5
+			}
+		}
+
 		BFL_weibeilianfuyi = {
 			picture = ARG_women_in_industry
 			allowed_civil_war = {
@@ -3158,7 +3188,7 @@ ideas = {
 				army_defence_factor = 3
 				army_org_factor = 3
 				army_morale_factor = 3
-				army_strength_factor = 5
+				army_strength_factor = 2
 			} 
 		}
 		
@@ -3172,7 +3202,7 @@ ideas = {
 				army_defence_factor = 10
 				army_org_factor = 8
 				army_morale_factor = 5
-				army_strength_factor = 9
+				army_strength_factor = 3
 			} 
 		}
 		
@@ -3536,7 +3566,7 @@ ideas = {
 			modifier = {
 				army_org_factor = 1.5
 				army_morale_factor = 2
-				army_strength_factor = 9
+				army_strength_factor = 0.5
 			} 
 		}
 		
@@ -3546,7 +3576,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_strength_factor = 3
+				army_strength_factor = 1
 			} 
 		}
 		
@@ -3676,7 +3706,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_strength_factor = 9.5
+				army_strength_factor = 1.5
 				army_org_factor = 2
 				army_morale_factor = 2
 				planning_speed = 10

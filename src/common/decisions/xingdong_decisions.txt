@@ -1,5 +1,6 @@
 xingdong_category = {
 	az_debug_decsion = {
+		icon = GFX_trait_shiyue
 		visible = {
 			is_debug = yes
 		}
@@ -126,6 +127,7 @@ xingdong_category = {
 			NOT = { has_global_flag = modoption_historicalbossai_on }
 			has_global_flag = MOD_azurlane_sairenzhizai
 			}
+			not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		}
 		complete_effect = { 
 			set_country_flag = show_tuxizhanzheng
@@ -1452,15 +1454,15 @@ xingdong_category = {
 		visible = {
 			
 		}
-		days_remove = 30
+		days_remove = 90
 		
 		ai_will_do = {
 			factor = 0
 		}
 		fixed_random_seed = no
 		modifier = {
-			political_power_cost = 5
-			war_support_weekly = 0.03
+			political_power_cost = 2
+			war_support_weekly = 0.025
 		}
 	}
 	qibicongrong = {
@@ -1501,7 +1503,7 @@ xingdong_category = {
 		modifier = {
 			political_power_cost = 0.5
 			military_leader_cost_factor = -0.5
-			army_leader_start_level = 2
+			army_leader_start_level = 3
 		}
 	}
 	shengyu_huifushengyu = {
@@ -1557,7 +1559,7 @@ xingdong_category = {
 		}
 		days_re_enable = 37
 		days_remove = 7
-		cost = 200
+		cost = 100
 		ai_will_do = {
 			base = 0
 		}
@@ -1907,9 +1909,15 @@ xingdong_category = {
 	mf_chushoumofang = {
 		icon = xzmf
 		available = {
-			OR = {
-			has_global_flag = modoption_fengkuangai_on
-			NOT = { has_global_flag = modoption_historicalbossai_on }
+			if = {
+				limit = {
+					is_ai = no
+				}
+				OR = {
+					has_global_flag = modoption_fengkuangai_on
+					NOT = { has_global_flag = modoption_historicalbossai_on }
+				}
+				not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 			}
 			custom_trigger_tooltip = {
 				tooltip = ""

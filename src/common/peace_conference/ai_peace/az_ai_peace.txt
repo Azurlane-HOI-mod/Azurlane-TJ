@@ -35,3 +35,21 @@ psh_mission_2 = {
 
 
 }
+
+az_take_our_claimed = {
+        peace_action_type = { take_states }
+        enable = {
+            ROOT = { tag = ROOT.FROM } #We are negotiating for ourselves
+            ROOT.FROM.FROM.FROM = { is_claimed_by = ROOT.FROM } #It is ours
+        }
+        ai_desire = 1000
+}
+
+az_take_our_cores = {
+        peace_action_type = { take_states }
+        enable = {
+            ROOT = { tag = ROOT.FROM } #We are negotiating for ourselves
+            ROOT.FROM.FROM.FROM = { is_core_of = ROOT.FROM } #It is ours
+        }
+        ai_desire = 1000
+}

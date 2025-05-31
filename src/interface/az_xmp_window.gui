@@ -51,7 +51,7 @@ guiTypes = {
 		}
 		
 		
-    
+  
 		buttonType = {
 			name = "az_xmp_main_window_close_button"
 			position = { x = -46 y = 4 }
@@ -100,6 +100,20 @@ guiTypes = {
 			format = left
 			fixedsize=yes
 			pdx_tooltip = "mf_number_tooltip"
+		}
+
+		instantTextboxType = {
+			name = "xmp_jz_number_text"
+			position = { x = 500 y = 25 }
+			Orientation = "UPPER_LEFT"
+			font = "hoi_20b"
+			#borderSize = { x = 110 y = 0 }
+			text = "jz_number_text"
+			maxWidth = 100
+			maxHeight = 40
+			format = left
+			fixedsize=yes
+			pdx_tooltip = "jz_number_tooltip"
 		}
 		############################################################
 		iconType ={
@@ -610,6 +624,74 @@ guiTypes = {
 				pdx_tooltip_delayed = "az_xmp_xiaoliwu_desc2"
 			}
 			########
+		########
+		iconType ={
+			name ="az_xmp_yonghenglihe"
+			spriteType = "GFX_az_xmp_icon13"  
+			position = { x = 100 y = -370 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_yonghenglihe_desc"
+			pdx_tooltip_delayed = "az_xmp_yonghenglihe_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_yonghenglihe_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 112 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_yonghenglihe_desc"
+			pdx_tooltip_delayed = "az_xmp_yonghenglihe_desc2"
+		}
+		instantTextboxType = { 
+			name = "az_xmp_yonghenglihe_text"
+			position = { x = 120 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_yonghenglihe_text" 
+			maxWidth = 120
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_yonghenglihe_desc"
+			pdx_tooltip_delayed = "az_xmp_yonghenglihe_desc2"
+		}
+		########
+		########
+		iconType ={
+			name ="az_xmp_biyishuangfei"
+			spriteType = "GFX_az_xmp_icon14"  
+			position = { x = 300 y = -370 }
+			Orientation = "LOWER_LEFT"
+			pdx_tooltip = "az_xmp_biyishuangfei_desc"
+			pdx_tooltip_delayed = "az_xmp_biyishuangfei_desc2"
+			
+		} 
+		ButtonType = {
+			name = "az_xmp_biyishuangfei_btn"
+			Orientation = "LOWER_LEFT"
+			position = { x = 312 y = -370 }
+			quadTextureSprite ="GFX_az_xmp_buybutton" 
+			clicksound = click_default
+			oversound = ui_menu_over
+			pdx_tooltip = "az_xmp_biyishuangfei_desc"
+			pdx_tooltip_delayed = "az_xmp_biyishuangfei_desc2"
+		}
+		instantTextboxType = { 
+			name = "az_xmp_biyishuangfei_text"
+			position = { x = 320 y = -245 }
+			Orientation = "LOWER_LEFT"
+			font = "hoi_24header"
+			text = "az_xmp_biyishuangfei_text" 
+			maxWidth = 120
+			maxHeight = 38
+			format = center
+			fixedsize=yes
+			pdx_tooltip = "az_xmp_biyishuangfei_desc"
+			pdx_tooltip_delayed = "az_xmp_biyishuangfei_desc2"
+		}
+		########
 	}
 	
 }

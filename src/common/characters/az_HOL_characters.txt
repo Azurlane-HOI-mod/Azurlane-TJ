@@ -1,0 +1,80 @@
+characters={
+	HOL_qisheng = {
+		name = HOL_qisheng
+		portraits={
+			army = {
+				large="gfx/leaders/HOL/qisheng.png"
+				small="gfx/interface/ideas/idea_qisheng.png"
+			}
+			civilian = {
+				large="gfx/leaders/HOL/qisheng.png"
+			}
+		}
+		
+		country_leader={
+			ideology= conservatism
+			traits={     }
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology= fascism_ideology
+			traits={   }
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology= marxism
+			traits={   }
+			expire="2000.1.1.1"
+		}
+		country_leader={
+			ideology= despotism
+			traits={     }
+			expire="2000.1.1.1"
+		}
+
+		
+		field_marshal = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		
+	}
+
+	HOL_aifosen = {
+		name = HOL_aifosen
+		portraits={
+			army = {
+				large="gfx/leaders/HOL/aifosen.png"
+				small="gfx/interface/ideas/idea_aifosen.png"
+			}
+		}
+
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+
+}

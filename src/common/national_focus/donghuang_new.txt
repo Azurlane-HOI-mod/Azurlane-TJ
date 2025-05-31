@@ -4800,40 +4800,58 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_threat = 5
-			annex_country = {
-				target = MON
-				transfer_troops = yes
-			}
-			add_state_core = 820
-			add_state_core = 330
-			add_state_core = 818
-			add_state_core = 817
-			add_state_core = 819
-			add_state_core = 329
-			add_state_core = 563
-			add_state_core = 561
-			add_state_core = 657
-			add_state_core = 560
-			add_state_core = 409
-			add_state_core = 408
-			add_state_core = 655
-			transfer_state = 329
-			transfer_state = 563
-			transfer_state = 561
-			transfer_state = 657
-			transfer_state = 560
-			transfer_state = 409
-			transfer_state = 408
-			transfer_state = 655
-			BFL = {
-				remove_state_core = 329
-				remove_state_core = 563
-				remove_state_core = 561
-				remove_state_core = 657
-				remove_state_core = 560
-				remove_state_core = 409
-				remove_state_core = 408
-				remove_state_core = 655
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				annex_country = {
+					target = MON
+					transfer_troops = yes
+				}
+				every_state = {
+					limit = {
+						is_core_of = MON
+					}
+					add_core_of = ROOT
+				}
+			}else = {
+				annex_country = {
+					target = MON
+					transfer_troops = yes
+				}
+				add_state_core = 820
+				add_state_core = 330
+				add_state_core = 818
+				add_state_core = 817
+				add_state_core = 819
+				add_state_core = 329
+				add_state_core = 563
+				add_state_core = 561
+				add_state_core = 657
+				add_state_core = 560
+				add_state_core = 409
+				add_state_core = 408
+				add_state_core = 655
+				transfer_state = 329
+				transfer_state = 563
+				transfer_state = 561
+				transfer_state = 657
+				transfer_state = 560
+				transfer_state = 409
+				transfer_state = 408
+				transfer_state = 655
+				transfer_state = 537
+				BFL = {
+					remove_state_core = 329
+					remove_state_core = 563
+					remove_state_core = 561
+					remove_state_core = 657
+					remove_state_core = 560
+					remove_state_core = 409
+					remove_state_core = 408
+					remove_state_core = 655
+					remove_state_core = 537
+				}
 			}
 		}
 	}

@@ -662,6 +662,27 @@ scripted_gui = {
 				}
 				
 			}
+			az_xmp_yonghenglihe_btn_click = {
+				add_to_variable = {
+					var = zs_sl
+					value = -600
+				}
+				add_to_variable = {
+					var = jz_sl
+					value = 1
+				}
+			}
+			az_xmp_biyishuangfei_btn_click = {
+				set_country_flag = az_xmp_biyishuangfei_yes
+				add_to_variable = {
+					var = zs_sl
+					value = -980
+				}
+				add_to_variable = {
+					var = jz_sl
+					value = 2
+				}
+			}
 		}
 		
 
@@ -812,6 +833,22 @@ scripted_gui = {
 				check_variable = {
 					var = zs_sl
 					value = 50
+					compare = greater_than_or_equals
+				}
+			}
+			az_xmp_yonghenglihe_btn_click_enabled = {
+			
+				check_variable = {
+					var = zs_sl
+					value = 600
+					compare = greater_than_or_equals
+				}
+			}
+			az_xmp_biyishuangfei_btn_click_enabled = {
+				not = { has_country_flag = az_xmp_biyishuangfei_yes }
+				check_variable = {
+					var = zs_sl
+					value = 980
 					compare = greater_than_or_equals
 				}
 			}
@@ -1109,6 +1146,50 @@ scripted_gui = {
 				AND = {
 					has_country_flag = xmpwindow2_open
 					NOT = { has_country_flag = xmpwindow3_open }
+				}
+			}
+
+			###########################第三页
+			az_xmp_yonghenglihe_visible = {
+				AND = {
+					has_country_flag = xmpwindow3_open
+					NOT = { has_country_flag = xmpwindow2_open }
+					NOT = { has_country_flag = xmpwindow1_open }
+				}
+			} 
+			az_xmp_yonghenglihe_btn_visible = {
+				AND = {
+					has_country_flag = xmpwindow3_open
+					NOT = { has_country_flag = xmpwindow2_open }
+					NOT = { has_country_flag = xmpwindow1_open }
+				}
+			}
+			az_xmp_yonghenglihe_text_visible = {
+				AND = {
+					has_country_flag = xmpwindow3_open
+					NOT = { has_country_flag = xmpwindow2_open }
+					NOT = { has_country_flag = xmpwindow1_open }
+				}
+			}
+			az_xmp_biyishuangfei_visible = {
+				AND = {
+					has_country_flag = xmpwindow3_open
+					NOT = { has_country_flag = xmpwindow2_open }
+					NOT = { has_country_flag = xmpwindow1_open }
+				}
+			} 
+			az_xmp_biyishuangfei_btn_visible = {
+				AND = {
+					has_country_flag = xmpwindow3_open
+					NOT = { has_country_flag = xmpwindow2_open }
+					NOT = { has_country_flag = xmpwindow1_open }
+				}
+			}
+			az_xmp_biyishuangfei_text_visible = {
+				AND = {
+					has_country_flag = xmpwindow3_open
+					NOT = { has_country_flag = xmpwindow2_open }
+					NOT = { has_country_flag = xmpwindow1_open }
 				}
 			}
 			###########################

@@ -7067,7 +7067,11 @@ focus_tree = {
 					has_global_flag = chy_touxiang_shishi
 					not = { country_exists = CHY }
 					CHY = {
-						is_subject = yes
+						OR = {
+							is_subject = yes
+							has_government = democratic
+							has_government = communism
+						}
 					}
 				}
 				OR = {
@@ -7694,7 +7698,7 @@ focus_tree = {
 		}
 		cost = 4
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		completion_reward = {
 			create_wargoal = { target = DOH type = puppet_wargoal_focus }

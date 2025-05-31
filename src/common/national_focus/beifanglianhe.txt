@@ -2718,6 +2718,7 @@
 			SWE = {is_in_faction_with = HUJ}
 			has_war_with = SWE
 			has_global_flag = beilian_bengkui
+			has_global_flag = yaertahuiyi_chenggong
 			}
 		}
 		ai_will_do = {
@@ -2815,6 +2816,7 @@
 			has_war_with = TUR
 			NOT = {country_exists = TUR}
 			has_global_flag = beilian_bengkui
+			has_global_flag = yaertahuiyi_chenggong
 			}
 		}
 		ai_will_do = {
@@ -5371,7 +5373,7 @@
 			factor = 100
 		}
 		completion_reward = {
-			add_political_power = 300
+			add_political_power = 200
 			BFL_sayousi = {
 			add_country_leader_role = {
 				country_leader = {
@@ -5481,6 +5483,7 @@
 			factor = 100
 		}
 		completion_reward = {
+			custom_effect_tooltip = bfl_qiangzhiqingxi_tips
 			custom_effect_tooltip = jiuguoxingdong_tip
 			effect_tooltip = {
 			country_event = az_tianjiang.255
@@ -5493,6 +5496,12 @@
 			has_idea = BFL_dqx_5
 			}
 			country_event = az_tianjiang.262
+			}
+			if = {
+			limit = {
+			has_idea = BFL_dqx_0
+			}
+			add_timed_idea = { idea = BFL_dqx_0ex days = 500 }
 			}
 			set_country_flag = bfl_dqxjisuantime
 		}
@@ -5635,7 +5644,7 @@
 		prerequisite = { focus = BFL_58 }
 		prerequisite = { focus = BFL_59 }
 		relative_position_id = BFL_58
-		cost = 5
+		cost = 10
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -5826,6 +5835,12 @@
 			TIX = { 
 			has_government = fascism
 			is_faction_leader = yes 
+			}
+			OR = {
+				TIX = {
+					not = { has_war_with = HUJ }
+				}
+				has_war_with = HUJ
 			}
 		}
 		ai_will_do = {
@@ -6033,7 +6048,11 @@ focus = {
 				has_global_flag = chy_touxiang_shishi
 				not = { country_exists = CHY }
 				CHY = {
-					is_subject = yes
+					OR = {
+						is_subject = yes
+						has_government = democratic
+						has_government = communism
+					}
 				}
 			}
 			OR = {
@@ -6850,6 +6869,7 @@ focus = {
 		factor = 0
 			modifier = {
 				BYG = { is_ai = yes }
+				not = { has_completed_focus = BFL_coldwar_2 }
 				add = 100
 			}
 	}
