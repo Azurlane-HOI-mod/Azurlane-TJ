@@ -5,12 +5,19 @@ DOH_historical = {
 		original_tag = DOH
 	}
 	enable = {
-		has_global_flag = MOD_azurlane_tianjiangjianniang
 		OR = {
 			#is_historical_focus_on = yes
 			has_game_rule = {
 				rule = DOH_ai_behavior
 				option = DOH_black_focus_1
+			}
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_black_focus_2
+			}
+			has_game_rule = {
+				rule = DOH_ai_behavior
+				option = DOH_black_focus_3
 			}
 		}
 	}
@@ -20,13 +27,13 @@ DOH_historical = {
 		DOH_zhengyankaishijie
 		DOH_shiyichangji
 		DOH_guguozhihui
-		DOH_baohuyixian
-		DOH_kuodayixianquanli
-		DOH_zhangkongsanjun
-		DOH_ducuyixian
-		DOH_xianzibingfa
-		DOH_xieyibenzizhuan
-		DOH_yixianwansui
+		#DOH_baohuyixian
+		#DOH_kuodayixianquanli
+		#DOH_zhangkongsanjun
+		#DOH_ducuyixian
+		#DOH_xianzibingfa
+		#DOH_xieyibenzizhuan
+		#DOH_yixianwansui
 
 		DOH_fangfanjinlin
 		DOH_beijingfangxian
@@ -58,7 +65,6 @@ DOH_red = {
 		original_tag = DOH
 	}
 	enable = {
-		has_global_flag = MOD_azurlane_tianjiangjianniang
 		OR = {
 			is_historical_focus_on = yes
 			has_game_rule = {
@@ -100,6 +106,30 @@ DOH_red = {
 
 		DOH_chenglikeyanzu
 	}
+	abort = {
+		OR = { 
+			has_game_rule = {
+                rule = DOH_ai_behavior
+                option = DOH_black_focus_1
+            } 
+			has_game_rule = {
+                rule = DOH_ai_behavior
+                option = DOH_black_focus_2
+            } 
+			has_game_rule = {
+                rule = DOH_ai_behavior
+                option = DOH_black_focus_3
+            } 
+			has_game_rule = {
+                rule = DOH_ai_behavior
+                option = DOH_blue_focus_1
+            }
+			has_game_rule = {
+                rule = DOH_ai_behavior
+                option = DOH_blue_focus_2
+            } 
+		}
+	}
 	# research = {
 		
 	# }
@@ -120,7 +150,6 @@ DOH_blue = {
 		original_tag = DOH
 	}
 	enable = {
-		has_global_flag = MOD_azurlane_tianjiangjianniang
 		OR = {
 			has_game_rule = {
 				rule = DOH_ai_behavior

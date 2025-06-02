@@ -665,4 +665,16 @@ on_actions = {
 			}
 		}
 	}
+	on_daily_DOH = { 
+		effect = {
+			if = {
+				limit = { 
+					tag = DOH
+					date < 1937.7.7
+					has_war_with = CHY
+				}
+				set_country_flag = DOH_zaozhan_cjwx
+			}
+		}
+	}
 }
