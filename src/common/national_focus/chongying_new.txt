@@ -4,7 +4,7 @@
 		factor = 0
 		modifier = {
 			tag = CHY
-			add = 0
+			add = 300
 		}
 	}
 	default = no
@@ -2235,6 +2235,7 @@
 		}
 		relative_position_id = CHY_chichen1
 		available = {
+			is_puppet = no
 			custom_trigger_tooltip = {
 				tooltip = "铁血国创建了赤色中轴"
 				has_global_flag = TIX_created_chisezhongzhou
@@ -2290,6 +2291,7 @@
 			focus = CHY_ziligenshen
 		}
 		available = {
+			is_puppet = no
 			any_country = {
 				is_major = yes
 				has_war_with = TIX
@@ -3006,6 +3008,9 @@
 		ai_will_do = {
 			factor = 100
 		}
+		available = {
+			is_puppet = no
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -3030,6 +3035,7 @@
 			factor = 35
 		}
 		available = {
+			is_puppet = no
 			OR = {
 				NOT = {
 					country_exists = DOH
@@ -3123,6 +3129,9 @@
 		cost = 14
 		ai_will_do = {
 			factor = 35
+		}
+		available = {
+			is_puppet = no
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -3267,6 +3276,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			OR = {
 				NOT = {
 					country_exists = DOH
@@ -3335,6 +3345,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			is_neighbor_of = TUR
 		}
 		bypass = {
@@ -3371,6 +3382,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			OR = {
 				NOT = {
 					country_exists = DOH
@@ -3423,6 +3435,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			OR = {
 				BFL = {
 					has_war_with = TIX
@@ -3670,6 +3683,9 @@
 		ai_will_do = {
 			factor = 35
 		}
+		available = {
+			is_puppet = no
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -3717,6 +3733,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			has_full_control_of_state = 641
 		}
 		cancel_if_invalid = yes
@@ -3777,6 +3794,7 @@
 			}
 		}
 		available = {
+			is_puppet = no
 			has_full_control_of_state = 629
 		}
 		bypass = {
@@ -3816,6 +3834,7 @@
 			}
 		}
 		available = {
+			is_puppet = no
 			has_full_control_of_state = 629
 		}
 		bypass = {
@@ -3851,6 +3870,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			ELS = {
 				has_country_flag = CHY_help_americas
 			}
@@ -3907,6 +3927,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			PRU = {
 				has_country_flag = CHY_help_americas
 			}
@@ -3971,6 +3992,7 @@
 			factor = 15
 		}
 		available = {
+			is_puppet = no
 			OR = {
 				ELS = {
 					has_country_flag = CHY_help_americas
@@ -4383,6 +4405,9 @@
 		prerequisite = {
 			focus = CHY_zhanliejianniang
 		}
+		available = {
+			is_puppet = no
+		}
 		relative_position_id = CHY_zhanliejianniang
 		x = 2
 		y = 1
@@ -4471,6 +4496,7 @@
 		}
 		available = {
 			has_country_flag = CHY_friend_with_doh
+			is_puppet = no
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -4998,6 +5024,7 @@
 			NOT = {
 				has_war_with = DOH
 			}
+			is_puppet = no
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -5025,6 +5052,7 @@
 			NOT = {
 				has_war_with = BFL
 			}
+			is_puppet = no
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -5115,6 +5143,7 @@
 			NOT = {
 				has_war_with = BYG
 			}
+			is_puppet = no
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -5178,6 +5207,7 @@
 			NOT = {
 				has_war_with = HUJ
 			}
+			is_puppet = no
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -5235,6 +5265,7 @@
 		y = 1
 		cost = 4
 		available = {
+			is_puppet = no
 			TIX = {
 				has_war_with = BYG
 				has_war_with = HUJ
