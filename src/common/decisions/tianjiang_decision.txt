@@ -12171,6 +12171,91 @@ BYG_sanbodikangstate = {
 }
 
 BFL_zhimingchongji_jyz = {
+	BFL_chengshigaiming_jy = {
+		icon = hol_war_on_pacifism
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			controls_state = 217
+			controls_state = 137
+			controls_state = 195
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_province_name = {
+				id = 3529
+				name = "罗西亚格勒"
+			}
+			set_province_name = {
+				id = 3151
+				name = "列宁格勒"
+			}
+			set_province_name = {
+				id = 3686
+				name = "赛瓦斯托波尔"
+			}
+		}
+	}
+	BFL_chengshigaiming_jy2 = {
+		icon = hol_war_on_pacifism
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			controls_state = 763
+			controls_state = 188
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_province_name = {
+				id = 6332
+				name = "萨悠斯格勒"
+			}
+			transfer_state = 763
+			transfer_state = 188
+			add_state_core = 763
+		}
+	}
+	BFL_hepingduohuiyuandong_jy = {
+		icon = hol_war_on_pacifism
+		visible = {
+			has_completed_focus = BFL_coldwar_22
+		}
+		available = {
+			DOH = { is_ai = yes }
+			CHY = { is_ai = yes }
+			219 = {
+				is_owned_and_controlled_by = BFL
+			}
+			OR = {
+				TIX = { surrender_progress > 0.5 }
+				TIX = { is_subject = yes }
+				not = { country_exists = TIX }
+			}
+			not = { has_war_with = DOH }
+			not = { has_war_with = CHY }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			transfer_state = 563
+			transfer_state = 561
+			transfer_state = 657
+			transfer_state = 560
+			transfer_state = 409
+			transfer_state = 408
+			transfer_state = 655
+		}
+	}
 	BFL_zhimingchongji_jy_1 = {
 		icon = generic_protection
 		activation = {
