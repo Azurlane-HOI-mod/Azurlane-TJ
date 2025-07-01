@@ -176,3 +176,87 @@ defined_text = {
 	}
 
 }
+
+defined_text = { #
+	name = Gettixbsmmanyiduzhi
+	text = {
+		trigger = {
+			original_tag = TIX
+			check_variable = { var = tix_bsmmanyiduzhi value = 10 compare = greater_than_or_equals }
+		}
+		localization_key = bsmmyd_gao
+	}
+	text = {
+		trigger = {
+			original_tag = TIX
+			check_variable = { var = tix_bsmmanyiduzhi value = 6 compare = greater_than_or_equals }
+			check_variable = { var = tix_bsmmanyiduzhi value = 10 compare = less_than }
+		}
+		localization_key = bsmmyd_zhong
+	}
+	text = {
+		trigger = {
+			original_tag = TIX
+			check_variable = { var = tix_bsmmanyiduzhi value = 0 compare = greater_than_or_equals }
+			check_variable = { var = tix_bsmmanyiduzhi value = 6 compare = less_than }
+		}
+		localization_key = bsmmyd_di
+	}
+	text = {
+		trigger = {
+			original_tag = TIX
+			check_variable = { var = tix_bsmmanyiduzhi value = -7 compare = greater_than_or_equals }
+			check_variable = { var = tix_bsmmanyiduzhi value = 0 compare = less_than }
+		}
+		localization_key = bsmmyd_jidi
+	}
+	text = {
+		trigger = {
+			original_tag = TIX
+			check_variable = { var = tix_bsmmanyiduzhi value = -7 compare = less_than }
+		}
+		localization_key = bsmmyd_chaodi
+	}
+}
+
+defined_text = { #
+	name = Getbflpianzhidu
+	text = {
+		trigger = {
+			original_tag = BFL
+			check_variable = { var = az_pianzhidu value = 50 compare = greater_than_or_equals }
+		}
+		localization_key = bflpzd_jigao
+	}
+	text = {
+		trigger = {
+			original_tag = BFL
+			check_variable = { var = az_pianzhidu value = 24 compare = greater_than_or_equals }
+			check_variable = { var = az_pianzhidu value = 50 compare = less_than }
+		}
+		localization_key = bflpzd_jiaogao
+	}
+	text = {
+		trigger = {
+			original_tag = BFL
+			check_variable = { var = az_pianzhidu value = 10 compare = greater_than_or_equals }
+			check_variable = { var = az_pianzhidu value = 24 compare = less_than }
+		}
+		localization_key = bflpzd_gao
+	}
+	text = {
+		trigger = {
+			original_tag = BFL
+			check_variable = { var = az_pianzhidu value = 0 compare = greater_than_or_equals }
+			check_variable = { var = az_pianzhidu value = 10 compare = less_than }
+		}
+		localization_key = bflpzd_di
+	}
+	text = {
+		trigger = {
+			original_tag = BFL
+			check_variable = { var = az_pianzhidu value = 0 compare = less_than }
+		}
+		localization_key = bflpzd_jidi
+	}
+}
