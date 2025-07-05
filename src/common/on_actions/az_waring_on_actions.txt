@@ -677,4 +677,432 @@ on_actions = {
 			}
 		}
 	}
+	on_weekly_BYG = { 
+		effect = {
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_qiye
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_qiye = { has_trait = BYG_qiye_zztz_1_off }
+						not = { has_idea = BYG_jjwjhyz }
+						not = { has_idea = BYG_jjwjhyz_1 }
+						not = { has_idea = BYG_jjwjhyz_2 }
+						not = { has_idea = BYG_jjwjhyz_3 }
+						not = { has_idea = BYG_jjwjhyz_4 }
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_1_off
+					add_country_leader_trait = BYG_qiye_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_qiye = { has_trait = BYG_qiye_zztz_2_off }
+						not = { has_war_with = TIX }
+						not = { has_war_with = CHY }
+						not = { has_war_with = SAD }
+						not = { has_war_with = HUJ }
+						not = { has_war_with = YUW }
+						not = { has_war_with = BFL }
+						not = { has_war_with = DOH }
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_2_off
+					add_country_leader_trait = BYG_qiye_zztz_2_on
+				}
+				if = {
+					limit = {
+						BYG_qiye = { has_trait = BYG_qiye_zztz_2_on }
+						OR = {
+							has_war_with = TIX
+							has_war_with = CHY
+							has_war_with = SAD
+							has_war_with = HUJ
+							has_war_with = YUW
+							has_war_with = BFL
+							has_war_with = DOH
+						}
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_2_on
+					add_country_leader_trait = BYG_qiye_zztz_2_off
+				}
+				if = {
+					limit = {
+						BYG_qiye = { has_trait = BYG_qiye_zztz_3_off }
+						OR = {
+							is_in_faction_with = HUJ
+							is_faction_leader = yes
+						}
+						OR = {
+							has_war_with = TIX
+							has_war_with = BFL
+							has_war_with = YUW
+						}
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_3_off
+					add_country_leader_trait = BYG_qiye_zztz_3_on
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_huayuan
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_huayuan = { has_trait = BYG_huayuan_zztz_1_off }
+						OR = {
+							has_completed_focus = BYG_coldwar_25
+							has_completed_focus = BYG_coldwar_26
+							has_completed_focus = BYG_coldwar_27
+							date > 1947.1.1
+						}
+					}
+					remove_country_leader_trait = BYG_huayuan_zztz_1_off
+					add_country_leader_trait = BYG_huayuan_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_huayuan = { has_trait = BYG_huayuan_zztz_2_off }
+						is_faction_leader = yes
+					}
+					remove_country_leader_trait = BYG_huayuan_zztz_2_off
+					add_country_leader_trait = BYG_huayuan_zztz_2_on
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_ankeleiqi
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_ankeleiqi = { has_trait = BYG_qiye_zztz_1_off }
+						not = { has_idea = BYG_jjwjhyz }
+						not = { has_idea = BYG_jjwjhyz_1 }
+						not = { has_idea = BYG_jjwjhyz_2 }
+						not = { has_idea = BYG_jjwjhyz_3 }
+						not = { has_idea = BYG_jjwjhyz_4 }
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_1_off
+					add_country_leader_trait = BYG_qiye_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_ankeleiqi = { has_trait = BYG_qiye_zztz_2_off }
+						not = { has_war_with = TIX }
+						not = { has_war_with = CHY }
+						not = { has_war_with = SAD }
+						not = { has_war_with = HUJ }
+						not = { has_war_with = YUW }
+						not = { has_war_with = BFL }
+						not = { has_war_with = DOH }
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_2_off
+					add_country_leader_trait = BYG_qiye_zztz_2_on
+				}
+				if = {
+					limit = {
+						BYG_ankeleiqi = { has_trait = BYG_qiye_zztz_2_on }
+						OR = {
+							has_war_with = TIX
+							has_war_with = CHY
+							has_war_with = SAD
+							has_war_with = HUJ
+							has_war_with = YUW
+							has_war_with = BFL
+							has_war_with = DOH
+						}
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_2_on
+					add_country_leader_trait = BYG_qiye_zztz_2_off
+				}
+				if = {
+					limit = {
+						BYG_ankeleiqi = { has_trait = BYG_qiye_zztz_3_off }
+						OR = {
+							is_in_faction_with = HUJ
+							is_faction_leader = yes
+						}
+						OR = {
+							has_war_with = TIX
+							has_war_with = BFL
+							has_war_with = YUW
+						}
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_3_off
+					add_country_leader_trait = BYG_qiye_zztz_3_on
+				}
+				if = {
+					limit = {
+						BYG_ankeleiqi = { has_trait = BYG_xiaojiajia_zztz_1_off }
+						has_completed_focus = BYG_zhonglifaan
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_1_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_ankeleiqi = { has_trait = BYG_xiaojiajia_zztz_2_off }
+						has_completed_focus = BYG_lianbangdetiequan
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_2_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_2_on
+				}
+				if = {
+					limit = {
+						BYG_ankeleiqi = { has_trait = BYG_xiaojiajia_zztz_3_off }
+						has_completed_focus = BYG_jierufenzheng
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_3_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_3_on
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_salatuojia
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_salatuojia = { has_trait = BYG_xiaojiajia_zztz_1_off }
+						has_completed_focus = BYG_zhonglifaan
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_1_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_salatuojia = { has_trait = BYG_xiaojiajia_zztz_2_off }
+						has_completed_focus = BYG_lianbangdetiequan
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_2_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_2_on
+				}
+				if = {
+					limit = {
+						BYG_salatuojia = { has_trait = BYG_xiaojiajia_zztz_3_off }
+						has_completed_focus = BYG_jierufenzheng
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_3_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_3_on
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_shengdiyage
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_shengdiyage = { has_trait = BYG_xiaojiajia_zztz_1_off }
+						has_completed_focus = BYG_zhonglifaan
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_1_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_shengdiyage = { has_trait = BYG_shengdiyage_zztz_1_off }
+						has_completed_focus = BYG_duiwaichukoujinkela
+					}
+					remove_country_leader_trait = BYG_shengdiyage_zztz_1_off
+					add_country_leader_trait = BYG_shengdiyage_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_shengdiyage = { has_trait = BYG_xiaojiajia_zztz_3_off }
+						has_completed_focus = BYG_jierufenzheng
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_3_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_3_on
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_aierdeliqi
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_aierdeliqi = { has_trait = BYG_xiaojiajia_zztz_1_off }
+						has_completed_focus = BYG_zhonglifaan
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_1_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_aierdeliqi = { has_trait = BYG_xiaojiajia_zztz_3_off }
+						has_completed_focus = BYG_jierufenzheng
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_3_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_3_on
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_shengluyisi
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_shengluyisi = { has_trait = BYG_qiye_zztz_1_off }
+						not = { has_idea = BYG_jjwjhyz }
+						not = { has_idea = BYG_jjwjhyz_1 }
+						not = { has_idea = BYG_jjwjhyz_2 }
+						not = { has_idea = BYG_jjwjhyz_3 }
+						not = { has_idea = BYG_jjwjhyz_4 }
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_1_off
+					add_country_leader_trait = BYG_qiye_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_shengluyisi = { has_trait = BYG_xiaojiajia_zztz_2_off }
+						has_completed_focus = BYG_laiyingde
+					}
+					remove_country_leader_trait = BYG_xiaojiajia_zztz_2_off
+					add_country_leader_trait = BYG_xiaojiajia_zztz_2_on
+				}
+				if = {
+					limit = {
+						BYG_shengluyisi = { has_trait = BYG_qiye_zztz_3_off }
+						OR = {
+							is_in_faction_with = HUJ
+							is_faction_leader = yes
+						}
+						OR = {
+							has_war_with = TIX
+							has_war_with = BFL
+							has_war_with = YUW
+						}
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_3_off
+					add_country_leader_trait = BYG_qiye_zztz_3_on
+				}
+			}
+			if = {
+				limit = { 
+					has_government = democratic
+					has_country_leader = {
+						character = BYG_aisaikesi
+						ruling_only = yes
+					}
+				 }
+				if = {
+					limit = {
+						BYG_aisaikesi = { has_trait = BYG_qiye_zztz_1_off }
+						not = { has_idea = BYG_jjwjhyz }
+						not = { has_idea = BYG_jjwjhyz_1 }
+						not = { has_idea = BYG_jjwjhyz_2 }
+						not = { has_idea = BYG_jjwjhyz_3 }
+						not = { has_idea = BYG_jjwjhyz_4 }
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_1_off
+					add_country_leader_trait = BYG_qiye_zztz_1_on
+				}
+				if = {
+					limit = {
+						BYG_aisaikesi = { has_trait = BYG_qiye_zztz_2_off }
+						not = { has_war_with = TIX }
+						not = { has_war_with = CHY }
+						not = { has_war_with = SAD }
+						not = { has_war_with = HUJ }
+						not = { has_war_with = YUW }
+						not = { has_war_with = BFL }
+						not = { has_war_with = DOH }
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_2_off
+					add_country_leader_trait = BYG_qiye_zztz_2_on
+				}
+				if = {
+					limit = {
+						BYG_aisaikesi = { has_trait = BYG_qiye_zztz_2_on }
+						OR = {
+							has_war_with = TIX
+							has_war_with = CHY
+							has_war_with = SAD
+							has_war_with = HUJ
+							has_war_with = YUW
+							has_war_with = BFL
+							has_war_with = DOH
+						}
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_2_on
+					add_country_leader_trait = BYG_qiye_zztz_2_off
+				}
+				if = {
+					limit = {
+						BYG_aisaikesi = { has_trait = BYG_qiye_zztz_3_off }
+						OR = {
+							is_in_faction_with = HUJ
+							is_faction_leader = yes
+						}
+						OR = {
+							has_war_with = TIX
+							has_war_with = BFL
+							has_war_with = YUW
+						}
+						any_country = {
+							has_war_with = BYG
+							is_major = yes
+						}
+					}
+					remove_country_leader_trait = BYG_qiye_zztz_3_off
+					add_country_leader_trait = BYG_qiye_zztz_3_on
+				}
+			}
+		}
+	}
+
 }

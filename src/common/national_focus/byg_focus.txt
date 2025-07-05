@@ -2639,6 +2639,7 @@ focus_tree = {
 				}
 				country_event = az_tianjiang.184
 			}
+			unlock_decision_category_tooltip = BYG_huoxingzhongdi
 		}
 	}
 	focus = {
@@ -2909,7 +2910,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			#custom_effect_tooltip = BYG_baiyingdazongtong_tooltip
+			custom_effect_tooltip = "由于国际局势的变化，企业将放弃她此前的中立原则"
 			add_country_leader_trait = bydyx
+			add_country_leader_trait = BYG_qiye_zztz_3_off
+			hidden_effect = {
+				remove_country_leader_trait = BYG_qiye_zztz_2_on
+				remove_country_leader_trait = BYG_qiye_zztz_2_off
+			}
 		}
 	}
 	focus = {
@@ -3075,8 +3082,14 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = BYG_baiyingdazongtong_tooltip
+			#custom_effect_tooltip = BYG_baiyingdazongtong_tooltip
+			custom_effect_tooltip = "由于国际局势的变化，企业将放弃她此前的中立原则"
 			add_country_leader_trait = bydzt
+			add_country_leader_trait = BYG_qiye_zztz_3_off
+			hidden_effect = {
+				remove_country_leader_trait = BYG_qiye_zztz_2_on
+				remove_country_leader_trait = BYG_qiye_zztz_2_off
+			}
 		}
 	}
 	focus = {
@@ -3116,6 +3129,8 @@ focus_tree = {
 							traits = {
 								lxzydph
 								bsldxzt
+								BYG_huayuan_zztz_1_off
+								BYG_huayuan_zztz_2_off
 							}
 						}
 						promote_leader = yes
@@ -3444,14 +3459,23 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			set_rule = {
+				can_only_justify_war_on_threat_country = no
+			}
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			custom_effect_tooltip = ENG_no_further_appeasement_tt
 			hidden_effect = {
 				set_rule = {
 					can_declare_war_on_same_ideology = yes
-					can_only_justify_war_on_threat_country = no
+				}
+				set_rule = {
+					can_puppet = yes
 				}
 			}
 			add_ideas = BYG_hlqk
-			custom_effect_tooltip = BYG_huolixianzhijiechu_tooltip
+			#custom_effect_tooltip = BYG_huolixianzhijiechu_tooltip
 		}
 	}
 	focus = {
@@ -4553,6 +4577,7 @@ focus_tree = {
 					name = "白鹰联邦国会"
 				}
 			}
+			unlock_decision_category_tooltip = BYG_huoxingzhongdi
 		}
 	}
 	focus = {
@@ -5016,6 +5041,12 @@ focus_tree = {
 			guojishengyu_up_3 = yes
 			add_stability = 0.1
 			add_war_support = 0.5
+			custom_effect_tooltip = "由于国际局势的变化，孤立主义已不再受欢迎"
+			add_country_leader_trait = BYG_xiaojiajia_zztz_3_off
+			hidden_effect = {
+				remove_country_leader_trait = BYG_xiaojiajia_zztz_1_on
+				remove_country_leader_trait = BYG_xiaojiajia_zztz_1_off
+			}
 			remove_ideas = USA_neutrality_act
 		}
 	}
