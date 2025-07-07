@@ -12691,4 +12691,33 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = az_tianjiang.365
+	title = "过早的战争"
+	desc = "我们根本没有做好与全世界为敌的准备，过早的战争行为将导致我们的政权走向不稳之中！"
+	picture = GFX_aze_diannao
+	trigger = {
+		date < 1937.6.1
+		tag = TIX
+		has_offensive_war = yes
+		has_global_flag = MOD_azurlane_tianjiangjianniang
+		is_ai = no
+	}
+	fire_only_once = yes
+	option = {
+		name = "战争很快就会结束！"
+		add_political_power = -999
+		set_stability = 0
+		set_war_support = 0
+		custom_effect_tooltip = TIX_bsmmanyidu_xiajiang
+		add_to_variable = {
+			var = tix_bsmmanyiduzhi
+			value = -9999
+		}
+		ai_chance = {
+			factor = 1000
+		}
+	}
+}
 	
