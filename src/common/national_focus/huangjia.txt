@@ -522,7 +522,7 @@ focus_tree = {
 		icon = GFX_focus_generic_manpower
 		x = 10
 		y = 0
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 7
 		}
@@ -637,7 +637,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_zhuzhonglujun
 		}
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 5
 		}
@@ -663,7 +663,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_lilunyanjiu
 		}
-		cost = 15
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -721,7 +721,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_zhuzhonglujun
 		}
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}
@@ -747,7 +747,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_jidonghuabudui
 		}
-		cost = 10
+		cost = 7
 		ai_will_do = {
 			factor = 5
 		}
@@ -801,7 +801,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_huangjiatanketuan
 		}
-		cost = 7
+		cost = 10
 		ai_will_do = {
 			factor = 7
 		}
@@ -923,7 +923,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_jiadakaicai
 		}
-		cost = 15
+		cost = 10
 		ai_will_do = {
 			factor = 8
 		}
@@ -1035,7 +1035,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_aierlangongye
 		}
-		cost = 15
+		cost = 10
 		ai_will_do = {
 			factor = 5
 		}
@@ -1398,7 +1398,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_salatuojialaoshi
 		}
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}
@@ -1447,7 +1447,7 @@ focus_tree = {
 		prerequisite = {
 			focus = HUJ_zhongchengdehuwei
 		}
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}
@@ -1593,23 +1593,27 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			every_unit_leader = {
-				limit = {
-					OR = {
-						has_id = 1007
-						has_id = 1012
-						has_id = 1018
-						has_id = 1024
-						has_id = 1026
-						has_id = 1028
-						has_id = 1030
-					}
-				}
-				add_skill_level = 1
-			}
 			army_experience = 30
 			navy_experience = 25
 			air_experience = 25
+			HUJ_beierfasite = {
+				add_skill_level = 1
+			}
+			HUJ_tianlangxing = {
+				add_skill_level = 1
+			}
+			HUJ_daiduo = {
+				add_skill_level = 1
+			}
+			HUJ_kalvbudisi = {
+				add_skill_level = 1
+			}
+			HUJ_sikula = {
+				add_skill_level = 1
+			}
+			HUJ_hemin = {
+				add_skill_level = 1
+			}
 		}
 	}
 	focus = {
@@ -2808,7 +2812,7 @@ focus_tree = {
 		icon = GFX_focus_qiaozhiwushi
 		x = 0
 		y = 1
-		cost = 15
+		cost = 10
 		prerequisite = {
 			focus = HUJ_guofangjianshe
 		}
@@ -2818,10 +2822,7 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			random_unit_leader = {
-				limit = {
-					has_id = 1002
-				}
+			HUJ_qiaozhiwushi = {
 				add_skill_level = 1
 				add_unit_leader_trait = panzer_leader
 				add_unit_leader_trait = cavalry_leader
@@ -3069,7 +3070,7 @@ focus_tree = {
 		icon = GFX_focus_rom_royal_dictatorship
 		x = 1
 		y = 1
-		cost = 20
+		cost = 15
 		prerequisite = {
 			focus = HUJ_youyakebushihuaping
 		}
@@ -3977,7 +3978,7 @@ focus_tree = {
 		}
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}

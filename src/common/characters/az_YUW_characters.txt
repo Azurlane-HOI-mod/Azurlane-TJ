@@ -463,7 +463,7 @@ characters={
 			
 			traits = { trait_kaixuan }
 			ai_will_do = {
-				factor = 5
+				factor = 0
 			}
 		}
 		navy_leader = {
@@ -753,7 +753,7 @@ characters={
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 5
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -797,7 +797,7 @@ characters={
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 5
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -884,6 +884,32 @@ characters={
 			logistics_skill = 3
 		}
 	}
+	YUW_xiafei_kelongren = {
+		name = YUW_xiafei_kelongren
+		portraits={
+			army = {
+				large="gfx/leaders/YUW/xiafei.png"
+				small="gfx/interface/ideas/idea_xiafei.png"
+			}
+			civilian = {
+				large="gfx/leaders/YUW/xiafei.png"
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = air_chief
+			idea_token = xiafei
+			available = {
+				has_capitulated = no
+			}
+			traits = { trait_xiafei_kelongren_air }
+	
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
 	YUW_rangbaer_kelongren = {
 		name = YUW_rangbaer_kelongren
 		portraits={
@@ -918,7 +944,17 @@ characters={
 				small="gfx/interface/ideas/idea_fulandeer.png"
 			}
 		}
-
+		 advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = fulandeer
+			
+			
+			traits = { trait_fulandeer }
+			ai_will_do = {
+				factor = 5
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -949,13 +985,6 @@ characters={
 			allowed = {
 				
 			}
-			available = {
-				OR = {
-				tag = YUW
-				tag = WEX
-				has_war_with = TIX
-				}
-			}
 			on_add = {
 				
 			}
@@ -964,7 +993,7 @@ characters={
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 5
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1110,10 +1139,19 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/YUW/jishang.png"
-				#small="gfx/interface/ideas/idea_jishang.png"
+				small="gfx/interface/ideas/idea_jishang.png"
 			}
 		}
-
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = jishang
+			traits = { trait_jishang }
+			
+			ai_will_do = {
+				factor = 16
+			}
+		}
 		navy_leader = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1162,10 +1200,34 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/YUW/kelaimengsuo.png"
-				#small="gfx/interface/ideas/idea_kelaimengsuo.png"
+				small="gfx/interface/ideas/idea_kelaimengsuo.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = kelaimengsuo
+			traits = { trait_kelaimengsuo }
 
+			available = {
+				if = {
+					limit = {
+						tag = YUW
+					}
+					has_stability > 1.2
+					has_war_support > 1.9
+					OR = {
+						date > 1940.6.1
+						has_government = fascism
+					}
+				}
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+	
+		}
 		navy_leader = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1325,7 +1387,23 @@ characters={
 				small="gfx/interface/ideas/idea_aersasi.png"
 			}
 		}
-
+		advisor={
+			slot = high_command
+			idea_token = aersasi
+			allowed = {
+				
+			}
+			on_add = {
+				
+			}
+			traits = {
+				trait_aersasi 
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1350,7 +1428,26 @@ characters={
 				small="gfx/interface/ideas/idea_mojiaduoer.png"
 			}
 		}
-
+		advisor={
+			slot = high_command
+			idea_token = mojiaduoer
+			allowed = {
+				
+			}
+			available = {
+				
+			}
+			on_add = {
+				
+			}
+			traits = {
+				trait_mojiaduoer 
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1372,7 +1469,27 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/YUW/beiyade.png"
-				small="gfx/interface/ideas/idea_buleisite.png"
+				small="gfx/interface/ideas/idea_beiyade.png"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = beiyade 
+			allowed = {
+				
+			}
+			available = {
+				
+			}
+			on_add = {
+				
+			}
+			traits = {
+				trait_beiyade 
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 5
 			}
 		}
 		corps_commander = {

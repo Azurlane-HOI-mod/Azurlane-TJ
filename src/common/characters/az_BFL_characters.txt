@@ -402,7 +402,7 @@ characters={
 			traits = { trait_leiming }
 
 			ai_will_do = {
-				factor = 15
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -465,7 +465,16 @@ characters={
 				small="gfx/interface/ideas/idea_moermansike.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = trait_moermansike
+			traits = { trait_moermansike }
 
+			ai_will_do = {
+				factor = 16
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -712,7 +721,7 @@ characters={
 			traits = { trait_kalangshitade }
 
 			ai_will_do = {
-				factor = 11
+				factor = 0
 			}
 			visible = { 
 				NOT = { has_completed_focus = BFL_kelimulinshibian } 
@@ -727,6 +736,8 @@ characters={
 					OR = {
 						has_country_flag = BFL_zzpianzhidu_on
 						has_completed_focus = BFL_24
+						has_completed_focus = BFL_42
+						has_completed_focus = BFL_60
 					}
 				}
 			}
@@ -1034,7 +1045,34 @@ characters={
 				small="gfx/interface/ideas/idea_gubixuefu.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = gubixuefu
+			traits = { trait_gubixuefu }
 
+			ai_will_do = {
+				factor = 11
+			}
+			visible = { 
+				NOT = { has_completed_focus = BFL_kelimulinshibian } 
+		    }
+				
+			available= {
+				if = { 	
+					limit = { tag = BFL }
+					NOT = {
+						has_completed_focus = BFL_kelimulinshibian 
+					}
+					OR = {
+						has_country_flag = BFL_zzpianzhidu_on
+						has_completed_focus = BFL_24
+						has_completed_focus = BFL_42
+						has_completed_focus = BFL_60
+					}
+				}
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1056,7 +1094,17 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BFL/naximofu.png"
-				small="gfx/interface/ideas/idea_tashigan.png"
+				small="gfx/interface/ideas/idea_naximofu.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = naximofu
+
+			traits = { trait_naximofu }
+			ai_will_do = {
+				factor = 10
 			}
 		}
 		navy_leader = {
@@ -1081,6 +1129,16 @@ characters={
 			army = {
 				large="gfx/leaders/BFL/kashan.png"
 				small="gfx/interface/ideas/idea_kashan.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = kashan
+			traits = { trait_kashan }
+
+			ai_will_do = {
+				factor = 15
 			}
 		}
 		corps_commander = {
@@ -1124,6 +1182,42 @@ characters={
 			defense_skill = 2
 			planning_skill = 3
 			logistics_skill = 2
+		}
+	}
+
+	BFL_dunsikeyi = {
+		name = BFL_dunsikeyi
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/dunsikeyi.png"
+				small="gfx/interface/ideas/idea_dunsikeyi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = dunsikeyi
+			traits = { trait_dunsikeyi }
+
+			ai_will_do = {
+				factor = 14
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist xunyang_army }
+			skill = 4
+			
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 4
 		}
 	}
 

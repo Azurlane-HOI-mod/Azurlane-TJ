@@ -193,7 +193,7 @@ characters={
 			traits = { trait_jiafuer }
 
 			ai_will_do = {
-				factor = 19
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -510,6 +510,16 @@ characters={
 			army = {
 				large="gfx/leaders/SAD/pangpeimagenuo.png"
 				small="gfx/interface/ideas/idea_pangpeimagenuo.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = pangpei
+			traits = { trait_pangpei }
+
+			ai_will_do = {
+				factor = 5
 			}
 		}
 		corps_commander = {
@@ -1082,6 +1092,40 @@ characters={
 			defense_skill = 1
 			planning_skill = 2
 			logistics_skill = 3
+		}
+	}
+	SAD_beierdi = {
+		name = SAD_beierdi
+		portraits={
+			army = {
+				large="gfx/leaders/SAD/beierdi.png"
+				small="gfx/interface/ideas/idea_beierdi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = beierdi
+			traits = { trait_beierdi }
+
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 6
+			planning_skill = 3
+			logistics_skill = 2
 		}
 	}
 	#scientists

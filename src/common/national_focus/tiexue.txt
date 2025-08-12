@@ -3647,6 +3647,18 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			custom_effect_tooltip = ENG_no_further_appeasement_tt
+			hidden_effect = {
+				set_rule = {
+					can_declare_war_on_same_ideology = yes
+				}
+				set_rule = {
+					can_puppet = yes
+				}
+			}
 			add_ideas = TIX_weirenquanerzhan_idea
 			remove_ideas = TIX_bsmdfk
 		}

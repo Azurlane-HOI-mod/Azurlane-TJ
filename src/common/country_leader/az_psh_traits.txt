@@ -203,9 +203,10 @@ leader_traits = {
 	trait_psh_rumunuanyang= { 
 		random = no
 		stability_factor = 0.1
-		stability_weekly = 0.005
-		political_power_cost = -0.35
+		stability_weekly = 0.01
+		political_power_cost = -0.5
 		communism_drift = 0.25
+		justify_war_goal_time = -0.25
 		drift_defence_factor = 0.5
 	}
 	#奏响自由赞歌
@@ -279,7 +280,7 @@ leader_traits = {
 	trait_psh_guandao = {
 		random = no
 		army_attack_factor = 0.15
-		army_defence_factor = 0.1
+		army_defence_factor = 0.15
 		planning_speed = 0.25
 	}
 	#星座
@@ -467,10 +468,10 @@ leader_traits = {
 	#英仙座
 	trait_yingxianzuo = {
 		random = no
-		org_loss_when_moving = -0.1
-		army_morale_factor = 0.1
+		org_loss_when_moving = -0.15
+		army_morale_factor = 0.12
 		experience_loss_factor = -0.12
-		attrition = -0.05
+		attrition = -0.075
 	}
 	#柴郡
 	trait_chaijun = {
@@ -710,5 +711,256 @@ leader_traits = {
 	BYG_shengdiyage_zztz_1_on = {
 		random = no
 		production_speed_industrial_complex_factor = 0.1
+	}
+	#奇尔沙治
+	trait_qiershazhi = {
+		random = no
+		acclimatization_cold_climate_gain_factor = 0.5
+		acclimatization_hot_climate_gain_factor = 0.5
+		air_superiority_bonus_in_combat = 0.1
+		coordination_bonus = 0.1
+		supply_node_range = 0.1
+	}
+	#小加加
+	trait_xiaojiajia = {
+		random = no
+		carrier_traffic = 0.3
+		repair_speed_factor = 0.3
+		special_forces_min = 72
+		army_leader_start_level = 1
+		navy_leader_start_level = 1
+	}
+	#约克城
+	trait_yuekecheng = {
+		random = no
+		air_untrained_pilots_penalty_factor = -0.5
+		fighter_sortie_efficiency = 0.3
+		navy_carrier_air_targetting_factor = 0.2
+		experience_gain_air = 0.3
+	}
+	#布莱默顿
+	trait_bulaimodun = {
+		random = no
+		coordination_bonus = 0.1
+		army_breakthrough_against_major_factor = 0.05
+		org_loss_at_low_org_factor = -0.3
+	}
+	#安克雷奇
+	trait_ankeleiqi = {
+		random = no
+		army_strength_factor = 0.1
+		army_defence_factor = 0.1
+		army_defence_against_major_factor = 0.1
+	}
+	#拉菲
+	trait_lafei = {
+		random = no
+		army_org_factor = 0.1
+		navy_org_factor = 0.2
+		navy_screen_attack_factor = 0.3
+		navy_screen_defence_factor = 0.3
+	}
+	#皇家橡树
+	trait_huangjiaxiangshu = {
+		random = no
+		experience_gain_army = 0.3
+		army_defence_against_major_factor = 0.1
+		cas_damage_reduction = 0.2
+	}
+	#阿尔比恩
+	trait_aerbien = {
+		random = no
+		navy_visibility = -0.1
+		navy_screen_defence_factor = 0.1
+		naval_strike_targetting_factor = 0.2
+		static_anti_air_damage_factor = 0.2
+		industrial_capacity_dockyard = 0.1
+	}
+	#特拉法尔加
+	trait_telafaerjia = {
+		random = no
+		army_attack_against_major_factor = 0.1
+		org_loss_at_low_org_factor = -0.25
+		special_forces_no_supply_grace = 144
+		special_forces_out_of_supply_factor = -0.8
+	}
+	#天狼星
+	trait_tianlangxing = {
+		random = no
+		political_power_factor = 0.15
+		war_stability_factor = 0.2
+		weekly_casualties_war_support = 0.005
+		weekly_convoys_war_support = 0.005
+		weekly_bombing_war_support = 0.005
+	}
+	#阿尔萨斯
+	trait_aersasi = {
+		random = no
+		army_strength_factor = 0.1
+		army_attack_against_major_factor = 0.1
+		army_defence_against_major_factor = 0.1
+	}
+	#莫加多尔
+	trait_mojiaduoer = {
+		random = no
+		combat_width_factor = -0.1
+		cas_damage_reduction = 0.1
+		acclimatization_cold_climate_gain_factor = 0.5
+		acclimatization_hot_climate_gain_factor = 0.5
+	}
+	#克莱蒙梭
+	trait_kelaimengsuo = {
+		random = no
+		party_popularity_stability_factor = 0.2
+		stability_factor = 0.3
+		war_stability_factor = 0.3
+		war_support_factor = 0.3
+		weekly_casualties_war_support = 0.005
+		weekly_convoys_war_support = 0.005
+		weekly_bombing_war_support = 0.005
+	}
+	#吉尚
+	trait_jishang = {
+		random = no
+		experience_gain_navy = 0.3
+		naval_speed_factor = 0.1
+		navy_weather_penalty = -0.2
+		naval_retreat_chance = 0.2
+	}
+	#贝亚德
+	trait_beiyade = {
+		random = no
+		experience_gain_army = 0.3
+		org_loss_at_low_org_factor = -0.4
+		army_defence_against_major_factor = 0.1
+	}
+	#霞飞克隆人空军特质
+	trait_xiafei_kelongren_air = {
+		random = no
+		experience_gain_air = 0.3
+		air_mission_efficiency = 0.1
+		air_close_air_support_org_damage_factor = 0.2
+	}
+	#弗兰德尔
+	trait_fulandeer = {
+		random = no
+		experience_gain_army = 0.2
+		army_attack_factor = 0.1
+		army_attack_speed_factor = 0.2
+		cat_superior_firepower_cost_factor = -0.15
+	}
+	#贝尔蒂
+	trait_beierdi = {
+		random = no
+		line_change_production_efficiency_factor = 0.2
+		production_factory_max_efficiency_factor = 0.1
+		production_factory_efficiency_gain_factor = 0.1
+		war_stability_factor = 0.3
+		army_defence_against_major_factor = 0.2
+	}
+	#庞培
+	trait_pangpei = {
+		random = no
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+		army_infantry_attack_factor = 0.2
+		army_infantry_defence_factor = 0.2
+	}
+	#鲁梅
+	trait_lumei = {
+		random = no
+		army_strength_factor = 0.1
+		army_attack_against_major_factor = 0.1
+		army_breakthrough_against_major_factor = 0.1
+	}
+	#梅克伦堡
+	trait_meikelunbao = {
+		random = no
+		army_attack_factor = 0.15
+		army_defence_factor = 0.15
+		army_attack_speed_factor = 0.2
+	}
+	#提尔比茨
+	trait_tierbici = {
+		random = no
+		production_speed_buildings_factor = 0.1
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.05
+	}
+	#美因茨
+	trait_meiyinci = {
+		random = no
+		global_building_slots_factor = 0.1
+		research_speed_factor = 0.1
+		local_resources_factor = 0.1
+	}
+	#亚尔薇特
+	trait_yaerweite = {
+		random = no
+		experience_gain_army = 0.3
+		army_armor_attack_factor = 0.1
+		mechanized_attack_factor = 0.1
+		motorized_attack_factor = 0.1
+	}
+	#u47
+	trait_u47 = {
+		random = no
+		experience_gain_navy = 0.3
+		navy_submarine_attack_factor = 0.1
+		naval_torpedo_cooldown_factor = -0.2
+		naval_torpedo_hit_chance_factor = 0.2
+		naval_torpedo_reveal_chance_factor = -0.2
+	}
+	#威悉
+	trait_weixi = {
+		random = no
+		experience_gain_air = 0.3
+		air_defence_factor = 0.1
+		ace_effectiveness_factor = 0.25
+		rocket_attack_factor = 0.3
+	}
+	#顿斯科伊
+	trait_dunsikeyi = {
+		random = no
+		army_armor_attack_factor = 0.1
+		motorized_attack_factor = 0.2
+		motorized_defence_factor = 0.2
+		mechanized_attack_factor = 0.2
+		mechanized_defence_factor = 0.2
+	}
+	#喀山
+	trait_kashan = {
+		random = no
+		army_org_factor = 0.1
+		supply_node_range = 0.1
+		supply_factor = 0.1
+	}
+	#古比雪夫
+	trait_gubixuefu = {
+		random = no
+		#minimum_training_level = -0.1
+		political_power_factor = 0.1
+		command_abilities_cost_factor = -0.5
+		grant_medal_cost_factor = -0.5
+		acclimatization_cold_climate_gain_factor = 0.5
+		acclimatization_hot_climate_gain_factor = 0.5
+	}
+	#摩尔曼斯克
+	trait_moermansike = {
+		random = no
+		consumer_goods_factor = -0.1
+		production_factory_start_efficiency_factor = 0.05
+		production_lack_of_resource_penalty_factor = -0.2
+		equipment_capture_factor = 0.1
+		military_industrial_organization_funds_gain = 0.33
+	}
+	#纳西莫夫
+	trait_naximofu = {
+		random = no
+		experience_gain_air = 0.3
+		air_attack_factor = 0.1
+		air_agility_factor = 0.1
+		air_accidents = -0.2
+		air_weather_penalty = -0.2
 	}
 }

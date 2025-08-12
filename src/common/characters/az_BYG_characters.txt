@@ -153,7 +153,17 @@ characters={
 				small="gfx/interface/ideas/idea_bulaimodun.png"
 			}
 		}		
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = bulaimodun
+			
+			traits = { trait_bulaimodun }
 
+			ai_will_do = {
+				factor = 20
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -181,7 +191,7 @@ characters={
 		}		
 		advisor = {
 			cost = 100
-			slot = high_command
+			slot = theorist
 			idea_token = aisaikesi
 			
 			traits = { trait_aisaikesi }
@@ -216,7 +226,28 @@ characters={
 				small="gfx/interface/ideas/idea_cuodao.png"
 			}
 		}		
-		
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = salatuojia 
+			
+			available = {
+				if = {
+					limit = { tag = BYG }
+					OR = {
+						has_completed_focus = BYG_qishituanchuji
+						has_completed_focus = BYG_kuodazhinangtuan
+						has_completed_focus = BYG_chongzubaiyingguohui
+						has_completed_focus = BYG_jianchatanwufubai
+						has_completed_focus = BYG_jurendejuexing
+					}
+				}
+			}
+			traits = { trait_xiaojiajia }
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -408,6 +439,17 @@ characters={
 				large="gfx/leaders/BYG/lafei.png"
 				small="gfx/interface/ideas/idea_lafei.png"
 			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = lafei
+			
+			traits = { trait_lafei }
+
+			ai_will_do = {
+				factor = 20
+			}
 		}		
 		corps_commander = {
 			visible = { 
@@ -571,7 +613,7 @@ characters={
 		}
 		advisor = {
 			cost = 100
-			slot = high_command
+			slot = theorist
 			idea_token = huashengdun
 			
 			
@@ -738,12 +780,12 @@ characters={
 		}		
 		advisor = {
 			cost = 100
-			slot = high_command
+			slot = theorist
 			idea_token = xianggelila
 			
 			traits = { trait_xianggelila }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -798,7 +840,7 @@ characters={
 			
 			traits = { trait_kasabulanka }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -828,7 +870,7 @@ characters={
 		}		
 		advisor = {
 			cost = 100
-			slot = high_command
+			slot = theorist
 			idea_token = youqibing
 			
 			
@@ -848,12 +890,12 @@ characters={
 		}		
 		advisor = {
 			cost = 100
-			slot = high_command
+			slot = theorist
 			idea_token = badan
 			
 			traits = { trait_badan }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -994,6 +1036,17 @@ characters={
 			army = {
 				large="gfx/leaders/BYG/yuekecheng.png"
 				small="gfx/interface/ideas/idea_yuekecheng.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = yuekecheng
+			
+			traits = { trait_yuekecheng }
+			cost = 100
+			ai_will_do = {
+				factor = 0
 			}
 		}		
 		corps_commander = {
@@ -1244,9 +1297,20 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/ankeleiqi.png"
-				#small="gfx/interface/ideas/idea_ankeleiqi.png"
+				small="gfx/interface/ideas/idea_ankeleiqi.png"
 			}
 		}		
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = ankeleiqi
+			
+			traits = { trait_ankeleiqi }
+
+			ai_will_do = {
+				factor = 20
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1319,6 +1383,28 @@ characters={
 			army = {
 				large="gfx/leaders/BYG/qiershazhi.png"
 				small="gfx/interface/ideas/idea_qiershazhi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = qiershazhi 
+			
+			available = {
+				if = {
+					limit = { tag = BYG }
+					OR = {
+						has_completed_focus = BYG_qishituanchuji
+						has_completed_focus = BYG_kuodazhinangtuan
+						has_completed_focus = BYG_chongzubaiyingguohui
+						has_completed_focus = BYG_jianchatanwufubai
+						has_completed_focus = BYG_jurendejuexing
+					}
+				}
+			}
+			traits = { trait_qiershazhi }
+			ai_will_do = {
+				factor = 3
 			}
 		}		
 		corps_commander = {
@@ -1628,7 +1714,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/gelunbiya.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_gelunbiya.png"
 			}
 		}		
 		corps_commander = {
@@ -1652,7 +1738,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/duli.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_duli.png"
 			}
 		}		
 		advisor = {
@@ -1686,7 +1772,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/hufeng.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_hufeng.png"
 			}
 		}		
 		corps_commander = {
@@ -1710,7 +1796,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/jialifuniya.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_jialifuniya.png"
 			}
 		}		
 		corps_commander = {
@@ -1734,7 +1820,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/jiqi.png"
-				small="gfx/interface/ideas/idea_daqinghuayu.png"
+				small="gfx/interface/ideas/idea_jiqi.png"
 			}
 		}		
 
@@ -1759,7 +1845,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/keluoladuo.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_keluoladuo.png"
 			}
 		}		
 		corps_commander = {
@@ -1783,7 +1869,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/kunxi.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_kunxi.png"
 			}
 		}		
 		corps_commander = {
@@ -1807,7 +1893,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/kupo.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_kupo.png"
 			}
 		}		
 		corps_commander = {
@@ -1855,7 +1941,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/masazhusai.png"
-				small="gfx/interface/ideas/idea_linuo.png"
+				small="gfx/interface/ideas/idea_masazhusai.png"
 			}
 		}		
 		corps_commander = {
@@ -1879,7 +1965,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/nigulasi.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_nigulasi.png"
 			}
 		}		
 		corps_commander = {
@@ -1903,7 +1989,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/pulinsidun.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_pulinsidun.png"
 			}
 		}		
 		corps_commander = {
@@ -1927,7 +2013,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/saqieer.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_saqieer.png"
 			}
 		}		
 		corps_commander = {
@@ -1951,7 +2037,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/sipengsi.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_sipengsi.png"
 			}
 		}		
 		corps_commander = {
@@ -1971,11 +2057,11 @@ characters={
 		}
 	}
 	BYG_tiannaxi = {
-		name = BYG_sipengsi
+		name = BYG_tiannaxi
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/tiannaxi.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_tiannaxi.png"
 			}
 		}		
 		corps_commander = {
@@ -1999,7 +2085,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/weiqita.png"
-				small="gfx/interface/ideas/idea_mengbiliai.png"
+				small="gfx/interface/ideas/idea_weiqita.png"
 			}
 		}		
 		corps_commander = {
@@ -2023,7 +2109,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/wensensi.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_wensensi.png"
 			}
 		}		
 		corps_commander = {
@@ -2047,7 +2133,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/xifunijiya.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_xifunijiya.png"
 			}
 		}		
 		corps_commander = {
@@ -2071,7 +2157,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/ximusi.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_ximusi.png"
 			}
 		}		
 		corps_commander = {
@@ -2095,7 +2181,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/yindiannabolisi.png"
-				small="gfx/interface/ideas/idea_danfo.png"
+				small="gfx/interface/ideas/idea_yindiannabolisi.png"
 			}
 		}		
 		corps_commander = {
@@ -2119,7 +2205,7 @@ characters={
 		portraits={
 			army = {
 				large="gfx/leaders/BYG/sheshuiyu.png"
-				small="gfx/interface/ideas/idea_daqinghuayu.png"
+				small="gfx/interface/ideas/idea_sheshuiyu.png"
 			}
 		}		
 		navy_leader = {
@@ -2138,7 +2224,175 @@ characters={
 			coordination_skill = 4
 		}
 	}
-        #scientists
+	BYG_haerfude = {
+		name = BYG_haerfude
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/haerfude.png"
+				small="gfx/interface/ideas/idea_haerfude.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  quzhu_navy }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 5
+			coordination_skill = 4
+		}
+	}
+	BYG_kansasi = {
+		name = BYG_kansasi
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/kansasi.png"
+				small="gfx/interface/ideas/idea_kansasi.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  zhanlie_navy }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 5
+		}
+	}
+	BYG_fage = {
+		name = BYG_fage
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/fage.png"
+				small="gfx/interface/ideas/idea_fage.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  xunyang_navy }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+	}
+	BYG_shengtafei = {
+		name = BYG_shengtafei
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/shengtafei.png"
+				small="gfx/interface/ideas/idea_shengtafei.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  xunyang_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+	}
+	BYG_fulankelin = {
+		name = BYG_fulankelin
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/fulankelin.png"
+				small="gfx/interface/ideas/idea_fulankelin.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  hangmu_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+	BYG_xinaoerliang = {
+		name = BYG_xinaoerliang
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/xinaoerliang.png"
+				small="gfx/interface/ideas/idea_xinaoerliang.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  xunyang_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+	BYG_pizibao = {
+		name = BYG_pizibao
+		portraits={
+			army = {
+				large="gfx/leaders/BYG/pizibao.png"
+				small="gfx/interface/ideas/idea_pizibao.png"
+			}
+		}		
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  xunyang_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+	}
+ #scientists
 	BYG_hailunna_sci = {
 		name = BYG_hailunna
 		portraits={

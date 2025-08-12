@@ -47,7 +47,7 @@ characters={
 			traits = { trait_weiershi }
 
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -721,7 +721,7 @@ characters={
 			traits = { trait_nvjiang }
 
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		navy_leader = {
@@ -754,12 +754,6 @@ characters={
 			slot = high_command
 			idea_token = daiduo
 			traits = { trait_daiduo }
-			available = {
-					OR = {
-						tag = HUJ
-						tag = ENG
-					}
-			}
 			ai_will_do = {
 				factor = 10
 			}
@@ -789,7 +783,15 @@ characters={
 				small="gfx/interface/ideas/idea_tianlangxing.png"
 			}
 		}
-
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = tianlangxing
+			traits = { trait_tianlangxing }
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -831,7 +833,7 @@ characters={
 			idea_token = naerxun
 			traits = { trait_naerxun }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1169,7 +1171,16 @@ characters={
 				small="gfx/interface/ideas/idea_aerbien.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = aerbien
+			traits = { trait_aerbien }
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1244,7 +1255,15 @@ characters={
 				small="gfx/interface/ideas/idea_huangjiaxiangshu.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = huangjiaxiangshu
+			traits = { trait_huangjiaxiangshu }
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1350,7 +1369,7 @@ characters={
 			idea_token = xiaotiane
 			traits = { trait_xiaotiane }
 			ai_will_do = {
-				factor = 20
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1408,12 +1427,6 @@ characters={
 			slot = army_chief
 			idea_token = hao
 			traits = { trait_hao }
-			available = {
-					OR = {
-						tag = HUJ
-						tag = ENG
-					}
-			}
 			ai_will_do = {
 				factor = 12
 			}
@@ -1460,7 +1473,7 @@ characters={
 					is_ai = no
 				}
 			}
-			traits = { hangmu_navy }
+			traits = { hangmu_army }
 			skill = 5
 			attack_skill = 6
 			defense_skill = 5
@@ -1491,7 +1504,7 @@ characters={
 					}
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1582,6 +1595,87 @@ characters={
 			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 2
+		}
+	}
+	HUJ_telafaerjia = {
+		name = HUJ_telafaerjia
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/telafaerjia.png"
+				small="gfx/interface/ideas/idea_telafaerjia.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = telafaerjia
+			traits = { trait_telafaerjia }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+	HUJ_keliaopeitela = {
+		name = HUJ_keliaopeitela
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/keliaopeitela.png"
+				small="gfx/interface/ideas/idea_keliaopeitela.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	HUJ_texiusi = {
+		name = HUJ_texiusi
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/texiusi.png"
+				small="gfx/interface/ideas/idea_texiusi.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
 		}
 	}
 	#克隆人
