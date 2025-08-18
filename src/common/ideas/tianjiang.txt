@@ -1,6 +1,99 @@
 ideas = {
 	# 天降独有民族精神，防覆盖
 	country = {
+		DOH_dingdianbaofeng_idea = {
+			picture = generic_air_interception
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = -0.25
+				army_defence_factor = -0.25
+				army_speed_factor = -0.1
+				org_loss_when_moving = 0.5
+				army_org_factor = -1.5
+				army_morale_factor = -0.8
+				land_reinforce_rate = -0.02
+				recon_factor = -0.15
+				attrition = 0.1
+				experience_loss_factor = 0.1
+			}
+		}
+		CHY_namichongqun_idea = {
+			picture = FRA_scw_intervention_republicans_focus
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_strength_factor = 0.25
+				army_attack_speed_factor = 0.4
+				army_speed_factor = 0.2
+				org_loss_when_moving = -0.9
+				army_org_factor = 3
+				army_morale_factor = 3
+			}
+		}
+		SAD_lichanghudun_idea = {
+			picture = YUG_federal_defense_council
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_org_factor = 0.4
+				org_loss_when_moving = -0.3
+				army_defence_factor = 1
+				army_core_defence_factor = 1
+				army_defence_against_major_factor = 1
+				army_defence_against_minor_factor = 1
+				motorized_defence_factor = 1
+				mechanized_defence_factor = 1
+				army_armor_defence_factor = 1
+				army_artillery_defence_factor = 1
+				navy_screen_defence_factor = 1
+				navy_capital_ship_defence_factor = 1
+				navy_submarine_defence_factor = 1
+				air_defence_factor = 1
+			}
+		}
+		YUW_kuangbao_idea = {
+			picture = SWE_land_air_warfare
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 0.5
+				army_defence_factor = 0.5
+				army_attack_speed_factor = 0.3
+				army_speed_factor = 0.1
+				breakthrough_factor = 0.3
+				planning_speed = 10
+				land_reinforce_rate = 0.1
+				org_loss_when_moving = -0.4
+				army_org_factor = 0.5
+				army_morale_factor = 0.5
+			}
+		}
+		HUJ_shijianjingzhi_idea = {
+			picture = FRA_matignon_agreements
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = -2
+				army_defence_factor = -2
+				army_attack_speed_factor = -0.9
+				air_superiority_bonus_in_combat = -1
+				army_speed_factor = -0.2
+				breakthrough_factor = -5
+				dig_in_speed_factor = -1
+				#recon_factor = -1
+				planning_speed = -10
+				air_attack_factor = -1
+				air_defence_factor = -1
+				air_accidents_factor = 1
+				air_agility_factor = -0.5
+			}
+		}
 		TIX_yuanshouzhiguo2 = {
 			name = TIX_yuanshouzhiguo
 			picture = GER_german_military
@@ -3895,20 +3988,22 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				stability_factor = 1.25
-				war_support_factor = 2
+				stability_factor = 0.5
+				war_support_factor = 0.8
 				political_power_factor = 3
-				research_speed_factor = 0.5
-				local_resources_factor = 1.5
-				industrial_capacity_dockyard = 0.75
-				line_change_production_efficiency_factor = 0.3
-				army_core_attack_factor = 0.8
-				army_core_defence_factor = 0.8
-				tank_manufacturer_cost_factor = -0.9
-				naval_manufacturer_cost_factor = -0.9
-				aircraft_manufacturer_cost_factor = -0.9
-				materiel_manufacturer_cost_factor = -0.9
-				industrial_concern_cost_factor = -0.9
+				research_speed_factor = 0.2
+				local_resources_factor = 0.5
+				industrial_capacity_dockyard = 0.5
+				line_change_production_efficiency_factor = 0.2
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+				tank_manufacturer_cost_factor = -0.5
+				naval_manufacturer_cost_factor = -0.5
+				aircraft_manufacturer_cost_factor = -0.5
+				materiel_manufacturer_cost_factor = -0.5
+				industrial_concern_cost_factor = -0.5
+				special_project_speed_factor = 0.1
+				production_speed_facility_factor = 0.1
 			} 
 		}
 		
@@ -3919,6 +4014,18 @@ ideas = {
 			}
 			modifier = {
 				railway_gun_bombardment_factor = 0.25
+			} 
+		}
+
+		TY_fkAI_kejizhishang = {
+			picture = fengkuangai
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.5
+				special_project_speed_factor = 0.3
+				production_speed_facility_factor = 0.5
 			} 
 		}
 		

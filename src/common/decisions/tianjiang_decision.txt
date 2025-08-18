@@ -1497,7 +1497,10 @@ TIX_neiwu = {
 			has_war_with = BFL
 			has_war_with = HUJ
 			has_war_with = BYG
-			NOT = { controls_state = 16 }
+			OR = {
+				NOT = { controls_state = 16 }
+				has_global_flag = AZ_fengkuangAI_citiao_ex
+			}
 			BFL = {
 			surrender_progress < 0.3
 			}
@@ -11409,19 +11412,19 @@ AZ_fkAIplayerjiaqiang = {
 			has_country_flag = AZ_fkAI_xuanzebuff_1
 			}
 			add_political_power = 1500
-			army_experience = 2000
-			navy_experience = 2000
-			air_experience = 2000
+			army_experience = 3000
+			navy_experience = 3000
+			air_experience = 3000
 			add_command_power = 500
-			custom_effect_tooltip = wz_earn_20000
+			custom_effect_tooltip = wz_earn_80000
 			add_to_variable = {
 				var = wz_sl
-				value = 20000
+				value = 80000
 			}
-			custom_effect_tooltip = get_zs_shuliang_200
+			custom_effect_tooltip = get_zs_shuliang_2000
 			add_to_variable = {
 				var = zs_sl
-				value = 200
+				value = 2000
 			}
 			}
 			if = {
@@ -11443,22 +11446,30 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级火炮卡"
 				bonus = 10
-				uses = 12
+				uses = 20
 				ahead_reduction = 10
 				category = artillery
 			}
 			add_tech_bonus = {
 				name = "超级步枪卡"
 				bonus = 10
-				uses = 10
+				uses = 15
 				ahead_reduction = 10
 				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = "舰娘科技卡"
+				bonus = 10
+				uses = 5
+				ahead_reduction = 10
+				category = jianniang_tech
 			}
 			}
 			if = {
 			limit = {
 			has_country_flag = AZ_fkAI_xuanzebuff_3
 			}
+			add_ideas = TY_fkAI_kejizhishang
 			add_tech_bonus = {
 				name = "超级卡车卡"
 				bonus = 10
@@ -13101,4 +13112,2222 @@ YUW_sanbosese = {
 			}
 		}
 	}
+}
+
+AZ_chaowu_jyz = {
+	HUJ_shijianjingzhi_jy = {
+		icon = SWI_elect_confederation_president
+		cost = 0
+		visible = {
+			tag = HUJ
+			OR = {
+				has_country_flag = az_beilunyinqing_on
+				AND = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					is_ai = yes
+				}
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				date > 1940.6.1
+				OR = {
+					TIX = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					YUW = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					SAD = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BFL = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					CHY = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BYG = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					DOH = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					SIR = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BLI = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					date > 1943.1.1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 221
+		complete_effect = {
+			every_country = {
+				activate_mission = HUJ_shijianjingzhi_jy_time
+				country_event = az_tianjiang.368
+			}
+			custom_effect_tooltip = HUJ_shijianjingzhi_timetips
+			every_other_country = {
+				limit = {
+					has_war_with = ROOT
+				}
+				add_timed_idea = {
+					idea = HUJ_shijianjingzhi_idea
+					days = 7
+				}
+			}
+		}
+	}
+	HUJ_shijianjingzhi_jy_time = {
+		icon = SWI_elect_confederation_president
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = HUJ }
+				HUJ = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 220
+		timeout_effect = {
+			country_event = az_tianjiang.369
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy = {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = no
+			has_country_flag = az_chaoshikongchuansongyi_on
+		}
+		state_target = yes
+		on_map_mode = map_only
+		#targets = { capital }
+		highlight_color_while_active = 1
+		days_remove = 1
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+		}
+		#days_re_enable = 91
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 91 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time
+				country_event = az_tianjiang.370
+			}
+			custom_effect_tooltip = TIX_chaoshikongchuansongyi_timetips
+			FROM = {
+				set_state_flag = TIX_chuansongmudidi
+			}
+		}
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = TIX_chuansongmudidi
+				}
+				clr_state_flag = TIX_chuansongmudidi
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 2
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}
+			effect_tooltip = {
+			FROM = {
+				custom_effect_tooltip = TIX_chaoshikongjuntuan_laila
+			}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_time = {
+		icon = generic_intelligence_operation
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = TIX }
+				TIX = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 90
+		timeout_effect = {
+			country_event = az_tianjiang.371
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_1 = {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 16 }
+			TIX = { has_war_with = YUW }
+			16 = {
+				is_owned_and_controlled_by = YUW
+			}
+		}
+		cancel_trigger = {
+			controls_state = 16
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			16 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_2 = {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 20 }
+			TIX = { has_war_with = YUW }
+			20 = {
+				is_owned_and_controlled_by = YUW
+			}
+		}
+		cancel_trigger = {
+			controls_state = 20
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			20 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_3= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 21 }
+			TIX = { has_war_with = YUW }
+			21 = {
+				is_owned_and_controlled_by = YUW
+			}
+		}
+		cancel_trigger = {
+			controls_state = 21
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			21 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_4= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 14 }
+			TIX = { has_war_with = YUW }
+			14 = {
+				is_owned_and_controlled_by = YUW
+			}
+		}
+		cancel_trigger = {
+			controls_state = 14
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			14 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_5= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 126 }
+			TIX = { has_war_with = HUJ }
+			126 = {
+				is_owned_and_controlled_by = HUJ
+			}
+			OR = {
+				YUW = { is_ai = no }
+				HUJ = { is_ai = no }
+				BYG = { is_ai = no }
+			}
+		}
+		cancel_trigger = {
+			controls_state = 126
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			126 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_6= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 121 }
+			TIX = { has_war_with = HUJ }
+			121 = {
+				is_owned_and_controlled_by = HUJ
+			}
+			OR = {
+				YUW = { is_ai = no }
+				HUJ = { is_ai = no }
+				BYG = { is_ai = no }
+			}
+		}
+		cancel_trigger = {
+			controls_state = 121
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			121 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_7= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 132 }
+			TIX = { has_war_with = HUJ }
+			132 = {
+				is_owned_and_controlled_by = HUJ
+			}
+			OR = {
+				YUW = { is_ai = no }
+				HUJ = { is_ai = no }
+				BYG = { is_ai = no }
+			}
+		}
+		cancel_trigger = {
+			controls_state = 132
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			132 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_8= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 119 }
+			TIX = { has_war_with = HUJ }
+			119 = {
+				is_owned_and_controlled_by = HUJ
+			}
+			OR = {
+				YUW = { is_ai = no }
+				HUJ = { is_ai = no }
+				BYG = { is_ai = no }
+			}
+		}
+		cancel_trigger = {
+			controls_state = 119
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			119 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_9= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 2 }
+			OR = {
+				TIX = { has_war_with = SAD }
+				TIX = { has_war_with = ITA }
+			}
+			2 = {
+				OR = {
+					is_owned_and_controlled_by = SAD
+					is_owned_and_controlled_by = ITA
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 2
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			2 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_10= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 849 }
+			OR = {
+				TIX = { has_war_with = SAD }
+				TIX = { has_war_with = ITA }
+			}
+			849 = {
+				OR = {
+					is_owned_and_controlled_by = SAD
+					is_owned_and_controlled_by = ITA
+				}
+			}
+		}
+		cancel_trigger = {
+			controls_state = 849
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			849 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_11= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 361 }
+			TIX = { has_war_with = BYG }
+			361 = {
+				is_owned_and_controlled_by = BYG
+			}
+			BYG = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 361
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			361 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_12= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 358 }
+			TIX = { has_war_with = BYG }
+			358 = {
+				is_owned_and_controlled_by = BYG
+			}
+			BYG = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 358
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			358 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_13= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 365 }
+			TIX = { has_war_with = BYG }
+			365 = {
+				is_owned_and_controlled_by = BYG
+			}
+			BYG = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 365
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			365 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_14= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 371 }
+			TIX = { has_war_with = BYG }
+			371 = {
+				is_owned_and_controlled_by = BYG
+			}
+			BYG = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 371
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			371 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_15= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 219 }
+			TIX = { has_war_with = BFL }
+			219 = {
+				is_owned_and_controlled_by = BFL
+			}
+			BFL = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 219
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			219 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_16= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 195 }
+			TIX = { has_war_with = BFL }
+			195 = {
+				is_owned_and_controlled_by = BFL
+			}
+			BFL = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 195
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			195 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_17= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 217 }
+			TIX = { has_war_with = BFL }
+			217 = {
+				is_owned_and_controlled_by = BFL
+			}
+			BFL = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 217
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			217 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_18= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 229 }
+			TIX = { has_war_with = BFL }
+			229 = {
+				is_owned_and_controlled_by = BFL
+			}
+			BFL = { is_ai = no }
+		}
+		cancel_trigger = {
+			controls_state = 229
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			229 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_19= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 137 }
+			TIX = { has_war_with = BFL }
+			137 = {
+				is_owned_and_controlled_by = BFL
+			}
+		}
+		cancel_trigger = {
+			controls_state = 137
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			137 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_ai_20= {
+		icon = generic_intelligence_operation
+		cost = 0
+		visible = {
+			tag = TIX
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			is_ai = yes
+			not = { has_country_flag = TIX_chaoshikong_lengquezhong }
+			not = { controls_state = 252 }
+			TIX = { has_war_with = BFL }
+			252 = {
+				is_owned_and_controlled_by = BFL
+			}
+		}
+		cancel_trigger = {
+			controls_state = 252
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 31
+		days_remove = 1
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = { flag = TIX_chaoshikong_lengquezhong value = 1 days = 31 }
+			every_country = {
+				activate_mission = TIX_chaoshikongchuansongyi_jy_time_ai
+				country_event = az_tianjiang.370
+			}
+		}
+		cancel_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+		}
+		remove_effect = {
+			252 = {
+				create_unit = {
+						division = "name = \"超时空军团\" division_template = \"超时空军团\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+			}
+		}
+	}
+	TIX_chaoshikongchuansongyi_jy_time_ai = {
+		icon = generic_intelligence_operation
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = TIX }
+				TIX = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 30
+		timeout_effect = {
+			country_event = az_tianjiang.371
+		}
+	}
+	BFL_wuditime_jy = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			tag = BFL
+			OR = {
+				AND = {
+					is_ai = no
+					has_country_flag = az_tiemuzhuangzhi_on
+				}
+				AND = {
+					is_ai = yes
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					date > 1940.1.1
+				}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_only
+		target_array = controlled_states
+		highlight_color_while_active = 1
+		target_trigger = {
+			FROM = {
+				is_core_of = BFL
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+			not = { has_country_flag = BFL_tiemu_lengquezhong }
+			FROM = {
+				is_core_of = BFL
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			set_country_flag = { flag = BFL_tiemu_lengquezhong value = 1 days = 101 }
+			every_country = {
+				activate_mission = BFL_wuditime_jy_time
+				country_event = az_tianjiang.372
+			}
+			custom_effect_tooltip = BFL_tiemu_timetips
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+					days = 10
+				}
+			}
+		}
+	}
+	BFL_wuditime_jy_time = {
+		icon = generic_tank
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = BFL }
+				BFL = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 100
+		timeout_effect = {
+			country_event = az_tianjiang.373
+		}
+	}
+	BFL_tiemumihunzhen_jy = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			tag = BFL
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+					TIX = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					YUW = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					SAD = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					HUJ = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					CHY = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BYG = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					DOH = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					SIR = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BLI = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+				}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_enemy_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = az_tianjiang.374
+			}
+			202 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			137 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			206 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			242 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			195 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			219 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			217 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_1 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 226
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 226
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			custom_effect_tooltip = jiechutiemu_tips
+			202 = {
+				remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_2 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 218
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 218
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			custom_effect_tooltip = jiechutiemu_tips
+			137 = {
+				remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_3 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 224
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 224
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			custom_effect_tooltip = jiechutiemu_tips
+			206 = {
+				remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_4 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 247
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 247
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			custom_effect_tooltip = jiechutiemu_tips
+			242 = {
+				remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_5 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 217
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 217
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			custom_effect_tooltip = jiechutiemu_tips
+			195 = {
+				remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_6 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 195
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 195
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = bfl_mosiketiemu_out_1
+				}
+				custom_effect_tooltip = jiechutiemu_tips
+				219 = {
+					remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+				}
+			}else = {
+				set_country_flag = bfl_mosiketiemu_out_1
+				custom_effect_tooltip = jiechutiemu_tips2
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_7 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 219
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 219
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			custom_effect_tooltip = jiechutiemu_tips
+			217 = {
+				remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+			}
+		}
+	}
+	BFL_jiechutiemu_jy_8 = {
+		icon = generic_tank
+		cost = 0
+		visible = {
+			has_war_with = BFL
+			is_ai = no
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			BFL = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				controls_state = 252
+				any_other_country = {
+					is_in_faction_with = ROOT
+					controls_state = 252
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = bfl_mosiketiemu_out_1
+				}
+				custom_effect_tooltip = jiechutiemu_tips
+				219 = {
+					remove_dynamic_modifier = { modifier = BFL_defencewudi_state }
+				}
+			}else = {
+				set_country_flag = bfl_mosiketiemu_out_1
+				custom_effect_tooltip = jiechutiemu_tips2
+			}
+		}
+	}
+	TIX_shijianhuisu_jy = {
+		icon = SWI_elect_confederation_president
+		cost = 0
+		visible = {
+			tag = TIX
+			has_country_flag = TIX_zuihoufanpu_flag
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_puppet = no
+			has_idea = HUJ_shijianjingzhi_idea
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 210
+		complete_effect = {
+			remove_ideas = HUJ_shijianjingzhi_idea
+			custom_effect_tooltip = TIX_shijianhuisu_tips
+		}
+	}
+	TIX_shijianjiqi_jy_time_ai = {
+		icon = SWI_elect_confederation_president
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = TIX }
+				is_subject = yes
+				not = { has_government = fascism }
+				is_ai = no
+			}
+		}
+		days_mission_timeout = 800
+		timeout_effect = {
+			every_other_country = {
+				TIX = {
+					annex_country = {
+						target = PREV
+						transfer_troops = no
+					}
+				}
+			}
+		}
+	}
+	TIX_shijianjiqi_jy_time_all = {
+		icon = SWI_elect_confederation_president
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = TIX }
+				TIX = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 800
+		timeout_effect = {
+			custom_effect_tooltip = "铁血将赢得本局游戏的胜利"
+		}
+	}
+	YUW_kuangbaofashengqi_jy = {
+		icon = eng_propaganda_campaigns
+		cost = 0
+		visible = {
+			tag = YUW
+			OR = {
+				has_country_flag = az_kuangbao_on
+				AND = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					is_ai = yes
+				}
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 101
+		complete_effect = {
+			every_country = {
+				activate_mission = YUW_kuangbaofashengqi_jy_time
+				country_event = az_tianjiang.377
+			}
+			custom_effect_tooltip = YUW_kuangbaofashengqi_timetips
+			add_timed_idea = {
+				idea = YUW_kuangbao_idea
+				days = 10
+			}
+		}
+	}
+	YUW_kuangbaofashengqi_jy_time = {
+		icon = eng_propaganda_campaigns
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = YUW }
+				YUW = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 100
+		timeout_effect = {
+			country_event = az_tianjiang.378
+		}
+	}
+	YUW_xinlingzhipeiyi_jy = {
+		icon = generic_political_discourse
+		cost = 0
+		visible = {
+			tag = YUW
+			OR = {
+				has_country_flag = az_xinlingzhipei_on
+				AND = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					is_ai = yes
+				}
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+			has_capitulated = no
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				date > 1940.6.1
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 151
+		complete_effect = {
+			every_country = {
+				activate_mission = YUW_xinlingzhipeiyi_jy_time
+				country_event = az_tianjiang.379
+			}
+			custom_effect_tooltip = YUW_xinlingzhipeiyi_timetips
+			every_other_country = {
+				limit = {
+					is_faction_leader = yes
+					has_war_with = YUW
+				}
+				transfer_units_fraction= {
+					target = YUW
+					army_ratio = 0.05
+					keep_unit_leaders_trigger = {
+						has_trait = trait_SPA_nationalist_sympathies
+					}
+				}
+			}
+		}
+	}
+	YUW_xinlingzhipeiyi_jy_time = {
+		icon = generic_political_discourse
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = YUW }
+				YUW = { is_subject = yes }
+				YUW = { has_capitulated = yes }
+			}
+		}
+		days_mission_timeout = 150
+		timeout_effect = {
+			country_event = az_tianjiang.380
+		}
+	}
+	BYG_lizijianongpao_jy = {
+		icon = SWE_set_air_budget
+		cost = 0
+		visible = {
+			tag = BYG
+			OR = {
+				AND = {
+					is_ai = no
+					has_country_flag = az_lizijianongpao_on
+				}
+				AND = {
+					is_ai = yes
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+				}
+			}
+			OR = {
+					AND = {
+						FROM = {
+							is_controlled_by = TIX
+							is_core_of = TIX
+						}
+						has_war_with = TIX
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = SAD
+							is_core_of = SAD
+						}
+						has_war_with = SAD
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = YUW
+							is_core_of = YUW
+						}
+						has_war_with = YUW
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = HUJ
+							is_core_of = HUJ
+						}
+						has_war_with = HUJ
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = BFL
+							is_core_of = BFL
+						}
+						has_war_with = BFL
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = CHY
+							is_core_of = CHY
+						}
+						has_war_with = CHY
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = DOH
+							is_core_of = DOH
+						}
+						has_war_with = DOH
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = BLI
+							is_core_of = BLI
+						}
+						has_war_with = BLI
+					}
+					AND = {
+						FROM = {
+							is_controlled_by = SIR
+							is_core_of = SIR
+						}
+						has_war_with = SIR
+					}
+			}
+		}
+		state_target = yes
+		on_map_mode = map_only
+		targets_dynamic = yes
+		highlight_color_while_active = 1
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+			not = { has_country_flag = BYG_lizipao_lengquezhong }
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				date > 1940.1.1
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			set_country_flag = { flag = BYG_lizipao_lengquezhong value = 1 days = 161 }
+			every_country = {
+				activate_mission = BYG_lizijianongpao_jy_time
+				country_event = az_tianjiang.381
+			}
+			custom_effect_tooltip = BYG_lizijianongpao_timetips
+			FROM = {
+				damage_building = {
+  					type = infrastructure
+					damage = 3
+				}
+				damage_building = {
+  					type = arms_factory
+					damage = 15
+				}
+				damage_building = {
+  					type = industrial_complex
+					damage = 15
+				}
+				damage_building = {
+  					type = air_base
+					damage = 5
+				}
+				add_dynamic_modifier = {
+					modifier = BYG_huimiexingdaji_state
+					scope = BYG
+					days = 10
+				}
+				add_dynamic_modifier = {
+					modifier = BYG_huimiexingdaji_all
+					days = 30
+				}
+			}
+		}
+	}
+	BYG_lizijianongpao_jy_time = {
+		icon = SWE_set_air_budget
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = BYG }
+				BYG = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 160
+		timeout_effect = {
+			country_event = az_tianjiang.382
+		}
+	}
+	SAD_lichanghudun_jy = {
+		icon = SWE_set_army_budget
+		cost = 0
+		visible = {
+			tag = SAD
+			OR = {
+				has_country_flag = az_lichanghudun_on
+				AND = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					is_ai = yes
+				}
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				date > 1940.1.1
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 81
+		complete_effect = {
+			every_country = {
+				activate_mission = SAD_lichanghudun_jy_time
+				country_event = az_tianjiang.383
+			}
+			custom_effect_tooltip = SAD_lichanghudun_timetips
+			add_timed_idea = {
+				idea = SAD_lichanghudun_idea
+				days = 10
+			}
+		}
+	}
+	SAD_lichanghudun_jy_time = {
+		icon = SWE_set_army_budget
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = SAD }
+				SAD = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 80
+		timeout_effect = {
+			country_event = az_tianjiang.384
+		}
+	}
+	CHY_namichongchao_jy = {
+		icon = jap_pacific_guardian
+		cost = 0
+		visible = {
+			tag = CHY
+			OR = {
+				has_country_flag = az_namichongchao_on
+				AND = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					is_ai = yes
+				}
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 101
+		complete_effect = {
+			every_country = {
+				activate_mission = CHY_namichongchao_jy_time
+				country_event = az_tianjiang.385
+			}
+			custom_effect_tooltip = CHY_namichongqun_timetips
+			add_timed_idea = {
+				idea = CHY_namichongqun_idea
+				days = 10
+			}
+		}
+	}
+	CHY_namichongchao_jy_time = {
+		icon = jap_pacific_guardian
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = CHY }
+				CHY = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 100
+		timeout_effect = {
+			country_event = az_tianjiang.386
+		}
+	}
+	DOH_baofengqiyuan_jy = {
+		icon = generic_scorched_earth
+		cost = 0
+		visible = {
+			tag = DOH
+			OR = {
+				has_country_flag = az_dingdianbaofeng_on
+				AND = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					is_ai = yes
+				}
+			}
+		}
+		available = {
+			is_puppet = no
+			has_war = yes
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					TIX = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					YUW = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					SAD = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BFL = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					CHY = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BYG = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					HUJ = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					SIR = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					BLI = {
+						is_ai = no
+						has_war_with = ROOT
+					}
+					date > 1941.1.1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_re_enable = 161
+		complete_effect = {
+			every_country = {
+				activate_mission = DOH_baofengqiyuan_jy_time
+				country_event = az_tianjiang.387
+			}
+			custom_effect_tooltip = DOH_baofengqiyuan_timetips
+			every_other_country = {
+				limit = {
+					has_war_with = ROOT
+				}
+				add_timed_idea = {
+					idea = DOH_dingdianbaofeng_idea
+					days = 10
+				}
+			}
+		}
+	}
+	DOH_baofengqiyuan_jy_time = {
+		icon = generic_scorched_earth
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			OR = {
+				not = { country_exists = DOH }
+				DOH = { is_subject = yes }
+			}
+		}
+		days_mission_timeout = 160
+		timeout_effect = {
+			country_event = az_tianjiang.388
+		}
+	}
+	debug_chaowu_bbbb = {
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {
+			clr_country_flag = TIX_chaoshikong_lengquezhong
+			clr_country_flag = BFL_tiemu_lengquezhong
+			clr_country_flag = BYG_lizipao_lengquezhong
+			annex_country = {
+				target = YUW
+			}
+			annex_country = {
+				target = TIX
+			}
+			annex_country = {
+				target = HUJ
+			}
+			annex_country = {
+				target = SAD
+			}
+			annex_country = {
+				target = CHY
+			}
+			annex_country = {
+				target = DOH
+			}
+			annex_country = {
+				target = BYG
+			}
+			annex_country = {
+				target = BFL
+			}
+		}
+	}
+
 }

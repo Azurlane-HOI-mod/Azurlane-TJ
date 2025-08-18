@@ -9512,6 +9512,7 @@ country_event = {
 			value = 500
 		}
 		hidden_effect = {
+		country_event = { id = az_tianjiang.375 days = 3 }
 		country_event = { id = az_tianjiang.276 days = 14 }
 		}
 		ai_chance = {
@@ -12748,5 +12749,318 @@ news_event = {
 	major = yes
 	option = {
 		name = az_tianjiang.367.a
+	}
+}
+
+country_event = {
+	id = az_tianjiang.368
+	title = "不列颠皇家启动了时间静止！"
+	desc = "皇家已经启动了她们的超级武器，她的所有敌人都会受到时间静止的影响。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.369
+	title = "时间静止准备就绪！"
+	desc = "皇家的时间静止已经准备就绪，随时可以发动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.370
+	title = "铁血启动了超时空传送！"
+	desc = "铁血已经启动了她们的超级武器，一支奇兵将出现在敌人后方。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.371
+	title = "超时空传送准备就绪！"
+	desc = "铁血的超时空传送仪已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.372
+	title = "北联启动了铁幕装置！"
+	desc = "北方联合已经启动了她们的超级武器，她们某个地区的部队获得了无敌状态！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.373
+	title = "铁幕装置准备就绪！"
+	desc = "北联的铁幕装置已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.374
+	title = "铁幕迷魂阵"
+	desc = "北方联合正在同时启用多座铁幕装置保护重要城市，我们必须逐个击破她们。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "具体该怎么做？"
+		custom_effect_tooltip = beilianmihunzhen_tips
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.375
+	title = "最后的挣扎"
+	desc = az_tianjiang.375.d
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "这真的会有用吗？"
+		custom_effect_tooltip = TIX_jiesuoshijianjiqi_tips
+		if = {
+			limit = {
+				is_ai = yes
+				has_global_flag = AZ_fengkuangAI_citiao_ex
+				OR = {
+					YUW = { is_ai = no }
+					BFL = { is_ai = no }
+					HUJ = { is_ai = no }
+					BYG = { is_ai = no }
+				}
+			}
+			activate_mission = TIX_shijianjiqi_jy_time_ai
+			every_other_country = {
+				activate_mission = TIX_shijianjiqi_jy_time_all
+				country_event = az_tianjiang.376
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.376
+	title = "警告！警告！警告！"
+	desc = "检测到不同往常的能量信号，多加留意！"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "出现了新的超级武器..."
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.377
+	title = "鸢尾启动了信仰激发器！"
+	desc = "鸢尾已经启动了她们的超级武器，她们的陆军战斗力得到了提升！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.378
+	title = "信仰激发器准备就绪！"
+	desc = "鸢尾的信仰激发器已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.379
+	title = "鸢尾启动了心灵支配仪！"
+	desc = "鸢尾已经启动了她们的超级武器，一些部队被鸢尾心灵控制了！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.380
+	title = "心灵支配仪准备就绪！"
+	desc = "鸢尾的心灵支配仪已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.381
+	title = "白鹰启动了离子加农炮！"
+	desc = "白鹰已经启动了她们的超级武器，一座城市化为了废墟！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.382
+	title = "离子加农炮准备就绪！"
+	desc = "白鹰的离子加农炮已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.383
+	title = "撒丁启动了力场护盾！"
+	desc = "撒丁已经启动了她们的超级武器，她们的部队得到了防御强化！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.384
+	title = "力场护盾准备就绪！"
+	desc = "撒丁的力场护盾已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.385
+	title = "重樱启动了纳米虫群！"
+	desc = "重樱已经启动了她们的超级武器，她们的部队得到了战力强化！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.386
+	title = "纳米虫群准备就绪！"
+	desc = "重樱的纳米虫群已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.387
+	title = "东煌启动了暴风起源！"
+	desc = "东煌已经启动了她们的超级武器，她们的敌人被削弱了！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.388
+	title = "暴风起源准备就绪！"
+	desc = "东煌的暴风起源已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
 	}
 }

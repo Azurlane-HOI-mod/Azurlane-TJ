@@ -1,5 +1,200 @@
 add_namespace = azspnews
 news_event = {
+	id = azspnews.38
+	title = "华盛顿沦陷"
+	desc = azspnews.38.d
+	picture = GFX_az_tix4
+	major = yes
+	trigger = {
+		361 = { is_controlled_by = TIX }
+		361 = { is_owned_by = BYG }
+		TIX = { has_war_with = BYG }
+		NOT = { has_global_flag = TIX_huashengdun_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = TIX_huashengdun_flag
+	}
+	
+	option = {
+		name = "怎么可能？"
+		trigger = {
+			NOT = {
+				TAG = BYG
+				TAG = TIX
+			}
+		}
+	}
+	option = {
+		name = "战斗仍在继续！"
+		trigger = { TAG = BYG }
+	}
+	option = {
+		name = "我们即将取得胜利！"
+		trigger = { TAG = TIX }
+	}
+}
+news_event = {
+	id = azspnews.37
+	title = "纽约陷落"
+	desc = azspnews.37.d
+	picture = GFX_az_tix3
+	major = yes
+	trigger = {
+		358 = { is_controlled_by = TIX }
+		358 = { is_owned_by = BYG }
+		TIX = { has_war_with = BYG }
+		NOT = { has_global_flag = TIX_niuyue_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = TIX_niuyue_flag
+	}
+	
+	option = {
+		name = "出乎意料"
+		trigger = {
+			NOT = {
+				TAG = BYG
+				TAG = TIX
+			}
+		}
+	}
+	option = {
+		name = "战斗才刚刚开始"
+		trigger = { TAG = BYG }
+	}
+	option = {
+		name = "终于！"
+		trigger = { TAG = TIX }
+	}
+}
+news_event = {
+	id = azspnews.36
+	title ="东京陷落"
+	desc = azspnews.36.d
+	picture = GFX_az_bfl1
+	major = yes
+	trigger = {
+		282 = { is_controlled_by = BFL }
+		282 = { is_owned_by = CHY }
+		BFL = { has_war_with = CHY }
+		NOT = { has_global_flag =BFL_tokyo_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = BFL_tokyo_flag
+	}
+	
+	option = {
+		name = "重大的进展。"
+		trigger = {
+			NOT = {
+				TAG = BFL
+				TAG = CHY
+			}
+		}
+	}
+	option = {
+		name = "一亿玉碎！"
+		trigger = { TAG = CHY }
+	}
+	option = {
+		name = "这是结束的开始"
+		trigger = { TAG = BFL }
+	}
+}
+news_event = { 
+	id = azspnews.35
+	title ="巴黎沦陷"
+	desc = azspnews.35.d
+	picture = GFX_az_bfl1
+	major = yes
+	trigger = {
+		16 = { is_controlled_by = BFL }
+		16 = { is_owned_by = YUW }
+		BFL = { has_war_with = YUW }
+		NOT = { has_global_flag = BFL_bali_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = BFL_bali_flag
+	}
+	
+	option = {
+		name = "还有人谁能阻止北联？"
+		trigger = {
+			NOT = {
+				TAG = YUW
+				TAG = BFL
+			}
+		}
+	}
+	option = {
+		name = "我们即将解放整个欧洲大陆！"
+		trigger = { TAG = BFL }
+	}
+	option = {
+		name = "我们还没有输！"
+		trigger = { TAG = YUW }
+	}
+}
+news_event = {
+	id = azspnews.34
+	title ="罗马陷落"
+	desc = azspnews.34.d
+	picture = GFX_az_bfl1
+	major = yes
+	trigger = {
+		2 = { is_controlled_by = BFL }
+		2 = { is_owned_by = SAD }
+		SAD = { has_war_with = BFL }
+		NOT = { has_global_flag = BFL_roma_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = BFL_roma_flag
+	}
+	
+	option = {
+		name = "知道了"
+		trigger = {
+			NOT = {
+				TAG = BFL
+				TAG = SAD
+			}
+		}
+	}
+	option = {
+		name = "还没有结束！"
+		trigger = { TAG = SAD }
+	}
+	option = {
+		name = "同志们，继续前进！"
+		trigger = { TAG = BFL }
+	}
+}
+news_event = {
 	id = azspnews.33
 	title ="北京沦陷"
 	desc = azspnews.33.d
@@ -614,6 +809,18 @@ news_event = {
 		YUW_beiyade = {
 			set_nationality = YUW
 		}
+		YUW_dikaina = {
+			set_nationality = YUW
+		}
+		YUW_dadan = {
+			set_nationality = YUW
+		}
+		YUW_beilaosenlin = {
+			set_nationality = YUW
+		}
+		YUW_masaina = {
+			set_nationality = YUW
+		}
 		}
 		SAD = {
 		YUW_shengnvzhende = {
@@ -671,6 +878,18 @@ news_event = {
 			set_nationality = YUW
 		}
 		YUW_beiyade = {
+			set_nationality = YUW
+		}
+		YUW_dikaina = {
+			set_nationality = YUW
+		}
+		YUW_dadan = {
+			set_nationality = YUW
+		}
+		YUW_beilaosenlin = {
+			set_nationality = YUW
+		}
+		YUW_masaina = {
 			set_nationality = YUW
 		}
 		}

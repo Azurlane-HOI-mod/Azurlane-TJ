@@ -410,6 +410,116 @@ TIX_man_organization = {
 		}
 	}
 
+	add_trait = { 
+		token = TIX_mio_linghuopaotai
+		name = TIX_mio_linghuopaotai
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_weapons
+		special_trait_background = yes
+
+		position = { x=7 y=3 }  
+		
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			
+		}
+		limit_to_equipment_type = { medium_tank_aa_chassis }
+		equipment_bonus = {
+			soft_attack = 0.5
+			hard_attack = 0.2
+			breakthrough = 0.25
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	add_trait = { 
+		token = TIX_mio_xingnengtisheng
+		name = TIX_mio_xingnengtisheng
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_production
+		special_trait_background = yes
+		relative_position_id = TIX_mio_linghuopaotai
+		position = { x=-1 y=1 }  
+		any_parent = { TIX_mio_linghuopaotai  }
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+
+		}
+		limit_to_equipment_type = { medium_tank_aa_chassis }
+		equipment_bonus = {
+			armor_value = 0.15
+			maximum_speed = 0.05
+			reliability = 0.1
+			breakthrough = 0.25
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	add_trait = { 
+		token = TIX_mio_jianyilingjian
+		name = TIX_mio_jianyilingjian
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_line_efficiency
+		special_trait_background = yes
+		relative_position_id = TIX_mio_linghuopaotai
+		position = { x=0 y=1 }  
+		any_parent = { TIX_mio_linghuopaotai  }
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			
+		}
+		limit_to_equipment_type = { medium_tank_aa_chassis }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.2
+			production_efficiency_cap_factor = 0.2
+			production_cost_factor = -0.2
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	add_trait = { 
+		token = TIX_mio_chuanjiapaodan
+		name = TIX_mio_chuanjiapaodan
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_spg
+		special_trait_background = yes
+		relative_position_id = TIX_mio_linghuopaotai
+		position = { x=1 y=1 }  
+		any_parent = { TIX_mio_linghuopaotai  }
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			
+		}
+		limit_to_equipment_type = { medium_tank_aa_chassis }
+		equipment_bonus = {
+			soft_attack = 2
+			hard_attack = 1
+			ap_attack = 1.2
+			breakthrough = 0.5
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
 	add_trait = {
 		token = TIX_mio_trait_hoesch_facilities
 		name = TIX_mio_trait_hoesch_facilities

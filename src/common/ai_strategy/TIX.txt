@@ -2908,3 +2908,24 @@ AZ_nationalist_spain_allies_nobody_on_historical = {
 	}
 	
 }
+
+TIX_YUW_is_SB = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_government = fascism
+		has_global_flag = AZ_fengkuangAI_citiao_ex
+		YUW = { is_ai  = no }
+	}
+	abort = {
+		YUW = { is_ai = yes }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "YUW"			
+		value =  -9999
+	}	
+}

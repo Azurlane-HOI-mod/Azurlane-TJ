@@ -423,7 +423,7 @@ tianjiang_aizuobi = {
 				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
-			date > 1940.6.1
+			date > 1939.6.1
 			has_global_flag = AZ_fengkuangAI_citiao_2
 		}
 		visible = {
@@ -460,8 +460,9 @@ tianjiang_aizuobi = {
 				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
-			date > 1941.6.1
+			date > 1940.6.1
 			has_global_flag = AZ_fengkuangAI_citiao_2
+			has_capitulated = no
 		}
 		visible = {
 			is_ai = yes
@@ -496,6 +497,7 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = yes
 		complete_effect = {
+			set_country_flag = jizaijianniangzuobi_yes
 			set_technology = {
 				shipgirltech_jizaijianniang_1 = 1
 			}
@@ -503,9 +505,72 @@ tianjiang_aizuobi = {
 			add_tech_bonus = {
 				name = "飞机模块研究加成"
 				bonus = 100
-				uses = 10
+				uses = 20
 				ahead_reduction = 10
 				category = plane_modules_tech
+			}
+		}
+	}
+	ai_jianngshi_zuobi9 = {
+		available = {
+			is_ai = yes
+			has_country_flag = jizaijianniangzuobi_yes
+			is_puppet = no
+			date > 1940.6.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			create_equipment_variant = {
+			name = "机载舰娘-对空用"
+			type = jizaijianniang_fighter
+			modules = {
+				fixed_main_weapon_slot = az_fighter_weapon_1
+				fixed_auxiliary_weapon_slot_1 = az_fighter_weapon_1
+				fixed_auxiliary_weapon_slot_2 = az_fighter_weapon_1
+				fixed_auxiliary_weapon_slot_3 = az_fighter_weapon_1
+				fixed_auxiliary_weapon_slot_4 = az_fighter_weapon_1
+				engine_type_slot = engine_4_2x
+				special_type_slot_1 = fuel_tanks_small
+				special_type_slot_2 = non_strategic_materials_small
+				special_type_slot_3 = fuel_tanks_small
+				special_type_slot_4 = armor_plate_small	
+				special_type_slot_5 = self_sealing_fuel_tanks_small
+				special_type_slot_6 = drop_tanks
+			}
+			}
+			add_equipment_to_stockpile = {
+				type = jizaijianniang_equipment_airframe
+				amount = 5000
+				producer = ROOT
+			}
+		}
+	}
+	ai_jianngshi_zuobi10 = {
+		available = {
+			is_ai = yes
+			has_country_flag = jizaijianniangzuobi_yes
+			is_puppet = no
+			date > 1941.1.1
+			has_capitulated = no
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = jizaijianniang_equipment_airframe
+				amount = 2000
+				producer = ROOT
 			}
 		}
 	}
@@ -607,7 +672,7 @@ tianjiang_aizuobi = {
 				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
-			date > 1940.6.1
+			date > 1939.6.1
 			has_global_flag = AZ_fengkuangAI_citiao_1
 		}
 		visible = {
@@ -717,7 +782,7 @@ tianjiang_aizuobi = {
 				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
-			date > 1941.6.1
+			date > 1940.6.1
 			has_global_flag = AZ_fengkuangAI_citiao_1
 		}
 		visible = {
@@ -917,6 +982,48 @@ tianjiang_aizuobi = {
 			complete_national_focus = BFL_t34shengchan #56
 			complete_national_focus = BFL_gangtiehongliu #42
 			complete_national_focus = BFL_liluntupo
+		}
+	}
+	zuobi_beilian_6 = {
+		available = {
+			tag = BFL
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			surrender_progress > 0.4
+			has_war_with = TIX
+			has_war_with = SAD
+			not = { has_war_with = CHY }
+			not = { has_war_with = DOH }
+			not = { has_war_with = BYG }
+			not = { has_war_with = HUJ }
+			TIX = {
+				is_ai = yes
+			}
+			SAD = {
+				is_ai = yes
+			}
+		}
+		visible = {
+			tag = BFL
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			219 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			217 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
 		}
 	}
 	zuobi_baiying = {
@@ -1278,8 +1385,10 @@ tianjiang_aizuobi = {
 		complete_effect = {
 			if = {
 				limit = {
-					tag = HUJ
-					tag = TIX
+					OR = {
+						tag = HUJ
+						tag = TIX
+					}
 				}
 				air_experience = 500
 			}
@@ -1424,6 +1533,55 @@ tianjiang_aizuobi = {
 		fire_only_once = yes
 		complete_effect = {
 			add_stability = 2
+		}
+	}
+	zuobi_tiexue_4 = {
+		available = {
+			tag = TIX
+			is_ai = yes
+			date > 1937.1.1
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		visible = {
+			tag = TIX
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			division_template = {
+					name = "超时空军团" 			
+					is_locked = yes				
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						medium_armor = { x = 1 y = 3 }
+						mechanized = { x = 2 y = 0 }
+						mechanized = { x = 2 y = 1 }
+						mechanized = { x = 2 y = 2 }
+						mechanized = { x = 2 y = 3 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+						mechanized = { x = 3 y = 3 }
+						mechanized = { x = 4 y = 0 }
+						mechanized = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						medium_flame_tank = { x = 0 y = 1 }
+						light_tank_recon = { x = 0 y = 2 }
+						artillery = { x = 0 y = 3 }
+						logistics_company = { x = 0 y = 4 }
+				    }
+			}
 		}
 	}
 	tix_huanzhuang = {
