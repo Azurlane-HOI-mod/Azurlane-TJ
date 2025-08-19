@@ -14899,20 +14899,33 @@ AZ_chaowu_jyz = {
 				activate_mission = YUW_xinlingzhipeiyi_jy_time
 				country_event = az_tianjiang.379
 			}
-			custom_effect_tooltip = YUW_xinlingzhipeiyi_timetips
-			every_other_country = {
+			if = {
 				limit = {
-					is_faction_leader = yes
-					has_war_with = YUW
+					is_ai = no
 				}
-				transfer_units_fraction= {
-					target = YUW
-					army_ratio = 0.05
-					keep_unit_leaders_trigger = {
-						has_trait = trait_SPA_nationalist_sympathies
+				custom_effect_tooltip = YUW_xinlingzhipeiyi_timetips
+				every_other_country = {
+					limit = {
+						is_faction_leader = yes
+						has_war_with = YUW
+					}
+					transfer_units_fraction= {
+						target = YUW
+						size = 0
+						army_ratio = 0.05
+						navy_ratio = 0
+						keep_unit_leaders_trigger = {
+							has_trait = trait_SPA_nationalist_sympathies
+						}
 					}
 				}
+			}else = {
+				add_timed_idea = {
+					idea = YUW_xinlingnengliang_idea
+					days = 10
+				}
 			}
+			
 		}
 	}
 	YUW_xinlingzhipeiyi_jy_time = {
@@ -15300,32 +15313,20 @@ AZ_chaowu_jyz = {
 			is_debug = yes
 		}
 		complete_effect = {
+			#set_country_flag = az_xinlingzhipei_on
 			clr_country_flag = TIX_chaoshikong_lengquezhong
 			clr_country_flag = BFL_tiemu_lengquezhong
 			clr_country_flag = BYG_lizipao_lengquezhong
-			annex_country = {
-				target = YUW
-			}
-			annex_country = {
-				target = TIX
-			}
-			annex_country = {
-				target = HUJ
-			}
-			annex_country = {
-				target = SAD
-			}
-			annex_country = {
-				target = CHY
-			}
-			annex_country = {
-				target = DOH
-			}
-			annex_country = {
-				target = BYG
-			}
-			annex_country = {
-				target = BFL
+			HUJ = {
+				transfer_units_fraction= {
+				target = HOL
+				size = 0
+				army_ratio = 0.05
+				navy_ratio = 0
+				keep_unit_leaders_trigger = {
+					has_trait = trait_SPA_nationalist_sympathies
+				}
+				}
 			}
 		}
 	}
