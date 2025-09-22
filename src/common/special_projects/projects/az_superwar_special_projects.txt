@@ -71,7 +71,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -118,12 +118,149 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
 			set_country_flag = az_tiemuzhuangzhi_on
 			custom_effect_tooltip = az_tiemuzhuangzhi_on
+		}
+	}
+	generic_prototype_rewards = {
+		sp_nuclear_scientist_xp_generic_reward
+		sp_nuclear_minor_progress_generic_reward
+		sp_nuclear_generic_electronics_tech_reward
+		sp_nuclear_generic_industry_tech_reward
+		sp_nuclear_reactor_radioactive_leak_stabilized_reward
+		sp_nuclear_reactor_minor_explosion_reward
+	}
+ }
+
+ sp_az_BFL_neibaodan_1 = {
+	specialization = specialization_nuclear
+	icon = GFX_sp_nuclear_reactor
+	project_tags = sp_tag_nuclear_power
+	prototype_time = sp_time.prototype.long
+	complexity = sp_complexity.large
+	breakthrough_cost = {
+		specialization_nuclear = 0
+	}
+	resource_cost = {
+		resources = {
+			steel = 10
+			aluminium = 10
+			chromium = 10
+		}
+	}
+	visible = {
+		FROM = {
+			tag = BFL
+			is_ai = no
+		}
+	}
+	available = {
+		
+	}
+	ai_will_do = {
+		base = 0
+	}
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = az_next_projects_on
+		}
+	}
+	generic_prototype_rewards = {
+		sp_nuclear_scientist_xp_generic_reward
+		sp_nuclear_minor_progress_generic_reward
+		sp_nuclear_generic_electronics_tech_reward
+		sp_nuclear_generic_industry_tech_reward
+		sp_nuclear_reactor_radioactive_leak_stabilized_reward
+		sp_nuclear_reactor_minor_explosion_reward
+	}
+ }
+
+ sp_az_BFL_neibaodan_2 = {
+	specialization = specialization_nuclear
+	icon = GFX_sp_nuclear_engines
+	project_tags = sp_tag_nuclear_power
+	prototype_time = sp_time.prototype.long	
+	complexity = sp_complexity.large
+	breakthrough_cost = {
+		specialization_nuclear = 0
+	}
+	special_project_parent = {
+		sp_az_BFL_neibaodan_1
+	}
+	resource_cost = {
+		resources = {
+			steel = 30
+			aluminium = 30
+			chromium = 30
+		}
+	}
+	visible = {
+		FROM = {
+			tag = BFL
+			is_ai = no
+		}
+	}
+	available = {
+		
+	}
+	ai_will_do = {
+		base = 0
+	}
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = az_next_projects_on
+		}
+	}
+	generic_prototype_rewards = {
+		sp_nuclear_scientist_xp_generic_reward
+		sp_nuclear_minor_progress_generic_reward
+		sp_nuclear_generic_electronics_tech_reward
+		sp_nuclear_generic_industry_tech_reward
+		sp_nuclear_reactor_radioactive_leak_stabilized_reward
+		sp_nuclear_reactor_minor_explosion_reward
+	}
+ }
+
+ sp_az_BFL_neibaodan_3 = {
+	specialization = specialization_nuclear
+	icon = GFX_sp_commercial_nuclear_reactor
+	project_tags = sp_tag_nuclear_power
+	prototype_time = sp_time.prototype.long	
+	complexity = sp_complexity.large
+	breakthrough_cost = {
+		specialization_nuclear = 0
+	}
+	special_project_parent = {
+		sp_az_BFL_neibaodan_1
+		sp_az_BFL_neibaodan_2
+	}
+	resource_cost = {
+		resources = {
+			steel = 50
+			aluminium = 50
+			chromium = 50
+		}
+	}
+	visible = {
+		FROM = {
+			tag = BFL
+			is_ai = no
+		}
+	}
+	available = {
+		
+	}
+	ai_will_do = {
+		base = 0
+	}
+	project_output = {
+		country_effects = {
+			set_country_flag = az_zhenkongneibaodan_on
+			custom_effect_tooltip = az_zhenkongneibaodan_on
 		}
 	}
 	generic_prototype_rewards = {
@@ -208,7 +345,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -255,7 +392,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -377,7 +514,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -424,7 +561,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -441,6 +578,7 @@
 		sp_nuclear_reactor_minor_explosion_reward
 	}
  }
+
 #############################################################鸢尾###########################################################
  sp_az_YUW_kuangbao_1 = {
 	specialization = specialization_nuclear
@@ -514,7 +652,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -561,7 +699,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -661,7 +799,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -708,12 +846,149 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
 			set_country_flag = az_lizijianongpao_on
 			custom_effect_tooltip = az_lizijianongpao_on
+		}
+	}
+	generic_prototype_rewards = {
+		sp_nuclear_scientist_xp_generic_reward
+		sp_nuclear_minor_progress_generic_reward
+		sp_nuclear_generic_electronics_tech_reward
+		sp_nuclear_generic_industry_tech_reward
+		sp_nuclear_reactor_radioactive_leak_stabilized_reward
+		sp_nuclear_reactor_minor_explosion_reward
+	}
+ }
+
+ sp_az_BYG_tianqikongzhiji_1 = {
+	specialization = specialization_nuclear
+	icon = GFX_sp_nuclear_reactor
+	project_tags = sp_tag_nuclear_power
+	prototype_time = sp_time.prototype.long	
+	complexity = sp_complexity.large
+	breakthrough_cost = {
+		specialization_nuclear = 0
+	}
+	resource_cost = {
+		resources = {
+			steel = 10
+			aluminium = 10
+			chromium = 10
+		}
+	}
+	visible = {
+		FROM = {
+			tag = BYG
+			is_ai = no
+		}
+	}
+	available = {
+		
+	}
+	ai_will_do = {
+		base = 0
+	}
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = az_next_projects_on
+		}
+	}
+	generic_prototype_rewards = {
+		sp_nuclear_scientist_xp_generic_reward
+		sp_nuclear_minor_progress_generic_reward
+		sp_nuclear_generic_electronics_tech_reward
+		sp_nuclear_generic_industry_tech_reward
+		sp_nuclear_reactor_radioactive_leak_stabilized_reward
+		sp_nuclear_reactor_minor_explosion_reward
+	}
+ }
+
+ sp_az_BYG_tianqikongzhiji_2 = {
+	specialization = specialization_nuclear
+	icon = GFX_sp_nuclear_engines
+	project_tags = sp_tag_nuclear_power
+	prototype_time = sp_time.prototype.long	
+	complexity = sp_complexity.large
+	breakthrough_cost = {
+		specialization_nuclear = 0
+	}
+	special_project_parent = {
+		sp_az_BYG_tianqikongzhiji_1
+	}
+	resource_cost = {
+		resources = {
+			steel = 30
+			aluminium = 30
+			chromium = 30
+		}
+	}
+	visible = {
+		FROM = {
+			tag = BYG
+			is_ai = no
+		}
+	}
+	available = {
+		
+	}
+	ai_will_do = {
+		base = 0
+	}
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = az_next_projects_on
+		}
+	}
+	generic_prototype_rewards = {
+		sp_nuclear_scientist_xp_generic_reward
+		sp_nuclear_minor_progress_generic_reward
+		sp_nuclear_generic_electronics_tech_reward
+		sp_nuclear_generic_industry_tech_reward
+		sp_nuclear_reactor_radioactive_leak_stabilized_reward
+		sp_nuclear_reactor_minor_explosion_reward
+	}
+ }
+
+ sp_az_BYG_tianqikongzhiji_3 = {
+	specialization = specialization_nuclear
+	icon = GFX_sp_commercial_nuclear_reactor
+	project_tags = sp_tag_nuclear_power
+	prototype_time = sp_time.prototype.long	
+	complexity = sp_complexity.large
+	breakthrough_cost = {
+		specialization_nuclear = 0
+	}
+	special_project_parent = {
+		sp_az_BYG_tianqikongzhiji_1
+		sp_az_BYG_tianqikongzhiji_2
+	}
+	resource_cost = {
+		resources = {
+			steel = 50
+			aluminium = 50
+			chromium = 50
+		}
+	}
+	visible = {
+		FROM = {
+			tag = BYG
+			is_ai = no
+		}
+	}
+	available = {
+		
+	}
+	ai_will_do = {
+		base = 0
+	}
+	project_output = {
+		country_effects = {
+			set_country_flag = az_shandianfengbao_on
+			custom_effect_tooltip = az_shandianfengbao_on
 		}
 	}
 	generic_prototype_rewards = {
@@ -798,7 +1073,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -845,7 +1120,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -935,7 +1210,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -982,7 +1257,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -1074,7 +1349,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {
@@ -1121,7 +1396,7 @@
 		
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 	project_output = {
 		country_effects = {

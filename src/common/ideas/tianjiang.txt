@@ -1,6 +1,97 @@
 ideas = {
 	# 天降独有民族精神，防覆盖
 	country = {
+		AZ_mztz_playerbuff = {
+			picture = fengkuangai
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				is_ai = yes
+			}
+			modifier = {
+				army_artillery_attack_factor = 4
+				army_infantry_defence_factor = 3
+				breakthrough_factor = 5
+				#conscription = 0.25
+				#conscription_factor = 1
+				#mobilization_speed = 10
+				#army_core_defence_factor = 25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = 0.15
+					soft_attack = 0.25
+					hard_attack = 0.25
+					reliability = 0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = 0.15
+					soft_attack = 0.25
+					hard_attack = 0.25
+					reliability = 0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.33
+					instant = yes
+				}
+				motorized_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			   	mechanized_equipment = {
+					build_cost_ic = 0.25
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = 0.25
+					instant = yes
+				}
+			}
+		}
+		AZ_mztz_AIbuff = {
+			picture = fengkuangai
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				is_ai = no
+			}
+			modifier = {
+				conscription = 0.25
+				conscription_factor = 1
+				mobilization_speed = 10
+				army_core_defence_factor = 25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				#support_equipment = {
+				#	build_cost_ic = -0.33
+				#	instant = yes
+				#}
+				#motorized_equipment = {
+				#	build_cost_ic = -0.2
+				#	instant = yes
+				#}
+			   # mechanized_equipment = {
+				#	build_cost_ic = 0.15
+				#	instant = yes
+				#}
+				#armor = {
+				#	build_cost_ic = 0.15
+				#	instant = yes
+				#}
+			}
+		}
 		YUW_xinlingnengliang_idea = {
 			picture = SWE_land_air_warfare
 			allowed_civil_war = {
