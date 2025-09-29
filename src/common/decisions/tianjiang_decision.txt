@@ -15733,6 +15733,10 @@ AZ_meizhoutiaozhan_jyz = {
 				TIX = { is_subject_of = ROOT }
 				TIX = { is_in_faction_with = ROOT }
 				not = { country_exists = TIX }
+				AND = {
+					country_exists = GER
+					GER = { is_in_faction_with = ROOT }
+				}
 			}
 			OR = {
 				tag = YUW
@@ -15763,8 +15767,26 @@ AZ_meizhoutiaozhan_jyz = {
 				not = { country_exists = BFL }
 				has_global_flag = beilian_bengkui
 			}
+			OR = {
+				tag = CHY
+				CHY = { is_subject_of = ROOT }
+				CHY = { is_in_faction_with = ROOT }
+				not = { country_exists = CHY }
+			}
+			OR = {
+				tag = DOH
+				DOH = { is_subject_of = ROOT }
+				DOH = { is_in_faction_with = ROOT }
+				not = { country_exists = DOH }
+			}
+			OR = {
+				tag = BYG
+				BYG = { is_subject_of = ROOT }
+				BYG = { is_in_faction_with = ROOT }
+				not = { country_exists = BYG }
+			}
 		}
-		days_mission_timeout = 1825
+		days_mission_timeout = 2190
 		complete_effect = {
 			custom_effect_tooltip = get_zs_shuliang_2500
 			add_to_variable = {
@@ -15788,6 +15810,10 @@ AZ_meizhoutiaozhan_jyz = {
 				TIX = { is_subject_of = ROOT }
 				TIX = { is_in_faction_with = ROOT }
 				not = { country_exists = TIX }
+				AND = {
+					country_exists = GER
+					GER = { is_in_faction_with = ROOT }
+				}
 			}
 			OR = {
 				tag = YUW
@@ -15818,8 +15844,26 @@ AZ_meizhoutiaozhan_jyz = {
 				not = { country_exists = BFL }
 				has_global_flag = beilian_bengkui
 			}
+			OR = {
+				tag = CHY
+				CHY = { is_subject_of = ROOT }
+				CHY = { is_in_faction_with = ROOT }
+				not = { country_exists = CHY }
+			}
+			OR = {
+				tag = DOH
+				DOH = { is_subject_of = ROOT }
+				DOH = { is_in_faction_with = ROOT }
+				not = { country_exists = DOH }
+			}
+			OR = {
+				tag = BYG
+				BYG = { is_subject_of = ROOT }
+				BYG = { is_in_faction_with = ROOT }
+				not = { country_exists = BYG }
+			}
 		}
-		days_mission_timeout = 2920
+		days_mission_timeout = 3285
 		complete_effect = {
 			custom_effect_tooltip = get_zs_shuliang_7500
 			add_to_variable = {
