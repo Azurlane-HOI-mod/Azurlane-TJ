@@ -15,8 +15,8 @@ ideas = {
 				#cavalry_defence_factor = 8
 				#army_artillery_attack_factor = 4
 				#army_infantry_defence_factor = 3
-				army_armor_attack_factor = 2
-				army_armor_defence_factor = 2
+				#army_armor_attack_factor = 2
+				#army_armor_defence_factor = 2
 				#breakthrough_factor = 3
 				#conscription = 0.25
 				#conscription_factor = 1
@@ -25,6 +25,13 @@ ideas = {
 				#org_loss_when_moving = -0.5
 				#recon_factor = 1
 				#army_speed_factor = 0.25
+				research_speed_factor = 1
+				army_attack_against_major_factor = 0.5
+				army_defence_against_major_factor = 0.5
+				army_breakthrough_against_major_factor = 0.5
+				special_forces_attack_factor = 3
+				special_forces_defence_factor = 3
+				special_forces_cap_flat = 99999
 			}
 			equipment_bonus = {
 				#infantry_equipment = {
@@ -53,16 +60,16 @@ ideas = {
 				#	build_cost_ic = 2
 				#	instant = yes
 				#}
-				armor = {
-					build_cost_ic = -0.4
-					soft_attack = 0.5
-					hard_attack = 0.5
-					reliability = 0.2
-					breakthrough = 0.25
-					maximum_speed = 0.2
-					ap_attack = 2
-					instant = yes
-				}
+				#armor = {
+				#	build_cost_ic = -0.4
+				#	soft_attack = 0.5
+				#	hard_attack = 0.5
+				#	reliability = 0.2
+				#	breakthrough = 0.25
+				#	maximum_speed = 0.2
+				#	ap_attack = 2
+				#	instant = yes
+				#}
 			}
 		}
 		AZ_mztz_AIbuff = {
@@ -88,13 +95,17 @@ ideas = {
 				#army_attack_against_minor_factor = 2
 				#army_defence_against_minor_factor = 2
 				#army_breakthrough_against_minor_factor = 2
-				army_infantry_attack_factor = 2
-				army_infantry_defence_factor = 5
-				army_artillery_attack_factor = 4
+				#army_infantry_attack_factor = 2
+				#army_infantry_defence_factor = 5
+				#army_artillery_attack_factor = 4
+				production_factory_start_efficiency_factor = 0.5
+				line_change_production_efficiency_factor = 1
+				production_factory_max_efficiency_factor = 0.3
+				production_factory_efficiency_gain_factor = 1
 			}
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = -0.4
+					build_cost_ic = -0.25
 					instant = yes
 				}
 				artillery_equipment = {
@@ -114,7 +125,7 @@ ideas = {
 				#	instant = yes
 				#}
 				armor = {
-					build_cost_ic = 0.25
+					build_cost_ic = -0.25
 					instant = yes
 				}
 			}
