@@ -2732,6 +2732,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 60
 		}
+		available = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				not = { has_global_flag = az_meizhoutiaozhan_action }
+			}
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
