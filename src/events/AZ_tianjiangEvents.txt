@@ -10062,6 +10062,25 @@ country_event = {
 		}
 	}
 	option = {
+		name = "直接选择全部词条！"
+		set_global_flag = AZ_fengkuangAI_citiao_1
+		set_global_flag = AZ_fengkuangAI_citiao_2
+		set_global_flag = AZ_fengkuangAI_citiao_3
+		set_global_flag = AZ_fengkuangAI_citiao_4
+		set_global_flag = AZ_fengkuangAI_citiao_5
+		set_global_flag = AZ_fengkuangAI_citiao_6
+		set_global_flag = AZ_fengkuangAI_citiao_7
+		set_global_flag = AZ_fengkuangAI_citiao_8
+		set_global_flag = AZ_fengkuangAI_citiao_9
+		set_global_flag = AZ_fengkuangAI_citiao_10
+		set_global_flag = AZ_fengkuangAI_citiao_11
+		set_global_flag = AZ_fengkuangAI_citiao_12
+		country_event = az_tianjiang.306
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
 		name = "不添加或联机有人选点这个"
 		ai_chance = {
 			factor = 100
@@ -10381,6 +10400,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "终于可以开始塔塔开了！"
+		set_global_flag = AZ_fengkuangAI_citiao_xuanzewancheng
 		if = {
 			limit = {
 			has_global_flag = AZ_fengkuangAI_citiao_1
@@ -13384,5 +13404,39 @@ country_event = {
 		ai_chance = {
 			base = 100
 		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.412
+	title = "自选稀有效果！"
+	desc = "恭喜你完美达成了每周挑战的通关条件！现在你可以在这里自选一个想要的特殊效果。"
+	picture = GFX_aze_kelifulan
+	is_triggered_only = yes
+	option = {
+		name = "我要超级小马！"
+		add_ideas = AZ_mztz_xiaoma_idea
+	}
+	option = {
+		name = "我想要上一把我获得的红尖尖！"
+		custom_effect_tooltip = get_zs_shuliang_10000
+		add_to_variable = {
+			var = zs_sl
+			value = 10000
+		}
+	}
+	option = {
+		name = "我想体验疯狂AI的将领！"
+		add_ideas = TY_fkAI_shenjingbaizhan
+		every_character = {
+			add_unit_leader_trait = fkAI_gaojizhinneng	
+		}
+		set_technology = {
+			az_shenjingbaizhan_tech = 1
+		}
+	}
+	option = {
+		name = "我想在正常模式下体验全词条的自选BUFF！"
+		add_ideas = AZ_mztz_rwkk_idea
 	}
 }

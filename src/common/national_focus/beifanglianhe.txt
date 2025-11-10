@@ -3698,6 +3698,12 @@
 		relative_position_id = BFL_12
 		mutually_exclusive = { focus = BFL_12 }
 		available = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				not = { has_global_flag = az_meizhoutiaozhan_action }
+			}
 			NOT = { has_completed_focus = BFL_kongjunjianshe }
 			NOT = { has_completed_focus = BFL_lujunjianshe }
 			NOT = { has_completed_focus = BFL_wanchengdiergewunianjihua }
