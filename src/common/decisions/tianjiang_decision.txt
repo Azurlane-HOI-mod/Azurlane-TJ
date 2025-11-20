@@ -15061,6 +15061,14 @@ AZ_chaowu_jyz = {
 			}
 			custom_effect_tooltip = BYG_lizijianongpao_timetips
 			FROM = {
+				custom_effect_tooltip = az_chaowushanghai_tips
+				damage_units = {
+					state = THIS
+					limit = { tag = PREV }
+					damage = 0.6
+					ratio = yes
+					army = yes
+				}
 				damage_building = {
   					type = infrastructure
 					damage = 3
@@ -15423,6 +15431,14 @@ AZ_chaowu_jyz = {
 			}
 			custom_effect_tooltip = BFL_zhenkongneibaodan_timetips
 			FROM = {
+				custom_effect_tooltip = az_chaowushanghai_tips
+				damage_units = {
+					state = THIS
+					limit = { tag = PREV }
+					damage = 0.9
+					ratio = yes
+					army = yes
+				}
 				damage_building = {
   					type = infrastructure
 					damage = 3
@@ -15580,6 +15596,14 @@ AZ_chaowu_jyz = {
 			}
 			custom_effect_tooltip = BYG_tianqikongzhiyi_timetips
 			FROM = {
+				custom_effect_tooltip = az_chaowushanghai_tips
+				damage_units = {
+					state = THIS
+					limit = { tag = PREV }
+					damage = 0.7
+					ratio = yes
+					army = yes
+				}
 				damage_building = {
   					type = infrastructure
 					damage = 1
@@ -15630,9 +15654,8 @@ AZ_chaowu_jyz = {
 			is_debug = yes
 		}
 		complete_effect = {
-			set_country_flag = az_shandianfengbao_on
-			clr_country_flag = TIX_chaoshikong_lengquezhong
-			clr_country_flag = BYG_shandianfengbao_lengquezhong
+			set_country_flag = az_lizijianongpao_on
+			clr_country_flag = BYG_lizipao_lengquezhong
 		}
 	}
 
