@@ -1822,3 +1822,98 @@ BYG_dont_guarantee_SA_unless_everyhting_is_shit = {
 		value = -200
 	}
 }
+
+### PACIFIC BUILDUP STRATEGIES
+
+# GUAM NAVAL BASE 
+BYG_prepare_guam = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		date > 1940.1.1
+		638 = {
+			naval_base < 4
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = build_building
+		id = naval_base
+		target = 12140
+		value = 100
+	}
+}
+
+BYG_prepare_guam_2 = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		date > 1943.1.1
+		638 = {
+			naval_base < 8
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = build_building
+		id = naval_base
+		target = 12140
+		value = 100
+	}
+}
+
+# GUAM HEADQUARTERS
+BYG_prepare_guam_3_naval_hq_supply = { 
+	allowed = {
+		original_tag = BYG
+		has_dlc = "No Compromise, No Surrender"
+	}
+	enable = {
+		date > 1943.1.1
+		638 = {
+			OR = {
+				naval_headquarters < 1
+				naval_supply_hub < 1
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = build_building
+		id = naval_headquarters
+		target = 12140
+		value = 100
+	}
+	ai_strategy = {
+		type = build_building
+		id = naval_supply_hub
+		target = 12140
+		value = 100
+	}
+
+}
+
+
+### FACTION RELATED STRATEGIES
+
+BYG_base_faction_priorities = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = spent_faction_initiative_priority
+		id = program
+		value = 25
+	}
+	ai_strategy = {
+		type = spent_faction_initiative_priority
+		id = unlock_faction_commander
+		value = 5
+	}
+}

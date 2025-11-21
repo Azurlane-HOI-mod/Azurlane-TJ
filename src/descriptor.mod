@@ -1,4 +1,4 @@
-version="1.5"
+version="2.2"
 tags={
 	"National Focuses"
 	"Alternative History"
@@ -13,5 +13,5 @@ dependencies={
 }
 replace_path="gfx/loadingscreens"
 picture="mod/AzurLaneShipGirls/thumbnail.png"
-supported_version="1.16.*"
+supported_version="1.17.*"
 remote_file_id="2249768662"

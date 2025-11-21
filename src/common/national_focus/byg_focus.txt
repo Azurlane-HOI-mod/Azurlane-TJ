@@ -352,7 +352,8 @@ focus_tree = {
 				specialization = specialization_land
 				value = 1.5
 			}
-			custom_effect_tooltip = BYG_xiandaishandianzhan_effect_tooltip
+			add_ideas = BYG_xdsdz
+			#custom_effect_tooltip = BYG_xiandaishandianzhan_effect_tooltip
 		}
 	}
 	focus = {
@@ -601,7 +602,7 @@ focus_tree = {
 				name = "防空巡洋"
 				bonus = 1.5
 				uses = 1
-				category = cl_tech
+				category = ca_tech
 			}
 			add_tech_bonus = {
 				name = "防空炮"
@@ -923,11 +924,10 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = "战略破坏"
-				cost_reduction = 0.5
-				uses = 2
-				category = strategic_destruction_tree
+			air_experience = 200
+			swap_ideas = {
+				remove_idea = BYG_kdxt
+				add_idea = BYG_kdxt_2
 			}
 			TY_kongjunliluntupo = yes
 		}
@@ -950,11 +950,10 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = "对地支援"
-				cost_reduction = 0.5
-				uses = 2
-				category = battlefield_support_tree
+			air_experience = 200
+			swap_ideas = {
+				remove_idea = BYG_kdxt
+				add_idea = BYG_kdxt_1
 			}
 			TY_kongjunliluntupo = yes
 		}
@@ -3278,7 +3277,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = BYG_baiyinghangxian
 		}
-		cost = 5
+		cost = 2
 		available = {
 			is_puppet = no
 			HUJ = {
@@ -3343,7 +3342,6 @@ focus_tree = {
 			}
 			add_political_power = 100
 			add_war_support = 0.1
-			create_faction = "白鹰-碧蓝航线"
 		}
 	}
 	focus = {
@@ -5502,7 +5500,6 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = "白鹰-碧蓝航线"
 		}
 	}
 	focus = {
@@ -6744,7 +6741,6 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = "白鹰-碧蓝航线"
 		}
 	}
 	focus = {

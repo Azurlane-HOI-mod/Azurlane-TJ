@@ -2929,3 +2929,31 @@ TIX_YUW_is_SB = {
 		value =  -9999
 	}	
 }
+
+# FACTION RELATED STRATEGIES
+
+TIX_base_faction_priorities = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+	# Note these adds to the base, as defined in default
+	ai_strategy = {
+		type = spent_faction_initiative_priority
+		id = program
+		value = 15
+	}
+	ai_strategy = {
+		type = spent_faction_initiative_priority
+		id = unlock_faction_commander
+		value = 5
+	}
+	ai_strategy = {
+		type = spent_faction_initiative_priority
+		id = unlock_doctrine_sharing
+		value = 10
+	}
+}

@@ -1,0 +1,205 @@
+# The Allies 
+faction_template_azurlane = {
+	name = "碧蓝航线"
+	manifest = faction_manifest_defense_of_democracy_allies
+
+	goals = {
+
+		# Short term goals
+		
+		# Medium term goals
+		faction_goal_the_arteries_of_trade
+
+		# Long term goals
+		faction_goal_the_atomic_race
+		faction_goal_rule_the_waves
+
+	}
+
+
+	default_rules = {
+		joining_rule_non_fascist
+		joining_rule_has_no_offensive_war
+		faction_peace_rule_liberation_focus
+		government_in_exile_allowed
+		change_leader_rule_manifest_below_35
+		dismissal_rule_ideology_not_democratic
+		change_leader_rule_industry
+	}
+	
+	icon = GFX_faction_icon_allies
+}
+
+# AXIS
+faction_template_cszz = {
+	name = "赤色中轴"
+	icon = GFX_faction_logo_axis
+	manifest = faction_manifest_conquest_of_territory
+
+	goals = {
+
+		# Short term goals
+		faction_goal_one_germany #It is ok for them not to start with a free slot
+		#faction_goal_high_seas_fleet
+
+		# Medium term goals
+		faction_goal_secure_european_continent
+
+		# Long terms
+		faction_goal_resource_control
+	
+	}
+
+	default_rules = {
+		call_to_war_rule_independent_only
+		joining_rule_non_communist
+		faction_peace_rule_conquest_focus
+		change_leader_rule_manpower
+		change_leader_rule_manifest_below_35
+		dismissal_rule_offensive_war
+	}
+	
+}
+
+#东亚反暴政联盟
+faction_template_DOH_united_front = {
+	name = "东亚反暴政联盟"
+	manifest = faction_manifest_china_territorial_integrity
+
+	goals = {
+		# Short term goals
+		# None
+
+		# Medium term goals
+		faction_goal_control_the_chinese_coast
+
+		# Long term goals
+		faction_goal_no_japanese_in_china
+		
+	}
+
+	default_rules = {
+		joining_rule_china_only
+		joining_rule_non_fascist
+		change_leader_rule_manpower
+		dismissal_rule_offensive_war
+	}
+
+	icon = GFX_faction_logo_chinese_united_front
+}
+
+# Comintern
+faction_template_BFL_comintern = {
+	name = "共产联盟"
+	manifest = faction_manifest_security_through_expansion
+	icon = GFX_faction_logo_comintern
+	goals = {
+
+		# Short term goals
+		# faction_goal_stall_the_fascist_threat
+
+		# Medium term goals
+		faction_goal_indifference_is_a_threat
+
+		# Long term goals
+		faction_goal_the_red_tide
+		
+	}
+
+	default_rules = {
+		joining_rule_communist_only
+		faction_peace_rule_puppeting_focus
+		change_leader_rule_manpower
+		change_leader_rule_industry
+		war_declaration_rule_major_only
+	}
+}
+
+# Sakoku Ron
+faction_template_CHY_sakoku_ron_faction = {
+	name = "东亚反共同盟"
+	manifest = faction_manifest_containment_of_communism 
+
+	goals = {
+
+		# Short Term 
+		faction_goal_war_on_communism
+
+		# Medium Term 
+		faction_goal_industrial_expansion
+
+		# Long Term 
+		faction_goal_resource_control
+		faction_goal_defeat_of_communism
+
+	}
+
+	default_rules = {
+		joining_rule_puppets_only
+		change_leader_rule_industry
+	}
+
+	icon = GFX_faction_logo_japanese_co_prosperity_sphere
+}
+
+# New Order in East Asia
+faction_template_CHY_new_asia_faction = {
+	name = "东亚合作圈"
+	manifest = faction_manifest_suppress_asian_communism
+
+	goals = {
+
+		# Short Term 
+		#faction_goal_ensure_military_r_d
+		#faction_goal_war_on_communism # Would be autocompleted if done when at war with the PRC 
+
+		# Medium Term 
+		faction_goal_control_the_chinese_capitals
+
+		# Long Term 
+		faction_goal_align_china
+		
+		#faction_goal_war_on_communism_in_asia
+	}
+
+	default_rules = {
+		joining_rule_non_communist
+		joining_rule_east_asia_only
+		faction_peace_china_focus
+		change_leader_rule_industry
+	}
+
+	icon = GFX_faction_logo_japanese_co_prosperity_sphere
+}
+
+#美联邦
+faction_template_byg_commonwealth = {
+	name = "白鹰联邦"
+	icon = GFX_faction_logo_generic_17
+	manifest = faction_manifest_defense_of_democracy
+	can_leader_join_other_factions = yes
+	visible = {
+		always = no  
+	}
+
+	goals = {
+		# Short term goals
+		faction_goal_building_up_guam # Acceptable not to be empty at start.
+
+		# Medium term goals
+		faction_goal_industrial_expansion
+		
+		# Long term goals
+		#faction_goal_contain_japanese_expansion_asia	#Granted/Unlocked by War Plan Orange
+	}
+
+	default_rules = {
+		joining_rule_puppets_only
+		war_declaration_generated_tension_25
+		war_declaration_threat_75
+		change_leader_rule_industry
+		change_leader_rule_manpower
+		change_leader_rule_manifest_below_35
+	}	
+	
+}

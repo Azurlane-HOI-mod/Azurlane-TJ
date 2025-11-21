@@ -870,8 +870,8 @@
 			add_doctrine_cost_reduction = {
 				name = "人海学说"
 				cost_reduction = 0.75
-				uses = 1
-				category = cat_mass_assault
+				uses = 2
+				category = land_doctrine
 			}
 		}
 	}
@@ -1026,6 +1026,7 @@
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			BFL_lujunjianshe_dengji = Yes
+			army_experience = 75
 			add_doctrine_cost_reduction = {
 				name = "纵深作战"
 				cost_reduction = 0.5
@@ -1559,12 +1560,7 @@
 		
 		cost = 7
 		available = {
-			if = {
-				limit = {
-					is_ai = no
-				}
-				has_navy_experience > 499
-			}
+
 		}
 		ai_will_do = {
 			factor = 5
@@ -1576,7 +1572,6 @@
 			remove_idea = BFL_feilabukandehaijun
 			add_idea = BFL_feilabukandehaijun_2
 			}
-			navy_experience = -500
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1603,12 +1598,6 @@
 		x = -1
 		y = 1
 		available = {
-			if = {
-				limit = {
-					is_ai = no
-				}
-				has_navy_experience > 999
-			}
 		}
 		cost = 7
 		
@@ -1622,7 +1611,6 @@
 			remove_idea = BFL_feilabukandehaijun_2
 			add_idea = BFL_feilabukandehaijun_3
 			}
-			navy_experience = -1000
 			add_ideas = BFL_pwjsc
 		}
 	}
@@ -1656,12 +1644,6 @@
 		
 		cost = 7
 		available = {
-			if = {
-				limit = {
-					is_ai = no
-				}
-				has_navy_experience > 499
-			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -1673,7 +1655,6 @@
 			remove_idea = BFL_feilabukandehaijun
 			add_idea = BFL_feilabukandehaijun_2
 			}
-			navy_experience = -400
 			add_tech_bonus = {
 				name = "舰队质量"
 				bonus = 1
@@ -1692,12 +1673,6 @@
 		
 		cost = 7
 		available = {
-			if = {
-				limit = {
-					is_ai = no
-				}
-				has_navy_experience > 999
-			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -1709,7 +1684,6 @@
 			remove_idea = BFL_feilabukandehaijun_2
 			add_idea = BFL_feilabukandehaijun_3
 			}
-			navy_experience = -900
 			add_tech_bonus = {
 				name = "超前思维"
 				bonus = 2
@@ -3494,7 +3468,7 @@
 			}
 			else = {
 				set_global_flag = BFL_created_gongchanlianmeng
-				create_faction = "共产联盟"
+				create_faction_from_template = faction_template_BFL_comintern
 			}
 			add_ideas = BFL_dlzq
 			add_political_power = 100
@@ -3649,12 +3623,6 @@
 		cost = 10
 		available = {
 			NOT = { has_country_flag = BFL_zzpianzhidu_on }
-			if = {
-				limit = {
-					is_ai = no
-				}
-				has_air_experience > 499
-			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -3662,7 +3630,6 @@
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			air_experience = -500
 			swap_ideas = {
 			remove_idea = BFL_buchengshudekongjun_2
 			add_idea = BFL_buchengshudekongjun_3
@@ -3778,7 +3745,7 @@
 			}
 			else = {
 				set_global_flag = BFL_created_gongchanlianmeng
-				create_faction = "共产联盟"
+				create_faction_from_template = faction_template_BFL_comintern
 			}
 			swap_ideas = {
 				remove_idea = BFL_luxianwenti
@@ -5993,7 +5960,7 @@
 		}
 		completion_reward = {
 			set_global_flag = BFL_created_gongchanlianmeng
-			create_faction = "共产联盟"
+			create_faction_from_template = faction_template_BFL_comintern
 			declare_war_on = { target = TIX type = annex_everything }
 		}
 	}

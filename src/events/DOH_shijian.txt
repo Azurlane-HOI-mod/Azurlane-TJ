@@ -408,14 +408,17 @@ country_event = {
 	option = {
 		name = DOH_event.7.a
 		ai_chance = {
-			base = 0
+			base = 1
 			modifier = {
 				OR = {
 					tag = TIB
 					tag = SIK
 					tag = XSM
+					tag = XIC
+					tag = SHX
+					tag = HBC
 				}
-				add = 7
+				add = 5
 			}
 		}
 		DOH = { country_event = DOH_event.8 } 
@@ -423,15 +426,7 @@ country_event = {
 	option = {
 		name = DOH_event.7.b
 		ai_chance = {
-			base = 3
-			modifier = {
-				OR = {
-					tag = YUN
-					tag = GXC
-					tag = SHX
-				}
-				add = 10
-			}
+			base = 1
 		}
 		DOH = { country_event = DOH_event.9 }
 		declare_war_on = {
@@ -756,7 +751,7 @@ country_event = {
 					}
 				}
 			}
-			create_faction = "东亚反暴政联盟"
+			create_faction_from_template = faction_template_DOH_united_front
 		}
 		add_war_support = 0.2
 		set_autonomy = {
@@ -847,7 +842,110 @@ country_event = {
 				} 
 			}
 		}
-		
+		if = {
+			limit = {
+				GDC = { exists = yes }
+			}
+			annex_country = { target = GDC transfer_troops = yes }
+			GDC = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				SIC = { exists = yes }
+			}
+			annex_country = { target = SIC transfer_troops = yes }
+			SIC = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				SND = { exists = yes }
+			}
+			annex_country = { target = SND transfer_troops = yes }
+			SND = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				HBC = { exists = yes }
+			}
+			annex_country = { target = HBC transfer_troops = yes }
+			HBC = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				XIC = { exists = yes }
+			}
+			annex_country = { target = XIC transfer_troops = yes }
+			XIC = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				KHM = { exists = yes }
+			}
+			annex_country = { target = KHM transfer_troops = yes }
+			KHM = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				GSM = { exists = yes }
+			}
+			annex_country = { target = GSM transfer_troops = yes }
+			GSM = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
+		if = {
+			limit = {
+				NXM = { exists = yes }
+			}
+			annex_country = { target = NXM transfer_troops = yes }
+			NXM = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
 	}
 
 }

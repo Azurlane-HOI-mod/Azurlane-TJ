@@ -2778,3 +2778,62 @@ HUJ_raids = {
         value = 200 # +200% more likely to target TIX
     }
 }
+
+HUJ_i_like_raj = {
+
+	allowed = {	
+		original_tag = HUJ 
+		has_dlc = "Graveyard of Empires"
+	}
+	enable = {
+		has_government = democratic
+		RAJ = {
+			is_subject_of = HUJ
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = befriend
+		id = "RAJ"
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "RAJ"
+		value = 200
+	}
+}
+
+HUJ_become_head_of_crypto = {
+	allowed = {	
+		original_tag = HUJ 
+		has_dlc = "No Compromise, No Surrender"
+		has_dlc = "La Resistance"
+	}
+	enable = {
+		has_done_agency_upgrade  = upgrade_form_department
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = become_head_of_crypto
+		value = 8
+	}
+}
+
+HUJ_become_supreme_commander = {
+	allowed = {	
+		original_tag = HUJ 
+		has_dlc = "No Compromise, No Surrender"
+	}
+	enable = {
+		date > 1938.1.1
+		date < 1940.1.1 
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = spent_faction_initiative_priority
+		id = unlock_faction_commander
+		value = 5
+	}
+}

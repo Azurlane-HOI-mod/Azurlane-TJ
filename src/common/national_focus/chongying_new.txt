@@ -771,7 +771,7 @@
 				name = "巡洋舰研究"
 				bonus = 1
 				uses = 2
-				category = cl_tech
+				category = ca_tech
 			}
 		}
 	}
@@ -1122,13 +1122,7 @@
 		continue_if_invalid = no
 		available_if_capitulated = no
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = "步兵战术改革"
-				cost_reduction = 0.5
-				uses = 4
-				category = cat_grand_battle_plan
-				category = cat_mass_assault
-			}
+			army_experience = 200
 			swap_ideas = {
 				remove_idea = CHY_bhsdlj
 				add_idea = CHY_bhsdlj_1
@@ -1275,13 +1269,7 @@
 		continue_if_invalid = no
 		available_if_capitulated = no
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = "机械化改革"
-				cost_reduction = 0.5
-				uses = 4
-				category = cat_grand_battle_plan
-				category = cat_mobile_warfare
-			}
+			army_experience = 200
 			swap_ideas = {
 				remove_idea = CHY_bhsdlj
 				add_idea = CHY_bhsdlj_1
@@ -2373,7 +2361,7 @@
 				can_create_factions = yes
 			}
 			custom_effect_tooltip = CHY_xijinanyangziyuanqu_tooltip
-			create_faction = "东亚合作圈"
+			create_faction_from_template = faction_template_CHY_new_asia_faction
 			add_ideas = CHY_kuangredekuozhangzhuyi_buff
 		}
 	}

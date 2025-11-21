@@ -8,9 +8,10 @@ xingdong_category = {
 			is_debug = yes
 		}
 		complete_effect = {
-			set_technology = {
-				keyantech_juxinghangmu = 1
-			}
+			#add_to_variable = {
+			#	var = xzmf_sl
+			#	value = 99
+			#}
 			
 		}
 	}
@@ -2187,7 +2188,7 @@ xingdong_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 		visible = {
 
@@ -2232,6 +2233,44 @@ xingdong_category = {
 			every_character = {
 				limit = { has_trait = luoli }
 				add_unit_leader_trait = xuexixunsu
+			}
+		}
+	}
+
+	mf_meitan = {
+		icon = xzmf
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				check_variable = {
+					var = xzmf_sl
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = xzmf_sl
+				value = 5
+				compare = greater_than_or_equals
+			}
+		}
+
+		custom_cost_text = mf_shuliang_5
+		complete_effect = { 
+			custom_effect_tooltip = az_ziyuanzhuanhua_tan_tooltip
+			add_to_variable = { az_ziyuanzhuanhua_tan = 100 }
+			force_update_dynamic_modifier = yes
+			add_to_variable = {
+				var = xzmf_sl
+				value = -5
 			}
 		}
 	}

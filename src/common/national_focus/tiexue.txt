@@ -1588,12 +1588,7 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			TY_haijunliluntupo = yes
-			add_doctrine_cost_reduction = {
-				name = "铁血新海军"
-				cost_reduction = 0.25
-				uses = 6
-				category = naval_doctrine
-			}
+			navy_experience = 300
 			remove_ideas = TIX_lrdhj
 			add_ideas = GER_seeherrschaft_ns
 		}
@@ -1819,12 +1814,6 @@ focus_tree = {
 		}
 		available = {
 			has_war = yes
-			if = {
-				limit = {
-					is_ai = no
-				}
-				has_air_experience > 200
-			}
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = yes
@@ -1857,26 +1846,6 @@ focus_tree = {
 					ahead_reduction = 2
 				}
 			}
-			if = {
-				limit = {
-					has_tech = ground_support_integration
-				}
-				add_doctrine_cost_reduction = {
-					name = "飞行队的经验"
-					cost_reduction = 0.5
-					uses = 4
-					category = air_doctrine
-				}
-			}
-			else = {
-				add_doctrine_cost_reduction = {
-					name = "飞行队的经验"
-					cost_reduction = 0.5
-					uses = 4
-					category = battlefield_support_tree
-				}
-			}
-			air_experience = -200
 			add_ideas = TIX_dgfxd
 			TY_kongjunliluntupo = yes
 		}
@@ -2179,8 +2148,7 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = "允许解锁第二条陆军学说路线"
-			set_country_flag = TY_army_liluntupo
+			TY_lujunliluntupo = yes
 			set_technology = {
 				breakthrough_for_tix = 1
 				popup = no
@@ -2306,24 +2274,12 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			if = {
-				limit = {
-					has_tech = blitzkrieg
-				}
-				add_doctrine_cost_reduction = {
-					name = "理论研究"
-					cost_reduction = 0.5
-					uses = 4
-					category = land_doctrine
-				}
-			}
-			else = {
-				add_doctrine_cost_reduction = {
-					name = "理论研究"
-					cost_reduction = 0.5
-					uses = 4
-					category = cat_mobile_warfare
-				}
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = "理论研究"
+				cost_reduction = 0.5
+				uses = 4
+				category = land_doctrine
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_land
@@ -3911,7 +3867,7 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			country_event = az_tianjiang.278
-			create_faction = "赤色中轴"
+			create_faction_from_template = faction_template_cszz
 			set_global_flag = TIX_created_chisezhongzhou
 			set_rule = {
 				can_create_factions = yes
@@ -6097,18 +6053,12 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			navy_experience = 80
+			navy_experience = 120
 			add_tech_bonus = {
 				name = "赤城的讲座"
 				bonus = 1.5
 				uses = 1
 				category = cv_tech
-			}
-			add_doctrine_cost_reduction = {
-				name = "赤城的讲座"
-				cost_reduction = 0.2
-				uses = 2
-				category = naval_doctrine
 			}
 		}
 	}
@@ -7045,7 +6995,7 @@ focus_tree = {
 				set_rule = {
 					can_create_factions = yes
 				}
-				create_faction = "赤色中轴"
+				create_faction_from_template = faction_template_cszz
 				set_cosmetic_tag = TIXdiguo
 				set_global_flag = TIX_created_chisezhongzhou
 				if = {
@@ -8567,7 +8517,7 @@ focus_tree = {
 				}
 			}
 			else = {
-				create_faction = "赤色中轴"
+				create_faction_from_template = faction_template_cszz
 				country_event = az_tianjiang.73
 				set_rule = {
 					can_create_factions = yes
