@@ -1,4 +1,4 @@
-getzhg_event_gerentezhi_se = {
+getzhg_event_gerentezhi_se = {SOV
 	custom_effect_tooltip = getzhg_event_gerentezhi_tt
 	if = {
 		limit = { is_navy_leader = yes }
@@ -547,12 +547,66 @@ TY_lujunliluntupo = {
 	}
 }	
 TY_haijunliluntupo = {
-	#custom_effect_tooltip = TY_haijunliluntupo_effect_tooltip
+	custom_effect_tooltip = TY_haijunliluntupo_effect_tooltip
 	#set_country_flag = TY_navy_liluntupo
+	if = {
+		limit = {
+			AND = { 
+				has_naval_academy = yes
+				has_doctrine = new_fleet_in_being
+			}
+		}
+		add_ideas = az_lltp_czjd
+	}
+	if = {
+		limit = {
+			AND = { 
+				has_naval_academy = yes
+				has_doctrine = new_convoy_raiding
+			}
+		}
+		add_ideas = az_lltp_myfs
+	}
+	if = {
+		limit = {
+			AND = { 
+				has_naval_academy = yes
+				has_doctrine = new_base_strike
+			}
+		}
+		add_ideas = az_lltp_jddj
+	}
 }
 TY_kongjunliluntupo = {
-	#custom_effect_tooltip = TY_kongjunliluntupo_effect_tooltip
+	custom_effect_tooltip = TY_kongjunliluntupo_effect_tooltip
 	#set_country_flag = TY_air_liluntupo
+	if = {
+		limit = {
+			AND = {
+				has_air_academy = yes
+				has_doctrine = new_strategic_destruction
+			}
+		}
+		add_ideas = az_lltp_zlph
+	}
+	if = {
+		limit = {
+			AND = {
+				has_air_academy = yes
+				has_doctrine = new_battlefield_support
+			}
+		}
+		add_ideas = az_lltp_zczy
+	}
+	if = {
+		limit = {
+			AND = {
+				has_air_academy = yes
+				has_doctrine = new_operational_integrity
+			}
+		}
+		add_ideas = az_lltp_lxzz
+	}
 }		
 
 shaixuan_leader_seffect = {

@@ -119,10 +119,10 @@ scripted_gui = {
 
 					}
 					check_variable = { 
-						ROOT.ROOT.wz_sl >9999
+						ROOT.wz_sl >9999
 					} 
 					check_variable = {
-						ROOT.ROOT.xzmf_sl >0 
+						ROOT.xzmf_sl >0 
 					} 
 				}
 				
@@ -178,7 +178,7 @@ scripted_gui = {
 						THIS = {
 							skill > 8
 							skill < 10 
-							is_navy_leader = NO
+							#is_navy_leader = NO
 						}
 					}
 					check_variable = {
@@ -192,15 +192,15 @@ scripted_gui = {
 					}
 				}
 				#lv9haijun
-				if = {
-					limit = {
-						THIS = { 
-							is_navy_leader = yes
-							skill > 8
-						}
-					}
-					always = NO
-				}
+				#if = {
+				#	limit = {
+				#		THIS = { 
+				#			is_navy_leader = yes
+							#skill > 8
+					#	}
+				#	}
+				#	always = NO
+				#}
 				#lv10
 				if = {
 					limit = {
@@ -242,6 +242,96 @@ scripted_gui = {
 					limit = {
 						THIS = {
 							skill > 11
+							skill < 13
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >59999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >3
+					}
+					check_variable = {
+						ROOT.zs_sl >99
+					}
+				}
+				#lv13
+				if = {
+					limit = {
+						THIS = {
+							skill > 12
+							skill < 14
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >69999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >4
+					}
+					check_variable = {
+						ROOT.zs_sl >119
+					}
+				}
+				#lv14
+				if = {
+					limit = {
+						THIS = {
+							skill > 13
+							skill < 15
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >79999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >4
+					}
+					check_variable = {
+						ROOT.zs_sl >119
+					}
+				}
+				#lv15
+				if = {
+					limit = {
+						THIS = {
+							skill > 14
+							skill < 16
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >89999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >5
+					}
+					check_variable = {
+						ROOT.zs_sl >149
+					}
+				}
+				#lv16
+				if = {
+					limit = {
+						THIS = {
+							skill > 15
+							skill < 20
+						}
+					}
+					check_variable = {
+						ROOT.wz_sl >99999
+					}
+					check_variable = {
+						ROOT.xzmf_sl >6
+					}
+					check_variable = {
+						ROOT.zs_sl >199
+					}
+				}
+				#lv20
+				if = {
+					limit = {
+						THIS = {
+							skill > 19
 						}
 					}
 					always = NO
@@ -306,8 +396,10 @@ scripted_gui = {
 				#lv1
 				if = { 
 					limit = {
-						skill > 0
-						skill < 2
+						THIS = {
+							skill > 0
+							skill < 2
+						}
 					}
 					add_to_variable = {
 						ROOT.wz_sl = -500
@@ -319,10 +411,10 @@ scripted_gui = {
 				#lv2
 				else_if = {
 					limit = {
-						
+						THIS = {
 							skill > 1
 							skill < 3
-						
+						}
 					}
 					add_to_variable = {
 						ROOT.wz_sl = -1000
@@ -334,10 +426,10 @@ scripted_gui = {
 				#lv3
 				else_if = {
 					limit = {
-						
+						THIS = {
 							skill > 2 
 							skill < 4
-						
+						}
 					}
 					add_to_variable = {
 						ROOT.wz_sl = -3000
@@ -349,10 +441,10 @@ scripted_gui = {
 				#lv4
 				else_if = {
 					limit = {
-						
+						THIS = {
 							skill > 3 
 							skill < 5 
-						
+						}
 					}
 					add_to_variable = {
 						ROOT.wz_sl = -6000
@@ -364,10 +456,10 @@ scripted_gui = {
 				#lv5
 				else_if = {
 					limit = {
-						
+						THIS = {
 							skill > 4 
 							skill < 6 
-						
+						}
 					}
 					add_to_variable = {
 						ROOT.wz_sl = -10000
@@ -382,10 +474,10 @@ scripted_gui = {
 				#lv6
 				else_if = {
 					limit = {
-						
+						THIS = {
 							skill > 5 
 							skill < 7 
-						
+						}
 					}
 					add_to_variable = {
 						ROOT.wz_sl = -15000
@@ -400,10 +492,10 @@ scripted_gui = {
 				#lv7
 				else_if = {
 					limit = {
-						
+						THIS = {
 							skill > 6
 							skill < 8 
-						
+						}
 					}
 					add_to_variable = {
 						ROOT.wz_sl = -20000
@@ -418,10 +510,10 @@ scripted_gui = {
 				#lv8
 				else_if = {
 					limit = {
-						
+						THIS = {
 							skill > 7 
 							skill < 9 
-						
+						}
 					}
 					
 					add_to_variable = {
@@ -430,30 +522,7 @@ scripted_gui = {
 					add_to_variable = {
 						ROOT.xzmf_sl = -2
 					}
-					
-					randomize_temp_variable = { 
-						var = chenggonggailv 
-						distribution = uniform
-						min = 0
-						max = 100
-					} 
-					if = {
-						limit = {
-							check_variable = { 
-								chenggonggailv > 20
-							}
-						}
-						
-						add_skill_level = 1
-						
-					}
-					else = {
-						
-						PREV = { unit_leader_event = getzhg_event.2501 } 
-						
-					}
-					
-					
+					add_skill_level = 1
 					
 				}
 				#lv9
@@ -473,27 +542,7 @@ scripted_gui = {
 					add_to_variable = {
 						ROOT.zs_sl = -20
 					}
-					randomize_temp_variable = {
-						var = chenggonggailv 
-						distribution = uniform
-						min = 0
-						max = 100
-					}
-					if = {
-						limit = {
-							check_variable = { 
-								chenggonggailv > 25
-							}
-						}
-						
-						add_skill_level = 1
-						
-					}
-					else = {
-						
-						PREV = { unit_leader_event = getzhg_event.2501 } 
-						
-					}
+					add_skill_level = 1
 				}
 				#lv10
 				else_if = {
@@ -512,27 +561,7 @@ scripted_gui = {
 					add_to_variable = {
 						ROOT.zs_sl = -60
 					}
-					randomize_temp_variable = {
-						var = chenggonggailv 
-						distribution = uniform
-						min = 0
-						max = 100
-					}
-					if = {
-						limit = {
-							check_variable = { 
-								chenggonggailv > 30
-							}
-						}
-						
-						add_skill_level = 1
-						
-					}
-					else = {
-						
-						PREV = { unit_leader_event = getzhg_event.2501 } 
-						
-					}
+					add_skill_level = 1
 				}
 				#lv11
 				else_if = {
@@ -551,6 +580,101 @@ scripted_gui = {
 					add_to_variable = {
 						ROOT.zs_sl = -100
 					}
+					add_skill_level = 1
+				}
+				#lv12
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 11
+							skill < 13
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -60000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -4
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -100
+					}
+					add_skill_level = 1
+				}
+				#lv13
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 12
+							skill < 14
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -70000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -4
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -120
+					}
+					add_skill_level = 1
+				}
+				#lv14
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 13
+							skill < 15
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -80000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -5
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -120
+					}
+					add_skill_level = 1
+				}
+				#lv15
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 14
+							skill < 16
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -90000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -6
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -150
+					}
+					add_skill_level = 1
+				}
+				#lv16
+				else_if = {
+					limit = {
+						THIS = {
+							skill > 15
+							skill < 20
+						}
+					}
+					add_to_variable = {
+						ROOT.wz_sl = -100000
+					}
+					add_to_variable = {
+						ROOT.xzmf_sl = -7
+					}
+					add_to_variable = {
+						ROOT.zs_sl = -200
+					}
 					randomize_temp_variable = {
 						var = chenggonggailv 
 						distribution = uniform
@@ -566,7 +690,7 @@ scripted_gui = {
 					if = {
 						limit = {
 							check_variable = { 
-								chenggonggailv > 40
+								chenggonggailv > 50
 							}  
 						}
 						
@@ -578,7 +702,7 @@ scripted_gui = {
 						PREV = { unit_leader_event = getzhg_event.2501 } 
 						
 					}
-				} 
+				}
 				
 			}
 			az_single_leader_xiujia_click = {

@@ -14,6 +14,7 @@ ideologies = {
 			}
 			
 			xiafeizhidu = {
+				can_be_randomly_selected = no
 			}
 			
 			populism = {
@@ -53,17 +54,21 @@ ideologies = {
 			lend_lease_tension = 0.50
 			send_volunteers_tension = 0.50
 			guarantee_tension = 0.25
-			annex_cost_factor = 0.5
+			# annex_cost_factor = 0.5 # Deprecated, use common\peace_conference\00_generic_peace.txt instead
 			civilian_intel_to_others = 20.0
 			army_intel_to_others = 5.0
 			navy_intel_to_others = 20.0
 			airforce_intel_to_others = 5
+			embargo_cost_factor = -0.5
+			embargo_threshold_factor = -0.5
 		}
 		
 		faction_modifiers = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
 		ai_democratic = yes # uses the democratic AI behaviour
+		ai_ideology_wanted_units_factor = 2
+		ai_give_core_state_control_threshold = 0 # Extra threshold value added to DIPLOMATIC_ACTION_PROPOSE_SCORE for this ideology to give back core state control to other country
 	}
 
 
@@ -87,6 +92,10 @@ ideologies = {
 			}
 			
 			niulunbaozhidu = {
+				can_be_randomly_selected = no
+			}
+			buddhist_socialism = {
+				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
 			}
 		}
 		
@@ -104,6 +113,7 @@ ideologies = {
 		faction_impact_on_world_tension = 0.5
 		
 		ai_communist = yes # uses the commie AI behaviour
+		ai_ideology_wanted_units_factor = 2
 		
 		rules = {
 			can_force_government = no
@@ -114,18 +124,20 @@ ideologies = {
 		can_collaborate = yes
 		
 		modifiers = {
-			puppet_cost_factor = -0.3
+			# puppet_cost_factor = -0.3 # Deprecated, use common\peace_conference\00_generic_peace.txt instead
 			civilian_intel_to_others = 10.0
 			army_intel_to_others = 7.5
 			navy_intel_to_others = 12.5
 			airforce_intel_to_others = 7.5
 			hidden_modifier = { join_faction_tension = -0.1 }
+			embargo_threshold_factor = 0.5
+			lend_lease_tension = 0.50
 		}
 		
 		faction_modifiers = {
 			
 		}
-
+		ai_give_core_state_control_threshold = 10
 	}
 
 	fascism = {
@@ -146,7 +158,9 @@ ideologies = {
 			
 			rexism = {
 			}
-			
+			emperor_fascism = {
+				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
+			}
 			lisha_xierism = {
 				can_be_randomly_selected = no
 			}
@@ -166,7 +180,7 @@ ideologies = {
 		faction_impact_on_world_tension = 1.0
 		
 		rules = {
-			can_force_government = no
+			can_force_government = yes
 			can_send_volunteers = yes
 			can_puppet = yes
 		}
@@ -180,9 +194,13 @@ ideologies = {
 			navy_intel_to_others = 10.0
 			airforce_intel_to_others = 10.0
 			hidden_modifier = { join_faction_tension = -0.1 }
+			embargo_cost_factor = 1
+			lend_lease_tension = 0.50
 		}
 
 		ai_fascist = yes # uses the fascist AI behaviour
+		ai_ideology_wanted_units_factor = 2
+		ai_give_core_state_control_threshold = 10000
 	}
 	
 	neutrality = {
@@ -203,6 +221,10 @@ ideologies = {
 			}
 			
 			centrism = {
+			}
+
+			japan_militarism_ideology = {
+				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
 			}
 		}
 
@@ -244,5 +266,8 @@ ideologies = {
 		}
 
 		ai_neutral = yes # 
+		ai_ideology_wanted_units_factor = 2
+		
+		ai_give_core_state_control_threshold = 10000
 	}
 }

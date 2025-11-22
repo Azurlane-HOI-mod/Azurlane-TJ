@@ -10,9 +10,16 @@ xingdong_category = {
 		complete_effect = {
 			#add_to_variable = {
 			#	var = xzmf_sl
-			#	value = 99
+			#	value = 9999
 			#}
-			
+			#add_to_variable = {
+			#	var = zs_sl
+			#	value = 99999
+			#}
+			#add_to_variable = {
+			#	var = wz_sl
+			#	value = 999999
+			#}
 		}
 	}
 
@@ -2244,7 +2251,7 @@ xingdong_category = {
 				tooltip = ""
 				check_variable = {
 					var = xzmf_sl
-					value = 5
+					value = 4
 					compare = greater_than_or_equals
 				}
 			}
@@ -2258,19 +2265,61 @@ xingdong_category = {
 		custom_cost_trigger = {
 			check_variable = {
 				var = xzmf_sl
-				value = 5
+				value = 4
 				compare = greater_than_or_equals
 			}
 		}
 
-		custom_cost_text = mf_shuliang_5
+		custom_cost_text = mf_shuliang_4
 		complete_effect = { 
 			custom_effect_tooltip = az_ziyuanzhuanhua_tan_tooltip
-			add_to_variable = { az_ziyuanzhuanhua_tan = 100 }
+			add_to_variable = { az_ziyuanzhuanhua_tan = 120 }
 			force_update_dynamic_modifier = yes
 			add_to_variable = {
 				var = xzmf_sl
-				value = -5
+				value = -4
+			}
+		}
+	}
+
+	mf_jingtongdu = {
+		icon = xzmf
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				check_variable = {
+					var = xzmf_sl
+					value = 2
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+
+		}
+		days_remove = 120
+		modifier = {
+			mass_assault_mastery_gain_factor = 1
+			grand_battleplan_mastery_gain_factor = 1
+			superior_firepower_mastery_gain_factor = 1
+			new_mobile_warfare_mastery_gain_factor = 1
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = xzmf_sl
+				value = 2
+				compare = greater_than_or_equals
+			}
+		}
+
+		custom_cost_text = mf_shuliang_2
+		complete_effect = { 
+			add_to_variable = {
+				var = xzmf_sl
+				value = -2
 			}
 		}
 	}
