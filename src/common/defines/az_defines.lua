@@ -23,6 +23,7 @@ NDefines.NCountry.BASE_MAX_COMMAND_POWER = 400
 NDefines.NCountry.BASE_COMMAND_POWER_GAIN = 0.6	
 
 --下划线
+NDefines.NBuildings.MAX_SHARED_SLOTS = 50						-- 建筑槽上限
 NDefines.NDiplomacy.MAX_TRUST_VALUE = 200						-- 最大关系上限
 NDefines.NDiplomacy.MIN_TRUST_VALUE = -200						-- 最小关系上限
 NDefines.NDiplomacy.MAX_OPINION_VALUE = 200						-- 最大关系上限
@@ -43,6 +44,17 @@ NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 3.0				-- 你每天可以获�
 NDefines.NGame.GAME_SPEED_SECONDS = { 1.0, 0.2, 0.1, 0.05, 0.0 }			--提速，必须是5的倍数
 NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1								--特种部队基础上限
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 48								--特种部队基础下限营
-	
-	
-	
+NDefines.NAI.WANTED_UNITS_INDUSTRY_FACTOR = 5.0						--国家期望部队数量的计算基准：可用军工产能比例
+NDefines.NAI.WANTED_UNITS_THREAT_BASE = 2.0						--无威胁状态下，最小期望部队数将乘以此系数
+NDefines.NAI.WANTED_UNITS_THREAT_MAX = 20						--标准化威胁值上限（超出此值将按此值计算)
+NDefines.NAI.WANTED_UNITS_MAX_WANTED_CAP = 3000						--一个国家所需的最大师团数量。此数值可能因某些硬编码倍率而超出，但不会因基础计算逻辑而突破
+NDefines.NAI.CANCEL_COMBAT_MIN_DURATION_HOURS = 4						--仅当战斗持续至少<数值>小时后，方可取消（常规）战斗
+NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.6						--若当前兵力强度低于此阈值，则取消单位生产以将资源调配至前线部队
+NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.5						--若当前人力水平低于此阈值，则取消单位生产以将资源调配至现役部队
+NDefines.NAI.ARMY_LEADER_ASSIGN_KEEP_CURRENT_LEADER_FACTOR = 3.0						--提升保留当前指挥官的评分权重。数值 > 1.0 表示偏向维持现任指挥官
+NDefines.NAI.ARMY_LEADER_ASSIGN_DONT_STEAL_OTHER_FACTOR = 0.3						--降低调用其他部队指挥官的评分权重。数值 < 1.0 表示不鼓励重新调配已任职的指挥官
+NDefines.NAI.AIFC_UPDATE_FREQUENCY_DAYS = 10						--AI 执行部队集结逻辑的频率。降低此值可能影响性能(原版为5)
+NDefines.NProduction.RESOURCE_PENALTY_WARNING_CRITICAL_RATIO = 100             -- 单位煤炭可转化能源量（原9）
+NDefines.NProduction.BASE_COUNTRY_ENERGY_PRODUCTION = 200            -- 国家基础能源产量（原10）
+NDefines.NProduction.ENERGY_SCALING_COST_BY_FACTORY_COUNT = 0.01            -- 根据工厂总数调整能源成本（原0.0225）
+NDefines.NProduction.BASE_ENERGY_COST = 0.1            -- 单座工厂的基础能耗（原0.25）

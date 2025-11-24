@@ -361,7 +361,7 @@ TIX_template_design = {
 	ai_strategy = {
 		type = template_prio
 		id = heavy_armor
-		value = -100
+		value = 0
 	}
 
 	ai_strategy = {
@@ -2955,5 +2955,42 @@ TIX_base_faction_priorities = {
 		type = spent_faction_initiative_priority
 		id = unlock_doctrine_sharing
 		value = 10
+	}
+}
+
+TIX_heavytank_production = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_tech = improved_heavy_tank_chassis
+		date > 1940.1.1
+		arms_factory > 299
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = heavy_armor
+		value = 20
+	}
+	ai_strategy = {
+		type = template_prio	#训练模板倾向
+		id = heavy_armor
+		value = 20
+	}
+}
+
+TIX_dont_help_IRQ = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_in_faction_with = IRQ
+		country_exists = BFL
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		value = 5000
+		id = "IRQ"
 	}
 }

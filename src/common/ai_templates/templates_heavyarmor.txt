@@ -1,0 +1,81 @@
+breakthrough_armor_AZ = {
+
+	available_for = {
+		TIX
+		BFL
+		BYG
+		HUJ
+	}
+
+	role = heavy_armor
+	front_role_override = offence
+
+	upgrade_prio = {
+		base = 1
+		modifier = { # maybe heavies aren't THAT important 
+			factor = 200
+			date > 1940.1.1 
+		}
+	}
+
+	heavy_armor_base_TIX = {
+		upgrade_prio = {
+			base = 1
+			modifier = {
+				factor = 1000
+				tag = TIX 
+			}
+			modifier = {
+				factor = 1000
+				tag = BYG 
+			}
+		}
+		reinforce_prio = 2
+
+		target_template = {
+
+			support = {
+				armored_engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				helicopter_transport = 1
+				armored_maintenance = 1
+			}
+			regiments = {
+			    heavy_armor = 8
+				mechanized = 8
+			}
+		}
+	}
+
+	heavy_armor_base_BFL = {
+		upgrade_prio = {
+			base = 1
+			modifier = {
+				factor = 1000
+				tag = BFL 
+			}
+			modifier = {
+				factor = 1000
+				tag = HUJ 
+			}
+		}
+		reinforce_prio = 2
+
+		target_template = {
+
+			support = {
+				armored_engineer = 1
+				light_tank_recon = 1
+				medium_flame_tank = 1
+				helicopter_transport = 1
+				armored_maintenance = 1
+			}
+			regiments = {
+			    heavy_armor = 8
+				infantry = 10
+			}
+		}
+	}
+
+}

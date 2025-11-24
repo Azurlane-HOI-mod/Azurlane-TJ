@@ -1,4 +1,53 @@
 tianjiang_aizuobi = {
+	ai_zhongtanzuobi = {
+		available = {
+			OR = {
+				tag = BFL
+				tag = TIX
+				tag = HUJ
+				tag = BYG
+			}
+			is_ai = yes
+			date > 1940.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_technology = {
+				improved_heavy_tank_chassis = 1
+			}
+			if = {
+				limit = {
+					tag = TIX
+				}
+				create_equipment_variant = {
+					name = "虎式坦克"
+					type = heavy_tank_chassis_2
+					parent_version = 0
+					modules = {
+						main_armament_slot = tank_medium_cannon_2
+						turret_type_slot = tank_heavy_three_man_tank_turret
+						suspension_type_slot = tank_torsion_bar_suspension
+						armor_type_slot = tank_riveted_armor
+						engine_type_slot = tank_diesel_engine
+						special_type_slot_1 = tank_radio_2
+						special_type_slot_2 = secondary_turret_small_cannon
+						special_type_slot_3 = secondary_turret_small_cannon
+							special_type_slot_4 = secondary_turret_small_cannon
+					}
+					upgrades = {
+						tank_nsb_engine_upgrade = 0
+						tank_nsb_armor_upgrade = 4
+					}
+				}
+			}
+		}
+	}
 	ai_shusifangyu_FKaizuobi = {
 		available = {
 			is_ai = yes

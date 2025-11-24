@@ -257,6 +257,29 @@ on_actions = {
 	}
 	on_startup = {
 		effect = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = BYG
+						tag = HUJ
+						tag = TIX
+						tag = SAD
+						tag = BFL
+						tag = YUW
+						tag = DOH
+						tag = CHY
+						tag = BLI
+						tag = SIR
+						tag = DH1
+					}
+					is_ai = no
+				}
+				add_ideas = az_meitanzuobi
+			}
+		}
+	}
+	on_startup = {
+		effect = {
 			SHO = {
 				country_event = az_tianjiang.357
 			}
@@ -281,7 +304,7 @@ on_actions = {
 	}
 	on_capitulation = { 
 		effect = {
-			if = {
+	if = {
 				limit = { 
 					date > 1941.6.1
 					tag = TIX
@@ -297,7 +320,7 @@ on_actions = {
 					surrender_progress < 0.4
 					}
 					HUJ = {
-					surrender_progress < 0.3
+					surrender_progress < 0.4
 					}
 					BYG = {
 					surrender_progress < 0.1
@@ -318,14 +341,6 @@ on_actions = {
 				}
 				white_peace = { 
 					tag = SAD
-				}
-				TIX_z23 = {
-					set_nationality = TIX
-				}
-				BFL = {
-					TIX_z23 = {
-						set_nationality = TIX
-					}
 				}
 				set_cosmetic_tag = TIX
 				TIX = {
@@ -426,6 +441,7 @@ on_actions = {
 		set_demilitarized_zone = yes
 		}
 		BFL = {
+		country_event = { id = az_tianjiang.413 days = 1 }
 		#annex_country = { target = FIN transfer_troops = no }
 		annex_country = { target = UKR transfer_troops = no }
 		annex_country = { target = LAT transfer_troops = no }
@@ -481,8 +497,8 @@ on_actions = {
 		}
 		add_popularity = { ideology = communism popularity = 0.75 }
 		news_event = { id = az_tianjiang.89 days = 1}
-		} 
-		
+		country_event = { id = az_tianjiang.414 days = 1 }
+	} 
 		}
 	}
 	on_capitulation = {

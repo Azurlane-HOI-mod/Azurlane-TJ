@@ -1917,3 +1917,24 @@ BYG_base_faction_priorities = {
 		value = 5
 	}
 }
+
+BYG_heavytank_production = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		has_tech = improved_heavy_tank_chassis
+		date > 1940.1.1
+		arms_factory > 399
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = heavy_armor
+		value = 20
+	}
+	ai_strategy = {
+		type = template_prio	#训练模板倾向
+		id = heavy_armor
+		value = 20
+	}
+}

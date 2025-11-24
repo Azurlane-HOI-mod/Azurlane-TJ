@@ -1780,3 +1780,24 @@ BFL_aifc_linear_defence = {
 		value = -100  # Just don't
 	}
 }
+
+BFL_heavytank_production = {
+	allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		has_tech = improved_heavy_tank_chassis
+		date > 1940.1.1
+		arms_factory > 199
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = heavy_armor
+		value = 50
+	}
+	ai_strategy = {
+		type = template_prio	#训练模板倾向
+		id = heavy_armor
+		value = 50
+	}
+}

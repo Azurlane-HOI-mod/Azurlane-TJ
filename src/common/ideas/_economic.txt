@@ -377,43 +377,9 @@ ideas = {
 
    				modifier = {
 					factor = 20
-
+					not = { has_idea = war_economy }
+					not = { has_idea = tot_economic_mobilisation }
 					is_major = yes
-				}
-				
-				modifier = {
-					add = 80
-					original_tag = SOV
-					date < 1937.1.1
-					NOT = { 
-						OR = {
-							has_idea = war_economy 
-							has_idea = tot_economic_mobilisation
-						}
-					}
-				}
-				
-				modifier = {
-					original_tag = SIA
-					NOT = { 
-						OR = {
-							has_idea = war_economy 
-							has_idea = tot_economic_mobilisation
-						}
-					}
-					add = 1200 #Prep for invasion
-				}
-
-				modifier = {
-					factor = 100
-					OR = {
-						original_tag = URG
-						original_tag = PAR
-					}
-					NOT = {
-						has_idea = war_economy
-					}
-					has_completed_focus = GUAY_coup_detat
 				}
    			}
 		}
@@ -564,55 +530,11 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-   				base = 3
+   				base = 100
 
 				modifier = {
-					#High prio on production
-					factor = 20
-					manpower_per_military_factory >  1000
-				}
-
-				modifier = {
-					# If we CAN go for total mobilization and have enough manpower for it, skip war economy, it's only a waste of PP
 					factor = 0
-
-					manpower_per_military_factory > 15000
-					has_war = yes
-					has_war_support > 0.8
-					any_enemy_country = {
-						ic_ratio = {
-							tag = ROOT
-							ratio > 0.5
-						}
-					}
-				}
-
-				modifier = {
-					add = 1800
-
-					# revert from closed_economy if we have large allies
-					has_idea = closed_economy
-					has_large_ally_not_pick_closed_economy = yes
-				}
-
-				modifier = {
-					# We will lose the war support after the war anyway
-					factor = 0
-					original_tag = GER
-					has_civil_war = yes
-					has_government = neutrality
-				}
-
-				modifier = {
-					# They will take the focus to gain this for free, so they shouldn't spend pp on it too willy-nilly 
-					factor = 0.5
-					original_tag = JAP
-					OR = {
-						is_historical_focus_on = yes
-						has_country_flag = JAP_AI_RANDOM_FASCIST
-						has_country_flag = JAP_AI_RANDOM_NEUTRALITY
-					}
-
+					has_idea = tot_economic_mobilisation
 				}
    			}
 		}
@@ -735,19 +657,7 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-   				base = 1
-
-				modifier = {
-					factor = 25
-					#Prio this if nation has a lot of manpower compared to MIC
-					manpower_per_military_factory > 15000
-				}
-
-				modifier = {
-					#Block  unless nation has a lot of manpower
-					factor = 0
-					manpower_per_military_factory <  10000
-				}
+   				base = 1000
 
 
 				modifier = {
@@ -758,31 +668,7 @@ ideas = {
 						has_idea = limited_conscription
 					}
 				}
-
-				# Germany needs to be careful
-				modifier = {
-					factor = 0
-
-					tag = GER
-					NOT = { has_doctrine = last_stand }
-					has_war = yes
-					date < 1944.01.01
-				}
-				modifier = {
-					factor = 0
-
-					tag = SOV
-					has_war = yes
-					OR = {
-						has_manpower < 2000000
-						NOT = {
-							OR = {
-								has_idea = all_adults_serve
-								has_idea = service_by_requirement
-							}
-						}
-					}
-				}
+				
    			}
 
 			cost = 150

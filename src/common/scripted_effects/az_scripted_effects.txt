@@ -1,7 +1,8 @@
-getzhg_event_gerentezhi_se = {SOV
+getzhg_event_gerentezhi_se = {
 	custom_effect_tooltip = getzhg_event_gerentezhi_tt
 	if = {
 		limit = { is_navy_leader = yes }
+		hidden_effect {
 		add_random_trait = { 
 			search_pattern_expert
 			gentlemanly
@@ -17,8 +18,10 @@ getzhg_event_gerentezhi_se = {SOV
 			naval_lineage
 			navy_media_personality
 		}
+		}
 	}
 	else = {
+		hidden_effect {
 		add_random_trait = { 
 			#substance_abuser
 			#substance_addict
@@ -33,11 +36,12 @@ getzhg_event_gerentezhi_se = {SOV
 			#media_personality
 			harsh_leader 
 			bearer_of_artillery	
-			infantry_officer
-			cavalry_officer
-			armor_officer
+			#infantry_officer
+			#cavalry_officer
+			#armor_officer
 			brave
 			engineer_officer
+		}
 		}
 	}	
 }
@@ -45,6 +49,7 @@ getzhg_event_xidetezhi_se = {
 	custom_effect_tooltip = getzhg_event_xidetezhi_tt
 	if = {
 		limit = { is_navy_leader = yes }
+		hidden_effect {
 		add_random_trait = { 
 			seawolf
 			fleet_protector
@@ -55,8 +60,10 @@ getzhg_event_xidetezhi_se = {
 			air_controller
 			ironside
 		}
+		}
 	}
 	else = {
+		hidden_effect {
 		add_random_trait = { 
 			organizer
 			cavalry_leader
@@ -68,20 +75,24 @@ getzhg_event_xidetezhi_se = {
 			commando
 			naval_invader
 		}
+		}
 	}	
 }
 getzhg_event_dixingtezhi_se = {
 	custom_effect_tooltip = getzhg_event_dixingtezhi_tt
 	if = {
 		limit = { is_navy_leader = yes }
+		hidden_effect {
 		add_random_trait = { 
 			inshore_fighter
 			green_water_expert
 			blue_water_expert
 			arctic_water_expert
 		}
+		}
 	}
 	else = {
+		hidden_effect {
 		add_random_trait = { 
 			desert_fox
 			swamp_fox
@@ -91,6 +102,7 @@ getzhg_event_dixingtezhi_se = {
 			ranger
 			urban_assault_specialist
 			winter_specialist
+		}
 		}
 	}	
 }

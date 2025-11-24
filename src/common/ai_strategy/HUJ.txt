@@ -515,7 +515,7 @@ HUJ_gang_up_TIX_with_BYG = {
 	}
 	ai_strategy = {
 		type = force_defend_ally_borders
-		value = 100
+		value = 500
 		target = africa
 	}
 }
@@ -1194,10 +1194,11 @@ HUJ_protect_asia_ore = {
 }
 
 HUJ_protect_africa_ore = {
-	allowed = {
-		original_tag = HUJ
-	}
 	enable = {
+		OR = {
+			original_tag = HUJ
+			is_subject_of = HUJ
+		}
 		has_war = yes
 		country_exists = SAD
 	}
@@ -1207,7 +1208,7 @@ HUJ_protect_africa_ore = {
 	 	type = put_unit_buffers
 
 		# ratio of total armeis in country to be buffered
-	 	ratio = 0.1
+	 	ratio = 0.4
 
 		# you can specify an order id. ratio of same orders ids will be share same ratio
 	 	order_id = 1
@@ -1217,6 +1218,7 @@ HUJ_protect_africa_ore = {
 	 		452
 			447
 			446
+			907
 	 	} 
 
 		# ai areas that the orders will use these buffers in
@@ -2248,11 +2250,12 @@ HUJ_BYG_take_italys_spaghetti = {
 		OR = {
 			original_tag = BYG
 			original_tag = HUJ
+			is_subject_of = HUJ
 		}
 		is_historical_focus_on = yes
 	}
 	enable = {
-		date > 1941.6.1
+		date > 1939.8.1
 		SAD = {
 			surrender_progress < 0.2
 		}
@@ -2262,19 +2265,19 @@ HUJ_BYG_take_italys_spaghetti = {
 	ai_strategy = {
 		type = area_priority
 		id = italy
-		value = 60
+		value = 200
 	}
 
 	ai_strategy = {
 		type = area_priority
 		id = north_africa
-		value = 100
+		value = 500
 	}
 
 	ai_strategy = {
 		type = area_priority
 		id = normandy_landing_zone
-		value = -100
+		value = -200
 	}
 }
 
@@ -2634,9 +2637,9 @@ HUJ_no_naval_landings_in_libya_yet = {
 	allowed = { original_tag = HUJ }
 	enable = {
 		is_historical_focus_on = yes  # Don't like locking it behind a checkbox...
-		date < 1943.5.1  # Historically, the North African campaign concluded May 1943. If Allies have not won there yet at this point, let them invade.
+		date < 1941.4.1  # Historically, the North African campaign concluded May 1943. If Allies have not won there yet at this point, let them invade.
 		OR = {
-			date < 1941.8.1 # If Tobruk hasn't fallen by this time, maybe it's time to start thinking about going around
+			date < 1941.6.1 # If Tobruk hasn't fallen by this time, maybe it's time to start thinking about going around
 			451 = { is_controlled_by_ROOT_or_ally = yes } # Tobruk is in our hands, we can continue on land
 		}
 		OR = {
@@ -2662,7 +2665,7 @@ HUJ_to_tobruk = {
 	enable = {
 		# NOTE: make sure these conditions are largely the same as for ENG_supply_for_tobruk_push below
 		is_historical_focus_on = yes
-		date > 1940.12.1 # Operation Compass
+		date > 1940.2.1 # Operation Compass
 		date < 1943.6.1
 		451 = { is_controlled_by = SAD }
 		SAD = { is_ai = yes }
@@ -2685,7 +2688,7 @@ HUJ_to_tobruk = {
 	ai_strategy = {
 		type = area_priority
 		id = north_africa
-		value = 50
+		value = 500
 	}
 
 	ai_strategy = {
@@ -2835,5 +2838,26 @@ HUJ_become_supreme_commander = {
 		type = spent_faction_initiative_priority
 		id = unlock_faction_commander
 		value = 5
+	}
+}
+
+HUJ_heavytank_production = {
+	allowed = {
+		original_tag = HUJ
+	}
+	enable = {
+		has_tech = improved_heavy_tank_chassis
+		date > 1940.1.1
+		arms_factory > 299
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = heavy_armor
+		value = 40
+	}
+	ai_strategy = {
+		type = template_prio	#训练模板倾向
+		id = heavy_armor
+		value = 40
 	}
 }

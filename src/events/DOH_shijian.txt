@@ -951,6 +951,19 @@ country_event = {
 				} 
 			}
 		}
+		if = {
+			limit = {
+				KUM = { exists = yes }
+			}
+			annex_country = { target = KUM transfer_troops = yes }
+			KUM = { 
+				DOH = { 
+					country_event = DOH_event.29
+					add_to_variable = { tunbingjunfa_costpp = -100 }
+					add_to_variable = { tunbingjunfa_shuliang = 1 }
+				} 
+			}
+		}
 	}
 
 }

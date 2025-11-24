@@ -2583,6 +2583,7 @@ news_event = {
 		ALB = {
 		transfer_state = 44
 		transfer_state = 805
+		transfer_state = 934
 		}
 		ai_chance = {
 			factor = 100
@@ -2621,6 +2622,7 @@ country_event = {
 		ALB = {
 		transfer_state = 44
 		transfer_state = 805
+		transfer_state = 934
 		}
 		hidden_effect = {
 		news_event = { id = az_tianjiang.80 days = 1}
@@ -5425,6 +5427,7 @@ country_event = {
 		transfer_state = 670
 		transfer_state = 286
 		transfer_state = 741
+		transfer_state = 1017
 		}
 		DOH = {
 		transfer_state = 609
@@ -5442,6 +5445,11 @@ country_event = {
 		transfer_state = 527
 		transfer_state = 525
 		transfer_state = 728
+		transfer_state = 1043
+		transfer_state = 1028
+		transfer_state = 1029
+		transfer_state = 1030
+		transfer_state = 1031
 		}
 		hidden_effect = {
 		news_event = { id = az_tianjiang.143 days = 1}
@@ -8152,6 +8160,7 @@ country_event = {
 		date > 1936.1.3
 		tag = HUJ
 		is_ai = yes
+		always = no	#再试试
 	}
 	fire_only_once = yes
 	option = {
@@ -13450,5 +13459,204 @@ country_event = {
 	option = {
 		name = "我想在正常模式下体验全词条的自选BUFF！"
 		add_ideas = AZ_mztz_rwkk_idea
+	}
+}
+
+country_event = {
+	id = az_tianjiang.413
+	title = "与尼米酱的合作"
+	desc = "铁血的Z23愿意与我们合作，共同建设美好的新铁血。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "这是好事啊"
+		TIX_z23 = {
+			set_nationality = TIX
+		}
+		TIX = {
+			add_country_leader_role = {
+				Character = TIX_z23
+				Promote_leader = yes
+				Country_leader = {
+					ideology = leninism
+					expire = "2000.1.1.1"
+					traits = {
+						jjdxxs
+						}
+					}
+				}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.414
+	title = "撒丁的末路"
+	desc = "在我们投降之后，撒丁也濒临崩溃。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "AI用事件"
+		if = {
+			limit = {
+				IRQ = {
+					has_government = fascism
+					is_subject = no
+				}
+			}
+			HUJ = {
+				set_autonomy = {
+					target = IRQ
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				PRU = {
+					has_government = fascism
+					is_subject = no
+				}
+			}
+			BYG = {
+				set_autonomy = {
+					target = PRU
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				VEN = {
+					has_government = fascism
+					is_subject = no
+				}
+			}
+			BYG = {
+				set_autonomy = {
+					target = VEN
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				DOM = {
+					has_government = fascism
+					is_subject = no
+				}
+			}
+			BYG = {
+				set_autonomy = {
+					target = DOM
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				ELS = {
+					has_government = fascism
+					is_subject = no
+				}
+			}
+			BYG = {
+				set_autonomy = {
+					target = ELS
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				SAD = {
+					is_ai = yes
+					has_government = fascism
+					has_capitulated = no
+					is_subject = no
+				}
+				not = { country_exists = ITA }
+			}
+			SAD = {
+				country_event = { id = az_tianjiang.415 days = 1 }
+				release_on_controlled = YUG
+				release_on_controlled = BUL
+				release_on_controlled = ALB
+				release_on_controlled = GRE
+				ALB = {
+					transfer_state = 44
+					transfer_state = 805
+					transfer_state = 934
+				}
+				retire_character = SAD_tuolichaili
+				ITA = {
+					set_politics = {
+						ruling_party = democratic
+					}
+				transfer_state = 115
+				transfer_state = 156
+				transfer_state = 117
+				transfer_state = 157
+				transfer_state = 2
+				transfer_state = 114
+				transfer_state = 849
+				}
+				ITA = {
+					add_popularity = { ideology = democratic popularity = 0.75 }
+					load_oob = ITA_1939_nsb
+					every_state = {
+						limit = {
+							is_core_of = SAD
+							}
+						add_core_of = ITA
+					}
+				}
+					HUJ = {
+						country_event = { id = az_tianjiang.82 days = 5 }
+						transfer_state = 177
+						transfer_state = 183
+					}
+					BFL = {
+						country_event = { id = az_tianjiang.82 days = 5 }
+						}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.415
+	title = "共和派发起内战"
+	desc = "随着铁血战败，我们也岌岌可危。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "不可能！"
+		declare_war_on = { target = BFL type = annex_everything }
+		declare_war_on = { target = HUJ type = annex_everything }
+		declare_war_on = { target = ITA type = annex_everything }
+		ITA = {
+			recruit_character = SAD_tuolichaili
+			add_country_leader_role = {
+				character = SAD_tuolichaili
+				promote_leader = yes
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = liberalism
+					traits = {
+
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
 	}
 }
