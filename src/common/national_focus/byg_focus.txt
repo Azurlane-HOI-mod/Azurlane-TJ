@@ -3416,11 +3416,11 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = -100
 			set_autonomy = {
 				target = BRA
 				autonomy_state = autonomy_dominion
 			}
+			add_faction_influence_ratio = 0.1
 		}
 	}
 	focus = {
@@ -7049,6 +7049,7 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		completion_reward = {
+			add_faction_influence_ratio = 0.1
 			custom_effect_tooltip = jiesuoluorijueyi_tip
 			add_breakthrough_progress = {
 				specialization = specialization_nuclear
@@ -7197,6 +7198,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_faction_influence_ratio = 0.25
 			every_other_country = {
 				limit = {
 					is_in_faction_with = BYG
@@ -7239,6 +7241,7 @@ focus_tree = {
 			set_faction_leader = yes
 			add_political_power = 200
 			add_war_support = 0.2
+			add_faction_influence_ratio = 0.1
 		}
 	}
 
@@ -7465,6 +7468,7 @@ focus_tree = {
 					country_event = az_tianjiang.337
 				}
 			}
+			add_faction_influence_ratio = 0.05
 		}
 	}
 
@@ -7496,6 +7500,7 @@ focus_tree = {
 				}
 				add_ideas = BYG_zhkyry
 			}
+			add_faction_influence_ratio = 0.05
 		}
 	}
 
@@ -7547,6 +7552,7 @@ focus_tree = {
 			WEX = {
 				country_event = az_tianjiang.343
 			}
+			add_faction_influence_ratio = 0.1
 		}
 	}
 
@@ -7576,6 +7582,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = BYG_qiangxiandian_tips
+			add_faction_influence_ratio = 0.05
 			BRA = {
 				set_cosmetic_tag = BRA_united_states_of_south_america_cos_tag
 				annex_country = { target = URG transfer_troops = yes }
@@ -7633,6 +7640,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = BYG_qiangxiandian_tips
+			add_faction_influence_ratio = 0.05
 			annex_country = { target = PAN transfer_troops = yes }
 			set_autonomy = {
 				target = MEX
@@ -7759,6 +7767,7 @@ focus_tree = {
 				add_stability = 0.1
 				add_popularity = { ideology = communism popularity = -0.2 }
 			}
+			add_faction_influence_ratio = 0.05
 		}
 	}
 
@@ -7797,6 +7806,7 @@ focus_tree = {
 				navy_experience = 50
 				air_experience = 50
 			}
+			add_faction_influence_ratio = 0.05
 		}
 	}
 
@@ -7850,6 +7860,7 @@ focus_tree = {
 					}
 				}
 			}
+			add_faction_influence_ratio = 0.2
 		}
 	}
 
@@ -7878,6 +7889,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 100
+			add_faction_influence_ratio = 0.1
 			HUJ = {
 				add_offsite_building = { type = industrial_complex level = 20 }
 				add_offsite_building = { type = arms_factory level = 20 }

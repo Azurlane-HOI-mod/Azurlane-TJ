@@ -758,6 +758,11 @@ focus_tree = {
 				uses = 2
 				category = armor
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_guofangjianshe HUJ_huangjiaqishituan }
+			  cost = 35
+			}
 		}
 	}
 	focus = {
@@ -1647,6 +1652,11 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_political_power = 200
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_chongjiangongye HUJ_nvpukeyanzu HUJ_jungongqiye HUJ_jiadakaicai }
+			  cost = 35
+			}
 		}
 	}
 	focus = {
@@ -1668,6 +1678,11 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_ideas = HUJ_nptg
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_huimiekeji HUJ_zhuzhonglujun HUJ_zhuanzhuyuzhimindishiwu }
+			  cost = 35
+			}
 		}
 	}
 	focus = {
@@ -1697,6 +1712,11 @@ focus_tree = {
 			}
 			hidden_effect = {
 				news_event = aznews.35
+			}
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_tiaojiaonvwang HUJ_qinjianjieyue HUJ_zhiyouhongcha HUJ_youhuagongyinglian HUJ_nvpugongzuozhidu HUJ_nvpushoujiaoyuquan HUJ_nvpulianmeng }
+			  cost = 35
 			}
 		}
 	}
@@ -1729,6 +1749,11 @@ focus_tree = {
 			}
 			hidden_effect = {
 				news_event = aznews.35
+			}
+			#custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_tiaojiaonvwang HUJ_qinjianjieyue HUJ_zhiyouhongcha HUJ_youhuagongyinglian HUJ_qingwuqigongchang HUJ_zhongwuqigongchang HUJ_bubingtanke  }
+			  cost = 35
 			}
 		}
 	}
@@ -3144,12 +3169,13 @@ focus_tree = {
 				uses = 3
 				category = synth_resources
 			}
-			custom_effect_tooltip = "（不要问我为什么红茶会加资源合成）"
+			#custom_effect_tooltip = "（不要问我为什么红茶会加资源合成）"
 			add_ai_strategy = {
 				type = prepare_for_war
 				id = SWE
 				value = 200
 			}
+			add_faction_influence_ratio = 0.05
 		}
 	}
 	focus = {
@@ -3171,8 +3197,8 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			navy_experience = 30
-			army_experience = 20
+			army_experience = 30
+			add_war_support = 0.1
 		}
 	}
 	focus = {
@@ -3506,9 +3532,10 @@ focus_tree = {
 					name = "皇家的帮助"
 					bonus = 1
 					uses = 2
-					category = naval_doctrine
+					category = naval_equipment
 				}
 			}
+			add_faction_influence_ratio = 0.05
 		}
 	}
 	focus = {
@@ -3551,6 +3578,7 @@ focus_tree = {
 					level = 2
 				}
 			}
+			add_faction_influence_ratio = 0.05
 		}
 	}
 	focus = {
@@ -3585,6 +3613,7 @@ focus_tree = {
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			add_faction_influence_ratio = 0.05
 			add_to_tech_sharing_group = HUJ_bilanhangxian
 			YUW = {
 				add_to_tech_sharing_group = HUJ_bilanhangxian
@@ -3659,6 +3688,7 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_ideas = HUJ_xsjl
+			add_faction_influence_ratio = 0.05
 		}
 	}
 	focus = {
@@ -4911,6 +4941,11 @@ focus_tree = {
 				category = land_doctrine
 			}
 			army_experience = 100
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_guofangjianshe HUJ_lilunyanjiu HUJ_liluntupo  }
+			  cost = 35
+			}
 		}
 	}
 	focus = {
@@ -5553,6 +5588,11 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_ideas = HUJ_kaihuashiming_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_tongzhibabuliedianhuj  }
+			  cost = 70
+			}
 		}
 	}
 	focus = {
@@ -6026,6 +6066,10 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_ideas = HUJ_xunhuatuzhu_idea
+			reduce_focus_completion_cost = {
+			  focus = { HUJ_tongzhibabuliedianhuj  }
+			  cost = 70
+			}
 		}
 	}
 }
