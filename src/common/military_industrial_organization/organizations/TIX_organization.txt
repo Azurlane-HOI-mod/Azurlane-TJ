@@ -222,7 +222,7 @@ TIX_porsche_organization = {
 }
 
 TIX_henschel_organization = {
-	include = generic_mobile_tank_organization
+	include = generic_infantry_tank_organization
 	icon = GFX_idea_henschel
 	
 	allowed = {	
@@ -235,8 +235,8 @@ TIX_henschel_organization = {
 		icon = GFX_generic_mio_department_icon_tank_heavy_tank_technology
 		special_trait_background = yes
 
-		position = { x=1 y=1 }  
-		relative_position_id = generic_mio_armor_hardening_process
+		position = { x=0 y=3 }  
+		relative_position_id = generic_mio_trait_single_engine
 
 		visible = {
 			FROM = { original_tag = TIX }
@@ -287,12 +287,12 @@ TIX_henschel_organization = {
 		}
 		
 		equipment_bonus = {
-			armor_value = -0.25
+			armor_value = -0.5
 			maximum_speed = 1.25
-			reliability = -0.5
+			reliability = -0.25
 		}
 		production_bonus = {
-			production_cost_factor = 0.25
+			production_cost_factor = 0.15
 		}
 		ai_will_do = {
 			base = 0
@@ -326,7 +326,7 @@ TIX_henschel_organization = {
 		icon = GFX_generic_mio_department_icon_facilities
 		special_trait_background = yes
 
-		position = { x=9 y=1 }
+		position = { x=2 y=3 }
 
 		visible = {
 			FROM = { original_tag = TIX }
@@ -1139,6 +1139,75 @@ TIX_deschimag_organization = {
 
 		ai_will_do = {
 			base = 2
+		}
+	}
+
+	add_trait = {  
+		token = bulizaochuanchang_1
+		name = bulizaochuanchang_1
+		icon = GFX_BLI_zaochuanchang_mio_icon_1
+		special_trait_background = yes
+
+		position = { x=7 y=4 }  
+
+		available = {
+			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi1_get } }
+		}
+		
+		equipment_bonus = {
+			reliability = 0.08 
+			armor_value = 0.05
+			maximum_speed = 0.03
+			naval_range = 0.1
+      	}
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
+		}
+	}
+
+	add_trait = {
+		token = bulizaochuanchang_2
+		name = bulizaochuanchang_2
+		icon = GFX_BLI_zaochuanchang_mio_icon_2
+		special_trait_background = yes
+
+		position = { x=8 y=4 }  
+
+		available = {
+			FROM = { OR = { hidden_trigger = { is_ai = yes } tag = BLI has_country_flag = buligongyi2_get } }
+		}
+		
+		equipment_bonus = {
+			lg_attack = 0.15
+			hg_attack = 0.2
+			carrier_size = 1
+			torpedo_attack = 0.15
+			build_cost_ic = -0.1
+  	    }
+		production_bonus = {
+			production_resource_need_factor = -0.55
+		}
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.35
+		}
+		on_complete = {
+			ROOT = {
+				add_mio_size = 1
+			}
+			FROM = {
+				navy_experience = 200
+			}
 		}
 	}
 }
@@ -2128,15 +2197,15 @@ TIX_messerschmitt_organization = {
 				mio:TIX_blohm_und_voss_organization = {
 					has_mio_size > 4
 				}
-				NOT = { has_country_flag = TIX_hamburger_flugzeugbau_trait_taken_flag }
+				#NOT = { has_country_flag = TIX_hamburger_flugzeugbau_trait_taken_flag }
 			}
 		}
 
 		on_complete = {
-			custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
-			FROM = {
-				set_country_flag = TIX_hamburger_flugzeugbau_trait_taken_flag
-			}
+			#custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+			#FROM = {
+			#	set_country_flag = TIX_hamburger_flugzeugbau_trait_taken_flag
+			#}
 		}
 
 		production_bonus = {

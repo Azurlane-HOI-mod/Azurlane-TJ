@@ -100,6 +100,26 @@ BFL_unit_production_at_strong = {
 	}
 }
 
+BFL_sad_neizan = {
+    allowed = {
+		original_tag = BFL
+	}
+	enable = {
+		tag = BFL
+		has_government = communism
+		SAD = {
+			not = { has_government = fascism }
+			has_civil_war = yes
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire	#志愿军
+		id = "SAD"			
+		value = 300
+	}
+
+}
+
 BFL_unit_production_air = {
     allowed = {
 		original_tag = BFL
@@ -469,6 +489,7 @@ BFL_rush_to_berlin = {
 	enable = {
 		date > 1943.1.1	
 		has_war_with = TIX
+		TIX = { is_ai = yes }
 	}
 	abort_when_not_enabled = yes
      
@@ -493,6 +514,7 @@ YUW_enemy = {
 	}
 	enable = {
 		has_war_with = YUW
+		YUW = { is_ai = yes }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {

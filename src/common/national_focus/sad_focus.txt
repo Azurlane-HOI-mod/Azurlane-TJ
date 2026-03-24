@@ -6,7 +6,7 @@ focus_tree = {
 	country = {
 		modifier = {
 			add = 10
-			tag = SAD
+			original_tag = SAD
 		}
 	}
 	default = no
@@ -486,7 +486,6 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = -250
 			random_owned_controlled_state = {
 				add_resource = {
 					type = steel
@@ -735,11 +734,7 @@ focus_tree = {
 		}
 		cost = 6
 		available = {
-			all_unit_leader = {
-				NOT = {
-					has_character_flag = xiujia_flag
-				}
-			}
+			
 		}
 		ai_will_do = {
 			factor = 15
@@ -768,8 +763,52 @@ focus_tree = {
 			focus = SAD_shaixuanjunguan
 		}
 		cost = 6
+		allow_branch = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
 		available = {
 			has_idea = lituoliao
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			remove_ideas = {
+				SAD_lsdfw
+			}
+			add_stability = 0.1
+			add_war_support = 0.15
+		}
+	}
+	focus = {
+		id = SAD_ziyoushidai
+		icon = GFX_focus_RAJ_seek_allies_with_the_muslim_league
+		x = 0
+		y = 1
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		relative_position_id = SAD_shaixuanjunguan
+		prerequisite = {
+			focus = SAD_shaixuanjunguan
+		}
+		cost = 6
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
 		}
 		ai_will_do = {
 			factor = 15
@@ -1797,6 +1836,8 @@ focus_tree = {
 		y = 1
 		cost = 5
 		available = {
+			not = { has_government = communism }
+			not = { has_government = democratic }
 			OR = {
 				has_global_flag = MOD_azurlane_sairenzhizai
 				NOT = {
@@ -1956,6 +1997,18 @@ focus_tree = {
 			every_state = {
 				limit = {
 					is_core_of = TUR
+				}
+				add_core_of = SAD
+			}
+			every_state = {
+				limit = {
+					is_core_of = TUN
+				}
+				add_core_of = SAD
+			}
+			every_state = {
+				limit = {
+					is_core_of = ALG
 				}
 				add_core_of = SAD
 			}
@@ -2385,6 +2438,9 @@ focus_tree = {
 					is_subject_of = SAD
 				}
 			}
+		}
+		bypass = {
+			has_completed_focus = SAD_afeilijiazhichi
 		}
 		ai_will_do = {
 			factor = 10
@@ -2878,6 +2934,10 @@ focus_tree = {
 		relative_position_id = SAD_lingxiudedierzhan
 		prerequisite = {
 			focus = SAD_lingxiudedierzhan
+		}
+		available = {
+			not = { has_government = democratic }
+			not = { has_government = communism }
 		}
 		cost = 5
 		ai_will_do = {
@@ -3375,7 +3435,7 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = "新萝马帝国"
+			create_faction = "新罗马帝国"
 		}
 	}
 	focus = {
@@ -3577,6 +3637,7 @@ focus_tree = {
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
+		mutually_exclusive = { focus = SAD_baoduhuantudi }
 		prerequisite = {
 			focus = SAD_waijiaozhengce
 		}
@@ -3883,6 +3944,7 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			country_event = az_tianjiang.424
 			army_experience = 100
 		}
 	}
@@ -3891,6 +3953,9 @@ focus_tree = {
 		icon = GFX_focus_ITA_banda_carita
 		x = 4
 		y = 0
+		available = {
+			has_completed_focus = SAD_shenshizhanbaiyuanyin
+		}
 		prerequisite = {
 			focus = SAD_afeilijiazhichi
 		}
@@ -3901,6 +3966,8 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			country_event = az_tianjiang.423
+			set_party_name = { ideology = democratic long_name = "共和统一战线" name = "共和统一战线" }
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.1
@@ -3929,13 +3996,25 @@ focus_tree = {
 			focus = SAD_zhiyiweiyuanhuitongzhi
 		}
 		relative_position_id = SAD_chengzanfeizhoujuntuan
+		available = {
+			has_government = fascism
+		}
 		cost = 1
 		ai_will_do = {
 			factor = 20
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			country_event = az_tianjiang.405
+			if = {
+				limit = {
+					has_country_flag = sad_neizhan_yes
+				}
+				country_event = az_tianjiang.425
+				set_country_flag = sad_panluanzhongzhi
+			}else = {
+				country_event = az_tianjiang.405
+				unlock_decision_category_tooltip = SAD_panbianzhe_jyz
+			}
 			add_political_power = 50
 		}
 	}
@@ -3944,6 +4023,9 @@ focus_tree = {
 		icon = GFX_focus_lituoliao
 		x = -6
 		y = 1
+		allow_branch = {
+			has_government = fascism
+		}
 		prerequisite = {
 			focus = SAD_anliuyongdong
 		}
@@ -3983,6 +4065,9 @@ focus_tree = {
 		icon = GFX_focus_weineituo
 		x = 0
 		y = 1
+		allow_branch = {
+			has_government = fascism
+		}
 		prerequisite = {
 			focus = SAD_anliuyongdong
 		}
@@ -4054,11 +4139,16 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			country_event = az_tianjiang.408
+			if = {
+				limit = {
+					not = { has_country_flag = sad_neizhan_yes }
+				}
+				country_event = az_tianjiang.408
+			}
 			custom_effect_tooltip = makeboluo_tezhishengji
-			add_country_leader_trait = trait_psh_makeboluo_2
-			hidden_effect = {
-				remove_country_leader_trait = trait_makeboluo
+			swap_ruler_traits = {
+   				remove = trait_makeboluo
+    			add = trait_psh_makeboluo_2
 			}
 			add_war_support = 0.2
 			add_stability = 0.4
@@ -4127,14 +4217,12 @@ focus_tree = {
 		prerequisite = {
 			focus = SAD_weineituodeshengli
 			focus = SAD_yuanlaoyuanzhangquan
+			focus = SAD_gongheyili
 		}
 		relative_position_id = SAD_weineituodeshengli
 		cost = 5
 		available = {
-			OR = {
-				has_government = neutrality
-				has_government = fascism
-			}
+			not = { has_government = communism }
 		}
 		ai_will_do = {
 			factor = 80
@@ -4158,10 +4246,7 @@ focus_tree = {
 		relative_position_id = SAD_xunlianjundui
 		cost = 5
 		available = {
-			OR = {
-				has_government = neutrality
-				has_government = fascism
-			}
+			not = { has_government = communism }
 		}
 		ai_will_do = {
 			factor = 80
@@ -4307,6 +4392,12 @@ focus_tree = {
 		icon = GFX_focus_generic_infiltration
 		x = 1
 		y = 1
+		allow_branch = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
 		prerequisite = {
 			focus = SAD_kuodafeizhoujuntuan
 			focus = SAD_weiyouyuxue
@@ -4361,6 +4452,12 @@ focus_tree = {
 		icon = GFX_focus_ITA_the_social_republic_prevails
 		x = 0
 		y = 1
+		allow_branch = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
 		prerequisite = {
 			focus = SAD_kuodafeizhoujuntuan
 			focus = SAD_weiyouyuxue
@@ -4467,11 +4564,16 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			country_event = az_tianjiang.409
+			if = {
+				limit = {
+					not = { has_country_flag = sad_neizhan_yes }
+				}
+				country_event = az_tianjiang.409
+			}
 			custom_effect_tooltip = makeboluo_tezhishengji
-			add_country_leader_trait = trait_psh_makeboluo_3
-			hidden_effect = {
-				remove_country_leader_trait = trait_psh_makeboluo_2
+			swap_ruler_traits = {
+   				remove = trait_psh_makeboluo_2
+    			add = trait_psh_makeboluo_3
 			}
 			add_ideas = SAD_ylyzkql
 			remove_power_balance = {
@@ -4488,6 +4590,8 @@ focus_tree = {
 			focus = SAD_fangyibahuo
 			focus = SAD_weichiquanlipingheng
 			focus = SAD_qudiweiyuanhui
+			focus = SAD_tuanjiejiushililiang
+			focus = SAD_huaqingjiexian
 		}
 		relative_position_id = SAD_weichiquanlipingheng
 		cost = 8
@@ -4568,6 +4672,12 @@ focus_tree = {
 		icon = GFX_focus_ITA_greater_italy
 		x = -4
 		y = 1
+		allow_branch = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
 		prerequisite = {
 			focus = SAD_diguohaijundajian
 		}
@@ -4606,6 +4716,60 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = SAD_dagongheguo
+		icon = GFX_focus_ITA_greater_italy
+		x = -4
+		y = 1
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		prerequisite = {
+			focus = SAD_diguohaijundajian
+		}
+		prerequisite = {
+			focus = SAD_kuojianladingmukongjunxueyuan
+		}
+		relative_position_id = SAD_diguohaijundajian
+		cost = 10
+		available = {
+			is_puppet = no
+			has_army_manpower = {
+				size > 2000000
+			}
+			controls_state = 2
+			controls_state = 797
+			controls_state = 846
+			controls_state = 735
+			controls_state = 103
+			controls_state = 458
+			controls_state = 665
+			controls_state = 1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				date > 1941.1.1
+				add = 20
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_state_core = 458
+			add_state_core = 665
+			add_state_core = 1
+			every_state = {
+				limit = {
+					is_core_of = TUR
+				}
+				add_core_of = SAD
+			}
+			add_country_leader_trait = trait_psh_sadgonghezihun
+		}
+	}
+	focus = {
 		id = SAD_junshiyanxi
 		icon = GFX_focus_eng_special_air_service
 		x = 8
@@ -4620,6 +4784,1291 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			country_event = az_tianjiang.189
+		}
+	}
+	focus = {
+		id = SAD_xinwaijiaofangzhen
+		icon = GFX_goal_generic_improve_relations
+		x = 12
+		y = 0
+		prerequisite = {
+			focus = SAD_jiaoaodezitai
+		}
+		relative_position_id = SAD_waijiaozhengce
+		cost = 3
+		available = {
+			is_puppet = no
+			not = { has_completed_focus = SAD_waijiaozhengce }
+			OR = {
+				has_completed_focus = SAD_tuanjiezhuyisading
+				has_completed_focus = SAD_gongheyili
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = SAD_baoduhuantudi
+		icon = GFX_focus_generic_befriend_switzerland
+		x = -5
+		y = 1
+		allow_branch = {
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+		}
+		mutually_exclusive = { focus = SAD_suoqutiqienuo }
+		prerequisite = {
+			focus = SAD_xinwaijiaofangzhen
+		}
+		relative_position_id = SAD_xinwaijiaofangzhen
+		cost = 5
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		bypass = {
+			OR = {
+				controls_state = 846
+				has_war_with = SWI
+				not = { country_exists = SWI }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				date > 1940.1.1
+				add = 10
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_1 = yes
+			give_guarantee = SWI
+			transfer_state = 846
+			add_state_core = 846
+		}
+	}
+	focus = {
+		id = SAD_fanghuanyuweiran
+		icon = GFX_goal_generic_territory_or_war
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_baoduhuantudi
+		}
+		relative_position_id = SAD_baoduhuantudi
+		cost = 2
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				date > 1940.1.1
+				add = 10
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			transfer_state = 177
+			add_state_core = 177
+		}
+	}
+	focus = {
+		id = SAD_jiejuetuerqi
+		icon = GFX_focus_generic_attack_turkey
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_fanghuanyuweiran
+		}
+		relative_position_id = SAD_fanghuanyuweiran
+		cost = 5
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		bypass = {
+			OR = {
+				not = { country_exists = TUR }
+				TUR = { is_subject_of = HUJ }
+				TUR = { is_subject_of = BFL }
+				is_in_faction_with = TUR
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				date > 1940.1.1
+				add = 10
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			create_wargoal = {
+				target = TUR
+				type = annex_everything
+			}
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = TUR
+				value = 200
+			}
+			every_state = {
+				limit = {
+					is_core_of = TUR
+				}
+				add_claim_by = SAD
+			}
+		}
+	}
+	focus = {
+		id = SAD_jiefangtiexue
+		icon = GFX_aflag_TIX
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_jiejuetuerqi
+		}
+		will_lead_to_war_with = TIX
+		relative_position_id = SAD_jiejuetuerqi
+		cost = 5
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+			NOT = {
+				is_in_faction_with = TIX
+			}
+			has_army_manpower = {
+				size > 1999999
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = TIX
+				NOT = {
+					country_exists = TIX
+				}
+				is_in_faction_with = TIX
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				date > 1940.1.1
+				add = 10
+			}
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			guojishengyu_up_5 = yes
+			create_wargoal = {
+				target = TIX
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+	focus = {
+		id = SAD_xiaomiediguozhuyi
+		icon = GFX_aflag_HUJ
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_jiefangtiexue
+		}
+		relative_position_id = SAD_jiefangtiexue
+		cost = 5
+		will_lead_to_war_with = HUJ
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+			NOT = {
+				is_in_faction_with = HUJ
+			}
+			has_army_manpower = {
+				size > 1999999
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = HUJ
+				NOT = {
+					country_exists = HUJ
+				}
+				is_in_faction_with = HUJ
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				date > 1940.1.1
+				add = 10
+			}
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.2
+			create_wargoal = {
+				target = HUJ
+				type = take_state_focus
+			}
+		}
+	}
+	focus = {
+		id = SAD_mulinzhengce
+		icon = GFX_focus_AUS_invite_the_entente
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = SAD_xinwaijiaofangzhen
+		}
+		relative_position_id = SAD_xinwaijiaofangzhen
+		cost = 4
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 120
+			YUW = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			AUS = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			SWI = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			HUJ = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+		}
+	}
+	focus = {
+		id = SAD_jiaohaobaerganguojia
+		icon = GFX_goal_anschluss
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_mulinzhengce
+		}
+		relative_position_id = SAD_mulinzhengce
+		cost = 4
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.15
+			YUG = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			ALB = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			GRE = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			HUN = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			BUL = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+			ROM = {
+				add_opinion_modifier = {
+					target = SAD
+					modifier = SAD_mulinzhengce_op
+				}
+			}
+		}
+	}
+	focus = {
+		id = SAD_touziruoxiaoguojia
+		icon = GFX_focus_generic_stockpile_currency
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_jiaohaobaerganguojia
+		}
+		relative_position_id = SAD_jiaohaobaerganguojia
+		cost = 5
+		available = {
+			is_puppet = no
+			if = {
+				limit = {
+					is_ai = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = wz_shuliang_10000_blocked
+					check_variable = {
+					var = wz_sl
+					value = 10000
+					compare = greater_than_or_equals
+					}
+				}
+			}
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = wz_shuliang_10000_tooltip
+			add_to_variable = {
+				var = wz_sl
+				value = -10000
+			}
+			custom_effect_tooltip = "巴尔干各国会十分感谢我们的帮助，这将使我们的关系更为亲密"
+		}
+	}
+	focus = {
+		id = SAD_tongyihuachangyi
+		icon = GFX_focus_GER_customs_union
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_touziruoxiaoguojia
+		}
+		relative_position_id = SAD_touziruoxiaoguojia
+		cost = 5
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+			any_other_country = {
+				OR = {
+					original_tag = YUG
+					tag = ROM
+					tag = HUN
+					tag = BUL
+					tag = GRE
+					tag = SLV
+					tag = CRO
+					tag = BOS
+					tag = HRZ
+					tag = TRA
+					tag = MNT
+					tag = KOS
+					tag = MAC
+					tag = ALB
+				}
+				OR = {
+					is_subject = no
+					is_subject_of = YUG
+					is_subject_of = SAD
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = YUG
+						tag = ROM
+						tag = HUN
+						tag = BUL
+						tag = GRE
+						tag = SLV
+						tag = CRO							
+						tag = BOS
+						tag = HRZ
+						tag = TRA
+						tag = MNT
+						tag = KOS
+						tag = MAC
+						tag = ALB
+					}
+					OR = {
+						is_subject = no
+						is_subject_of = YUG
+						is_subject_of = SAD
+					}
+				}
+				country_event = az_tianjiang.417
+			}
+		}
+	}
+	focus = {
+		id = SAD_manjiuzizhiqu
+		icon = GFX_focus_manjiu
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_tongyihuachangyi
+		}
+		relative_position_id = SAD_tongyihuachangyi
+		cost = 5
+		available = {
+			is_puppet = no
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = SAD
+					is_controlled_by = SAD
+					OR = {
+						is_core_of = YUG
+						is_core_of = ROM
+						is_core_of = HUN
+						is_core_of = BUL
+						is_core_of = GRE
+						is_core_of = SLV
+						is_core_of = CRO							
+						is_core_of = BOS
+						is_core_of = HRZ
+						is_core_of = TRA
+						is_core_of = MNT
+						is_core_of = KOS
+						is_core_of = MAC
+						is_core_of = ALB
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = SAD_manjiuzizhiqu_state
+					scope = SAD
+				}
+			}
+		}
+	}
+	focus = {
+		id = SAD_chuanbotuanjiesixiang
+		icon = GFX_focus_GER_strike_at_the_rising_sun
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = SAD_xinwaijiaofangzhen
+		}
+		mutually_exclusive = { focus = SAD_hepinghanweizhe }
+		relative_position_id = SAD_xinwaijiaofangzhen
+		cost = 2
+		available = {
+			is_puppet = no
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.2
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = SAD_yubeilianjiechu
+		icon = GFX_fflag_BFL
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_chuanbotuanjiesixiang
+		}
+		relative_position_id = SAD_chuanbotuanjiesixiang
+		cost = 2
+		available = {
+			is_puppet = no
+			has_government = communism
+		}
+		bypass = {
+			OR = {
+				BFL = {
+					not = { has_government = communism }
+				}
+				not = { country_exists = BFL }
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 50
+			BFL = {
+				country_event = az_tianjiang.418
+			}
+		}
+	}
+	focus = {
+		id = SAD_jiarugongchanlianmeng
+		icon = GFX_focus_JAP_a_free_asia_pacific
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_yubeilianjiechu
+		}
+		relative_position_id = SAD_yubeilianjiechu
+		cost = 2
+		available = {
+			is_puppet = no
+			has_government = communism
+			is_in_faction = no
+			BFL = {
+				has_government = communism
+			}
+			custom_trigger_tooltip = {
+				tooltip = "共产联盟存在"
+				has_global_flag = BFL_created_gongchanlianmeng
+				BFL = {
+					is_faction_leader = yes
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				is_in_faction_with = HUJ
+				is_in_faction_with = YUW
+				is_in_faction_with = BFL
+				is_in_faction_with = TIX
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			BFL = {
+				add_to_faction = SAD
+			}
+		}
+	}
+	focus = {
+		id = SAD_fenxiangxianjinjishu
+		icon = GFX_focus_ITA_new_horizons
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_jiarugongchanlianmeng
+		}
+		relative_position_id = SAD_jiarugongchanlianmeng
+		cost = 5
+		available = {
+			is_puppet = no
+			has_government = communism
+			is_in_faction_with = BFL
+		}
+		bypass = {
+			not = { is_in_faction_with = BFL }
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = "北联分享的技术"
+				bonus = 0.5
+				uses = 4
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = "北联分享的技术"
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+			BFL = {
+				add_tech_bonus = {
+					name = "撒丁分享的技术"
+					bonus = 1
+					uses = 1
+					category = light_fighter
+				}
+				add_tech_bonus = {
+					name = "撒丁分享的技术"
+					bonus = 0.5
+					uses = 4
+					category = plane_modules_tech
+				}
+			}
+		}
+	}
+	focus = {
+		id = SAD_tuanjieliliangda
+		icon = GFX_focus_ITA_peasants_rise
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_fenxiangxianjinjishu
+		}
+		relative_position_id = SAD_fenxiangxianjinjishu
+		cost = 5
+		available = {
+			is_puppet = no
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SAD_tjlld
+		}
+	}
+	focus = {
+		id = SAD_hepinghanweizhe
+		icon = GFX_fflag_SAD
+		x = 5
+		y = 1
+		mutually_exclusive = { focus = SAD_chuanbotuanjiesixiang }
+		prerequisite = {
+			focus = SAD_xinwaijiaofangzhen
+		}
+		relative_position_id = SAD_xinwaijiaofangzhen
+		cost = 2
+		available = {
+			is_puppet = no
+			has_government = democratic
+		}
+		bypass = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			add_war_support = 0.2
+		}
+	}
+	focus = {
+		id = SAD_baohuaodili
+		icon = GFX_focus_generic_befriend_austria
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_hepinghanweizhe
+		}
+		relative_position_id = SAD_hepinghanweizhe
+		cost = 3
+		available = {
+			is_puppet = no
+			has_government = democratic
+		}
+		bypass = {
+			OR = {
+				not = { country_exists = AUS }
+				AUS = { is_subject = yes }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			give_guarantee = AUS
+			custom_effect_tooltip = SAD_baohuaodili_tips
+		}
+	}
+	focus = {
+		id = SAD_xiaobilanhangxian
+		icon = GFX_focus_generic_democratic_europe
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_baohuaodili
+		}
+		relative_position_id = SAD_baohuaodili
+		cost = 2
+		available = {
+			is_puppet = no
+			is_in_faction = no
+		}
+		bypass = {
+			OR = {
+				is_in_faction_with = HUJ
+				is_in_faction_with = YUW
+				is_in_faction_with = BFL
+				is_in_faction_with = TIX
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+			}
+			country_event = az_tianjiang.419
+		}
+	}
+	focus = {
+		id = SAD_fantiexuebaoweiwang
+		icon = GFX_focus_bisimai_prison
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_xiaobilanhangxian
+		}
+		relative_position_id = SAD_xiaobilanhangxian
+		cost = 4
+		available = {
+			is_puppet = no
+			is_faction_leader = yes
+		}
+		bypass = {
+			OR = {
+				is_in_faction_with = HUJ
+				is_in_faction_with = YUW
+				is_in_faction_with = BFL
+				is_in_faction_with = TIX
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = {
+				limit = {
+					any_other_country = {
+						tag = DEN
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				DEN = {
+					country_event = az_tianjiang.420
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						tag = HOL
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				HOL = {
+					country_event = az_tianjiang.420
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						tag = BEL
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				BEL = {
+					country_event = az_tianjiang.420
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						tag = LUX
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				LUX = {
+					country_event = az_tianjiang.420
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						tag = CZE
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				CZE = {
+					country_event = az_tianjiang.420
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						tag = POL
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				POL = {
+					country_event = az_tianjiang.420
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						tag = SWI
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				SWI = {
+					country_event = az_tianjiang.420
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						tag = LIT
+						is_subject = no
+						has_government = democratic
+						is_in_faction = no
+					}
+				}
+				LIT = {
+					country_event = az_tianjiang.420
+				}
+			}
+		}
+	}
+	focus = {
+		id = SAD_zhengyibisheng
+		icon = GFX_focus_generic_escort_efficiency
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_fantiexuebaoweiwang
+		}
+		relative_position_id = SAD_fantiexuebaoweiwang
+		cost = 5
+		available = {
+			is_puppet = no
+			has_government = democratic
+			any_enemy_country = {
+				is_major = yes
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = SAD_zybs
+		}
+	}
+	focus = {
+		id = SAD_tuanjiezhuyisading
+		icon = GFX_focus_GER_legacy_of_the_spartacus_league
+		x = -6
+		y = 1
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		prerequisite = {
+			focus = SAD_anliuyongdong
+		}
+		relative_position_id = SAD_anliuyongdong
+		mutually_exclusive = {
+			focus = SAD_gongheyili
+			focus = SAD_yuanlaoyuanzhangquan
+		}
+		cost = 5
+		available = {
+			has_government = communism
+			has_civil_war = no
+			power_balance_value = {
+				id = SAD_balance
+				value < -0.9
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = az_tianjiang.430
+			add_political_power = 75
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+			swap_ruler_traits = {
+   				remove = trait_bubeigufudeqidai
+    			add = trait_bubeigufudeqidai_2
+			}
+		}
+	}
+	focus = {
+		id = SAD_saoqingjiuriyinying
+		icon = GFX_focus_ITA_il_sol_dell_avvenire
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_tuanjiezhuyisading
+		}
+		relative_position_id = SAD_tuanjiezhuyisading
+		cost = 5
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.3
+			}
+			add_ideas = SAD_hryx
+		}
+	}
+	focus = {
+		id = SAD_gaizaomanjiu
+		icon = GFX_focus_manjiu
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_saoqingjiuriyinying
+		}
+		relative_position_id = SAD_saoqingjiuriyinying
+		cost = 5
+		available = {
+			has_government = communism
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			set_stability = 1.25
+			set_war_support = 2
+			swap_ruler_traits = {
+   				remove = trait_bubeigufudeqidai_2
+    			add = trait_bubeigufudeqidai_3
+			}
+		}
+	}
+	focus = {
+		id = SAD_gongheyili
+		icon = GFX_focus_ITA_the_italian_republic
+		x = 0
+		y = 1
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		prerequisite = {
+			focus = SAD_anliuyongdong
+		}
+		relative_position_id = SAD_anliuyongdong
+		mutually_exclusive = {
+			focus = SAD_tuanjiezhuyisading
+			focus = SAD_yuanlaoyuanzhangquan
+		}
+		cost = 5
+		available = {
+			has_government = democratic
+			has_civil_war = no
+			power_balance_value = {
+				id = SAD_balance
+				value > 0.2
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			country_event = az_tianjiang.428
+			add_political_power = 25
+			add_ideas = SAD_saddyh_small2
+		}
+	}
+	focus = {
+		id = SAD_zaizaosading
+		icon = GFX_focus_CHI_demonstrate_our_resolve
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_gongheyili
+		}
+		relative_position_id = SAD_gongheyili
+		cost = 5
+		available = {
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_ideas = SAD_zzsd
+		}
+	}
+	focus = {
+		id = SAD_zhanxinliming
+		icon = GFX_focus_PER_strengthen_the_tudeh
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_zaizaosading
+		}
+		relative_position_id = SAD_zaizaosading
+		cost = 5
+		available = {
+			has_government = democratic
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			country_event = az_tianjiang.429
+			swap_ideas = {
+				remove_idea = SAD_saddyh_small2
+				add_idea = SAD_saddyh_small
+			}
+		}
+	}
+	focus = {
+		id = SAD_chongjianguojia
+		icon = GFX_focus_ITA_workers_unions
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = SAD_tuanjiezhuyisading
+			focus = SAD_gongheyili
+		}
+		relative_position_id = SAD_tuanjiezhuyisading
+		cost = 5
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = SAD_cjgj
+				days = 180
+			}
+		}
+	}
+	focus = {
+		id = SAD_qingsuanshijian
+		icon = GFX_focus_ITA_topple_amhara_rulers
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SAD_chongjianguojia
+		}
+		relative_position_id = SAD_chongjianguojia
+		cost = 5
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			custom_effect_tooltip = "然而，只是进行了一番口头教育而已"
+			every_army_leader = {
+				add_logistics = 2
+				add_planning = 2
+			}
+		}
+	}
+	focus = {
+		id = SAD_tuanjiejiushililiang
+		icon = GFX_focus_ITA_corpo_volontari_della_liberta
+		x = 1
+		y = 1
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		prerequisite = {
+			focus = SAD_kuodafeizhoujuntuan
+			focus = SAD_weiyouyuxue
+			focus = SAD_jinghuamanjiu
+			focus = SAD_gaizaomanjiu
+			focus = SAD_zhanxinliming
+		}
+		prerequisite = {
+			focus = SAD_yuweiyuanhuihezuo
+			focus = SAD_luomameng
+			focus = SAD_qingsuanshijian
+		}
+		mutually_exclusive = {
+			focus = SAD_huaqingjiexian
+			focus = SAD_qudiweiyuanhui
+		}
+		relative_position_id = SAD_kuodafeizhoujuntuan
+		cost = 10
+		available = {
+			has_government = communism
+			power_balance_value = {
+				id = SAD_balance
+				value < -0.9
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		#search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = az_tianjiang.432
+			add_stability = 0.3
+			add_war_support = 0.3
+			add_ideas = SAD_tjjsll
+			remove_power_balance = {
+				id = SAD_balance
+			}
+		}
+	}
+	focus = {
+		id = SAD_huaqingjiexian
+		icon = GFX_focus_ITA_the_social_republic_prevails
+		x = 0
+		y = 1
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		prerequisite = {
+			focus = SAD_kuodafeizhoujuntuan
+			focus = SAD_weiyouyuxue
+			focus = SAD_jinghuamanjiu
+			focus = SAD_gaizaomanjiu
+			focus = SAD_zhanxinliming
+		}
+		prerequisite = {
+			focus = SAD_yuweiyuanhuihezuo
+			focus = SAD_luomameng
+			focus = SAD_qingsuanshijian
+		}
+		mutually_exclusive = {
+			focus = SAD_tuanjiejiushililiang
+			focus = SAD_qudiweiyuanhui
+		}
+		relative_position_id = SAD_weiyouyuxue
+		cost = 10
+		available = {
+			has_government = democratic
+			power_balance_value = {
+				id = SAD_balance
+				value > 0.4
+			}
+		}
+		ai_will_do = {
+			factor = 80
+		}
+		completion_reward = {
+			add_political_power = 200
+			swap_ideas = {
+				remove_idea = SAD_saddyh_small
+				add_idea = SAD_saddyh
+			}
 		}
 	}
 }

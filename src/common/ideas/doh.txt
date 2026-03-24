@@ -448,7 +448,7 @@ ideas = {
 				has_war = no
 			}
 			modifier = {
-				army_strength_factor = 0.1
+				army_strength_factor = 0.05
 				defensive_war_stability_factor = 0.3
 				army_core_defence_factor = 0.2
 				war_support_factor = 0.3
@@ -464,7 +464,7 @@ ideas = {
 				has_war = no
 			}
 			modifier = {
-				army_strength_factor = 0.2
+				army_strength_factor = 0.1
 				defensive_war_stability_factor = 0.4
 				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.4
@@ -481,7 +481,7 @@ ideas = {
 				has_war = no
 			}
 			modifier = {
-				army_strength_factor = 0.4
+				army_strength_factor = 0.2
 				defensive_war_stability_factor = 0.5
 				army_core_attack_factor = 0.3
 				army_core_defence_factor = 0.8
@@ -500,7 +500,7 @@ ideas = {
 				has_war = no
 			}
 			modifier = {
-				army_strength_factor = 0.6
+				army_strength_factor = 0.4
 				defensive_war_stability_factor = 0.6
 				army_core_attack_factor = 0.6
 				army_core_defence_factor = 1.2
@@ -522,7 +522,7 @@ ideas = {
 				has_war = no
 			}
 			modifier = {
-				army_strength_factor = 0.8
+				army_strength_factor = 0.6
 				defensive_war_stability_factor = 0.8
 				army_core_attack_factor = 1
 				army_core_defence_factor = 2
@@ -543,7 +543,7 @@ ideas = {
 				has_war = no
 			}
 			modifier = {
-				army_strength_factor = 1
+				army_strength_factor = 0.8
 				defensive_war_stability_factor = 1
 				army_core_attack_factor = 1.5
 				army_core_defence_factor = 3
@@ -655,7 +655,7 @@ ideas = {
 			}
 			targeted_modifier = {
 				tag = CHY
-				defense_bonus_against = 0.5
+				defense_bonus_against = 0.3
 			}
 			modifier = {
 				army_core_defence_factor = 1
@@ -1619,7 +1619,7 @@ ideas = {
 		
 		designer = yes
 		
-		CHI_taiyuan_arsenal = {
+		DOH_taiyuan_arsenal = {
 			picture = generic_artillery_manufacturer_1
 
 			
@@ -1642,7 +1642,7 @@ ideas = {
 			
 		}
 
-		CHI_liaoning_arsenal = {
+		DOH_liaoning_arsenal = {
 			picture = generic_motorized_equipment_manufacturer_1
 			
 			allowed = {
@@ -1664,7 +1664,7 @@ ideas = {
 			
 		}
 
-		CHI_hanyan_arsenal = {
+		DOH_hanyan_arsenal = {
 			picture = generic_infantry_equipment_manufacturer_1
 
 			
@@ -1686,7 +1686,7 @@ ideas = {
 			traits = { infantry_equipment_manufacturer }
 			
 		}
-		CHI_mukden_arsenal = {
+		DOH_mukden_arsenal = {
 			picture = generic_infantry_equipment_manufacturer_2
 
 			
@@ -1744,7 +1744,7 @@ ideas = {
 			
 		designer = yes		
 
-		CHI_camco_3 = {
+		DOH_camco_3 = {
 
 			picture = CHI_camco
 
@@ -1772,24 +1772,370 @@ ideas = {
 
 	}
 	industrial_concern = {
-	
-		CHI_mining_commission = {
-
-			picture = generic_industrial_concern_3		
+		#  PRC_peoples_bank_of_china: "[ROOT.GetName]人民银行"
+		#  PRC_publicity_department_of_central_committee: "中国共产党中央委员会宣传部"
+		#  PRC_sinochem: "中化集团"
+		#  PRC_nanjing_wireless_electronics_plant: "南京无线电厂"
+		#  PRC_china_state_construction_engineering_corporation: "中国建筑工程总局"
+		#  PRC_china_state_construction_engineering_corporation_civ_improved: "$PRC_china_state_construction_engineering_corporation$"
+		#  PRC_china_state_construction_engineering_corporation_mil_improved: "$PRC_china_state_construction_engineering_corporation$"
+		#  PRC_china_railway_construction_corporation: "中国铁道建筑总公司"
+		#  PRC_china_national_nuclear_corporation: "中国核工业总公司"
+		DOH_peoples_bank_of_china = {
+			# 中国人民银行
+			picture = PRC_peoples_bank_of_china
 
 			allowed = {
 				tag = DOH
 			}
 
-			cost = 150
+			available = {
+				has_completed_focus = DOH_renminwansui
+			}
+
+			visible = {
+				always = yes
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			traits = { central_bank } 
+
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		DOH_publicity_department_of_central_committee = {
+			# 宣传部
+			picture = PRC_publicity_department_of_central_committee 
+
+			allowed = {
+				tag = DOH
+			}
+
+			visible = {
+				always = yes
+			}
+
+			ai_will_do = {
+				base = 10
+			}
+
+			traits = { PRC_magazine }
+
+			modifier = {
+				political_power_gain = 0.25
+				stability_factor = 0.05
+			}
+		}
+
+		DOH_sinochem = {
+			# 中国化工集团
+			picture = PRC_sinochem
+
+			allowed = {
+				tag = DOH
+			}
+
+			visible = {
+				always = yes
+			}
+
+			available = {
+				OR = {
+			 		DOH = {
+		 				controls_state = 608
+		 			}
+		 		}
+			}
+
+			research_bonus = { synth_resources = 0.15 }
+
+			traits = {
+				refinery_concern
+			}
+
+			modifier = {
+				country_resource_oil = 10
+			}
+		}
+
+		DOH_china_state_construction_engineering_corporation = {
+			# 中国建筑工程总局
+			picture = PRC_china_state_construction_engineering_corporation
+
+			allowed = {
+				tag = DOH
+			}
+
+			visible = {
+				always = yes
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			traits = { construction_company }
+
+			research_bonus = { construction_tech = 0.15 }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.075
+				production_speed_arms_factory_factor = 0.075
+			}
+		}
+
+		DOH_china_railway_construction_corporation = {
+			# 中国铁道建筑总公司
+			picture = PRC_china_railway_construction_corporation 
+
+			allowed = {
+				tag = DOH
+			}
+
+			visible = {
+				always = yes
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			traits = { railway_company }
+		}
+
+		DOH_china_national_nuclear_corporation = {
+			# 中国核工业总公司
+			picture = PRC_china_national_nuclear_corporation
+
+			allowed = {
+				tag = DOH
+			}
+
+			visible = {
+				always = yes
+			}
+
+			available = {
+				has_completed_focus = DOH_liangdanyixing
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			traits = { PRC_nuclear_company }
+
+			modifier = {
+				specialization_nuclear_speed_factor = 0.1
+				sp_tag_nuclear_power_speed_factor = 0.15
+				production_speed_nuclear_reactor_factor = 0.1
+
+			}
+		}
+
+	#  CHI_national_resource_commission: "全国资源委员会"
+	#  CHI_national_resource_commission_desc: "$CHI_mining_commission_desc$"
+	#  CHI_china_national_aviation_corporation: "中国航空公司"
+	#  CHI_china_merchant_group: "招商局集团"
+	#  CHI_shanghai_power_company: "上海电力公司"
+	#  CHI_bank_of_china: "中国银行"
+	#  CHI_yongli_chemical_industries: "永利化学工业"
+
+		DOH_showa_steel_works = {
+			# 鞍山炼钢厂
+			picture = JAP_japan_steel_works			
+			
+			available = {
+				controls_state = 716
+			}
+
+			allowed = {
+				tag = DOH
+			}
+
+			visible = { NOT	= { has_completed_focus = MAN_tsr_mangyo } }
+
+			research_bonus = {
+				industry = 0.15
+			}
+
+			traits = {
+				industrial_steel_mills_trait
+			}
 			
 			ai_will_do = {
 				factor = 1
 			}
+		}
+
+		DOH_western_refinery = {
+			# 西制油厂
+			picture = generic_refining_concern_1
+
+			available = {
+				controls_state = 716
+			}
+
+			allowed = { ## If have SEA, then all China except PRC has it. Else all have it (because SEA PRC has Sinochem)
+				tag = DOH
+			}
+			
+			research_bonus = {
+				industry = 0.1
+				synth_resources = 0.15
+			}
+			
+			traits = { refinery_concern }
+			
+			# assembled hawk II and hawk III fighter bombers as well as the Vultee V-11 ground attackers
+						
+			ai_will_do = {
+				factor = 1
+			}
+
+		}
+
+		DOH_nanjing_wireless_electronics_plant = {
+			# 南京无线电厂
+			picture = PRC_nanjing_wireless_electronics_plant 
+
+			allowed = {
+				tag = DOH
+			}
+
+			visible = {
+				always = yes
+			}
+
+			available = {
+				controls_state = 1035
+				has_completed_focus = DOH_wuxiandianjishu
+			}
+
+
+			traits = { electronics_concern }
+
+			research_bonus = {
+				electronics = 0.15
+			}
 
 			modifier = {
-				local_resources_factor = 0.1
+				
 			}
+
+		}
+
+		DOH_china_national_aviation_corporation = {
+			# 中国航空公司
+			picture = CHI_china_national_aviation_corporation
+			
+			allowed = {
+				tag = DOH
+			}
+			available = {
+				has_completed_focus = DOH_tieyuan
+			}
+						
+			research_bonus = {
+				air_equipment = 0.05
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+			
+			traits = { civilian_airway_company }
+		}
+
+		DOH_china_merchant_group = {
+			# 招商局集团
+			picture = CHI_china_merchant_group
+			
+			allowed = {
+				tag = DOH
+				has_completed_focus = DOH_heqishengcai
+			}
+						
+			research_bonus = {
+
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+			
+			traits = { transport_company }
+		}
+
+		DOH_shanghai_power_company = {
+			# 上海电力公司
+			picture = CHI_shanghai_power_company
+			
+			allowed = {
+				tag = DOH
+			}
+			available = {
+				controls_state = 613
+			}
+						
+			research_bonus = {
+			}
+
+			modifier = {
+				country_resource_coal = 18
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+			
+			traits = { energy_supply_company }
+		}
+
+		DOH_bank_of_china = {
+			# 中国银行						
+			picture = CHI_bank_of_china
+			
+			allowed = {
+				tag = DOH
+			}
+			available = {
+				always = yes
+			}
+
+			ai_will_do = {
+				base = 3
+			}
+			
+			traits = { monopolistic_bank }
+		}
+
+		DOH_yongli_chemical_industries = {
+			# 永利化学工业
+			picture = CHI_yongli_chemical_industries
+			
+			allowed = {
+				tag = DOH
+			}
+			available = {
+				always = yes
+			}
+						
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+			
+			traits = { refinery_concern }
 		}
 	}
 }

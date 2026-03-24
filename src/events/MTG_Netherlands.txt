@@ -472,11 +472,11 @@ country_event = {
 		    ideology = democratic
 		    popularity = -0.05
 		}
-		#retire_country_leader = yes
-		#promote_character = {
-		#	character = HOL_pieter_sjoerds_gerbrandy
-		#	ideology = conservatism
-		#}
+		retire_country_leader = yes
+		promote_character = {
+			character = HOL_pieter_sjoerds_gerbrandy
+			ideology = conservatism
+		}
 		if = {
 			limit = {
 				has_idea = HOL_weak_government
@@ -936,7 +936,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				is_in_faction_with = SOV
+				is_in_faction_with = BFL
 			}
 			modifier = {
 				factor = 0
@@ -1017,7 +1017,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				is_in_faction_with = SOV
+				is_in_faction_with = BFL
 			}
 			modifier = {
 				factor = 0
@@ -1098,7 +1098,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				is_in_faction_with = SOV
+				is_in_faction_with = BFL
 			}
 			modifier = {
 				factor = 0
@@ -1280,7 +1280,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				is_in_faction_with = SOV
+				is_in_faction_with = BFL
 			}
 			modifier = {
 				factor = 0
@@ -1476,7 +1476,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				is_in_faction_with = SOV
+				is_in_faction_with = BFL
 			}
 			modifier = {
 				factor = 0
@@ -1704,7 +1704,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				is_in_faction_with = SOV
+				is_in_faction_with = BFL
 			}
 			modifier = {
 				factor = 0
@@ -2774,7 +2774,7 @@ country_event = {
 		name = excellent
 		if = {
 			limit = {
-				any_state = {
+				any_controlled_state = {
 					is_fully_controlled_by = ROOT
 					is_on_continent = europe
 				}
@@ -3010,7 +3010,11 @@ country_event = {
 					autonomy_state = autonomy_free 
 				} 
 			}
-			create_faction = GER_central_powers_faction
+			create_faction_from_template = {
+				template = faction_template_GER_mitteleuropa_alliance
+				name = GER_central_powers_faction
+				icon = GFX_faction_logo_generic_13
+			}
 			add_to_faction = HOL
 		}
 	}

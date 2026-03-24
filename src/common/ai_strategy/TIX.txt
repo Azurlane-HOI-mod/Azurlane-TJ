@@ -531,6 +531,26 @@ TIX_start = {
 
 }
 
+TIX_sad_neizan = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		tag = TIX
+		has_government = fascism
+		SAD = {
+			not = { has_government = fascism }
+			has_civil_war = yes
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire	#志愿军
+		id = "D04"			
+		value = 300
+	}
+
+}
+
 TIX_bubangzhusading = {
     allowed = {
 			original_tag = TIX
@@ -620,7 +640,7 @@ TIX_strike_BFL = {
 
 		priority = 100
 		ordertype = front
-		execution_type = rush
+		execution_type = balanced
 		execute_order = yes
 	}
 	
@@ -1018,6 +1038,19 @@ TIX_war_YUW_no_ai = {
 		ordertype = front
 		execution_type = careful
 	}
+
+	 ai_strategy = {
+		type = front_control
+
+		tag = YUW
+
+		ratio = 0.5
+
+		priority = 100
+		ordertype = front
+		execution_type = balanced
+		execute_order = yes
+	}
 }
 
 
@@ -1326,6 +1359,9 @@ TIX_dont_help_SAD_in_africa_after_SAD_control_Cairo = {
 		is_in_faction_with = SAD
 		SAD = { controls_state = 2 }
 		country_exists = BFL
+		SAD = {
+			has_government = fascism
+		}
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
@@ -2459,6 +2495,7 @@ TIX_blitz_france = {
 		date < 1940.9.1
 		HOL = { has_capitulated = yes }
 		is_historical_focus_on = yes
+		YUW = { is_ai = yes }
 	}
 
 	abort_when_not_enabled = yes
@@ -2992,5 +3029,129 @@ TIX_dont_help_IRQ = {
 		type = dont_defend_ally_borders
 		value = 5000
 		id = "IRQ"
+	}
+}
+
+TIX_war_with_SAD = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		has_war_with = SAD
+		SAD = {
+			has_capitulated = no
+			not = { has_government = fascism }
+		}
+	}
+	abort = {
+	    SAD = { has_capitulated = yes }
+	}
+	
+	ai_strategy = {
+		type = front_armor_score #部署坦克
+		id = SAD
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "SAD"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = prepare_for_war
+		id = "SAD"
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = "SAD"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = front_unit_request
+		tag = SAD		
+		value = 200
+	}
+
+}
+
+#Yo-ho-ho and a bottle of rum! We set sail for the North Sea aaaargh!
+TIX_raid_the_north_sea = {
+	allowed = { original_tag = TIX }
+	enable = {
+		OR = {
+			has_war_with = NOR
+			has_war_with = BFL
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 45 #Norwegian Sea
+		value = 100
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 174 #Norwegian coast
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 173 #Eastern North Sea
+		value = 250
+	}
+}
+
+#Yo-ho-ho and a bottle of rum! We set sail for the North Atlantic aaaargh!
+TIX_raid_the_atlantic = {
+	allowed = { original_tag = TIX }
+	enable = {
+		OR = {
+			has_war_with = HUJ
+			has_war_with = BYG
+			has_war_with = CAN
+		}
+		#Gotta control the Western coast of France
+		any_controlled_state = {
+			OR = {
+				state = 14
+				state = 30
+				state = 23
+				state = 19
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 42 #Bay of Biscay
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 47 #Iberian Coast
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 49 #North Atlantic Ridge
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 44 #Denmark Strait
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 56 #Mid Atlantic
+		value = 100
 	}
 }

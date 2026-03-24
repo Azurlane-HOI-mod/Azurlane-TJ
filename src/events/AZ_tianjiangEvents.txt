@@ -2492,6 +2492,7 @@ country_event = {
 	trigger = {
 		date > 1941.6.1
 		tag = SAD
+		not = { has_country_flag = sad_neizhan_yes }
 		OR = {
 		2 = { is_controlled_by = BYG } 
 		2 = { is_controlled_by = YUW } 
@@ -4249,8 +4250,6 @@ country_event = {
 			}
 		USA = {
 			set_cosmetic_tag = USA1
-			load_oob = BYG_neizhanfenbu_1
-			load_oob = USA_1936
 			add_war_support = 1
 			add_popularity = { ideology = fascism popularity = 1 } 
 				set_politics = {
@@ -4287,6 +4286,10 @@ country_event = {
 		add_popularity = { ideology = fascism popularity = -0.2 }
 		hidden_effect = {
 			country_event = { id = az_tianjiang.123 hours = 24}
+			USA = {
+				load_oob = BYG_neizhanfenbu_1
+				load_oob = USA_1936
+			}
 		}
 		ai_chance = {
 			factor = 100
@@ -4302,6 +4305,10 @@ country_event = {
 		add_popularity = { ideology = fascism popularity = -0.2 }
 		hidden_effect = {
 			country_event = { id = az_tianjiang.123 hours = 24}
+			USA = {
+				load_oob = BYG_neizhanfenbu_1
+				load_oob = USA_1936
+			}
 		}
 		ai_chance = {
 			factor = 0
@@ -4352,7 +4359,6 @@ country_event = {
 			}
 			USB = {
 				set_cosmetic_tag = USB1
-				load_oob = BYG_neizhanfenbu_2
 				set_capital = { state = 395 }
 				add_war_support = 1
 				add_popularity = { ideology = communism popularity = 1 } 
@@ -4395,6 +4401,9 @@ country_event = {
 		add_popularity = { ideology = communism popularity = -0.2 }
 		hidden_effect = {
 			country_event = { id = az_tianjiang.124 hours = 24}
+			USB = {
+				load_oob = BYG_neizhanfenbu_2
+			}
 		}
 		ai_chance = {
 			factor = 100
@@ -4409,6 +4418,9 @@ country_event = {
 		add_popularity = { ideology = communism popularity = -0.2 }
 		hidden_effect = {
 			country_event = { id = az_tianjiang.124 hours = 24}
+			USB = {
+				load_oob = BYG_neizhanfenbu_2
+			}
 		}
 		ai_chance = {
 			factor = 0
@@ -4490,12 +4502,6 @@ country_event = {
 						}
 				}
 				}
-				CSA = {
-					load_oob = BYG_neizhanfenbu_3
-				}
-				BYG = {
-					load_oob = BYG_neizhanfenbu_4
-				}
 			}
 	}
 	option = {
@@ -4504,6 +4510,12 @@ country_event = {
 		add_popularity = { ideology = neutrality popularity = -0.2 }
 		hidden_effect = {
 			country_event = { id = az_tianjiang.125 days = 1 }
+			CSA = {
+				load_oob = BYG_neizhanfenbu_3
+			}
+			BYG = {
+				load_oob = BYG_neizhanfenbu_4
+			}
 		}
 		ai_chance = {
 			factor = 100
@@ -4518,6 +4530,12 @@ country_event = {
 		add_popularity = { ideology = neutrality popularity = -0.2 }
 		hidden_effect = {
 			country_event = { id = az_tianjiang.125 days = 1 }
+			CSA = {
+				load_oob = BYG_neizhanfenbu_3
+			}
+			BYG = {
+				load_oob = BYG_neizhanfenbu_4
+			}
 		}
 		ai_chance = {
 			factor = 0
@@ -5530,17 +5548,17 @@ country_event = {
 				}
 		}
 		ai_chance = {
-			factor = 1
-			modifier = {
-			TIX = { is_ai = yes }
-			factor = 100
-			}
+			base = 1
 			modifier = {
 			is_historical_focus_on = yes
-			factor = 100
+			factor = 10000
 			}
 			modifier = {
 			TIX = { has_completed_focus = TIX_baoshouxuanze }
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
 			factor = 100
 			}
 		}
@@ -5555,7 +5573,20 @@ country_event = {
 			value = 200
 		}
 		ai_chance = {
-			factor = 60
+			base = 60
+			modifier = {
+				not = { has_government = fascism }
+				TIX = { 
+					not = { 
+						has_government = democratic 
+					} 
+				}
+				factor = 100
+			}
+			modifier = {
+			is_historical_focus_on = yes
+			factor = 0
+			}
 		}
 	}
 }
@@ -7447,6 +7478,7 @@ country_event = {
 	trigger = {
 		has_added_tension_amount > 39
 		not= { has_country_flag = beiqianzeguole_tj }
+		NOT = { has_global_flag = az_chiji_flag }
 	}
 	option = {
 		name = "呀咩咯！"
@@ -7908,6 +7940,7 @@ country_event = {
 		date < 1937.6.1
 		tag = BYG
 		NOT = { has_country_flag = baiyingneizhaweiji }
+		NOT = { has_global_flag = az_chiji_flag }
 		has_offensive_war = yes
 		has_added_tension_amount > 9
 		has_global_flag = MOD_azurlane_tianjiangjianniang
@@ -7943,6 +7976,7 @@ country_event = {
 		has_offensive_war = yes
 		has_added_tension_amount > 9
 		has_global_flag = MOD_azurlane_tianjiangjianniang
+		NOT = { has_global_flag = az_chiji_flag }
 		NOT = {
 		has_game_rule = {
 			rule = AZ_huj_bengkui_rule
@@ -9086,7 +9120,7 @@ country_event = {
 		country_event = { id = az_tianjiang.260 days = 20 }
 		}
 		ai_chance = {
-			factor = 0
+			factor = 100
 		}
 	}
 	option = {
@@ -9096,7 +9130,7 @@ country_event = {
 		country_event = { id = az_tianjiang.260 days = 20 }
 		}
 		ai_chance = {
-			factor = 100
+			factor = 0
 		}
 	}
 }
@@ -10464,6 +10498,18 @@ country_event = {
 			activate_mission = AZ_fkAI_xuanzebuff_time
 			set_country_flag = AZ_fkAI_playertime
 			add_ideas = TY_fkAI_wanjiagangtiezhiqu
+			add_ideas = TY_fkAIdebuffplayer
+			}
+			every_country = {
+			limit = {
+			is_ai = no
+			OR = {
+				tag = TIX
+				tag = YUW
+				tag = BFL
+			}
+			}
+			add_ideas = TY_fkAIdebuffplayer_teding
 			}
 		}
 		ai_chance = {
@@ -10932,6 +10978,15 @@ country_event = {
 		TIX = {
 			country_event = { id = az_tianjiang.322 days = 1 }
 		}
+		if = {
+			limit = {
+				not = { has_government = democratic }
+			}
+			set_politics = {
+				ruling_party = democratic
+			}
+			add_popularity = { ideology = democratic popularity = 0.5 }
+		}
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -10945,6 +11000,14 @@ country_event = {
 			modifier = {
 				tag = ROM
 				factor = 0
+			}
+			modifier = {
+				tag = POL
+				factor = 10000
+			}
+			modifier = {
+				tag = DEN
+				factor = 10000
 			}
 		}
 	}
@@ -12763,6 +12826,7 @@ country_event = {
 		has_offensive_war = yes
 		has_global_flag = MOD_azurlane_tianjiangjianniang
 		is_ai = no
+		NOT = { has_global_flag = az_chiji_flag }
 	}
 	fire_only_once = yes
 	option = {
@@ -13120,7 +13184,7 @@ country_event = {
 
 country_event = {
 	id = az_tianjiang.389
-	title = "关于每周挑战"
+	title = "关于每月挑战"
 	desc = az_tianjiang.389.d
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
@@ -13443,7 +13507,7 @@ country_event = {
 country_event = {
 	id = az_tianjiang.412
 	title = "自选稀有效果！"
-	desc = "恭喜你完美达成了每周挑战的通关条件！现在你可以在这里自选一个想要的特殊效果。"
+	desc = "恭喜你完美达成了每月挑战的通关条件！现在你可以在这里自选一个想要的特殊效果。"
 	picture = GFX_aze_kelifulan
 	is_triggered_only = yes
 	option = {
@@ -13486,6 +13550,10 @@ country_event = {
 			set_nationality = TIX
 		}
 		TIX = {
+			country_event = az_tianjiang.448
+		}
+		effect_tooltip = {
+		TIX = {
 			add_country_leader_role = {
 				Character = TIX_z23
 				Promote_leader = yes
@@ -13498,8 +13566,21 @@ country_event = {
 					}
 				}
 		}
+		}
+		trigger = {
+			HUJ = { is_ai = yes }
+			BYG = { is_ai = yes }
+			YUW = { is_ai = yes }
+			DOH = { is_ai = yes }
+		}
 		ai_chance = {
 			base = 100
+		}
+	}
+	option = {
+		name = "谁？"
+		ai_chance = {
+			base = 1
 		}
 	}
 }
@@ -13589,6 +13670,7 @@ country_event = {
 					has_government = fascism
 					has_capitulated = no
 					is_subject = no
+					not = { has_country_flag = sad_neizhan_yes }
 				}
 				not = { country_exists = ITA }
 			}
@@ -13667,6 +13749,1507 @@ country_event = {
 				}
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.416
+	title = "唐努图瓦加入联合"
+	desc = "唐努图瓦要求并入北方联合，我们没有拒绝的理由。"
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = "好的"
+		annex_country = { target = TAN transfer_troops = no }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.417
+	title = "巴尔干一体化"
+	desc = "撒丁建议我们巴尔干的小国整合到一起。"
+	is_triggered_only = yes
+	option = {
+		name = "好啊，我完全同意"
+		every_core_state = {
+			add_core_of = SAD
+		}
+		SAD = {
+			annex_country = { target = ROOT transfer_troops = yes }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.418
+	title = "撒丁代表团来了"
+	desc = "撒丁代表团来了，她们在内战后已经焕然一新。"
+	is_triggered_only = yes
+	option = {
+		name = "欢迎欢迎"
+		add_political_power = 10
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.419
+	title = "小碧蓝航线？"
+	desc = "为什么我们非要和皇家穿一条裤子呢？也许我们可以建立一个小碧蓝航线..."
+	is_triggered_only = yes
+	option = {
+		name = "对噢"
+		create_faction = "地中海条约"
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "还是加入皇家吧"
+		trigger = {
+			HUJ = { is_faction_leader = yes }
+			not = { has_war_with = HUJ }
+		}
+		HUJ = {
+			add_to_faction = SAD
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.420
+	title = "撒丁邀请我们加入阵营"
+	desc = "撒丁邀请我们加入她们的阵营，共同对抗铁血。"
+	is_triggered_only = yes
+	option = {
+		name = "我莫得选择，因为我只是个小几把路人国家。"
+		SAD = {
+			add_to_faction = ROOT
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.421
+	title = "安德烈亚上台"
+	desc = az_tianjiang.421.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "好吧"
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_popularity = { ideology = communism popularity = 0.4 }
+		SAD_duoliya = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = marxism
+					traits = {
+						trait_bubeigufudeqidai
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.422
+	title = "议会重组"
+	desc = az_tianjiang.422.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "好吧"
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+		add_popularity = { ideology = democratic popularity = 0.4 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.423
+	title = "与马可波罗结盟？"
+	desc = az_tianjiang.423.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "马可波罗的野心太大了"
+		set_country_flag = sad_yugcdjiemeng_flag
+		custom_effect_tooltip = sad_neizhan_yugcdjm
+		set_party_name = { ideology = communism long_name = "共和统一战线" name = "共和统一战线" }
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = "比起共产党，还是马可波罗好点"
+		custom_effect_tooltip = sad_neizhan_yumkbljm
+		hidden_effect = {
+			SAD_makeboluo = {
+				add_unit_leader_trait = SAD_buzhongjianniang
+			}
+			SAD_zhuliaokaisa = {
+				add_unit_leader_trait = SAD_buzhongjianniang
+			}
+			SAD_diguo = {
+				add_unit_leader_trait = SAD_buzhongjianniang
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.424
+	title = "内战的阴霾"
+	desc = az_tianjiang.424.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "内战不可避免"
+		set_country_flag = sad_neizhan_yes
+		SAD_zhusaipei = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_duoliya = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_dafenqi = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_beierdi = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_abuluqi = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_lafeier = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = "这一切可以被阻止"
+		custom_effect_tooltip = "撒丁内战不会发生"
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.425
+	title = "内战爆发"
+	desc = az_tianjiang.425.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "帝国的生命已经进入倒计时"
+		mark_focus_tree_layout_dirty = yes
+		set_war_support = 2
+		add_popularity = { ideology = democratic popularity = 0.5 }
+		SAD_zhusaipei = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = socialism
+					traits = {
+						trait_fensuidiguo
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = fascism
+			size = 0.5
+			army_ratio = 0.5
+			states = {
+				2
+				157
+				162
+				161
+				160
+				159
+				158
+				850
+				39
+				736
+				852
+				163
+			}
+			keep_unit_leaders_trigger = {
+				has_trait = SAD_buzhongjianniang
+			}
+		}
+		random_other_country = {
+			limit = {
+				original_tag = SAD
+				has_government = fascism
+			}
+			set_war_support = 1
+			set_cosmetic_tag = SAD_xindiguo
+			add_popularity = { ideology = democratic popularity = -0.2 }
+		}
+		add_ideas = SAD_nzrq
+		hidden_effect = {
+			country_event = { id = az_tianjiang.426 days = 1 }
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.426
+	title = "撒丁共和国大议会"
+	desc = "旧行政机构已不再具备合法性，共和国大议会将取代委员会。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "好"
+		set_country_flag = sad_yijingchongzuyihui_yes
+		set_party_name = { ideology = democratic long_name = "共和大议会" name = "共和大议会" }
+		set_party_name = { ideology = communism long_name = "撒丁共产联盟" name = "撒丁共产联盟" }
+		every_character = {
+			remove_unit_leader_trait = SAD_buzhongjianniang
+		}
+		if = {
+			limit = {
+				has_country_flag = sad_yugcdjiemeng_flag
+			}
+			set_power_balance = {
+				id = SAD_balance
+				left_side = SAD_left_side2				# will keep the last set side if not specified
+				right_side = SAD_right_side2			# will keep the last set side if not specified
+				set_default = yes				# whether or not to reset the power balance to the initial value, default = no
+			}
+		}else = {
+			set_power_balance = {
+				id = SAD_balance
+				right_side = SAD_right_side2			# will keep the last set side if not specified
+				set_default = yes				# whether or not to reset the power balance to the initial value, default = no
+			}
+		}
+		hidden_effect = {
+			country_event = { id = az_tianjiang.431 days = 7 }
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.427
+	title = "重新统一"
+	desc = "内战已经结束，战败一方的舰娘重新加入了我们。"
+	picture = GFX_aze_diannao
+	trigger = {
+		tag = SAD
+		has_country_flag = sad_yijingchongzuyihui_yes
+		has_civil_war = no
+	}
+	fire_only_once = yes
+	option = {
+		name = "好的"
+		#random_other_country = {
+		#	limit = {
+		#		original_tag = SAD
+		#		not = { tag = ROOT }
+		#	}
+		#	every_character = {
+		#		set_nationality = ROOT
+		#	}
+		#}
+		D04 = {
+			every_character = {
+				set_nationality = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 1000
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.428
+	title = "内战胜利"
+	desc = az_tianjiang.428.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "撒丁共和国，第一天"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.429
+	title = "崭新黎明"
+	desc = az_tianjiang.429.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "故事的序章"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.430
+	title = "内战胜利"
+	desc = az_tianjiang.430.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "撒丁共和国，第一天"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.431
+	title = "哪方主导？"
+	desc = "关于议会主导权的讨论已经持续了多天，是支持我们的盟友还是维持现状？"
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "维持现状就好"
+		add_power_balance_value = {
+			id = SAD_balance
+			value = 0.1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "支持我们的盟友"
+		add_power_balance_value = {
+			id = SAD_balance
+			value = -1
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.432
+	title = "团结就是力量"
+	desc = az_tianjiang.432.d
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "内战的阴霾终会散去"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.433
+	title = "一触即发"
+	desc = az_tianjiang.433.d
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		is_in_faction_with = TIX
+		not = { has_country_flag = sad_panluanzhongzhi }
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = BFL
+			has_war_with = BYG
+		}
+		check_variable = {
+			var = az_mimoujincheng
+			value = 80
+			compare = greater_than_or_equals
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	fire_only_once = yes
+	option = {
+		name = "赤色中轴危在旦夕"
+		custom_effect_tooltip = sad_shijianneizhan_tips
+		hidden_effect = {
+		set_country_flag = sad_lishiguoceneizhan_yes
+		set_country_flag = sad_neizhan_yes
+		set_country_flag = sad_yugcdjiemeng_flag
+		SAD_zhusaipei = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_duoliya = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_dafenqi = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_beierdi = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_abuluqi = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_lafeier = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.434
+	title = "内战爆发"
+	desc = az_tianjiang.434.d
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		OR = {
+			date > 1940.3.1
+			is_ai = no
+		}
+		not = { has_country_flag = sad_panluanzhongzhi }
+		has_country_flag = sad_lishiguoceneizhan_yes
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = BFL
+			has_war_with = BYG
+		}
+		check_variable = {
+			var = az_mimoujincheng
+			value = 100
+			compare = greater_than_or_equals
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	fire_only_once = yes
+	option = {
+		name = "帝国已支离破碎"
+		mark_focus_tree_layout_dirty = yes
+		set_cosmetic_tag = SAD
+		set_country_flag = sad_panluanzhongzhi
+		set_war_support = 2
+		add_popularity = { ideology = democratic popularity = 0.5 }
+		add_popularity = { ideology = fascism popularity = -0.5 }
+		SAD_zhusaipei = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "4999.1.1"
+					ideology = socialism
+					traits = {
+						trait_fensuidiguo
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = fascism
+			size = 0.8
+			army_ratio = 0.8
+			navy_ratio = 0.7
+			air_ratio = 0.8
+			states = {
+				2
+				157
+				162
+				161
+				160
+				159
+				158
+				850
+				39
+			}
+			keep_unit_leaders_trigger = {
+				has_trait = SAD_buzhongjianniang
+			}
+		}
+		random_other_country = {
+			limit = {
+				original_tag = SAD
+				has_government = fascism
+			}
+			country_event = { id = az_tianjiang.436 days = 1 }
+			set_war_support = 1
+			set_cosmetic_tag = SAD_xindiguo
+			add_popularity = { ideology = democratic popularity = -0.2 }
+			if = {
+				limit = {
+					TIX = {
+						is_faction_leader = yes
+					}
+				}
+				TIX = {
+					add_to_faction = PREV
+				}
+			}
+		}
+		HUJ = {
+			add_to_faction = ROOT
+		}
+		country_event = { id = az_tianjiang.426 days = 1 }
+		release_on_controlled = YUG
+		release_on_controlled = BUL
+		release_on_controlled = ALB
+		release_on_controlled = GRE
+		HUJ = {
+		country_event = { id = az_tianjiang.82 days = 5 }
+		transfer_state = 177
+		transfer_state = 183
+		}
+		BFL = {
+		country_event = { id = az_tianjiang.82 days = 5 }
+		}
+		ALB = {
+		transfer_state = 44
+		transfer_state = 805
+		transfer_state = 934
+		}
+		hidden_effect = {
+		news_event = { id = az_tianjiang.80 days = 1}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.435
+	title = "撒丁爆发内战"
+	desc = "由于撒丁帝国内部的问题以及战局不利等外部原因，撒丁内战最终爆发。作为她们唯一的盟友，我们是否应该强行介入她们的事务？"
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "撒丁的舰娘们是一群杂鱼，她们需要铁血的帮助"
+		set_autonomy = {
+			target = FROM
+			autonomy_state = autonomy_reichsprotectorate
+		}
+		FROM = {
+			declare_war_on = { target = SAD type = civil_war } 
+		}
+		trigger = {
+			is_subject = no
+			surrender_progress < 0.2
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我们很忙，她们自己能处理好"
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.436
+	title = "内战爆发"
+	desc = "这是一个判定事件"
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "给铁血发送"
+		TIX = {
+			country_event = { id = az_tianjiang.435 days = 1 }
+		}
+		trigger = {
+			TIX = {
+				is_faction_leader = yes
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.437
+	title = "撒丁路线指南"
+	desc = "黑线白线正常点国策+控制权利平衡就行。想走蓝红线必须向埃塞投降，然后在事件中选择“内战不可避免”，随后自己控制权利平衡即可。"
+	picture = GFX_aze_sad
+	is_triggered_only = yes
+	option = {
+		name = "懂了"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.438
+	title = "战局不利"
+	desc = "由于丢失了东非领土，战局陷入不利状态。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		OR = {
+			owns_state = 271
+			ETH = { is_subject_of = SAD }
+		}
+		271 = {
+			is_controlled_by_ROOT_or_subject = no
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 20
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.439
+	title = "战局不利"
+	desc = "由于丢失了北非领土，战局陷入不利状态。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		OR = {
+			owns_state = 448
+			LBA = { is_subject_of = SAD }
+		}
+		OR = {
+			owns_state = 451
+			LBA = { is_subject_of = SAD }
+		}
+		448 = {
+			is_controlled_by_ROOT_or_subject = no
+		}
+		451 = {
+			is_controlled_by_ROOT_or_subject = no
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 20
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.440
+	title = "战局不利"
+	desc = "由于丢失了南方关键城市，战局陷入不利状态。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		OR = {
+			AND = {
+				owns_state = 115
+				115 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+			AND = {
+				owns_state = 117
+				117 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+			AND = {
+				owns_state = 849
+				849 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 20
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.441
+	title = "战局不利"
+	desc = "由于丢失了北方关键城市，战局陷入不利状态。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		OR = {
+			AND = {
+				owns_state = 158
+				158 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+			AND = {
+				owns_state = 159
+				159 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+			AND = {
+				owns_state = 160
+				160 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 20
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.442
+	title = "战局不利"
+	desc = "由于丢失了中部关键城市，战局陷入不利状态。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		OR = {
+			AND = {
+				owns_state = 2
+				2 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+			AND = {
+				owns_state = 162
+				162 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+			AND = {
+				owns_state = 161
+				161 = {
+					is_controlled_by_ROOT_or_subject = no
+				}
+			}
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 20
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.443
+	title = "战局不利"
+	desc = "由于丢失了撒丁岛，领袖被质疑能力。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		owns_state = 114
+		114 = {
+			is_controlled_by_ROOT_or_subject = no
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 10
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.444
+	title = "战局不利"
+	desc = "由于还未拿下开罗与马耳他，领袖被质疑能力。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		907 = {
+			is_controlled_by_ROOT_or_subject = no
+		}
+		116 = {
+			is_controlled_by_ROOT_or_subject = no
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		has_war_with = HUJ
+		not = { has_country_flag = sad_maertakailuo_cd }
+	}
+	#fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 20
+		}
+		set_country_flag = {
+    		flag = sad_maertakailuo_cd
+   			days = 365
+   			value = 1
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.445
+	title = "战局不利"
+	desc = "铁血在东线受挫，战局对我方不利。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		is_in_faction_with = TIX
+		TIX = {
+			has_war_with = BFL
+			war_length_with = {
+				tag = BFL
+				months > 6
+			}
+		}
+		BFL = {
+			surrender_progress < 0.7
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 10
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.446
+	title = "战局不利"
+	desc = "我们在西线受挫，战局对我方不利。"
+	picture = GFX_aze_sad
+	trigger = {
+		tag = SAD
+		date > 1941.1.1
+		is_puppet = no
+		not = { has_country_flag = sad_panluanzhongzhi }
+		is_in_faction_with = TIX
+		has_war_with = HUJ
+		has_war_with = YUW
+		16 = {
+			is_controlled_by = YUW
+		}
+		war_length_with = {
+			tag = HUJ
+			months > 12
+		}
+		HUJ = {
+			surrender_progress < 0.6
+		}
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		OR = {
+			has_war_with = HUJ
+			has_war_with = YUW
+			has_war_with = BYG
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "不好！"
+		custom_effect_tooltip = sad_mimoujinchengzengjia_tips
+		add_to_variable = {
+			var = az_mimoujincheng
+			value = 10
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.447
+	title = "测试事件"
+	desc = "测试雅尔塔触发"
+	picture = GFX_aze_diannao
+	trigger = {
+		always = no
+		date > 1941.6.1
+					tag = TIX
+					has_government = fascism
+					is_puppet = no
+					not = { has_global_flag = yaertahuiyi_chenggong_shishi }
+					not = { controls_state = 64 }
+					not = { country_exists = WEX }
+					has_global_flag = yaertahuiyi_chenggong
+					has_war_with = BFL
+					has_war_with = BYG
+					has_war_with = HUJ
+					BFL = {
+					surrender_progress < 0.4
+					}
+					HUJ = {
+					surrender_progress < 0.4
+					}
+					BYG = {
+					surrender_progress < 0.1
+					}
+	}
+	fire_only_once = yes
+	option = {
+		name = "OK"
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.448
+	title = "尼米上任"
+	desc = "北联方面希望尼米担任新铁血的领导人。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "这是好事啊"
+		add_country_leader_role = {
+			Character = TIX_z23
+			Promote_leader = yes
+			Country_leader = {
+				ideology = leninism
+				expire = "2000.1.1.1"
+				traits = {
+					jjdxxs
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.449
+	title = "撒丁AI路线判定"
+	desc = "非历史一定概率走内战线。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "黑线"
+		ai_chance = {
+			base = 40
+			modifier = {
+				OR = {
+					is_historical_focus_on = yes
+					has_game_rule = {
+						rule = SAD_ai_behavior
+						option = SAD_historical
+					}
+				}
+				factor = 100
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SAD_ai_behavior
+					option = SAD_neizhan
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = "内战线"
+		ETH = {
+			transfer_state = 550
+			transfer_state = 559
+			transfer_state = 844
+			add_state_core = 550
+			add_state_core = 559
+			add_state_core = 844
+		}
+		complete_national_focus = SAD_afeilijiazhichi
+		ai_chance = {
+			base = 60
+			modifier = {
+				has_game_rule = {
+					rule = SAD_ai_behavior
+					option = SAD_neizhan
+				}
+				factor = 300
+			}
+			modifier = {
+				OR = {
+					is_historical_focus_on = yes
+					has_game_rule = {
+						rule = SAD_ai_behavior
+						option = SAD_historical
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+}
+
+#从SB丹麦手里拿回南日德兰
+country_event = {
+	id = az_tianjiang.450
+	title = az_tianjiang.450.t
+	desc = az_tianjiang.450.d
+	fire_only_once = yes
+	hidden = yes
+	trigger = {
+		tag = TIX
+		has_government = fascism
+		is_puppet = no
+		DEN = {
+			is_subject_of = TIX
+		}
+		912 = { is_controlled_by = DEN }
+	}
+	immediate = {
+		hidden_effect = {
+          transfer_state = 912
+      }
+	}
+	option = {
+		name = az_tianjiang.450.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#新原版tag获得天堂之战buff
+country_event = {
+	id = az_tianjiang.451
+	title = "天堂之战buff"
+	desc = "给新出现的原版tag加上天堂之战buff。"
+	trigger = {
+		shijianniangguojia_trigger = no
+		is_ai = yes
+		not = { has_idea = TY_yuanbanAI }
+		any_other_country = {
+			OR = {
+				has_idea = TY_yuanbanAI
+				has_idea = TY_yuanbanAI2
+			}
+		}
+	}
+	option = {
+		name = "好的"
+		add_ideas = TY_yuanbanAI
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#新tag获得空军限制等效果
+country_event = {
+	id = az_tianjiang.452
+	title = "11"
+	desc = "11111"
+	hidden = yes
+	trigger = {
+		has_global_flag = xianzhikongjun_on
+		not = { has_idea = TY_xianzhikongjun } 
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		add_ideas = TY_xianzhikongjun
+	}
+	option = {
+		name = "1"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.453
+	title = "11"
+	desc = "11111"
+	hidden = yes
+	trigger = {
+		has_global_flag = modoption_navykuaijian_on
+		not = { has_idea = TY_qianghuachuanwu } 
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		add_ideas = TY_qianghuachuanwu
+	}
+	option = {
+		name = "1"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.454
+	title = "11"
+	desc = "11111"
+	hidden = yes
+	trigger = {
+		has_global_flag = modoption_shengchan_on
+		not = { has_idea = TY_chaojishengchan } 
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		add_ideas = TY_chaojishengchan
+	}
+	option = {
+		name = "1"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.455
+	title = "11"
+	desc = "11111"
+	hidden = yes
+	trigger = {
+		has_global_flag = modoption_yansukeyan_on
+		not = { has_idea = TY_jiasuyanjiu } 
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		add_ideas = TY_jiasuyanjiu
+	}
+	option = {
+		name = "1"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.456
+	title = "11"
+	desc = "11111"
+	hidden = yes
+	trigger = {
+		has_global_flag = modoption_morepp_on
+		not = { has_idea = TY_gengduoppdian } 
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		add_ideas = TY_gengduoppdian
+	}
+	option = {
+		name = "1"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#吃鸡AIbuff
+country_event = {
+	id = az_tianjiang.457
+	title = "11"
+	desc = "11111"
+	hidden = yes
+	trigger = {
+		is_ai = yes
+		has_global_flag = az_chiji_flag
+		not = { has_idea = az_chiji_jinzhibaodu } 
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		add_ideas = az_chiji_jinzhibaodu
+	}
+	option = {
+		name = "1"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#通用申请加入阵营事件
+country_event = {
+	id = az_tianjiang.10000
+	title = az_tianjiang.10000.t
+	desc = az_tianjiang.10000.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "可以"
+		ROOT = {
+			add_to_faction = FROM
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = "不行"
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#通用建立阵营事件
+country_event = {
+	id = az_tianjiang.10001
+	title = "建立属于我们自己的阵营"
+	desc = "我们应该建立属于自己的阵营，名字应该叫什么好呢？"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "独立舰娘联盟"
+		create_faction = "独立舰娘联盟"
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = "不结盟舰娘"
+		create_faction = "不结盟舰娘"
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = az_tianjiang.10001.a
+		create_faction = az_tianjiang.10001.a
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = az_tianjiang.10001.b
+		create_faction = az_tianjiang.10001.b
 		ai_chance = {
 			base = 100
 		}

@@ -7,9 +7,8 @@ tags={
 }
 name="AzurLane碧蓝航线：天降舰娘"
 dependencies={
-	"52 Chinese Localisation"
 	"50 Construction Slots"
-	"Extended Tech Tree 1960"
+	"碧蓝mod吃鸡测试"
 }
 replace_path="gfx/loadingscreens"
 picture="mod/AzurLaneShipGirls/thumbnail.png"

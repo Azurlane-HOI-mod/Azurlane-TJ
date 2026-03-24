@@ -1,5 +1,13 @@
 on_actions = {
 	on_startup = { 
+		effect = {
+			every_country = {
+				set_technology = {
+					az_jianniangguo_tech = 1
+					popup = no
+				}
+			}
+		}
 		effect = { 
 			#开局音效
 			CHY = {
@@ -120,6 +128,8 @@ on_actions = {
 				recruit_character = xiaoshengdiyage
 				#其他
 				recruit_character = dingzhen
+				#塞壬
+				recruit_character = SIR_guanchazhe
 			}
 			#科研经费侧重
 			every_country = {
@@ -204,16 +214,6 @@ on_actions = {
 			}
 		} 
 	}
-	on_startup = {
-		effect = {
-			every_country = {
-				set_technology = {
-					az_jianniangguo_tech = 1
-					popup = no
-				}
-			}
-		}
-	}
 	on_monthly  = {
 		effect = {
 
@@ -261,55 +261,6 @@ on_actions = {
 					
 			}
 		}
-	}
-	on_puppet = {
-		effect = {
-			if = {
-				limit = {
-					AND = {
-						ROOT = {
-							shijianniangguojia_trigger = yes
-							NOT = { has_country_flag = jianniangyibeifuhuo }
-						}
-						FROM = {
-							shijianniangguojia_trigger = yes
-						}
-					}
-				}
-
-				FROM = {
-					country_event = getzhg_event.11
-				}
-				
-			}
-		}
-	}
-	on_annex = {
-		effect = {
-			if = {
-				limit = {
-					AND = {
-						FROM = {
-							shijianniangguojia_trigger = yes
-							NOT = { has_country_flag = jianniangyibeifuhuo }
-						}
-						ROOT = {
-							shijianniangguojia_trigger = yes
-						}
-					}
-				}
-
-				ROOT = {
-	
-					country_event = getzhg_event.1101
-				}
-			
-				
-					
-			}
-		}
-	}
-	on_capitulation = {
 		effect = {
 			if = {
 				limit = {
@@ -334,56 +285,6 @@ on_actions = {
 					
 			}
 		}
-	}
-	on_annex = {
-		effect = {
-			if = {
-				limit = {
-					has_global_flag = modoption_fengkuangai_on
-					AND = {
-						FROM = {
-							NOT = { has_country_flag = beilueduo }
-							shijianniangguojia_trigger = yes
-						}
-						ROOT = {
-							is_ai = no
-						}
-					}
-				}
-				
-				ROOT = {
-					country_event = { id = azevent.78 hours = 2 }
-				}
-				
-					
-			}
-		}
-	}
-	on_puppet = {
-		effect = {
-			if = {
-				limit = {
-					has_global_flag = modoption_fengkuangai_on
-					ROOT = {
-						NOT = { has_country_flag = beilueduo }
-						shijianniangguojia_trigger = yes
-					}
-					FROM = {
-						is_ai = no
-					}
-				}
-				ROOT = {
-					set_country_flag = beilueduo 
-				}
-				FROM = {
-					country_event = { id = azevent.78 hours = 2 }
-				}
-				
-					
-			}
-		}
-	}
-	on_capitulation = {
 		effect = {
 			if = {
 				limit = {
@@ -532,6 +433,48 @@ on_actions = {
 			if = {
 				limit = {
 					AND = {
+						ROOT = {
+							shijianniangguojia_trigger = yes
+							NOT = { has_country_flag = jianniangyibeifuhuo }
+						}
+						FROM = {
+							shijianniangguojia_trigger = yes
+						}
+					}
+				}
+
+				FROM = {
+					country_event = getzhg_event.11
+				}
+				
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = modoption_fengkuangai_on
+					ROOT = {
+						NOT = { has_country_flag = beilueduo }
+						shijianniangguojia_trigger = yes
+					}
+					FROM = {
+						is_ai = no
+					}
+				}
+				ROOT = {
+					set_country_flag = beilueduo 
+				}
+				FROM = {
+					country_event = { id = azevent.78 hours = 2 }
+				}
+				
+					
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					AND = {
 					    has_global_flag = MOD_azurlane_sairenzhizai
 						ROOT = {
 							shijianniangguojia_trigger = yes
@@ -660,6 +603,53 @@ on_actions = {
 					}
 				}
 				
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						FROM = {
+							shijianniangguojia_trigger = yes
+							NOT = { has_country_flag = jianniangyibeifuhuo }
+						}
+						ROOT = {
+							shijianniangguojia_trigger = yes
+						}
+					}
+				}
+
+				ROOT = {
+	
+					country_event = getzhg_event.1101
+				}
+			
+				
+					
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = modoption_fengkuangai_on
+					AND = {
+						FROM = {
+							NOT = { has_country_flag = beilueduo }
+							shijianniangguojia_trigger = yes
+						}
+						ROOT = {
+							is_ai = no
+						}
+					}
+				}
+				
+				ROOT = {
+					country_event = { id = azevent.78 hours = 2 }
+				}
+				
+					
 			}
 		}
 	}

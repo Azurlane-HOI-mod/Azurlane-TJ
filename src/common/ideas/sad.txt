@@ -59,11 +59,11 @@ ideas = {
 			modifier = {
 				
 				refit_speed = 0.1
-				repair_speed_factor = 0.15
-				consumer_goods_factor = -0.1
+				repair_speed_factor = 0.25
+				consumer_goods_factor = -0.15
 				navy_max_range_factor = 0.1
-				production_speed_dockyard_factor = 0.05
-				trade_opinion_factor = 0.15
+				production_speed_dockyard_factor = 0.1
+				trade_opinion_factor = 0.25
 			}
 		}
 		SAD_fbdzf = {
@@ -230,7 +230,7 @@ ideas = {
 		SAD_sddrg = {
 			picture = SPA_la_division_azul
 			allowed_civil_war = {
-				always = yes
+				has_government = fascism
 			}
 	
 			modifier = {
@@ -348,8 +348,8 @@ ideas = {
 			modifier = {
 				trade_opinion_factor = -0.1
 				opinion_gain_monthly_factor = -0.25
-				industrial_capacity_dockyard = 0.05
-				consumer_goods_factor = -0.15
+				industrial_capacity_dockyard = 0.1
+				consumer_goods_factor = -0.25
 			}
 		}
 		SAD_lsdfw = {
@@ -455,13 +455,13 @@ ideas = {
 			}
 	
 			modifier = {
-				experience_gain_army_factor = 0.15
-				experience_gain_army_unit_factor = 0.15
-				army_attack_factor = 0.2
-				army_defence_factor = 0.2
-				special_forces_attack_factor = 0.3
-				special_forces_defence_factor = 0.3
-				training_time_army_factor = 0.3
+				experience_gain_army_factor = 0.25
+				experience_gain_army_unit_factor = 0.25
+				army_attack_factor = 0.3
+				army_defence_factor = 0.3
+				special_forces_attack_factor = 0.5
+				special_forces_defence_factor = 0.5
+				training_time_army_factor = 0.1
 			}
 		}
 		SAD_gmzwd = {
@@ -471,8 +471,8 @@ ideas = {
 			}
 	
 			modifier = {
-				army_core_attack_factor = 0.6
-				army_core_defence_factor = 0.6
+				army_core_attack_factor = 1
+				army_core_defence_factor = 1
 				conscription = 0.025
 				required_garrison_factor = -0.35
 				training_time_army_factor = -0.25
@@ -485,8 +485,8 @@ ideas = {
 			}
 	
 			modifier = {
-				army_armor_attack_factor = 0.15
-				army_armor_defence_factor = 0.15
+				army_armor_attack_factor = 0.2
+				army_armor_defence_factor = 0.2
 				
 			}
 		}
@@ -554,12 +554,12 @@ ideas = {
 					instant = yes
 				}
 				heavy_tank_chassis = {
-					reliability_factor = 0.03
-					armor_value = 0.08
+					reliability_factor = 0.05
+					armor_value = 0.12
 					instant = yes
 				}
 				super_heavy_tank_chassis = {
-					reliability_factor = 0.03
+					reliability_factor = 0.05
 					armor_value = 0.15
 					instant = yes
 				}
@@ -604,7 +604,10 @@ ideas = {
 		SAD_gtty = {
 			picture = vittoria_mutilata
 			allowed_civil_war = {
-				always = yes
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
 			}
 			modifier = {
 				local_resources_factor = 0.1
@@ -643,6 +646,140 @@ ideas = {
 				industrial_capacity_factory = 0.1
 				army_defence_factor = 0.1
 				navy_max_range_factor = 0.1
+			}
+		}
+		SAD_tjlld = {
+			picture = ITA_il_sol_dell_avvenire_ns
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_strength_factor = 0.05
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				army_attack_against_major_factor = 0.2
+				army_defence_against_major_factor = 0.2
+			}
+		}
+		SAD_zybs = {
+			picture = generic_women_in_the_army
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				org_loss_when_moving = -0.2
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				army_attack_against_major_factor = 0.1
+				army_defence_against_major_factor = 0.1
+			}
+		}
+		SAD_tjjsll = {
+			picture = AUS_austromarxism
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.1
+				industrial_capacity_factory = 0.3
+				war_support_factor = 0.5
+				war_support_weekly = 0.01
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+			}
+		}
+		SAD_saddyh = {
+			picture = CHL_the_Hacienda_inquilinaje_system
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.5
+				line_change_production_efficiency_factor = 0.5
+				production_factory_max_efficiency_factor = 0.5
+				production_factory_efficiency_gain_factor = 0.5
+				industrial_capacity_dockyard = 0.5
+			}
+		}
+		SAD_saddyh_small = {
+			name = SAD_saddyh
+			picture = CHL_the_Hacienda_inquilinaje_system
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.3
+				line_change_production_efficiency_factor = 0.3
+				production_factory_max_efficiency_factor = 0.3
+				production_factory_efficiency_gain_factor = 0.3
+				industrial_capacity_dockyard = 0.3
+			}
+		}
+		SAD_saddyh_small2 = {
+			name = SAD_saddyh
+			picture = CHL_the_Hacienda_inquilinaje_system
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		SAD_zzsd = {
+			picture = RAJ_independence_movement
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+				army_attack_factor = 0.3
+				army_defence_factor = 0.3
+			}
+		}
+		SAD_cjgj = {
+			picture = PER_unification_initiative_idea
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.5
+				production_cost_industrial_complex_factor = -0.25
+				consumer_goods_expected_value = -0.05
+				consumer_goods_factor = -0.5
+				industry_free_repair_factor = 1
+				industry_repair_factor = 1
+			}
+		}
+		SAD_hryx = {
+			picture = ITA_il_sol_dell_avvenire_ns
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_org_factor = 0.1
+				army_attack_against_major_factor = 0.2
+				army_defence_against_major_factor = 0.2
+				breakthrough_factor = 0.1
+			}
+		}
+		SAD_nzrq = {
+			picture = RAJ_independence_movement
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				has_civil_war = no
+			}
+			modifier = {
+				army_core_attack_factor = 2
+				army_core_defence_factor = 2
+				breakthrough_factor = 4
 			}
 		}
 	}

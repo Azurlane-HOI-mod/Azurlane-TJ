@@ -30,6 +30,11 @@ BYG_start_tianjiang = {
 		value = 800
 	}
 	ai_strategy = {
+		type = equipment_production_factor	#装备倾向
+		id = armor			
+		value = 200
+	}
+	ai_strategy = {
 		type = role_ratio	#模板倾向
 		id = marines
 		value = 0
@@ -1140,7 +1145,7 @@ BYG_dont_do_so_many_naval_1942 = {
 
 	enable = {
 		is_historical_focus_on = yes
-		date < 1941.8.1
+		date < 1941.5.1
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
@@ -1276,7 +1281,7 @@ BYG_take_out_italy_boost = {
 		is_historical_focus_on = yes
 	}
 	enable = {
-		date > 1942.6.1
+		date > 1941.5.1
 		SAD = {
 			surrender_progress < 0.2
 		}
@@ -1298,7 +1303,7 @@ BYG_take_out_italy_boost = {
 	ai_strategy = {
 		type = invasion_unit_request
 		area = italy
-		value = 3
+		value = 10
 	}
 
 	ai_strategy = {
@@ -1312,6 +1317,24 @@ BYG_take_out_italy_boost = {
 		id = normandy_landing_zone
 		value = -100
 	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 68
+		value = 400
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 169
+		value = 400
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 29
+		value = 400
+	}
 }
 
 BYG_d_day_boost = {
@@ -1320,7 +1343,7 @@ BYG_d_day_boost = {
 	}
 	enable = {
 		has_war_with = TIX 
-		date > 1942.9.1
+		date > 1941.9.1
 		SAD = {
 			surrender_progress > 0.2
 		}
@@ -1361,11 +1384,11 @@ BYG_torch_boost = {
 	enable = {
 		country_exists = WEX 
 		has_war_with = TIX
-		date > 1942.5.1
+		date > 1941.5.1
 	}
 	abort = {
 		OR = {
-			date > 1943.9.1 # if we haven't succeeded by now, maybe try somewhere else
+			date > 1942.9.1 # if we haven't succeeded by now, maybe try somewhere else
 			461 = { is_controlled_by_ROOT_or_ally = yes }
 			459 = { is_controlled_by_ROOT_or_ally = yes }
 		}
@@ -1391,7 +1414,7 @@ BYG_torch_boost = {
 	ai_strategy = {
 		type = front_unit_request
 		area = torch_landing_zone
-		value = 1
+		value = 2
 	}
 	ai_strategy = {
 		type = prepare_for_war
@@ -1402,6 +1425,16 @@ BYG_torch_boost = {
 		type = invade
 		id = WEX
 		value = 200
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 47
+		value = 400
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 48
+		value = 400
 	}
 }
 
@@ -1936,5 +1969,97 @@ BYG_heavytank_production = {
 		type = template_prio	#训练模板倾向
 		id = heavy_armor
 		value = 20
+	}
+}
+
+### Pacific war strategies
+
+BYG_CHY_pacific_war_dominance = {
+	allowed = {
+		OR = {
+			original_tag = BYG
+			original_tag = CHY
+		}
+	}
+	
+	enable = {
+		OR = {
+			has_war_with = BYG
+			has_war_with = CHY
+		}
+		surrender_progress < 0.15 #Just give up trying to compete now
+		set_temp_variable = { t = num_ships_with_type@carrier }
+		check_variable = { t > 4 } #We lost the carrier war now, time to retreat
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = micronesia_pacific_control_zone
+		value = 80
+	}
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = mariana_pacific_control_zone
+		value = 80
+	}
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = north_pacific_control_zone
+		value = 80
+	}
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = pearl_harbor_pacific_control_zone
+		value = 80
+	}
+	
+}
+
+BYG_dominate_the_home_islands = {
+	allowed = {
+		original_tag = BYG
+	}
+	
+	enable = {
+		has_war_with = CHY
+		OR = {
+			date > 1943.1.1
+			controls_state = 645 #Iwo Jima
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = naval_dominance
+		id = home_islands_control_zone
+		value = 100
+	}
+}
+
+BYG_baohu_SAD = {
+	allowed = {
+		original_tag = BYG
+	}
+	enable = {
+		is_in_faction_with = SAD
+		has_war_with = TIX
+		date > 1941.1.1
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "SAD"
+		value = 5000
+	}
+	ai_strategy = {
+		type = force_defend_ally_borders
+		value = 2000
+		target = mainland_europe
 	}
 }

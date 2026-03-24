@@ -1,0 +1,2193 @@
+az_chiji_tyjy = {
+	ai_chiji_aixuanzhangudingtag_jy = {
+		visible = {
+			is_ai = yes
+			OR = {
+				#tag = HU6
+				tag = TI5
+			}
+			date < 1936.6.1
+		}
+		#fire_only_once = yes
+		available = {
+			is_ai = yes
+			custom_trigger_tooltip = {
+				tooltip = "距上次与塞壬停战已经过去了一段时间（3个月）"
+				NOT = { has_country_flag = zhanzhenglengque }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 14
+		days_re_enable = 60
+		remove_effect = {
+			if = {
+				limit = {
+					tag = HU6
+				}
+				declare_war_on = { target = SR4 type = annex_everything }
+			}
+			if = {
+				limit = {
+					tag = TI5
+				}
+				declare_war_on = { target = SR1 type = annex_everything }
+			}
+		}
+	}
+	ai_chiji_gfbuff_jy = {
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		available = {
+			is_ai = yes
+			not = { tag = SR1 }
+			not = { tag = SR3 }
+			not = { tag = BY1 }
+			not = { tag = BY3 }
+			not = { tag = BY4 }
+			not = { tag = BY5 }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_ideas = ai_chiji_gfbuff
+			add_ideas = ai_chiji_gfbuff2
+			if = {
+				limit = {
+					not = { tag = SIR }
+					not = { tag = SR1 }
+					not = { tag = SR3 }
+				}
+				every_controlled_state = {
+                	create_unit = {
+				   		division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
+				    	owner = PREV
+				    	count = 30
+			   	 	}
+            	}
+			}
+			if = {
+				limit = {
+					tag = SIR
+				}
+				add_offsite_building = { type = industrial_complex level = 100 }
+				add_offsite_building = { type = dockyard level = 300 }
+				add_offsite_building = { type = arms_factory level = 600 }
+				every_controlled_state = {
+                	create_unit = {
+				   		division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 1 start_equipment_factor = 1" 
+				    	owner = PREV
+				    	count = 5
+			   	 	}
+            	}
+			}
+		}
+	}
+	ai_chiji_kjzb_jy = {
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		available = {
+			is_ai = yes
+			not = { tag = SIR }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			army_experience = 500
+			set_technology = {
+				interwar_antitank = 1
+			}
+			set_technology = {
+				armor_tech_2 = 1
+			}
+			set_technology = {
+				antitank1 = 1
+			}
+			set_technology = {
+				antitank2 = 1
+			}
+			set_technology = {
+				antitank3 = 1
+			}
+			set_technology = {
+				interwar_antiair = 1
+			}
+			set_technology = {
+				centimetric_radar = 1
+			}
+			set_technology = {
+				improved_decimetric_radar = 1
+			}
+			set_technology = {
+				decimetric_radar = 1
+			}
+			set_technology = {
+				radio_detection = 1
+			}
+			set_technology = {
+				radio = 1
+			}
+			set_technology = {
+				tech_engineers2 = 1
+			}
+			set_technology = {
+				super_heavy_tank_chassis = 1
+			}
+			set_technology = {
+				engine_tech_2 = 1
+			}
+			set_technology = {
+				tech_maintenance_company = 1
+			}
+			set_technology = {
+				tech_maintenance_company2 = 1
+			}
+		}
+	}
+	az_cj_xuanzhan = {
+		icon = hol_draw_up_staff_plans
+		visible = {
+			is_subject = no
+		}
+		target_trigger = {
+			ROOT = {
+				is_subject = no
+			}
+			FROM = {
+				exists = yes
+				is_neighbor_of = ROOT
+				is_subject = no
+				not = { is_in_faction_with = ROOT }
+				not = { tag = YUW }
+				not = { tag = TIX }
+				not = { tag = BYG }
+				not = { tag = BFL }
+				not = { tag = HUJ }
+				not = { tag = DOH }
+				not = { tag = CHY }
+				not = { tag = SAD }
+				not = { tag = SIR }
+				not = { tag = SR1 }
+				not = { tag = SR2 }
+				not = { tag = SR3 }
+				not = { tag = SR4 }
+				not = {
+					OR = {
+			tag = TI1
+			tag = TI2
+			tag = TI3
+			tag = TI4
+			tag = TI5
+			tag = HU1
+			tag = HU2
+			tag = HU3
+			tag = HU4
+			tag = HU5
+			tag = HU6
+			tag = BF1
+			tag = BF2
+			tag = BF3
+			tag = BF4
+			tag = CH1
+			tag = CH2
+			tag = CH3
+			tag = CH4
+			tag = DH2
+			tag = DH3
+			tag = DH4
+			tag = BY1
+			tag = BY2
+			tag = BY3
+			tag = BY4
+			tag = BY5
+			tag = YU1
+			tag = YU2
+			tag = YU3
+			tag = YU4
+			tag = YU5
+			tag = SA1
+			tag = SA2
+			tag = SA3
+			tag = SA4
+					}
+				}
+			}
+		}
+		available = {
+			not = { has_country_flag = az_chiji_zhengzaixuanzhan }
+			if = {
+				limit = {
+					is_ai = yes
+					#not = { tag = SR2 }
+					#not = { tag = TI1 }
+					not = { tag = TI2 }
+					not = { tag = SA4 }
+					not = { tag = YU5 }
+					not = { tag = HU4 }
+					not = { tag = SA1 }
+					not = { tag = BF1 }
+					not = { tag = BF2 }
+					not = { tag = BF3 }
+					not = { tag = CH1 }
+					not = { tag = CH4 }
+					not = { tag = DH3 }
+					#not = { tag = SA2 }
+					not = { tag = BF4 }
+					not = { tag = HU5 }
+					#not = { tag = SR3 }
+				}
+				has_war = no
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					OR = {
+						tag = BF1
+						#tag = BF2
+					}
+				}
+				date > 1936.5.1
+				not = { has_war_with = SOV }
+				not = { has_war_with = RKM }
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					OR = {
+						tag = BF2
+						tag = BF3
+					}
+				}
+				not = { has_war_with = SOV }
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = SR1
+						tag = SR4
+					}
+				}
+				always = no
+			}
+			FROM = {
+				is_neighbor_of = ROOT
+				not = {
+					or = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+						#has_non_aggression_pact_with = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				shijianniangguojia_trigger = yes
+				add = 100
+			}
+			modifier = {
+				shisairen_trigger = yes
+				add = 100
+			}
+			modifier = {
+				tag = SIR
+				add = 100
+			}
+		}
+		fire_only_once = yes
+		days_remove = 7
+		war_with_target_on_remove = yes
+		complete_effect = {
+			set_country_flag = az_chiji_zhengzaixuanzhan
+		}
+		cancel_effect = {
+            clr_country_flag = az_chiji_zhengzaixuanzhan
+        }
+		cancel_trigger = {
+            FROM = {
+               exists = no
+            }
+        }
+		remove_effect = {
+			clr_country_flag = az_chiji_zhengzaixuanzhan
+			every_state = {
+				limit = {
+					is_core_of = FROM
+				}
+				add_claim_by = ROOT
+			}
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
+
+	az_cj_xuanzhan2 = {
+		icon = jian
+		visible = {
+			is_subject = no
+			shijianniangguojia_trigger = yes
+		}
+		cost = 50
+		target_trigger = {
+			ROOT = {
+				is_subject = no
+			}
+			FROM = {
+				exists = yes
+				is_neighbor_of = ROOT
+				is_subject = no
+				not = { is_in_faction_with = ROOT }
+				#not = { has_government = ROOT }
+				shijianniangguojia_trigger = yes
+			}
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+					OR = {
+						tag = BF1
+						tag = BF2
+						tag = BF3
+					}
+				}
+				FROM = {
+					tag = BF4
+				}
+			}
+			if = {
+				limit = {
+					date < 1937.1.1
+				}
+				custom_trigger_tooltip = {
+					tooltip = az_chiji_jinggao_tips
+					always = yes
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = YU1
+						tag = YU2
+						tag = YU3
+						tag = YU4
+					}
+					not = { has_global_flag = yuw_chijitongyi_yes }
+				}
+				OR = {
+					FROM  = {
+						OR = {
+							tag = YU1
+							tag = YU2
+							tag = YU3
+							tag = YU4
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = TI1
+						tag = TI2
+						tag = TI3
+						tag = TI4
+					}
+					not = { has_global_flag = tix_chijitongyi_yes }
+				}
+				OR = {
+					FROM  = {
+						OR = {
+							tag = TI1
+							tag = TI2
+							tag = TI3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					not = { tag = HU1 }
+					not = { tag = HU2 }
+					not = { tag = HU3 }
+					not = { tag = YU1 }
+					not = { tag = YU3 }
+					not = { tag = TI3 }
+					not = { tag = SA1 }
+					not = { tag = BY2 }
+					not = { tag = BF4 }
+				}
+				date > 1937.6.1
+			}
+			not = { has_country_flag = az_chiji_zhengzaixuanzhan }
+			if = {
+				limit = {
+					is_ai = yes
+					not = { tag = BY2 }
+					not = { tag = BF1 }
+					not = { tag = BF2 }
+					not = { tag = BF3 }
+				}
+				has_war = no
+			}
+			FROM = {
+				is_neighbor_of = ROOT
+				not = {
+					or = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+						has_government = ROOT
+						has_non_aggression_pact_with = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			#modifier = {
+			#	has_war = no
+			#	add = 0
+			#}
+			modifier = {
+				OR = {
+					tag = TI1
+					tag = TI2
+				}
+				is_neighbor_of = TI3
+				add = 80
+			}
+			modifier = {
+				tag = YU1
+				is_neighbor_of = YU3
+				add = 80
+			}
+			modifier = {
+				tag = YU3
+				is_neighbor_of = YU1
+				add = 80
+			}
+			modifier = {
+				tag = YU2
+				is_neighbor_of = YU4
+				add = 80
+			}
+			modifier = {
+				tag = YU4
+				is_neighbor_of = YU2
+				add = 80
+			}
+			modifier = {
+				is_neighbor_of = BF4
+				OR = {
+					tag = BF1
+					tag = BF2
+					tag = BF3
+				}
+				add = 80
+			}
+			modifier = {
+				tag = BF4
+				OR = {
+					is_neighbor_of = BF1
+					is_neighbor_of = BF2
+					is_neighbor_of = BF3
+				}
+				add = 80
+			}
+			modifier = {
+				tag = CH4
+				OR = {
+					is_neighbor_of = DH2
+					is_neighbor_of = DH3
+				}
+				add = 80
+			}
+			modifier = {
+				OR = {
+					tag = TI4
+					tag = YU5
+					tag = HU4
+					tag = HU5
+					tag = HU6
+					tag = SA4
+					tag = SA3
+				}
+				factor = 0
+			}
+			modifier = {
+				tag = BY2
+				OR = {
+					is_neighbor_of = BY1
+					is_neighbor_of = BY4
+				}
+				add = 80
+			}
+			modifier = {
+				tag = SA1
+				is_neighbor_of = SA3
+				add = 80
+			}
+			modifier = {
+				tag = SA2
+				OR = {
+					is_neighbor_of = SA3
+					is_neighbor_of = SA1
+				}
+				add = 40
+			}
+			modifier = {
+				OR = {
+					tag = DH2
+					tag = DH4
+				}
+				OR = {
+					is_neighbor_of = DH2
+					is_neighbor_of = DH3
+					is_neighbor_of = DH4
+				}
+				add = 5
+			}
+		}
+		fire_only_once = yes
+		days_remove = 7
+		war_with_target_on_remove = yes
+		complete_effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = YU1
+						tag = YU2
+						tag = YU3
+						tag = YU4
+						tag = TI1
+						tag = TI2
+						tag = TI3
+					}
+				}
+				custom_effect_tooltip = az_chiji_tyjy_tixyuwtips
+			}
+			set_country_flag = az_chiji_zhengzaixuanzhan
+		}
+		cancel_trigger = {
+            FROM = {
+               exists = no
+            }
+        }
+		cancel_effect = {
+            clr_country_flag = az_chiji_zhengzaixuanzhan
+        }
+		remove_effect = {
+			clr_country_flag = az_chiji_zhengzaixuanzhan
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
+
+	az_cj_xuanzhan3 = {
+		icon = jian
+		visible = {
+			is_subject = no
+			shisairen_trigger = yes
+		}
+		target_trigger = {
+			ROOT = {
+				is_subject = no
+			}
+			FROM = {
+				exists = yes
+				is_neighbor_of = ROOT
+				is_subject = no
+				not = { is_in_faction_with = ROOT }
+				not = { has_government = ROOT }
+				shijianniangguojia_trigger = yes
+				not = { tag = SIR }
+				not = { tag = SR1 }
+				not = { tag = SR2 }
+				not = { tag = SR3 }
+				not = { tag = SR4 }
+			}
+		}
+		available = {
+			date > 1940.1.1
+			FROM = {
+				is_neighbor_of = ROOT
+				not = {
+					or = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		days_remove = 7
+		days_re_enable = 90
+		war_with_target_on_remove = yes
+		remove_effect = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+	}
+	az_zsxzjy_sir = {
+		priority = 10000
+		visible = {
+			tag = SIR
+		}
+		available = {
+			date > 1939.12.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			create_faction_from_template = faction_template_srlm
+			remove_ideas = az_chiji_ty_idea_jianniang
+			swap_ideas = {
+				remove_idea = SIR_buff5
+				add_idea = SIR_buff_max
+			}
+		}
+	}
+	az_zsxzjy_sir2 = {
+		priority = 10000
+		visible = {
+			shisairen_trigger = yes
+			not = { tag = SIR }
+		}
+		available = {
+			date > 1939.12.2
+			SIR = { is_faction_leader = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			SIR = {
+				add_to_faction = ROOT
+			}
+			remove_ideas = az_chiji_ty_idea_jianniang
+			swap_ideas = {
+				remove_idea = SIR_buff5
+				add_idea = SIR_buff_max
+			}
+		}
+	}
+	az_zsxzjy_sa1 = {
+		priority = 10000
+		visible = {
+			tag = SA1
+		}
+		available = {
+			#not = { country_exists = SA3 }
+			not = { country_exists = TOS }
+			not = { country_exists = LBV }
+			not = { country_exists = PAP }
+			not = { country_exists = TTS }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_cosmetic_tag = SAD
+			set_rule = { can_join_factions = yes }
+			add_ideas = SAD_weiyouyuxue_idea
+			add_ideas = SAD_mxsdjq_idea
+			add_ideas = SAD_sdhsj
+			add_ideas = SAD_aqazcxy
+			add_ideas = SAD_gmzwd
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+	az_zsxzjy_sa2 = {
+		name = az_zsxzjy_sa1
+		priority = 10000
+		visible = {
+			tag = SA2
+		}
+		available = {
+			not = { country_exists = SA1 }
+			not = { country_exists = TOS }
+			not = { country_exists = LBV }
+			not = { country_exists = PAP }
+			not = { country_exists = TTS }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_rule = { can_join_factions = yes }
+			add_ideas = SAD_ylyzkql
+			add_ideas = SAD_luomameng_idea
+			add_ideas = SAD_jinghuamanjiu_idea
+			add_ideas = SAD_hnyg
+			add_ideas = SAD_weiyouyuxue_idea
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+	az_zsxzjy_sa3 = {
+		visible = {
+			tag = SA3
+		}
+		available = {
+			not = { country_exists = SA1 }
+			not = { country_exists = TTS }
+			not = { country_exists = TOS }
+			not = { country_exists = LBV }
+			not = { country_exists = PAP }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_cosmetic_tag = SAD
+			add_ideas = SAD_zybs
+			add_ideas = SAD_tjlld
+			add_ideas = SAD_zzsd
+			add_ideas = SAD_hryx
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+	az_zsxzjy_sa4 = {
+		priority = 10000
+		visible = {
+			tag = SA4
+		}
+		available = {
+			not = { country_exists = ORO }
+			not = { country_exists = GBA }
+			not = { country_exists = ETH }
+			not = { country_exists = SOM }
+			not = { country_exists = HAR }
+			not = { country_exists = AFA }
+			not = { country_exists = DJI }
+			not = { country_exists = QEM }
+			not = { country_exists = TIG }
+			not = { country_exists = ERI }
+			not = { country_exists = KEN }
+			not = { country_exists = TZN }
+			not = { country_exists = SUD }
+			not = { country_exists = UGA }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_capital = { state = 271 }
+			set_rule = { can_join_factions = yes }
+			add_ideas = SAD_zhimindizhengbing_idea
+			add_ideas = SAD_slmhd
+			add_ideas = SAD_luomameng_idea
+			add_ideas = SAD_gmzwd
+			add_ideas = SAD_weiyouyuxue_idea
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+	az_zsxzjy_yu13 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = YU1
+				tag = YU3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			has_war = no
+			strength_ratio = {
+    			tag = YU2
+    			ratio > 1.3
+			}
+			strength_ratio = {
+    			tag = YU4
+    			ratio > 1.3
+			}
+			not = { country_exists = WEX }
+			OR = {
+				not = { country_exists = YU1 }
+				not = { country_exists = YU3 }
+			}
+			not = { country_exists = FRA }
+			not = { country_exists = BRI }
+			not = { country_exists = RKB }
+			not = { country_exists = OCC }
+			not = { has_war_with = YU2 }
+			not = { has_war_with = YU4 }
+			YU2 = {
+				has_war = no
+			}
+			YU4 = {
+				has_war = no
+			}
+		}
+		complete_effect = {
+			set_global_flag = yuw_chijitongyi_yes
+			set_cosmetic_tag = YUW_yuwjg
+			set_rule = { can_join_factions = yes }
+			if  = {
+				limit = {
+					tag = YU1
+				}
+				add_ideas = YUW_lianhezhizheng_idea
+				add_ideas = YUW_ywzq
+				add_ideas = YUW_mzszj
+				add_ideas = YUW_jjggA1
+				add_ideas = YUW_zymygg
+				add_ideas = YUW_gr
+				add_ideas = YUW_slsywm
+			}
+			if  = {
+				limit = {
+					tag = YU3
+				}
+				add_ideas = YUW_dulandaquan_idea
+				add_ideas = YUW_ywzq
+				add_ideas = YUW_zypg
+				add_ideas = YUW_xingfenzhidu_idea
+				add_ideas = YUW_slsywm
+			}
+			remove_ideas = az_chiji_ty_idea_jianniang
+			if = {
+				limit = {
+					YU4 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = YU4 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					YU2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = YU2 transfer_troops = yes }
+			}
+		}
+	}
+	az_zsxzjy_yu24 = {
+		priority = 10000
+		name = az_zsxzjy_yu13
+		visible = {
+			OR = {
+				tag = YU2
+				tag = YU4
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			has_war = no
+			strength_ratio = {
+    			tag = YU1
+    			ratio > 1.3
+			}
+			fighting_army_strength_ratio = {
+    			tag = YU1
+    			ratio > 0.8
+			}
+			strength_ratio = {
+    			tag = YU3
+    			ratio > 1.3
+			}
+			fighting_army_strength_ratio = {
+    			tag = YU3
+    			ratio > 0.8
+			}
+			not = { country_exists = WEX }
+			not = { country_exists = FRA }
+			not = { country_exists = BRI }
+			not = { country_exists = RKB }
+			not = { country_exists = OCC }
+			not = { has_war_with = YU1 }
+			not = { has_war_with = YU2 }
+			not = { has_war_with = YU3 }
+			not = { has_war_with = YU4 }
+			YU1 = {
+				has_war = no
+			}
+			YU2 = {
+				has_war = no
+			}
+			YU3 = {
+				has_war = no
+			}
+			YU4 = {
+				has_war = no
+			}
+		}
+		complete_effect = {
+			set_global_flag = yuw_chijitongyi_yes
+			set_cosmetic_tag = YUW_yuwjg
+			set_rule = { can_join_factions = yes }
+			annex_country = { target = YU1 transfer_troops = yes }
+			annex_country = { target = YU3 transfer_troops = yes }
+			remove_ideas = az_chiji_ty_idea_jianniang
+			add_ideas = YUW_rssy
+			add_ideas = YUW_xyshz
+			add_ideas = YUW_jtjh
+			if = {
+				limit = {
+					tag = YU2
+				}
+				add_ideas = YUW_wcct
+			}
+			if = {
+				limit = {
+					tag = YU4
+				}
+				add_ideas = YUW_gxjy
+			}
+			if = {
+				limit = {
+					tag = YU2
+					YU4 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = YU4 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = YU4
+					YU2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = YU2 transfer_troops = yes }
+			}
+		}
+	}
+	az_zsxzjy_yu5 = {
+		priority = 10000
+		visible = {
+			tag = YU5
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { country_exists = MOR }
+			not = { country_exists = ALG }
+			not = { country_exists = TUN }
+			#not = { country_exists = LBA }
+			not = { country_exists = WES }
+			not = { country_exists = MRT }
+		}
+		complete_effect = {
+			set_capital = { state = 459 }
+			set_cosmetic_tag = YU5_ALG
+			set_rule = { can_join_factions = yes }
+			remove_ideas = az_chiji_ty_idea_jianniang
+			add_ideas = YUW_zhandourengzaijuxu_idea_3
+			add_ideas = YUW_seseshensheng
+			add_country_leader_trait = trait_psh_zhanjinzuie
+			add_country_leader_trait = trait_psh_wenxiangchenni
+		}
+	}
+	az_zsxzjy_hu12 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = HU1
+				tag = HU2
+				tag = HU3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			if = {
+				limit = {
+					tag = HU1
+				}
+				strength_ratio = {
+    				tag = HU2
+    				ratio > 1.2
+				}
+				fighting_army_strength_ratio = {
+    				tag = HU2
+    				ratio > 0.5
+				}
+				strength_ratio = {
+    				tag = HU3
+    				ratio > 1.2
+				}
+				fighting_army_strength_ratio = {
+    				tag = HU3
+    				ratio > 0.5
+				}
+			}
+			if = {
+				limit = {
+					tag = HU2
+				}
+				strength_ratio = {
+    				tag = HU1
+    				ratio > 1.2
+				}
+				fighting_army_strength_ratio = {
+    				tag = HU1
+    				ratio > 0.5
+				}
+				strength_ratio = {
+    				tag = HU3
+    				ratio > 1.2
+				}
+				fighting_army_strength_ratio = {
+    				tag = HU3
+    				ratio > 0.5
+				}
+			}
+			if = {
+				limit = {
+					tag = HU3
+				}
+				strength_ratio = {
+    				tag = HU1
+    				ratio > 1.2
+				}
+				fighting_army_strength_ratio = {
+    				tag = HU1
+    				ratio > 0.5
+				}
+				strength_ratio = {
+    				tag = HU2
+    				ratio > 1.2
+				}
+				fighting_army_strength_ratio = {
+    				tag = HU2
+    				ratio > 0.5
+				}
+			}
+			not = { country_exists = WLS }
+			not = { country_exists = ENG }
+			not = { country_exists = SCO }
+			not = { country_exists = NIR }
+			not = { country_exists = IRE }
+			not = { country_exists = RGB }
+			not = { has_war_with = HU1 }
+			not = { has_war_with = HU2 }
+			not = { has_war_with = HU3 }
+			HU1 = {
+				has_war = no
+			}
+			HU2 = {
+				has_war = no
+			}
+			HU3 = {
+				has_war = no
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = HUJ
+			set_rule = { can_join_factions = yes }
+			create_faction_from_template = faction_template_azurlane_chiji
+			add_ideas = HUJ_hjzz
+			add_ideas = HUJ_nwhwj2
+			add_ideas = HUJ_hjtgnpd
+			add_ideas = HUJ_btfy
+			add_ideas = HUJ_wmsddhp
+			remove_ideas = az_chiji_ty_idea_jianniang
+			if = {
+				limit = {
+					tag = HU1
+					HU2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = HU2 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = HU2
+					HU1 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = HU1 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = HU1
+						tag = HU2
+					}
+					HU3 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = HU3 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = HU3
+					HU1 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = HU1 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = HU3
+					HU2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = HU2 transfer_troops = yes }
+			}
+		}
+	}
+	az_zsxzjy_hu45 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = HU4
+				tag = HU5
+				tag = HU6
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			if = {
+				limit = {
+					tag = HU4
+				}
+				not = { country_exists = EGY }
+				not = { country_exists = PAL }
+				#not = { country_exists = LBA }
+				not = { country_exists = SUD }
+				not = { country_exists = LEB }
+				not = { country_exists = JOR }
+			}
+			if = {
+				limit = {
+					tag = HU5
+				}
+				not = { country_exists = RAJ }
+				not = { country_exists = KHL }
+				not = { country_exists = CIP }
+				not = { country_exists = RJP }
+				not = { country_exists = PAK }
+				not = { country_exists = WIS }
+				not = { country_exists = HYD }
+				not = { country_exists = RAS }
+				not = { country_exists = KOL }
+				not = { country_exists = MYS }
+			}
+			if = {
+				limit = {
+					tag = HU6
+				}
+				owns_state = 336
+				owns_state = 672
+				owns_state = 334
+				owns_state = 1022
+				owns_state = 333
+				owns_state = 1024
+			}
+		}
+		complete_effect = {
+			if  = {
+				limit = {
+					tag = HU4
+				}
+				set_capital = { state = 907 }
+			}
+			if  = {
+				limit = {
+					tag = HU5
+				}
+				set_cosmetic_tag = HU5_RAJ
+			}
+			if  = {
+				limit = {
+					tag = HU6
+				}
+				set_cosmetic_tag = HU6_MAL
+			}
+			set_rule = { can_join_factions = yes }
+			add_ideas = HUJ_hjzz
+			add_ideas = HUJ_quanqiuzhengfu_idea
+			add_ideas = HUJ_kaihuashiming_idea
+			add_ideas = HUJ_zzcy
+			add_ideas = HUJ_khlz
+			add_ideas = HUJ_nwhwj2
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+	az_zsxzjy_ti12 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = TI1
+				tag = TI2
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			if = {
+				limit = {
+					tag = TI1
+				}
+				strength_ratio = {
+    				tag = TI2
+    				ratio > 1.3
+				}
+				fighting_army_strength_ratio = {
+    				tag = TI2
+    				ratio > 0.5
+				}
+			}
+			if = {
+				limit = {
+					tag = TI2
+				}
+				strength_ratio = {
+    				tag = TI1
+    				ratio > 1.3
+				}
+				fighting_army_strength_ratio = {
+    				tag = TI1
+    				ratio > 0.5
+				}
+			}
+			not = { country_exists = BAY }
+			not = { country_exists = WUR }
+			not = { country_exists = RHI }
+			not = { country_exists = HES }
+			not = { country_exists = HAN }
+			not = { country_exists = THU }
+			not = { country_exists = SAX }
+			not = { country_exists = SIL }
+			not = { country_exists = SHL }
+			not = { country_exists = MEK }
+			not = { country_exists = KSH }
+			not = { country_exists = PRE }
+			not = { country_exists = GER }
+			not = { country_exists = TI3 }
+			not = { has_war_with = TI1 }
+			not = { has_war_with = TI2 }
+			not = { has_war_with = TI4 }
+		}
+		complete_effect = {
+			set_global_flag = tix_chijitongyi_yes
+			set_cosmetic_tag = TIX
+			set_rule = { can_join_factions = yes }
+			create_faction_from_template = faction_template_cszz_chiji
+			remove_ideas = az_chiji_ty_idea_jianniang
+			if = {
+				limit = {
+					tag = TI1
+				}
+				add_ideas = TIX_wndez
+				add_ideas = TIX_hjjwj
+				add_ideas = TIX_pjjgzyjy_idea
+				add_ideas = TIX_hszq_ex
+			}
+			if = {
+				limit = {
+					tag = TI2
+				}
+				add_ideas = TIX_srbq
+				add_ideas = TIX_gaishitaibao_ex
+				add_ideas = TIX_yuanshouzhiguo2
+				add_country_leader_trait = trait_psh_sirtixkejijiejing
+			}
+			if = {
+				limit = {
+					TI4 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = TI4 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = TI1
+					TI2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = TI2 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = TI2
+					TI1 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = TI1 transfer_troops = yes }
+			}
+		}
+	}
+	az_zsxzjy_ti3 = {
+		priority = 10000
+		visible = {
+			tag = TI3
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			owns_state = 64
+			not = { country_exists = TI1 }
+			not = { country_exists = TI2 }
+			not = { country_exists = TI4 }
+		}
+		complete_effect = {
+			set_global_flag = tix_chijitongyi_yes
+			set_cosmetic_tag = TIX
+			set_rule = { can_join_factions = yes }
+			create_faction_from_template = faction_template_cszz_chiji
+			add_ideas = TIX_wzgfy
+			add_ideas = TIX_jungongfuheti_idea
+			add_ideas = TIX_gyjj
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+	az_zsxzjy_ti5 = {
+		priority = 10000
+		visible = {
+			tag = TI5
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			OR = {
+				not = { country_exists = SR1 }
+				SR1 = { has_capitulated = yes }
+			}
+		}
+		complete_effect = {
+			set_capital = { state = 501 }
+			set_cosmetic_tag = TI5_BRA
+			set_rule = { can_join_factions = yes }
+			add_ideas = TIX_jingjifanrong_idea
+			add_ideas = TIX_the_shield_of_democracy_conservatism_welfare_and_democracy_idea
+			add_ideas = TIX_weirenquanerzhan_idea
+			add_ideas = TIX_jungongfuheti_idea
+			remove_ideas = az_chiji_ty_idea_jianniang
+			remove_ideas = az_chiji_zmsr_idea2
+		}
+	}
+	az_zsxzjy_bf123 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = BF1
+				tag = BF2
+				tag = BF3
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				tag = BF1
+				add = 100
+			}
+		}
+		fire_only_once = yes
+		available = {
+			date > 1937.7.1
+			not = { country_exists = SOV }
+			not = { country_exists = RKM }
+			not = { country_exists = BLR }
+			not = { country_exists = EST }
+			not = { country_exists = LAT }
+			not = { country_exists = LIT }
+			not = { country_exists = RKO }
+			not = { country_exists = UKR }
+			not = { country_exists = RKU }
+			not = { country_exists = KAL }
+			not = { country_exists = CRI }
+			not = { country_exists = CHU }
+			not = { country_exists = VGE }
+			not = { country_exists = MEL }
+			not = { country_exists = TAT }
+			not = { country_exists = KAR }
+			not = { has_war_with = BF1 }
+			not = { has_war_with = BF2 }
+			not = { has_war_with = BF3 }
+		}
+		complete_effect = {
+			set_cosmetic_tag = BFL
+			set_rule = { can_join_factions = yes }
+			create_faction_from_template = faction_template_BFL_comintern_chiji
+			add_ideas = BFL_hjdj5
+			add_ideas = BFL_quanmianfangong
+			add_ideas = BFL_tuanjieyixin
+			add_ideas = BFL_weibeilianfuyi
+			add_ideas = BFL_chiseliming
+			remove_ideas = az_chiji_ty_idea_jianniang
+			if = {
+				limit = {
+					tag = BF1
+					BF2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = BF2 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = BF1
+					BF3 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = BF3 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = BF2
+					BF1 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = BF1 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = BF2
+					BF3 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = BF3 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = BF3
+					BF1 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = BF1 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = BF3
+					BF2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = BF2 transfer_troops = yes }
+			}
+		}
+	}
+
+	az_zsxzjy_dh23 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = DH2
+				tag = DH3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			date > 1937.1.1
+			if = {
+				limit = {
+					tag = DH2
+				}
+				strength_ratio = {
+    				tag = DH3
+    				ratio > 1.5
+				}
+				fighting_army_strength_ratio = {
+    				tag = DH3
+    				ratio > 0.5
+				}
+			}
+			if = {
+				limit = {
+					tag = DH3
+				}
+				strength_ratio = {
+    				tag = DH2
+    				ratio > 1.5
+				}
+				fighting_army_strength_ratio = {
+    				tag = DH2
+    				ratio > 0.5
+				}
+			}
+			not = { country_exists = CHI }
+			not = { country_exists = RNG }
+			not = { country_exists = SND }
+			not = { country_exists = HBC }
+			not = { country_exists = SHX }
+			not = { country_exists = XIC }
+			not = { country_exists = SIC }
+			not = { country_exists = NXM }
+			not = { country_exists = GSM }
+			not = { country_exists = XSM }
+			not = { country_exists = YUN }
+			not = { country_exists = GXC }
+			not = { country_exists = GDC }
+			not = { country_exists = KHM }
+			not = { country_exists = SIK }
+			not = { country_exists = TIB }
+			not = { has_war_with = DH2 }
+			not = { has_war_with = DH3 }
+		}
+		complete_effect = {
+			set_cosmetic_tag = DOH
+			set_rule = { can_join_factions = yes }
+			create_faction_from_template = faction_template_DOH_united_front_chiji
+			if = {
+				limit = {
+					tag = DH2
+				}
+				add_ideas = DOH_jgjcsehy
+				add_ideas = DOH_xdh
+				add_ideas = DOH_guomuyixian_idea_2_yixianwansui
+				add_ideas = DOH_idea_jishushengji
+				add_ideas = DOH_ggkf_1
+				add_ideas = DOH_qiansedezhuiyi_1
+			}
+			if = {
+				limit = {
+					tag = DH3
+				}
+				add_ideas = DOH_sixiangjiaoyu
+				add_ideas = DOH_xdh
+				add_ideas = DOH_rmws
+				add_ideas = DOH_nbjs
+				add_ideas = DOH_ggkf_1
+				add_ideas = DOH_qiansedezhuiyi_1
+				add_country_leader_trait = paohuo_qinxierupu
+			}
+			remove_ideas = az_chiji_ty_idea_jianniang
+			if = {
+				limit = {
+					tag = DH2
+					DH3 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = DH3 transfer_troops = yes }
+			}
+			if = {
+				limit = {
+					tag = DH3
+					DH2 = {
+						is_ai = yes
+					}
+				}
+				annex_country = { target = DH2 transfer_troops = yes }
+			}
+		}
+	}
+
+	az_zsxzjy_dh4 = {
+		priority = 10000
+		visible = {
+			tag = DH4
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			date > 1937.1.1
+			not = { country_exists = CHI }
+			not = { country_exists = RNG }
+			not = { country_exists = SND }
+			not = { country_exists = HBC }
+			not = { country_exists = SHX }
+			not = { country_exists = XIC }
+			not = { country_exists = SIC }
+			not = { country_exists = NXM }
+			not = { country_exists = GSM }
+			not = { country_exists = XSM }
+			not = { country_exists = YUN }
+			not = { country_exists = GXC }
+			not = { country_exists = GDC }
+			not = { country_exists = KHM }
+			not = { country_exists = SIK }
+			not = { country_exists = TIB }
+			not = { country_exists = DH2 }
+			not = { country_exists = DH3 }
+		}
+		complete_effect = {
+			set_cosmetic_tag = DOH
+			set_rule = { can_join_factions = yes }
+			create_faction_from_template = faction_template_DOH_united_front_chiji
+			add_ideas = DOH_jgjcsehy
+			add_ideas = DOH_xdh
+			add_ideas = DOH_nbjs
+			add_ideas = DOH_wlzs
+			add_ideas = DOH_ziligengsheng_idea
+			add_ideas = DOH_qiansedezhuiyi_1
+			add_country_leader_trait = zhamouqiji
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+
+	az_zsxzjy_ch123 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = CH2
+				tag = CH3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { country_exists = JAP }
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					tag = CH2
+				}
+				declare_war_on = {
+					target = CH1
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = CH3
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					tag = CH3
+				}
+				declare_war_on = {
+					target = CH1
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = CH2
+					type = annex_everything
+				}
+			}
+			CH1 = {
+				add_ideas = az_chiji_chyneizhanbuff
+			}
+			CH2 = {
+				add_ideas = az_chiji_chyneizhanbuff
+			}
+			CH3 = {
+				add_ideas = az_chiji_chyneizhanbuff
+			}
+		}
+	}
+
+	az_zsxzjy_ch123_ex = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = CH1
+				tag = CH2
+				tag = CH3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { country_exists = JAP }
+			not = { country_exists = EZO }
+			if = {
+				limit = {
+					tag = CH1
+				}
+				not = { country_exists = CH2 }
+				not = { country_exists = CH3 }
+			}
+			if = {
+				limit = {
+					tag = CH2
+				}
+				not = { country_exists = CH1 }
+				not = { country_exists = CH3 }
+			}
+			if = {
+				limit = {
+					tag = CH3
+				}
+				not = { country_exists = CH2 }
+				not = { country_exists = CH1 }
+			}
+		}
+		complete_effect = {
+			set_global_flag = chy_chijitongyi_yes
+			set_cosmetic_tag = CHY
+			create_faction_from_template = faction_template_CHY_new_asia_faction_chiji
+			set_rule = { can_join_factions = yes }
+			add_ideas = CHY_sakulajundui_buff
+			add_ideas = chy_hangmu_buff_2
+			add_ideas = CHY_chongyingzaochuan
+			add_ideas = CHY_navyupupup
+			add_ideas = chy_wushidaojinshen_buff
+			add_ideas = chy_dalishenchan_buff
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+
+	az_zsxzjy_ch4 = {
+		priority = 10000
+		visible = {
+			tag = CH4
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { country_exists = KOR }
+			not = { country_exists = MAN }
+			not = { country_exists = MEN }
+			not = { country_exists = HBC }
+			not = { country_exists = VLA }
+			not = { country_exists = SND }
+			#not = { country_exists = FER }
+		}
+		complete_effect = {
+			set_capital = { state = 408 }
+			set_rule = { can_join_factions = yes }
+			add_ideas = CHY_sakulajundui_buff
+			add_ideas = CHY_zhongshibubin_buff
+			add_ideas = chy_wushidaojinshen_buff
+			add_ideas = chy_dalishenchan_buff
+			add_ideas = CHY_zhongshijixiehua_buff
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+
+	az_zsxzjy_by12345 = {
+		priority = 10000
+		visible = {
+			OR = {
+				tag = BY1
+				tag = BY2
+				tag = BY3
+				tag = BY4
+				tag = BY5
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { country_exists = USA }
+			not = { country_exists = CSA }
+			not = { country_exists = USB }
+			not = { country_exists = RCO }
+			not = { country_exists = RUS }
+			if = {
+				limit = {
+					tag = BY1
+				}
+				not = { country_exists = BY3 }
+				not = { country_exists = BY4 }
+				not = { country_exists = BY5 }
+			}
+			if = {
+				limit = {
+					tag = BY2
+				}
+				not = { country_exists = BY1 }
+				not = { country_exists = BY3 }
+				not = { country_exists = BY4 }
+				not = { country_exists = BY5 }
+			}
+			if = {
+				limit = {
+					tag = BY3
+				}
+				not = { country_exists = BY1 }
+				not = { country_exists = BY4 }
+				not = { country_exists = BY5 }
+			}
+			if = {
+				limit = {
+					tag = BY4
+				}
+				not = { country_exists = BY1 }
+				not = { country_exists = BY3 }
+				not = { country_exists = BY5 }
+			}
+			if = {
+				limit = {
+					tag = BY5
+				}
+				not = { country_exists = BY1 }
+				not = { country_exists = BY3 }
+				not = { country_exists = BY4 }
+			}
+		}
+		complete_effect = {
+			set_cosmetic_tag = BYG
+			create_faction_from_template = faction_template_byg_commonwealth_chiji
+			set_rule = { can_join_factions = yes }
+			add_ideas = BYG_jrfs
+			add_ideas = BYG_xdsdz
+			add_ideas = BYG_yqb
+			add_ideas = BYG_kdxt_1
+			add_ideas = BYG_hlqk
+			remove_ideas = az_chiji_ty_idea_jianniang
+		}
+	}
+
+	az_jrzy_jy_hu45 = {
+		priority = 10000
+		visible = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			OR = {
+				tag = HU4
+				tag = HU5
+				tag = HU6
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			OR = {
+				HU1 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+				HU2 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+				HU3 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					HU1 = {
+						is_faction_leader = yes
+					}
+				}
+				HU1 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+			if = {
+				limit = {
+					HU2 = {
+						is_faction_leader = yes
+					}
+				}
+				HU2 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+			if = {
+				limit = {
+					HU3 = {
+						is_faction_leader = yes
+					}
+				}
+				HU3 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+		}
+	}
+	az_jrzy_jy_yu124 = {
+		priority = 10000
+		visible = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			OR = {
+				tag = YU1
+				tag = YU2
+				tag = YU4
+				tag = YU5
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			OR = {
+				HU1 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+				HU2 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+				HU3 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+			}
+			if = {
+				limit = {
+					tag = YU5
+				}
+				has_global_flag = yuw_chijitongyi_yes
+				is_in_faction = no
+				not = { country_exists = YU3 }
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					HU1 = {
+						is_faction_leader = yes
+					}
+				}
+				HU1 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+			if = {
+				limit = {
+					HU2 = {
+						is_faction_leader = yes
+					}
+				}
+				HU2 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+			if = {
+				limit = {
+					HU3 = {
+						is_faction_leader = yes
+					}
+				}
+				HU3 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+		}
+	}
+	az_jrzy_jy_yu35 = {
+		priority = 10000
+		visible = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			OR = {
+				tag = YU3
+				tag = YU5
+				tag = SA1
+				tag = SA4
+				tag = TI5
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			OR = {
+				TI1 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+				TI2 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+			}
+			if = {
+				limit = {
+					tag = SA1
+				}
+				not = { country_exists = SA3 }
+			}
+			if = {
+				limit = {
+					tag = YU5
+				}
+				date > 1938.6.1
+				not = { has_global_flag = yuw_chijitongyi_yes }
+				country_exists = TI2
+				is_in_faction = no
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					TI1 = {
+						is_faction_leader = yes
+					}
+				}
+				TI1 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+			if = {
+				limit = {
+					TI2 = {
+						is_faction_leader = yes
+					}
+				}
+				TI2 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+		}
+	}
+	az_jrzy_jy_ch4 = {
+		priority = 10000
+		visible = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			tag = CH4
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		available = {
+			not = { has_idea = az_chiji_ty_idea_jianniang }
+			OR = {
+				CH1 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+				CH2 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+				CH3 = {
+					is_faction_leader = yes
+					not = { has_war_with = ROOT }
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					CH1 = {
+						is_faction_leader = yes
+					}
+				}
+				CH1 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+			if = {
+				limit = {
+					CH2 = {
+						is_faction_leader = yes
+					}
+				}
+				CH2 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+			if = {
+				limit = {
+					CH3 = {
+						is_faction_leader = yes
+					}
+				}
+				CH3 = {
+					country_event = az_tianjiang.10000
+				}
+			}
+		}
+	}
+	az_jrzy_jy_zjzy = {
+		priority = 10000
+		visible = {
+			 not = { has_idea = az_chiji_ty_idea_jianniang }
+			 is_subject = no
+			 is_in_faction = no
+			 NOT = { tag = TI1 }
+			 NOT = { tag = TI2 }
+			 NOT = { tag = HU1 }
+			 NOT = { tag = HU2 }
+			 NOT = { tag = HU3 }
+			 NOT = { tag = BY1 }
+			 NOT = { tag = BY2 }
+			 NOT = { tag = BY3 }
+			 NOT = { tag = BY4 }
+			 NOT = { tag = BY5 }
+			 NOT = { tag = CH1 }
+			 NOT = { tag = CH2 }
+			 NOT = { tag = CH3 }
+			 NOT = { tag = BF1 }
+			 NOT = { tag = BF2 }
+			 NOT = { tag = BF3 }
+			 NOT = { tag = DH1 }
+			 NOT = { tag = DH2 }
+			 NOT = { tag = DH3 }
+			 NOT = { tag = DH4 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		fire_only_once = yes
+		available = {
+			 is_subject = no
+			 is_in_faction = no
+		}
+		complete_effect = {
+			country_event = az_tianjiang.10001
+		}
+	}
+}

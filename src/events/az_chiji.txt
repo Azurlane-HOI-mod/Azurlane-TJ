@@ -1,0 +1,138 @@
+add_namespace = az_chiji
+country_event = {
+	id = az_chiji.0
+	title = "吃鸡通用国策测试"
+	desc = "测试吃鸡通用国策"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "111"
+        load_focus_tree = az_generic_focus
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_chiji.1
+	title = "吃鸡测试"
+	desc = "测试吃鸡地图，所有选项最好保持默认设置！游戏前期会很卡，但越往后越流畅！"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "加载地图（不要选主要舰娘国点击这个选项）"
+        custom_effect_tooltip = az_chiji_ka_tips
+        country_event = az_chiji.2
+        set_global_flag = az_chiji_flag
+        hidden_effect = {
+            az_liekai_scripted_effects = yes
+        }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_chiji.2
+	title = "吃鸡测试2"
+	desc = "刷新中，游戏前期会很卡，但越往后越流畅！"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "刷新中"
+        custom_effect_tooltip = az_chiji_ka_tips
+        country_event = az_chiji.3
+        hidden_effect = {
+            az_shuaxinzhong_scripted_effects = yes
+        }
+    }
+}
+
+country_event = {
+	id = az_chiji.3
+	title = "吃鸡测试3"
+	desc = "宣战中，游戏前期会很卡，但越往后越流畅！"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "此选项为各主要势力的固定宣战，不建议跳过"
+        custom_effect_tooltip = az_chiji_ka_tips
+        country_event = az_chiji.4
+        hidden_effect = {
+            az_shuaxinzhong2_scripted_effects = yes
+        }
+    }
+	option = {
+		name = "如果点了上面之后卡死超过五分钟，再重开点这个跳过"
+		ai_chance = {
+			factor = 100
+		}
+    }
+}
+
+country_event = {
+	id = az_chiji.4
+	title = "吃鸡测试4"
+	desc = "强烈建议此时存档，以后开始游戏都可以直接通过这个存档进入！（前提是版本稳定）"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "需要更全面战争的点这个"
+        custom_effect_tooltip = az_chiji_ka_tips
+        country_event = az_chiji.5
+        hidden_effect = {
+            az_shuaxinzhong3_scripted_effects = yes
+        }
+    }
+	option = {
+		name = "卡死时间超过两分钟的点这个跳过固定宣战"
+		ai_chance = {
+			factor = 100
+		}
+    }
+}
+
+country_event = {
+	id = az_chiji.5
+	title = "吃鸡测试5"
+	desc = "宣战中"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "需要更全面战争的点这个"
+        custom_effect_tooltip = az_chiji_ka_tips
+        country_event = az_chiji.6
+        hidden_effect = {
+            az_shuaxinzhong4_scripted_effects = yes
+        }
+    }
+	option = {
+		name = "卡死时间超过两分钟的点这个跳过固定宣战"
+		ai_chance = {
+			factor = 100
+		}
+    }
+}
+
+country_event = {
+	id = az_chiji.6
+	title = "吃鸡测试6"
+	desc = "宣战中"
+	picture = GFX_aze_kaixuan
+	is_triggered_only = yes
+	option = {
+		name = "需要更全面战争的点这个"
+        custom_effect_tooltip = az_chiji_ka_tips
+        hidden_effect = {
+            az_shuaxinzhong5_scripted_effects = yes
+        }
+    }
+	option = {
+		name = "卡死时间超过两分钟的点这个跳过固定宣战"
+		ai_chance = {
+			factor = 100
+		}
+    }
+}

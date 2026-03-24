@@ -67,6 +67,9 @@
 						state = 530
 						state = 537
 						state = 536
+						state = 1020
+						state = 1019
+						state = 1018
 					}
 				}
 				add_extra_state_shared_building_slots = 2
@@ -330,23 +333,34 @@
 				limit = {
 					OR = {
 						is_military_industrial_organization = CHY_osaka_army_arsenal_organization
-						is_military_industrial_organization = CHY_aichi_organization
+						is_military_industrial_organization = CHY_sagami_army_arsenal_organization
+						is_military_industrial_organization = CHY_mitsubishi_heavy_industries_organization
 						is_military_industrial_organization = CHY_kure_naval_arsenal_organization
 						is_military_industrial_organization = CHY_yokosuka_naval_arsenal_organization
+						is_military_industrial_organization = CHY_kawasaki_dockyards_organization
 						is_military_industrial_organization = CHY_maizuru_naval_arsenal_organization
 						is_military_industrial_organization = CHY_sasebo_naval_arsenal_organization
+						is_military_industrial_organization = CHY_mitsubishi_kobe_shipyard_organization
 						is_military_industrial_organization = CHY_mitsubishi_organization
 						is_military_industrial_organization = CHY_aichi_organization
 						is_military_industrial_organization = CHY_nakajima_organization
 						is_military_industrial_organization = CHY_yokosuka_organization
-						is_military_industrial_organization = CHY_tokyo_arsenal_organization
+						is_military_industrial_organization = CHY_kawanishi_aircraft_company_organization
+						is_military_industrial_organization = CHY_kawasaki_aircraft_industries_organization
+						is_military_industrial_organization = CHY_tachikawa_aircraft_company_organization
+						is_military_industrial_organization = CHY_kokura_arsenal_organization
 						is_military_industrial_organization = CHY_osaka_army_arsenal_artillery_organization
 						is_military_industrial_organization = CHY_nissan_organization
+						is_military_industrial_organization = CHY_tokyo_automobile_industries_organization
+						is_military_industrial_organization = CHY_nagoya_arsenal_organization
+						is_military_industrial_organization = CHY_kayaba_industry_organization
+						is_military_industrial_organization = CHY_hitachi_arms_department_organization
 					}
 				}
 				add_mio_size = 2
 			}
-			add_research_slot = 1
+			#add_research_slot = 1 不要6槽
+			IF = { limit = { has_idea = oriental_development_company }  swap_ideas = { remove_idea = oriental_development_company add_idea = oriental_development_company_upgraded } }
 		}
 	}
 	focus = {
@@ -1917,6 +1931,9 @@
 		ai_will_do = {
 			factor = 40
 		}
+		available = {
+			is_puppet = no
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -1937,13 +1954,14 @@
 			focus = CHY_changmen1
 		}
 		available = {
+			is_puppet = no
 			has_country_flag = chy_shangwu
 		}
 		x = 5
 		y = 1
 		cost = 4
 		ai_will_do = {
-			factor = 40
+			factor = 90
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1956,11 +1974,8 @@
 				character = CHY_chicheng
 				ideology = fascism_ideology
 			}
-			CHY_chicheng = {
-				add_country_leader_trait = {
+			add_country_leader_trait = {
 					trait = yihangzhan
-					ideology = fascism
-				}
 			}
 			news_event = CHY_new1_shijian.20
 			add_political_power = 300
@@ -1978,7 +1993,7 @@
 		y = 1
 		cost = 5
 		ai_will_do = {
-			factor = 40
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2007,7 +2022,7 @@
 		y = 1
 		cost = 5
 		ai_will_do = {
-			factor = 40
+			factor = 80
 		}
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
@@ -2070,7 +2085,7 @@
 		y = 1
 		cost = 5
 		ai_will_do = {
-			factor = 40
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2090,7 +2105,7 @@
 		y = 1
 		cost = 5
 		ai_will_do = {
-			factor = 40
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2202,7 +2217,7 @@
 		y = 1
 		cost = 4
 		ai_will_do = {
-			factor = 40
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2246,7 +2261,7 @@
 		y = 1
 		cost = 4
 		ai_will_do = {
-			factor = 15
+			factor = 40
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2346,8 +2361,11 @@
 		x = 0
 		y = 1
 		cost = 4
+		available = {
+			is_puppet = no
+		}
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2372,7 +2390,7 @@
 		y = 1
 		cost = 4
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2393,7 +2411,7 @@
 		y = 1
 		cost = 4
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2441,210 +2459,7 @@
 			hidden_effect = {
 				if = {
 					limit = {
-						NOT = {
-							has_idea = TY_dingzhenai
-						}
-						is_ai = yes
-						OR = { has_global_flag = AZ_fengkuangAI_citiao_10 
-	                    has_global_flag = AZ_fengkuangAI_citiao_ex 
-		            }
-					}
-					division_template = {
-						name = "关东边防师"
-						division_names_group = JAP_ARM_01
-						regiments = {
-							medium_armor = {
-								x = 0
-								y = 0
-							}
-							medium_armor = {
-								x = 0
-								y = 1
-							}
-							medium_armor = {
-								x = 0
-								y = 2
-							}
-							medium_armor = {
-								x = 0
-								y = 3
-							}
-							medium_armor = {
-								x = 1
-								y = 0
-							}
-							medium_armor = {
-								x = 1
-								y = 1
-							}
-							medium_armor = {
-								x = 1
-								y = 2
-							}
-							medium_armor = {
-								x = 1
-								y = 3
-							}
-							medium_tank_destroyer_brigade = {
-								x = 2
-								y = 0
-							}
-							medium_sp_anti_air_brigade = {
-								x = 2
-								y = 1
-							}
-							infantry = {
-								x = 3
-								y = 0
-							}
-							infantry = {
-								x = 3
-								y = 1
-							}
-							infantry = {
-								x = 3
-								y = 2
-							}
-							infantry = {
-								x = 3
-								y = 3
-							}
-							infantry = {
-								x = 4
-								y = 0
-							}
-							infantry = {
-								x = 4
-								y = 1
-							}
-							infantry = {
-								x = 4
-								y = 2
-							}
-							infantry = {
-								x = 4
-								y = 3
-							}
-						}
-						support = {
-							armored_engineer = {
-								x = 0
-								y = 0
-							}
-							light_tank_recon = {
-								x = 0
-								y = 1
-							}
-							medium_flame_tank = {
-								x = 0
-								y = 2
-							}
-							armored_maintenance = {
-								x = 0
-								y = 3
-							}
-							helicopter_field_hospital = {
-								x = 0
-								y = 4
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_idea = TY_dingzhenai
-						}
-						NOT = { is_ai = yes }
-						OR = { has_global_flag = AZ_fengkuangAI_citiao_10 
-	                    has_global_flag = AZ_fengkuangAI_citiao_ex 
-		            }
-					}
-					division_template = {
-						name = "关东边防师"
-						division_names_group = JAP_ARM_01
-						regiments = {
-							artillery_brigade = {
-								x = 0
-								y = 0
-							}
-							artillery_brigade = {
-								x = 0
-								y = 1
-							}
-							artillery_brigade = {
-								x = 1
-								y = 0
-							}
-							artillery_brigade = {
-								x = 1
-								y = 1
-							}
-							medium_armor = {
-								x = 2
-								y = 0
-							}
-							infantry = {
-								x = 3
-								y = 0
-							}
-							infantry = {
-								x = 3
-								y = 1
-							}
-							infantry = {
-								x = 3
-								y = 2
-							}
-							infantry = {
-								x = 3
-								y = 3
-							}
-							infantry = {
-								x = 4
-								y = 0
-							}
-							infantry = {
-								x = 4
-								y = 1
-							}
-							infantry = {
-								x = 4
-								y = 2
-							}
-							infantry = {
-								x = 4
-								y = 3
-							}
-						}
-						support = {
-							armored_engineer = {
-								x = 0
-								y = 0
-							}
-							light_tank_recon = {
-								x = 0
-								y = 1
-							}
-							armored_maintenance = {
-								x = 0
-								y = 3
-							}
-							helicopter_field_hospital = {
-								x = 0
-								y = 4
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
 						NOT = { has_idea = TY_dingzhenai }
-						NOT = { has_idea = TY_fengkuangai }
-						NOT = { has_idea = TY_fengkuangai2 }
-		                NOT = { has_idea = TY_fengkuangai3 }
-						NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
-		                NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 					}
 					division_template = {
 						name = "关东边防师"
@@ -2926,7 +2741,7 @@
 		y = 1
 		cost = 4
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2990,7 +2805,11 @@
 		y = 1
 		cost = 2
 		ai_will_do = {
-			factor = 100
+			factor = 10
+			modifier = {
+				date > 1937.5.1
+				factor  = 100
+			}
 		}
 		available = {
 			is_puppet = no
@@ -3016,7 +2835,7 @@
 		y = 1
 		cost = 7
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		available = {
 			is_puppet = no
@@ -3050,6 +2869,11 @@
 			add_state_core = 525
 			add_state_core = 527
 			add_state_core = 524
+			add_state_core = 1043
+			add_state_core = 1028
+			add_state_core = 1029
+			add_state_core = 1031
+			add_state_core = 1030
 		}
 	}
 	focus = {
@@ -3112,7 +2936,7 @@
 		y = 1
 		cost = 14
 		ai_will_do = {
-			factor = 35
+			factor = 50
 		}
 		available = {
 			is_puppet = no
@@ -3461,7 +3285,7 @@
 		y = 1
 		cost = 4
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		available = {
 			is_puppet = no
@@ -3537,7 +3361,7 @@
 			}
 		}
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		completion_reward = {
 			YUW = {
@@ -3566,7 +3390,7 @@
 			is_puppet = no
 		}
 		ai_will_do = {
-			factor = 35
+			factor = 80
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -3591,7 +3415,11 @@
 			is_puppet = no
 		}
 		ai_will_do = {
-			factor = 35
+			factor = 10
+			modifier = {
+				date > 1941.6.1
+				add = 50
+			}
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -3666,7 +3494,11 @@
 		y = 1
 		cost = 2
 		ai_will_do = {
-			factor = 35
+			factor = 10
+			modifier = {
+				date > 1941.6.1
+				add = 50
+			}
 		}
 		available = {
 			is_puppet = no
@@ -4027,6 +3859,7 @@
 			focus = CHY_chichen1
 		}
 		available = {
+			is_puppet = no
 			has_country_leader = {
 				ruling_only = yes
 				character = CHY_changmen
@@ -4044,6 +3877,9 @@
 		completion_reward = {
 			add_stability = 0.1
 			add_political_power = 300
+			hidden_effect = {
+				news_event = aznews.22
+			}
 			hidden_effect = {
 				add_country_leader_role = {
 					Character = CHY_changmen
@@ -4500,6 +4336,7 @@
 				transfer_state = 745
 				transfer_state = 716
 				transfer_state = 524
+				transfer_state = 1043
 				give_resource_rights = {
 					receiver = CHY
 					state = 328

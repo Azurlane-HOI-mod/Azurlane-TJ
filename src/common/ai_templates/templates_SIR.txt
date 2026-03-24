@@ -7,7 +7,7 @@ armor_default = {
 	}
 	match_to_count = 0.55
 		upgrade_prio = {
-			base = 10
+			base = 100
 			modifier = {
 				has_idea = TY_dingzhenai 
 				factor = 0
@@ -17,27 +17,35 @@ armor_default = {
 		upgrade_prio = {
 			base = 10
 			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-		NOT = { country_exists = BLI }
-			}
-		}
-		production_prio = {
-			base = 0
-			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
+				factor = 100
+				NOT = {	has_idea = TY_dingzhenai }
 				NOT = { country_exists = BLI }
 			}
 			modifier = {
-				add = 100
-			 has_global_flag = modoption_historicalbossai_on 
+				factor = 1000
+			 	has_global_flag = az_chiji_flag
 			}
 		}
-		target_width = 42
+		production_prio = {
+			base = 1
+			modifier = {
+				factor = 100
+				NOT = {	has_idea = TY_dingzhenai }
+				NOT = { country_exists = BLI }
+			}
+			modifier = {
+				factor = 100
+			 	has_global_flag = modoption_historicalbossai_on 
+			}
+			modifier = {
+				factor = 1000
+			 	has_global_flag = az_chiji_flag
+			}
+		}
+		target_width = 36
 		width_weight = 1
 		column_swap_factor = 1.5
-		reinforce_prio = 1
+		reinforce_prio = 2
 		target_template = {
 			weight = 0.9
 			match_value = 9000.0
@@ -50,8 +58,8 @@ armor_default = {
 			}
 			regiments = {
 			    heavy_armor = 8
-				heavy_tank_destroyer_brigade = 1
-				mechanized = 8
+				#heavy_tank_destroyer_brigade = 1
+				mechanized = 10
 			}
 		}
 		allowed_types = {

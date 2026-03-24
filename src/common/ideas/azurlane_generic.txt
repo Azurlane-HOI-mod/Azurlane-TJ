@@ -463,6 +463,44 @@ ideas = {
 
 	# Special ones that can be applied on other countries through focus system.
 	country = {
+		TY_fkAIdebuffplayer = {
+			picture = dingzhenai
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#generate_wargoal_tension = 1
+				guarantee_cost = 99999
+				bunker_max_level_terrain_limit = -5
+				coastal_bunker_max_level_terrain_limit = -5
+				#justify_war_goal_time = 99999
+			}
+		}
+		TY_fkAIdebuffplayer_teding = {
+			picture = dingzhenai
+			cancel = {
+				date > 1939.9.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				generate_wargoal_tension = 1
+				justify_war_goal_time = 99999
+			}
+		}
+		TY_fkAIex_sir_debuff = {
+			picture = dingzhenai
+			cancel = {
+				date > 1943.1.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				enemy_justify_war_goal_time = 10000
+			}
+		}
 		az_hjll_1 = {
 			picture = dingzhenai
 			allowed_civil_war = {
@@ -593,6 +631,9 @@ ideas = {
 				always = yes
 			}
 			modifier = {
+				automatic_grant_medal_chance = 1
+				unit_medal_effectiveness = 1
+				planning_decay_rate_factor = -0.8
 				consumer_goods_expected_value = -0.05
 				production_cost_industrial_complex_factor = -0.1	
 				production_cost_arms_factory_factor = -0.1
@@ -631,6 +672,7 @@ ideas = {
 				sp_air_jet_engine_speed_factor = 0.3
 				land_bunker_effectiveness_factor = 0.5
 				coastal_bunker_effectiveness_factor = 0.5
+				training_time_army_factor = -0.2
 			} 
 		}
 		TY_fengkuangai2 = {
@@ -639,6 +681,9 @@ ideas = {
 				always = yes
 			}
 			modifier = {
+				automatic_grant_medal_chance = 1
+				unit_medal_effectiveness = 1
+				planning_decay_rate_factor = -0.8
 				consumer_goods_expected_value = -0.05
 				production_cost_industrial_complex_factor = -0.1	
 				production_cost_arms_factory_factor = -0.1
@@ -680,6 +725,7 @@ ideas = {
 				sp_air_jet_engine_speed_factor = 0.3
 				land_bunker_effectiveness_factor = 0.75
 				coastal_bunker_effectiveness_factor = 0.75
+				training_time_army_factor = -0.2
 			} 
 		}
 		TY_fengkuangai3 = {
@@ -688,6 +734,9 @@ ideas = {
 				always = yes
 			}
 			modifier = {
+				automatic_grant_medal_chance = 1
+				unit_medal_effectiveness = 1
+				planning_decay_rate_factor = -0.8
 				consumer_goods_expected_value = -0.05
 				production_cost_industrial_complex_factor = -0.1	
 				production_cost_arms_factory_factor = -0.1
@@ -729,6 +778,7 @@ ideas = {
 				sp_air_jet_engine_speed_factor = 0.3
 				land_bunker_effectiveness_factor = 1
 				coastal_bunker_effectiveness_factor = 1
+				training_time_army_factor = -0.2
 			} 
 		}
 		az_pt_1 = {

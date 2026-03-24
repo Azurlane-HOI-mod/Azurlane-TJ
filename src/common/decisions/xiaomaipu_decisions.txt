@@ -447,7 +447,7 @@ xiaomaipu_category = {
 		}
 		days_remove = 200
 		ai_will_do = {
-			factor = 1000
+			factor = 5
 		}
 		modifier = {
 			civilian_factory_use = 10
@@ -469,14 +469,6 @@ xiaomaipu_category = {
 		}
 		ai_will_do = {
 			factor = 0
-			modifier = {
-				OR = {
-					tag = HUJ
-					tag = BYG
-					tag = CHY
-				}
-				add = 3
-			}
 		}
 		days_remove = 90
 		available = {
@@ -527,31 +519,7 @@ xiaomaipu_category = {
 			is_ai = yes
 		}
 		ai_will_do = {
-			factor = 5
-			modifier = {
-				AND = {
-					date < 1942.1.1
-					OR = {
-						tag = TIX
-						tag = BFL
-						tag = DOH
-						tag = YUW
-					}
-				}
-				factor = 0
-			}
-			modifier = {
-				AND = {
-					date > 1939.1.1
-					OR = {
-						tag = HUJ
-						tag = CHY
-						tag = SAD
-						tag = BYG
-					}
-				}
-				factor = 0
-			}
+			factor = 0
 		}
 		days_remove = 120
 		available = {
@@ -596,16 +564,7 @@ xiaomaipu_category = {
 	army_college_lujunzhanshukeyan = {
 		icon = shu
 		ai_will_do = {
-			factor = 5
-			modifier = {
-				OR = {
-					tag = TIX
-					tag = BFL
-					tag = DOH
-					tag = YUW
-				}
-				add = 5
-			}
+			factor = 0
 		}
 		days_remove = 90
 		available = {

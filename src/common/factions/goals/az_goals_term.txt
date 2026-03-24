@@ -1,0 +1,1886 @@
+az_faction_goal_one_germany = {
+	name = az_one_germany_goal_name
+	description = az_one_germany_goal_desc
+	category = short_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = TIX
+		}
+	}
+	cancel = { 
+		FROM = {
+			NOT = { has_government = fascism }
+		}
+	}
+	completed = {
+		any_country_with_original_tag = {
+			original_tag_to_check = AUS
+			exists = no 
+		}
+		any_country_with_original_tag = {
+			original_tag_to_check = TIX
+			controls_state = 4
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 50
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_stability = 0.15
+		add_political_power = 50
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_building_up_guam = {
+	name = building_up_guam_goal_name
+	description = az_building_up_guam_goal_desc
+	category = short_term
+	group = FOCUS_FILTER_CONSOLIDATION
+	visible = {
+		FROM = { tag = BYG }
+	}
+	cancel = { 
+		FROM = { NOT = { controls_state = 638 } }
+	}
+	completed = {
+		638 = { naval_base > 2 }
+	}
+	complete_effect = {
+		add_faction_power_projection = 100 
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_war_support = 0.02
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_coastal_security = {
+	name = coastal_security_goal_name
+	description = coastal_security_goal_desc
+	category = short_term
+	group = FOCUS_FILTER_NAVY_XP
+	allowed = {
+	}
+	visible = {
+		FROM = {
+			original_tag = CHY
+		}
+	}
+	completed = {
+		has_naval_control = 90
+		has_naval_control = 79
+		has_naval_control = 77
+		has_naval_control = 76
+		has_naval_control = 75
+		has_naval_control = 73
+	}
+	complete_effect = {
+		add_faction_initiative = 1
+		add_faction_power_projection = 500
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+				}	
+				name = ALL_FACTION_MEMBERS
+			}
+			navy_experience = 50
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 4 # Mid game prio
+			date > 1940.1.1
+		}
+	}
+}
+
+az_faction_goal_production_quotas = {
+	name = production_quotas_goal_name
+	description = production_quotas_goal_desc
+	group = FOCUS_FILTER_INDUSTRY
+	category = short_term
+	allowed = {
+		original_tag = BFL
+	}
+	available = {
+		has_war = no
+	}
+	completed = {
+		count_in_collection = {
+			collection = {
+				input = game:scope
+				operators = { faction_members }
+				name = FACTION_NAME
+			}
+			stockpile = infantry_equipment
+			size > 100000
+		}
+		count_in_collection = {
+			collection = {
+				input = game:scope
+				operators = { faction_members }
+				name = FACTION_NAME
+			}
+			stockpile = artillery_equipment
+			size > 2500
+		}
+		count_in_collection = {
+			collection = {
+				input = game:scope
+				operators = { faction_members }
+				name = FACTION_NAME
+			}
+			stockpile = support_equipment
+			size > 1000
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = INFLUENCE_ABOVE_30_PERCENT
+		every_faction_member = {
+			limit = { faction_influence_ratio > 0.3}
+			add_political_power = 75
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 1
+			date < 1940.1.1
+		}
+	}
+}
+
+az_faction_goal_stall_the_fascist_threat = {
+	name = stall_the_fascist_threat_goal_name
+	description = stall_the_fascist_threat_goal_desc
+	group = FOCUS_FILTER_INTERNAL_AFFAIRS
+	category = short_term
+	allowed = {
+	}
+	visible = {
+		date < 1938.6.1
+		FROM = {
+			original_tag = BFL
+		}
+	}
+	completed = {
+		OR = {
+			AND = {
+				date > 1939.1.1
+				NOT = { has_global_flag = scw_over }
+			}
+			AND = {
+				has_global_flag = scw_over
+				has_global_flag = republican_victory
+			}
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = { army_experience = 50 }
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1
+			SPR_scw_in_progress = yes
+		}
+		modifier = {
+			add = 9 # SOV should always prio this
+			SPR_scw_in_progress = yes
+			original_tag = BFL
+		}
+	}
+}
+
+az_faction_goal_undo_versailles = {
+	name = az_undo_versailles_goal_name
+	description = az_undo_versailles_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_WAR_SUPPORT
+	visible = {
+		FROM = { original_tag = TIX }
+	}
+	completed = {
+		OR = {
+			AND = {
+				original_tag = TIX
+				has_army_manpower = {
+					size > 1000000
+				}
+				controls_state = 28
+				controls_state = 85
+				controls_state = 86
+				controls_state = 188
+				controls_state = 762
+				controls_state = 807
+				controls_state = 912
+			}
+			any_allied_country = {
+				original_tag = TIX
+				has_army_manpower = {
+					size > 1000000
+				}
+				controls_state = 28
+				controls_state = 85
+				controls_state = 86
+				controls_state = 188
+				controls_state = 762
+				controls_state = 807
+				controls_state = 912
+			}
+		}
+		42 = { is_demilitarized_zone = no }
+		51 = { is_demilitarized_zone = no }
+		978 = { is_demilitarized_zone = no }
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		every_faction_member = {
+			limit = {
+				original_tag = TIX
+			}
+			add_faction_initiative = 1
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_faction_member = { 
+			tooltip = INFLUENCE_ABOVE_30_PERCENT
+			visible_when_empty = yes
+			limit = {
+				faction_influence_ratio > 0.3
+			}
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 9
+			is_historical_focus_on = yes
+		}
+	}
+}
+
+az_faction_goal_secure_european_continent = {
+	name = secure_european_continent_goal_name
+	description = secure_european_continent_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = TIX
+		}
+	}
+	completed = {
+		collection_size = {
+			input = {
+				input = constant:country_groups.continental_europe_1936
+				operators = {
+					limit = {
+						OR = {
+							is_in_faction_with = ROOT
+							has_capitulated = yes
+							exists = no
+							is_subject_of = ROOT 
+						}
+					}
+				}
+				name = COLLECTION_CONTINENTAL_EUROPE_DEFEATED_OR_FACTION_MEMBERS
+			}
+			value > 8
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_faction_member = { 
+			tooltip = INFLUENCE_ABOVE_30_PERCENT
+			visible_when_empty = yes
+			limit = {
+				faction_influence_ratio > 0.3
+			}
+			add_faction_initiative = 1
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 9
+			is_historical_focus_on = yes
+		}
+	}
+}
+
+az_faction_goal_secure_north_africa = {
+	name = secure_north_africa_goal_name
+	description = secure_north_africa_goal_desc
+	group = FOCUS_FILTER_ANNEXATION
+	category = medium_term
+	visible = {
+		OR = {
+			FROM = { original_tag = SAD }
+			any_allied_country = {
+				original_tag = SAD 
+			}
+		}
+	}
+	available = {
+		date > 1940.1.1
+		has_war_with = HUJ
+	}
+	completed = {
+		AND = {
+			446 = {  is_controlled_by_ROOT_or_ally = yes } # Suez
+			448 = {  is_controlled_by_ROOT_or_ally = yes } # Tripoli
+			116 = {  is_controlled_by_ROOT_or_ally = yes } # Malta
+		}
+		OR = {
+			118 = {  is_controlled_by_ROOT_or_ally = yes } # Gibraltar
+			183 = {  is_controlled_by_ROOT_or_ally = yes } # Cyprus
+			182 = {  is_controlled_by_ROOT_or_ally = yes } # Crete
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 500
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = INFLUENCE_TOP_TWO
+		every_faction_member = {
+			limit = {
+				faction_influence_rank < 3
+			}
+			add_faction_initiative = 1
+			add_political_power = 100 
+		}
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 10
+			is_historical_focus_on = yes
+		}
+	}
+}
+
+az_faction_goal_high_seas_fleet = {
+	name = high_seas_fleet_goal_name
+	description = high_seas_fleet_goal_desc
+	group = FOCUS_FILTER_NAVY_XP
+	category = medium_term
+	allowed = {
+	}
+	visible = {
+		FROM = {
+			OR = {
+				original_tag = TIX
+				AND = {
+					any_allied_country = {
+						original_tag = TIX
+					}
+					num_of_naval_factories > 0
+				}
+			}
+		}
+	}
+	completed = {
+		has_war_with_major = yes 
+		count_in_collection = {
+			collection = {
+				input = game:scope
+				operators = { faction_members }
+				name = FACTION
+			}
+			unit = capital_ship
+			size > 19
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members
+					limit = {
+						num_of_naval_factories > 0
+					}
+				}
+				name = ALL_FACTION_MEMBERS
+			}
+			navy_experience = 50
+			add_tech_bonus = {
+				name = high_seas_fleet_tech_bonus
+				bonus = 0.5
+				uses = 2
+				category = naval_equipment
+			}
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 1 # If they have a bunch of naval factories, go for it
+			num_of_naval_factories > 29
+		}
+	}
+}
+
+az_faction_goal_the_arteries_of_trade = {
+	name = the_arteries_of_trade_goal_name
+	description = the_arteries_of_trade_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_CONSOLIDATION
+	allowed = {
+	}
+	visible = {
+		FROM = {
+			has_war = yes
+			OR = {
+				tag = HUJ
+				tag = CAN
+				tag = RAJ
+				tag = MAL
+				tag = BYG
+			}
+		}
+	}
+	completed = {
+		count_triggers = {
+			amount = 10
+			has_naval_control = 43
+			has_naval_control = 49
+			has_naval_control = 51
+			has_naval_control = 56
+			has_naval_control = 57
+			has_naval_control = 68
+			has_naval_control = 29
+			has_naval_control = 69
+			has_naval_control = 72
+			has_naval_control = 100
+			has_naval_control = 104
+			has_naval_control = 71
+			has_naval_control = 60	
+			has_naval_control = 48
+			has_naval_control = 61
+			has_naval_control = 62
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		every_faction_member = {
+			add_stability = 0.05
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 1 # Extra eager to do this as the main trade nations
+			OR = {
+				original_tag = HUJ
+				original_tag = BYG
+			}
+		}
+		modifier = {
+			factor = 2
+			is_historical_focus_on = yes
+		}
+	}
+}
+
+az_faction_goal_imperial_glory = {
+	name = imperial_glory_goal_name
+	description = imperial_glory_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_CONSOLIDATION
+	allowed = {
+	}
+	visible = {
+		FROM = {
+			OR = {
+				original_tag = HUJ
+				original_tag = CAN
+				original_tag = RAJ
+				original_tag = AST
+				original_tag = NZL
+				original_tag = MAL
+				original_tag = YUW
+				original_tag = HOL
+				original_tag = INS
+			}
+		}
+	}
+	available = {
+		FROM = { has_war = yes }
+	}
+	completed = {
+		longest_war_length > 36
+		count_triggers = {
+			amount = 3 # Add triggers to count below
+			
+			1021 = { is_controlled_by_ROOT_or_ally = yes } # Singapore
+			118 = { is_controlled_by_ROOT_or_ally = yes } # Gibraltar
+			116 = { is_controlled_by_ROOT_or_ally = yes } # Malta
+			IF = {
+				limit = { 286 = { OWNER = { is_in_faction_with = ROOT } } }
+				286 = { is_controlled_by_ROOT_or_ally = yes } # Saigon if France joins
+			}
+			IF = {
+				limit = { 335 = { OWNER = { is_in_faction_with = ROOT } } }
+				335 = { is_controlled_by_ROOT_or_ally = yes } # East Indies
+			}
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+					limit = {
+						owns_any_state_of = {
+							 1021
+							 118
+							 116
+							 286
+							 335
+						}
+					}
+				}
+				
+				name = OWNS_LISTED_STATE
+			}
+			custom_effect_tooltip = OWNS_LISTED_STATE
+			add_faction_initiative = 1
+			add_faction_influence_ratio = 0.05
+			add_stability = 0.05
+		}
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1 # The Empire cares a little
+			OR = {
+				original_tag = HUJ
+				original_tag = CAN
+				original_tag = RAJ
+				original_tag = AST
+				original_tag = NZL
+				original_tag = MAL
+				original_tag = YUW
+				original_tag = HOL
+				original_tag = INS
+			}
+			is_historical_focus_on = yes
+		}
+		modifier = {
+			add = 1 # The Colonial Powers always care
+			OR = {
+				original_tag = HUJ
+				original_tag = YUW
+				original_tag = HOL
+			}
+		}
+		modifier = {
+			add = 10 # The Colonial Powers always care a LOT on historical
+			OR = {
+				original_tag = HUJ
+				original_tag = YUW
+				original_tag = HOL
+			}
+			is_historical_focus_on = yes
+		}
+	}
+}
+
+az_faction_goal_control_the_chinese_coast = {
+	name = control_the_chinese_coast_goal_name
+	description = control_the_chinese_coast_goal_desc
+	group = FOCUS_FILTER_CONSOLIDATION
+	category = medium_term
+	allowed = {
+	}
+	visible = {
+		FROM = {
+			tag = DOH
+			has_war = yes
+		}
+	}
+	completed = {
+		OR = {
+			AND = {
+				has_war = yes 
+				any_enemy_country = {
+					war_length_with = {
+						tag = ROOT
+						months > 36
+					}
+				}
+			}
+			AND = {
+				date > 1939.6.1
+				has_war = no
+			}
+		}
+		count_triggers = {
+			amount = 5
+			1033 = { is_controlled_by_ROOT_or_ally = yes }
+			592 = {	is_controlled_by_ROOT_or_ally = yes }
+			593 = {	is_controlled_by_ROOT_or_ally = yes }
+			595 = {	is_controlled_by_ROOT_or_ally = yes }
+			596 = {	is_controlled_by_ROOT_or_ally = yes }
+			613 = {	is_controlled_by_ROOT_or_ally = yes }
+			1034 = { is_controlled_by_ROOT_or_ally = yes }
+			598 = {	is_controlled_by_ROOT_or_ally = yes }
+			597 = {	is_controlled_by_ROOT_or_ally = yes }
+		}
+		
+	}
+	cancel = {
+		NOT = {
+			count_triggers = {
+				amount = 5
+				1033 = { is_controlled_by_ROOT_or_ally = yes }
+				592 = {	is_controlled_by_ROOT_or_ally = yes }
+				593 = {	is_controlled_by_ROOT_or_ally = yes }
+				595 = {	is_controlled_by_ROOT_or_ally = yes }
+				596 = {	is_controlled_by_ROOT_or_ally = yes }
+				613 = {	is_controlled_by_ROOT_or_ally = yes }
+				1034 = { is_controlled_by_ROOT_or_ally = yes }
+				598 = {	is_controlled_by_ROOT_or_ally = yes }
+				597 = {	is_controlled_by_ROOT_or_ally = yes }
+			}
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+				}
+				
+				name = ALL_FACTION_MEMBERS
+			}
+			custom_effect_tooltip = ALL_FACTION_MEMBERS
+			army_experience = 50
+			add_war_support = 0.05
+			add_stability = 0.05
+		}
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+				}
+				
+				name = ALL_FACTION_MEMBERS
+			}
+			custom_effect_tooltip = ALL_FACTION_MEMBERS
+			army_experience = 50
+			add_war_support = 0.1
+			add_stability = 0.05
+		}
+		every_state = {
+			limit = {
+				OR = {
+					state = 1033
+					state = 592
+					state = 593
+					state = 595
+					state = 596
+					state = 613
+					state = 1034
+					state = 598
+					state = 597
+				}
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				level = 2
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_naval_base = yes
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		base = 10 # Pretty much everyone should want to do this
+	}
+}
+
+az_faction_goal_control_the_chinese_capitals = {
+	name = az_control_the_chinese_capitals_goal_name
+	description = az_control_the_chinese_capitals_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_ANNEXATION
+	allowed = {
+	}
+	visible = {
+		FROM = {
+			original_tag = CHY
+		}
+	}
+	completed = {
+		608 = { is_controlled_by_ROOT_or_ally = yes }
+		1035 = { is_controlled_by_ROOT_or_ally = yes }
+		592 = { is_controlled_by_ROOT_or_ally = yes }
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+				}
+				
+				name = ALL_FACTION_MEMBERS
+			}
+			custom_effect_tooltip = ALL_FACTION_MEMBERS
+			army_experience = 50
+			air_experience = 25
+			navy_experience = 25
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 9 # Early game prio
+			date < 1941.1.1
+		}
+	}
+}
+
+az_faction_goal_secure_the_oil_supply = {
+	name = secure_the_oil_supply_goal_name
+	description = secure_the_oil_supply_goal_desc
+	category = medium_term
+	group = resources_to_market_icon
+	allowed = {
+		
+	}
+	visible = {
+		FROM = {
+			original_tag = CHY
+		}
+	}
+	completed = {
+		has_resources_in_collection = {
+			collection = {
+					input = game:scope
+					operators =  { faction_members }
+					name = FACTION
+			}
+			resource = oil
+			amount > 199
+		}
+	}
+	complete_effect = {
+
+		every_faction_member = { 
+			tooltip = AT_LEAST_70_OIL
+			visible_when_empty = yes
+			limit = {
+				has_resources_in_country = {
+					resource = oil
+					amount > 69
+				}
+			}
+			add_faction_initiative = 1
+			add_faction_influence_ratio = 0.15
+			add_tech_bonus = {
+				name = secure_the_oil_supply_tech_bonus
+				bonus = 0.75
+				uses = 1
+				category = excavation_tech
+			}
+		}
+		
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 9 # Mid game prio
+			date > 1941.1.1
+		}
+	}
+}
+
+az_faction_goal_indifference_is_a_threat = {
+	name = indifference_is_a_threat_goal_name
+	description = indifference_is_a_threat_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_CONSOLIDATION
+	allowed = {
+		
+	}
+	visible = {
+		FROM = {
+			original_tag = BFL
+		}
+	}
+	completed = {
+		collection_size = {
+			input = {
+				input = collection:europe_non_aligned_countries
+				name = COLLECTION_COUNTRIES_EUROPE_NON_ALIGNED
+			}
+			value < 5
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 500
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	ai_will_do = {
+		base = 1
+	}
+}
+
+az_faction_goal_undoing_brest_litowsk = {
+	name = az_undoing_brest_litowsk_goal_name
+	description = az_undoing_brest_litowsk_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_ANNEXATION
+	allowed = {
+		
+	}
+	visible = {
+		FROM = {
+			original_tag = BFL
+		}
+	}
+	completed = {
+		count_triggers = {
+			amount = 4
+			OR = {
+				LIT = { exists = no }
+				LIT = { is_in_faction_with = ROOT }
+			}
+			OR = {
+				LAT = { exists = no }
+				LAT = { is_in_faction_with = ROOT }
+			}
+			OR = {
+				EST = { exists = no }
+				EST = { is_in_faction_with = ROOT }
+			}
+			OR = {
+				POL = { exists = no }
+				POL = { is_in_faction_with = ROOT }
+			}
+			OR = {
+				FIN = { exists = no }
+				FIN = { is_in_faction_with = ROOT }
+			}
+		}
+		
+	}
+	complete_effect = {
+		add_faction_power_projection = 500
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			army_experience = 50
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 9 # SOV should always prio this
+			original_tag = BFL
+		}
+	}
+}  
+
+az_faction_goal_no_japanese_in_china = {
+	name = faction_goal_no_japanese_in_china_name
+	description = az_faction_goal_no_japanese_in_china_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	allowed = {
+		
+	}
+	visible = {
+		FROM = {
+			tag = DOH
+			any_enemy_country = {
+				original_tag = CHY
+			}
+		}
+		
+	}
+	completed = {
+		collection_size = {
+			input = {
+				input = collection:az_china_potential_core_mainland_states
+				operators = {
+					limit = {
+						OR = {
+							controller = { is_in_faction_with = CHY }
+							is_controlled_by = CHY
+						}
+					}
+				}
+				name = az_COLLECTION_NO_JAPANESE_IN_CHINA
+			}
+			value < 1
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+					limit = {
+						faction_influence_ratio > 0.3
+					}
+				}
+				name = INFLUENCE_ABOVE_30_PERCENT
+			}
+			add_faction_influence_ratio = 0.2
+			add_faction_initiative = 1
+			add_political_power = 100
+			army_experience = 100
+			add_manpower = 100000
+		}
+	}
+	ai_will_do = {
+		base = 10 # Do itttt!
+	}
+}
+
+az_faction_goal_align_china = {
+	name = az_align_china_goal_name
+	description = az_align_china_goal_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = CHY
+		}
+	}
+	completed = {
+		OR = {
+			not = { country_exists = DOH }
+			DOH = { is_subject_of = CHY }
+			DOH = { has_capitulated = yes }
+		}
+		OR = {
+			not = { country_exists = DH1 }
+			DH1 = { is_subject_of = CHY }
+			DH1 = { has_capitulated = yes }
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 300
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_popularity = {
+		    ideology = ROOT
+		    popularity = 0.1
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+					limit = {
+						faction_influence_ratio > 0.3
+					}
+				}
+				
+				name = INFLUENCE_ABOVE_30_PERCENT
+			}
+			custom_effect_tooltip = INFLUENCE_ABOVE_30_PERCENT
+			add_faction_initiative = 1
+			add_political_power = 100
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 9 # Early game prio
+			date < 1941.1.1
+		}
+	}
+}
+
+az_faction_goal_contain_japanese_expansion_asia = {
+	name = az_contain_japanese_expansion_asia_goal_name
+	description = az_contain_japanese_expansion_asia_goal_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	allowed = {
+		
+	}
+	visible = {
+		FROM = {
+			original_tag = BYG
+		}
+	}
+	available = {
+		date > 1940.1.1
+		collection_size = {
+			input = {
+				input = collection:country_and_all_subjects_controlled_non_core_states
+				name = COLLECTION_OCCUPIED_STATES_BY_JAPAN_OR_FACTION_MEMBERS
+			}
+			value > 29
+		}
+	}
+	completed = {
+		CHY = {
+			IF = {
+				limit = {
+					is_in_faction = no
+				}
+				collection_size = {
+					input = {
+						input = collection:country_and_all_subjects_controlled_non_core_states
+						name = COLLECTION_OCCUPIED_STATES_BY_JAPAN_OR_FACTION_MEMBERS
+					}
+					value < 20
+				}
+			}
+			ELSE = {
+				collection_size = {
+					input = {
+						input = collection:faction_controlled_non_core_states
+						name = COLLECTION_OCCUPIED_STATES_BY_JAPAN_OR_FACTION_MEMBERS
+					}
+					value < 20
+				}
+			}
+		}		
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		every_collection_element = {
+			input = {
+				input = game:scope
+				operators =  { 
+					faction_members 
+					limit = {
+						faction_influence_ratio > 0.3
+					}
+				}
+				
+				name = INFLUENCE_ABOVE_30_PERCENT
+			}
+			custom_effect_tooltip = INFLUENCE_ABOVE_30_PERCENT
+			add_faction_initiative = 1
+		}
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1 # Start considering it when Japan is growing a lot
+		}
+		modifier = {
+			add = 10 # Really do it when at war
+			any_enemy_country = {
+				original_tag = CHY
+			}
+		}
+	}
+}
+
+az_faction_goal_eastern_european_security = {
+	name = eastern_european_security_goal_name
+	description = eastern_european_security_goal_desc
+	category = long_term
+	group = FOCUS_FILTER_POLITICAL_CHARACTER
+	visible = {
+		FROM = { original_tag = BFL }
+	}
+	completed = {
+		count_triggers = {
+			amount = 6
+				
+			EST = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			LAT = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			LIT = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			POL = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			ROM = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			HUN = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			CZE = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			SLO = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			BUL = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			GRE = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			YUG = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			ALB = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+			TUR = {
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+		}			
+	}
+	complete_effect = {
+		add_faction_power_projection = 1000
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = INFLUENCE_ABOVE_30_PERCENT
+		every_faction_member = {
+			limit = { faction_influence_ratio > 0.3}
+			add_political_power = 200
+			add_faction_initiative = 1
+		}
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1
+			date > 1938.1.1
+		}
+		modifier = {
+			add = 9 # SOV should always prio this
+			date > 1938.1.1
+			original_tag = BFL
+		}
+	}
+}
+
+az_faction_goal_disarm_aggression_central_powers = {
+	name = disarm_aggression_central_powers_goal_name
+	description = disarm_aggression_central_powers_goal_desc
+	category = long_term
+	group = FOCUS_FILTER_POLITICAL_CHARACTER
+	visible = {
+		FROM = {
+			OR = {
+				original_tag = YUW
+				original_tag = CZE
+			}
+			has_government = democratic
+		}
+		OR = {
+			any_country_with_original_tag = {
+				original_tag_to_check = TIX
+				NOT = { has_government = democratic }
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = HUN
+				NOT = { has_government = democratic }
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = AUS
+				NOT = { has_government = democratic }
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = BUL
+				NOT = { has_government = democratic }
+			}
+		}
+	}
+	completed = {
+		OR = {
+			any_country_with_original_tag = {
+				original_tag_to_check = TIX
+				has_government = democratic
+			}
+			TIX = { exists = no }
+		}
+		OR = {
+			any_country_with_original_tag = {
+				original_tag_to_check = HUN
+				has_government = democratic
+			}
+			HUN = { exists = no }
+		}
+		OR = {
+			any_country_with_original_tag = {
+				original_tag_to_check = AUS
+				has_government = democratic
+			}
+			AUS = { exists = no }
+		}
+		OR = {
+			any_country_with_original_tag = {
+				original_tag_to_check = BUL
+				has_government = democratic
+			}
+			BUL = { exists = no }
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 1000
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = INFLUENCE_ABOVE_30_PERCENT
+		every_faction_member = {
+			limit = { faction_influence_ratio > 0.3}
+			add_political_power = 200
+			add_faction_initiative = 1
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+##########################################################################################新增阵营目标######################################################################
+az_faction_goal_nvpu = {
+	name = az_faction_goal_nvpu_name
+	description = az_faction_goal_nvpu_desc
+	category = short_term
+	group = FOCUS_FILTER_INTERNAL_AFFAIRS
+	visible = {
+		FROM = {
+			original_tag = HUJ
+		}
+	}
+	completed = {
+		HUJ = {
+			has_completed_focus = HUJ_nvpucanting
+			OR = {
+				has_completed_focus = HUJ_neiwuweizhu
+				has_completed_focus = HUJ_tegongweizhu
+			}
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 50
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_bkbmzz = {
+	name = az_faction_goal_bkbmzz_name
+	description = az_faction_goal_bkbmzz_desc
+	category = short_term
+	group = FOCUS_FILTER_INTERNAL_AFFAIRS
+	visible = {
+		FROM = {
+			original_tag = HUJ
+		}
+	}
+	available = {
+		threat > 0.3
+	}
+	completed = {
+		HUJ = {
+			OR = {
+				has_completed_focus = HUJ_bentufangyu
+				has_completed_focus = HUJ_quanqiufangwei
+			}
+		}
+	}
+	complete_effect = {
+		add_political_power = 75
+		add_faction_power_projection = 100
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_tybbldny = {
+	name = az_faction_goal_tybbldny_name
+	description = az_faction_goal_tybbldny_desc
+	category = medium_term
+	group = FOCUS_FILTER_INTERNAL_AFFAIRS
+	visible = {
+		FROM = {
+			original_tag = HUJ
+		}
+	}
+	completed = {
+		HUJ = {
+			has_completed_focus = HUJ_tongzhibabuliedianhuj
+		}
+	}
+	complete_effect = {
+		add_political_power = 200
+		add_stability = 0.1
+		add_war_support = 0.1
+		add_faction_power_projection = 300
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_sywmsddhp = {
+	name = az_faction_goal_sywmsddhp_name
+	description = az_faction_goal_sywmsddhp_desc
+	category = long_term
+	group = FOCUS_FILTER_POLITICAL_CHARACTER
+	visible = {
+		FROM = {
+			original_tag = HUJ
+		}
+	}
+	available = {
+		date > 1941.1.1
+	}
+	completed = {
+		HUJ = {
+			has_completed_focus = HUJ_shuyuwomenshidaideheping
+		}
+	}
+	complete_effect = {
+		add_political_power = 300
+		add_stability = 0.5
+		add_war_support = 0.5
+		add_faction_power_projection = 500
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+az_faction_goal_cze_my = {
+	name = az_faction_goal_cze_my_name
+	description = az_faction_goal_cze_my_desc
+	category = short_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = TIX
+		}
+	}
+	completed = {
+		OR = {
+			not = { country_exists = AUS }
+			AUS = { is_subject_of = TIX }
+			AUS = { has_capitulated = yes }
+			AUS = { is_in_faction_with = TIX }
+		}
+		OR = {
+			not = { country_exists = CZE }
+			CZE = { is_subject_of = TIX }
+			CZE = { has_capitulated = yes }
+			CZE = { is_in_faction_with = TIX }
+		}
+		OR = {
+			not = { country_exists = HUN }
+			HUN = { is_subject_of = TIX }
+			HUN = { has_capitulated = yes }
+			HUN = { is_in_faction_with = TIX }
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_war_support = 0.15
+		add_political_power = 75
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_ozmr = {
+	name = az_faction_goal_ozmr_name
+	description = az_faction_goal_ozmr_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = TIX
+		}
+	}
+	completed = {
+		OR = {
+			has_completed_focus = TIX_coldwar_13
+			AND = {
+				OR = {
+					not = { country_exists = YUW }
+					YUW = { is_subject_of = TIX }
+					YUW = { has_capitulated = yes }
+					YUW = { is_in_faction_with = TIX }
+					country_exists = WEX
+				}
+				OR = {
+					not = { country_exists = SAD }
+					SAD = { is_subject_of = TIX }
+					SAD = { has_capitulated = yes }
+					SAD = { is_in_faction_with = TIX }
+				}
+				OR = {
+					not = { country_exists = HUJ }
+					HUJ = { is_subject_of = TIX }
+					HUJ = { has_capitulated = yes }
+					HUJ = { is_in_faction_with = TIX }
+				}
+				OR = {
+					not = { country_exists = BFL }
+					BFL = { is_subject_of = TIX }
+					BFL = { has_capitulated = yes }
+					BFL = { is_in_faction_with = TIX }
+					has_global_flag = beilian_bengkui
+				}
+			}
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 1000
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_war_support = 0.5
+		add_political_power = 500
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_gbqr = {
+	name = az_faction_goal_gbqr_name
+	description = az_faction_goal_gbqr_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = TIX
+		}
+	}
+	completed = {
+		OR = {
+			not = { country_exists = BYG }
+			BYG = { is_subject_of = TIX }
+			BYG = { has_capitulated = yes }
+			BYG = { is_in_faction_with = TIX }
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 500
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_political_power = 200
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+az_faction_goal_lmdg = {
+	name = az_faction_goal_lmdg_name
+	description = az_faction_goal_lmdg_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = SAD
+			not = { is_in_faction_with = TIX }
+		}
+	}
+	completed = {
+		SAD = {
+			has_completed_focus = SAD_chongzhudiguorongguang
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 500
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_political_power = 200
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+az_faction_goal_ozbz = {
+	name = az_faction_goal_ozbz_name
+	description = az_faction_goal_ozbz_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = YUW
+			not = { is_in_faction_with = HUJ }
+			not = { is_in_faction_with = TIX }
+		}
+	}
+	completed = {
+		OR = {
+			not = { country_exists = TIX }
+			TIX = { is_subject_of = YUW }
+			TIX = { has_capitulated = yes }
+			TIX = { is_in_faction_with = YUW }
+		}
+		OR = {
+			not = { country_exists = SAD }
+			SAD = { is_subject_of = YUW }
+			SAD = { has_capitulated = yes }
+			SAD = { is_in_faction_with = YUW }
+		}
+		OR = {
+			not = { country_exists = HUJ }
+			HUJ = { is_subject_of = YUW }
+			HUJ = { has_capitulated = yes }
+			HUJ = { is_in_faction_with = YUW }
+		}
+		OR = {
+			not = { country_exists = BFL }
+			BFL = { is_subject_of = YUW }
+			BFL = { has_capitulated = yes }
+			BFL = { is_in_faction_with = YUW }
+			has_global_flag = beilian_bengkui
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 1000
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_stability = 0.3
+		add_political_power = 500
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_nbwd = {
+	name = az_faction_goal_nbwd_name
+	description = az_faction_goal_nbwd_desc
+	category = short_term
+	group = FOCUS_FILTER_INTERNAL_AFFAIRS
+	visible = {
+		FROM = {
+			original_tag = BFL
+		}
+	}
+	cancel = {
+		BFL = {
+			has_completed_focus = BFL_xiangyouzhuan
+		}
+	}
+	completed = {
+		BFL = {
+			OR = {
+				has_completed_focus = BFL_28
+				has_completed_focus = BFL_63
+				has_completed_focus = BFL_42
+			}
+		}
+	}
+	complete_effect = {
+		add_political_power = 100
+		add_faction_power_projection = 100
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_jdgg = {
+	name = az_faction_goal_jdgg_name
+	description = az_faction_goal_jdgg_desc
+	category = short_term
+	group = FOCUS_FILTER_ARMY_XP
+	visible = {
+		FROM = {
+			original_tag = BFL
+		}
+	}
+	cancel = {
+		BFL = {
+			has_completed_focus = BFL_xiangyouzhuan
+		}
+	}
+	completed = {
+		BFL = {
+			has_completed_focus = BFL_junduizhengwei
+			has_completed_focus = BFL_liluntupo
+		}
+	}
+	complete_effect = {
+		add_political_power = 75
+		add_war_support = 0.25
+		add_faction_power_projection = 200
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_sjgm = {
+	name = az_faction_goal_sjgm_name
+	description = az_faction_goal_sjgm_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = BFL
+		}
+	}
+	completed = {
+		OR = {
+			not = { country_exists = TIX }
+			TIX = { is_subject_of = BFL }
+			TIX = { has_capitulated = yes }
+			TIX = { is_in_faction_with = BFL }
+		}
+		OR = {
+			not = { country_exists = SAD }
+			SAD = { is_subject_of = BFL }
+			SAD = { has_capitulated = yes }
+			SAD = { is_in_faction_with = BFL }
+		}
+		OR = {
+			not = { country_exists = HUJ }
+			HUJ = { is_subject_of = BFL }
+			HUJ = { has_capitulated = yes }
+			HUJ = { is_in_faction_with = BFL }
+		}
+		OR = {
+			not = { country_exists = YUW }
+			YUW = { is_subject_of = BFL }
+			YUW = { has_capitulated = yes }
+			YUW = { is_in_faction_with = BFL }
+		}
+		OR = {
+			not = { country_exists = DOH }
+			DOH = { is_subject_of = BFL }
+			DOH = { has_capitulated = yes }
+			DOH = { is_in_faction_with = BFL }
+		}
+		OR = {
+			not = { country_exists = CHY }
+			CHY = { is_subject_of = BFL }
+			CHY = { has_capitulated = yes }
+			CHY = { is_in_faction_with = BFL }
+		}
+		OR = {
+			not = { country_exists = BYG }
+			BYG = { is_subject_of = BFL }
+			BYG = { has_capitulated = yes }
+			BYG = { is_in_faction_with = BFL }
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 3000
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_stability = 0.5
+		add_war_support = 1
+		add_political_power = 1000
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+az_faction_goal_btxxt = {
+	name = az_faction_goal_btxxt_name
+	description = az_faction_goal_btxxt_desc
+	category = medium_term
+	group = FOCUS_FILTER_INDUSTRY
+	visible = {
+		FROM = {
+			original_tag = BYG
+		}
+	}
+	completed = {
+		BYG = {
+			OR = {
+				has_completed_focus = BYG_wanzhengdewomen
+				AND = {
+					has_war_support > 1.9
+					NOT = {
+						has_idea = BYG_jjwjhyz
+					}
+					NOT = {
+						has_idea = BYG_jjwjhyz_1
+					}
+					NOT = {
+						has_idea = BYG_jjwjhyz_2
+					}
+					NOT = {
+						has_idea = BYG_jjwjhyz_3
+					}
+				}
+			}
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_political_power = 200
+		add_stability = 0.3
+		add_war_support = 0.3
+	}
+	ai_will_do = {
+		base = 10
+	}
+}
+
+az_faction_goal_qqgs = {
+	name = az_faction_goal_qqgs_name
+	description = az_faction_goal_qqgs_desc
+	category = long_term
+	group = FOCUS_FILTER_ANNEXATION
+	visible = {
+		FROM = {
+			original_tag = BYG
+		}
+	}
+	available = {
+		is_faction_leader = yes
+		date > 1941.1.1
+	}
+	completed = {
+		OR = {
+			not = { country_exists = TIX }
+			TIX = { is_subject_of = BYG }
+			TIX = { has_capitulated = yes }
+			TIX = { is_in_faction_with = BYG }
+			country_exists = GER
+		}
+		OR = {
+			not = { country_exists = SAD }
+			SAD = { is_subject_of = BYG }
+			SAD = { has_capitulated = yes }
+			SAD = { is_in_faction_with = BYG }
+			country_exists = ITA
+		}
+		OR = {
+			not = { country_exists = HUJ }
+			HUJ = { is_subject_of = BYG }
+			HUJ = { has_capitulated = yes }
+			HUJ = { is_in_faction_with = BYG }
+		}
+		OR = {
+			not = { country_exists = YUW }
+			YUW = { is_subject_of = BYG }
+			YUW = { has_capitulated = yes }
+			YUW = { is_in_faction_with = BYG }
+		}
+		OR = {
+			not = { country_exists = DOH }
+			DOH = { is_subject_of = BYG }
+			DOH = { has_capitulated = yes }
+			DOH = { is_in_faction_with = BYG }
+		}
+		OR = {
+			not = { country_exists = CHY }
+			CHY = { is_subject_of = BYG }
+			CHY = { has_capitulated = yes }
+			CHY = { is_in_faction_with = BYG }
+		}
+		OR = {
+			not = { country_exists = BFL }
+			BFL = { is_subject_of = BYG }
+			BFL = { has_capitulated = yes }
+			BFL = { is_in_faction_with = BYG }
+			has_global_flag = beilian_bengkui
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 2000
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		add_stability = 0.5
+		add_war_support = 1
+		add_political_power = 1000
+	}
+	ai_will_do = {
+		base = 0
+	}
+}

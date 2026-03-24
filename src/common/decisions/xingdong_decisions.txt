@@ -136,6 +136,7 @@ xingdong_category = {
 			has_global_flag = MOD_azurlane_sairenzhizai
 			}
 			not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
+			not = { has_global_flag = az_chiji_flag }
 		}
 		complete_effect = { 
 			set_country_flag = show_tuxizhanzheng
@@ -165,6 +166,8 @@ xingdong_category = {
 			country_exists = FROM 
 		}
 		available = {
+			not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
+			not = { has_global_flag = az_chiji_flag }
 			FROM = { 
 				NOT = { has_country_flag = beituxizhanzheng_doing } 
 			}
@@ -1246,7 +1249,7 @@ xingdong_category = {
 		days_remove = 60
 		
 		ai_will_do = {
-			factor = 5
+			factor = 0
 		}
 		fixed_random_seed = no
 		complete_effect = {
@@ -1716,7 +1719,7 @@ xingdong_category = {
 		days_remove = 7
 		cost = 25
 		ai_will_do = {
-			base = 10
+			base = 0
 		}
 		remove_effect = {
 			guojishengyu_up_1 = yes
@@ -1734,7 +1737,7 @@ xingdong_category = {
 		days_remove = 7
 		cost = 25
 		ai_will_do = {
-			base = 10
+			base = 0
 		}
 		remove_effect = {
 			add_research_slot = 1
@@ -2300,12 +2303,91 @@ xingdong_category = {
 		visible = {
 
 		}
-		days_remove = 120
+		days_remove = 180
 		modifier = {
-			mass_assault_mastery_gain_factor = 1
-			grand_battleplan_mastery_gain_factor = 1
-			superior_firepower_mastery_gain_factor = 1
-			new_mobile_warfare_mastery_gain_factor = 1
+			land_mastery_gain_factor = 5
+			#mass_assault_mastery_gain_factor = 5
+			#grand_battleplan_mastery_gain_factor = 5
+			#superior_firepower_mastery_gain_factor = 5
+			#new_mobile_warfare_mastery_gain_factor = 5
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = xzmf_sl
+				value = 2
+				compare = greater_than_or_equals
+			}
+		}
+
+		custom_cost_text = mf_shuliang_2
+		complete_effect = { 
+			add_to_variable = {
+				var = xzmf_sl
+				value = -2
+			}
+		}
+	}
+
+	mf_jingtongdu_air = {
+		icon = xzmf
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				check_variable = {
+					var = xzmf_sl
+					value = 2
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+
+		}
+		days_remove = 180
+		modifier = {
+			air_mastery_gain_factor = 5
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = xzmf_sl
+				value = 2
+				compare = greater_than_or_equals
+			}
+		}
+
+		custom_cost_text = mf_shuliang_2
+		complete_effect = { 
+			add_to_variable = {
+				var = xzmf_sl
+				value = -2
+			}
+		}
+	}
+
+	mf_jingtongdu_navy = {
+		icon = xzmf
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ""
+				check_variable = {
+					var = xzmf_sl
+					value = 2
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+
+		}
+		days_remove = 180
+		modifier = {
+			naval_mastery_gain_factor = 5
 		}
 		custom_cost_trigger = {
 			check_variable = {

@@ -1,0 +1,159 @@
+ideas = {
+	hidden_ideas = {
+		az_chiji_jinzhibaodu = {
+			cancel = {
+				is_ai = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 2
+				research_speed_factor = 2
+				justify_war_goal_time = 1000
+				ai_desired_divisions_factor = 100
+			}
+		}
+		ai_chiji_gfbuff = {
+			cancel = {
+				date > 1937.1.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 0.4
+				army_defence_factor = 0.4
+			}
+		}
+		ai_chiji_gfbuff2 = {
+			cancel = {
+				date > 1936.3.1
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_attack_factor = 0.5
+				army_core_defence_factor = 0.5
+				supply_consumption_factor = -0.3
+			}
+		}
+		az_chiji_chyneizhanbuff = {
+			cancel = {
+				has_global_flag = chy_chijitongyi_yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				attrition = 0.4
+				army_core_attack_factor = 2
+				breakthrough_factor = 3
+			}
+		}
+	}
+	country = {
+		az_chiji_ty_idea = {
+			picture = fengkuangai
+			allowed_civil_war = {
+				always = yes
+			}
+			rule = {
+				can_create_collaboration_government = no
+				can_create_factions = no
+				can_force_government = no
+				can_join_factions = no
+				can_guarantee_other_ideologies = no
+				can_puppet = no
+				can_access_market = no
+			}
+			modifier = {
+				political_power_gain = 1
+				#army_attack_factor = 0.25
+				#army_defence_factor = 0.25
+				annex_cost_factor = -0.1
+				puppet_cost_factor = 100
+				industrial_capacity_dockyard = 1
+				pocket_penalty = 5
+				guarantee_cost = 1000
+				embargo_cost_factor = 1000
+			}
+		}
+		az_chiji_ty_idea_jianniang = {
+			picture = fengkuangai
+			allowed_civil_war = {
+				always = yes
+			}
+			rule = {
+				can_create_collaboration_government = no
+				can_create_factions = no
+				can_force_government = no
+				can_join_factions = no
+				can_guarantee_other_ideologies = no
+				can_puppet = no
+				can_access_market = no
+			}
+			modifier = {
+				political_power_gain = 1
+				#production_speed_buildings_factor = 0.5
+				#industrial_capacity_factory = 0.5
+				#production_factory_max_efficiency_factor = 0.1
+				#production_factory_efficiency_gain_factor = 0.1
+				attrition = 0.1
+				#army_speed_factor = 0.1
+				army_attack_factor = 0.4	#0.6
+				army_defence_factor = 0.4	#0.6
+				army_core_attack_factor = 0.4
+				army_core_defence_factor = 0.4
+				#breakthrough_factor = 1
+				supply_consumption_factor = -0.5
+				annex_cost_factor = -0.1
+				puppet_cost_factor = 100
+				industrial_capacity_dockyard = 1
+				pocket_penalty = 5
+				guarantee_cost = 1000
+				embargo_cost_factor = 1000
+				ai_focus_aggressive_factor = 10
+			}
+		}
+		az_chiji_zmsr_idea = {
+			picture = SIR_darksiren
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				pocket_penalty = -6
+				#army_speed_factor = 0.5
+				attrition = -0.2
+				supply_consumption_factor = -0.3
+			}
+			targeted_modifier = {
+				tag = SR4
+				attack_bonus_against = 2
+				defense_bonus_against = 2
+				breakthrough_bonus_against = 2
+			}
+		}
+		az_chiji_zmsr_idea2 = {
+			name = az_chiji_zmsr_idea
+			picture = SIR_darksiren
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				pocket_penalty = -6
+				army_speed_factor = 0.5
+				attrition = -0.2
+				supply_consumption_factor = -0.3
+			}
+			targeted_modifier = {
+				tag = SR1
+				attack_bonus_against = 2
+				defense_bonus_against = 2
+				breakthrough_bonus_against = 2
+			}
+		}
+	}
+
+}

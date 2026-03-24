@@ -684,6 +684,89 @@ ideas = {
 	}
 
 	industrial_concern = {
+		sumitomo = {
+						
+			allowed = {
+				original_tag = CHY
+			}
+						
+			research_bonus = {
+				excavation_tech = 0.05
+				cat_production = 0.05
+			}
+
+			ai_will_do = {
+				base = 10
+			}
+			
+			traits = { mining_zaibatsu }
+		}
+		
+		mitsubishi_civilian = {
+
+			picture = mitsubishi
+						
+			allowed = {
+				original_tag = CHY
+			}
+	
+			research_bonus = {
+			}
+
+			ai_will_do = {
+				base = 10
+
+			}
+			
+			traits = { armament_zaibatsu }
+		}
+
+		mitsui_bank = { 
+
+			picture = JAP_mitsui
+
+			allowed = {
+				original_tag = CHY
+			}
+
+			research_bonus = {	
+				electronics = 0.05
+				industry = 0.1
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+		
+			traits = { industrial_conglomerate } 
+
+			modifier = {
+				
+			}
+		}
+		
+		yasuda_zaibatsu = { 
+
+			picture = JAP_yasuda_zaibatsu
+
+			allowed = {
+				original_tag = CHY
+			}
+
+			research_bonus = {
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+		
+			traits = { zaibatsu_bank } 
+
+			modifier = {
+				political_power_factor = -0.1
+				consumer_goods_factor = -0.2
+			}
+		}
 		kawasaki = {
 			
 			allowed = {
@@ -693,27 +776,17 @@ ideas = {
 			research_bonus = {
 				industry = 0.15
 			}
+
+			ai_will_do = {
+				base = 0.5
+			}
 			
 			traits = { industrial_concern }
 		}
 		
-		
-		sumitomo = {
-						
-			allowed = {
-				original_tag = CHY
-			}
-						
-			research_bonus = {
-				electronics = 0.15
-			}
-			
-			traits = { electronics_concern }
-		}
-
 		JAP_idemitsu_kosan = {
 						
-			picture = generic_industrial_concern_2
+			picture = JAP_idemitsu_kosan
 			
 			allowed = {
 				original_tag = CHY
@@ -723,8 +796,190 @@ ideas = {
 				industry = 0.05
 				synth_resources = 0.1
 			}
+
+			ai_will_do = {
+				base = 0.5
+			}
 			
 			traits = { refinery_concern }
+		}
+		
+		hitachi_civilian = {
+
+			picture = JAP_hitachi
+			
+			allowed = {
+				original_tag = CHY
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+				excavation_tech = 0.05
+			}
+
+			ai_will_do = {
+				base = 0.5
+			}
+			
+			traits = { electronics_concern }
+		}
+		
+		imperial_japanese_airways = { 
+
+			picture = JAP_imperial_airways
+
+			allowed = {
+				original_tag = CHY	
+			}
+
+			research_bonus = {
+				air_equipment = 0.05
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+		
+			traits = { civilian_airway_company } 
+
+			modifier = {
+			}
+		}
+		
+		tetsudou_shou = { 
+
+			picture = JAP_tetsudo_sho
+
+			allowed = {
+				original_tag = CHY
+			}
+
+			ai_will_do = {
+				base = 0.5
+			}
+		
+			traits = { railway_company } 
+
+			modifier = {
+			}
+		}
+		
+		oriental_development_company = { 
+
+			picture = JAP_oriental_development_company
+
+			allowed = {
+				original_tag = CHY
+			}
+
+			ai_will_do = {
+				base = 0.5
+			}
+			
+			visible = {
+				NOT = {
+					has_completed_focus = CHY_gongyejituan
+				}
+			}
+		
+			traits = { colonial_investments_company } 
+
+			modifier = {
+				non_core_manpower = 0.01
+				local_resources_factor = 0.05
+				resistance_target = -0.05
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+		
+		oriental_development_company_upgraded = { 
+
+			name = oriental_development_company
+
+			picture = JAP_oriental_development_company
+
+			allowed = {
+				original_tag = CHY
+			}
+			
+			visible = {
+				has_completed_focus = CHY_gongyejituan
+			}
+
+			available = {
+				has_completed_focus = CHY_gongyejituan
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+		
+			traits = { colonial_investments_company } 
+
+			modifier = {
+				non_core_manpower = 0.02
+				local_resources_factor = 0.1
+				resistance_target = -0.1
+				production_speed_infrastructure_factor = 0.2
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+	
+	
+	nanyou_kouhatsu = { 
+
+			picture = JAP_nanyo_kohatsu
+
+			allowed = {
+				original_tag = CHY
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+		
+			traits = { south_seas_development_company } 
+
+			modifier = {
+				non_core_manpower = 0.01
+				local_resources_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		japan_steel_works = {
+			
+			picture = JAP_japan_steel_works
+
+			allowed = {
+				original_tag = CHY
+			}
+			
+			research_bonus = {
+				industry = 0.1
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+			
+			traits = { industrial_steel_mills_trait }
+		}
+		
+		doumei_tsushin = {
+			
+			picture = JAP_domei_tsushin
+
+			allowed = {
+				original_tag = CHY
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+			
+			traits = { national_news_agency }
 		}
 		
 	}

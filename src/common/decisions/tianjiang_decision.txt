@@ -8063,6 +8063,10 @@ YUW_fuyyongjueyi = {
 				add_core_of = YUW
 				remove_core_of = BEL
 			}
+			980 = {
+				add_core_of = YUW
+				remove_core_of = BEL
+			}
 			release_on_controlled = HOL
 			release_on_controlled = AUS
 			release_on_controlled = HUN
@@ -8091,6 +8095,7 @@ YUW_fuyyongjueyi = {
 			BEL = {
 				set_cosmetic_tag = FLDS
 				add_state_claim = 34
+				add_state_claim = 980
 			}
 		}
 	}
@@ -8222,6 +8227,10 @@ SAD_quanlipingheng = {
 		icon = generic_arrest
 		cost = 50
 		available = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
 		}
 		days_re_enable = 120
 		fire_only_once = no
@@ -8239,6 +8248,10 @@ SAD_quanlipingheng = {
 		icon = generic_assassination
 		cost = 50
 		available = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
 		}
 		days_re_enable = 120
 		fire_only_once = no
@@ -8295,6 +8308,10 @@ SAD_quanlipingheng = {
 		icon = ger_reichskommissariats
 		cost = 50
 		available = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
 		}
 		modifier = {
 			fascism_drift = 0.1
@@ -8316,9 +8333,62 @@ SAD_quanlipingheng = {
 		icon = eng_install_government
 		cost = 50
 		available = {
+			not = { has_government = communism }
+			not = { has_country_flag = sad_yugcdjiemeng_flag }
 		}
 		modifier = {
 			neutrality_drift = 0.2
+		}
+		days_remove = 90
+		days_re_enable = 240
+		fire_only_once = no
+		complete_effect = {
+			add_power_balance_value = {
+				id = SAD_balance
+				value = -0.25
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	SAD_zhichidayihui = {
+		icon = gre_investment_decisions
+		cost = 50
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		modifier = {
+			democratic_drift = 0.1
+		}
+		days_remove = 90
+		days_re_enable = 240
+		fire_only_once = no
+		complete_effect = {
+			add_power_balance_value = {
+				id = SAD_balance
+				value = 0.25
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	SAD_zhichisadinggongchanlianmeng = {
+		icon = eng_blackshirt_march
+		cost = 50
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			has_country_flag = sad_yugcdjiemeng_flag
+		}
+		modifier = {
+			communism_drift = 0.2
 		}
 		days_remove = 90
 		days_re_enable = 240
@@ -8353,6 +8423,31 @@ SAD_quanlipingheng = {
 			factor = 100
 		}
 	}
+	SAD_aiquanlipingheng2 = {
+		cost = 0
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			is_ai = yes
+			is_puppet = no
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			date > 1937.1.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_power_balance_value = {
+				id = SAD_balance
+				value = 0.4
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
 	SAD_fazhanjunshigongye = {
 		icon = generic_merge_plant_materiel
 		cost = 150
@@ -8364,9 +8459,10 @@ SAD_quanlipingheng = {
 		}
 		days_remove = 180
 		modifier = {
-			industrial_capacity_factory = 0.3
-			industrial_capacity_dockyard = 0.3
+			industrial_capacity_factory = 0.5
+			industrial_capacity_dockyard = 0.5
 			production_speed_arms_factory_factor = 0.3
+			production_speed_dockyard_factor = 0.3
 		}
 		ai_will_do = {
 			factor = 100
@@ -8417,6 +8513,9 @@ SAD_sadaisaizhanzheng = {
 				}
 			}
 		}
+		cancel_trigger = {
+			has_completed_focus = SAD_afeilijiazhichi
+		}
 		days_mission_timeout = 180
 		is_good = no
 		complete_effect = {
@@ -8451,6 +8550,27 @@ SAD_sadaisaizhanzheng = {
 				add_state_core = 844
 			}
 			complete_national_focus = SAD_afeilijiazhichi
+		}
+	}
+	SAD_AIaisaipanding_jy = {
+		icon = eng_blackshirt_march
+		allowed = {
+			tag = SAD
+		}
+		visible = {
+			is_ai = yes
+			has_war_with = ETH
+		}
+		available = {
+			is_ai = yes
+			has_war_with = ETH
+			date > 1936.1.10
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			country_event = az_tianjiang.449
 		}
 	}
 }
@@ -9332,6 +9452,17 @@ ALL_luxianzhinan = {
 		}
 		complete_effect = {
 			country_event = az_tianjiang.266
+		}
+	}
+	SAD_luxian = {
+		visible = {
+			original_tag = SAD
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			country_event = az_tianjiang.437
 		}
 	}
 	BYG_qiye_jbsj_jy = {
@@ -10286,7 +10417,13 @@ SAD_gonggulingxiuquanwei_renwu = {
 			}
 		}
 		available = {
-			has_completed_focus = SAD_zaifeizhoudeshengli
+			OR = {
+				has_completed_focus = SAD_zaifeizhoudeshengli
+				has_completed_focus = SAD_afeilijiazhichi
+			}
+		}
+		cancel_trigger = {
+			not = { has_government = fascism }
 		}
 		days_mission_timeout = 120
 		is_good = no
@@ -10313,6 +10450,9 @@ SAD_gonggulingxiuquanwei_renwu = {
 		}
 		available = {
 			has_completed_focus = SAD_zhengfuneidedaqingxi
+		}
+		cancel_trigger = {
+			not = { has_government = fascism }
 		}
 		days_mission_timeout = 365
 		is_good = no
@@ -11170,6 +11310,37 @@ HUJ_zhanzhengdezhongjie = {
 			}
 		}
 	}
+	kongzhisad_jueyi = {
+		name = kongzhiita_jueyi
+		icon = generic_political_address
+		available = {
+			date > 1941.1.1
+			tag = HUJ
+			controls_state = 126
+			surrender_progress < 0.3
+			is_faction_leader = yes
+			is_in_faction_with = SAD
+			SAD = {
+				is_ai = yes
+				has_civil_war = yes
+			}
+		}
+		visible = {
+			tag = HUJ
+			country_exists = SAD
+			date > 1940.6.1
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_autonomy = {
+				target = SAD
+				autonomy_state = autonomy_supervised_state
+			}
+		}
+	}
 	gansheirq_jueyi = {
 		icon = generic_political_address
 		available = {
@@ -11350,6 +11521,37 @@ TIX_quanlipingheng = {
 }
 
 AZ_fkAIplayerjiaqiang = {
+	az_qianzoule_dianzhege = {
+		visible = {
+			is_ai = no
+			has_global_flag = modoption_tiantangzhizhan_on
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			date < 1936.1.3
+		}
+		available = {
+			is_ai = no
+			has_global_flag = modoption_tiantangzhizhan_on
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			date < 1936.1.3
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_global_flag = TY_fkAI_yourenjuedebugounan
+			custom_effect_tooltip = az_dianzhiqiankanqingchu_tips
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						shijianniangguojia_trigger = yes
+						is_ai = yes
+					}
+					swap_ideas = {
+						remove_idea = TY_fkAI_zuizhonghetiex
+						add_idea = TY_fkAI_zuizhonghetiex_shuzhipengzhang
+					}
+				}
+			}
+		}
+	}
 	az_wanjialingqufkAIbuff = {
 		icon = generic_form_nation
 		visible = {
@@ -14940,7 +15142,7 @@ AZ_chaowu_jyz = {
 						army_ratio = 0.05
 						navy_ratio = 0
 						keep_unit_leaders_trigger = {
-							has_trait = trait_SPA_nationalist_sympathies
+							always = yes
 						}
 					}
 				}
@@ -15675,9 +15877,22 @@ AZ_chaowu_jyz = {
 		visible = {
 			is_debug = yes
 		}
+		
 		complete_effect = {
-			#set_country_flag = az_lizijianongpao_on
+			#set_politics = { ruling_party = democratic }
+			#mark_focus_tree_layout_dirty = yes
+			#set_country_flag = az_beilunyinqing_on
 			#clr_country_flag = BYG_lizipao_lengquezhong
+			#every_state = {
+			#	limit = {
+			#		 not = { is_core_of = YUW }
+			#		 is_owned_and_controlled_by = YUW
+			#	}
+			#	add_dynamic_modifier = {
+			#		modifier = YUW_sesefushi_state
+			#		scope = YUW
+			#	}
+			#}
 		}
 	}
 
@@ -15720,10 +15935,10 @@ AZ_meizhoutiaozhan_jyz = {
 				not = { has_global_flag = modoption_fengkuangai_on }
 			}
 			custom_trigger_tooltip = {
-				tooltip = "完美达成过本次每周挑战目标"
+				tooltip = "完美达成过本次每月挑战目标"
 				has_completed_custom_achievement = {
    					mod = az_achievements
-    				achievement = az_meizhoutiaozhan_cj
+    				achievement = az_meizhoutiaozhan_cj5
 				}
 			}
 			custom_trigger_tooltip = {
@@ -15747,6 +15962,95 @@ AZ_meizhoutiaozhan_jyz = {
 			not = { has_global_flag = az_meizhoutiaozhan_action }
 		}
 		available = {
+			tag = SAD
+			custom_trigger_tooltip = {
+				tooltip = az_aikongzhiqitaguojia
+				all_other_country = {
+					is_ai = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "历史国策已开启"
+				is_historical_focus_on = yes
+			}
+			not = { has_global_flag = modoption_dingzhenai_on }
+			not = { has_global_flag = az_chiji_flag }
+		}
+		complete_effect = {
+			#activate_mission = AZ_meizhoutiaozhan_jy_wanmei_time
+			#activate_mission = AZ_meizhoutiaozhan_jy_dacheng_time
+			set_global_flag = az_meizhoutiaozhan_SAD
+			set_global_flag = az_meizhoutiaozhan_action
+			add_ideas = AZ_mztz_playerbuff
+		}
+	}
+	AZ_wangqitiaozhan_jy_TIX = {
+		icon = eng_trade_unions_support
+		cost = 0
+		visible = {
+			is_ai = no
+			not = { has_global_flag = az_meizhoutiaozhan_down }
+			not = { has_global_flag = az_meizhoutiaozhan_action }
+		}
+		available = {
+			tag = TIX
+			custom_trigger_tooltip = {
+				tooltip = "非历史模式已开启"
+				is_historical_focus_on = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = az_aikongzhiqitaguojia
+				all_other_country = {
+					is_ai = yes
+				}
+			}
+			not = { has_global_flag = modoption_dingzhenai_on }
+			not = { has_global_flag = az_chiji_flag }
+		}
+		complete_effect = {
+			set_global_flag = az_meizhoutiaozhan_TIX
+			set_global_flag = az_meizhoutiaozhan_action
+			activate_mission = AZ_meizhoutiaozhan_jy_wanmei_time_TIX
+			activate_mission = AZ_meizhoutiaozhan_jy_dacheng_time_TIX
+		}
+	}
+	AZ_wangqitiaozhan_jy_YUW = {
+		icon = eng_trade_unions_support
+		cost = 0
+		visible = {
+			is_ai = no
+			not = { has_global_flag = az_meizhoutiaozhan_down }
+			not = { has_global_flag = az_meizhoutiaozhan_action }
+		}
+		available = {
+			tag = YUW
+			custom_trigger_tooltip = {
+				tooltip = "非历史模式已开启"
+				is_historical_focus_on = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = az_aikongzhiqitaguojia
+				all_other_country = {
+					is_ai = yes
+				}
+			}
+			not = { has_global_flag = modoption_dingzhenai_on }
+			not = { has_global_flag = az_chiji_flag }
+		}
+		complete_effect = {
+			set_global_flag = az_meizhoutiaozhan_YUW
+			set_global_flag = az_meizhoutiaozhan_action
+		}
+	}
+	AZ_wangqitiaozhan_jy_BFL = {
+		icon = eng_trade_unions_support
+		cost = 0
+		visible = {
+			is_ai = no
+			not = { has_global_flag = az_meizhoutiaozhan_down }
+			not = { has_global_flag = az_meizhoutiaozhan_action }
+		}
+		available = {
 			tag = BFL
 			custom_trigger_tooltip = {
 				tooltip = az_aikongzhiqitaguojia
@@ -15755,13 +16059,36 @@ AZ_meizhoutiaozhan_jyz = {
 				}
 			}
 			not = { has_global_flag = modoption_dingzhenai_on }
+			not = { has_global_flag = az_chiji_flag }
 		}
 		complete_effect = {
-			#activate_mission = AZ_meizhoutiaozhan_jy_wanmei_time
-			#activate_mission = AZ_meizhoutiaozhan_jy_dacheng_time
 			set_global_flag = az_meizhoutiaozhan_BFL
 			set_global_flag = az_meizhoutiaozhan_action
-			add_ideas = AZ_mztz_playerbuff
+		}
+	}
+	AZ_wangqitiaozhan_jy_DOH = {
+		icon = eng_trade_unions_support
+		cost = 0
+		visible = {
+			is_ai = no
+			not = { has_global_flag = az_meizhoutiaozhan_down }
+			not = { has_global_flag = az_meizhoutiaozhan_action }
+		}
+		available = {
+			tag = DOH
+			custom_trigger_tooltip = {
+				tooltip = az_aikongzhiqitaguojia
+				all_other_country = {
+					is_ai = yes
+				}
+			}
+			not = { has_global_flag = modoption_dingzhenai_on }
+			not = { has_global_flag = az_chiji_flag }
+		}
+		complete_effect = {
+			set_global_flag = az_meizhoutiaozhan_DOH
+			set_global_flag = az_meizhoutiaozhan_action
+			add_ideas = az_houqizhixiu_idea
 		}
 	}
 	AZ_meizhoutiaozhan_jy_off = {
@@ -15786,6 +16113,9 @@ AZ_meizhoutiaozhan_jyz = {
 			is_ai = yes
 			has_global_flag = az_meizhoutiaozhan_action
 			shijianniangguojia_trigger = yes
+			not = { has_global_flag = az_meizhoutiaozhan_BFL }
+			not = { has_global_flag = az_meizhoutiaozhan_TIX }
+			not = { has_global_flag = az_meizhoutiaozhan_YUW }
 		}
 		ai_will_do = {
 			factor = 100
@@ -15817,13 +16147,16 @@ AZ_meizhoutiaozhan_jyz = {
 			set_global_flag = az_meizhoutiaozhan_down
 		}
 	}
-	AZ_meizhoutiaozhan_jy_wanmei_time = {
+	AZ_meizhoutiaozhan_jy_wanmei_time_TIX = {
+		name = AZ_meizhoutiaozhan_jy_wanmei_time
 		icon = generic_scorched_earth
 		is_good = no
 		activation = {
 			always = no
 		}
 		available = {
+			is_puppet = no
+			not = { has_government = fascism }
 			OR = {
 				tag = TIX
 				TIX = { is_subject_of = ROOT }
@@ -15863,28 +16196,28 @@ AZ_meizhoutiaozhan_jyz = {
 				not = { country_exists = BFL }
 				has_global_flag = beilian_bengkui
 			}
-			OR = {
-				tag = CHY
-				CHY = { is_subject_of = ROOT }
-				CHY = { is_in_faction_with = ROOT }
-				not = { country_exists = CHY }
-			}
-			OR = {
-				tag = DOH
-				DOH = { is_subject_of = ROOT }
-				DOH = { is_in_faction_with = ROOT }
-				not = { country_exists = DOH }
-			}
-			OR = {
-				tag = BYG
-				BYG = { is_subject_of = ROOT }
-				BYG = { is_in_faction_with = ROOT }
-				not = { country_exists = BYG }
-			}
+			#OR = {
+			#	tag = CHY
+			#	CHY = { is_subject_of = ROOT }
+			#	CHY = { is_in_faction_with = ROOT }
+			#	not = { country_exists = CHY }
+			#}
+			#OR = {
+			#	tag = DOH
+			#	DOH = { is_subject_of = ROOT }
+			#	DOH = { is_in_faction_with = ROOT }
+			#	not = { country_exists = DOH }
+			#}
+			#OR = {
+			#	tag = BYG
+			#	BYG = { is_subject_of = ROOT }
+			#	BYG = { is_in_faction_with = ROOT }
+			#	not = { country_exists = BYG }
+			#}
 		}
-		days_mission_timeout = 2190
+		days_mission_timeout = 2555
 		complete_effect = {
-			set_global_flag = az_meizhoutiaozhan_cj_get
+			set_global_flag = az_meizhoutiaozhan_cj_get3
 			custom_effect_tooltip = get_zs_shuliang_2500
 			add_to_variable = {
 				var = zs_sl
@@ -15895,13 +16228,16 @@ AZ_meizhoutiaozhan_jyz = {
 			custom_effect_tooltip = az_meizhoutiaozhan_buwanmei
 		}
 	}
-	AZ_meizhoutiaozhan_jy_dacheng_time = {
+	AZ_meizhoutiaozhan_jy_dacheng_time_TIX = {
+		name = AZ_meizhoutiaozhan_jy_dacheng_time
 		icon = generic_scorched_earth
 		is_good = no
 		activation = {
 			always = no
 		}
 		available = {
+			is_puppet = no
+			not = { has_government = fascism }
 			OR = {
 				tag = TIX
 				TIX = { is_subject_of = ROOT }
@@ -15941,24 +16277,24 @@ AZ_meizhoutiaozhan_jyz = {
 				not = { country_exists = BFL }
 				has_global_flag = beilian_bengkui
 			}
-			OR = {
-				tag = CHY
-				CHY = { is_subject_of = ROOT }
-				CHY = { is_in_faction_with = ROOT }
-				not = { country_exists = CHY }
-			}
-			OR = {
-				tag = DOH
-				DOH = { is_subject_of = ROOT }
-				DOH = { is_in_faction_with = ROOT }
-				not = { country_exists = DOH }
-			}
-			OR = {
-				tag = BYG
-				BYG = { is_subject_of = ROOT }
-				BYG = { is_in_faction_with = ROOT }
-				not = { country_exists = BYG }
-			}
+			#OR = {
+			#	tag = CHY
+			#	CHY = { is_subject_of = ROOT }
+			#	CHY = { is_in_faction_with = ROOT }
+			#	not = { country_exists = CHY }
+			#}
+			#OR = {
+			#	tag = DOH
+			#	DOH = { is_subject_of = ROOT }
+			#	DOH = { is_in_faction_with = ROOT }
+			#	not = { country_exists = DOH }
+			#}
+			#OR = {
+			#	tag = BYG
+			#	BYG = { is_subject_of = ROOT }
+			#	BYG = { is_in_faction_with = ROOT }
+			#	not = { country_exists = BYG }
+			#}
 		}
 		days_mission_timeout = 3285
 		complete_effect = {
@@ -16007,4 +16343,234 @@ AZ_meizhoutiaozhan_jyz = {
 			}
 		}
 	}
+	AZ_meizhoutiaozhan_jy_YUW_misson = {
+		icon = generic_scorched_earth
+		cost = 0
+		visible = {
+			is_ai = no
+			has_global_flag = az_meizhoutiaozhan_YUW
+		}
+		fire_only_once = yes
+		available = {
+			has_completed_focus = YUW_buyetinghaodemang
+			all_state = {
+				owner = {
+					OR = {
+						tag = YUW
+						is_ally_with = YUW
+					}
+				}
+				OR = {
+					is_core_of = YUW
+					owner = {
+						is_ally_with = YUW
+						not = { tag = YUW }
+					}
+					has_dynamic_modifier = {
+   						 modifier = YUW_sesefushi_state
+   						 scope = YUW
+					}
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					date < 1945.1.1
+				}
+				set_global_flag = az_meizhoutiaozhan_cj_get2
+				custom_effect_tooltip = get_zs_shuliang_10000
+				add_to_variable = {
+					var = zs_sl
+					value = 10000
+				}
+			}else = {
+				custom_effect_tooltip = get_zs_shuliang_7500
+				add_to_variable = {
+					var = zs_sl
+					value = 7500
+				}
+			}
+		}
+	}
+	AZ_meizhoutiaozhan_jy_DOH_misson = {
+		icon = generic_scorched_earth
+		cost = 0
+		visible = {
+			is_ai = no
+			has_global_flag = az_meizhoutiaozhan_DOH
+		}
+		fire_only_once = yes
+		available = {
+			TIX = {
+				has_government = ROOT
+			}
+			BFL = {
+				has_government = ROOT
+			}
+			YUW = {
+				has_government = ROOT
+			}
+			SAD = {
+				has_government = ROOT
+			}
+			HUJ = {
+				has_government = ROOT
+			}
+			BYG = {
+				has_government = ROOT
+			}
+			CHY = {
+				has_government = ROOT
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					date < 1945.1.1
+				}
+				set_global_flag = az_meizhoutiaozhan_cj_get4
+				custom_effect_tooltip = get_zs_shuliang_10000
+				add_to_variable = {
+					var = zs_sl
+					value = 10000
+				}
+			}else = {
+				custom_effect_tooltip = get_zs_shuliang_7500
+				add_to_variable = {
+					var = zs_sl
+					value = 7500
+				}
+			}
+		}
+	}
+	AZ_meizhoutiaozhan_jy_SAD_misson = {
+		icon = generic_scorched_earth
+		cost = 0
+		visible = {
+			is_ai = no
+			has_global_flag = az_meizhoutiaozhan_SAD
+		}
+		fire_only_once = yes
+		available = {
+			is_puppet = no
+			OR = {
+				AND = {
+					is_in_faction_with = TIX
+					OR = {
+						has_global_flag = beilian_bengkui
+						BFL = { is_subject = yes }
+						not = { country_exists = BFL }
+					}
+					OR = {
+						has_global_flag = guangrongheping_shishi
+						has_global_flag = xinzhixu_shishi
+						HUJ = { is_subject = yes }
+						not = { country_exists = HUJ }
+					}
+					OR = {
+						country_exists = WEX
+						YUW = { is_subject = yes }
+						not = { country_exists = YUW }
+					}
+				}
+				AND = {
+					is_in_faction_with = HUJ
+					custom_trigger_tooltip = {
+						tooltip = cold_war_tips_1
+						OR = {
+							has_global_flag = yaertahuiyi_chenggong_shishi
+							not = { country_exists = TIX }
+							TIX = { is_subject = yes }
+						}
+						OR = {
+							has_global_flag = chy_touxiang_shishi
+							not = { country_exists = CHY }
+							CHY = { is_subject = yes }
+						}
+						OR = {
+							not = { country_exists = SAD }
+							SAD = {
+								OR = {
+									has_government = democratic
+									has_government = communism
+									is_puppet = yes
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = "本次只要达成条件就视作完美通关"
+			set_global_flag = az_meizhoutiaozhan_cj_get5
+			custom_effect_tooltip = get_zs_shuliang_10000
+			add_to_variable = {
+				var = zs_sl
+				value = 10000
+			}
+		}
+	}
+}
+
+SAD_panbianzhe_jyz = {
+	SAD_panbianzhe_jy = {
+		icon = eng_puppet_usa
+		available = {
+			OR = {
+				has_idea = SAD_lingxiuquanwei_3
+				has_completed_focus = SAD_chongzhudiguorongguang
+			}
+		}
+		visible = {
+			has_completed_focus = SAD_anliuyongdong
+			not = { has_country_flag = sad_panluanzhongzhi }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				is_historical_focus_on = yes
+				date < 1943.7.1
+				factor = 0
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = sad_panluanzhongzhi_tips
+			set_country_flag = sad_panluanzhongzhi
+			add_to_variable = {
+				var = az_mimoujincheng
+				value = -100
+			}
+		}
+	}
+	SAD_jiangdimimoujincheng_jy = {
+		icon = generic_arrest
+		cost = 1000
+		available = {
+			is_puppet = no
+			has_civil_war = no
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+		visible = {
+			has_completed_focus = SAD_anliuyongdong
+			not = { has_country_flag = sad_panluanzhongzhi }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			custom_effect_tooltip = SAD_jiangdimimoujincheng_jy_tips
+			add_to_variable = {
+				var = az_mimoujincheng
+				value = -20
+			}
+		}
+	}
+
+
 }

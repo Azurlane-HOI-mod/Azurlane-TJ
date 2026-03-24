@@ -257,3 +257,21 @@ YUW_sesefushi_state = {
 	state_resources_factor = 0.3
 }
 
+SAD_manjiuzizhiqu_state = {
+	enable = { 
+		always = yes
+	}
+	icon = GFX_modifiers_PRC_urban_development
+	remove_trigger = {
+		not = {
+			country_exists = SAD
+		}
+	}
+	local_building_slots_factor = 0.15
+	local_manpower = -0.25
+	state_production_speed_buildings_factor = 0.2
+	enemy_operative_detection_chance_over_occupied_tag = 0.5
+	enemy_intel_network_gain_factor_over_occupied_tag = -0.5
+	state_resources_factor = 0.25
+}
+

@@ -414,11 +414,19 @@ country_event = {
 					tag = TIB
 					tag = SIK
 					tag = XSM
-					tag = XIC
-					tag = SHX
 					tag = HBC
 				}
-				add = 5
+				add = 4
+			}
+			modifier = {
+				OR = {
+					tag = TIB
+					tag = SIK
+					tag = XSM
+					tag = HBC
+				}
+				is_historical_focus_on = yes
+				factor = 100
 			}
 		}
 		DOH = { country_event = DOH_event.8 } 
@@ -426,7 +434,7 @@ country_event = {
 	option = {
 		name = DOH_event.7.b
 		ai_chance = {
-			base = 1
+			base = 3
 		}
 		DOH = { country_event = DOH_event.9 }
 		declare_war_on = {
@@ -1057,7 +1065,7 @@ country_event = {
 
 					random_owned_controlled_state = {
 						create_unit = {
-							division = "name = \"民兵团\" division_template = \"军团\" start_experience_factor = 0.3 start_equipment_factor = 1"
+							division = "name = \"民兵团\" division_template = \"志愿民兵\" start_experience_factor = 0.3 start_equipment_factor = 1"
 							owner = ROOT
 						}	
 					}
@@ -1109,7 +1117,7 @@ country_event = {
 
 					random_owned_controlled_state = {
 						create_unit = {
-							division = "name = \"民兵团\" division_template = \"军团\" start_experience_factor = 0.3 start_equipment_factor = 1"
+							division = "name = \"民兵团\" division_template = \"志愿民兵\" start_experience_factor = 0.3 start_equipment_factor = 1"
 							owner = ROOT
 						}	
 					}
@@ -1144,7 +1152,7 @@ country_event = {
 
 					random_owned_controlled_state = {
 						create_unit = {
-							division = "name = \"民兵团\" division_template = \"军团\" start_experience_factor = 0.3 start_equipment_factor = 1"
+							division = "name = \"民兵团\" division_template = \"志愿民兵\" start_experience_factor = 0.3 start_equipment_factor = 1"
 							owner = ROOT
 						}	
 					}

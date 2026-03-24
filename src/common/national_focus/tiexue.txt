@@ -2159,6 +2159,13 @@ focus_tree = {
 				specialization = specialization_land
 				value = 1.5
 			}
+			add_mastery_bonus = {
+                bonus = 0.25
+                days = 365
+                name = "思维创新"
+                folder = land
+                index = 1
+            }
 		}
 	}
 	focus = {
@@ -2256,6 +2263,14 @@ focus_tree = {
 				planning_skill = 3
 				logistics_skill = 2
 			}
+			add_mastery_bonus = {
+                bonus = 0.5
+                days = 180
+                name = "训练坦克乘员组"
+                folder = land
+                track = armor
+                index = 1
+            }
 		}
 	}
 	focus = {
@@ -2539,7 +2554,7 @@ focus_tree = {
 		}
 		cost = 5
 		ai_will_do = { 
-			factor = 20
+			factor = 50
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2688,7 +2703,7 @@ focus_tree = {
 		}
 		relative_position_id = TIX_yihuigaige
 		ai_will_do = {
-			factor = 60
+			factor = 50
 		}
 		available = {
 			
@@ -4074,6 +4089,9 @@ focus_tree = {
 						SAD = {
 							is_ai = no
 						}
+						SAD = {
+							has_completed_focus = SAD_baohuaodili
+						}
 					}
 				}
 				add_named_threat = {
@@ -4228,6 +4246,12 @@ focus_tree = {
 			NOT = {
 				country_exists = AUS
 			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
+			}
 		}
 		bypass = {
 			OR = {
@@ -4320,6 +4344,12 @@ focus_tree = {
 			is_puppet = no
 			NOT = {
 				has_completed_focus = TIX_yubilanhangxianjiaohao
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 			}
 		}
 		bypass = {
@@ -4593,8 +4623,16 @@ focus_tree = {
 			}
 		}
 		available = {
+			is_puppet = no
 			NOT = {
 				has_completed_focus = TIX_yubilanhangxianjiaohao
+			}
+			if = {
+				limit = {
+					is_ai = no
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+				}
+				date > 1939.7.1
 			}
 		}
 		bypass = {
@@ -4680,8 +4718,16 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		available = {
+			is_puppet = no
 			NOT = {
 				has_completed_focus = TIX_yubilanhangxianjiaohao
+			}
+			if = {
+				limit = {
+					is_ai = no
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+				}
+				date > 1939.9.1
 			}
 		}
 		bypass = {
@@ -4811,6 +4857,12 @@ focus_tree = {
 				YUG = {
 					is_subject_of = SAD
 				}
+				SAD = {
+					OR = {
+						has_government = communism
+						has_government = democratic
+					}
+				}
 			}
 		}
 		completion_reward = {
@@ -4855,6 +4907,12 @@ focus_tree = {
 			is_puppet = no
 			NOT = {
 				country_exists = AUS
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 			}
 		}
 		bypass = {
@@ -4951,6 +5009,12 @@ focus_tree = {
 			is_puppet = no
 			NOT = {
 				country_exists = CZE
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 			}
 		}
 		bypass = {
@@ -5105,10 +5169,18 @@ focus_tree = {
 			has_war_with = YUW
 		}
 		available = {
+			is_puppet = no
 			NOT = {
 				has_completed_focus = TIX_yubilanhangxianjiaohao
 			}
 			NOT = { has_non_aggression_pact_with = YUW }
+			if = {
+				limit = {
+					is_ai = no
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+				}
+				date > 1940.1.1
+			}
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -5159,8 +5231,16 @@ focus_tree = {
 			}
 		}
 		available = {
+			is_puppet = no
 			NOT = {
 				has_completed_focus = TIX_yubilanhangxianjiaohao
+			}
+			if = {
+				limit = {
+					is_ai = no
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+				}
+				date > 1939.10.1
 			}
 		}
 		bypass = {
@@ -5198,6 +5278,18 @@ focus_tree = {
 				}
 				YUW = {
 					country_event = TIX_event.10
+				}
+			}
+			if = {
+				limit = {
+					HUJ = {
+						is_puppet = no
+						exists = yes
+						not = { has_war_with = TIX }
+					}
+				}
+				HUJ = {
+					country_event = HUJ_event.5
 				}
 			}
 		}
@@ -6436,6 +6528,13 @@ focus_tree = {
 			has_army_manpower = {
 				size > 1500000
 			}
+			if = {
+				limit = {
+					is_ai = no
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+				}
+				date > 1941.1.1
+			}
 		}
 		cost = 7
 		search_filters = {
@@ -7302,12 +7401,27 @@ focus_tree = {
 		}
 		completion_reward = {
 			guojishengyu_down_10 = yes
-			add_named_threat = {
-				threat = 10
-				name = "奥地利危机"
-			}
-			AUS = {
-				country_event = az_tianjiang.310
+			if = {
+				limit = {
+					SAD = {
+						has_completed_focus = SAD_baohuaodili
+					}
+				}
+				add_named_threat = {
+						threat = 10
+						name = "奥地利危机"
+				}
+				SAD = {
+					country_event = az_tianjiang.145
+				}
+			}else = {
+				add_named_threat = {
+					threat = 10
+					name = "奥地利危机"
+				}
+				AUS = {
+					country_event = az_tianjiang.310
+				}
 			}
 			effect_tooltip = {
 					custom_effect_tooltip = if_they_accept_tt
@@ -7464,6 +7578,11 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 50
+		}
+		bypass = {
+			SAD = {
+				has_government = democratic
+			}
 		}
 		completion_reward = {
 			add_ai_strategy = {
@@ -8173,7 +8292,7 @@ focus_tree = {
 		icon = GFX_fflag_TIX
 		x = 1
 		y = 1
-		cost = 71.5
+		cost = 50
 		prerequisite = {
 			focus = TIX_yaoqingbaerganguojia
 		}
@@ -9054,26 +9173,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			guojishengyu_down_10 = yes
-			if = {
-				limit = {
-					is_ai = no
-				}
-				add_named_threat = {
-					threat = 10
-					name = "奥地利危机"
-				}
-				SAD = {
-					country_event = az_tianjiang.145
-				}
+			add_named_threat = {
+				threat = 10
+				name = "奥地利危机"
 			}
-			else = {
-				add_named_threat = {
-					threat = 10
-					name = "吞并奥地利"
-				}
-				AUS = {
-					country_event = az_tianjiang.2
-				}
+			SAD = {
+				country_event = az_tianjiang.145
 			}
 			effect_tooltip = {
 					custom_effect_tooltip = if_they_accept_tt

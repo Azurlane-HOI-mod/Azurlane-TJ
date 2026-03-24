@@ -63,7 +63,6 @@ on_actions = {
 			}
 		} 
 	}
-
 	on_declare_war = { 
 		effect = { 
 			if = { 
@@ -83,9 +82,7 @@ on_actions = {
 					set_country_flag = CHY_xuanzhan_DOH
 				}
 			}
-		} 
-	}
-	on_declare_war = { 
+		}
 		effect = { 
 			if = { 
 				limit = { 
@@ -105,8 +102,6 @@ on_actions = {
 				}
 			}
 		} 
-	}
-	on_declare_war = { 
 		effect = { 
 			if = { 
 				limit = { 
@@ -126,30 +121,6 @@ on_actions = {
 			}
 		} 
 	}
-	on_declare_war = { 
-		effect = { 
-			if = { 
-				limit = { 
-					ROOT = { tag = TIX } 
-					FROM = { 
-						OR = {
-							tag = BEL 
-							tag = HOL
-							tag = LUX
-							
-						}
-					}
-					NOT = { has_global_flag = TIX_jingongdidisangong }
-
-				}
-				set_global_flag = TIX_jingongdidisangong
-				HUJ = { 
-					country_event = { id = HUJ_event.5 days = 2 }
-				}	
-				
-			}
-		} 
-	}	
 	on_annex = {
 		effect = { 
 			if = {

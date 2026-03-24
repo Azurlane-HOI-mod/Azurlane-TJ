@@ -213,8 +213,18 @@ az_tongsinimiao_cj = {
     
     happened = {
 		not = { has_global_flag = modoption_dingzhenai_on }
-		is_in_faction_with = SAD
-    has_war_with = ITA
+    OR = {
+      AND = {
+        is_in_faction_with = SAD
+        has_war_with = ITA
+      }
+      AND = {
+        SAD = {
+          has_civil_war = yes
+          has_war_with = TIX
+        }
+      }
+    }
     }    
 }
 
@@ -902,5 +912,61 @@ az_ceshichengjiu_cj = {
     
     happened = {
         always = yes
+    }    
+}
+
+az_meizhoutiaozhan_cj2 = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_global_flag = az_meizhoutiaozhan_cj_get2
+    }    
+}
+
+az_meizhoutiaozhan_cj3 = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_global_flag = az_meizhoutiaozhan_cj_get3
+    }    
+}
+
+az_meizhoutiaozhan_cj4 = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_global_flag = az_meizhoutiaozhan_cj_get4
+    }    
+}
+
+az_meizhoutiaozhan_cj5 = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_global_flag = az_meizhoutiaozhan_cj_get5
     }    
 }

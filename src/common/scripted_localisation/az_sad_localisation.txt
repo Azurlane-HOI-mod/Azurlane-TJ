@@ -1,0 +1,113 @@
+defined_text = {
+	name = SAD_diguohaijundajian
+	text = {
+		trigger = {
+			original_tag = SAD
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+		localization_key = "帝国海军大建"
+	}
+	text = {
+		trigger = {
+			original_tag = SAD
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		localization_key = "共和国海军大建" 
+	}
+}
+
+defined_text = {
+	name = SAD_qudiweiyuanhui
+	text = {
+		trigger = {
+			original_tag = SAD
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+		localization_key = "取缔委员会"
+	}
+	text = {
+		trigger = {
+			original_tag = SAD
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		localization_key = "取缔大议会" 
+	}
+}
+
+defined_text = {
+	name = SAD_qudiweiyuanhuidesc
+	text = {
+		trigger = {
+			original_tag = SAD
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+		localization_key = "利托里奥委员会如今已经失去了权利，我们现在只需立法就可以消灭这个组织。"
+	}
+	text = {
+		trigger = {
+			original_tag = SAD
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		localization_key = "共和国大议会如今只是一个摆设，我们现在只需立法就可以消灭这个组织。" 
+	}
+}
+
+defined_text = { #
+	name = Getsadpanluandu
+	text = {
+		trigger = {
+			original_tag = SAD
+			check_variable = { var = az_mimoujincheng value = 100 compare = greater_than_or_equals }
+		}
+		localization_key = sadpld_jigao
+	}
+	text = {
+		trigger = {
+			original_tag = SAD
+			check_variable = { var = az_mimoujincheng value = 80 compare = greater_than_or_equals }
+			check_variable = { var = az_mimoujincheng value = 100 compare = less_than }
+		}
+		localization_key = sadpld_jiaogao
+	}
+	text = {
+		trigger = {
+			original_tag = SAD
+			check_variable = { var = az_mimoujincheng value = 40 compare = greater_than_or_equals }
+			check_variable = { var = az_mimoujincheng value = 80 compare = less_than }
+		}
+		localization_key = sadpld_gao
+	}
+	text = {
+		trigger = {
+			original_tag = SAD
+			check_variable = { var = az_mimoujincheng value = 0 compare = greater_than_or_equals }
+			check_variable = { var = az_mimoujincheng value = 40 compare = less_than }
+		}
+		localization_key = sadpld_di
+	}
+	text = {
+		trigger = {
+			original_tag = SAD
+			check_variable = { var = az_mimoujincheng value = 0 compare = less_than }
+		}
+		localization_key = sadpld_jidi
+	}
+}

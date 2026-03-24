@@ -1,0 +1,394 @@
+#购买武器(1政治点=15的IC产能） 1军工满效率每天5IC产出 10把步枪（净生产量+三分之一） 1.42火炮（净生产量+五分之一） 2卡车（净生产量+四分之一）
+siren_category = {
+	siren_liluntup_jy = {
+		icon = hude
+		visible = {
+			has_global_flag = az_chiji_flag
+		}
+		available = {
+			shisairen_trigger = yes
+			date > 1939.1.1
+		}
+		ai_will_do = {
+			factor = 1001
+		}
+		fire_only_once = yes
+		complete_effect = {
+			TY_lujunliluntupo = yes
+			TY_haijunliluntupo = yes
+			TY_kongjunliluntupo = yes
+		}
+	}
+	siren_ludiyaosai = {
+		icon = hude
+		visible = {
+			has_global_flag = az_chiji_flag
+		}
+		available = {
+			shisairen_trigger = yes
+		}
+		ai_will_do = {
+			factor = 1001
+		}
+		fire_only_once = yes
+		complete_effect = {
+			division_template = {
+				name = "塞壬防御机关"
+				regiments = {
+					siren_ludiyaosai_1 = { x = 0 y = 0 }
+					siren_ludiyaosai_1 = { x = 0 y = 1 }
+					siren_ludiyaosai_1 = { x = 0 y = 2 }
+					siren_ludiyaosai_1 = { x = 0 y = 3 }
+					siren_ludiyaosai_1 = { x = 0 y = 4 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}	
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"陆地要塞\" division_template = \"塞壬防御机关\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			} 
+			
+		}
+	}
+	siren_xuanzhan_1 = {
+		icon = hude
+		available = {
+			has_global_flag = sirennandu3
+			has_war = no
+			any_country = {
+				is_ai = NO
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		fire_only_once = yes
+		visible = {
+			always = no
+			has_global_flag = az_chiji_flag
+		}
+		ai_will_do = {
+			base = 1000
+		}	
+		remove_effect = {  
+			every_other_country = {
+				limit = { 
+					is_ai = NO 
+					NOT = { shisairen_trigger = yes }
+				}
+				country_event = azevent.103
+			}
+			
+		}
+	}
+	siren_xuanzhan_2 = {
+		icon = hude
+		available = {
+			has_global_flag = sirennandu3
+			has_global_flag = SIR_sirennandu3_xuanzhan_1
+			has_war = no
+			any_country = {
+				is_ai = NO
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		fire_only_once = yes
+		visible = {
+			always = no
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		
+		remove_effect = {  
+			every_other_country = {
+				limit = { 
+					is_ai = NO 
+					NOT = { shisairen_trigger = yes }
+				}
+				country_event = azevent.10301
+			}
+			set_global_flag = SIR_sirennandu3_xuanzhan_1
+		}
+	}
+	siren_xuanzhan_3 = {
+		icon = hude
+		available = {
+			has_global_flag = sirennandu3
+			has_global_flag = SIR_sirennandu3_xuanzhan_2
+			has_war = no
+			any_country = {
+				is_ai = NO
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		visible = {
+			always = no
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		days_remove = 50
+		remove_effect = {  
+			every_other_country = {
+				limit = { 
+					is_ai = NO 
+					NOT = { shisairen_trigger = yes }
+				}
+				ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+			}
+		}
+	}
+	siren_suijiqiandu = {
+		icon = hude
+		available = {
+			
+				has_war = yes
+		
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+		}
+		ai_will_do = {
+			base = 100
+		}
+		days_re_enable = 180
+		days_remove = 180
+		
+		remove_effect = {  
+			if = {
+				limit = { has_war = yes }
+				random_controlled_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						is_island_state = NO
+						is_coastal = NO
+						NOT = {
+							has_state_category = wasteland
+							has_state_category = tiny_island
+							has_state_category = small_island
+							has_state_category = pastoral
+							has_state_category = enclave
+						}
+					}
+					PREV = { set_capital = { state = PREV.THIS } }
+				}
+			}
+			
+			
+		}
+	}
+
+	siren_reinforce_1 = {
+		icon = hude
+		available = {
+			has_war = yes
+			NOT = {
+				has_country_flag = siren_reinforce_1_incd
+			}
+			NOT = { has_country_flag = siren_safe_time }
+		}
+		visible = {
+			always = no
+		}
+		complete_effect = {  
+			meta_effect = {
+				text = {
+					set_country_flag = { flag = siren_reinforce_1_incd value = 1 days = [cd] }
+				}
+				cd = siren_reinforce_1_cd
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_idea = SIR_buff3
+							has_idea = SIR_buff4
+							has_idea = SIR_buff5
+						}
+						OR = {
+							has_global_flag = sirennandu2
+							has_global_flag = sirennandu3
+						}
+					}
+				}
+				SIR_reinforce_1_mec = yes
+				SIR_reinforce_1_inf_big = yes
+			}
+			else = {
+				SIR_reinforce_1_inf = yes
+				SIR_reinforce_1_mot = yes
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	siren_reinforce_2 = {
+		icon = hude
+		available = {
+			OR = {
+				has_idea = SIR_buff1
+				has_idea = SIR_buff2
+			}
+			has_war = yes
+			NOT = {
+				has_country_flag = siren_reinforce_2_incd
+			}
+			NOT = { has_country_flag = siren_safe_time }
+		}
+		visible = {
+			always = no
+		}
+		complete_effect = {  
+			meta_effect = {
+				text = {
+					set_country_flag = { flag = siren_reinforce_2_incd value = 1 days = [cd] }
+				}
+				cd = siren_reinforce_2_cd
+			}
+			SIR_reinforce_2_lt = yes
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	siren_reinforce_3 = {
+		icon = hude
+		available = {
+			OR = {
+				has_idea = SIR_buff2
+				has_idea = SIR_buff3
+				has_idea = SIR_buff4
+			}
+			has_war = yes
+			NOT = {
+				has_country_flag = siren_reinforce_3_incd
+			}
+			NOT = { has_country_flag = siren_safe_time }
+		}
+		visible = {
+			always = no
+		}
+		complete_effect = {  
+			meta_effect = {
+				text = {
+					set_country_flag = { flag = siren_reinforce_3_incd value = 1 days = [cd] }
+				}
+				cd = siren_reinforce_3_cd
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_idea = SIR_buff3
+							has_idea = SIR_buff4
+							has_idea = SIR_buff5
+						}
+						OR = {
+							has_global_flag = sirennandu2
+							has_global_flag = sirennandu3
+						}
+					}
+				}
+				SIR_reinforce_3_mt_late = yes
+			}
+			else = {
+				SIR_reinforce_3_mt = yes
+				SIR_reinforce_3_td = yes
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	siren_reinforce_4 = {
+		icon = hude
+		available = {
+			OR = {
+				has_idea = SIR_buff3
+				has_idea = SIR_buff4
+				has_idea = SIR_buff5
+				has_idea = SIR_buff_max
+			}
+			has_war = yes
+			NOT = {
+				has_country_flag = siren_reinforce_4_incd
+			}
+			NOT = { has_country_flag = siren_safe_time }
+		}
+		visible = {
+			always = no
+		}
+		complete_effect = {  
+			meta_effect = {
+				text = {
+					set_country_flag = { flag = siren_reinforce_4_incd value = 1 days = [cd] }
+				}
+				cd = siren_reinforce_4_cd
+			}
+			SIR_reinforce_4_ht = yes
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	siren_reinforce_5 = {
+		icon = hude
+		available = {
+			OR = {
+				has_idea = SIR_buff4
+				has_idea = SIR_buff5
+				has_idea = SIR_buff_max
+			}
+			has_war = yes
+			NOT = {
+				has_country_flag = siren_reinforce_5_incd
+			}
+			NOT = { has_country_flag = siren_safe_time }
+		}
+		visible = {
+			always = no
+		}
+		complete_effect = {  
+			meta_effect = {
+				text = {
+					set_country_flag = { flag = siren_reinforce_5_incd value = 1 days = [cd] }
+				}
+				cd = siren_reinforce_5_cd
+			}
+			SIR_reinforce_5_sht = yes
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+}

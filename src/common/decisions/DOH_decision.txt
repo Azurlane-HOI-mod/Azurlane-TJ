@@ -133,6 +133,10 @@ DOH_decision_category = {
 				controls_state = 761
 				controls_state = 527
 				controls_state = 525
+				controls_state = 1028
+				controls_state = 1029
+				controls_state = 1030
+				controls_state = 1031
 			}
 		}
 		days_remove = 70
@@ -227,18 +231,18 @@ DOH_decision_category = {
 				409 = {
 					set_state_name = DOH_boli_name
 				}
-				set_victory_points = {
-					province = 957					# 符拉迪沃斯托克/海参崴
-					value = 20
-				}
-				set_victory_points = {
-					province = 12189					# 哈巴罗夫斯克/伯力
-					value = 20
-				}
-				set_victory_points = {
-					province = 4705					# 赤塔/尼布楚
-					value = 10
-				}
+				# set_victory_points = {
+				# 	province = 957					# 符拉迪沃斯托克/海参崴
+				# 	value = 20
+				# }
+				# set_victory_points = {
+				# 	province = 12189					# 哈巴罗夫斯克/伯力
+				# 	value = 20
+				# }
+				# set_victory_points = {
+				# 	province = 4705					# 赤塔/尼布楚
+				# 	value = 10
+				# }
 			}
 		}
 	}
@@ -269,14 +273,14 @@ DOH_decision_category = {
 				name = DOH_wuliyasutai_name
 			}
 			hidden_effect = {
-				set_victory_points = {
-					province = 10627					# 克孜勒/乌里雅苏台
-					value = 10
-				}
-				set_victory_points = {
-					province = 4801					# 乌兰巴托
-					value = 15
-				}
+				# set_victory_points = {
+				# 	province = 10627					# 克孜勒/乌里雅苏台
+				# 	value = 10
+				# }
+				# set_victory_points = {
+				# 	province = 4801					# 乌兰巴托
+				# 	value = 15
+				# }
 			}
 		}
 	}
@@ -314,14 +318,14 @@ DOH_decision_category = {
 				set_state_category = large_city
 			}
 			hidden_effect = {
-				set_victory_points = {
-					province = 10062					# 香港
-					value = 20
-				}
-				set_victory_points = {
-					province = 4189					# 澳门
-					value = 10
-				}
+				# set_victory_points = {
+				# 	province = 10062					# 香港
+				# 	value = 20
+				# }
+				# set_victory_points = {
+				# 	province = 4189					# 澳门
+				# 	value = 10
+				# }
 			}
 		}
 	}
@@ -342,22 +346,30 @@ DOH_decision_category = {
 		available = {
 			owns_state = 527
 			owns_state = 525
+			owns_state = 1028
+			owns_state = 1029
+			owns_state = 1030
+			owns_state = 1031
 		}
 		cost = 25
 		fire_only_once = yes
 		days_remove = 5
 		complete_effect = {
-			add_state_core = 527
-			add_state_core = 525
+			every_state = {
+				limit = {
+					is_core_of = KOR
+				}
+				add_core_of = DOH
+			}
 			hidden_effect = {
-				set_victory_points = {
-					province = 4052					# 平壤
-					value = 15
-				}
-				set_victory_points = {
-					province = 7125					# 汉城
-					value = 20
-				}
+				# set_victory_points = {
+				# 	province = 4052					# 平壤
+				# 	value = 15
+				# }
+				# set_victory_points = {
+				# 	province = 7125					# 汉城
+				# 	value = 20
+				# }
 			}
 		}
 	}
@@ -1746,9 +1758,35 @@ DOH_decision_debug_category = {
 					target = YUN
 				}
 				annex_country = {
-					target = GXC
+					target = KHM
+				}
+				annex_country = {
+					target = NXM
+				}
+				annex_country = {
+					target = GSM
+				}
+				annex_country = {
+					target = XIC
+				}
+				annex_country = {
+					target = SIC
+				}
+				annex_country = {
+					target = HBC
+				}
+				annex_country = {
+					target = SND
+				}
+				annex_country = {
+					target = GDC
 				}
 				transfer_state = 609
+				transfer_state = 1043
+				transfer_state = 1028
+				transfer_state = 1029
+				transfer_state = 1030
+				transfer_state = 1031
 				transfer_state = 611
 				transfer_state = 610
 				transfer_state = 612

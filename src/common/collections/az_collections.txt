@@ -1,0 +1,41 @@
+az_china_potential_core_states = {
+	input = game:all_states
+	operators = {
+		limit = {
+			OR = {
+				is_core_of = DOH
+				is_core_of = DH1
+			}
+		}
+	}
+}
+
+
+az_china_potential_core_mainland_states = {
+	input = collection:az_china_potential_core_states
+	operators = {
+		limit = {
+			is_one_state_island = no 
+		}
+	}
+}
+
+
+az_china_core_states_controlled_by_faction_leader_ideology = {
+	input = collection:az_china_potential_core_states
+	operators = {
+		limit = {
+			OR = {
+				is_core_of = DOH
+				is_core_of = DH1
+			}
+			controller = {
+				OR = {
+					tag = DOH
+					tag = DH1
+				}
+			}
+		}
+	}
+	name = AZ_COLLECTION_CHINA_CORE_STATES_CONTROLLED_BY_FACTION_LEADER_IDEOLOGY
+}

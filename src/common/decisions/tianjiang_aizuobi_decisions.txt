@@ -1,4 +1,21 @@
 tianjiang_aizuobi = {
+	ai_sir_zuobi = {
+		visible = {
+			tag = SIR
+			is_ai = yes
+		}
+		available = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = TY_fkAIex_sir_debuff
+		}
+	}
 	ai_zhongtanzuobi = {
 		available = {
 			OR = {
@@ -152,6 +169,26 @@ tianjiang_aizuobi = {
 			every_character = {
 				add_unit_leader_trait = fkAI_gaojizhinneng	
 			}
+			}
+		}
+	}
+	ai_fkAI_shuzhidabaozha = {
+		available = {
+			is_ai = yes
+			has_idea = TY_fkAI_zuizhonghetiex
+			has_global_flag = TY_fkAI_yourenjuedebugounan
+		}
+		visible = {
+			is_ai = yes
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			swap_ideas = {
+			remove_idea = TY_fkAI_zuizhonghetiex
+			add_idea = TY_fkAI_zuizhonghetiex_shuzhipengzhang
 			}
 		}
 	}
@@ -1664,15 +1701,6 @@ tianjiang_aizuobi = {
 			}
 			set_technology = {
 				armor_tech_2 = 1
-			}
-			set_technology = {
-				antitank1 = 1
-			}
-			set_technology = {
-				antitank2 = 1
-			}
-			set_technology = {
-				antitank3 = 1
 			}
 			set_technology = {
 				amphibious_mechanized_infantry = 1

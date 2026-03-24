@@ -798,14 +798,14 @@ strike_DOH = {
 	}
 	enable = {
 		has_war_with = DOH
-		date < 1938.2.1
+		date < 1937.12.1
 		OR = {
 			has_global_flag = AZ_fengkuangAI_citiao_10
 			has_global_flag = AZ_fengkuangAI_citiao_ex
 		}
 	}
 	abort = {
-		date > 1938.2.1
+		date > 1937.12.1
 		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
 		NOT = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		
@@ -1197,12 +1197,12 @@ CHY_hold_up_in_china = { #We got this far but there are bigger targets to worry 
 	}
 
 	enable = {
-		date > 1937.10.1
+		date > 1937.12.1
 		date < 1944.1.1
 		is_historical_focus_on = yes
 		DOH = { has_capitulated = no }
 		DOH = { is_ai = yes }
-		613 = { # Nanjing
+		1035 = { # Nanjing
 			is_controlled_by = CHY
 		}
 		NOT = { has_global_flag = AZ_fengkuangAI_citiao_10 }
@@ -1215,9 +1215,9 @@ CHY_hold_up_in_china = { #We got this far but there are bigger targets to worry 
 
 		tag = DOH
 
-		ratio = 0.1
+		#ratio = 0.1
 
-		priority = 100
+		priority = 1000
 		ordertype = front
 		execution_type = careful
 	}
@@ -1227,9 +1227,9 @@ CHY_hold_up_in_china = { #We got this far but there are bigger targets to worry 
 
 		tag = DH1
 
-		ratio = 0.1
+		#ratio = 0.1
 
-		priority = 100
+		priority = 1000
 		ordertype = front
 		execution_type = careful
 	}

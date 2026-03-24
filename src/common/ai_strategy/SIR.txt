@@ -168,16 +168,24 @@ SIR_unit_production_army_before_1940 = {
 		original_tag = SIR
 	}
 	enable = {
-		country_exists = BLI
+		OR = {
+			country_exists = BLI
+			AND = {
+				has_global_flag = az_chiji_flag
+				date > 1937.1.1
+			}
+		}
 		NOT = {
 			has_idea = TY_dingzhenai
 		}
 		NOT = { has_global_flag = modoption_historicalbossai_on }
 	}
 	abort = {
-		NOT = { country_exists = BLI }
+		OR = {
+			NOT = { country_exists = BLI }
 			has_idea = TY_dingzhenai
 			has_global_flag = modoption_historicalbossai_on 
+		}
 	}
 	
 	ai_strategy = {
@@ -273,9 +281,15 @@ SIR_unit_production_army_after_1940 = {
 		original_tag = SIR
 	}
 	enable = {
-    NOT = { country_exists = BLI }
-	NOT = { has_idea = TY_dingzhenai } 
-	has_global_flag = modoption_historicalbossai_on 
+		OR = {
+			NOT = { country_exists = BLI }
+			AND = {
+				has_global_flag = az_chiji_flag
+				date > 1937.1.1
+			}
+		}
+		NOT = { has_idea = TY_dingzhenai } 
+		NOT = { has_global_flag = modoption_historicalbossai_on }
 	}
 	abort = {
 		has_global_flag = modoption_historicalbossai_on 
@@ -346,11 +360,11 @@ SIR_unit_production_army_after_1940 = {
 		id = anti_air			
 		value = 10
 	}
-	ai_strategy = {
-		type = equipment_production_factor	#装备倾向
-		id = land_heavy_tank_destroyer			
-		value = 500
-	}
+	#ai_strategy = {
+	#	type = equipment_production_factor	#装备倾向
+	#	id = land_heavy_tank_destroyer			
+	#	value = 0
+	#}
 	
 	ai_strategy = {
 		type = equipment_production_min_factories
@@ -453,22 +467,22 @@ SIR_unit_production_army_historicalbossai_on = {
 		id = anti_air			
 		value = 10
 	}
-	ai_strategy = {
-		type = equipment_production_factor	#装备倾向
-		id = land_heavy_tank_destroyer			
-		value = 500
-	}
+	#ai_strategy = {
+	#	type = equipment_production_factor	#装备倾向
+	#	id = land_heavy_tank_destroyer			
+	#	value = 500
+	#}
 	
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = land_heavy_tank
 		value = 1
 	}
-	ai_strategy = {
-		type = equipment_production_min_factories
-		id = land_heavy_tank_destroyer
-		value = 1
-	}
+	#ai_strategy = {
+	#	type = equipment_production_min_factories
+	#	id = land_heavy_tank_destroyer
+	#	value = 1
+	#}
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = train
@@ -679,5 +693,107 @@ SIR_war_with_BLI = {
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
+	}
+}
+
+SIR_dengguanbi_huj = {
+	allowed = {
+		original_tag = SIR
+	}
+	enable = {
+		OR = {
+			has_war_with = HU1
+			has_war_with = HU2
+			has_war_with = HU3
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = HU1
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = HU2
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = HU3
+		value = 20
+	}
+}
+
+SIR_dengguanbi_huj = {
+	allowed = {
+		original_tag = SIR
+	}
+	enable = {
+		OR = {
+			has_war_with = BY1
+			has_war_with = BY2
+			has_war_with = BY3
+			has_war_with = BY4
+			has_war_with = BY5
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BY1
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BY2
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BY3
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BY4
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = BY5
+		value = 20
+	}
+}
+
+SIR_dengguanbi_huj = {
+	allowed = {
+		original_tag = SIR
+	}
+	enable = {
+		OR = {
+			has_war_with = CH1
+			has_war_with = CH2
+			has_war_with = CH3
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = CH1
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = CH2
+		value = 20
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = CH3
+		value = 20
 	}
 }

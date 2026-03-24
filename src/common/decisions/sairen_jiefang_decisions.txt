@@ -1,0 +1,1046 @@
+#购买武器(1政治点=15的IC产能） 1军工满效率每天5IC产出 10把步枪（净生产量+三分之一） 1.42火炮（净生产量+五分之一） 2卡车（净生产量+四分之一）
+jiefanglingtu_category = {
+	
+	jiefang_zhanlingqu_mapdecision = {
+		
+		icon = xingdong
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = controlled_states
+		highlight_color_while_active = 1
+		
+		days_remove = hexinhua_cost_days
+		cost = hexinhua_cost_pp
+		
+		target_trigger = {
+			FROM = {
+				always = yes
+			}
+		}
+		
+		visible = {
+			has_global_flag = az_chiji_flag
+			FROM = { 
+				AND = {
+					is_controlled_by = ROOT
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+		
+		available = {
+			FROM = {
+				is_controlled_by = ROOT
+				if = {
+					limit = {
+						OR = {
+							has_state_category = wasteland
+							has_state_category = enclave
+							has_state_category = tiny_island
+							has_state_category = pastoral
+							
+						}
+					}
+					set_temp_variable = { hexinhua_cost_pp = 0 }
+				}
+				else_if = {
+					limit = {
+						or = {
+							has_state_category = small_island
+							has_state_category = rural	
+						}
+					}
+					
+					set_temp_variable = { hexinhua_cost_pp = 1 }
+				}
+				else_if = {
+					limit = {
+						has_state_category = town
+					}
+					
+					set_temp_variable = { hexinhua_cost_pp = 5 }
+				}
+				else_if = {
+					limit = {
+						has_state_category = large_town
+					}
+					
+					set_temp_variable = { hexinhua_cost_pp = 10 }
+				}
+				else_if = {
+					limit = {
+						has_state_category = city
+					}
+					
+					set_temp_variable = { hexinhua_cost_pp = 15 }
+				}
+				else_if = {
+					limit = {
+						has_state_category = large_city
+					}
+					
+					set_temp_variable = { hexinhua_cost_pp = 20 }
+				}
+				else_if = {
+					limit = {
+						has_state_category = metropolis
+					}
+					
+					set_temp_variable = { hexinhua_cost_pp = 30 }
+				}
+				else_if = {
+					limit = {
+						has_state_category = megalopolis
+					}
+					
+					set_temp_variable = { hexinhua_cost_pp = 40 }
+				}
+			}
+			
+			
+		}
+		
+		
+		complete_effect = {
+			FROM = {
+				if = {
+					limit = {
+						state_population < 300000
+					}
+					set_temp_variable = { hexinhua_cost_days = 1 } 
+				}
+				else_if = {
+					limit = {
+						AND = {
+							state_population > 299999
+							state_population < 1000000	
+						}
+						
+					}
+					set_temp_variable = { hexinhua_cost_days = 5 } 
+				}
+				else_if = {
+					limit = {
+						AND = {
+							state_population > 999999
+							state_population < 3000000	
+						}
+						
+					}
+					set_temp_variable = { hexinhua_cost_days = 10 } 
+				}
+				else_if = {
+					limit = {
+						AND = {
+							state_population > 2999999
+							state_population < 6000000	
+						}
+						
+					}
+					set_temp_variable = { hexinhua_cost_days = 15 } 
+				}
+				else_if = {
+					limit = {
+						AND = {
+							state_population > 5999999
+							state_population < 12000000	
+						}
+						
+					}
+					set_temp_variable = { hexinhua_cost_days = 25 } 
+				}
+				else_if = {
+					limit = {
+						AND = {
+							state_population > 11999999
+							state_population < 25000000	
+						}
+						
+					}
+					set_temp_variable = { hexinhua_cost_days = 45 } 
+				}
+				else_if = {
+					limit = {
+							state_population > 24999999
+					}
+					set_temp_variable = { hexinhua_cost_days = 60 } 
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}
+	}
+
+	tingzhijinggong = {
+		icon = generic_form_nation
+		available = {
+			date < 1939.12.1
+			has_capitulated = NO
+			is_subject = NO
+		}
+		visible = {
+			date < 1939.12.1
+			has_global_flag = az_chiji_flag
+			not = {
+				has_country_flag = AL_win_or_die
+			}
+			is_faction_leader = no
+			OR = {
+				has_war_with = SIR
+				has_war_with = SR1
+				has_war_with = SR2
+				has_war_with = SR3
+				has_war_with = SR4
+			}
+		}
+		days_remove = 7
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				surrender_progress > 0.95
+				add = 25
+			}
+			modifier = {
+				is_faction_leader = no
+				surrender_progress > 0.5
+				add = 100
+			}
+			modifier = {
+				tag = CHY
+				is_faction_leader = no
+				controls_state = 528
+				controls_state = 529
+				controls_state = 530
+				controls_state = 531
+				controls_state = 532
+				controls_state = 533
+				controls_state = 534
+				controls_state = 535
+				controls_state = 282
+				NOT = { has_country_flag = CHY_xiuyangshengxi_completed } 
+				add = 100
+			}
+		}
+		complete_effect = { 
+			if = {
+				limit = { has_war_with = SIR }
+				SIR = {
+					add_to_variable = {
+						var = canzhanguo_sl
+						value = -1
+					}
+				}
+			}
+			if = {
+				limit = { has_war_with = SR1 }
+				SR1 = {
+					add_to_variable = {
+						var = canzhanguo_sl
+						value = -1
+					}
+				}
+			}
+			if = {
+				limit = { has_war_with = SR2 }
+				SR2 = {
+					add_to_variable = {
+						var = canzhanguo_sl
+						value = -1
+					}
+				}
+			}
+			if = {
+				limit = { has_war_with = SR3 }
+				SR3 = {
+					add_to_variable = {
+						var = canzhanguo_sl
+						value = -1
+					}
+				}
+			}
+			if = {
+				limit = { has_war_with = SR4 }
+				SR4 = {
+					add_to_variable = {
+						var = canzhanguo_sl
+						value = -1
+					}
+				}
+			}
+		}
+		remove_effect = {
+
+			custom_effect_tooltip = "获得控制的省份（不需要解放造核也可以）"	
+			hidden_effect = {
+				set_country_flag = { flag = zhanzhenglengque value = 1 days = 90 }
+				if = {
+					limit = {
+						AND = {
+							has_capitulated = NO
+							is_subject = NO
+						}
+					}
+					every_state = {		
+						limit = {		
+							is_controlled_by = ROOT
+							
+						}
+						ROOT = { transfer_state = PREV }		
+					}
+				}
+				
+			}	
+			custom_effect_tooltip = "与塞壬停战"
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							has_capitulated = NO
+							is_subject = NO
+						}
+					}
+					
+					if = {
+						limit = { has_war_with = SIR }
+						white_peace = { 
+							tag = SIR
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+					}
+					if = {
+						limit = { has_war_with = SR1 }
+						white_peace = { 
+							tag = SR1
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+					}
+					if = {
+						limit = { has_war_with = SR2 }
+						white_peace = { 
+							tag = SR2
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+					}
+					if = {
+						limit = { has_war_with = SR3 }
+						white_peace = { 
+							tag = SR3
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+					}
+					if = {
+						limit = { has_war_with = SR4 }
+						white_peace = { 
+							tag = SR4
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+					}
+
+				}
+				
+			}
+		}
+	}
+	tingzhijinggong_leader = {
+		icon = generic_form_nation
+		available = {
+			date < 1939.12.1
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = tingzhijinggong_leader_trigger_tooltip
+					NOT = { has_country_flag = tingzhijinggong_leader_lengque }
+				}
+				AND = {
+					has_capitulated = NO
+					is_subject = NO
+				}
+			}
+			
+		}
+		visible = {
+			date < 1939.12.1
+			has_global_flag = az_chiji_flag
+			not = {
+				has_country_flag = AL_win_or_die
+			}
+			is_faction_leader = yes
+			OR = {
+				has_war_with = SIR
+				has_war_with = SR1
+				has_war_with = SR2
+				has_war_with = SR3
+				has_war_with = SR4
+			}
+		}
+		
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_faction_leader = yes
+				surrender_progress > 0.5
+				add = 100
+			}
+			
+		}
+		complete_effect = {
+			set_country_flag = tingzhijinggong_leader_begin
+			set_country_flag = { flag = tingzhijinggong_leader_lengque value = 1 days = 90 }
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					OR = {
+						has_war_with = SIR
+						has_war_with = SR1
+						has_war_with = SR2
+						has_war_with = SR3
+						has_war_with = SR4
+					}
+				}
+				country_event = azevent.64 
+			}
+		}
+	
+	}
+	tingzhijinggong_leader_mission = {
+		icon = xiuxi	
+		allowed = { 
+			is_faction_leader = yes
+		}
+		
+		visible = {
+			has_global_flag = az_chiji_flag
+		}
+
+		activation = {
+			has_country_flag = tingzhijinggong_leader_begin
+		}	
+		
+		selectable_mission = no
+		
+		is_good = yes
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = tingzhijinggong_leader_mission_trigger_tooltip
+				has_country_flag = tingzhijinggong_leader_jujue
+			}
+		}
+		
+		days_mission_timeout = 7
+		timeout_effect = {
+			clr_country_flag = tingzhijinggong_leader_begin
+			custom_effect_tooltip = tingzhijinggong_leader_mission_tingzhan_tooltip
+			hidden_effect = {
+				set_country_flag = { flag = zhanzhenglengque value = 1 days = 90 }
+				if = {
+					limit = {
+						AND = {
+							has_capitulated = NO
+							is_subject = NO
+						}
+					}
+					every_state = {		
+						limit = {		
+							AND = { 
+								is_controlled_by = ROOT
+							}	
+						}
+						ROOT = { transfer_state = PREV }		
+					}
+					if = {
+						limit = { has_war_with = SIR }
+						white_peace = { 
+							tag = SIR
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+						SIR = {
+							add_to_variable = {
+								var = canzhanguo_sl
+								value = -1
+							}
+						}
+					}
+					if = {
+						limit = { has_war_with = SR1 }
+						white_peace = { 
+							tag = SR1
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}
+						SR1 = {
+							add_to_variable = {
+								var = canzhanguo_sl
+								value = -1
+							}
+						}
+					}
+					if = {
+						limit = { has_war_with = SR2 }
+						white_peace = { 
+							tag = SR2
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}
+						SR2 = {
+							add_to_variable = {
+								var = canzhanguo_sl
+								value = -1
+							}
+						}
+					}
+					if = {
+						limit = { has_war_with = SR3 }
+						white_peace = { 
+							tag = SR3
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+						SR3 = {
+							add_to_variable = {
+								var = canzhanguo_sl
+								value = -1
+							}
+						}
+					}
+					if = {
+						limit = { has_war_with = SR4 }
+						white_peace = { 
+							tag = SR4
+							message = "双方都停火了，貌似与塞壬打成了一致。"
+						}	
+						SR4 = {
+							add_to_variable = {
+								var = canzhanguo_sl
+								value = -1
+							}
+						}
+					}	
+				}
+			}
+		}
+		complete_effect = { 
+			clr_country_flag = tingzhijinggong_leader_begin
+			clr_country_flag = tingzhijinggong_leader_jujue
+			custom_effect_tooltip = tingzhijinggong_leader_mission_shibai_tooltip
+		}
+		
+	}
+
+	fadongjinggong_sir = {
+		icon = jian
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = "距上次与塞壬停战已经过去了一段时间（3个月）"
+				NOT = { has_country_flag = zhanzhenglengque }
+			}
+			
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			NOT = { has_war_with = SIR }
+			is_puppet = NO
+			NOT = { is_in_faction_with = SIR }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				tag = TIX
+				has_completed_focus = TIX_zhunbeichongfanoulu
+				add = 10
+			}
+			
+			modifier = {
+				tag = BFL
+				has_completed_focus = BFL_dongougongshi
+				add = 10
+			}
+			modifier = {
+				tag = HUJ
+				has_completed_focus = HUJ_zhanqianchoubei
+				add = 10
+			}
+			modifier = {
+				OR = {
+					tag = HUJ
+					tag = YUW
+					tag = SAD
+				}
+				SIR = {
+					NOT = { controls_state = 64 }
+				}
+				add = 0
+			}
+			modifier = {
+				OR = {
+					tag = HUJ
+					tag = YUW
+					tag = SAD
+				}
+				SIR = {
+					NOT = { controls_state = 64 }
+				}
+				add = 0
+			}
+			modifier = {
+				tag = BYG
+				has_completed_focus = BYG_xianhuashengkai
+				add = 10
+			}
+			modifier = {
+				tag = YUW
+				has_completed_focus = YUW_jiuciweizhiderongren
+				add = 10
+			}
+			modifier = {
+				tag = SAD
+				has_completed_focus = SAD_lingxiudeguwu
+				TIX = { has_war_with = SIR }
+				add = 10
+			}
+			modifier = {
+				OR = {
+					date < 1940.1.1
+					any_enemy_country = {
+						shisairen_trigger = yes
+					}
+				}	
+				factor = 0
+			}
+		}
+		
+		complete_effect = { 
+			custom_effect_tooltip = "对邪恶的塞壬宣战！"
+			declare_war_on = { target = SIR type = annex_everything }
+			hidden_effect = {	
+				#add_threat = -100
+			}
+		}
+		
+	}
+	fadongjinggong_sr1 = {
+		icon = jian
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = "距上次与塞壬停战已经过去了一段时间（3个月）"
+			NOT = { has_country_flag = zhanzhenglengque }
+			
+			}
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			NOT = { 
+				has_war_with = SR1
+			}
+			is_puppet = NO
+			NOT = { is_in_faction_with = SR1 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				OR = {
+					date < 1940.2.1
+					any_enemy_country = {
+						shisairen_trigger = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		
+		complete_effect = { 
+			custom_effect_tooltip = "对邪恶的塞壬宣战！"
+			declare_war_on = { target = SR1 type = annex_everything }
+			hidden_effect = {	
+				#add_threat = -100
+			}
+		}
+		
+	}
+	fadongjinggong_sr2 = {
+		icon = jian
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = "距上次与塞壬停战已经过去了一段时间（3个月）"
+			NOT = { has_country_flag = zhanzhenglengque }
+			
+			}
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			NOT = {  
+				has_war_with = SR2
+			}
+			is_puppet = NO
+			NOT = { is_in_faction_with = SR2 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				OR = {
+					date < 1940.2.1
+					any_enemy_country = {
+						shisairen_trigger = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		
+		complete_effect = { 
+			custom_effect_tooltip = "对邪恶的塞壬宣战！"
+			declare_war_on = { target = SR2 type = annex_everything }
+			hidden_effect = {					
+				#add_threat = -100
+			}
+		}
+		
+	}
+	fadongjinggong_sr3 = {
+		icon = jian
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = "距上次与塞壬停战已经过去了一段时间（3个月）"
+			NOT = { has_country_flag = zhanzhenglengque }
+			
+			}
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			NOT = { 
+				has_war_with = SR3
+			}
+			is_puppet = NO
+			NOT = { is_in_faction_with = SR3 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				tag = CHY
+				OR = {
+					has_completed_focus = CHY_duiwaikuozhang
+					has_completed_focus = CHY_richuzhiying
+				}
+				add = 10
+			}
+			modifier = {
+				tag = DOH
+				has_completed_focus = DOH_jiefangxuanyan	
+				add = 10
+			}
+			modifier = {
+				tag = BFL
+				AND = {
+					BFL = {
+						controls_state = 219
+						controls_state = 398
+					}
+					has_completed_focus = BFL_wulaergongshi
+				}
+				add = 10
+			}
+			modifier = {
+				OR = {
+					date < 1940.2.1
+					any_enemy_country = {
+						shisairen_trigger = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		
+		complete_effect = { 
+			custom_effect_tooltip = "对邪恶的塞壬宣战！"
+			declare_war_on = { target = SR3 type = annex_everything }
+			hidden_effect = {					
+				#add_threat = -100
+			}
+		}
+		
+	}
+	fadongjinggong_sr4 = {
+		icon = jian
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = "距上次与塞壬停战已经过去了一段时间（3个月）"
+			NOT = { has_country_flag = zhanzhenglengque }
+			
+			}
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			NOT = { 
+				has_war_with = SR4
+			}
+			is_puppet = NO
+			NOT = { is_in_faction_with = SR4 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				OR = {
+					date < 1940.2.1
+					any_enemy_country = {
+						shisairen_trigger = yes
+					}
+				}
+				factor = 0
+			}
+		}
+		
+		complete_effect = { 
+			custom_effect_tooltip = "对邪恶的塞壬宣战！"
+			declare_war_on = { target = SR4 type = annex_everything }
+			hidden_effect = {	
+				#add_threat = -100
+			}
+		}
+		
+	}
+	
+	aijiefang_zhanlingqu = {
+		icon = xingdong
+		days_re_enable = 60
+		available = {
+			any_state = {
+				AND = {
+					is_controlled_by = ROOT
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = {	
+				is_ai = yes
+				NOT = { has_global_flag = baguozhengbamoshi }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			hidden_effect = {	
+				every_state = {
+					limit = {
+						AND = {
+							is_controlled_by = ROOT
+							NOT = { is_core_of = ROOT }
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+	bolin_qiandu = {
+		icon = jian
+		available = {
+			has_full_control_of_state = 64
+
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = { 
+				OR = {
+					tag = TIX
+					tag = TI1
+					tag = TI2
+					tag = TI3
+					tag = TI4
+				}
+				capital_scope = {
+					NOT = { state = 64 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			set_capital = { state = 64 }
+		}
+	}
+	lundun_qiandu = {
+		icon = jian
+		available = {
+			has_full_control_of_state = 126
+
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = { 
+				OR = {
+					tag = HUJ
+					tag = HU1
+					tag = HU2
+					tag = HU3
+					tag = HU4
+					tag = HU5
+					tag = HU6
+				}
+				capital_scope = {
+					NOT = { state = 126 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			set_capital = { state = 126	}
+		}
+	}
+	nanjing_qiandu = {
+		icon = jian
+		available = {
+			has_full_control_of_state = 1035
+
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = { 
+				OR = {
+					tag = DOH
+					tag = DH1
+					tag = DH2
+					tag = DH3
+					tag = DH4
+				}
+				capital_scope = {
+					NOT = { state = 1035 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			set_capital = { state = 1035	}
+		}
+	}
+	bali_qiandu = {
+		icon = jian
+		available = {
+			has_full_control_of_state = 16
+
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = { 
+				OR = {
+					tag = YUW
+					tag = WEX
+					tag = YU1
+					tag = YU2
+					tag = YU3
+					tag = YU4
+					tag = YU5
+				}
+				capital_scope = {
+					NOT = { state = 16 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			set_capital = { state = 16	}
+		}
+	}
+	mosike_qiandu = {
+		icon = jian
+		available = {
+			has_full_control_of_state = 219
+
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = { 
+				OR = {
+					tag = BFL
+					tag = BF1
+					tag = BF2
+					tag = BF3
+					tag = BF4
+				}
+				capital_scope = {
+					NOT = { state = 219 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			set_capital = { state = 219	}
+		}
+	}
+	huashengdun_qiandu = {
+		icon = jian
+		available = {
+			has_full_control_of_state = 361
+
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = { 
+				OR = {
+					tag = BYG
+					tag = BY1
+					tag = BY2
+					tag = BY3
+					tag = BY4
+					tag = BY5
+				}
+				capital_scope = {
+					NOT = { state = 361 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			set_capital = { state = 361	}
+		}
+	}
+	luoma_qiandu = {
+		icon = jian
+		available = {
+			has_full_control_of_state = 2
+
+		}
+		visible = {
+			has_global_flag = az_chiji_flag
+			AND = { 
+				OR = {
+					tag = SAD
+					tag = SA1
+					tag = SA2
+					tag = SA3
+					tag = SA4
+				}
+				capital_scope = {
+					NOT = { state = 2 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = { 
+			set_capital = { state = 2 }
+		}
+	}
+}
