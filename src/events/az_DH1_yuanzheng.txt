@@ -3,6 +3,22 @@ add_namespace = az_DH1_yuanzheng_lost_attacker
 add_namespace = az_DH1_yuanzheng_won_defender
 add_namespace = az_DH1_yuanzheng_lost_defender
 country_event = {
+	id = az_DH1_yuanzheng_won_attacker.0
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		FROM.FROM.FROM = {
+			FROM.FROM = {
+				DH1 = {
+					country_event = {
+						id = az_DH1_yuanzheng_won_attacker.1
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
 	id = az_DH1_yuanzheng_won_attacker.1
 	picture = GFX_aze_chaijun_nice
 	title = az_DH1_yuanzheng_won_attacker.t
@@ -36,6 +52,22 @@ country_event = {
 	}
 }
 country_event = {
+	id = az_DH1_yuanzheng_lost_attacker.0
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		FROM.FROM.FROM = {
+			FROM.FROM = {
+			DH1 = {
+				country_event = {
+					id = az_DH1_yuanzheng_lost_attacker.1
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
 	id = az_DH1_yuanzheng_lost_attacker.1
 	picture = GFX_aze_txluoen2
 	title = az_DH1_yuanzheng_lost_attacker.t
@@ -56,6 +88,18 @@ country_event = {
 		add_political_power = -50
 	}
 }
+# country_event = {
+# 	id = az_DH1_yuanzheng_won_defender.0
+# 	is_triggered_only = yes
+# 	hidden = yes
+# 	immediate = {
+# 		DH1 = {
+# 			country_event = {
+# 				id = az_DH1_yuanzheng_won_defender.1
+# 			}
+# 		}
+# 	}
+# }
 country_event = {
 	id = az_DH1_yuanzheng_won_defender.1
 	picture = GFX_aze_chaijun_nice
@@ -76,6 +120,18 @@ country_event = {
 		name = az_DH1_yuanzheng_won_defender.a
 	}
 }
+# country_event = {
+# 	id = az_DH1_yuanzheng_lost_defender.0
+# 	is_triggered_only = yes
+# 	hidden = yes
+# 	immediate = {
+# 		DH1 = {
+# 			country_event = {
+# 				id = az_DH1_yuanzheng_lost_defender.1
+# 			}
+# 		}
+# 	}
+# }
 country_event = {
 	id = az_DH1_yuanzheng_lost_defender.1
 	picture = GFX_aze_txluoen2

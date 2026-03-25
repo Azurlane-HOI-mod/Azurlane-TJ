@@ -172,6 +172,55 @@ DOH_decision_category = {
 			}
 		}
 	}
+	DOH_beijing = {
+		icon = xingdong
+		ai_will_do = {
+			factor = 5
+		}
+		visible = {
+			OR = {
+				is_debug = yes
+				owns_state = 372
+			}
+		}
+		available = {
+			owns_state = 372
+		}
+		cost = 5
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+			set_province_name = {
+				id = 9843
+				name = DOH_beijing_name
+			}
+		}
+	}
+	DOH_changchun = {
+		icon = xingdong
+		ai_will_do = {
+			factor = 5
+		}
+		visible = {
+			OR = {
+				is_debug = yes
+				owns_state = 328
+			}
+		}
+		available = {
+			owns_state = 328
+		}
+		cost = 5
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+			set_province_name = {
+				id = 4572
+				name = 4572_modern_name
+			}
+		}
+	}
+
 	DOH_waidongbei = {
 		icon = xingdong
 		ai_will_do = {
@@ -231,18 +280,18 @@ DOH_decision_category = {
 				409 = {
 					set_state_name = DOH_boli_name
 				}
-				# set_victory_points = {
-				# 	province = 957					# 符拉迪沃斯托克/海参崴
-				# 	value = 20
-				# }
-				# set_victory_points = {
-				# 	province = 12189					# 哈巴罗夫斯克/伯力
-				# 	value = 20
-				# }
-				# set_victory_points = {
-				# 	province = 4705					# 赤塔/尼布楚
-				# 	value = 10
-				# }
+				set_victory_points = {
+					province = 957					# 符拉迪沃斯托克/海参崴
+					value = 20
+				}
+				set_victory_points = {
+					province = 12189					# 哈巴罗夫斯克/伯力
+					value = 20
+				}
+				set_victory_points = {
+					province = 4705					# 赤塔/尼布楚
+					value = 10
+				}
 			}
 		}
 	}
@@ -273,14 +322,14 @@ DOH_decision_category = {
 				name = DOH_wuliyasutai_name
 			}
 			hidden_effect = {
-				# set_victory_points = {
-				# 	province = 10627					# 克孜勒/乌里雅苏台
-				# 	value = 10
-				# }
-				# set_victory_points = {
-				# 	province = 4801					# 乌兰巴托
-				# 	value = 15
-				# }
+				set_victory_points = {
+					province = 10627					# 克孜勒/乌里雅苏台
+					value = 10
+				}
+				set_victory_points = {
+					province = 4801					# 乌兰巴托
+					value = 15
+				}
 			}
 		}
 	}
@@ -318,14 +367,14 @@ DOH_decision_category = {
 				set_state_category = large_city
 			}
 			hidden_effect = {
-				# set_victory_points = {
-				# 	province = 10062					# 香港
-				# 	value = 20
-				# }
-				# set_victory_points = {
-				# 	province = 4189					# 澳门
-				# 	value = 10
-				# }
+				set_victory_points = {
+					province = 10062					# 香港
+					value = 25
+				}
+				set_victory_points = {
+					province = 4189					# 澳门
+					value = 15
+				}
 			}
 		}
 	}
@@ -362,14 +411,14 @@ DOH_decision_category = {
 				add_core_of = DOH
 			}
 			hidden_effect = {
-				# set_victory_points = {
-				# 	province = 4052					# 平壤
-				# 	value = 15
-				# }
-				# set_victory_points = {
-				# 	province = 7125					# 汉城
-				# 	value = 20
-				# }
+				set_victory_points = {
+					province = 4052					# 平壤
+					value = 15
+				}
+				set_victory_points = {
+					province = 7125					# 汉城
+					value = 20
+				}
 			}
 		}
 	}
@@ -1781,6 +1830,12 @@ DOH_decision_debug_category = {
 				annex_country = {
 					target = GDC
 				}
+				annex_country = {
+					target = GXC
+				}
+				# annex_country = {
+				# 	target = DH1
+				# }
 				transfer_state = 609
 				transfer_state = 1043
 				transfer_state = 1028
@@ -1799,6 +1854,11 @@ DOH_decision_debug_category = {
 				transfer_state = 761
 				transfer_state = 527
 				transfer_state = 525
+				transfer_state = 524
+				
+				transfer_state = 728
+				transfer_state = 729
+				transfer_state = 326
 			}
 		}
 	}
@@ -1833,6 +1893,16 @@ DOH_decision_debug_category = {
 			complete_national_focus = DOH_heqishengcai
 			complete_national_focus = DOH_guangronghemengxiangdeyuanzheng
 			complete_national_focus = DOH_dongfangliming
+			complete_national_focus = DOH_shisanchaogudu
+			complete_national_focus = DOH_jingchudadi
+			complete_national_focus = DOH_dalianlvshun
+			complete_national_focus = DOH_zhongyuan
+			complete_national_focus = DOH_jianshedaolian
+			complete_national_focus = DOH_nanhaiziyuankaifa
+			complete_national_focus = DOH_jianshedaolian
+			complete_national_focus = DOH_donghuangdeshidai
+			complete_national_focus = DOH_hailufuhe
+			complete_national_focus = DOH_shanhejinxiu
 			add_political_power = 4000
 			add_equipment_to_stockpile = {
 				type = doh_civ_equipment_1

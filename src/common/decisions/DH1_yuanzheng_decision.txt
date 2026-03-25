@@ -12,6 +12,8 @@ DH1_decision_category = {
 			complete_national_focus = DH1_zhongnanbandao
 			complete_national_focus = DH1_beibeibeiqilexingnang
 			complete_national_focus = DH1_nanyacidalu
+			complete_national_focus = DH1_xuewaiyu
+			complete_national_focus = DH1_jingong
 			for_loop_effect = { 
 				start = 0
 				end = 20
@@ -91,7 +93,7 @@ DH1_decision_category = {
 				add = 100
 			}
 		}
-		cost = 15
+		cost = 12
 		fire_only_once = no
 		days_remove = 5
 		days_re_enable = 10
@@ -121,10 +123,15 @@ DH1_decision_category = {
 					FROM.attacker_state_vs_@ROOT = id
 				}
 			}
-			# log = "attacker [FROM.GetName]: [?FROM.attacker_state_vs_@ROOT]"
-			# log = "defender [FROM.GetName]: [?FROM.defender_state_vs_@ROOT]"
-			# log = "attacker [FROM.GetName]: [?FROM.attacker_state_vs_@DH1]"
-			# log = "defender [FROM.GetName]: [?FROM.defender_state_vs_@DH1]"
+			log = "attacker [ROOT.GetName]: [?FROM.attacker_state_vs_@ROOT]"
+			log = "defender [FROM.GetName]: [?FROM.defender_state_vs_@ROOT]"
+			log = "attacker [ROOT.GetName]: [?FROM.attacker_state_vs_@DH1]"
+			log = "defender [FROM.GetName]: [?FROM.defender_state_vs_@DH1]"
+			log = "test FROM.FROM.FROM: [FROM.FROM.FROM.GetName]"
+			log = "FROM.FROM: [FROM.FROM.GetName]"
+			log = "FROM: [FROM.GetName]"
+			log = "PREV: [PREV.GetName]"
+			log = "ROOT: [ROOT.GetName]"
 		}
 		remove_effect = {
 			start_border_war = {
@@ -132,9 +139,9 @@ DH1_decision_category = {
 				attacker = {
 					state = var:FROM.attacker_state_vs_@ROOT
 					num_provinces = 4
-					on_win = az_DH1_yuanzheng_won_attacker.1
-					on_lose = az_DH1_yuanzheng_lost_attacker.1
-					on_cancel = az_DH1_yuanzheng_lost_attacker.1
+					on_win = az_DH1_yuanzheng_won_attacker.0
+					on_lose = az_DH1_yuanzheng_lost_attacker.0
+					on_cancel = az_DH1_yuanzheng_lost_attacker.0
 				}
 				defender = {
 					state = var:FROM.defender_state_vs_@ROOT
