@@ -1508,12 +1508,24 @@ TIX_neiwu = {
 			has_war_with = BFL
 			has_war_with = HUJ
 			has_war_with = BYG
-			OR = {
-				NOT = { controls_state = 16 }
-				has_global_flag = AZ_fengkuangAI_citiao_ex
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR  = {
+					NOT = { controls_state = 16 }
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+				}
 			}
 			BFL = {
 			surrender_progress < 0.3
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				NOT = { controls_state = 16 }
+				surrender_progress > 0.1
 			}
 			not = { has_country_flag = tix_nvwushenxingdongyishshi }
 			not = { has_completed_focus = TIX_coldwar_12 }
@@ -11638,20 +11650,20 @@ AZ_fkAIplayerjiaqiang = {
 			limit = {
 			has_country_flag = AZ_fkAI_xuanzebuff_1
 			}
-			add_political_power = 1500
+			add_political_power = 3000
 			army_experience = 3000
 			navy_experience = 3000
 			air_experience = 3000
 			add_command_power = 500
-			custom_effect_tooltip = wz_earn_80000
+			custom_effect_tooltip = wz_earn_100000
 			add_to_variable = {
 				var = wz_sl
-				value = 80000
+				value = 100000
 			}
-			custom_effect_tooltip = get_zs_shuliang_2000
+			custom_effect_tooltip = get_zs_shuliang_3000
 			add_to_variable = {
 				var = zs_sl
-				value = 2000
+				value = 3000
 			}
 			}
 			if = {

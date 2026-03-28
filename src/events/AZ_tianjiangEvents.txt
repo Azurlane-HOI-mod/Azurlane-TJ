@@ -15038,6 +15038,7 @@ country_event = {
 		shijianniangguojia_trigger = no
 		is_ai = yes
 		not = { has_idea = TY_yuanbanAI }
+		not = { has_idea = TY_yuanbanAI2 }
 		any_other_country = {
 			OR = {
 				has_idea = TY_yuanbanAI
@@ -15250,6 +15251,30 @@ country_event = {
 	option = {
 		name = az_tianjiang.10001.b
 		create_faction = az_tianjiang.10001.b
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#原版tag升级天堂之战buff
+country_event = {
+	id = az_tianjiang.458
+	title = "天堂之战buff"
+	desc = "给原版tag升级天堂之战buff。"
+	trigger = {
+		shijianniangguojia_trigger = no
+		is_ai = yes
+		has_idea = TY_yuanbanAI
+		not = { has_idea = TY_yuanbanAI2 }
+		date > 1939.1.1
+	}
+	option = {
+		name = "好的"
+		swap_ideas = {
+			remove_idea = TY_yuanbanAI
+			add_idea = TY_yuanbanAI2
+		}
 		ai_chance = {
 			base = 100
 		}
