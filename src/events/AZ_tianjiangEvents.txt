@@ -6101,8 +6101,9 @@ country_event = {
 	picture = GFX_aze_hit
 	fire_only_once = yes
 	trigger = {
-	is_ai = no
-	date > 1936.4.1
+		is_ai = no
+		date > 1936.4.1
+		not = { has_global_flag = az_chiji_flag }
 	}
 	option = {
 		name = "哇嘎哒"
@@ -14256,6 +14257,9 @@ country_event = {
 			add_unit_leader_trait = SAD_buzhongjianniang
 		}
 		SAD_lafeier = {
+			add_unit_leader_trait = SAD_buzhongjianniang
+		}
+		SAD_wugelinuo = {
 			add_unit_leader_trait = SAD_buzhongjianniang
 		}
 		}

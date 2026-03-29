@@ -1,4 +1,80 @@
 #碧蓝航线MOD
+tank_destroyer_force_AZ = {
+    track = armor
+    name = AZ_SUBDOCTRINE_TANK_DESTROYER_FORCE
+    description = SUBDOCTRINE_TANK_DESTROYER_FORCE_DESC
+    icon = GFX_doctrine_tank_destroyer_force_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    available = {
+        shijianniangguojia_trigger = yes
+    }
+
+    ai_will_do = {
+
+        base = 0
+
+    }  
+
+    category_all_armor = {
+        defense = 0.2
+        hard_attack = 0.2
+        ap_attack = 0.2
+    }
+
+    rewards = {
+
+        mobile_anti_tank = {
+            mot_anti_tank_brigade = {
+                max_organisation = 15
+                hard_attack = 0.2
+                ap_attack = 0.3
+            }
+
+        }
+        committed_operational_units = {
+            assault_engineer = {
+                battalion_mult = {
+                    category = category_tank_destroyers
+                    reliability = 0.04
+                    soft_attack = 0.1
+                    hard_attack = 0.1
+                }
+            }
+        }
+        redeployment_priority = {
+            category_tank_destroyers = {
+                supply_consumption = -0.03
+                default_morale = 0.2
+            }
+        }
+
+        independent_counterattacks = {
+            category_tank_destroyers = {
+                max_organisation = 10
+                initiative = 0.02
+            }
+        }
+
+        selfsufficient_battalion = {
+            armored_signal = {
+                battalion_mult = {
+                    category = category_tank_destroyers
+                    hard_attack = 0.2
+                    ap_attack = 0.3
+
+                }
+            }
+        }
+
+
+
+    }
+}
+
+
 armored_spearhead_TIX = {
     track = armor
     name = AZ_SUBDOCTRINE_ARMORED_SPEARHEAD
@@ -639,8 +715,8 @@ large_unit_tactics_BFL = {
     rewards = {
         wide_trench_networks = {
             unit_infantry_design_cost_factor = -1
-            dig_in_speed_factor = 0.5
-            max_dig_in_factor = 0.1
+            dig_in_speed_factor = 1
+            max_dig_in_factor = 0.5
         }
         flexible_division_structures = {
         #2
@@ -874,19 +950,19 @@ defensive_postures_HUJ = {
     rewards = {
         HUJ1 = {
             max_dig_in = 5
-            dig_in_speed_factor = 1
+            dig_in_speed_factor = 2
         }
         HUJ2 = {
-            army_infantry_defence_factor = 0.1
+            army_infantry_defence_factor = 0.3
             category_all_infantry = {
                 max_organisation = 20
                 defense = 0.2
             }
         }
         HUJ3 = {
-            max_dig_in_factor = 0.25
+            max_dig_in_factor = 0.5
             category_all_infantry = {
-                entrenchment = 0.2
+                entrenchment = 0.6
             }
         }
         HUJ4 = {
@@ -897,8 +973,8 @@ defensive_postures_HUJ = {
         HUJ5 = {
             enable_tactic = tactic_backhand_blow_for_yuw
             max_dig_in = 5
-            max_dig_in_factor = 0.25
-            dig_in_speed_factor = 1
+            max_dig_in_factor = 0.5
+            dig_in_speed_factor = 3
         }
 
     }
@@ -1598,16 +1674,18 @@ rapid_domination_BYG = {
             category_support_battalions = {
                 max_organisation = 20
                 soft_attack = 0.5
+                hard_attack = 0.5
             }
         }
         BYG5 = {
         #5
             category_army = {
                 soft_attack = 0.1
+                #hard_attack = 0.1
             }
             category_all_infantry = {
                 soft_attack = 0.2
-                hard_attack = 0.1
+                hard_attack = 0.2
             }
             army_bonus_air_superiority_factor = 0.2
            
@@ -1786,11 +1864,11 @@ last_stand_AZ = {
         }
         AZ3 = {
         #3
-            max_dig_in_factor = 0.1
-            dig_in_speed_factor = 0.5
+            max_dig_in_factor = 0.25
+            dig_in_speed_factor = 1
             out_of_supply_factor = -0.4
             category_all_infantry = {
-                entrenchment = 0.2
+                entrenchment = 0.5
             }
         }
         AZ4 = {
@@ -1864,7 +1942,7 @@ fire_concentration_BFL = {
      enable_tactic = tactic_overwhelming_fire
 
      artillery_brigade = {
-        combat_width = -1.6
+        combat_width = -0.8
      }
      category_line_artillery = {
         max_organisation = 10
@@ -1914,8 +1992,8 @@ fire_concentration_BFL = {
                 defense = 0.5
             }
             artillery_brigade = {
-                soft_attack = 0.2
-                hard_attack = 0.2
+                soft_attack = 0.1
+                hard_attack = 0.1
             }
         }
     }

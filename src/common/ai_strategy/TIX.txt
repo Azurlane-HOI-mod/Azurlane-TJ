@@ -697,39 +697,6 @@ TIX_strike_BFL_aivsai = {
 	}
 }
 
-TIX_strike_BFL_crazyaivsai = {
-    allowed = {
-		original_tag = TIX
-	}
-	enable = {
-		has_completed_focus = TIX_qifujuxiong
-		date < 1941.8.1
-		BFL = { is_ai = yes }
-		BFL = {OR = {
-			has_idea = TY_fengkuangai
-			has_idea = TY_fengkuangai2
-			has_idea = TY_fengkuangai3
-		}
-	}
-	}
-	abort = {
-	    date > 1941.8.1
-	}
-
-    ai_strategy = {
-		type = front_control
-
-		tag = BFL
-
-		ratio = 0.25
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
-}
-
 BFL_ally = {
     allowed = {
 			original_tag = TIX
@@ -1050,6 +1017,31 @@ TIX_war_YUW_no_ai = {
 		ordertype = front
 		execution_type = balanced
 		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 29 # Nord-Pas_de_Calais
+		state = 785 # Picardy
+		state = 16 # Ile de France
+		state = 15 # Normandy
+		# include Belgium as well even though we hopefully have already taken it
+		state = 6 # Vlaanderen
+		state = 34 # Wallonie
+		state = 977 # Antwerpen
+
+		value = 80 # +80%
+	}
+
+	ai_strategy = {
+		# Avoid the areas behind the Maginot line
+		type = force_concentration_target_weight
+		state = 18 # Champagne
+		state = 17 # Franche-Comte
+		state = 28 # Alsace-Lorraine
+		state = 27 # Bourgogne
+
+		value = -60 # -60%
 	}
 }
 

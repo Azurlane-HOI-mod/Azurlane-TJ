@@ -437,7 +437,7 @@ characters={
 			traits = { trait_shensu }
 
 			ai_will_do = {
-				factor = 15
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1218,6 +1218,120 @@ characters={
 			defense_skill = 4
 			planning_skill = 2
 			logistics_skill = 4
+		}
+	}
+
+	BFL_hongseshanmai = {
+		name = BFL_hongseshanmai
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/hongseshanmai.png"
+				small="gfx/interface/ideas/idea_hongseshanmai.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist xunyang_army }
+			skill = 3
+			
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+
+	BFL_bojiateli = {
+		name = BFL_bojiateli
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/bojiateli.png"
+				small="gfx/interface/ideas/idea_bojiateli.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { winter_specialist xunyang_army }
+			skill = 3
+			
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	BFL_wanpi = {
+		name = BFL_wanpi
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/wanpi.png"
+				small="gfx/interface/ideas/idea_wanpi.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { trait_reckless winter_specialist quzhu_army }
+			skill = 2
+			
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	BFL_mosike = {
+		name = BFL_mosike
+		portraits={
+			army = {
+				large="gfx/leaders/BFL/mosike.png"
+				small="gfx/interface/ideas/idea_mosike.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = mosike
+			traits = { trait_mosike }
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = {  winter_specialist xunyang_army }
+			skill = 5
+			
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
 		}
 	}
 
