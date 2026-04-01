@@ -37,13 +37,13 @@ country_event = {
 country_event = {
 	id = az_chiji.2
 	title = "吃鸡测试2"
-	desc = "刷新中，游戏前期会很卡，但越往后越流畅！"
+	desc = "刷新与宣战中，游戏前期会很卡，但越往后越流畅！强烈建议加载结束后存档，以后开始游戏都可以直接通过这个存档进入！（前提是版本稳定）"
 	picture = GFX_aze_kaixuan
 	is_triggered_only = yes
 	option = {
 		name = "刷新中"
         custom_effect_tooltip = az_chiji_ka_tips
-        country_event = az_chiji.3
+        #country_event = az_chiji.3
         hidden_effect = {
             az_shuaxinzhong_scripted_effects = yes
         }
@@ -57,9 +57,9 @@ country_event = {
 	picture = GFX_aze_kaixuan
 	is_triggered_only = yes
 	option = {
-		name = "此选项为各主要势力的固定宣战，不建议跳过"
+		name = "此选项不建议跳过"
         custom_effect_tooltip = az_chiji_ka_tips
-        country_event = az_chiji.4
+        #country_event = az_chiji.4
         hidden_effect = {
             az_shuaxinzhong2_scripted_effects = yes
         }
@@ -85,12 +85,6 @@ country_event = {
         hidden_effect = {
             az_shuaxinzhong3_scripted_effects = yes
         }
-    }
-	option = {
-		name = "卡死时间超过两分钟的点这个跳过固定宣战"
-		ai_chance = {
-			factor = 100
-		}
     }
 }
 

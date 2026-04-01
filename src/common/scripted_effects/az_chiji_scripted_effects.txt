@@ -526,6 +526,7 @@ az_liekai_scripted_effects = {
             transfer_state = 255
         }
         SOV = {
+            set_country_flag = az_chiji_bfl_flag
             transfer_state = 208
             transfer_state = 209
             transfer_state = 210
@@ -550,6 +551,7 @@ az_liekai_scripted_effects = {
             transfer_state = 245
         }
         RKM = {
+            set_country_flag = az_chiji_bfl_flag
             transfer_state = 214
             transfer_state = 879
             transfer_state = 880
@@ -582,6 +584,7 @@ az_liekai_scripted_effects = {
         }
         #东煌部分
         CHI = {
+            set_country_flag = az_chiji_doh_flag
             annex_country = { target = DOH transfer_troops = no }
         }
         SIC = {
@@ -596,6 +599,7 @@ az_liekai_scripted_effects = {
             transfer_state = 728
         }
         RNG = {
+            set_country_flag = az_chiji_doh_flag
             set_politics = { ruling_party = fascism }
             add_popularity = { ideology = fascism popularity = 1 }
             transfer_state = 603
@@ -658,6 +662,7 @@ az_liekai_scripted_effects = {
             release = GUM
         }
         USA = {
+            set_country_flag = az_chiji_byg_flag
             set_cosmetic_tag = USA_USA_chiji
             transfer_state = 357
 			transfer_state = 358
@@ -668,6 +673,7 @@ az_liekai_scripted_effects = {
 			transfer_state = 816
         }
         USB = {
+            set_country_flag = az_chiji_byg_flag
             transfer_state = 261
 			transfer_state = 369
 			transfer_state = 393
@@ -682,6 +688,7 @@ az_liekai_scripted_effects = {
 			transfer_state = 383
         }
         CSA = {
+            set_country_flag = az_chiji_byg_flag
             transfer_state = 374
 			transfer_state = 375
 			transfer_state = 370
@@ -2804,6 +2811,7 @@ az_liekai_scripted_effects = {
         BF1 = {
             inherit_technology = BFL
             transfer_state = 219
+            add_research_slot = 1
             add_country_leader_role = {
                 character = BFL_sayousi
                 promote_leader = yes
@@ -2825,6 +2833,7 @@ az_liekai_scripted_effects = {
         BF2 = {
             inherit_technology = BFL
             transfer_state = 195
+            add_research_slot = 1
             add_country_leader_role = {
                 character = BFL_beilaluosi
                 promote_leader = yes
@@ -2846,6 +2855,7 @@ az_liekai_scripted_effects = {
         BF3 = {
             inherit_technology = BFL
             transfer_state = 217
+            add_research_slot = 1
             add_country_leader_role = {
                 character = BFL_luoxiya
                 promote_leader = yes
@@ -2867,6 +2877,7 @@ az_liekai_scripted_effects = {
         BF4 = {
             inherit_technology = BFL
             transfer_state = 572
+            add_research_slot = 1
             add_country_leader_role = {
                 character = BFL_talin
                 promote_leader = yes
@@ -2889,6 +2900,7 @@ az_liekai_scripted_effects = {
         DH2 = {
             inherit_technology = DOH
             transfer_state = 1036
+            add_research_slot = 1
             add_country_leader_role = {
                 character = DOH_yixian
                 promote_leader = yes
@@ -2902,6 +2914,7 @@ az_liekai_scripted_effects = {
         DH3 = {
             inherit_technology = DOH
             transfer_state = 1032
+            add_research_slot = 1
             add_country_leader_role = {
                 character = DOH_anshan
                 promote_leader = yes
@@ -2923,6 +2936,7 @@ az_liekai_scripted_effects = {
         DH4 = {
             inherit_technology = DOH
             transfer_state = 613
+            add_research_slot = 1
             add_country_leader_role = {
                 character = DOH_zhenhai
                 promote_leader = yes
@@ -3022,6 +3036,7 @@ az_liekai_scripted_effects = {
 			}
         }
         BY1 = {
+            set_country_flag = az_chiji_byg_flag
             transfer_state = 361
             inherit_technology = BYG
             remove_country_leader_role = {
@@ -3052,6 +3067,7 @@ az_liekai_scripted_effects = {
             }
         }
         BY3 = {
+            set_country_flag = az_chiji_byg_flag
             transfer_state = 371
             inherit_technology = BYG
             add_country_leader_role = {
@@ -3065,6 +3081,7 @@ az_liekai_scripted_effects = {
             }
         }
         BY4 = {
+            set_country_flag = az_chiji_byg_flag
             transfer_state = 373
             inherit_technology = BYG
             add_country_leader_role = {
@@ -3078,6 +3095,7 @@ az_liekai_scripted_effects = {
             }
         }
         BY5 = {
+            set_country_flag = az_chiji_byg_flag
             transfer_state = 386
             inherit_technology = BYG
             add_country_leader_role = {
@@ -3695,27 +3713,24 @@ az_shuaxinzhong_scripted_effects = {
 			    }
             }
         }
-        RNG = {
+        every_country = {
+            limit = {
+                has_country_flag = az_chiji_doh_flag
+            }
+            declare_war_on = { target = DH2 type = annex_everything }
+            declare_war_on = { target = DH4 type = annex_everything }
             declare_war_on = { target = CHI type = annex_everything }
-            declare_war_on = { target = DH4 type = annex_everything }
-            declare_war_on = { target = DH2 type = annex_everything }
-        }
-        CHI = {
-            declare_war_on = { target = DH4 type = annex_everything }
-            declare_war_on = { target = DH2 type = annex_everything }
         }
         JAP = {
             declare_war_on = { target = CH1 type = annex_everything }
             declare_war_on = { target = CH2 type = annex_everything }
             declare_war_on = { target = CH3 type = annex_everything }
         }
-        RKM = {
+        every_country = {
+            limit = {
+                has_country_flag = az_chiji_bfl_flag
+            }
             declare_war_on = { target = SOV type = annex_everything }
-            declare_war_on = { target = BF1 type = annex_everything }
-            declare_war_on = { target = BF2 type = annex_everything }
-            declare_war_on = { target = BF3 type = annex_everything }
-        }
-        SOV = {
             declare_war_on = { target = BF1 type = annex_everything }
             declare_war_on = { target = BF2 type = annex_everything }
             declare_war_on = { target = BF3 type = annex_everything }
@@ -3724,102 +3739,31 @@ az_shuaxinzhong_scripted_effects = {
             declare_war_on = { target = YU1 type = annex_everything }
             declare_war_on = { target = YU3 type = annex_everything }
         }
-        RGB = {
-            declare_war_on = { target = ENG type = annex_everything }
-            declare_war_on = { target = WLS type = annex_everything }
-            declare_war_on = { target = HU1 type = annex_everything }
-            declare_war_on = { target = HU3 type = annex_everything }
+        SA1 = {
+            declare_war_on = { target = TOS type = annex_everything }
         }
-        ENG = {
-            declare_war_on = { target = HU1 type = annex_everything }
-        }
-        WLS = {
-            declare_war_on = { target = HU1 type = annex_everything }
-            declare_war_on = { target = HU3 type = annex_everything }
-        }
-        SCO = {
-            declare_war_on = { target = HU3 type = annex_everything }
-        }
-        NIR = {
-            declare_war_on = { target = HU2 type = annex_everything }
-        }
-        IRE = {
-            declare_war_on = { target = HU2 type = annex_everything }
-            declare_war_on = { target = NIR type = annex_everything }
+        every_country = {
+            limit = {
+                has_country_flag = az_chiji_byg_flag
+            }
+            declare_war_on = { target = BY1 type = annex_everything }
+            declare_war_on = { target = BY3 type = annex_everything }
+            declare_war_on = { target = BY4 type = annex_everything }
+            declare_war_on = { target = BY5 type = annex_everything }
+            declare_war_on = { target = USA type = annex_everything }
+            declare_war_on = { target = USB type = annex_everything }
+            declare_war_on = { target = CSA type = annex_everything }
+            declare_war_on = { target = RUS type = annex_everything }
+            declare_war_on = { target = RCO type = annex_everything }
         }
 }
 
 az_shuaxinzhong2_scripted_effects = {
-        SA1 = {
-            declare_war_on = { target = TOS type = annex_everything }
-        }
-        RCO = {
-            declare_war_on = { target = USA type = annex_everything }
-            declare_war_on = { target = USB type = annex_everything }
-            declare_war_on = { target = CSA type = annex_everything }
-            declare_war_on = { target = BY1 type = annex_everything }
-            declare_war_on = { target = BY3 type = annex_everything }
-            declare_war_on = { target = BY4 type = annex_everything }
-            declare_war_on = { target = BY5 type = annex_everything }
-        }
-        RUS = {
-            declare_war_on = { target = USA type = annex_everything }
-            declare_war_on = { target = USB type = annex_everything }
-            declare_war_on = { target = CSA type = annex_everything }
-            declare_war_on = { target = BY1 type = annex_everything }
-            declare_war_on = { target = BY3 type = annex_everything }
-            declare_war_on = { target = BY4 type = annex_everything }
-            declare_war_on = { target = BY5 type = annex_everything }
-        }
-        USA = {
-            declare_war_on = { target = USB type = annex_everything }
-            declare_war_on = { target = CSA type = annex_everything }
-            declare_war_on = { target = BY1 type = annex_everything }
-            declare_war_on = { target = BY3 type = annex_everything }
-            declare_war_on = { target = BY4 type = annex_everything }
-            declare_war_on = { target = BY5 type = annex_everything }
-        }
-        USB = {
-            declare_war_on = { target = CSA type = annex_everything }
-            declare_war_on = { target = BY1 type = annex_everything }
-            declare_war_on = { target = BY3 type = annex_everything }
-            declare_war_on = { target = BY4 type = annex_everything }
-            declare_war_on = { target = BY5 type = annex_everything }
-        }
-        CSA = {
-            declare_war_on = { target = BY1 type = annex_everything }
-            declare_war_on = { target = BY3 type = annex_everything }
-            declare_war_on = { target = BY4 type = annex_everything }
-            declare_war_on = { target = BY5 type = annex_everything }
-        }
-        BY3 = {
-            declare_war_on = { target = BY1 type = annex_everything }
-            declare_war_on = { target = BY4 type = annex_everything }
-            declare_war_on = { target = BY5 type = annex_everything }
-        }
-        BY4 = {
-            declare_war_on = { target = BY1 type = annex_everything }
-            declare_war_on = { target = BY5 type = annex_everything }
-        }
-        BY5 = {
-            declare_war_on = { target = BY1 type = annex_everything }
-        }
+        
 }
 
 az_shuaxinzhong3_scripted_effects = {
-        SA4 = {
-            declare_war_on = { target = ETH type = annex_everything }
-            declare_war_on = { target = TIG type = annex_everything }
-            declare_war_on = { target = AFA type = annex_everything }
-            declare_war_on = { target = QEM type = annex_everything }
-            declare_war_on = { target = BEG type = annex_everything }
-            declare_war_on = { target = GBA type = annex_everything }
-            declare_war_on = { target = ORO type = annex_everything }
-            declare_war_on = { target = HAR type = annex_everything }
-            declare_war_on = { target = DJI type = annex_everything }
-            declare_war_on = { target = ERI type = annex_everything }
-            declare_war_on = { target = SOM type = annex_everything }
-        }
+        
 }
 
 az_shuaxinzhong4_scripted_effects = {

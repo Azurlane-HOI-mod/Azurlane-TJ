@@ -1,5 +1,18 @@
 add_namespace = az_tianjiang
 country_event = {
+	id = az_tianjiang.0
+	title = "MOD说明"
+	desc = az_tianjiang.0.d
+	picture = GFX_aze_start
+	is_triggered_only = yes
+	option = {
+		name = "好的"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
 	id = az_tianjiang.1
 	title = "来自铁血的最后通牒"
 	desc = "铁血要求我们全面并入对方，我们应该怎么办？"
@@ -15089,6 +15102,7 @@ country_event = {
 	desc = "11111"
 	hidden = yes
 	trigger = {
+		not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		has_global_flag = modoption_navykuaijian_on
 		not = { has_idea = TY_qianghuachuanwu } 
 	}
@@ -15112,6 +15126,7 @@ country_event = {
 	desc = "11111"
 	hidden = yes
 	trigger = {
+		not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		has_global_flag = modoption_shengchan_on
 		not = { has_idea = TY_chaojishengchan } 
 	}
@@ -15135,6 +15150,7 @@ country_event = {
 	desc = "11111"
 	hidden = yes
 	trigger = {
+		not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		has_global_flag = modoption_yansukeyan_on
 		not = { has_idea = TY_jiasuyanjiu } 
 	}
@@ -15158,6 +15174,7 @@ country_event = {
 	desc = "11111"
 	hidden = yes
 	trigger = {
+		not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
 		has_global_flag = modoption_morepp_on
 		not = { has_idea = TY_gengduoppdian } 
 	}
