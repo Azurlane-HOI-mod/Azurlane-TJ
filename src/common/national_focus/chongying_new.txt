@@ -3211,6 +3211,7 @@
 		}
 		bypass = {
 			OR = {
+				has_global_flag = AZ_fengkuangAI_citiao_ex
 				has_war_with = MON
 				MON = {
 					has_capitulated = yes
@@ -3267,9 +3268,18 @@
 		available_if_capitulated = no
 		completion_reward = {
 			add_state_claim = 655
-			create_wargoal = {
-				target = BFL
-				type = take_state_focus
+			if = {
+				limit = {
+					is_ai = yes
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					BFL = { is_ai = no }
+				}
+				declare_war_on = { target = BFL type = annex_everything }
+			} else = {
+				create_wargoal = {
+					target = BFL
+					type = take_state_focus
+				}
 			}
 			add_ideas = CHY_bflwar_buff
 		}

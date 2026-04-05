@@ -6732,13 +6732,36 @@ focus_tree = {
 					BFL = {
 						is_ai = yes
 					}
-					has_idea = TIX_fkAIbuff
+					has_global_flag = AZ_fengkuangAI_citiao_ex
 				}
 				BFL = {
 					add_timed_idea = {
 						idea = BFL_weidadeweiguozhanzheng_ai
 						days = 650
 					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					is_ai = yes
+					CHY = {
+						has_government = fascism
+						is_faction_leader = yes
+						is_ai = yes
+					}
+					OR = {
+						not = { country_exists = DOH }
+						DOH = { is_subject_of = CHY }
+					}
+					OR = {
+						BFL = { is_ai = no }
+						BOW = { is_ai = no }	#方便看海
+					}
+				}
+				CHY = {
+					complete_national_focus = CHY_xiaohuashenliguoshi
+					complete_national_focus = CHY_duibeilianzhanzhen
 				}
 			}
 		}

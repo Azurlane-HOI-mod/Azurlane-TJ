@@ -1065,6 +1065,16 @@ focus_tree = {
 					is_ai = no
 				}
 				has_global_flag = modoption_historicalbossai_on
+				AND = {
+					has_global_flag = AZ_fengkuangAI_citiao_ex
+					OR = {
+						BYG = { is_ai = no }
+						HUJ = { is_ai = no }
+						BFL = { is_ai = no }
+						DOH = { is_ai = no }
+						BOW = { is_ai = no }	#方便看海
+					}
+				}
 			}
 		}
 		ai_will_do = {

@@ -13,6 +13,19 @@ country_event = {
 	}
 }
 country_event = {
+	id = az_tianjiang.99999
+	title = "全词条改动详情"
+	desc = az_tianjiang.99999.d
+	picture = GFX_aze_start
+	is_triggered_only = yes
+	option = {
+		name = "好的"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
 	id = az_tianjiang.1
 	title = "来自铁血的最后通牒"
 	desc = "铁血要求我们全面并入对方，我们应该怎么办？"
@@ -8239,7 +8252,7 @@ country_event = {
 country_event = {
 	id = az_tianjiang.231
 	title = "警告，警告"
-	desc = "历史国策下的疯狂AI铁血会在满足特定条件的情况下提前宣战北联，请提前做好准备！！！"
+	desc = "全词条疯狂AI铁血会提前宣战北联，如果北联是玩家则AI重樱也会进战，请提前做好准备！！！"
 	picture = GFX_aze_dai
 	is_triggered_only = yes
 	option = {
@@ -10480,7 +10493,7 @@ country_event = {
 	picture = GFX_aze_hit
 	is_triggered_only = yes
 	option = {
-		name = "终于可以开始塔塔开了！"
+		name = "如果选择了全词条，记得阅读一下改动！"
 		set_global_flag = AZ_fengkuangAI_citiao_xuanzewancheng
 		if = {
 			limit = {
@@ -10496,6 +10509,12 @@ country_event = {
 			has_global_flag = AZ_fengkuangAI_citiao_10
 			has_global_flag = AZ_fengkuangAI_citiao_11
 			has_global_flag = AZ_fengkuangAI_citiao_12
+			}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = az_tianjiang.99999
 			}
 			clr_global_flag = AZ_fengkuangAI_citiao_4
 			clr_global_flag = AZ_fengkuangAI_citiao_5
@@ -11910,6 +11929,8 @@ country_event = {
 				add_state_core = 409
 				add_state_core = 408
 				add_state_core = 655
+				annex_country = { target = MON transfer_troops = no }
+				add_core_of = MON
 			 }
 		}
 		if = {
@@ -11924,6 +11945,7 @@ country_event = {
 				transfer_state = 409
 				transfer_state = 408
 				transfer_state = 655
+				annex_country = { target = MON transfer_troops = no }
 			 }
 		}
 		if = {
@@ -11967,6 +11989,7 @@ country_event = {
 		}
 		KAZ = {
 			set_cosmetic_tag = KAZ_zhongyalianmeng
+			set_politics = { ruling_party = neutrality }
 			transfer_state = 823
 			transfer_state = 584
 			transfer_state = 831
@@ -15054,6 +15077,8 @@ country_event = {
 	trigger = {
 		shijianniangguojia_trigger = no
 		is_ai = yes
+		not = { tag = D04 }
+		not = { tag = D05 }
 		not = { has_idea = TY_yuanbanAI }
 		not = { has_idea = TY_yuanbanAI2 }
 		any_other_country = {
@@ -15298,6 +15323,26 @@ country_event = {
 		}
 		ai_chance = {
 			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.459
+	title = "警告，警告"
+	desc = "全词条疯狂AI的塞壬会在不久后入侵北美，请提前做好准备！！！"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "我阐释你的梦，你怎么不早说？"
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "我没意见"
+		ai_chance = {
+			factor = 100
 		}
 	}
 }

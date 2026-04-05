@@ -1,4 +1,125 @@
 tianjiang_aizuobi = {
+	ai_sad_zuobi_mimoudu = {
+		visible = {
+			tag = SAD
+			is_ai = yes
+			has_civil_war = no
+			has_government = fascism
+		}
+		available = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			TIX = { is_ai = yes }
+			CHY = { is_ai = yes }
+			date > 1941.6.1
+			OR = {
+				BFL = { is_ai = no }
+				BYG = { is_ai = no }
+				HUJ = { is_ai = no }
+				YUW = { is_ai = no }
+			}
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = sad_panluanzhongzhi
+			add_to_variable = {
+				var = az_mimoujincheng
+				value = -100
+			}
+		}
+	}
+	ai_chy_zuobi_ex = {
+		visible = {
+			tag = CHY
+			is_ai = yes
+			country_exists = DOH
+		}
+		available = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			DOH = { is_ai = yes }
+			OR = {
+				BFL = { is_ai = no }
+				BYG = { is_ai = no }
+				HUJ = { is_ai = no }
+				YUW = { is_ai = no }
+				BOW = { is_ai = no }	#方便看海
+			}
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = CHY_qctmiaosha_doh
+		}
+	}
+	ai_sir_zuobi2 = {
+		visible = {
+			tag = SIR
+			is_ai = yes
+			country_exists = BYG
+		}
+		available = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			date > 1940.1.1
+			BLI = { is_ai = yes }
+			OR = {
+				BFL = { is_ai = no }
+				BYG = { is_ai = no }
+				HUJ = { is_ai = no }
+				YUW = { is_ai = no }
+				BOW = { is_ai = no }	#方便看海
+			}
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		days_remove = 180
+		fire_only_once = yes
+		complete_effect = {
+			BYG = {
+				country_event = az_tianjiang.459
+			}
+			HUJ = {
+				country_event = az_tianjiang.459
+			}
+		}
+		remove_effect = {
+			declare_war_on = { target = BYG type = annex_everything }
+			declare_war_on = { target = PAN type = annex_everything }
+			declare_war_on = { target = COS type = annex_everything }
+			declare_war_on = { target = NIC type = annex_everything }
+			declare_war_on = { target = HON type = annex_everything }
+			declare_war_on = { target = ELS type = annex_everything }
+			declare_war_on = { target = GUA type = annex_everything }
+			declare_war_on = { target = MEX type = annex_everything }
+		}
+	}
+	ai_sir_zuobi3 = {
+		visible = {
+			tag = SIR
+			is_ai = yes
+		}
+		available = {
+			is_ai = yes
+			date > 1940.1.2
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			complete_national_focus = SIR_xinyangzhanshi
+			complete_national_focus = SIR_diyicizhaohuan
+			add_research_slot = 8
+		}
+	}
 	ai_sir_zuobi = {
 		visible = {
 			tag = SIR
@@ -14,6 +135,7 @@ tianjiang_aizuobi = {
 		fire_only_once = yes
 		complete_effect = {
 			add_ideas = TY_fkAIex_sir_debuff
+			add_ideas = SIR_buff5
 		}
 	}
 	ai_zhongtanzuobi = {
@@ -307,9 +429,6 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = yes
 		complete_effect = {
-			set_technology = {
-				mobile_warfare = 1
-			}
 			complete_national_focus = BYG_ziyouhanweizhe
 			complete_national_focus = BYG_bilanhangxianfangyutongmeng
 			complete_national_focus = BYG_lianbangdeyingxiong
@@ -317,14 +436,75 @@ tianjiang_aizuobi = {
 			complete_national_focus = BYG_xiandaishandianzhan
 		}
 	}
+	ai_byg_sdz_fa = {
+		available = {
+			date > 1940.1.1
+			tag = BYG
+			is_puppet = no
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			has_global_flag = MOD_azurlane_tianjiangjianniang
+			OR = {
+				TIX = {
+					is_ai = NO
+				}
+				SAD = {
+					is_ai = no
+				}
+				CHY = {
+					is_ai = no
+				}
+				BOW = {
+					is_ai = no	#方便看海
+				}
+			}
+		}
+		visible = {
+			is_ai = yes
+			tag = BYG
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			complete_national_focus = BYG_baiyingjungongchang
+			complete_national_focus = BYG_motuohuafangan
+			complete_national_focus = BYG_zhancheguilai
+			complete_national_focus = BYG_xiandaishandianzhan
+			complete_national_focus = BYG_danbingzhuangbei
+			complete_national_focus = BYG_kuozhaoyouqibing
+			complete_national_focus = BYG_huolixianzhijiechu
+		}
+	}
 	ai_huj_zhimindi_fa = {
 		available = {
-			date > 1939.10.10
+			date > 1939.7.10
 			tag = HUJ
 			is_puppet = no
 			is_ai = yes
-			has_global_flag = modoption_historicalbossai_on
+			OR = {
+				has_global_flag = modoption_historicalbossai_on
+				has_global_flag = AZ_fengkuangAI_citiao_ex
+			}
 			has_global_flag = MOD_azurlane_tianjiangjianniang
+			OR = {
+				TIX = {
+					is_ai = NO
+				}
+				SAD = {
+					is_ai = no
+				}
+				CHY = {
+					is_ai = no
+				}
+				BOW = {
+					is_ai = no	#方便看海
+				}
+				YUW = { 
+					is_ai = no 
+				}
+			}
 		}
 		visible = {
 			is_ai = yes
@@ -336,6 +516,9 @@ tianjiang_aizuobi = {
 		fire_only_once = yes
 		complete_effect = {
 			complete_national_focus = HUJ_tongzhibabuliedianhuj
+			complete_national_focus = HUJ_liluntupo
+			complete_national_focus = HUJ_yazhitiexue
+			complete_national_focus = HUJ_zhangkongdizhonghai
 		}
 	}
 	ai_tix_zaozhanbeilianzuobi = {
@@ -358,6 +541,9 @@ tianjiang_aizuobi = {
 				BYG = {
 					is_ai = no
 				}
+				BOW = {
+					is_ai = no	#方便看海
+				}
 			}
 			OR = {
 				YUW = {
@@ -367,6 +553,7 @@ tianjiang_aizuobi = {
 					country_exists = YUW
 				}
 			}
+			has_global_flag = AZ_fengkuangAI_citiao_ex
 			NOT = {
 				has_global_flag = modoption_historicalbossai_on
 			}
@@ -379,7 +566,7 @@ tianjiang_aizuobi = {
 			factor = 10000
 		}
 		fire_only_once = yes
-		days_remove = 180
+		days_remove = 270
 		complete_effect = {
 			complete_national_focus = TIX_siweichuangxin
 			complete_national_focus = TIX_libingmoma
@@ -455,6 +642,23 @@ tianjiang_aizuobi = {
 				type = prepare_for_war
 				id = "BFL"
 				value = 500
+			}
+			if = {
+				limit = {
+					BFL = { is_ai = no }
+					CHY = { is_ai = yes }
+					OR = {
+						not = { country_exists = DOH }
+						DOH = { is_subject_of = CHY }
+					}
+				}
+				CHY = {
+					add_ai_strategy = {
+						type = prepare_for_war
+						id = "BFL"
+						value = 500
+					}
+				}
 			}
 		}
 		remove_effect = {
@@ -1060,10 +1264,10 @@ tianjiang_aizuobi = {
 			tag = BFL
 			is_ai = yes
 			has_global_flag = AZ_fengkuangAI_citiao_ex
-			surrender_progress > 0.4
+			#surrender_progress > 0.4
 			has_war_with = TIX
 			has_war_with = SAD
-			not = { has_war_with = CHY }
+			#not = { has_war_with = CHY }
 			not = { has_war_with = DOH }
 			not = { has_war_with = BYG }
 			not = { has_war_with = HUJ }
@@ -1083,6 +1287,41 @@ tianjiang_aizuobi = {
 		}
 		fire_only_once = yes
 		complete_effect = {
+			if = {
+				limit = {
+					OR = {
+						BYG = { is_ai = no }
+						HUJ = { is_ai = no }
+						YUW = { is_ai = no }
+					}
+				}
+				add_political_power = 100
+			} else = {
+				202 = {
+					add_dynamic_modifier = {
+						modifier = BFL_defencewudi_state
+						scope = BFL
+					}
+				}
+				206 = {
+					add_dynamic_modifier = {
+						modifier = BFL_defencewudi_state
+						scope = BFL
+					}
+				}
+				242 = {
+					add_dynamic_modifier = {
+						modifier = BFL_defencewudi_state
+						scope = BFL
+					}
+				}
+				376 = {
+					add_dynamic_modifier = {
+						modifier = BFL_defencewudi_state
+						scope = BFL
+					}
+				}
+			}
 			219 = {
 				add_dynamic_modifier = {
 					modifier = BFL_defencewudi_state
@@ -1090,6 +1329,12 @@ tianjiang_aizuobi = {
 				}
 			}
 			217 = {
+				add_dynamic_modifier = {
+					modifier = BFL_defencewudi_state
+					scope = BFL
+				}
+			}
+			195 = {
 				add_dynamic_modifier = {
 					modifier = BFL_defencewudi_state
 					scope = BFL

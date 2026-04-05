@@ -295,7 +295,7 @@ BYG_war_with_tix = {
 	ai_strategy = {
 		type = invasion_unit_request
 		tag = TIX
-		value = 10
+		value = 100
 	}
 	
 	ai_strategy = {
@@ -806,13 +806,13 @@ BYG_naval_invasions_please = {
 	ai_strategy = {
 		type = invasion_unit_request
 		tag = TIX
-		value = 40
+		value = 100
 	}
 	
 	ai_strategy = {
 		type = invasion_unit_request
 		tag = CHY
-		value = 20
+		value = 60
 	}
 }
 
@@ -1146,6 +1146,9 @@ BYG_dont_do_so_many_naval_1942 = {
 	enable = {
 		is_historical_focus_on = yes
 		date < 1941.5.1
+		TIX = { is_ai = yes }
+		SAD = { is_ai = yes }
+		CHY = { is_ai = yes }
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
@@ -1343,14 +1346,30 @@ BYG_d_day_boost = {
 	}
 	enable = {
 		has_war_with = TIX 
-		date > 1941.9.1
-		SAD = {
-			surrender_progress > 0.2
+		OR = {
+			date > 1941.9.1
+			TIX = {
+				is_ai = no
+			}
+			SAD = {
+				is_ai = no
+			}
+		}
+		OR = {
+			SAD = {
+				surrender_progress > 0.2
+			}
+			TIX = {
+				is_ai = no
+			}
+			SAD = {
+				is_ai = no
+			}
 		}
 	}
 	abort = {
 		OR = {
-			date > 1944.9.1 # if we haven't succeeded by now, kill Japan instead
+			date > 1945.9.1 # if we haven't succeeded by now, kill Japan instead
 			AND = {
 				16 = { is_controlled_by_ROOT_or_ally = yes } # Paris has been liberated
 				is_historical_focus_on = yes 
@@ -1384,7 +1403,15 @@ BYG_torch_boost = {
 	enable = {
 		country_exists = WEX 
 		has_war_with = TIX
-		date > 1941.5.1
+		OR = {
+			date > 1941.5.1
+			TIX = {
+				is_ai = no
+			}
+			SAD = {
+				is_ai = no
+			}
+		}
 	}
 	abort = {
 		OR = {
