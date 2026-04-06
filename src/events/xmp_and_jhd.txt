@@ -96,8 +96,11 @@ country_event = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
 		surrender_progress > 0.5
+		NOT = { has_country_flag = fkai_buff_shengji_yes1 }
+		shijianniangguojia_trigger = yes
 	}
 	immediate = {
+		set_country_flag = fkai_buff_shengji_yes1
 		if = {
 			limit = { has_idea = TY_fengkuangai }
 			swap_ideas = {
@@ -145,6 +148,7 @@ country_event = {
 		has_global_flag = modoption_fengkuangai_on
 		surrender_progress > 0.75
 		NOT = { has_country_flag = fengkuangai_shuabing_1 }
+		shijianniangguojia_trigger = yes
 	}
 	immediate = {
 		set_country_flag = fengkuangai_shuabing_1
@@ -545,14 +549,17 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+	#fire_only_once = yes
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1937.1.1
+		date > 1937.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes1 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes1
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
 			amount = 5000
@@ -569,14 +576,17 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1938.1.1
+		date > 1938.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes2 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes2
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
 			amount = 5000
@@ -603,14 +613,17 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1939.1.1
+		date > 1939.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes3 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes3
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
 			amount = 20000
@@ -637,25 +650,28 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1940.1.1
+		date > 1940.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes4 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes4
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 20000
+			amount = 40000
 		}
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-			amount = 2500
+			amount = 4000
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 1500
+			amount = 2500
 		}
 	}
 }
@@ -665,25 +681,28 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1941.1.1
+		date > 1941.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes5 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes5
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 20000
+			amount = 60000
 		}
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-			amount = 500
+			amount = 6000
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
+			amount = 5000
 		}
 		add_equipment_to_stockpile = {
 			type = fighter_equipment
@@ -703,25 +722,28 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1942.1.1
+		date > 1942.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes6 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes6
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 20000
+			amount = 80000
 		}
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-			amount = 500
+			amount = 8000
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
+			amount = 6000
 		}
 		add_equipment_to_stockpile = {
 			type = fighter_equipment
@@ -735,25 +757,28 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1943.1.1
+		date > 1943.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes7 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes7
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 20000
+			amount = 100000
 		}
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-			amount = 500
+			amount = 10000
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
+			amount = 8000
 		}
 		add_equipment_to_stockpile = {
 			type = fighter_equipment
@@ -767,25 +792,28 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1944.1.1
+		date > 1944.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes8 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes8
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 20000
+			amount = 120000
 		}
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-			amount = 500
+			amount = 12500
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
+			amount = 12500
 		}
 		add_equipment_to_stockpile = {
 			type = fighter_equipment
@@ -799,25 +827,28 @@ country_event = {
 	desc = junhuo.6.d
 	picture = GFX_aze_junhuodian
 	hidden = yes
-	fire_only_once = yes
+
 	trigger = {
 		is_ai = yes
 		has_global_flag = modoption_fengkuangai_on
-		date>1945.1.1
+		date > 1945.1.1
+		shijianniangguojia_trigger = yes
+		not = { has_country_flag = az_aiwuzidahui_yes9 }
 	}
 
 	immediate = {
+		set_country_flag = az_aiwuzidahui_yes9
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 20000
+			amount = 150000
 		}
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-			amount = 5500
+			amount = 15500
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 2500
+			amount = 12500
 		}
 		add_equipment_to_stockpile = {
 			type = fighter_equipment
@@ -869,15 +900,15 @@ country_event = {
 	immediate = {
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 20000
+			amount = 200000
 		}
 		add_equipment_to_stockpile = {
 			type = artillery_equipment
-			amount = 500
+			amount = 15000
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
+			amount = 15000
 		}
 		add_equipment_to_stockpile = {
 			type = fighter_equipment
