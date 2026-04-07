@@ -1567,6 +1567,11 @@ BFL_dont_do_so_many_naval_invasions_please = {
 	}
 	ai_strategy = {
 		type = invasion_unit_request
+		tag = ROM
+		value = -50
+	}
+	ai_strategy = {
+		type = invasion_unit_request
 		tag = FIN
 		value = -50
 	}
@@ -1580,7 +1585,9 @@ BFL_defend_blitzkrieg = {#Only perform careful attacks, we want to defend while 
 	enable = {
 		date < 1942.8.1 #To space!
 		has_war_with = TIX
+		TIX = { is_ai = yes }
 		TIX = { has_idea = TIX_sljh }
+		TIX = { controls_state = 16 }
 	}
 
 	abort_when_not_enabled = yes
@@ -1608,7 +1615,10 @@ BFL_defend_blitzkrieg_2  = {#Only perform careful attacks, we want to defend for
 	enable = {
 		date < 1942.8.1 #To space!
 		has_war_with = TIX
-		NOT = { TIX = { has_idea = TIX_sljh } }
+		OR = {
+			NOT = { TIX = { has_idea = TIX_sljh } }
+			TIX = { is_ai = no }
+		}
 		is_historical_focus_on = yes
 	}
 
