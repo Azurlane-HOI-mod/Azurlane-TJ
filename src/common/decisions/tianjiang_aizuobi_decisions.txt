@@ -139,6 +139,52 @@ tianjiang_aizuobi = {
 			add_ideas = SIR_buff5
 		}
 	}
+	az_kejizuobi_all = {
+		visible = {
+			is_ai = yes
+		}
+		available = {
+			is_ai = yes
+			OR = {
+				has_idea = TY_fengkuangai
+				has_idea = TY_fengkuangai2
+				has_idea = TY_fengkuangai3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_technology = {
+				tech_mountaineers = 1
+			}
+			set_technology = {
+				tech_mountaineers2 = 1
+			}
+			set_technology = {
+				tech_mountaineers3 = 1
+			}
+			set_technology = {
+				special_forces_mountaineers = 1
+			}
+			set_technology = {
+				rangers = 1
+			}
+			set_technology = {
+				special_forces_recon = 1
+			}
+			set_technology = {
+				mountaineers_combat_1 = 1
+			}
+			set_technology = {
+				mountaineers_combat_3 = 1
+			}
+			set_technology = {
+				mountaineers_keystone_2 = 1
+			}
+		}
+	}
 	ai_zhongtanzuobi = {
 		available = {
 			OR = {
@@ -342,32 +388,39 @@ tianjiang_aizuobi = {
 						medium_armor = { x = 0 y = 1 }
 						medium_armor = { x = 0 y = 2 }
 						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 0 y = 4 }
 						medium_armor = { x = 1 y = 0 }
 						medium_armor = { x = 1 y = 1 }
 						medium_armor = { x = 1 y = 2 }
 						medium_armor = { x = 1 y = 3 }
-						medium_tank_destroyer_brigade = { x = 2 y = 0 }
-						medium_sp_anti_air_brigade = { x = 2 y = 1 }
-						mechanized = { x = 3 y = 0 }
-						mechanized = { x = 3 y = 1 }
-						mechanized = { x = 3 y = 2 }
-						mechanized = { x = 3 y = 3 }
-						mechanized = { x = 4 y = 0 }
-						mechanized = { x = 4 y = 1 }
-						mechanized = { x = 4 y = 2 }
-						mechanized = { x = 4 y = 3 }
+						medium_armor = { x = 1 y = 4 }
+						mountaineers = { x = 2 y = 0 }
+						mountaineers = { x = 2 y = 1 }
+						mountaineers = { x = 2 y = 2 }
+						mountaineers = { x = 2 y = 3 }
+						mountaineers = { x = 2 y = 4 }
+						mountaineers = { x = 3 y = 0 }
+						mountaineers = { x = 3 y = 1 }
+						mountaineers = { x = 3 y = 2 }
+						mountaineers = { x = 3 y = 3 }
+						mountaineers = { x = 3 y = 4 }
+						mountaineers = { x = 4 y = 0 }
+						mountaineers = { x = 4 y = 1 }
+						mountaineers = { x = 4 y = 2 }
+						mountaineers = { x = 4 y = 3 }
+						mountaineers = { x = 4 y = 4 }
 					}
 					support = {
-						engineer = { x = 0 y = 0 }
+						armored_engineer = { x = 0 y = 0 }
 						medium_flame_tank = { x = 0 y = 1 }
 						light_tank_recon = { x = 0 y = 2 }
-						artillery = { x = 0 y = 3 }
+						helicopter_field_hospital = { x = 0 y = 3 }
 						logistics_company = { x = 0 y = 4 }
 				    }
 				}
 			for_loop_effect = {
 				start = 0
-				end = 6
+				end = 12
 				add = 1
 				capital_scope = {
 					create_unit = {
@@ -401,7 +454,7 @@ tianjiang_aizuobi = {
 		complete_effect = {
 			for_loop_effect = {
 				start = 0
-				end = 12
+				end = 24
 				add = 1
 				capital_scope = {
 					create_unit = {

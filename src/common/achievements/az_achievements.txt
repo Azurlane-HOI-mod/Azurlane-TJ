@@ -970,3 +970,17 @@ az_meizhoutiaozhan_cj5 = {
 		has_global_flag = az_meizhoutiaozhan_cj_get5
     }    
 }
+
+az_meizhoutiaozhan_cj6 = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+    }
+    
+    happened = {
+		not = { has_global_flag = modoption_dingzhenai_on }
+		has_global_flag = az_meizhoutiaozhan_cj_get6
+    }    
+}

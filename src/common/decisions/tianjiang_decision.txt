@@ -15933,7 +15933,7 @@ AZ_meizhoutiaozhan_jyz = {
 			clr_global_flag = az_meizhoutiaozhan_action
 		}
 	}
-	AZ_meizhoutiaozhan_jiangli = {
+	AZ_meizhoutiaozhan_kuaijiekaiqi_qct = {
 		cost = 0
 		visible = {
 			is_ai = no
@@ -15948,10 +15948,97 @@ AZ_meizhoutiaozhan_jyz = {
 				not = { has_global_flag = modoption_fengkuangai_on }
 			}
 			custom_trigger_tooltip = {
-				tooltip = "完美达成过本次每月挑战目标"
-				has_completed_custom_achievement = {
-   					mod = az_achievements
-    				achievement = az_meizhoutiaozhan_cj5
+				tooltip = az_aikongzhiqitaguojia
+				all_other_country = {
+					is_ai = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "历史国策已开启"
+				is_historical_focus_on = yes
+			}
+			not = { has_global_flag = AZ_fengkuangAI_citiao_ex }
+			not = { has_global_flag = modoption_dingzhenai_on }
+			not = { has_global_flag = az_chiji_flag }
+		}
+		complete_effect = {
+			set_country_flag = fengkuangai_yixuanzeguo_flag
+			set_global_flag = modoption_tiantangzhizhan_on
+			every_country = {
+				limit = {
+					AND = {
+						shijianniangguojia_trigger = no
+						is_ai = yes
+					}
+				}
+				add_ideas = TY_yuanbanAI
+			}
+			set_global_flag = modoption_fengkuangai_on
+			every_country = {
+				limit = {
+					AND = {
+						shijianniangguojia_trigger = yes
+						is_ai = yes
+					}
+				}
+				add_ideas = TY_fengkuangai
+			}
+			set_global_flag = AZ_fengkuangAI_citiao_1
+			set_global_flag = AZ_fengkuangAI_citiao_2
+			set_global_flag = AZ_fengkuangAI_citiao_3
+			set_global_flag = AZ_fengkuangAI_citiao_4
+			set_global_flag = AZ_fengkuangAI_citiao_5
+			set_global_flag = AZ_fengkuangAI_citiao_6
+			set_global_flag = AZ_fengkuangAI_citiao_7
+			set_global_flag = AZ_fengkuangAI_citiao_8
+			set_global_flag = AZ_fengkuangAI_citiao_9
+			set_global_flag = AZ_fengkuangAI_citiao_10
+			set_global_flag = AZ_fengkuangAI_citiao_11
+			set_global_flag = AZ_fengkuangAI_citiao_12
+			country_event = az_tianjiang.306
+		}
+	}
+	AZ_meizhoutiaozhan_jiangli = {
+		cost = 0
+		visible = {
+			is_ai = no
+			date < 1936.1.3
+		}
+		fire_only_once = yes
+		available = {
+			date < 1936.1.3
+			has_global_flag = az_gamestarted
+			OR = {
+				has_global_flag = AZ_fengkuangAI_citiao_xuanzewancheng
+				not = { has_global_flag = modoption_fengkuangai_on }
+			}
+			OR = {
+				has_global_flag = az_meizhoutiaozhan_down
+				has_global_flag = az_meizhoutiaozhan_action
+			}
+			custom_trigger_tooltip = {
+				tooltip = "完美达成过往期任意一次每月挑战目标"
+				OR = {
+					has_completed_custom_achievement = {
+   						mod = az_achievements
+    					achievement = az_meizhoutiaozhan_cj
+					}
+					has_completed_custom_achievement = {
+   						mod = az_achievements
+    					achievement = az_meizhoutiaozhan_cj2
+					}
+					has_completed_custom_achievement = {
+   						mod = az_achievements
+    					achievement = az_meizhoutiaozhan_cj3
+					}
+					has_completed_custom_achievement = {
+   						mod = az_achievements
+    					achievement = az_meizhoutiaozhan_cj4
+					}
+					has_completed_custom_achievement = {
+   						mod = az_achievements
+    					achievement = az_meizhoutiaozhan_cj5
+					}
 				}
 			}
 			custom_trigger_tooltip = {
@@ -15975,7 +16062,6 @@ AZ_meizhoutiaozhan_jyz = {
 			not = { has_global_flag = az_meizhoutiaozhan_action }
 		}
 		available = {
-			tag = SAD
 			custom_trigger_tooltip = {
 				tooltip = az_aikongzhiqitaguojia
 				all_other_country = {
@@ -15986,15 +16072,19 @@ AZ_meizhoutiaozhan_jyz = {
 				tooltip = "历史国策已开启"
 				is_historical_focus_on = yes
 			}
+			has_global_flag = modoption_tiantangzhizhan_on
+			has_global_flag = AZ_fengkuangAI_citiao_ex
 			not = { has_global_flag = modoption_dingzhenai_on }
 			not = { has_global_flag = az_chiji_flag }
 		}
 		complete_effect = {
 			#activate_mission = AZ_meizhoutiaozhan_jy_wanmei_time
 			#activate_mission = AZ_meizhoutiaozhan_jy_dacheng_time
-			set_global_flag = az_meizhoutiaozhan_SAD
+			country_event = az_tianjiang.460
+			set_global_flag = az_meizhoutiaozhan_QCT
 			set_global_flag = az_meizhoutiaozhan_action
-			add_ideas = AZ_mztz_playerbuff
+			#add_ideas = AZ_mztz_playerbuff
+			activate_mission = AZ_meizhoutiaozhan_jy_dacheng_time_QCT
 		}
 	}
 	AZ_wangqitiaozhan_jy_TIX = {
@@ -16104,6 +16194,34 @@ AZ_meizhoutiaozhan_jyz = {
 			add_ideas = az_houqizhixiu_idea
 		}
 	}
+	AZ_wangqitiaozhan_jy_SAD = {
+		icon = eng_trade_unions_support
+		cost = 0
+		visible = {
+			is_ai = no
+			not = { has_global_flag = az_meizhoutiaozhan_down }
+			not = { has_global_flag = az_meizhoutiaozhan_action }
+		}
+		available = {
+			tag = SAD
+			custom_trigger_tooltip = {
+				tooltip = az_aikongzhiqitaguojia
+				all_other_country = {
+					is_ai = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = "历史国策已开启"
+				is_historical_focus_on = yes
+			}
+			not = { has_global_flag = modoption_dingzhenai_on }
+			not = { has_global_flag = az_chiji_flag }
+		}
+		complete_effect = {
+			set_global_flag = az_meizhoutiaozhan_SAD
+			set_global_flag = az_meizhoutiaozhan_action
+		}
+	}
 	AZ_meizhoutiaozhan_jy_off = {
 		icon = eng_trade_unions_support
 		cost = 0
@@ -16129,6 +16247,9 @@ AZ_meizhoutiaozhan_jyz = {
 			not = { has_global_flag = az_meizhoutiaozhan_BFL }
 			not = { has_global_flag = az_meizhoutiaozhan_TIX }
 			not = { has_global_flag = az_meizhoutiaozhan_YUW }
+			not = { has_global_flag = az_meizhoutiaozhan_DOH }
+			not = { has_global_flag = az_meizhoutiaozhan_SAD }
+			not = { has_global_flag = az_meizhoutiaozhan_QCT }
 		}
 		ai_will_do = {
 			factor = 100
@@ -16516,13 +16637,105 @@ AZ_meizhoutiaozhan_jyz = {
 			}
 		}
 		complete_effect = {
-			custom_effect_tooltip = "本次只要达成条件就视作完美通关"
+			custom_effect_tooltip = "只要达成条件就视作完美通关"
 			set_global_flag = az_meizhoutiaozhan_cj_get5
 			custom_effect_tooltip = get_zs_shuliang_10000
 			add_to_variable = {
 				var = zs_sl
 				value = 10000
 			}
+		}
+	}
+	AZ_meizhoutiaozhan_jy_dacheng_time_QCT = {
+		name = AZ_meizhoutiaozhan_jy_wanmei_time
+		icon = generic_scorched_earth
+		is_good = no
+		activation = {
+			always = no
+		}
+		available = {
+			is_puppet = no
+			OR = {
+				tag = TIX
+				TIX = { is_subject_of = ROOT }
+				TIX = { is_in_faction_with = ROOT }
+				not = { country_exists = TIX }
+				AND = {
+					country_exists = GER
+					GER = { is_in_faction_with = ROOT }
+				}
+			}
+			OR = {
+				tag = YUW
+				YUW = { is_subject_of = ROOT }
+				YUW = { is_in_faction_with = ROOT }
+				not = { country_exists = YUW }
+				AND = {
+					country_exists = WEX
+					WEX = { is_in_faction_with = ROOT }
+				}
+			}
+			OR = {
+				tag = HUJ
+				HUJ = { is_subject_of = ROOT }
+				HUJ = { is_in_faction_with = ROOT }
+				not = { country_exists = HUJ }
+			}
+			OR = {
+				tag = SAD
+				SAD = { is_subject_of = ROOT }
+				SAD = { is_in_faction_with = ROOT }
+				not = { country_exists = SAD }
+				AND = {
+					country_exists = ITA
+					ITA = { is_in_faction_with = ROOT }
+				}
+			}
+			OR = {
+				tag = BFL
+				BFL = { is_subject_of = ROOT }
+				BFL = { is_in_faction_with = ROOT }
+				not = { country_exists = BFL }
+				has_global_flag = beilian_bengkui
+			}
+			OR = {
+				tag = CHY
+				CHY = { is_subject_of = ROOT }
+				CHY = { is_in_faction_with = ROOT }
+				not = { country_exists = CHY }
+			}
+			OR = {
+				tag = DOH
+				DOH = { is_subject_of = ROOT }
+				DOH = { is_in_faction_with = ROOT }
+				not = { country_exists = DOH }
+			}
+			OR = {
+				tag = BYG
+				BYG = { is_subject_of = ROOT }
+				BYG = { is_in_faction_with = ROOT }
+				not = { country_exists = BYG }
+			}
+			OR = {
+				tag = SIR
+				SIR = { is_subject_of = ROOT }
+				SIR = { is_in_faction_with = ROOT }
+				not = { country_exists = SIR }
+			}
+			OR = {
+				tag = BLI
+				BLI = { is_subject_of = ROOT }
+				BLI = { is_in_faction_with = ROOT }
+				not = { country_exists = BLI }
+			}
+		}
+		days_mission_timeout = 3650
+		complete_effect = {
+			custom_effect_tooltip = "只要达成条件就视作完美通关"
+			set_global_flag = az_meizhoutiaozhan_cj_get6
+		}
+		timeout_effect = {
+			custom_effect_tooltip = az_meizhoutiaozhan_shibai
 		}
 	}
 }

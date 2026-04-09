@@ -2365,9 +2365,15 @@
 		mutually_exclusive = {focus = BFL_zhuzhouweinue}
 		cost = 2
 		available = {
-			country_exists = CHY
+			not = { has_war_with = CHY }
 		}
-
+		bypass = {
+			OR = {
+				has_war_with = CHY
+				not = { country_exists = CHY }
+				CHY = { is_subject = yes }
+			}
+		}
 		ai_will_do = {
 			factor = 10
 			modifier = {

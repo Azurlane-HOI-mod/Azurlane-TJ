@@ -31,6 +31,15 @@ on_actions = {
 				activate_mission = AZ_meizhoutiaozhan_jy_time
 			}
 		}
+		effect = {	#群友间谍，以后直接开间谍机构得了
+			every_country = {
+				limit = {
+					#is_debug = yes
+					shijianniangguojia_trigger = yes
+				}
+				create_intelligence_agency = yes
+			}
+		}
 		effect = {
 			every_country = {
 				limit = {

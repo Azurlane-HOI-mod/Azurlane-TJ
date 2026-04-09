@@ -112,7 +112,10 @@ SAD_unit_production_at_strong = {
 		type = ignore_army_incompetence
 		value = 10000
 	}
-	
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = -50
+	}
 	ai_strategy = {
         type = force_build_armies
         value = 100
@@ -443,7 +446,7 @@ SAD_stockpile_less_early_game = {
 
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = -25 # reduce while we build up troops for africa etc
+		value = -70 # reduce while we build up troops for africa etc
 	}
 }
 
@@ -1018,7 +1021,7 @@ SAD_dont_join_ww2_too_early = {
 	enable = {
 		is_in_faction_with = SAD
 		YUW = {
-			surrender_progress < 0.05 # If France is falling, it should be safe
+			surrender_progress < 0.1 # If France is falling, it should be safe
 		}
 		TIX = { # Only hold back if we're in the Axis together with Germany, Otherwise, we'll do whatever we feel like.
 			is_in_faction_with = SAD

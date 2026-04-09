@@ -287,16 +287,12 @@ TIX_unit_production = {
 		value = 1
 	}
 	ai_strategy = {
-		type = ignore_army_incompetence
-		value = 10000
-	}
-	ai_strategy = {
         type = force_build_armies
         value = 100
     }
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = 5
+		value = -50
 	}
 }
 
@@ -562,7 +558,7 @@ TIX_sad_neizan = {
 	}
 	ai_strategy = {
 		type = send_volunteers_desire	#志愿军
-		id = "D04"			
+		id = "DAS"			
 		value = 300
 	}
 
@@ -593,14 +589,18 @@ TIX_bubangzhusading = {
 
 TIX_war_with_BFL = {
     allowed = {
-			original_tag = TIX
+		original_tag = TIX
 	}
 	enable = {
 		has_completed_focus = TIX_feixuzhixia
 		country_exists = BFL
+		surrender_progress < 0.1
 	}
 	abort = {
-	    BFL = { has_capitulated = yes }
+		OR = {
+			BFL = { has_capitulated = yes }
+			surrender_progress > 0.1
+		}
 	}
 	
 	ai_strategy = {
@@ -1801,9 +1801,6 @@ TIX_hold_up_in_bfl = { #We got this far but there are bigger targets to worry ab
 		YUW = { is_ai = yes }
 		YUW = { has_capitulated = yes }
 		}
-		NOT = {
-			has_idea = TY_fengkuangai
-		}
 	}
 	abort_when_not_enabled = yes
 
@@ -2629,11 +2626,11 @@ TIX_abandon_ship = {
 	}
 
 	enable = {
-		surrender_progress > 0.25 #Bring our metal bawkses home
+		surrender_progress > 0.15 #Bring our metal bawkses home
 	}
 
 	abort = {
-		surrender_progress < 0.25 #Bring our metal bawkses home
+		surrender_progress < 0.15 #Bring our metal bawkses home
 	}
 
 	ai_strategy = {
@@ -2641,7 +2638,7 @@ TIX_abandon_ship = {
 
 		tag = BFL
 
-		value = -40
+		value = -80
 	}
 }
 
@@ -2724,7 +2721,7 @@ TIX_pause_in_BFL = { #We got this far but our home is under siege
 		has_war_with = BFL
 		BFL = { has_capitulated = no }
 		OR = {
-			surrender_progress > 0.15
+			surrender_progress > 0.1
 			16 = {
 				controller = {
 					has_war_with = TIX
@@ -2754,7 +2751,7 @@ TIX_pause_in_BFL = { #We got this far but our home is under siege
 
 		tag = YUW
 
-		value = 20 # omg no, the french
+		value = 40 # omg no, the french
 	}
 
 	ai_strategy = {
@@ -2762,7 +2759,7 @@ TIX_pause_in_BFL = { #We got this far but our home is under siege
 
 		tag = BFL
 
-		value = -20 # FLEE
+		value = -40 # FLEE
 	}
 }
 

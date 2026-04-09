@@ -179,15 +179,10 @@ yaertahuiyi_effects = {
 				add_popularity = { ideology = communism popularity = 0.75 }
 				news_event = { id = az_tianjiang.89 days = 1}
 				country_event = { id = az_tianjiang.414 days = 1 }
-				random_other_country = {
-					limit = {
-						original_tag = SAD
-						has_government = fascism
-						not = { tag = SAD }
-						is_in_faction_with = TIX
-					}
-					SAD = {
-						annex_country = { target = PREV transfer_troops = no }
+				SAD = {
+					annex_country = {
+						target = DAS
+						transfer_troops = no
 					}
 				}
 }

@@ -14063,6 +14063,7 @@ country_event = {
 			}
 			set_war_support = 1
 			set_cosmetic_tag = SAD_xindiguo
+			set_country_flag = SAD_neizhantag_yes
 			add_popularity = { ideology = democratic popularity = -0.2 }
 		}
 		add_ideas = SAD_nzrq
@@ -14138,7 +14139,7 @@ country_event = {
 		#		set_nationality = ROOT
 		#	}
 		#}
-		D04 = {
+		DAS = {
 			every_character = {
 				set_nationality = ROOT
 			}
@@ -14384,6 +14385,7 @@ country_event = {
 			}
 			country_event = { id = az_tianjiang.436 days = 1 }
 			set_war_support = 1
+			set_country_flag = SAD_neizhantag_yes
 			set_cosmetic_tag = SAD_xindiguo
 			add_popularity = { ideology = democratic popularity = -0.2 }
 			if = {
@@ -15074,6 +15076,7 @@ country_event = {
 	trigger = {
 		shijianniangguojia_trigger = no
 		is_ai = yes
+		not = { tag = DAS }
 		not = { tag = D04 }
 		not = { tag = D05 }
 		not = { has_idea = TY_yuanbanAI }
@@ -15341,5 +15344,57 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.460
+	title = "是否开启作弊模式？"
+	desc = "开启作弊模式通关同样可以获得成就，是否开启作弊模式？"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "开启作弊，不然打不过喵"
+		custom_effect_tooltip = az_mytz_qct_zuobi_tips
+		add_to_variable = {
+			var = wz_sl
+			value = 92000
+		}
+		add_to_variable = {
+			var = zs_sl
+			value = 5600
+		}
+		add_to_variable = {
+			var = xzmf_sl
+			value = 28
+		}
+		add_to_variable = {
+			var = jz_sl
+			value = 4
+		}
+		hidden_effect = {
+			add_ideas = az_quancitiao_zuobi
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = "不开，我可以轻松打赢喵"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.461
+	title = "测试事件"
+	desc = "11"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "11"
+		set_country_flag = SAD_neizhantag_yes
 	}
 }
