@@ -12,68 +12,20 @@ armor_default = {
 				factor = 0
 			}
 		}
-	medium_armor_1 = {
-		upgrade_prio = {
-			base = 0
-			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-			NOT = {	has_idea = TY_fengkuangai }
-			NOT = {	has_idea = TY_fengkuangai2 }
-			NOT = {	has_idea = TY_fengkuangai3 }
-			}
-		}
-		production_prio = {
-			base = 0
-			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-				NOT = {	has_idea = TY_fengkuangai }
-				NOT = {	has_idea = TY_fengkuangai2 }
-				NOT = {	has_idea = TY_fengkuangai3 }
-			}
-		}
 
-		target_template = {
-			support = {
-				armored_engineer = 1
-				light_tank_recon = 1
-				medium_flame_tank = 1
-				helicopter_transport = 1
-				armored_maintenance = 1
-			}
-			regiments = {
-			    medium_armor = 7
-				medium_tank_destroyer_brigade = 1
-				medium_sp_anti_air_brigade = 1
-				infantry = 10
-			}
-		}
-
-	}
 	medium_armor_2 = {
 		upgrade_prio = {
 			base = 0
 			modifier = {
 				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-		    OR = {
-				has_idea = TY_fengkuangai
-				has_idea = TY_fengkuangai2
-				has_idea = TY_fengkuangai3
-			}
+				NOT = {	has_idea = TY_dingzhenai }
 			}
 		}
 		production_prio = {
 			base = 0
 			modifier = {
 				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-		    OR = {
-				has_idea = TY_fengkuangai
-				has_idea = TY_fengkuangai2
-				has_idea = TY_fengkuangai3
-			}
+				NOT = {	has_idea = TY_dingzhenai }
 			}
 		}
 
@@ -86,10 +38,8 @@ armor_default = {
 				helicopter_field_hospital = 1
 			}
 			regiments = {
-			    medium_armor = 7
-				medium_tank_destroyer_brigade = 1
-				medium_sp_anti_air_brigade = 1
-				infantry = 10
+			    medium_armor = 10
+				infantry = 15
 			}
 		}
 	}

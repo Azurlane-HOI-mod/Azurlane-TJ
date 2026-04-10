@@ -87,7 +87,10 @@ SAD_unit_production_at_strong = {
 		id = marines
 		value = 0
 	}
-
+	ai_strategy = {
+		type = garrison
+		value = 20
+	}
 	ai_strategy = {
 		type = role_ratio	#模板倾向
 		id = infantry
@@ -114,7 +117,7 @@ SAD_unit_production_at_strong = {
 	}
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = -50
+		value = -70
 	}
 	ai_strategy = {
         type = force_build_armies
@@ -341,46 +344,13 @@ SAD_template_design = {
 		original_tag = SAD
 	}
 	enable = {
-    always = yes	
-	}
-	abort = { 
-	always = no
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = 0
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = 1
+   		always = yes	
 	}
 	
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = 40
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 0
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = heavy_armor
-		value = -50
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = -50
+		value = 60
 	}
 }
 
@@ -446,7 +416,7 @@ SAD_stockpile_less_early_game = {
 
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = -70 # reduce while we build up troops for africa etc
+		value = -80 # reduce while we build up troops for africa etc
 	}
 }
 

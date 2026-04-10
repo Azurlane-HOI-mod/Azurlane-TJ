@@ -242,6 +242,10 @@ TIX_unit_production = {
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
+		type = garrison
+		value = 10
+	}
+	ai_strategy = {
 		type = role_ratio	#模板倾向
 		id = infantry
 		value = 50
@@ -292,84 +296,7 @@ TIX_unit_production = {
     }
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = -50
-	}
-}
-
-TIX_template_design = {
-    allowed = {
-		original_tag = TIX
-	}
-	enable = {
-		always = yes
-	}
-	abort = {
-		always = no
-	}
-	
-	ai_strategy = {
-		type = railway_gun_divisions_ratio
-		value = 1
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 10
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = artillery
-		value = 5
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = 1
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = 1
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = -10
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 10
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = modern_armor
-		value = 0
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = heavy_armor
-		value = 0
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = -10
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = mechanized
-		value = 0
+		value = -80
 	}
 }
 
@@ -418,7 +345,7 @@ TIX_unit_production_expect_air = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = fighter
-		value = 150
+		value = 100
 	}
 
 	ai_strategy = {
@@ -987,7 +914,7 @@ TIX_war_YUW = {
 
 		priority = 100
 		ordertype = front
-		execution_type = rush
+		execution_type = balanced
 		execute_order = yes
 	}
 }
@@ -2500,6 +2427,7 @@ TIX_blitz_france = {
 	enable = {
 		date < 1940.9.1
 		HOL = { has_capitulated = yes }
+		BEL = { has_capitulated = yes }
 		is_historical_focus_on = yes
 		YUW = { is_ai = yes }
 	}
@@ -2651,7 +2579,7 @@ TIX_normandy_buffer = {
 		YUW = {
 			has_capitulated = yes
 		}
-		date < 1943.1.1
+		date > 1941.1.1
 	}
 	abort_when_not_enabled = yes
 
@@ -2670,11 +2598,6 @@ TIX_normandy_buffer = {
 		subtract_fronts_from_need = yes
 	}
 
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 10
-	}
 }
 
 TIX_invasion_buffer = {
@@ -2686,7 +2609,7 @@ TIX_invasion_buffer = {
 		YUW = {
 			has_capitulated = yes
 		}
-		date > 1943.1.1
+		date > 1941.1.1
 	}
 	abort_when_not_enabled = yes
 
@@ -2703,11 +2626,6 @@ TIX_invasion_buffer = {
 		area = normandy_landing_zone
 		subtract_invasions_from_need = no
 		subtract_fronts_from_need = yes
-	}
-	ai_strategy = {
-		type = role_ratio
-		id = garrison
-		value = 10
 	}
 }
 

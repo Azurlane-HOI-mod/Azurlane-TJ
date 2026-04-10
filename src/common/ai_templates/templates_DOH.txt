@@ -5,96 +5,28 @@ armor_default = {
 	roles = {
 		armor
 	}
-	match_to_count = 0.55
+
 		upgrade_prio = {
 			base = 0
 			modifier = {
 				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-				num_of_military_factories > 150
+				NOT = {	has_idea = TY_dingzhenai }
 			}
 		}
-	medium_armor = {
-		upgrade_prio = {
-			base = 0
-			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-				num_of_military_factories > 150
-				NOT = { has_idea = TY_fengkuangai }
-	NOT = { has_idea = TY_fengkuangai2 }
-	NOT = { has_idea = TY_fengkuangai3 }
-			}
-		}
-		production_prio = {
-			base = 0
-			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-				num_of_military_factories > 150
-				NOT = { has_idea = TY_fengkuangai }
-	NOT = { has_idea = TY_fengkuangai2 }
-	NOT = { has_idea = TY_fengkuangai3 }
-			}
-		}
-		target_width = 42
-		width_weight = 1
-		column_swap_factor = 1.5
-		reinforce_prio = 1
-		target_template = {
-			weight = 0.9
-			match_value = 9000.0
-			support = {
-				armored_engineer = 1
-				light_tank_recon = 1
-				medium_flame_tank = 1
-				helicopter_transport = 1
-				armored_maintenance = 1
-			}
-			regiments = {
-			    medium_armor = 8
-				medium_tank_destroyer_brigade = 1
-				medium_sp_anti_air_brigade = 1
-				infantry = 10
-			}
-		}
-		allowed_types = {
-			medium_armor
-			infantry
-			armored_engineer
-			light_tank_recon
-			helicopter_transport
-			armored_maintenance
-			medium_flame_tank
-			medium_tank_destroyer_brigade
-			medium_sp_anti_air_brigade
-		}
-	}
+
 	medium_armor_2 = {
 		upgrade_prio = {
 			base = 0
 			modifier = {
 				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-				num_of_military_factories > 150
-				OR = {
-					has_idea = TY_fengkuangai
-				has_idea = TY_fengkuangai2
-				has_idea = TY_fengkuangai3
-				}
+				NOT = {	has_idea = TY_dingzhenai }
 			}
 		}
 		production_prio = {
 			base = 0
 			modifier = {
 				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-				num_of_military_factories > 150
-				OR = {
-					has_idea = TY_fengkuangai
-				has_idea = TY_fengkuangai2
-				has_idea = TY_fengkuangai3
-			    }
+				NOT = {	has_idea = TY_dingzhenai }
 		    }
 			modifier = {
 				add = 100
@@ -104,13 +36,9 @@ armor_default = {
 			    }
 		    }
 	    }
-		target_width = 42
-		width_weight = 1
-		column_swap_factor = 1.5
-		reinforce_prio = 1
+
 		target_template = {
-			weight = 0.9
-			match_value = 9000.0
+
 			support = {
 				armored_engineer = 1
 				light_tank_recon = 1
@@ -119,22 +47,9 @@ armor_default = {
 				helicopter_field_hospital = 1
 			}
 			regiments = {
-			    medium_armor = 8
-				medium_tank_destroyer_brigade = 1
-				medium_sp_anti_air_brigade = 1
+			    medium_armor = 10
 				infantry = 10
 			}
-		}
-		allowed_types = {
-			medium_armor
-			infantry
-			armored_engineer
-			light_tank_recon
-			armored_maintenance
-			helicopter_field_hospital
-			medium_flame_tank
-			medium_tank_destroyer_brigade
-			medium_sp_anti_air_brigade
 		}
 	}
 }

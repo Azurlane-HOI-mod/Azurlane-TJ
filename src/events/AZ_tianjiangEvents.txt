@@ -2193,6 +2193,18 @@ country_event = {
 				autonomy_state = autonomy_reichskommissariat
 			}
 		}
+		if = {
+			limit = {
+				country_exists = POL
+			}
+			annex_country = { target = POL transfer_troops = no }
+		}
+		if = {
+			limit = {
+				country_exists = LIT
+			}
+			annex_country = { target = LIT transfer_troops = no }
+		}
 		news_event = { id = az_tianjiang.74 days = 1}
 		add_named_threat = { threat = -200 name = "光荣和平" }
 		transfer_state = 28

@@ -157,6 +157,11 @@ HUJ_unit_production_at_week = {
 	}
 	
 	ai_strategy = {
+		type = garrison
+		value = 10
+	}
+
+	ai_strategy = {
 		type = role_ratio
 		id = garrison
 		value = 0
@@ -207,6 +212,10 @@ HUJ_unit_production_at_week = {
         type = force_build_armies
         value = 100
     }
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = -80
+	}
 }
 
 HUJ_unit_production_at_strong = {
@@ -216,15 +225,20 @@ HUJ_unit_production_at_strong = {
     
 	enable = {
 		OR = {
-		num_of_military_factories > 150
-		date > 1940.1.1	
-    }
-	NOT = {
-		has_idea = TY_dingzhenai
-	}
+			num_of_military_factories > 150
+			date > 1940.1.1	
+    	}
+		NOT = {
+			has_idea = TY_dingzhenai
+		}
 	}
 	abort_when_not_enabled = yes
 	
+	ai_strategy = {
+		type = garrison
+		value = 20
+	}
+
 	ai_strategy = {
 		type = role_ratio
 		id = garrison
@@ -272,66 +286,9 @@ HUJ_unit_production_at_strong = {
         type = force_build_armies
         value = 100
     }
-}
-
-HUJ_template_design = {
-    allowed = {
-		original_tag = HUJ
-	}
-	  
-	enable = {
-		always = yes			
-	}
-	abort = { 
-		always = no
-	}
-	
 	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 10
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = 0
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = 1
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = 0
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = 10
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = heavy_armor
-		value = 0
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = 0
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = mechanized
-		value = 0
+		type = equipment_stockpile_surplus_ratio
+		value = -80
 	}
 }
 

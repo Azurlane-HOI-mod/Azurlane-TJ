@@ -74,7 +74,7 @@ SGZ_start = {
     }
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
-		value = -50
+		value = -80
 	}
 }
 
@@ -597,12 +597,12 @@ YUW_why_push_into_germany_their_food_is_horrible = {
 		surrender_progress < 0.01 # We haven't lost territories 
 		
 		# Once Germany launches some kind of attack on the low countries, or if they go somewhere dangerous, we can try if we want to
-		GER = { NOT = { has_war_with = BEL } }
-		GER = { NOT = { has_war_with = HOL } }
-		GER = { NOT = { has_war_with = CZE } }
-		GER = { NOT = { has_war_with = AUS } }
-		GER = { NOT = { has_war_with = BFL } }
-		GER = { NOT = { has_war_with = SAD } }
+		TIX = { NOT = { has_war_with = BEL } }
+		TIX = { NOT = { has_war_with = HOL } }
+		TIX = { NOT = { has_war_with = CZE } }
+		TIX = { NOT = { has_war_with = AUS } }
+		TIX = { NOT = { has_war_with = BFL } }
+		TIX = { NOT = { has_war_with = SAD } }
 
 
 		28 = { # Alsace-Lorraine
@@ -610,10 +610,10 @@ YUW_why_push_into_germany_their_food_is_horrible = {
 		}
 
 		42 = { # Moselland
-			is_controlled_by = GER
+			is_controlled_by = TIX
 		}
 		978 = { # Baden
-			is_controlled_by = GER
+			is_controlled_by = TIX
 		}
 	}
 	abort_when_not_enabled = yes
@@ -692,3 +692,4 @@ YUW_benelux_will_surely_not_fall = {
 		subtract_fronts_from_need = yes
 	}
 }
+

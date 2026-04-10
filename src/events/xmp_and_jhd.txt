@@ -112,16 +112,6 @@ country_event = {
 			air_experience = 500
 		}
 		else_if = {
-			limit = { has_idea = TY_fengkuangai2 }
-			swap_ideas = {
-				remove_idea = TY_fengkuangai2
-				add_idea = TY_fengkuangai3
-			}
-			army_experience = 999
-			navy_experience = 999
-			air_experience = 999
-		}
-		else_if = {
 			limit = { has_idea = TY_fengkuangai3 }
 			add_political_power = 2000
 			army_experience = 999
@@ -152,19 +142,6 @@ country_event = {
 	}
 	immediate = {
 		set_country_flag = fengkuangai_shuabing_1
-		if = {
-			limit = { has_idea = TY_fengkuangai }
-			add_ideas = TY_fengkuangai2
-		}
-		else_if = {
-			limit = { has_idea = TY_fengkuangai2 }
-			add_ideas = TY_fengkuangai3
-		}
-		else = {
-			add_to_variable = {
-				zs_sl = 500
-			}
-		}
 		if = {
 			limit = {
 				tag = TIX

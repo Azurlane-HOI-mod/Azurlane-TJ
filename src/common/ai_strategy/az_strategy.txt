@@ -1,28 +1,10 @@
 
-az_ai_jianniangshi = {
-	enable = {
-		OR = {
-			tag = YUW
-		}
-		date > 1938.1.1
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = marines
-		value = 8
-	}
-
-}
 az_ai_highered_armored_production0 = {
+	allowed = {
+		tag = WEX
+	}
 	enable = {
-		AND = {
-			OR = {
-				tag = WEX
-			}
-			num_of_military_factories > 55
-			
-		}
+		num_of_military_factories > 55
 	}
 
 	ai_strategy = {
@@ -37,14 +19,11 @@ az_ai_highered_armored_production0 = {
 	} 
 }
 az_ai_highered_armored_production1 = {
+	allowed = {
+		tag = WEX
+	}
 	enable = {
-		AND = {
-			OR = {
-				tag = WEX
-			}
-			num_of_military_factories > 109
-			
-		}
+		num_of_military_factories > 109
 	}
 
 	ai_strategy = {
@@ -64,14 +43,11 @@ az_ai_highered_armored_production1 = {
 	}
 }
 az_ai_highered_armored_production2 = {
+	allowed = {
+		tag = WEX
+	}
 	enable = {
-		AND = {
-			OR = {
-				tag = WEX
-			}
-			num_of_military_factories > 209
-			
-		}
+		num_of_military_factories > 209
 	}
 
 	ai_strategy = {
@@ -197,4 +173,155 @@ CH4_ally = {
 		id = "TI4"			
 		value = -1000
 	}
+}
+
+az_no_unit_is_wrong = {
+	enable = {
+		shijianniangguojia_trigger = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = template_prio
+		id = garrison
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = artillery
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = modern_armor
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = -50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = -50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = artillery
+		value = -50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = motorized
+		value = -50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = cavalry
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = light_armor
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = modern_armor
+		value = -50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = -50
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized
+		value = -50
+	}
+
+	ai_strategy = {
+    	type = land_xp_spend_priority
+   		id = division_template
+    	value = 100
+	}
+
+	ai_strategy = {
+    	type = pp_spend_amount
+    	id = idea
+    	value = 100
+	}
+
+	ai_strategy = {
+    	type = pp_spend_priority
+    	id = admiral
+		value = -100
+	}
+
+	ai_strategy = {
+    	type = pp_spend_priority
+    	id = relation
+		value = -100
+	}
+
+	ai_strategy = {
+		type = force_concentration_factor
+		value = 100
+	}
+
+}
+
+az_ai_invasion = {
+	enable = {
+		date > 1940.3.1
+		OR = {
+			tag = YUW
+			tag = CHY
+			tag = BYG
+			tag = HUJ
+		}
+	}
+
+	ai_strategy = {
+    	type = naval_invasion_focus
+    	value = 100
+	}
+
 }
