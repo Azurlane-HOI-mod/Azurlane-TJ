@@ -3371,8 +3371,11 @@ focus_tree = {
 			factor = 10
 		}
 		bypass = {
-			PHI = {
-				has_capitulated = yes
+			OR = {
+				PHI = {
+					has_capitulated = yes
+				}
+				not = { country_exists = PHI }
 			}
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }

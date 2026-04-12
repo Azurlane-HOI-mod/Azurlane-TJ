@@ -72,7 +72,6 @@ tianjiang_aizuobi = {
 				BFL = { is_ai = no }
 				BYG = { is_ai = no }
 				HUJ = { is_ai = no }
-				YUW = { is_ai = no }
 				BOW = { is_ai = no }	#方便看海
 			}
 		}
@@ -109,6 +108,12 @@ tianjiang_aizuobi = {
 			is_ai = yes
 			date > 1940.1.2
 			has_global_flag = AZ_fengkuangAI_citiao_ex
+			OR = {
+				BYG = { is_ai = no }
+				HUJ = { is_ai = no }
+				BFL = { is_ai = no }
+				DOH = { is_ai = no }
+			}
 		}
 		ai_will_do = {
 			factor = 10000
@@ -129,6 +134,12 @@ tianjiang_aizuobi = {
 		available = {
 			is_ai = yes
 			has_global_flag = AZ_fengkuangAI_citiao_ex
+			OR = {
+				BYG = { is_ai = no }
+				HUJ = { is_ai = no }
+				BFL = { is_ai = no }
+				DOH = { is_ai = no }
+			}
 		}
 		ai_will_do = {
 			factor = 10000
@@ -246,7 +257,7 @@ tianjiang_aizuobi = {
 			any_enemy_country = {
 				is_ai = no
 			}
-			surrender_progress > 0.65
+			surrender_progress > 0.75
 		}
 		visible = {
 			is_ai = yes
@@ -369,7 +380,7 @@ tianjiang_aizuobi = {
 				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
-			date > 1938.2.1
+			date > 1938.6.1
 			has_global_flag = AZ_fengkuangAI_citiao_7
 		}
 		visible = {
@@ -418,13 +429,40 @@ tianjiang_aizuobi = {
 						logistics_company = { x = 0 y = 4 }
 				    }
 				}
+				division_template = {
+					name = "火星填线师" 			
+					is_locked = yes				
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+					}
+				}
+			for_loop_effect = {
+				start = 0
+				end = 8
+				add = 1
+				capital_scope = {
+					create_unit = {
+						division = "name = \"火星装甲师\" division_template = \"火星装甲师\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
 			for_loop_effect = {
 				start = 0
 				end = 24
 				add = 1
 				capital_scope = {
 					create_unit = {
-						division = "name = \"火星装甲师\" division_template = \"火星装甲师\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"火星填线师\" division_template = \"火星填线师\" start_experience_factor = 0.3 start_equipment_factor = 1"
 						owner = ROOT
 					}
 				}
@@ -439,7 +477,7 @@ tianjiang_aizuobi = {
 				has_idea = TY_fengkuangai3
 			}
 			is_ai = yes
-			date > 1939.2.1
+			date > 1939.6.1
 			is_puppet = no
 			has_global_flag = AZ_fengkuangAI_citiao_7
 		}
@@ -454,11 +492,22 @@ tianjiang_aizuobi = {
 		complete_effect = {
 			for_loop_effect = {
 				start = 0
-				end = 48
+				end = 16
 				add = 1
 				capital_scope = {
 					create_unit = {
 						division = "name = \"火星装甲师\" division_template = \"火星装甲师\" start_experience_factor = 1 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+			for_loop_effect = {
+				start = 0
+				end = 48
+				add = 1
+				capital_scope = {
+					create_unit = {
+						division = "name = \"火星填线师\" division_template = \"火星填线师\" start_experience_factor = 0.3 start_equipment_factor = 1"
 						owner = ROOT
 					}
 				}
