@@ -1771,7 +1771,18 @@ country_event = {
 	desc = CHY_new1_shijian.48.desc
 	picture = GFX_aze_meta_hailunna
 	fire_only_once = yes
-	is_triggered_only = yes
+	trigger = {
+		tag = CHY
+		OR = { 
+			not = { has_global_flag = tianchengzhaohuan } 
+			not = { has_global_flag = tianchengzhaohuan_not } 
+		}
+		has_character = CHY_tiancheng 
+		OR = { 
+			date > 1939.1.1
+			is_ai = yes 
+		}
+	}
 	option = {
 		name = CHY_new1_shijian.48.a
 		    add_to_variable = {

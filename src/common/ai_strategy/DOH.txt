@@ -654,18 +654,18 @@ DOH_hunker_down_now  = {
 	enable = {
 		date < 1942.1.1 #We accept our fate after this point
 		has_war_with = CHY
-		surrender_progress > 0.3
+		OR = {
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			surrender_progress > 0.3
+		}
 	}
 
 	abort = {
 	   OR = {
-		date > 1942.1.1 #We accept our fate after this point
-		CHY = { has_war_with = BFL }
-		CHY = { has_war_with = BYG }
-		CHY = { has_war_with = YUW }
-		CHY = { has_war_with = HUJ }
-		has_global_flag = AZ_fengkuangAI_citiao_10 
-		has_global_flag = AZ_fengkuangAI_citiao_ex 
+			date > 1942.1.1 #We accept our fate after this point
+			CHY = { has_war_with = BFL }
+			CHY = { has_war_with = BYG }
+			CHY = { has_war_with = HUJ }
 		}
 	}
 
@@ -698,6 +698,7 @@ strike_CHY_fengkuangAI = {
 		original_tag = DOH
 	}
 	enable = {
+		CHY = { is_ai = no }
 		has_war_with = CHY
 		OR = {
 			has_global_flag = AZ_fengkuangAI_citiao_10

@@ -2931,12 +2931,12 @@ TIX_heavytank_production = {
 	ai_strategy = {
 		type = role_ratio	#模板倾向
 		id = heavy_armor
-		value = 20
+		value = 500
 	}
 	ai_strategy = {
 		type = template_prio	#训练模板倾向
 		id = heavy_armor
-		value = 20
+		value = 500
 	}
 }
 
@@ -3077,5 +3077,39 @@ TIX_raid_the_atlantic = {
 		type = naval_convoy_raid_region
 		id = 56 #Mid Atlantic
 		value = 100
+	}
+}
+
+TIX_nanmei_no_in_fation = {
+	enable = {
+		OR = {
+			tag = MEX
+			tag = GUA
+			tag = HON
+			tag = ELS
+			tag = NIC
+			tag = CUB
+			tag = HAI
+			tag = DOM
+			tag = COS
+			tag = PAN
+			tag = VEN
+			tag = PRU
+			tag = COL
+			tag = ECU
+			tag = BRA
+			tag = BOL
+			tag = CHL
+			tag = ARG
+			tag = URG
+			tag = PAR
+		}
+		TIX = { has_government = fascism }
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = alliance
+		id = "TIX"			
+		value = -2000
 	}
 }

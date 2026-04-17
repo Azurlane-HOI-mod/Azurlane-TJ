@@ -2528,7 +2528,7 @@ country_event = {
 	desc = az_tianjiang.79.d
 	picture = GFX_aze_sad
 	trigger = {
-		date > 1941.6.1
+		date > 1943.6.1
 		tag = SAD
 		not = { has_country_flag = sad_neizhan_yes }
 		OR = {
@@ -2547,6 +2547,7 @@ country_event = {
 		BYG = {	is_faction_leader = yes }
 		}
 		surrender_progress > 0.4
+		not = { has_country_flag = sad_panluanzhongzhi }
 		not = { has_global_flag = guangrongheping_shishi }
 		not = { has_global_flag = xinzhixu_shishi }
 	}

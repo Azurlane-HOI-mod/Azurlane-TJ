@@ -33,7 +33,7 @@
 HUJ_INF_01 = {
 	name = "步兵部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -52,7 +52,7 @@ HUJ_INF_01 = {
 HUJ_INF_02 = {
 	name = "步兵部队（旅）"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -71,7 +71,7 @@ HUJ_INF_02 = {
 HUJ_INF_03 = { 
 	name = "快速轻装部队" 
 
-	for_countries = { HUJ } 
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 } 
 
 	can_use = { always = yes }
 
@@ -90,7 +90,7 @@ HUJ_INF_03 = {
 HUJ_CAV_01 = {
 	name = "骑兵部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -109,7 +109,7 @@ HUJ_CAV_01 = {
 HUJ_CAV_02 = {
 	name = "骑兵部队（旅）"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -128,7 +128,7 @@ HUJ_CAV_02 = {
 HUJ_MOT_01 = {
 	name = "机动步兵部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -147,7 +147,7 @@ HUJ_MOT_01 = {
 HUJ_MOT_02 = {
 	name = "摩托化步兵师"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -166,7 +166,7 @@ HUJ_MOT_02 = {
 HUJ_MEC_01 = {
 	name = "机械化部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -185,7 +185,7 @@ HUJ_MEC_01 = {
 HUJ_ARM_01 = {
 	name = "装甲部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -204,7 +204,7 @@ HUJ_ARM_01 = {
 HUJ_ARM_02 = {
 	name = "坦克部队（旅）"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -223,7 +223,7 @@ HUJ_ARM_02 = {
 HUJ_ARM_03 = {
 	name = "重型装甲部队（旅）"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -242,7 +242,7 @@ HUJ_ARM_03 = {
 HUJ_PAR_01 = {
 	name = "空降部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -260,7 +260,7 @@ HUJ_PAR_01 = {
 HUJ_PAR_02 = {
 	name = "伞兵部队（团）"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -279,7 +279,7 @@ HUJ_PAR_02 = {
 HUJ_MAR_01 = {
 	name = "皇家海军陆战部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -298,7 +298,7 @@ HUJ_MAR_01 = {
 HUJ_MNT_01 = {
 	name = "山地部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -317,15 +317,12 @@ HUJ_MNT_01 = {
 HUJ_MNT_02 = { 
 	name = "廓尔喀（山地）部队" 
 
-	for_countries = { HUJ RAJ } 
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 RAJ } 
 
 	can_use = {
 		OR = {
-			tag = HUJ
-			AND = {
-				tag = RAJ
-				has_completed_focus = RAJ_indian_gurkhas
-			}
+			tag = HUJ HU1 HU2 HU3 HU4 HU5 HU6
+			tag = RAJ
 		}
 	}
 
@@ -344,7 +341,7 @@ HUJ_MNT_02 = {
 HUJ_GAR_01 = {
 	name = "守备部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes }
 
@@ -363,7 +360,7 @@ HUJ_GAR_01 = {
 HUJ_COL_01 = {
 	name = "非洲殖民地部队"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = {
 		NOT = {
@@ -386,7 +383,7 @@ HUJ_COL_01 = {
 HUJ_AIR_01 = { 
 	name = "防空部队" 
 
-	for_countries = { HUJ } 
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 } 
 
 	can_use = { always = yes } 
 
@@ -406,7 +403,7 @@ HUJ_DEM_01 =
 {
 	name = "皇家陆军部队（旅）"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes } # used to populate spawned divisions in civil war
 
@@ -426,7 +423,7 @@ HUJ_FAS_01 =
 {
 	name = "黑衫军部队（旅）"
 
-	for_countries = { HUJ }
+	for_countries = { HUJ HU1 HU2 HU3 HU4 HU5 HU6 }
 
 	can_use = { always = yes } # used to populate divisions spawned in civil war
 

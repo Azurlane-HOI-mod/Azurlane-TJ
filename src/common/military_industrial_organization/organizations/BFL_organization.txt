@@ -92,13 +92,14 @@ BFL_morozov_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
 			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
 			}
 		}
@@ -111,11 +112,11 @@ BFL_morozov_design_bureau_organization = {
 			maximum_speed = 0.10
 			reliability = 0.05
 			armor_value = 0.05
+			fuel_consumption = -0.10
 			build_cost_ic = -0.10
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			army_fuel_consumption_factor = -0.1
 		}
 	}
 	
@@ -249,13 +250,14 @@ BFL_astrov_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
 			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
 			}
 		}
@@ -266,11 +268,11 @@ BFL_astrov_design_bureau_organization = {
 				maximum_speed = 0.10
 				reliability = 0.05
 				armor_value = 0.05
+				fuel_consumption = -0.10
 				build_cost_ic = -0.10
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			army_fuel_consumption_factor = -0.1
 		}
 	}
 	
@@ -404,13 +406,14 @@ BFL_okmo_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
 			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
 			}
 		}
@@ -421,11 +424,11 @@ BFL_okmo_organization = {
 			maximum_speed = 0.10
 			reliability = 0.05
 			armor_value = 0.05
+			fuel_consumption = -0.10
 			build_cost_ic = -0.10
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			army_fuel_consumption_factor = -0.1
 		}
 	}
 	
@@ -560,17 +563,16 @@ BFL_mytishchy_machine_building_plant_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
-		    FROM = {
 			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
 			}
-		}
 		}
 
 		equipment_bonus = {
@@ -579,11 +581,11 @@ BFL_mytishchy_machine_building_plant_organization = {
 			maximum_speed = 0.10
 			reliability = 0.05
 			armor_value = 0.05
+			fuel_consumption = -0.10
 			build_cost_ic = -0.10
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			army_fuel_consumption_factor = -0.1
 		}
 	}
 	
@@ -722,17 +724,16 @@ BFL_kirov_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = { #Two FROM blocs to provide two different check marks in the UI
-		    FROM = {
 			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
 			}
-		}
 		}
 
 		equipment_bonus = {
@@ -741,11 +742,11 @@ BFL_kirov_organization = {
 					maximum_speed = 0.10
 					reliability = 0.05
 					armor_value = 0.05
+					fuel_consumption = -0.10
 					build_cost_ic = -0.10
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			army_fuel_consumption_factor = -0.1
 		}
 	}
 	
@@ -956,15 +957,16 @@ BFL_nevskoye_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			} 
 		}
 
 		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_battleship mio_cat_eq_all_destroyer }
@@ -977,11 +979,11 @@ BFL_nevskoye_design_bureau_organization = {
 			    lg_attack = 0.15
 				hg_attack = 0.15
 				anti_air_attack = 0.15
+				fuel_consumption = -0.10
 				armor_value = 0.15
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			navy_fuel_consumption_factor = -0.1
 		}
 	}
 
@@ -1164,15 +1166,16 @@ BFL_rubin_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			}
 		}
 
 		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_destroyer ship_hull_submarine mio_cat_eq_all_battleship mio_cat_eq_all_carrier }
@@ -1186,10 +1189,10 @@ BFL_rubin_design_bureau_organization = {
 			lg_attack = 0.15
 			sub_detection = 0.25
 			naval_range = 0.25
+			fuel_consumption = -0.10
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			navy_fuel_consumption_factor = -0.1
 		}
 	}
 
@@ -1430,15 +1433,16 @@ BFL_black_sea_shipyard_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			}
 		}
 
 		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_destroyer ship_hull_submarine }
@@ -1451,10 +1455,10 @@ BFL_black_sea_shipyard_organization = {
 			lg_attack = 0.15
 			naval_speed = 0.1
 			sub_detection = 0.25
+			fuel_consumption = -0.10
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			navy_fuel_consumption_factor = -0.1
 		}
 	}
 
@@ -1690,15 +1694,15 @@ BFL_sevastopol_marine_plant_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			FROM = {
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			}
 		}
 
 		limit_to_equipment_type = { mio_cat_eq_all_cruiser mio_cat_eq_all_destroyer ship_hull_submarine mio_cat_eq_all_battleship mio_cat_eq_all_carrier }
@@ -1709,15 +1713,11 @@ BFL_sevastopol_marine_plant_organization = {
 
 		equipment_bonus = {
 			naval_speed = 0.1
+			fuel_consumption = -0.10
 		}
 
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			navy_fuel_consumption_factor = -0.1
-			naval_accidents_chance = -0.30
-			repair_speed_factor = 0.2
-			refit_ic_cost = -0.2
-			refit_speed = 0.2
 		}
 
 	}
@@ -1850,15 +1850,16 @@ BFL_mig_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			 FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			}
 		}
 
 		production_bonus = {
@@ -1871,11 +1872,11 @@ BFL_mig_design_bureau_organization = {
 			air_attack = 0.1
 			air_defence = 0.1
 			air_range = 0.2
+			fuel_consumption = -0.10
 		}
 
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			air_fuel_consumption_factor = -0.1
 		}
 	}
 
@@ -1993,15 +1994,16 @@ BFL_ilyushin_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			}
 		}
 
 		production_bonus = {
@@ -2014,10 +2016,10 @@ BFL_ilyushin_design_bureau_organization = {
 			air_attack = 0.1
 		    air_defence = 0.1
 			air_range = 0.2
+			fuel_consumption = -0.1
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			air_fuel_consumption_factor = -0.1
 		}
 	}
 
@@ -2134,15 +2136,16 @@ BFL_yakovlev_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			}
 		}
 
 		production_bonus = {
@@ -2157,10 +2160,10 @@ BFL_yakovlev_design_bureau_organization = {
 			air_range = 0.2
 			naval_strike_attack = 0.1
 		    naval_strike_targetting = 0.1
+			fuel_consumption = -0.1
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			air_fuel_consumption_factor = -0.1
 		}
 	}
 
@@ -2300,15 +2303,16 @@ BFL_tupolev_design_bureau_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
-			FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			}
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
 		}
 
 		available = {
-			FROM = { FROM = {
+			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
-			} }
+			}
 		}
 
 		production_bonus = {
@@ -2321,10 +2325,10 @@ BFL_tupolev_design_bureau_organization = {
 			air_bombing = 0.1
 		    air_defence = 0.1
 			air_range = 0.2
+			fuel_consumption = -0.1
 		}
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			air_fuel_consumption_factor = -0.1
 		}
 	}
 
@@ -2787,27 +2791,26 @@ BFL_gaz_organization = {
 		
 		visible = {
 			FROM = { original_tag = BFL }
+			#FROM = {
+			#	has_completed_focus = BFL_junshiqiyeshenji
+			#}
+		}
+
+		available = {
 			FROM = {
+				not = { has_government = communism }
 				has_completed_focus = BFL_junshiqiyeshenji
 			}
 		}
 
-		available = {
-			FROM = { FROM = {
-				has_completed_focus = BFL_junshiqiyeshenji
-			} }
-		}
-
 		organization_modifier = {
 			military_industrial_organization_research_bonus = 0.15
-			navy_fuel_consumption_factor = -0.2
-			army_fuel_consumption_factor = -0.2
-			air_fuel_consumption_factor = -0.2
 		}
 
 		equipment_bonus = {
 			soft_attack = 0.1
 			reliability = 0.1
+			fuel_consumption = -0.2
 			build_cost_ic = -0.2
 	}
 	}

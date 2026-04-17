@@ -2,10 +2,76 @@ on_actions = {
 	on_startup = { 
 		effect = {
 			every_country = {
+				limit = {
+					#is_debug = yes
+					shijianniangguojia_trigger = yes
+				}
+				create_intelligence_agency = yes
+			}
+			every_country = {
 				set_technology = {
 					az_jianniangguo_tech = 1
 					popup = no
 				}
+			}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = az_tianjiang.0	#MOD说明
+				#country_event = az_tianjiang.389
+				activate_mission = AZ_meizhoutiaozhan_jy_time	#每月挑战
+				add_ideas = az_meitanzuobi	#煤炭作弊
+			}
+			CHY = {
+				country_event = CHY_new1_shijian.1
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = AZ_chy_guocexuanze_rule
+						option = AZ_chy_guocexuanze_rule_off
+					}
+				}
+				CHY = { load_focus_tree = chongying_focus } 
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = BYG
+						tag = HUJ
+						tag = TIX
+						tag = SAD
+						tag = BFL
+						tag = YUW
+						tag = DOH
+						tag = CHY
+						tag = BLI
+						tag = SIR
+					}
+					is_ai = yes
+				}
+				add_ideas = az_aimeitanzuobi
+				add_ideas = xingzhenggongzuo
+		        add_political_power = -300
+			}
+			SIR = {
+				country_event = az_tianjiang.324
+			}
+			BLI = {
+				country_event = az_tianjiang.324
+			}
+			CHY = {
+				country_event = az_tianjiang.324
+			}
+			SHO = {
+				country_event = az_tianjiang.357
+			}
+			BOW = {
+				country_event = az_tianjiang.357
+			}
+			HOL = {
+				country_event = az_tianjiang.357
 			}
 		}
 		effect = { 
@@ -58,78 +124,90 @@ on_actions = {
 			}
 			#招魂术
 			TAN = { 
-				#META
-				recruit_character = meta_huangjiafangzhou
-				recruit_character = meta_feilong
-				recruit_character = meta_canglong
-				recruit_character = meta_hailunna
-				recruit_character = meta_feiying
-				recruit_character = meta_fusang
-				recruit_character = meta_genaisennao
-				#指挥官
-				recruit_character = zhg_gudelian
-				recruit_character = zhg_maikease
-				recruit_character = zhg_menggemali
-				recruit_character = zhg_nimici
-				recruit_character = zhg_longmeier
-				recruit_character = zhg_dengnici
-				recruit_character = zhg_dongpingxiangbalang
-				#学院
-				recruit_character = kaqiusha
-				recruit_character = nongna
-				recruit_character = kaiyi
-				recruit_character = xijuandai
-				recruit_character = futian
-				recruit_character = dajiling
-				recruit_character = mali
-				recruit_character = yatian
-				recruit_character = anteng
-				recruit_character = xizhuzhensui
-				recruit_character = meisui
-				#东煌国策
-				recruit_character = DOH_79shi
-				recruit_character = DH1_79shi
-				recruit_character = DOH_97shi
-				recruit_character = DOH_JS9
-				recruit_character = DOH_NZ75
-				recruit_character = DOH_QBU88
-				#recruit_character = DOH_naerxun
-				recruit_character = DOH_xifeng
-				recruit_character = DOH_beifeng
-				recruit_character = DOH_chy_advisor
-				recruit_character = DOH_yingrui_advisor
-				recruit_character = DOH_pinghai_advisor
-				recruit_character = DOH_haerbin_advisor
+					##META
+					recruit_character = meta_huangjiafangzhou
+					recruit_character = meta_feilong
+					recruit_character = meta_canglong
+					recruit_character = meta_hailunna
+					recruit_character = meta_feiying
+					recruit_character = meta_fusang
+					recruit_character = meta_genaisennao
+					#指挥官
+					recruit_character = zhg_gudelian
+					recruit_character = zhg_maikease
+					recruit_character = zhg_menggemali
+					recruit_character = zhg_nimici
+					recruit_character = zhg_longmeier
+					recruit_character = zhg_dengnici
+					recruit_character = zhg_dongpingxiangbalang
+					#学院
+					recruit_character = kaqiusha
+					recruit_character = nongna
+					recruit_character = kaiyi
+					recruit_character = xijuandai
+					recruit_character = futian
+					recruit_character = dajiling
+					recruit_character = mali
+					recruit_character = yatian
+					recruit_character = anteng
+					recruit_character = xizhuzhensui
+					recruit_character = meisui
+					#东煌国策
+					recruit_character = DOH_79shi
+					recruit_character = DH1_79shi
+					recruit_character = DOH_97shi
+					recruit_character = DOH_JS9
+					recruit_character = DOH_NZ75
+					recruit_character = DOH_QBU88
+					#recruit_character = DOH_naerxun
+					recruit_character = DOH_xifeng
+					recruit_character = DOH_beifeng
+					recruit_character = DOH_chy_advisor
+					recruit_character = DOH_yingrui_advisor
+					recruit_character = DOH_pinghai_advisor
+					recruit_character = DOH_haerbin_advisor
 
-				#魔王
-				recruit_character = ailier
-				recruit_character = biexibu
-				recruit_character = dajiaxi
-				recruit_character = xiaojiaxi
-				recruit_character = maou
-				recruit_character = peikela
-				recruit_character = sataniya
-				recruit_character = xieshenjiang
-				#灰烬战线
-				recruit_character = hushi
-				recruit_character = diyumao
-				recruit_character = ju
-				recruit_character = kv
-				#萝莉
-				recruit_character = xiaotiancheng
-				recruit_character = xiaoshengwang
-				recruit_character = xiaoqiye
-				recruit_character = xiaoqibolin
-				recruit_character = xiaokelifulan
-				recruit_character = xiaohailunna
-				recruit_character = xiaoguanghui
-				recruit_character = xiaobirui
-				recruit_character = xiaobeifa
-				recruit_character = xiaoshengdiyage
-				#其他
-				recruit_character = dingzhen
-				#塞壬
-				recruit_character = SIR_guanchazhe
+					#魔王
+					recruit_character = ailier
+					recruit_character = biexibu
+					recruit_character = dajiaxi
+					recruit_character = xiaojiaxi
+					recruit_character = maou
+					recruit_character = peikela
+					recruit_character = sataniya
+					recruit_character = xieshenjiang
+					#灰烬战线
+					recruit_character = hushi
+					recruit_character = diyumao
+					recruit_character = ju
+					recruit_character = kv
+					#萝莉
+					recruit_character = xiaotiancheng
+					recruit_character = xiaoshengwang
+					recruit_character = xiaoqiye
+					recruit_character = xiaoqibolin
+					recruit_character = xiaokelifulan
+					recruit_character = xiaohailunna
+					recruit_character = xiaoguanghui
+					recruit_character = xiaobirui
+					recruit_character = xiaobeifa
+					recruit_character = xiaoshengdiyage
+					#其他
+					recruit_character = dingzhen
+					#塞壬
+					recruit_character = SIR_guanchazhe
+
+					#我也不知道这是啥
+					recruit_character = alpt_hpym
+					recruit_character = alpt_sjyy
+					recruit_character = alpt_build
+					recruit_character = alpt_decade
+					recruit_character = alpt_ln
+					recruit_character = alpt_sd
+					recruit_character = alpt_qybl
+					recruit_character = alpt_yybl
+					recruit_character = alpt_xiaomeiyan
+					recruit_character = alpt_kaluo
 			}
 			#科研经费侧重
 			every_country = {

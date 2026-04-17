@@ -937,31 +937,31 @@ country_event = {
 }
 
 
-country_event = {
-	id = YUW_event.999
-	title = YUW_event.999.t
-	desc = YUW_event.999.d 
-	trigger = {
-	tag = YUW
-	has_country_flag =  YUW_nishibushiainie
-	is_ai = no
-	}
-	fire_only_once = yes
-	option = {
-		name = YUW_event.999.a
-		custom_effect_tooltip = YUW_chengshi
-		add_political_power = -2000
-		add_stability = -0.5
-		add_war_support = -0.5
-		remove_ideas = YUW_fkAIbuff
-		remove_ideas = TY_fengkuangAI
-	}
-	option = {
-		name = YUW_event.999.b
-		custom_effect_tooltip = YUW_shuohuang
-		country_event = YUW_event.998
-	}
-}
+#country_event = {
+#	id = YUW_event.999
+#	title = YUW_event.999.t
+#	desc = YUW_event.999.d 
+#	trigger = {
+#	tag = YUW
+#	has_country_flag =  YUW_nishibushiainie
+#	is_ai = no
+#	}
+#	fire_only_once = yes
+#	option = {
+#		name = YUW_event.999.a
+#		custom_effect_tooltip = YUW_chengshi
+#		add_political_power = -2000
+#		add_stability = -0.5
+#		add_war_support = -0.5
+#		remove_ideas = YUW_fkAIbuff
+#		remove_ideas = TY_fengkuangAI
+#	}
+#	option = {
+#		name = YUW_event.999.b
+#		custom_effect_tooltip = YUW_shuohuang
+#		country_event = YUW_event.998
+#	}
+#}
 
 country_event = {
 	id = YUW_event.998
@@ -983,39 +983,25 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = YUW_event.997
-	title = YUW_event.997.t
-	desc = YUW_event.997.d 
-	is_triggered_only = yes
-	option = {
-		name = YUW_event.997.a
-		set_politics = {
-			ruling_party = 
-		}
-	}
-}
+#country_event = {
+#	id = YUW_event.997
+#	title = YUW_event.997.t
+#	desc = YUW_event.997.d 
+#	is_triggered_only = yes
+#	option = {
+#		name = YUW_event.997.a
+#		set_politics = {
+#			ruling_party = 
+#		}
+#	}
+#}
 
 country_event = {
 	id = YUW_event.12
 	title = "在鸢尾的胜利"
 	desc = "鸢尾国的厌战情绪很重，他们其中一部分人要求与我们议和，是否要成立一个傀儡鸢尾帮我们管理部分土地？同时他们还能提供一批旧鸢尾军队为我们所用，而且我们也不会损失多少占领区工业。"
 	picture = GFX_aze_txbsm
-	fire_only_once = yes
-	trigger = {
-	tag = TIX
-	has_government = fascism
-	has_war_with = YUW
-	YUW = {
-	NOT = {
-	has_government = fascism 
-	}
-	has_idea = YUW_zbbz
-	has_capitulated = yes
-	}
-	is_in_faction_with = SAD
-	controls_state = 16
-	}
+	is_triggered_only = yes
 	option = {
 		name = "成立傀儡维希教廷。"
 		ai_chance = {
@@ -1023,14 +1009,52 @@ country_event = {
 		}
 		hidden_effect = {
 		YUW = { 
-		set_cosmetic_tag = YUW_free #自由法国
-		release = WEX
+			set_cosmetic_tag = YUW_free #自由鸢尾
+			add_state_core = 543
+		}
+		news_event = { hours = 48 id = azspnews.19 }
+		country_event = { id = az_tianjiang.239 days = 5 }
+		WEX = {
+		inherit_technology = YUW
+		transfer_state = 26
+		transfer_state = 21
+		transfer_state = 32
+		transfer_state = 22
+		transfer_state = 31
+		transfer_state = 25
+		transfer_state = 20
+		transfer_state = 33
+		transfer_state = 459
+		transfer_state = 460
+		transfer_state = 513
+		transfer_state = 461
+		transfer_state = 462
+		transfer_state = 514
+		
+		add_state_core = 21
+		add_state_core = 32
+		add_state_core = 22
+		add_state_core = 31
+		add_state_core = 25
+		add_state_core = 20
+		add_state_core = 33
+		add_state_core = 459
+		add_state_core = 460
+		add_state_core = 513
+		add_state_core = 461
+		add_state_core = 462
+		add_state_core = 514
+		
 		}
 		}
-		country_event = { id =YUW_event.13}
+		#country_event = { id =YUW_event.13}
 		TIX = {
 		add_stability = 0.1
-		add_war_support = 0.1
+		set_autonomy = {
+			target = WEX
+			autonomy_state = autonomy_reichskommissariat
+		}
+		give_guarantee = WEX
 		set_state_controller = 806
 		set_state_controller = 19
 		set_state_controller = 23
@@ -1047,6 +1071,7 @@ country_event = {
 		set_state_controller = 29
 		}
 		SAD = {
+		give_guarantee = WEX
 		add_war_support = 0.1
 		set_state_controller = 735
 		set_state_controller = 1

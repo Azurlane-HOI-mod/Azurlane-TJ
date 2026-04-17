@@ -2464,6 +2464,7 @@
 					division_template = {
 						name = "关东边防师"
 						division_names_group = JAP_ARM_01
+						is_locked = yes	
 						regiments = {
 							artillery_brigade = {
 								x = 0
@@ -2549,6 +2550,7 @@
 					division_template = {
 						name = "关东边防师"
 						division_names_group = JAP_ARM_01
+						is_locked = yes	
 						regiments = {
 							artillery_brigade = {
 								x = 0
@@ -2725,6 +2727,23 @@
 					create_unit = {
 						division = "name = \"边防师\" division_template = \"关东边防师\" start_experience_factor = 0.4"
 						owner = ROOT
+					}
+				}
+				if = {
+					limit = {
+						is_ai = yes
+						has_global_flag = modoption_fengkuangai_on
+					}
+					for_loop_effect = {
+						start = 0
+						end = 24
+						add = 1
+						capital_scope = {
+							create_unit = {
+								division = "name = \"边防师\" division_template = \"关东边防师\" start_experience_factor = 0.5 start_equipment_factor = 1"
+								owner = ROOT
+							}
+						}
 					}
 				}
 			}

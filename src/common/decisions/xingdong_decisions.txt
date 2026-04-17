@@ -1445,7 +1445,7 @@ xingdong_category = {
 		available = {
 			if = {
 				limit = { has_government = democratic }
-				has_war_support < 1
+				has_war_support < 0.5
 				OR = {
 					has_war = yes
 					threat > 0.8
@@ -1459,7 +1459,7 @@ xingdong_category = {
 						has_government = neutrality
 					}
 				}
-				has_war_support < 1.5
+				has_war_support < 1
 			}
 		}
 		visible = {

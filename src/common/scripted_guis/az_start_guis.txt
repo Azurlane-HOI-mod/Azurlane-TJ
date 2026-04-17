@@ -611,6 +611,33 @@ scripted_gui = {
 						add_ideas = TY_fengkuangai
 					}
 				}
+				if = {
+					limit = {
+						has_global_flag = modoption_tiantangzhizhan_on
+					}
+					clr_global_flag = modoption_tiantangzhizhan_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = no
+								is_ai = yes
+							}
+						}
+						remove_ideas = TY_yuanbanAI
+					}
+				}
+				else = {
+					set_global_flag = modoption_tiantangzhizhan_on
+					every_country = {
+						limit = {
+							AND = {
+								shijianniangguojia_trigger = no
+								is_ai = yes
+							}
+						}
+						add_ideas = TY_yuanbanAI
+					}
+				}
 			}
 			modoption_button7_on_click = {
 				if = {
@@ -656,33 +683,33 @@ scripted_gui = {
 				}
 			}
 			modoption_button9_on_click = {
-				if = {
-					limit = {
-						has_global_flag = modoption_tiantangzhizhan_on
-					}
-					clr_global_flag = modoption_tiantangzhizhan_on
-					every_country = {
-						limit = {
-							AND = {
-								shijianniangguojia_trigger = no
-								is_ai = yes
-							}
-						}
-						remove_ideas = TY_yuanbanAI
-					}
-				}
-				else = {
-					set_global_flag = modoption_tiantangzhizhan_on
-					every_country = {
-						limit = {
-							AND = {
-								shijianniangguojia_trigger = no
-								is_ai = yes
-							}
-						}
-						add_ideas = TY_yuanbanAI
-					}
-				}
+				#if = {
+				#	limit = {
+				#		has_global_flag = modoption_tiantangzhizhan_on
+				#	}
+				#	clr_global_flag = modoption_tiantangzhizhan_on
+				#	every_country = {
+				#		limit = {
+				#			AND = {
+				#				shijianniangguojia_trigger = no
+				#				is_ai = yes
+				#			}
+				#		}
+				#		remove_ideas = TY_yuanbanAI
+				#	}
+				#}
+				#else = {
+				#	set_global_flag = modoption_tiantangzhizhan_on
+				#	every_country = {
+				#		limit = {
+				#			AND = {
+				#				shijianniangguojia_trigger = no
+				#				is_ai = yes
+				#			}
+				#		}
+				#		add_ideas = TY_yuanbanAI
+				#	}
+				#}
 			}
 		}
 		triggers = {
@@ -744,10 +771,11 @@ scripted_gui = {
 				}
 			}
 			modoption_button9_on_visible = {
-				AND = {
-					NOT = { has_global_flag = az_gamestarted }
-					has_global_flag = MOD_azurlane_tianjiangjianniang
-				}
+				always = no
+				#AND = {
+				#	NOT = { has_global_flag = az_gamestarted }
+				#	has_global_flag = MOD_azurlane_tianjiangjianniang
+				#}
 			}
 			modoption_title6_visible = {
 				has_global_flag = MOD_azurlane_tianjiangjianniang
@@ -768,10 +796,10 @@ scripted_gui = {
 				has_global_flag = MOD_azurlane_tianjiangjianniang
 			}
 			modoption_title9_visible = {
-				has_global_flag = MOD_azurlane_tianjiangjianniang
+				always = no
 			}
 			modoption_text9_visible = {
-				has_global_flag = MOD_azurlane_tianjiangjianniang
+				always = no
 			}
 			modoption_sirennandu_title_visible = {
 				has_global_flag = MOD_azurlane_sairenzhizai

@@ -35,7 +35,7 @@ TIX_Inf_01 =
 {
 	name = "步兵部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -55,7 +55,7 @@ TIX_ALTINF_01 =
 {
 	name = "后期步兵部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -74,7 +74,7 @@ TIX_LTINF_01 =
 {
 	name = "猎兵部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -92,7 +92,7 @@ TIX_MOT_01 =
 {
 	name = "摩托化部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = {
 		OR = {
@@ -117,7 +117,7 @@ TIX_MOT_02 =
 {
 	name = "摩托化部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { has_government = fascism }
 
@@ -135,7 +135,7 @@ TIX_MEC_01 =
 {
 	name = "装甲掷弹兵部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -153,7 +153,7 @@ TIX_Mnt_01 =
 {
 	name = "山地部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -169,7 +169,7 @@ TIX_MAR_01 =
 {
 	name = "海军陆战部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -183,7 +183,7 @@ TIX_PAR_01 =
 {
 	name = "空军伞降部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -199,7 +199,7 @@ TIX_GAR_01 =
 {
 	name = "守备部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -219,7 +219,7 @@ TIX_Arm_01 =
 {
 	name = "装甲部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -235,7 +235,7 @@ TIX_LTARM_01 =
 {
 	name = "轻型装甲部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -253,7 +253,7 @@ TIX_Cav_01 =
 {
 	name = "骑兵部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { always = yes }
 
@@ -270,7 +270,7 @@ TIX_SS_01 =
 {
 	name = "铁血陆军部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
 	can_use = { 
 		has_government = fascism
@@ -288,15 +288,9 @@ TIX_MONINF_01 =
 {
 	name = "帝国步兵部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
-	can_use = { 
-		OR = {
-			has_government = neutrality 
-			has_government = democratic 
-		}
-		has_completed_focus = TIX_oppose_hitler
-	}
+	can_use = { has_government = neutrality }
 
 	division_types = { "infantry" "mechanized" "mountaineers" "paratrooper" "marine" }
 
@@ -310,15 +304,9 @@ TIX_MONMOB_01 =
 {
 	name = "帝国装甲部队"
 
-	for_countries = { TIX }
+	for_countries = { TIX TI1 TI2 TI3 TI4 TI5 }
 
-	can_use = { 
-		OR = {
-			has_government = neutrality 
-			has_government = democratic 
-		}
-		has_completed_focus = TIX_oppose_hitler
-	}
+	can_use = { has_government = neutrality }
 
 	division_types = {  "cavalry" "light_armor" "medium_armor" "heavy_armor" "modern_armor"  }
 
