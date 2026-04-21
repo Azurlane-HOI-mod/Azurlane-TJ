@@ -61,3 +61,4 @@ NDefines.NProduction.ENERGY_SCALING_COST_BY_FACTORY_COUNT = 0.01            -- �
 NDefines.NProduction.BASE_ENERGY_COST = 0.1            -- 单座工厂的基础能耗（原0.25）
 NDefines.NCountry.REINFORCEMENT_MANPOWER_CHUNK = 0.3				-- 人力补员运送的每次输送量，以该编制所需总人力的百分比表示
 NDefines.NCountry.REINFORCEMENT_MANPOWER_DELIVERY_SPEED = 30.0				-- 陆军人力补充送达速度（运输时间）的修正系数
+NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 1.0          --对岸炮击数值上限（原0.33，应狗崽子要求改为1.0）

@@ -184,7 +184,11 @@ TIX_quanlipingheng = {
 AZ_fkAIplayerjiaqiang = {
 	icon = xingdong
 	allowed = {
-		shijianniangguojia_trigger = yes
+		OR = {
+			shijianniangguojia_trigger = yes
+			shisairen_trigger = yes
+			tag = SIR
+		}
 	}
 	priority = 10000
 }

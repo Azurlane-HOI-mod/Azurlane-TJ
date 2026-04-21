@@ -3344,9 +3344,12 @@ ideas = {
 			modifier = {
 				army_attack_factor = 3
 				army_defence_factor = 3
-				army_org_factor = 1
+				army_org_factor = 3
 				army_morale_factor = 1
-				army_strength_factor = 3
+				army_strength_factor = 5
+				production_speed_buildings_factor = 0.3
+				industrial_capacity_factory = 0.5
+				industrial_capacity_dockyard = 0.5
 			} 
 		}
 		
@@ -3358,9 +3361,29 @@ ideas = {
 			modifier = {
 				army_attack_factor = 10
 				army_defence_factor = 10
-				army_org_factor = 3
+				army_org_factor = 5
 				army_morale_factor = 3
-				army_strength_factor = 5
+				army_strength_factor = 10
+				production_speed_buildings_factor = 0.5
+				industrial_capacity_factory = 1
+				industrial_capacity_dockyard = 1
+			} 
+		}
+
+		TY_yuanbanAI3 = { 
+			picture = fengkuangai
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 30
+				army_defence_factor = 30
+				army_org_factor = 10
+				army_morale_factor = 5
+				army_strength_factor = 10
+				production_speed_buildings_factor = 1
+				industrial_capacity_factory = 3
+				industrial_capacity_dockyard = 3
 			} 
 		}
 		
@@ -3641,8 +3664,8 @@ ideas = {
 			}
 			modifier = {
 				army_attack_against_major_factor = -0.3
-				army_breakthrough_against_major_factor = -0.5
-				army_org_factor = -0.5
+				army_breakthrough_against_major_factor = -0.3
+				#army_org_factor = -0.5
 				training_time_army_factor = 0.5
 			} 
 			on_remove = {

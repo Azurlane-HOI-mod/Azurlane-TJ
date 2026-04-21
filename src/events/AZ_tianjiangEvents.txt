@@ -2682,10 +2682,14 @@ country_event = {
 	option = {
 		name = "要求希腊提供永久驻军权"
 		set_autonomy = {
-				target = GRE
-				autonomy_state = autonomy_dominion
-			}
-		trigger = { TAG = HUJ  }
+			target = GRE
+			autonomy_state = autonomy_dominion
+		}
+		trigger = { 
+			tag = HUJ  
+			is_puppet = no
+			has_government = democratic
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -2693,16 +2697,36 @@ country_event = {
 	option = {
 		name = "向南斯拉夫与保加利亚提供庇护"
 		set_autonomy = {
-				target = YUG
-				autonomy_state = autonomy_integrated_puppet
-			}
+			target = YUG
+			autonomy_state = autonomy_integrated_puppet
+		}
 		set_autonomy = {
-				target = BUL
-				autonomy_state = autonomy_integrated_puppet
-			}
+			target = BUL
+			autonomy_state = autonomy_integrated_puppet
+		}
+		set_autonomy = {
+			target = ALB
+			autonomy_state = autonomy_integrated_puppet
+		}
 		trigger = {
-		TAG = BFL  
-		is_puppet = no
+			tag = BFL  
+			is_puppet = no
+			not = { has_global_flag = beilian_bengkui }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = "她们必须臣服！"
+		declare_war_on = { target = YUG type = annex_everything }
+		declare_war_on = { target = BUL type = annex_everything }
+		declare_war_on = { target = ALB type = annex_everything }
+		declare_war_on = { target = GRE type = annex_everything }
+		trigger = { 
+			tag = TIX  
+			is_puppet = no
+			has_government = fascism
 		}
 		ai_chance = {
 			factor = 100
@@ -12936,6 +12960,7 @@ country_event = {
 	desc = "皇家的时间静止已经准备就绪，随时可以发动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -12964,6 +12989,7 @@ country_event = {
 	desc = "铁血的超时空传送仪已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -12992,6 +13018,7 @@ country_event = {
 	desc = "北联的铁幕装置已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13081,6 +13108,7 @@ country_event = {
 	desc = "鸢尾的信仰激发器已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13109,6 +13137,7 @@ country_event = {
 	desc = "鸢尾的心灵支配仪已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13137,6 +13166,7 @@ country_event = {
 	desc = "白鹰的离子加农炮已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13165,6 +13195,7 @@ country_event = {
 	desc = "撒丁的力场护盾已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13193,6 +13224,7 @@ country_event = {
 	desc = "重樱的纳米虫群已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13221,6 +13253,7 @@ country_event = {
 	desc = "东煌的暴风起源已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13389,6 +13422,7 @@ country_event = {
 	desc = "北联的真空内爆弹已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -13417,6 +13451,7 @@ country_event = {
 	desc = "白鹰的天气控制仪已经准备就绪，随时可以启动。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
+	minor_flavor = yes
 	option = {
 		name = "哇嘎哒"
 		ai_chance = {
@@ -15094,10 +15129,12 @@ country_event = {
 		not = { tag = D05 }
 		not = { has_idea = TY_yuanbanAI }
 		not = { has_idea = TY_yuanbanAI2 }
+		not = { has_idea = TY_yuanbanAI3 }
 		any_other_country = {
 			OR = {
 				has_idea = TY_yuanbanAI
 				has_idea = TY_yuanbanAI2
+				has_idea = TY_yuanbanAI3
 			}
 		}
 	}
@@ -15326,13 +15363,39 @@ country_event = {
 		is_ai = yes
 		has_idea = TY_yuanbanAI
 		not = { has_idea = TY_yuanbanAI2 }
-		date > 1939.1.1
+		has_global_flag = AZ_fengkuangAI_citiao_ex
+		date > 1938.1.1
 	}
 	option = {
 		name = "好的"
 		swap_ideas = {
 			remove_idea = TY_yuanbanAI
 			add_idea = TY_yuanbanAI2
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#原版tag升级天堂之战buff2
+country_event = {
+	id = az_tianjiang.464
+	title = "天堂之战buff"
+	desc = "给原版tag升级天堂之战buff。"
+	trigger = {
+		shijianniangguojia_trigger = no
+		is_ai = yes
+		has_idea = TY_yuanbanAI2
+		not = { has_idea = TY_yuanbanAI3 }
+		has_global_flag = AZ_fengkuangAI_citiao_ex
+		date > 1940.1.1
+	}
+	option = {
+		name = "好的"
+		swap_ideas = {
+			remove_idea = TY_yuanbanAI2
+			add_idea = TY_yuanbanAI3
 		}
 		ai_chance = {
 			base = 100
@@ -15409,5 +15472,44 @@ country_event = {
 	option = {
 		name = "11"
 		set_country_flag = SAD_neizhantag_yes
+	}
+}
+
+country_event = {
+	id = az_tianjiang.462
+	title = "守赢计划"
+	desc = "虽然塞壬对碧蓝航线宣战了，但布里为我们带来了好消息：只要白鹰能坚守阵地，布里就会配合南美的抵抗组织打败塞壬。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			activate_mission = az_sirzibao_dutiao_time_tips
+		}
+	}
+	option = {
+		name = "坚持就是胜利！"
+		effect_tooltip = {
+			activate_mission = az_sirzibao_dutiao_time_tips
+		}
+	}
+}
+
+#附庸tag获得额外效果，不再给宗主国提供部队
+country_event = {
+	id = az_tianjiang.463
+	title = "是附庸国家"
+	desc = "是附庸国家"
+	trigger = {
+		is_ai = yes
+		is_subject = yes
+		not = { has_country_flag = az_buzaigeizongzhubudui_tianjia_yes }
+	}
+	option = {
+		name = "好的"
+		set_country_flag = az_buzaigeizongzhubudui_tianjia_yes
+		set_rule = { units_deployed_to_overlord = no }	#宗主国不再接收附庸部队
+		ai_chance = {
+			base = 100
+		}
 	}
 }

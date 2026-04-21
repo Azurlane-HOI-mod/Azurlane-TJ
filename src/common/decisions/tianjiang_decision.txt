@@ -11627,8 +11627,66 @@ AZ_fkAIplayerjiaqiang = {
 			
 		}
 
+	}
+	az_sirzibao_dutiao_time = {
+		priority = 999
+		icon = generic_intelligence_operation
+		is_good = yes
+		activation = {
+			always = no
 		}
-		
+		complete_effect = {
+			
+		}
+		available = {
+			OR = {
+				BYG = { has_capitulated = yes }
+				not = { country_exists = BYG }
+				BYG = { surrender_progress > 0.7 }
+			}
+		}
+		days_mission_timeout = 730
+		timeout_effect = {
+			BLI = { annex_country = { target = SIR transfer_troops = no } }
+			every_state = {
+				limit = {
+					is_core_of = SIR
+				}
+				add_core_of = BLI
+			}
+		}
+	}
+	az_sirzibao_dutiao_time_tips = {
+		name = az_sirzibao_dutiao_time
+		priority = 999
+		icon = generic_intelligence_operation
+		is_good = yes
+		activation = {
+			always = no
+		}
+		complete_effect = {
+			
+		}
+		available = {
+			OR = {
+				BYG = { has_capitulated = yes }
+				not = { country_exists = BYG }
+				BYG = { surrender_progress > 0.7 }
+			}
+		}
+		days_mission_timeout = 730
+		timeout_effect = {
+			effect_tooltip = {
+				BLI = { annex_country = { target = SIR transfer_troops = no } }
+				every_state = {
+					limit = {
+						is_core_of = SIR
+					}
+					add_core_of = BLI
+				}
+			}
+		}
+	}
 	AZ_fkAI_xuanzebuff_time = {
 		priority = 200
 		icon = generic_intelligence_operation
