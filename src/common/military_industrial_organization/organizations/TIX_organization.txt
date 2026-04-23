@@ -3642,3 +3642,448 @@ TIX_auto_union_organization = {
 		}
 	}
 }
+
+TIX_henschel_kassel_organization = {
+	include = generic_train_organization
+	icon = GFX_idea_GER_henschel_civilian
+	allowed = {
+		original_tag = TIX
+	}
+
+	# available = {
+	# 	FROM = {
+	# 		controls_state = 55
+	# 	}
+	# }
+
+	add_trait = {
+		token = TIX_mio_trait_lokomotivfabrik_floridsdorf
+		name = GER_mio_trait_lokomotivfabrik_floridsdorf
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+
+		visible = {
+			FROM = { 
+				original_tag = TIX
+			}
+		}
+
+		limit_to_equipment_type = { train_equipment }
+
+		available = {
+			FROM = {
+				OR = {
+					controls_state = 4
+					any_subject_country = {
+						controls_state = 4
+					}	
+				}
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+}
+
+#German Armor MIO's gained from GER_intergrate_czeh_manufacturers focus
+TIX_CZE_skoda_works_german_organization = {
+	include = generic_tank_refurbishment_plant_organization
+	icon = GFX_idea_CZE_skoda_artillery
+
+	allowed = {
+		original_tag = TIX	
+	}
+
+	available = {
+		FROM = { #state_is_fully_controlled_by_ROOT_or_subject = yes tooltip's FROM and Subject names don't show up in this context. It would of course be a better check to use if not for this
+			OR = {
+				controls_state = 9
+				any_subject_country = {
+					controls_state = 9
+				}	
+			}
+		}
+	}
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_experienced_manufacturer_skoda_works_german
+		name = GER_mio_trait_experienced_manufacturer
+		icon = GFX_generic_mio_trait_icon_reliability
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = { 
+		token = TIX_mio_tiexuezhuangjiagongzao_5
+		name = TIX_mio_tiexuezhuangjiagongzao
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_technology
+		special_trait_background = yes
+
+		position = { x=9 y=1 }  
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = TIX_fazhanzhuangjia
+			}
+		}
+		
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			armor_value = 0.05
+			maximum_speed = 0.05
+			reliability = 0.15
+			breakthrough = 0.05
+		}
+		production_bonus = {
+			#production_cost_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+#CKD under Germany
+TIX_CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization = {
+	include = CZE_tank_destroyer_organization
+	icon = GFX_idea_CZE_ckd #New signage is expensive
+
+	allowed = {
+		original_tag = TIX
+	}
+
+	available = {
+		FROM = { #state_is_fully_controlled_by_ROOT_or_subject = yes tooltip's FROM and Subject names don't show up in this context. It would of course be a better check to use if not for this
+			OR = {
+				controls_state = 9
+				any_subject_country = {
+					controls_state = 9
+				}	
+			}
+		}
+	}
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_panzer_38t_chassis_conversion
+		name = CZE_mio_trait_panzer_38t_chassis_conversion
+		icon = GFX_generic_mio_department_icon_tank_light_tank_conversion
+		special_trait_background = yes
+
+		position = { x=2 y=0 }  
+		
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = {
+			FROM = {
+				has_tech = interwar_antitank
+			}
+		}
+
+		limit_to_equipment_type = { 
+			light_tank_destroyer_chassis
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_conversion_speed_factor = 0.10
+			production_resource_need_factor = -0.05
+		}
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_sturmhaubitze #Same but different
+		name = GER_mio_trait_sturmhaubitze
+		icon = GFX_generic_mio_department_icon_tank_general_at
+		special_trait_background = yes 
+
+		position = { x = 9 y = 1 }
+		
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = {
+			# FROM = { #We already check
+			# 	has_completed_focus = GER_integrate_czech_manufacturers
+			# }
+		}
+
+		all_parents = { CZE_mio_trait_heavy_mobile_siege_cannons }
+
+		limit_to_equipment_type = {	medium_tank_destroyer_chassis heavy_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+			breakthrough = 0.05
+		}
+
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+	add_trait = { 
+		token = TIX_mio_tiexuezhuangjiagongzao_6
+		name = TIX_mio_tiexuezhuangjiagongzao
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_technology
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		available = { #Two FROM blocs to provide two different check marks in the UI
+			FROM = {
+				has_completed_focus = TIX_fazhanzhuangjia
+			}
+		}
+		
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			armor_value = 0.05
+			maximum_speed = 0.05
+			reliability = 0.15
+			breakthrough = 0.05
+		}
+		production_bonus = {
+			#production_cost_factor = 0.1
+		}
+		ai_will_do = {
+			base = 100
+		}
+	}
+
+	override_trait = {
+		token = CZE_mio_trait_low_profile_ambushers_tank_destoryer
+		
+		any_parent = { CZE_mio_trait_mobile_tank_destroyers CZE_mio_trait_panzer_38t_chassis_conversion CZE_mio_trait_medium_tank_hunters_tank_destoryer }
+	}
+
+	override_trait = {
+		token = CZE_mio_trait_light_tank_destroyer_gun_improved_muzzle_breaks
+		
+		any_parent = { CZE_mio_trait_mobile_tank_destroyers CZE_mio_trait_panzer_38t_chassis_conversion }
+	}
+}
+
+#German Air MIO gained from GER_intergrate_czeh_manufacturers focus
+TIX_CZE_avia_german_organization = {
+	name = CZE_avia
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_idea_CZE_avia
+
+	allowed = {
+		original_tag = TIX
+	}
+
+	available = {
+		FROM = {
+			OR = {
+				controls_state = 9
+				any_subject_country = {
+					controls_state = 9
+				}	
+			}
+		}
+	}
+
+	equipment_type = {
+		mio_cat_eq_only_light_fighter
+	}
+
+	research_categories = {	mio_cat_all_light_fighter_and_modules }
+
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_messerschmitt_integration
+		name = CZE_mio_trait_messerschmitt_integration
+		icon = GFX_generic_mio_department_icon_plane_light_line_efficiency
+		special_trait_background = yes
+
+		position = { x=8 y=0 }  
+		
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		organization_modifier = {
+		    military_industrial_organization_research_bonus = 0.05
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = TIX_mio_trait_aerodynamic_research_insitute
+		name = GER_mio_trait_aerodynamic_research_insitute
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }  
+		
+		visible = {
+			FROM = { original_tag = TIX }
+		}
+
+		organization_modifier = {
+		    military_industrial_organization_research_bonus = 0.1
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_walter_co_german
+		name = CZE_mio_trait_walter_co_name
+		icon = GFX_generic_mio_department_icon_plane_general_engine
+		special_trait_background = yes
+
+		position = { x=9 y=1 }
+
+		visible = {
+			FROM = { 
+				original_tag = TIX
+			}
+		}
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			air_agility = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+}
+
+TIX_CZE_ceska_zbrojovka_uhersky_brod_organization = {
+	include = CZE_automatic_weapons_equipment_organization
+	icon = GFX_idea_CZE_ceska_zbrojovka_uhersky_brod
+	allowed = { 
+		tag = TIX
+	}
+
+	available = {
+		FROM = { #state_is_fully_controlled_by_ROOT_or_subject = yes tooltip's FROM and Subject names don't show up in this context. It would of course be a better check to use if not for this
+				OR = {
+					controls_state = 75
+					any_subject_country = {
+						controls_state = 75
+					}	
+				}
+		}
+	}
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_export_models
+		name = GER_mio_trait_export_models
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+			production_cost_factor = -0.03
+		}
+		
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_walter_co
+		name = CZE_mio_trait_walter_co_name
+		icon = GFX_generic_mio_department_icon_plane_general_engine
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+
+
+		limit_to_equipment_type = { mio_cat_eq_only_light_fighter mio_cat_eq_only_strategic_bomber }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			air_agility = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = TIX_CZE_mio_trait_walter_co_german
+		name = CZE_mio_trait_walter_co_name
+		icon = GFX_generic_mio_department_icon_plane_general_engine
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+
+		visible = {
+			FROM = { 
+				original_tag = TIX
+			}
+		}
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			air_agility = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+}

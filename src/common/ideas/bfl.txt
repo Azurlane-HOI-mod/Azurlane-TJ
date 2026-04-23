@@ -1429,14 +1429,18 @@ ideas = {
 		
 		
 
-		stalingrad_tractor_factory = {
+		BFL_stalingrad_tractor_factory = {
+			picture = stalingrad_tractor_factory
+			name = stalingrad_tractor_factory
 		
 			
 			allowed = {
 				original_tag = BFL
 			}
 			
-
+			visible = {
+				NOT = { has_completed_focus = BFL_gongrenfuli }
+			}
 			
 			research_bonus = {
 				industry = 0.15
@@ -1447,15 +1451,44 @@ ideas = {
 			modifier = {
 			}
 		}
+
+		BFL_stalingrad_tractor_factory_improved = { #NSB
+			name = stalingrad_tractor_factory
+
+			picture = stalingrad_tractor_factory
+
+			allowed = {
+				original_tag = BFL
+			}
+
+			visible = {
+				has_completed_focus = BFL_gongrenfuli
+			}
+
+			research_bonus = {
+				industry = 0.2
+			}
+
+			traits = { industrial_concern }
+
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+			
+		}
 		
-		leningrad_polytechnical_institute = {
+		BFL_leningrad_polytechnical_institute = {
+			picture = leningrad_polytechnical_institute
+			name = leningrad_polytechnical_institute
 			
 			
 			allowed = {
 				original_tag = BFL
 			}
 			
-
+			visible = {
+				not = { has_completed_focus = BFL_gongrenfuli }
+			}
 			
 			research_bonus = {
 				electronics = 0.15
@@ -1466,6 +1499,30 @@ ideas = {
 			modifier = {
 			}
 		}
+		BFL_leningrad_polytechnical_institute_improved = {
+			name = leningrad_polytechnical_institute
+
+			picture = leningrad_polytechnical_institute
+
+			allowed = {
+				original_tag = BFL
+			}
+
+			visible = {
+				has_completed_focus = BFL_gongrenfuli
+			}
+
+			research_bonus = {
+				electronics = 0.2
+			}
+
+			traits = { electronics_concern }
+
+			modifier = {
+				supply_consumption_factor = -0.05
+			}
+		}
+
 		BFL_soviet_railways = { 
 
 			picture = SOV_soviet_railways

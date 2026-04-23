@@ -1,4 +1,41 @@
 tianjiang_aizuobi = {
+	ai_yuw_zuobi_xuanzhanmiao = {
+		visible = {
+			tag = YUW
+			is_ai = yes
+			country_exists = TIX
+		}
+		available = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			is_in_faction_with = HUJ
+			has_capitulated = no
+			TIX = { is_ai = no }
+			not = { is_in_faction_with = TIX }
+			TIX = { has_government = fascism }
+			not = { has_war_with = TIX }
+			date > 1940.6.1
+			date < 1941.6.1
+		}
+		ai_will_do = {
+			factor = 10000
+		}
+		fire_only_once = yes
+		complete_effect = {
+			declare_war_on = { target = TIX type = annex_everything }
+			HUJ = {
+				declare_war_on = { target = TIX type = annex_everything }
+			}
+			if = {
+				limit = {
+					is_in_faction_with = BYG
+				}
+				BYG = {
+					declare_war_on = { target = TIX type = annex_everything }
+				}
+			}
+		}
+	}
 	ai_sad_zuobi_mimoudu = {
 		visible = {
 			tag = SAD

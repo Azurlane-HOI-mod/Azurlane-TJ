@@ -535,6 +535,7 @@ country_event = {
 		autonomy_state = autonomy_reichskommissariat
 		}
 		hidden_effect = {
+		country_event = { id = az_tianjiang.465 days = 4 }
 		country_event = { id = az_tianjiang.235 days = 10 }
 		transfer_state = 9
 		transfer_state = 75
@@ -567,6 +568,7 @@ country_event = {
 		add_political_power = 50
 		add_war_support = 0.1
 		hidden_effect = {
+		country_event = { id = az_tianjiang.465 days = 4 }
 		country_event = { id = az_tianjiang.235 days = 10 }
 		transfer_state = 9
 		transfer_state = 75
@@ -597,6 +599,7 @@ country_event = {
 		add_political_power = -50
 		add_war_support = 0.1
 		hidden_effect = {
+		country_event = { id = az_tianjiang.465 days = 4 }
 		country_event = { id = az_tianjiang.235 days = 10 }
 		transfer_state = 9
 		transfer_state = 75
@@ -10864,6 +10867,7 @@ country_event = {
 		autonomy_state = az_autonomy_volkskommissariat
 		}
 		hidden_effect = {
+		country_event = { id = az_tianjiang.465 days = 4 }
 		SLO = {
 		transfer_state = 70
 		transfer_state = 71
@@ -15511,5 +15515,42 @@ country_event = {
 		ai_chance = {
 			base = 100
 		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.465
+	title = "整合捷克制造商"
+	desc = "捷克的制造商十分先进，我们应该将其整合。"
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "这是好事啊"
+		unlock_military_industrial_organization_tooltip = mio:TIX_CZE_skoda_works_german_organization
+		mio:TIX_CZE_skoda_works_german_organization = {
+			add_mio_size = 3
+			add_mio_funds_gain_factor = 0.25
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		unlock_military_industrial_organization_tooltip = mio:TIX_CZE_ceska_zbrojovka_uhersky_brod_organization
+		mio:TIX_CZE_ceska_zbrojovka_uhersky_brod_organization = {
+			add_mio_size = 3
+			add_mio_funds_gain_factor = 0.25
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		unlock_military_industrial_organization_tooltip = mio:TIX_CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization
+		mio:TIX_CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization = {
+			add_mio_size = 3
+			add_mio_funds_gain_factor = 0.25
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		unlock_military_industrial_organization_tooltip = mio:TIX_CZE_avia_german_organization
+			mio:TIX_CZE_avia_german_organization = {
+			add_mio_size = 3
+			add_mio_funds_gain_factor = 0.25
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_timed_idea = { idea = CZE_integrate_czech_manufacturers_GER_idea_aat days = 180 }	
 	}
 }

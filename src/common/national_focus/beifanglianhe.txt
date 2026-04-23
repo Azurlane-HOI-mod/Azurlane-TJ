@@ -433,6 +433,37 @@
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_ideas = BFL_jjdgr
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = BFL_stalingrad_tractor_factory
+					add_idea = BFL_stalingrad_tractor_factory_improved
+				}
+				swap_ideas = {
+					remove_idea = BFL_leningrad_polytechnical_institute
+					add_idea = BFL_leningrad_polytechnical_institute_improved
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = BFL_stalingrad_tractor_factory
+					}
+					swap_ideas = {
+						remove_idea = BFL_stalingrad_tractor_factory
+						add_idea = BFL_stalingrad_tractor_factory_improved
+					}
+				}
+				if = {
+					limit = {
+						has_idea = BFL_leningrad_polytechnical_institute
+					}
+					swap_ideas = {
+						remove_idea = BFL_leningrad_polytechnical_institute
+						add_idea = BFL_leningrad_polytechnical_institute_improved
+					}
+				}
+			}
 		}
 	}
 	focus = {
