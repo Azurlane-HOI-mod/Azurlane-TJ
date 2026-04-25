@@ -3113,3 +3113,239 @@ TIX_nanmei_no_in_fation = {
 		value = -2000
 	}
 }
+
+TIX_start_the_blitz = {
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		HUJ = { is_ai = no }
+		is_historical_focus_on = yes
+		has_war_with = HUJ
+		HUJ = { controls_state = 126 } # Checks that they control London
+		YUW = { has_capitulated = yes }
+		NOT = { has_war_with = SOV }
+		NOT = {
+			focus_progress = {
+				focus = TIX_qifujuxiong
+				progress > 0.01
+			}
+		}
+		date > 1940.1.1
+		date < 1940.9.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 1 #Strategic Region ID - Southern England
+		value = 5000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 18 #Strategic Region ID - English Channel
+		value = -20000 #Too easy to lose planes here
+	}
+}
+
+TIX_stop_blitz = { #prevents TIX air from suicidally continuing the Blitz after they decide to focus east next year, until the USSR is knocked out
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = HUJ
+		BFL = { has_capitulated = no }
+		date > 1940.9.1
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 1 #Strategic Region ID - Southern England
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 2 #Strategic Region ID - Northern England
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 3 #Strategic Region ID - Scotland
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 4 #Strategic Region ID - Ireland
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 18 #Strategic Region ID - English Channel
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 43 #Strategic Region ID - Western Approaches
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
+
+TIX_avoid_air_war_before_fall_gelb = { #prevents TIX air from uselessly beating itself up prior to the invasion of France
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = YUW
+		YUW = { controls_state = 16 } # Checks that they control Paris
+		HOL = { has_capitulated = no }
+		YUW = { is_ai = yes }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 1 #Strategic Region ID - Southern England
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 2 #Strategic Region ID - Northern England
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 3 #Strategic Region ID - Scotland
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 4 #Strategic Region ID - Ireland
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 18 #Strategic Region ID - English Channel
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 43 #Strategic Region ID - Western Approaches
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 42 #Strategic Region ID - Bay of Biscay
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 19 #Strategic Region ID - Northern France
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 208 #Strategic Region ID - Western France
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 20 #Strategic Region ID - Southern France
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
+
+TIX_avoid_early_blitz = { #prevents TIX air from uselessly attacking England while Fall Gelb is still on
+	allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = HUJ
+		YUW = { has_capitulated = no }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 1 #Strategic Region ID - Southern England
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 2 #Strategic Region ID - Northern England
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 3 #Strategic Region ID - Scotland
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 4 #Strategic Region ID - Ireland
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 18 #Strategic Region ID - English Channel
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 43 #Strategic Region ID - Western Approaches
+		value = -20000 #value of stocked main front in active combat is usually around 35,000
+	}
+}
+
+TIX_dont_send_air_to_middle_east = {
+	allowed = { original_tag = TIX }
+	enable = {
+		is_historical_focus_on = yes
+		date > 1940.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 28 # Middle East
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 232 # Levant
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 116 # Iran
+		value = -30000
+	}
+}
+#Pfot ends

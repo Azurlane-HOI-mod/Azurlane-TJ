@@ -1042,3 +1042,77 @@ SAD_other_priorities = {
 		value = -50
 	}
 }
+
+SAD_air_support_north_africa = {
+	allowed = {
+		original_tag = SAD
+	}
+	enable = {
+		is_historical_focus_on = yes
+		has_war_with = HUJ
+		date < 1942.3.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 225 # Tripoli
+		value = 5500
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 128 # Egypt
+		value = 3000
+	}
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 29 # Central Mediterranean Sea
+		value = 2000
+	}
+}
+
+SAD_air_defense_homeland = {
+	allowed = { original_tag = SAD }
+	enable = {
+		has_war_with = HUJ
+		any_owned_state = {
+			is_core_of = SAD
+			is_on_continent = europe
+			NOT = { is_controlled_by = SAD }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 23 # Italy
+		value = 10000
+	}
+}
+
+SAD_dont_send_air_to_middle_east = {
+	allowed = { original_tag = SAD }
+	enable = {
+		is_historical_focus_on = yes
+		date > 1940.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 28 # Middle East
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 232 # Levant
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 116 # Iran
+		value = -30000
+	}
+}
