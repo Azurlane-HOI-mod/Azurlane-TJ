@@ -14364,7 +14364,7 @@ country_event = {
 		tag = SAD
 		is_puppet = no
 		OR = {
-			date > 1940.3.1
+			date > 1941.3.1
 			is_ai = no
 		}
 		not = { has_country_flag = sad_panluanzhongzhi }
@@ -15357,6 +15357,30 @@ country_event = {
 	}
 }
 
+#通用申请邀请阵营事件
+country_event = {
+	id = az_tianjiang.10002
+	title = az_tianjiang.10002.t
+	desc = az_tianjiang.10002.d
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "可以"
+		FROM = {
+			add_to_faction = ROOT
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = "不行"
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
 #原版tag升级天堂之战buff
 country_event = {
 	id = az_tianjiang.458
@@ -15552,5 +15576,243 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		add_timed_idea = { idea = CZE_integrate_czech_manufacturers_GER_idea_aat days = 180 }	
+	}
+}
+
+#舰娘联合国，邀请
+country_event = {
+	id = az_tianjiang.466
+	title = az_tianjiang.466.t
+	desc = az_tianjiang.466.d
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = "伟大的一天！"
+		custom_effect_tooltip = "我国将加入舰娘联合国"
+		custom_effect_tooltip = az_zengjiagongxinli_tips
+		add_to_variable = {
+			var = global.jnlhg_gongxinli
+			value = 1
+		}
+		set_country_flag = jiannianglianheguo_chengyuan_yes
+		add_to_array = { array = global.az_cyg_variable value = ROOT }
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = "她们不过是在浪费时间"
+		set_country_flag = jujuejairu_jnlhg
+		ai_chance = {
+			base = 0
+			modifier = {
+				tag = SIR
+				add = 100
+			}
+			modifier = {
+				has_government = fascism
+				not_shijianniangguojia_trigger = yes
+				add = 100
+			}
+		}
+	}
+}
+
+#舰娘联合国，主要舰娘国
+country_event = {
+	id = az_tianjiang.467
+	title = "选举主要舰娘国"
+	desc = "一些实力较强的舰娘国将被选为舰娘联合国的主要舰娘国，拥有更高的投票权重。"
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = "好的喵"
+		every_country = {
+			limit = {
+				shijianniangguojia_trigger = yes
+				is_major = yes
+				num_of_factories > 74
+			}
+			country_event = az_tianjiang.468
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.468
+	title = "我国被选为主要舰娘国"
+	desc = "我国已经在舰娘联合国中被选为了主要舰娘国，在投票时拥有更高的权重。"
+	picture = GFX_aze_chaijun_nice
+	is_triggered_only = yes
+	option = {
+		name = "好的喵"
+		add_to_array = { array = global.az_zycyg_variable value = ROOT }
+		remove_from_array = { array = global.az_cyg_variable value = ROOT }
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.469
+	title = "我国被逐出舰娘联合国！"
+	desc = az_tianjiang.469.d
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "之后我们再回去报仇喵！"
+		set_country_flag = jujuejairu_jnlhg
+		clr_country_flag = jiannianglianheguo_chengyuan_yes
+		remove_from_array = { array = global.az_zycyg_variable value = ROOT }
+		remove_from_array = { array = global.az_cyg_variable value = ROOT }
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#被撤销主席位置
+country_event = {
+	id = az_tianjiang.470
+	title = "舰娘联合国主席位置被撤销"
+	desc = "我国已不满足领导舰娘联合国的条件，无法再担任主席国职位。"
+	trigger = {
+		has_country_flag = jiannianglianheguo_zhuxi_yes
+		OR = {
+			has_capitulated = yes
+			is_subject = yes
+			not = { has_government = democratic }
+		}
+		
+	}
+	option = {
+		name = "好吧"
+		remove_from_array = { array = global.az_zxg_variable value = ROOT }
+		clr_country_flag = jiannianglianheguo_zhuxi_yes
+		clr_global_flag = jiannianglianheguo_zhuxi_yes_flag
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.471
+	title = "我国被指定为全球公敌！"
+	desc = "我国已正式被舰娘联合国指定为全球公敌，现在全世界都会与我们为敌！"
+	picture = GFX_aze_hit
+	is_triggered_only = yes
+	option = {
+		name = "那就用拳头来说话吧！"
+		add_to_array = { array = global.az_qqgd_variable }
+		set_country_flag = jiannianglianheguo_gongdizhiding_yes
+		#以下为被踢联合国，防止漏掉
+		set_country_flag = jujuejairu_jnlhg
+		clr_country_flag = jiannianglianheguo_chengyuan_yes
+		remove_from_array = { array = global.az_zycyg_variable value = ROOT }
+		remove_from_array = { array = global.az_cyg_variable value = ROOT }
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#被撤销主席位置
+country_event = {
+	id = az_tianjiang.472
+	title = "危机解除"
+	desc = "全球公敌已被击败。"
+	trigger = {
+		has_global_flag = quanqiugongdi_yizhiding
+		any_other_country = {
+			has_country_flag = jiannianglianheguo_gongdizhiding_yes
+			OR = {
+				is_subject = yes
+				has_capitulated = yes
+				exists = no
+			}
+		}
+		
+	}
+	option = {
+		name = "好消息！"
+		clr_global_flag = quanqiugongdi_yizhiding
+		set_variable = {
+			var = global.jnlhg_weiishuzhi
+			value = 0
+		}
+		every_other_country = {
+			limit = {
+				has_country_flag = jiannianglianheguo_gongdizhiding_yes
+			}
+			clr_country_flag = az_jnlhg_zhicaimubiao
+			clr_country_flag = jiannianglianheguo_gongdizhiding_yes
+			remove_from_array = { array = global.az_qqgd_variable value = ?global.az_qqgd_variable^0 }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#退出舰娘联合国
+country_event = {
+	id = az_tianjiang.473
+	title = "退出舰娘联合国"
+	desc = "你确定要退出舰娘联合国吗？一旦退出就无法再次加入了。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "是，我要退出"
+		custom_effect_tooltip = "移除舰娘联合国相关内容"
+		set_country_flag = jujuejairu_jnlhg
+		clr_country_flag = jiannianglianheguo_chengyuan_yes
+		remove_from_array = { array = global.az_zycyg_variable value = ROOT }
+		remove_from_array = { array = global.az_cyg_variable value = ROOT }
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = "我手滑点错了喵"
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#被联合国制裁
+country_event = {
+	id = az_tianjiang.474
+	title = "我国被舰娘联合国制裁！"
+	desc = "舰娘联合国对我国进行了经济制裁，我们现在被多国禁运。"
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "闹麻了喵"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#被联合国谴责
+country_event = {
+	id = az_tianjiang.475
+	title = "舰娘联合国对我国发起了外交谴责"
+	desc = "舰娘联合国谴责了我国近期的扩张行为。"
+	picture = GFX_aze_kan
+	is_triggered_only = yes
+	option = {
+		name = "就这吗喵"
+		add_political_power = -1
+		add_war_support = -0.01
+		ai_chance = {
+			base = 100
+		}
 	}
 }

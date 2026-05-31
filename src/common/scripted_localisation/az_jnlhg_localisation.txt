@@ -1,0 +1,826 @@
+defined_text = {
+	name = jiannianglianheguo_zhuxi
+	text = {
+		trigger = {
+			has_global_flag = jiannianglianheguo_zhuxi_yes_flag
+		}
+		localization_key = "zhuxi_tag_name_1"
+	}
+}
+
+defined_text = {
+	name = jiannianglianheguo_gongdi
+	text = {
+		trigger = {
+			not = { has_global_flag = quanqiugongdi_yizhiding }
+		}
+		localization_key = "暂无"
+	}
+	text = {
+		trigger = {
+			has_global_flag = quanqiugongdi_yizhiding
+		}
+		localization_key = "quanqiugongdi_name_1"
+	}
+}
+
+#defined_text = {
+#	name = jiannianglianheguo_chengyuan
+#	text = {
+#		trigger = {
+#			has_global_flag = jnlhg_yijingjianli_yes
+#		}
+#		localization_key = "chengyuan_tag_name_[?global.az_cyg_variable]"
+#	}
+#}
+
+defined_text = {
+	name = chengyuan_majoytag_name_1
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num > 1
+      		}
+    	}
+    	localization_key = chengyuan_majoytag_name_1
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_zycyg_variable^num < 1
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num < 2
+      		}
+    	}
+   	 	localization_key = chengyuan_majoytag_name_1_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_majoytag_name_2
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num > 2
+      		}
+    	}
+    	localization_key = chengyuan_majoytag_name_2
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_zycyg_variable^num < 2
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num < 3
+      		}
+    	}
+   	 	localization_key = chengyuan_majoytag_name_2_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_majoytag_name_3
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num > 3
+      		}
+    	}
+    	localization_key = chengyuan_majoytag_name_3
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_zycyg_variable^num < 3
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num < 4
+      		}
+    	}
+   	 	localization_key = chengyuan_majoytag_name_3_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_majoytag_name_4
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num > 4
+      		}
+    	}
+    	localization_key = chengyuan_majoytag_name_4
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_zycyg_variable^num < 4
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num < 5
+      		}
+    	}
+   	 	localization_key = chengyuan_majoytag_name_4_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_majoytag_name_5
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num > 5
+      		}
+    	}
+    	localization_key = chengyuan_majoytag_name_5
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_zycyg_variable^num < 5
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_zycyg_variable^num < 6
+      		}
+    	}
+   	 	localization_key = chengyuan_majoytag_name_5_last
+  	}
+}
+
+#############
+defined_text = {
+	name = chengyuan_tag_name_1
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 1
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_1
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 1
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 2
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_1_last
+  	}
+}
+defined_text = {
+	name = chengyuan_tag_name_2
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 2
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_2
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 2
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 3
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_2_last
+  	}
+}
+defined_text = {
+	name = chengyuan_tag_name_3
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 3
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_3
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 3
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 4
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_3_last
+  	}
+}
+defined_text = {
+	name = chengyuan_tag_name_4
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 4
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_4
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 4
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 5
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_4_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_5
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 5
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_5
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 5
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 6
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_5_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_6
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 6
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_6
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 6
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 7
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_6_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_7
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 7
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_7
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 7
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 8
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_7_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_8
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 8
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_8
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 8
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 9
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_8_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_9
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 9
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_9
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 9
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 10
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_9_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_10
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 10
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_10
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 10
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 11
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_10_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_11
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 11
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_11
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 11
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 12
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_11_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_12
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 12
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_12
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 12
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 13
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_12_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_13
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 13
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_13
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 13
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 14
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_13_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_14
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 14
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_14
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 14
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 15
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_14_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_15
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 15
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_15
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 15
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 16
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_15_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_16
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 16
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_16
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 16
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 17
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_16_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_17
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 17
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_17
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 17
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 18
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_17_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_18
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 18
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_18
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 18
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 19
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_18_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_19
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 19
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_19
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 19
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 20
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_19_last
+  	}
+}
+
+defined_text = {
+	name = chengyuan_tag_name_20
+	text = {
+    	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num > 20
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_20
+  	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+       	 		global.az_cyg_variable^num < 20
+      		}
+    	}
+    	localization_key = chengyuan_tag_name_none
+ 	}
+  	text = {
+   	 	trigger = {
+      		check_variable = {
+        		global.az_cyg_variable^num < 21
+      		}
+    	}
+   	 	localization_key = chengyuan_tag_name_20_last
+  	}
+}
+
+defined_text = {
+	name = jiannianglianheguo_gongxinli
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_gongxinli > 94
+			}
+		}
+		localization_key = jiannianglianheguo_gongxinli_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_gongxinli < 95
+			}
+			check_variable = {
+				global.jnlhg_gongxinli > 69
+			}
+		}
+		localization_key = jiannianglianheguo_gongxinli_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_gongxinli < 70
+			}
+			check_variable = {
+				global.jnlhg_gongxinli > 49
+			}
+		}
+		localization_key = jiannianglianheguo_gongxinli_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_gongxinli > 19
+			}
+			check_variable = {
+				global.jnlhg_gongxinli < 50
+			}
+		}
+		localization_key = jiannianglianheguo_gongxinli_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_gongxinli < 20
+			}
+		}
+		localization_key = jiannianglianheguo_gongxinli_0
+	}
+}
+
+defined_text = {
+	name = jiannainglianheguo_gongdi_dengji
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_weiishuzhi < 1
+			}
+		}
+		localization_key = jiannianglianheguo_weijidengji_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_weiishuzhi > 0
+				global.jnlhg_weiishuzhi < 10
+			}
+		}
+		localization_key = jiannianglianheguo_weijidengji_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_weiishuzhi > 9
+			}
+			check_variable = {
+				global.jnlhg_weiishuzhi < 29
+			}
+		}
+		localization_key = jiannianglianheguo_weijidengji_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				global.jnlhg_weiishuzhi > 29
+			}
+		}
+		localization_key = jiannianglianheguo_weijidengji_0
+	}
+}

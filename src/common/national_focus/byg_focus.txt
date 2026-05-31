@@ -3264,6 +3264,16 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+				}
+				custom_effect_tooltip = az_zengjiagongxinli_tips
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = 1
+				}
+			}
 			guojishengyu_up_3 = yes
 			add_political_power = 50
 			give_guarantee = CAN
@@ -3311,6 +3321,16 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+				}
+				custom_effect_tooltip = az_zengjiagongxinli_tips
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = 3
+				}
+			}
 			HUJ = {
 				add_to_faction = BYG
 			}
@@ -3436,6 +3456,16 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+				}
+				custom_effect_tooltip = az_zengjiagongxinli_tips
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = 5
+				}
+			}
 			set_autonomy = {
 				target = BRA
 				autonomy_state = autonomy_dominion
@@ -3523,6 +3553,16 @@ focus_tree = {
 		}
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+				}
+				custom_effect_tooltip = az_zengjiagongxinli_tips
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = 3
+				}
+			}
 			set_autonomy = {
 				target = VEN
 				autonomy_state = autonomy_puppet

@@ -287,25 +287,122 @@ on_actions = {
 				}
 			}
 		}
-	}
-		
-	on_capitulation_immediate = {
 		effect = {
 			if = {
-				limit = { 
-					tag = TIX
-					is_puppet = no
-					has_government = fascism
-					has_global_flag = yaertahuiyi_chenggong
-					not = { has_global_flag = yaertahuiyi_chenggong_shishi }
-					not = { country_exists = WEX }
-					not = { controls_state = 64 }
-					has_war_with = BFL
-					has_war_with = BYG
-					has_war_with = HUJ
-				}	
-				yaertahuiyi_effects = yes
-			} 
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+					is_subject = no
+					not = { has_government = fascism }
+					is_major = no
+				}
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = -1
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+					is_subject = no
+					not = { has_government = fascism }
+					is_major = yes
+				}
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = -5
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+					is_subject = no
+					not = { has_government = fascism }
+					shijianniangguojia_trigger = yes
+				}
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = -15
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = quanqiugongdi_yizhiding
+					is_subject = no
+					not = { has_government = fascism }
+					is_major = no
+					FROM = {
+						has_country_flag = jiannianglianheguo_gongdizhiding_yes
+					}
+				}
+				add_to_variable = {
+					var = global.jnlhg_weiishuzhi
+					value = 3
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = quanqiugongdi_yizhiding
+					is_subject = no
+					not = { has_government = fascism }
+					shijianniangguojia_trigger = yes
+					FROM = {
+						has_country_flag = jiannianglianheguo_gongdizhiding_yes
+					}
+				}
+				add_to_variable = {
+					var = global.jnlhg_weiishuzhi
+					value = 15
+				}
+			}
+		}
+	}
+	on_annex = {
+		effect = {
+			if = {
+				FROM = {
+					limit = {
+						has_global_flag = jnlhg_yijingjianli_yes
+						has_country_flag = jiannianglianheguo_chengyuan_yes
+					}
+					clr_country_flag = jiannianglianheguo_chengyuan_yes
+					remove_from_array = { array = global.az_zycyg_variable value = FROM }
+					remove_from_array = { array = global.az_cyg_variable value = FROM }
+				}
+			}
+			if = {
+				FROM = {
+					limit = {
+						has_global_flag = jnlhg_yijingjianli_yes
+						has_country_flag = jiannianglianheguo_chengyuan_yes
+						is_subject = no
+						not = { has_government = fascism }
+					}
+					add_to_variable = {
+						var = global.jnlhg_gongxinli
+						value = -1
+					}
+				}
+			}
+		}
+		
+	}
+	on_capitulation_immediate = {
+		effect = {
+				if = {
+					limit = { 
+						tag = TIX
+						is_puppet = no
+						has_government = fascism
+						has_global_flag = yaertahuiyi_chenggong
+						not = { has_global_flag = yaertahuiyi_chenggong_shishi }
+						not = { country_exists = WEX }
+						not = { controls_state = 64 }
+						has_war_with = BFL
+						has_war_with = BYG
+						has_war_with = HUJ
+					}	
+					yaertahuiyi_effects = yes
+				}
 		}
 	}
 	on_weekly_TIX = { 
@@ -338,18 +435,18 @@ on_actions = {
 			}
 		}
 	}
-	on_monthly_DOH = { 
-		effect = {
-			if = {
-				limit = { 
-					tag = DOH
-					date < 1937.7.7
-					has_war_with = CHY
-				}
-				set_country_flag = DOH_zaozhan_cjwx
-			}
-		}
-	}
+	#on_monthly_DOH = { 
+	#	effect = {
+	#		if = {
+	#			limit = { 
+	#				tag = DOH
+	#				date < 1937.7.7
+	#				has_war_with = CHY
+	#			}
+	#			set_country_flag = DOH_zaozhan_cjwx
+	#		}
+	#	}
+	#}
 	on_weekly_BYG = { 
 		effect = {
 			if = {

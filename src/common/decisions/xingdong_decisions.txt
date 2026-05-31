@@ -1526,13 +1526,13 @@ xingdong_category = {
 		}
 		available = {
 			has_country_flag = beibishile_tj
-
+			has_added_tension_amount < 30
 		} 
 		days_re_enable = 150
 		days_remove = 90
 		cost = 300
 		ai_will_do = {
-			base = 1
+			base = 0
 		}
 		modifier = {
 			political_power_gain = -1
@@ -1558,6 +1558,92 @@ xingdong_category = {
 			remove_ideas = TJ_guojiqimin
 		}
 	}
+	shengyu_jiannianglianheguo = {
+		priority = 100
+		icon = chaijun
+		visible = {
+			not = { has_global_flag = jnlhg_yijingjianli_yes }
+		}
+		available = {
+			has_war = no
+			has_government = democratic
+			if = {
+				limit = { not = { has_global_flag = az_chiji_flag } }
+				has_added_tension_amount < 10
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = shengyu_20
+						check_variable = {
+							var = guojishengyu_value
+							value = 20
+							compare = greater_than_or_equals
+						}
+					}
+					AND = {
+						is_ai = no
+						date > 1937.1.1
+					}
+				}
+			}
+			not = { has_global_flag = jnlhg_yijingjianli_yes }
+			not = { has_global_flag = az_chiji_flag }
+		}
+		fire_only_once = yes
+		cost = 0
+		complete_effect = {
+			set_global_flag = jnlhg_yijingjianli_yes
+			guojishengyu_up_3 = yes
+			add_named_threat = {
+    			threat = -5
+    			name = "舰娘联合国成立"
+			}
+			set_country_flag = jiannianglianheguo_zhuxi_yes
+			set_global_flag = jiannianglianheguo_zhuxi_yes_flag
+			custom_effect_tooltip = jnlhg_chengweizhuxiguo_yes
+			unlock_decision_category_tooltip = AZ_jiannianglianheguo_jyz
+			set_country_flag = jiannianglianheguo_chengyuan_yes
+			#add_to_array = { array = global.az_zxg_variable }
+			#add_to_array = { array = global.az_cyg_variable }
+			#add_to_array = { array = global.az_qqgd_variable }
+			add_to_array = { array = global.az_zxg_variable value = ROOT }
+			add_to_array = { array = global.az_cyg_variable value = ROOT }
+			every_other_country = {
+				limit = {
+					shijianniangguojia_trigger = yes
+					is_subject = no
+				}
+				country_event = { id = az_tianjiang.466 hours = 2 }
+			}
+			every_other_country = {
+				limit = {
+					not_shijianniangguojia_trigger = yes
+					is_subject = no
+				}
+				country_event = { id = az_tianjiang.466 hours = 6 }
+			}
+			hidden_effect = {
+				news_event = { id = azspnews.39 days = 1}
+				country_event = { id = az_tianjiang.467 days = 2 }
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				date > 1937.2.1
+				tag = HUJ
+				add = 100
+			}
+		}
+	}
 	shengyu_hepingyanjiang = {
 		icon = lansegantan
 		available = {
@@ -1570,22 +1656,36 @@ xingdong_category = {
 		}
 		days_re_enable = 37
 		days_remove = 7
-		cost = 100
+		cost = 50
 		ai_will_do = {
 			base = 0
 		}
 		remove_effect = {
 			guojishengyu_up_1 = yes
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+				}
+				custom_effect_tooltip = az_zengjiagongxinli_tips
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = 1
+				}
+			}
 		}
 	}
 	shengyu_yicaijunchengnuoheping = {
 		icon = manjiu
 		available = {
 			has_war_support > 0.33
+			if = {
+				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+				has_added_tension_amount < 10
+			}
 		}
 		days_re_enable = 60
 		days_remove = 30
-		cost = 50
+		cost = 25
 		ai_will_do = {
 			base = 0
 		}
@@ -1603,11 +1703,11 @@ xingdong_category = {
 				az_caijun_shiyi = -0.005
 			}
 			add_to_variable = {
-				jiechucaijun_cost = 200
+				jiechucaijun_cost = 25
 			}
 			clamp_temp_variable = {
 				var = jiechucaijun_cost
-				max = 1000
+				max = 100
 			}
 			add_war_support = -0.33
 			guojishengyu_up_3 = yes
@@ -1622,7 +1722,6 @@ xingdong_category = {
 	shengyu_jiechucaijun = {
 		icon = manjiu
 		visible = {
-			has_war = yes
 			NOT = {
 				check_variable = {
 					az_caijun_shiyi = 0
@@ -1630,7 +1729,11 @@ xingdong_category = {
 			}
 		}
 		available = {
-			has_war_support > 0.8
+			has_war_support > 0.4
+			OR = {
+				threat > 0.3
+				has_war = yes
+			}
 		}
 		days_remove = 30
 		cost = var:jiechucaijun_cost
@@ -1662,8 +1765,8 @@ xingdong_category = {
 		available = {
 			num_of_civilian_factories_available_for_projects > 9
 		}
-		days_re_enable = 210
-		days_remove = 180
+		#days_re_enable = 210
+		days_remove = 90
 		cost = 25
 		ai_will_do = {
 			base = 0
@@ -1678,10 +1781,14 @@ xingdong_category = {
 	shengyu_jieshounanmin = {
 		icon = xiuxi
 		available = {
-			has_stability > 0.2
+			has_stability > 0.3
 			has_war = no
+			if = {
+				limit = { has_global_flag = MOD_azurlane_tianjiangjianniang }
+				has_added_tension_amount < 20
+			}
 		}
-		days_re_enable = 150
+		days_re_enable = 100
 		days_remove = 30
 		cost = 25
 		ai_will_do = {
@@ -1694,7 +1801,7 @@ xingdong_category = {
 		complete_effect = {
 			add_timed_idea = {
 				idea = TY_jieshounanmin
-				days = 120
+				days = 90
 			}
 		}
 		remove_effect = {
@@ -1743,6 +1850,131 @@ xingdong_category = {
 			add_research_slot = 1
 		}
 	} 
+	shengyu_zhiyishijiezhixu = {
+		icon = hongsegantan
+		available = {
+			has_added_tension_amount > 5
+		}
+		days_re_enable = 37
+		days_remove = 7
+		cost = 25
+		ai_will_do = {
+			base = 0
+		}
+		remove_effect = {
+			guojishengyu_down_1 = yes
+			add_threat = 1
+			if = {
+				limit = {
+					has_global_flag = jnlhg_yijingjianli_yes
+				}
+				custom_effect_tooltip = az_jiangdigongxinli_tips
+				add_to_variable = {
+					var = global.jnlhg_gongxinli
+					value = -1
+				}
+			}
+		}
+	}
+	shengyu_lueduozhanlingqucaifu = {
+		icon = kejixiang
+		available = {
+			not = { has_government = democratic }
+			has_added_tension_amount > 10
+			any_controlled_state = {
+				industrial_complex > 0
+				not = { is_core_of = ROOT }
+			}
+		}
+		days_re_enable = 100
+		days_remove = 90
+		cost = 25
+		ai_will_do = {
+			base = 0
+		}
+		complete_effect = {
+			guojishengyu_down_3 = yes
+		}
+		modifier = {
+			consumer_goods_factor = -0.2
+			production_speed_buildings_factor = 0.1
+			resistance_target = 0.2
+			resistance_activity = 0.35
+		}
+		remove_effect = {
+			custom_effect_tooltip = "拆除占领区的民用工厂"
+			custom_effect_tooltip = wz_shuliang_20000
+			add_to_variable = {
+				var = wz_sl
+				value = 20000
+			}
+			every_state = {
+				limit = {
+					is_controlled_by = ROOT
+					not = { is_core_of = ROOT }
+					industrial_complex > 0
+				}
+				remove_building = {
+   					type = industrial_complex
+    				level = 1
+				}
+			}
+		}
+	}
+	shengyu_jianlimanjiujizhongying = {
+		icon = xiuxi
+		available = {
+			has_government = fascism
+			has_added_tension_amount > 10
+			has_stability > 0.5
+		}
+		days_re_enable = 100
+		days_remove = 90
+		cost = 50
+		ai_will_do = {
+			base = 0
+		}
+		complete_effect = {
+			guojishengyu_down_5 = yes
+			add_stability = -0.2
+		}
+		modifier = {
+			civilian_factory_use = 5
+			resistance_target = -0.2
+			resistance_activity = -0.5
+			weekly_manpower = -5000
+			non_core_manpower = -0.05
+		}
+		remove_effect = {
+			add_manpower = -10000
+			custom_effect_tooltip = wz_shuliang_10000
+			add_to_variable = {
+				var = wz_sl
+				value = 10000
+			}
+			add_to_variable = {
+				shengyu_jizhongying_cishu = 1
+			}
+		}
+	}
+	shengyu_jianlimanjiujizhongying_teshubudui = {
+		icon = xiuxi
+		visible = {
+			check_variable = {
+				shengyu_jizhongying_cishu > 3
+			}
+		}
+		fire_only_once = yes
+		days_remove = 7
+		cost = 25
+		ai_will_do = {
+			base = 0
+		}
+		remove_effect = {
+			guojishengyu_down_1 = yes
+			add_ideas = TY_teshubudui
+		}
+	}
 	xunzhao_mfk = {
 		icon = manjiu
 		available = {
@@ -2305,7 +2537,7 @@ xingdong_category = {
 		}
 		days_remove = 180
 		modifier = {
-			land_mastery_gain_factor = 5
+			land_mastery_gain_factor = 1
 			#mass_assault_mastery_gain_factor = 5
 			#grand_battleplan_mastery_gain_factor = 5
 			#superior_firepower_mastery_gain_factor = 5
@@ -2348,7 +2580,7 @@ xingdong_category = {
 		}
 		days_remove = 180
 		modifier = {
-			air_mastery_gain_factor = 5
+			air_mastery_gain_factor = 3
 		}
 		custom_cost_trigger = {
 			check_variable = {
@@ -2387,7 +2619,7 @@ xingdong_category = {
 		}
 		days_remove = 180
 		modifier = {
-			naval_mastery_gain_factor = 5
+			naval_mastery_gain_factor = 3
 		}
 		custom_cost_trigger = {
 			check_variable = {

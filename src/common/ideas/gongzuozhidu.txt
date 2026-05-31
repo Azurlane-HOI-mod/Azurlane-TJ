@@ -18,10 +18,16 @@ ideas = {
 						}
 					}
 					AND = {
-						has_war_support > 1.5
+						has_war_support > 1
 						has_stability > 1
 					}
 					
+				}
+				custom_trigger_tooltip = {
+					tooltip = shengyu_xiaoyu20
+					check_variable = {
+						guojishengyu_value < -20
+					}
 				}
 			}
 			ai_will_do = {
@@ -65,7 +71,6 @@ ideas = {
 					add = 10
 					OR = {
 						tag = BFL
-						tag = CHY
 						#tag = YUW
 						}
 					OR = {
@@ -74,11 +79,25 @@ ideas = {
 					}
 				}
 				modifier = {
+					OR = {
+						tag = CHY
+						tag = TIX
+					}
+					add = 100
+				}
+				modifier = {
 					add = -10
 					has_stability < 0.75
 				}
 			} 
-			
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = shengyu_xiaoyu10
+					check_variable = {
+						guojishengyu_value < -10
+					}
+				}
+			}
 			modifier = {
 				industrial_capacity_factory = 0.15
 				industrial_capacity_dockyard = 0.15
@@ -113,6 +132,14 @@ ideas = {
 			ai_will_do = {
 				base = 0
 			} 
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = shengyu_10
+					check_variable = {
+						guojishengyu_value > 9
+					}
+				}
+			}
 			
 			modifier = {
 				industrial_capacity_factory = -0.2
@@ -137,7 +164,12 @@ ideas = {
 						amount_research_slots > 5
 						has_completed_focus = DOH_guangronghemengxiangdeyuanzheng
 					}
-				
+					custom_trigger_tooltip = {
+						tooltip = shengyu_20
+						check_variable = {
+							guojishengyu_value > 19
+						}
+					}
 			}
 			ai_will_do = {
 				factor = 0

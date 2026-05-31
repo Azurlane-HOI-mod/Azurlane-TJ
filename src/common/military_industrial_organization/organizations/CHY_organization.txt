@@ -14,16 +14,8 @@ CHY_osaka_army_arsenal_organization = {
 	allowed = {	
 		tag = CHY
 	}
-	available = {
-		FROM = {
-			OR = {
-				original_tag= CHY
-				OR = {
-					is_ally_with = CHY
-					has_country_flag = chy_jungongyuanzhu_flag
-				}
-			}
-		}
+	ai_will_do = {
+		base = 1000
 	}
 	add_trait = {
 		token = gongyejituan
@@ -35,13 +27,7 @@ CHY_osaka_army_arsenal_organization = {
 
 		available = {
 			FROM = { 
-				OR = {
-					has_completed_focus =  CHY_gongyejituan 
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -116,17 +102,6 @@ CHY_sagami_army_arsenal_organization = {
 	allowed = {	
 		tag = CHY
 	}
-	available = {
-		FROM = {
-			OR = {
-				original_tag= CHY
-				OR = {
-					is_ally_with = CHY
-					has_country_flag = chy_jungongyuanzhu_flag
-				}
-			}
-		}
-	}
 
 	add_trait = {
 		token = gongyejituan
@@ -138,13 +113,7 @@ CHY_sagami_army_arsenal_organization = {
 
 		available = {
 			FROM = { 
-				OR = {
-					has_completed_focus =  CHY_gongyejituan 
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -233,17 +202,6 @@ CHY_mitsubishi_heavy_industries_organization = {
 	allowed = {	
 		tag = CHY
 	}
-	available = {
-		FROM = {
-			OR = {
-				original_tag= CHY
-				OR = {
-					is_ally_with = CHY
-					has_country_flag = chy_jungongyuanzhu_flag
-				}
-			}
-		}
-	}
 
 	add_trait = {
 		token = CHY_mio_trait_military_arsenal_trait
@@ -253,6 +211,12 @@ CHY_mitsubishi_heavy_industries_organization = {
 
 		position = { x = 5 y = 0 }  
 		
+		available = {
+			FROM = {
+				has_completed_focus = CHY_jichutanke
+			}
+		}
+
 		production_bonus = {
 			production_capacity_factor = 0.05
 		}
@@ -362,13 +326,7 @@ CHY_mitsubishi_heavy_industries_organization = {
 
 		available = {
 			FROM = { 
-				OR = {
-					has_completed_focus =  CHY_gongyejituan 
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -1720,13 +1678,7 @@ CHY_mitsubishi_organization = {
 
 		available = {
 			FROM = {
-				OR = {
-					has_completed_focus =  CHY_gongyejituan
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -1870,13 +1822,7 @@ CHY_aichi_organization = {
 
 		available = {
 			FROM = {
-				OR = {
-					has_completed_focus =  CHY_gongyejituan
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -1952,13 +1898,7 @@ CHY_nakajima_organization = {
 
 		available = {
 			FROM = {
-				OR = {
-					has_completed_focus =  CHY_gongyejituan
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -2083,13 +2023,7 @@ CHY_yokosuka_organization = {
 
 		available = {
 			FROM = {
-				OR = {
-					has_completed_focus =  CHY_gongyejituan
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -2519,17 +2453,6 @@ CHY_osaka_army_arsenal_artillery_organization = {
 	allowed = {
 		tag = CHY
 	}
-	available = {
-		owner = {
-		OR = {
-			original_tag= CHY
-			OR = {
-				is_ally_with = CHY
-				has_country_flag = chy_jungongyuanzhu_flag
-			}
-		}
-	}
-	}
 	add_trait = {  
 		token = gongyejituan
 		name = gongyejituan
@@ -2540,13 +2463,7 @@ CHY_osaka_army_arsenal_artillery_organization = {
 
 		available = {
 			FROM = {
-				OR = {
-					has_completed_focus =  CHY_gongyejituan
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -2590,17 +2507,7 @@ CHY_nissan_organization = {
 	allowed = {
 		tag = CHY
 	}
-	available = {
-		FROM = {
-			OR = {
-				original_tag= CHY
-				OR = {
-					is_ally_with = CHY
-					has_country_flag = chy_jungongyuanzhu_flag
-				}
-			}
-		}
-	}
+
 	add_trait = {  
 		token = gongyejituan
 		name = gongyejituan
@@ -2611,13 +2518,7 @@ CHY_nissan_organization = {
 
 		available = {
 			FROM = {
-				OR = {
-					has_completed_focus =  CHY_gongyejituan
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -2718,17 +2619,7 @@ CHY_tokyo_automobile_industries_organization = {
 	icon = GFX_idea_JAP_isuzu_mot_1 # Can become GFX_idea_JAP_isuzu_mot_2
 	
 	allowed = {	
-		OR = {
-			AND = {
-				original_tag = CHY
-				has_dlc = "La Resistance"
-			}
-		}
-		has_dlc = "Arms Against Tyranny"
-	}
-	
-	available = {
-		FROM = { original_tag = CHY } 
+		original_tag = CHY
 	}
 
 	add_trait = {
@@ -2758,13 +2649,7 @@ CHY_tokyo_automobile_industries_organization = {
 
 		available = {
 			FROM = {
-				OR = {
-					has_completed_focus =  CHY_gongyejituan
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan 
 			}
 		}
 		
@@ -2791,11 +2676,7 @@ CHY_nagoya_arsenal_organization = {
 	icon = GFX_idea_JAP_nagoya_arsenal
 	
 	allowed = {	
-		OR = {
-			original_tag = CHY 
-			original_tag = MAN
-		}
-		has_dlc = "Arms Against Tyranny"
+		original_tag = CHY 
 	}
 
 	add_trait = {
@@ -2825,13 +2706,7 @@ CHY_nagoya_arsenal_organization = {
 
 		available = {
 			FROM = { 
-				OR = {
-					has_completed_focus =  CHY_gongyejituan 
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -2859,8 +2734,6 @@ CHY_kayaba_industry_organization = {
 	
 	allowed = {	
 		original_tag = CHY 
-		has_dlc = "Gotterdammerung"		
-		has_dlc = "Arms Against Tyranny"
 	}
 
 	add_trait = {
@@ -2890,13 +2763,7 @@ CHY_kayaba_industry_organization = {
 
 		available = {
 			FROM = { 
-				OR = {
-					has_completed_focus =  CHY_gongyejituan 
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
@@ -2926,11 +2793,10 @@ CHY_hitachi_arms_department_organization = {
 	
 	allowed = {	
 		original_tag = CHY
-		has_dlc = "Arms Against Tyranny"
 	}
 	
-	available = {
-		
+	ai_will_do = {
+		base = 0
 	}
 
 	add_trait = {
@@ -2990,13 +2856,7 @@ CHY_hitachi_arms_department_organization = {
 
 		available = {
 			FROM = { 
-				OR = {
-					has_completed_focus =  CHY_gongyejituan 
-					OR = {
-						is_ally_with = CHY
-						has_country_flag = chy_jungongyuanzhu_flag
-					}
-				}
+				has_completed_focus =  CHY_gongyejituan
 			}
 		}
 		
