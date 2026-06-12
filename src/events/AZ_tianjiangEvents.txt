@@ -5617,7 +5617,7 @@ country_event = {
 			base = 1
 			modifier = {
 			is_historical_focus_on = yes
-			factor = 10000
+			factor = 100
 			}
 			modifier = {
 			TIX = { has_completed_focus = TIX_baoshouxuanze }
@@ -7195,7 +7195,7 @@ country_event = {
 			modifier = {
 			has_war = yes
 			date < 1941.1.1
-			factor = 1000
+			factor = 100
 			}
 		}
 	}
@@ -7225,7 +7225,7 @@ country_event = {
 			factor = 100
 			modifier = {
 			date > 1941.1.1
-			factor = 1000
+			factor = 100
 			}
 		}
 	}
@@ -11077,11 +11077,11 @@ country_event = {
 			}
 			modifier = {
 				tag = POL
-				factor = 10000
+				factor = 100
 			}
 			modifier = {
 				tag = DEN
-				factor = 10000
+				factor = 100
 			}
 		}
 	}
@@ -12915,7 +12915,7 @@ country_event = {
 			value = -9999
 		}
 		ai_chance = {
-			factor = 1000
+			factor = 100
 		}
 	}
 }
@@ -14197,7 +14197,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 1000
+			factor = 100
 		}
 	}
 }
@@ -14837,6 +14837,9 @@ country_event = {
 	id = az_tianjiang.444
 	title = "战局不利"
 	desc = "由于还未拿下开罗与马耳他，领袖被质疑能力。"
+	mean_time_to_happen = {
+		days = 15
+	}
 	picture = GFX_aze_sad
 	trigger = {
 		tag = SAD
@@ -15125,6 +15128,9 @@ country_event = {
 	id = az_tianjiang.451
 	title = "天堂之战buff"
 	desc = "给新出现的原版tag加上天堂之战buff。"
+	mean_time_to_happen = {
+		days = 15
+	}
 	trigger = {
 		shijianniangguojia_trigger = no
 		is_ai = yes
@@ -15162,7 +15168,7 @@ country_event = {
 		not = { has_idea = TY_xianzhikongjun } 
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 15
 	}
 	immediate = {
 		add_ideas = TY_xianzhikongjun
@@ -15186,7 +15192,7 @@ country_event = {
 		not = { has_idea = TY_qianghuachuanwu } 
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 15
 	}
 	immediate = {
 		add_ideas = TY_qianghuachuanwu
@@ -15210,7 +15216,7 @@ country_event = {
 		not = { has_idea = TY_chaojishengchan } 
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 15
 	}
 	immediate = {
 		add_ideas = TY_chaojishengchan
@@ -15234,7 +15240,7 @@ country_event = {
 		not = { has_idea = TY_jiasuyanjiu } 
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 15
 	}
 	immediate = {
 		add_ideas = TY_jiasuyanjiu
@@ -15258,7 +15264,7 @@ country_event = {
 		not = { has_idea = TY_gengduoppdian } 
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 15
 	}
 	immediate = {
 		add_ideas = TY_gengduoppdian
@@ -15283,7 +15289,7 @@ country_event = {
 		not = { has_idea = az_chiji_jinzhibaodu } 
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 15
 	}
 	immediate = {
 		add_ideas = az_chiji_jinzhibaodu
@@ -15394,6 +15400,9 @@ country_event = {
 		has_global_flag = AZ_fengkuangAI_citiao_ex
 		date > 1938.1.1
 	}
+	mean_time_to_happen = {
+		days = 15
+	}
 	option = {
 		name = "好的"
 		swap_ideas = {
@@ -15418,6 +15427,9 @@ country_event = {
 		not = { has_idea = TY_yuanbanAI3 }
 		has_global_flag = AZ_fengkuangAI_citiao_ex
 		date > 1940.1.1
+	}
+	mean_time_to_happen = {
+		days = 15
 	}
 	option = {
 		name = "好的"
@@ -15531,6 +15543,9 @@ country_event = {
 		is_ai = yes
 		is_subject = yes
 		not = { has_country_flag = az_buzaigeizongzhubudui_tianjia_yes }
+	}
+	mean_time_to_happen = {
+		days = 15
 	}
 	option = {
 		name = "好的"
@@ -15689,6 +15704,9 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 15
+	}
 	option = {
 		name = "好吧"
 		remove_from_array = { array = global.az_zxg_variable value = ROOT }
@@ -15737,6 +15755,9 @@ country_event = {
 			}
 		}
 		
+	}
+	mean_time_to_happen = {
+		days = 15
 	}
 	option = {
 		name = "好消息！"

@@ -12,5 +12,5 @@ dependencies={
 }
 replace_path="gfx/loadingscreens"
 picture="mod/AzurLaneShipGirls/thumbnail.png"
-supported_version="1.18.*"
+supported_version="1.19.*"
 remote_file_id="2249768662"

@@ -91,7 +91,7 @@ TIX_light_tanks = {
 	}
 	advanced_light_tank_default = { #SARL42
 		priority = {
-			factor = 1000
+			factor = 100
 		}
 		history = yes
 		target_variant = {
@@ -145,7 +145,7 @@ TIX_medium_flame_tank = {
 
 	basic_medium_flame_tank_default = {
 		priority = {
-			factor = 10000
+			factor = 100
 			modifier = { 
 				has_tech = improved_medium_tank_chassis
 				factor = 0 #let's not waste XP here
@@ -183,7 +183,7 @@ TIX_medium_flame_tank = {
 	}
 	improved_medium_flame_tank_default = {
 		priority = {
-			factor = 10000
+			factor = 100
 			modifier = { 
 				NOT = { has_tech = improved_medium_tank_chassis }
 				factor = 0 #let's not waste XP here
@@ -801,7 +801,7 @@ TIX_medium_tank_anti_air = {
 	}
 	medium_tank_anti_air_3 = { #SARL42
 		priority = {
-			factor = 1000
+			factor = 100
 			modifier = { 
 				NOT = { has_tech = advanced_medium_tank_chassis }
 				factor = 0 #let's not waste XP here
