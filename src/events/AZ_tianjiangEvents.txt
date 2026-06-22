@@ -400,7 +400,7 @@ country_event = {
 	}
 	fire_only_once = yes
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	option = {
 		name = "好的"
@@ -1530,7 +1530,7 @@ country_event = {
 				has_war_with = TIX
 				TIX = { is_faction_leader = yes }
 			}
-			TIX = { country_event = az_tianjiang.330  days = 1 }
+			TIX = { country_event = { id = az_tianjiang.330  days = 1 } }
 		}
 		ai_chance = {
 			factor = 100
@@ -2154,14 +2154,14 @@ country_event = {
 				country_exists = LIT
 				LIT = { has_war_with = TIX }
 			}
-			annex_country = LIT
+			annex_country = { target = LIT transfer_troops = no }
 		}
 		if = {
 			limit = {
 				country_exists = POL
 				POL = { has_war_with = TIX }
 			}
-			annex_country = POL
+			annex_country = { target = POL transfer_troops = no }
 		}
 		TIX = {
 		add_ideas = TIX_guangrongheping
@@ -2389,7 +2389,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -2429,7 +2429,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -2469,7 +2469,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -2513,7 +2513,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -5117,7 +5117,7 @@ country_event = {
 	option = {
 		name = "向碧蓝航线提交投降书"
 		custom_effect_tooltip = baiyingqiangdi_tishi
-		BYG = { country_event = az_tianjiang.139 days = 1 }
+		BYG = { country_event = {id = az_tianjiang.139 days = 1 } }
 		ai_chance = {
 			base = 20
 			modifier = {
@@ -5129,7 +5129,7 @@ country_event = {
 	option = {
 		name = "向共产联盟提交投降书"
 		custom_effect_tooltip = beilianqiangdi_tishi
-		BFL = { country_event = az_tianjiang.139 days = 1 }
+		BFL = { country_event = {id = az_tianjiang.139 days = 1 } }
 		ai_chance = {
 			base = 20
 			modifier = {
@@ -5142,7 +5142,7 @@ country_event = {
 	option = {
 		name = "我们决不投降！！！"
 		custom_effect_tooltip = hedanlailuo_tishi
-		BYG = { country_event = az_tianjiang.138 days = 3 }
+		BYG = { country_event = {id = az_tianjiang.138 days = 3 } }
 		ai_chance = {
 			base = 50
 			modifier = {
@@ -5177,7 +5177,7 @@ country_event = {
 	option = {
 		name = "只能接受了吧？"
 		trigger = { TAG = BFL  }
-		CHY = { country_event = az_tianjiang.141 days = 3 }
+		CHY = { country_event = {id = az_tianjiang.141 days = 3 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -5185,7 +5185,7 @@ country_event = {
 	option = {
 		name = "只能接受了吧？"
 		trigger = { TAG = BYG  }
-		CHY = { country_event = az_tianjiang.142 days = 3 }
+		CHY = { country_event = {id = az_tianjiang.142 days = 3 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -5194,7 +5194,7 @@ country_event = {
 		name = "不行，我要全吃！"
 		trigger = { TAG = BYG  }
 		custom_effect_tooltip = "重樱将会向另一阵营提交投降书"
-		CHY = { country_event = az_tianjiang.140 days = 3 }
+		CHY = { country_event = {id = az_tianjiang.140 days = 3 } }
 		set_global_flag = baiying_jujuechytouxiang
 		ai_chance = {
 			factor = 0
@@ -5204,7 +5204,7 @@ country_event = {
 		name = "不行，我要全吃！"
 		trigger = { TAG = BFL  }
 		custom_effect_tooltip = "重樱将会向另一阵营提交投降书"
-		CHY = { country_event = az_tianjiang.140 days = 3 }
+		CHY = { country_event = {id = az_tianjiang.140 days = 3 } }
 		set_global_flag = beilian_jujuechytouxiang
 		ai_chance = {
 			factor = 0
@@ -5221,7 +5221,7 @@ country_event = {
 	option = {
 		name = "那只能找别人试试了"
 		trigger = { has_global_flag = beilian_jujuechytouxiang }
-		BYG = { country_event = az_tianjiang.139 days = 1 }
+		BYG = { country_event = {id = az_tianjiang.139 days = 1 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -5229,7 +5229,7 @@ country_event = {
 	option = {
 		name = "那只能找别人试试了"
 		trigger = { has_global_flag = baiying_jujuechytouxiang }
-		BFL = { country_event = az_tianjiang.139 days = 1 }
+		BFL = { country_event = {id = az_tianjiang.139 days = 1 } }
 		ai_chance = {
 			factor = 100
 		}
@@ -5576,7 +5576,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = "奥地利属于铁血"
-		AUS = { country_event = az_tianjiang.2 days = 2 }
+		AUS = { country_event = { id = az_tianjiang.2 days = 2 } }
 		add_ai_strategy = {
 			type = befriend
 			id = TIX			
@@ -5644,7 +5644,7 @@ country_event = {
 	option = {
 		name = "我们必须阻止铁血继续扩张！"
 		give_guarantee = AUS
-		TIX = { country_event = az_tianjiang.146 days = 3 }
+		TIX = { country_event = { id = az_tianjiang.146 days = 3 } }
 		add_ai_strategy = {
 			type = antagonize
 			id = "TIX"			
@@ -6331,7 +6331,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	picture = GFX_aze_hit
 	option = {
@@ -6389,7 +6389,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	picture = GFX_aze_hit
 	option = {
@@ -6417,7 +6417,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	picture = GFX_report_event_generic_sign_treaty2
 	option = {
@@ -6469,7 +6469,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	picture = GFX_report_event_generic_sign_treaty2
 	option = {
@@ -7047,7 +7047,7 @@ country_event = {
 	date < 1937.1.1
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	option = {
 		name = "不用控制台是看不见这个事件的"
@@ -7365,7 +7365,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -7389,7 +7389,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -7413,7 +7413,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -7437,7 +7437,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -7462,7 +7462,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -7487,7 +7487,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -7512,7 +7512,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -7537,7 +7537,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -9375,7 +9375,7 @@ news_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	immediate = {
@@ -11164,7 +11164,7 @@ country_event = {
 	option = {
 		name = "我军败了！"
 		add_named_threat = { threat = -999 name = "新秩序" }
-		add_political_power - 500
+		add_political_power = -500
 		add_stability = -0.5
 		add_war_support = -1
 		ai_chance = {
@@ -11280,7 +11280,9 @@ country_event = {
 			}
 		}
 		HUJ = {
-			set_capital = 276
+			set_capital = {
+				state = 276
+			}
 			release_on_controlled = SCO
 			release_on_controlled = WLS
 			release_on_controlled = IRE
@@ -11983,7 +11985,12 @@ country_event = {
 				add_state_core = 408
 				add_state_core = 655
 				annex_country = { target = MON transfer_troops = no }
-				add_core_of = MON
+				every_state = {
+					limit = {
+						is_core_of = MON
+					}
+					add_core_of = DOH
+				}
 			 }
 		}
 		if = {
@@ -14329,7 +14336,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	fire_only_once = yes
 	option = {
@@ -14397,7 +14404,7 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	fire_only_once = yes
 	option = {

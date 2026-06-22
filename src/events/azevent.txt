@@ -812,6 +812,9 @@ country_event = {
 			has_country_flag = zhm_yuehanmiao_get
 		}
 	}
+	mean_time_to_happen = {
+		days = 30
+	}
 	option = {
 		name = azevent.35.a
 		add_ideas = TY_mmwh
@@ -831,6 +834,9 @@ country_event = {
 			has_idea = zengjiajunfei
 			has_idea = lujunkuobian
 		}
+	}
+	mean_time_to_happen = {
+		days = 30
 	}
 	option = {
 		name = azevent.36.a
@@ -854,6 +860,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 30
+	}
 	option = {
 		name = azevent.37.a
 		remove_ideas = TY_lujunkuaisufazhan
@@ -873,6 +882,9 @@ country_event = {
 			has_idea = fazhanhaijun
 			has_idea = haijundajian
 		}
+	}
+	mean_time_to_happen = {
+		days = 30
 	}
 	option = {
 		name = azevent.38.a
@@ -896,6 +908,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 30
+	}
 	option = {
 		name = azevent.39.a
 		remove_ideas = TY_haijunkuaisufazhan
@@ -915,6 +930,9 @@ country_event = {
 			has_idea = zengjiajunfei
 			has_idea = keyancezhong_junshi
 		}
+	}
+	mean_time_to_happen = {
+		days = 30
 	}
 	option = {
 		name = azevent.40.a
@@ -938,6 +956,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 30
+	}
 	option = {
 		name = azevent.41.a
 		remove_ideas = TY_sanjunfazhan
@@ -958,6 +979,9 @@ country_event = {
 			has_idea = dalikaifaziyuan
 			has_idea = gongyejianshe
 		}
+	}
+	mean_time_to_happen = {
+		days = 30
 	}
 	option = {
 		name = azevent.42.a
@@ -982,6 +1006,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 30
+	}
 	option = {
 		name = azevent.43.a
 		remove_ideas = TY_zhongshiminsheng
@@ -1002,6 +1029,9 @@ country_event = {
 			has_idea = zengjiajunfei
 			has_idea = keyancezhong_junshi
 		}
+	}
+	mean_time_to_happen = {
+		days = 30
 	}
 	option = {
 		name = azevent.44.a
@@ -1026,6 +1056,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 30
+	}
 	option = {
 		name = azevent.45.a
 		remove_ideas = TY_lujunkeji
@@ -1045,6 +1078,9 @@ country_event = {
 			has_idea = zhongshikeyan
 			has_idea = fazhanhaijun
 		}
+	}
+	mean_time_to_happen = {
+		days = 30
 	}
 	option = {
 		name = azevent.46.a
@@ -1068,6 +1104,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 30
+	}
 	option = {
 		name = azevent.47.a
 		remove_ideas = TY_haijunkeji
@@ -1087,6 +1126,9 @@ country_event = {
 			has_idea = zhongshikeyan
 			has_idea = fazhankongjun
 		}
+	}
+	mean_time_to_happen = {
+		days = 30
 	}
 	option = {
 		name = azevent.48.a
@@ -1110,6 +1152,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 3
+	}
 	option = {
 		name = azevent.49.a
 		remove_ideas = TY_kongjunkeji
@@ -1130,6 +1175,9 @@ country_event = {
 			has_idea = lujunkuobian
 			has_idea = junshicanmou
 		}
+	}
+	mean_time_to_happen = {
+		days = 3
 	}
 	option = {
 		name = azevent.4901.a
@@ -1153,6 +1201,9 @@ country_event = {
 				has_idea = junshicanmou
 			}
 		}
+	}
+	mean_time_to_happen = {
+		days = 3
 	}
 	option = {
 		name = azevent.4902.a
@@ -2248,12 +2299,12 @@ country_event = {
 		
 	}
 	immediate = {
-		every_enemy_country = {
-			limit = {
-				shijianniangguojia_trigger = yes
-			}
-			country_event = { id = azevent.7601 hours = 6 }
-		}
+		# every_enemy_country = {
+			# limit = {
+				# shijianniangguojia_trigger = yes
+			# }
+			# country_event = { id = azevent.7601 hours = 6 }
+		# }
 		if = {
 			limit = { NOT = { has_template = "塞壬紧急防卫队" } }
 			division_template = {
@@ -2771,6 +2822,9 @@ country_event = {
 			chushou_xzmf > 0
 		}
 	}
+	mean_time_to_happen = {
+		days = 3
+	}
 	hidden = yes
 	immediate = {
 		country_event = { id = azevent.7701 days = 30 random_days = 120 }
@@ -3051,8 +3105,8 @@ country_event = {
 	trigger = {
 		check_variable = { wz_sl > 1200000 }
 	}
-	immediate = {
-
+	mean_time_to_happen = {
+		days = 7
 	}
 	option = {
 		name = azevent.10101.a
@@ -3122,6 +3176,9 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 3
+	}
 	immediate = {
 		ROOT = { activate_decision = xunzhao_mfk  }
 	}
@@ -3139,6 +3196,9 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 3
+	}
 	immediate = {
 		ROOT = { activate_decision = kaicai_mfk  }
 	}
@@ -3152,6 +3212,9 @@ country_event = {
 			has_country_flag = kaicaimofangkuang
 		}
 		
+	}
+	mean_time_to_happen = {
+		days = 3
 	}
 	immediate = {
 		ROOT = { activate_decision = zhuru_mfk  }
@@ -3170,6 +3233,9 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 3
+	}
 	immediate = {
 		ROOT = { activate_decision = tansuodui }
 	}
@@ -3187,6 +3253,9 @@ country_event = {
 		}
 		
 	}
+	mean_time_to_happen = {
+		days = 3
+	}
 	immediate = {
 		ROOT = { activate_decision = tansuodui2 }
 	}
@@ -3202,6 +3271,9 @@ country_event = {
 				xzmf_sl > 1
 			}
 		}
+	}
+	mean_time_to_happen = {
+		days = 3
 	}
 	immediate = {
 		ROOT = { activate_decision = mf_mofangjiexi }
@@ -3219,6 +3291,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 3
+	}
 	immediate = {
 		ROOT = { activate_decision = mf_mofangjichuang }
 	}
@@ -3234,6 +3309,9 @@ country_event = {
 				xzmf_sl > 2
 			}
 		}
+	}
+	mean_time_to_happen = {
+		days = 3
 	}
 	immediate = {
 		ROOT = { 

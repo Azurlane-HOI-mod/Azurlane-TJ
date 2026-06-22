@@ -177,11 +177,11 @@ country_event = {
 						tank_nsb_armor_upgrade = 14
 					}
 				}
-				every_military_industrial_organization = {
-					limit = { owner = XGE }
-					add_mio_funds = 300
-					add_mio_size = 10
-				}
+				# every_military_industrial_organization = {
+					# limit = { owner = XGE }
+					# add_mio_funds = 300
+					# add_mio_size = 10
+				# }
 			}
 		}
 	}
@@ -544,8 +544,8 @@ country_event = {
 			ROOT = {
 				if = {
 					limit = {
-						has_character = GER_maiye
-						GER_maiye = {
+						has_character = XGE_maiye
+						XGE_maiye = {
 							NOT = {
 								has_character_flag = has_been_a_governor
 							}
@@ -563,7 +563,7 @@ country_event = {
 							}
 						}
 					}
-					GER_maiye = {
+					XGE_maiye = {
 						set_character_flag = has_been_a_governor
 					}
 				}
@@ -579,9 +579,6 @@ news_event = {
 	title = XGE_News.001.t
 	picture = GFX_event_xier_in_power
 	desc = XGE_News.001.desc
-	trigger = {
-		wants_world_news = yes
-	}
 	is_triggered_only = yes
 	major = yes
 	option = {
@@ -606,9 +603,6 @@ news_event = {
 	title = XGE_News.002.t
 	picture = GFX_new_event_ger_win_civil_war
 	desc = XGE_News.002.desc
-	trigger = {
-		wants_world_news = yes
-	}
 	is_triggered_only = yes
 	major = yes
 	option = {
@@ -633,9 +627,6 @@ news_event = {
 	title = XGE_News.003.t
 	picture = GFX_new_death_of_ger
 	desc = XGE_News.003.desc
-	trigger = {
-		wants_world_news = yes
-	}
 	is_triggered_only = yes
 	major = yes
 	option = {
@@ -660,9 +651,6 @@ news_event = {
 	title = XGE_News.004.t
 	picture = GFX_event_xier_in_power
 	desc = XGE_News.004.desc
-	trigger = {
-		wants_world_news = yes
-	}
 	is_triggered_only = yes
 	major = yes
 	option = {

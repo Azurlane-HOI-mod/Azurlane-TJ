@@ -1,8 +1,8 @@
 focus_tree = {
 	id = yuanwei_focus
-	shared_focus = AL_zhuanyi
-	shared_focus = AL_gujun
-	shared_focus = AL_junshi
+	# shared_focus = AL_zhuanyi
+	# shared_focus = AL_gujun
+	# shared_focus = AL_junshi
 	country = {
 		factor = 0
 		modifier = {
@@ -122,31 +122,22 @@ focus_tree = {
 						limit = {
 							has_global_flag = MOD_azurlane_tianjiangjianniang
 						}
-						capital = 26
-						states = {
-							21
-							32
-							22
-							31
-							25
-							20
-							33
-							735
-							1
-							806
-							19
-							23
+						set_capital = {
+							state = 26
 						}
+						
 					}
 					if = {
 						limit = {
 							has_global_flag = MOD_azurlane_sairenzhizai
 						}
-						capital = 114
+						set_capital = {
+							state = 114
+						}
 					}
 					keep_unit_leaders = {
 						2001
-						6194
+						#6194
 						2006
 						2012
 						2011
@@ -543,7 +534,7 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.1
 			}
-			YUW_hldzf_dengji = 1
+			YUW_hldzf_dengji = yes
 			custom_effect_tooltip = yuw_shuangfangfennujiang
 			add_to_variable = {
 				var = yuw_weixi
@@ -576,7 +567,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.2
 			add_war_support = 0.2
-			YUW_hldzf_dengji = 1
+			YUW_hldzf_dengji = yes
 			custom_effect_tooltip = yuw_shuangfangfennujiang
 			add_to_variable = {
 				var = yuw_weixi
@@ -5771,15 +5762,15 @@ focus_tree = {
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			TY_lujunliluntupo = yes
-			if = {
-				limit = {
-					is_ai = yes
-					has_completed_focus = YUW_dayuanshuaiwlaile
-				}
-				set_technology = {
-					superior_firepower = 1
-				}
-			}
+			# if = {
+				# limit = {
+					# is_ai = yes
+					# has_completed_focus = YUW_dayuanshuaiwlaile
+				# }
+				# set_technology = {
+					# superior_firepower = 1
+				# }
+			# }
 		}
 	}
 	focus = {
@@ -7831,9 +7822,9 @@ focus_tree = {
 					is_ai = yes
 					has_idea = YUW_fkAIbuff
 				}
-				set_technology = {
-					mobile_warfare = 1
-				}
+				# set_technology = {
+					# mobile_warfare = 1
+				# }
 				set_technology = {
 					mechanised_infantry = 1
 				}

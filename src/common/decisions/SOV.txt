@@ -236,7 +236,7 @@ SOV_paranoia_system = {
 
 		remove_effect = {
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
+			#set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 
 			SOV_pick_regular_purge_administration_type_effect = yes
 			SOV_paranoia_low_decrease_effect = yes
@@ -297,7 +297,7 @@ SOV_paranoia_system = {
 
 		remove_effect = {
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
+			#set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 
 			SOV_pick_regular_purge_army_type_effect = yes
 			SOV_paranoia_medium_decrease_effect = yes
@@ -362,7 +362,7 @@ SOV_paranoia_system = {
 
 		remove_effect = {
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
+			#set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 
 			SOV_pick_regular_purge_navy_type_effect = yes
 			SOV_paranoia_low_decrease_effect = yes
@@ -421,7 +421,7 @@ SOV_paranoia_system = {
 
 		remove_effect = {
 			clr_country_flag = SOV_paranoia_conducting_inspection_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
+# 			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_decision_flag days = 15 } #Used to prevent random purges from popping up immediately after this is completed
 
 			SOV_pick_regular_purge_airforce_type_effect = yes
 			SOV_paranoia_low_decrease_effect = yes
@@ -2220,7 +2220,7 @@ SOV_propaganda_campaigns = {
 							amount > 0
 						}
 					}
-					capital_scope = { add_to_variable = { SOV_steel_bonus = 1 } }
+					#capital_scope = { add_to_variable = { SOV_steel_bonus = 1 } }
 				}
 
 				every_controlled_state = {
@@ -2230,7 +2230,7 @@ SOV_propaganda_campaigns = {
 							amount > 0
 						}
 					}
-					capital_scope = { add_to_variable = { SOV_aluminium_bonus = 1 } }
+					#capital_scope = { add_to_variable = { SOV_aluminium_bonus = 1 } }
 				}
 
 				every_controlled_state = {
@@ -2240,7 +2240,7 @@ SOV_propaganda_campaigns = {
 							amount > 0
 						}
 					}
-					capital_scope = { add_to_variable = { SOV_chromium_bonus = 1 } }
+					#capital_scope = { add_to_variable = { SOV_chromium_bonus = 1 } }
 				}
 
 				every_controlled_state = {
@@ -2250,7 +2250,7 @@ SOV_propaganda_campaigns = {
 							amount > 0
 						}
 					}
-					capital_scope = { add_to_variable = { SOV_tungsten_bonus = 1 } }
+					#capital_scope = { add_to_variable = { SOV_tungsten_bonus = 1 } }
 				}
 			}
 
@@ -5341,7 +5341,7 @@ SOV_diplomacy_middle_east_decision_category = {
 							is_controlled_by = HUJ
 							HUJ = {
 								any_allied_country = {
-									controls_state = PREV
+									#controls_state = PREV
 								}
 							}
 						}
@@ -13070,7 +13070,7 @@ SOV_soviet_civil_war_dec_cat = {
 			408 = { CONTROLLER = { original_tag = BFL } }
 			custom_trigger_tooltip = {
 				tooltip = SOV_not_has_conflict_with_japan
-				NOT = { CHY = { has_decision = CHY_test_the_soviets } }
+				#NOT = { CHY = { has_decision = CHY_test_the_soviets } }
 				NOT = { has_border_war_with = CHY }
 				NOT = { has_war_with = CHY }
 			}
@@ -13156,7 +13156,7 @@ SOV_soviet_civil_war_dec_cat = {
 			655 = { CONTROLLER = { original_tag = BFL } }
 			custom_trigger_tooltip = {
 				tooltip = SOV_not_has_conflict_with_japan
-				NOT = { CHY = { has_decision = CHY_test_the_soviets } }
+				#NOT = { CHY = { has_decision = CHY_test_the_soviets } }
 				NOT = { has_border_war_with = CHY }
 				NOT = { has_war_with = CHY }
 			}
@@ -14109,7 +14109,7 @@ SOV_soviet_civil_war_dec_cat = {
 		visible = {
 			SOV_display_civil_war_start_state = yes
 			566 = { is_owned_by = ROOT }
-			has_game_rule = { rule = sov_fragmentation_status option = SOV_UTTERLY_YUWGMENTED }
+			#has_game_rule = { rule = sov_fragmentation_status option = SOV_UTTERLY_YUWGMENTED }
 		}
 
 		cost = 10
@@ -15450,7 +15450,7 @@ SOV_soviet_civil_war_dec_cat = {
 		timeout_effect = {
 
 			custom_effect_tooltip = SOV_the_zinovyevite_terrorist_center_mission_tt
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
+			#set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_first_moscow_trial_flag #Used to unlock the next purge focus
 			SOV_paranoia_high_increase_effect = yes
 
@@ -15578,7 +15578,7 @@ SOV_soviet_civil_war_dec_cat = {
 		cancel_if_not_visible = yes
 
 		timeout_effect = {
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
+			#set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_second_moscow_trial_flag #Used to unlock the next purge focus
 			SOV_paranoia_high_increase_effect = yes
 			#HISTORICAL
@@ -15749,7 +15749,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 			SOV_decrease_all_opposition_army = yes
 			set_country_flag = SOV_the_military_conspiracy_completed_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
+			#set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_trial_of_the_generals_flag #Used to unlock the next purge focus
 			SOV_paranoia_high_increase_effect = yes
 
@@ -15942,7 +15942,7 @@ SOV_soviet_civil_war_dec_cat = {
 
 		timeout_effect = {
 			set_country_flag = SOV_the_bloc_of_rights_and_trotskyites_completed_flag
-			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
+			#set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_third_moscow_trial_flag #Used to unlock the next purge focus
 			#HISTORICAL
 			#Bukharin
@@ -16297,7 +16297,7 @@ operations = {
 		}
 
 		available = {
-			CHY = { has_completed_focus = CHY_pre_emptive_coup }
+			#CHY = { has_completed_focus = CHY_pre_emptive_coup }
 			MAN = { is_puppet = no }
 			NOT = {
 				has_war_with = MAN
@@ -16307,7 +16307,7 @@ operations = {
 		cost = 25
 		fire_only_once = yes
 		visible = {
-			CHY = { has_completed_focus = CHY_strengthen_civilian_government }
+			#CHY = { has_completed_focus = CHY_strengthen_civilian_government }
 			MAN = { exists = yes }
 		}
 
@@ -16366,7 +16366,7 @@ political_actions = {
 		cost = 0
 		fire_only_once = yes
 		visible = {
-			CHY = { has_completed_focus = CHY_strengthen_civilian_government }
+			#CHY = { has_completed_focus = CHY_strengthen_civilian_government }
 			PRC = { exists = yes }
 		}
 

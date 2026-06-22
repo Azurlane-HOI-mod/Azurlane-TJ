@@ -38,10 +38,10 @@
                     division_template = "汽车师团"
                     disband = yes 
 				}
-				delete_units ={
-                    division_template = "重樱驻军"
-                    disband = yes 
-				}
+				# delete_units ={
+                    # division_template = "重樱驻军"
+                    # disband = yes 
+				# }
 				delete_units ={
                     division_template = "骑兵师1型"
                     disband = yes 
@@ -1835,25 +1835,31 @@
 		continue_if_invalid = no
 		available_if_capitulated = no
 		completion_reward = {
-			if = {
-				limit = {
-					has_tech = formation_flying
-				}
-				add_doctrine_cost_reduction = {
-					name = "支援学说"
-					cost_reduction = 0.75
-					uses = 4
-					category = cat_battlefield_support
-				}
+			add_doctrine_cost_reduction = {
+				name = "空军学说"
+				cost_reduction = 0.5
+				uses = 4
+				category = air_doctrine
 			}
-			else = {
-				add_doctrine_cost_reduction = {
-					name = "空军学说"
-					cost_reduction = 0.5
-					uses = 4
-					category = air_doctrine
-				}
-			}
+			# if = {
+				# limit = {
+					# has_tech = formation_flying
+				# }
+				# add_doctrine_cost_reduction = {
+					# name = "支援学说"
+					# cost_reduction = 0.75
+					# uses = 4
+					# category = cat_battlefield_support
+				# }
+			# }
+			# else = {
+				# add_doctrine_cost_reduction = {
+					# name = "空军学说"
+					# cost_reduction = 0.5
+					# uses = 4
+					# category = air_doctrine
+				# }
+			# }
 		}
 	}
 	focus = {
