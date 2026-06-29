@@ -2659,8 +2659,16 @@ country_event = {
 		transfer_state = 177
 		transfer_state = 183
 		}
-		BFL = {
-		country_event = { id = az_tianjiang.82 days = 5 }
+		if = {
+			limit = {
+				BFL = { 
+					is_puppet = no
+				}
+				not = { has_global_flag = beilian_bengkui }
+			}
+			BFL = {
+				country_event = { id = az_tianjiang.82 days = 5 }
+			}
 		}
 		ALB = {
 		transfer_state = 44
@@ -12106,6 +12114,62 @@ country_event = {
 			BFL = {
 				annex_country = { target = TUR transfer_troops = no }
 				release_on_controlled = TUR
+			}
+		}
+		if = {
+			limit = {
+				YUG = { is_subject_of = BFL }
+			}
+			CRO = {
+				transfer_state = 109
+				transfer_state = 103
+				transfer_state = 163
+			}
+			TIX = {
+				transfer_state = 102
+				transfer_state = 853
+				transfer_state = 736
+				transfer_state = 852
+			}
+			TIX = {
+				puppet = YUG
+				set_autonomy = {
+					target = YUG
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+			TIX = {
+				puppet = CRO
+				set_autonomy = {
+					target = CRO
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		if = {
+			limit = {
+				BUL = { is_subject_of = BFL }
+			}
+			TIX = {
+				puppet = BUL
+				set_autonomy = {
+					target = BUL
+					autonomy_state = autonomy_integrated_puppet
+				}
+			}
+			BUL = {
+				transfer_state = 106
+				transfer_state = 970
+				transfer_state = 803
+			}
+		}
+		if = {
+			limit = {
+				HUN = { is_subject_of = TIX }
+			}
+			HUN = {
+				transfer_state = 45
+				transfer_state = 764
 			}
 		}
 	}
