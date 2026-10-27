@@ -276,7 +276,7 @@ characters={
 			traits = { trait_tashigan }
 			
 			ai_will_do = {
-				factor = 16
+				factor = 4
 			}
 		}
 		navy_leader = {
@@ -304,7 +304,16 @@ characters={
 				small="gfx/interface/ideas/idea_weiyan.png"
 			}
 		}
-
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = weiyan
+			traits = { trait_weiyan }
+			
+			ai_will_do = {
+				factor = 4
+			}
+		}
 		
 		navy_leader = {
 			visible = { 
@@ -337,12 +346,6 @@ characters={
 			slot = army_chief
 			idea_token = beilaluosi
 			traits = { trait_beilaluosi }
-			available = {
-			OR = {
-			    is_ai = yes
-				BFL_beilaluosi = { is_field_marshal = yes }
-				}
-			}
 			ai_will_do = {
 				factor = 16
 			}
@@ -667,7 +670,16 @@ characters={
 				small="gfx/interface/ideas/idea_jifu.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = jifu
+			traits = { trait_jifu }
 
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -692,7 +704,15 @@ characters={
 				small="gfx/interface/ideas/idea_lingmin.png"
 			}
 		}
-
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = lingmin
+			traits = { trait_lingmin }
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -959,7 +979,16 @@ characters={
 				small="gfx/interface/ideas/idea_xiongmeng.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = xiongmeng
+			traits = { trait_xiongmeng }
 
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -985,7 +1014,16 @@ characters={
 				small="gfx/interface/ideas/idea_boertawa.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = trait_boertawa
+			traits = { trait_boertawa }
 
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1203,7 +1241,7 @@ characters={
 			traits = { trait_dunsikeyi }
 
 			ai_will_do = {
-				factor = 14
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1230,6 +1268,16 @@ characters={
 			army = {
 				large="gfx/leaders/BFL/hongseshanmai.png"
 				small="gfx/interface/ideas/idea_hongseshanmai.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = trait_hongseshanmai
+			traits = { trait_hongseshanmai }
+
+			ai_will_do = {
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -1284,6 +1332,15 @@ characters={
 				small="gfx/interface/ideas/idea_wanpi.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = wanpi
+			traits = { trait_wanpi }
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1331,8 +1388,8 @@ characters={
 			traits = {  winter_specialist xunyang_army }
 			skill = 5
 			
-			attack_skill = 4
-			defense_skill = 5
+			attack_skill = 8
+			defense_skill = 8
 			planning_skill = 5
 			logistics_skill = 5
 		}

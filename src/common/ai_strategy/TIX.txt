@@ -3349,3 +3349,58 @@ TIX_dont_send_air_to_middle_east = {
 	}
 }
 #Pfot ends
+
+TIX_donthelpsia = {
+    allowed = {
+		original_tag = TIX
+	}
+	enable = {
+		country_exists = SIA
+	}
+	abort = { 
+		NOT = { country_exists = SIA }
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "SIA"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "SIA"
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = SIA
+		value = -999
+	}
+
+}
+
+SIA_is_SB = {
+	 allowed = {
+		original_tag = SIA
+	}
+	enable = {
+		is_puppet = no
+	}
+	ai_strategy = {
+		type = alliance
+		id = TIX
+		value = -999
+	}
+	ai_strategy = {
+		type = alliance
+		id = SAD
+		value = -999
+	}
+	ai_strategy = {
+		type = alliance
+		id = CHY
+		value = -999
+	}
+}

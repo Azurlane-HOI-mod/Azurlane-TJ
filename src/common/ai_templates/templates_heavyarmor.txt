@@ -1,3 +1,68 @@
+az_hq_generic = {
+	role = hq_role
+
+	available_for = {
+		TIX
+		BFL
+		BYG
+		HUJ
+		SAD
+		YUW
+		CHY
+		DOH
+		SIR
+		BLI
+	}
+
+	upgrade_prio = {
+		base = 100
+	}
+
+	hq_default_az = {
+		upgrade_prio = {
+			base = 10
+			modifier = {
+				has_global_flag = AZ_fengkuangAI_citiao_ex
+				factor = 0
+			}
+		}
+
+		target_template = {
+			support = {
+				hq_logistics = 1
+				hq_support_company_shipgirl = 1
+				hq_naval_liaison_shipgirl = 1
+				hq_engineer_shipgirl = 1
+			}
+			
+			regiments = {
+				hq_motorized = 4
+			}
+		}
+	}
+	hq_default_az_good = {
+		upgrade_prio = {
+			base = 1
+			modifier = {
+				has_global_flag = AZ_fengkuangAI_citiao_ex
+				factor = 100
+			}
+		}
+
+		target_template = {
+			support = {
+				hq_air_liaison = 1
+				hq_support_company_shipgirl = 1
+				hq_naval_liaison_shipgirl = 1
+				hq_engineer_shipgirl = 1
+			}
+			
+			regiments = {
+				hq_shipgirl_infantry = 4
+			}
+		}
+	}
+}
 breakthrough_armor_AZ = {
 
 	available_for = {

@@ -203,12 +203,11 @@ az_liekai_scripted_effects = {
             release = RCG
             release = SYR
             release = LEB
-            release = MAD
+            #release = MAD
             release = CAM
             release = VIN
             release = LAO
-            release = TAH
-            release = GDL
+            #release = GDL
         }
         SPR = {
             #release = EQG
@@ -233,19 +232,19 @@ az_liekai_scripted_effects = {
             release = SOM
             release = MLW
             release = ZAM
-            release = MLT
-            release = CYP
+            #release = MLT
+            #release = CYP
             release = BHR
             release = QAT
             release = UAE
             release = KUW
-            release = MLD
-            release = FIJ
-            release = SRL
+            #release = MLD
+            #release = FIJ
+            #release = SRL
             release = BLZ
-            release = BAH
-            release = JAM
-            release = BAS
+            #release = BAH
+            #release = JAM
+            #release = BAS
 
         }
         JOR = {
@@ -299,7 +298,7 @@ az_liekai_scripted_effects = {
             release = MZB
             release = ANG
             release = GNB
-            release = CBV
+            #release = CBV
         }
         RAJ = {
             release = CIP
@@ -350,7 +349,7 @@ az_liekai_scripted_effects = {
             release = BOS
             release = SER
             release = HRZ
-            release = MNZ
+            #release = MNZ
             release = MAC
         }
         ROM = {
@@ -380,9 +379,9 @@ az_liekai_scripted_effects = {
             transfer_state = 271
             transfer_state = 839
         }
-        SPM = {
-            transfer_state = 114
-        }
+        # SPM = {
+            # transfer_state = 114
+        # }
         LBV = {
             transfer_state = 159
             transfer_state = 850
@@ -432,7 +431,7 @@ az_liekai_scripted_effects = {
             release = KBK
             release = ARM
             release = KYR
-            release = KRZ
+            #release = KRZ
             release = KHA
             release = TMS
             release = TAJ
@@ -440,7 +439,7 @@ az_liekai_scripted_effects = {
             release = BSK
             release = BYA
             release = GEO
-            release = VLO
+            #release = VLO
             release = CKK
             release = ANU
             release = FER
@@ -612,12 +611,12 @@ az_liekai_scripted_effects = {
         CHY = {
             release = ANU
             release = EZO
-            release = FOR
-            release = OKN
-            release = PLU
+            #release = FOR
+            #release = OKN
+            #release = PLU
             release = KOR
-            release = FSM
-            release = GUM
+            #release = FSM
+            #release = GUM
             release = SHX
             release = HBC
         }
@@ -656,8 +655,8 @@ az_liekai_scripted_effects = {
         }
         #白鹰部分
         BYG = {
-            release = HAW
-            release = PUE
+            #release = HAW
+            #release = PUE
             #release = PAN
             release = GUM
         }
@@ -778,9 +777,9 @@ az_liekai_scripted_effects = {
 						modifier = siren_jianniang_opinion 
 					}
         }
-        GRN = {
-            transfer_state = 101
-        }
+        # GRN = {
+            # transfer_state = 101
+        # }
         SIR = {
             add_ideas = {
 	            SIR_srdtz
@@ -814,6 +813,10 @@ az_liekai_scripted_effects = {
             transfer_state = 697
             transfer_state = 698
             transfer_state = 730
+            transfer_state = 116
+            transfer_state = 101
+            transfer_state = 183
+            annex_country = { target = ICE transfer_troops = no }
             add_country_leader_role = {
                 character = SR1_guanchazhe
                 promote_leader = yes
@@ -838,10 +841,21 @@ az_liekai_scripted_effects = {
             annex_country = { target = ARG transfer_troops = no }
             annex_country = { target = URG transfer_troops = no }
             annex_country = { target = PAR transfer_troops = no }
+            annex_country = { target = CUB transfer_troops = no }
+            annex_country = { target = HAI transfer_troops = no }
+            annex_country = { target = DOM transfer_troops = no }
             transfer_state = 299
             transfer_state = 720
             transfer_state = 695
             transfer_state = 691
+            transfer_state = 691
+            transfer_state = 690
+            transfer_state = 693
+            transfer_state = 689
+            transfer_state = 686
+            transfer_state = 694
+            transfer_state = 308
+            transfer_state = 692
         }
         SR2 = {
             set_grand_doctrine = superior_firepower
@@ -853,6 +867,10 @@ az_liekai_scripted_effects = {
             transfer_state = 681
             transfer_state = 704
             transfer_state = 703
+            transfer_state = 543
+            transfer_state = 708
+            transfer_state = 706
+            transfer_state = 702
         }
         SR3 = {
             set_grand_doctrine = superior_firepower
@@ -864,6 +882,10 @@ az_liekai_scripted_effects = {
             transfer_state = 645
             transfer_state = 648
             transfer_state = 650
+            transfer_state = 281
+            transfer_state = 422
+            transfer_state = 526
+            transfer_state = 524
         }
         SR4 = {
             set_grand_doctrine = superior_firepower
@@ -878,6 +900,27 @@ az_liekai_scripted_effects = {
             transfer_state = 712
             transfer_state = 733
             transfer_state = 641
+            transfer_state = 1065
+            transfer_state = 634
+            transfer_state = 734
+            transfer_state = 1071
+            transfer_state = 635
+            transfer_state = 1072
+            transfer_state = 646
+            transfer_state = 638
+            transfer_state = 632
+            transfer_state = 631
+            transfer_state = 629
+            transfer_state = 630
+            transfer_state = 727
+            transfer_state = 642
+            transfer_state = 647
+            transfer_state = 684
+            transfer_state = 633
+            transfer_state = 725
+            transfer_state = 639
+            transfer_state = 643
+            transfer_state = 636
         }
         #通用部分
         every_state = {
@@ -1049,6 +1092,9 @@ az_liekai_scripted_effects = {
             YUW_masaina = {
                 set_nationality = YU1
             }
+            YUW_baofengyu = {
+                set_nationality = YU1
+            }
             #教廷骑士
             YUW_jialisuoniai = {
                 set_nationality = YU2
@@ -1057,6 +1103,9 @@ az_liekai_scripted_effects = {
                 set_nationality = YU2
             }
             YUW_xiafei = {
+                set_nationality = YU2
+            }
+            YUW_xiafei_kelongren = {
                 set_nationality = YU2
             }
             YUW_fulandeer = {
@@ -1076,6 +1125,9 @@ az_liekai_scripted_effects = {
             }
             #维希教廷
             YUW_rangbaer = {
+                set_nationality = YU3
+            }
+            YUW_rangbaer_kelongren = {
                 set_nationality = YU3
             }
             YUW_dunkerque = {
@@ -1127,6 +1179,9 @@ az_liekai_scripted_effects = {
             YUW_beiyade = {
                 set_nationality = YU4
             }
+            YUW_wuju = {
+                set_nationality = YU4
+            }
             #北非探险队
             YUW_aerjiliya = {
                 set_nationality = YU5
@@ -1150,6 +1205,12 @@ az_liekai_scripted_effects = {
                 set_nationality = YU5
             }
             YUW_dadan = {
+                set_nationality = YU5
+            }
+            YUW_aluomangshi = {
+                set_nationality = YU5
+            }
+            YUW_sebao = {
                 set_nationality = YU5
             }
         }
@@ -1210,6 +1271,12 @@ az_liekai_scripted_effects = {
                 set_nationality = TI1
             }
             TIX_lumei = {
+                set_nationality = TI1
+            }
+            TIX_bolixingen = {
+                set_nationality = TI1
+            }
+            TIX_molici = {
                 set_nationality = TI1
             }
             #俾斯麦冲锋队
@@ -1286,6 +1353,12 @@ az_liekai_scripted_effects = {
             TIX_z18 = {
                 set_nationality = TI3
             }
+            TIX_z14 = {
+                set_nationality = TI3
+            }
+            TIX_z15 = {
+                set_nationality = TI3
+            }
             #帝国海军部
             TIX_qibolin = {
                 set_nationality = TI4
@@ -1323,6 +1396,9 @@ az_liekai_scripted_effects = {
             TIX_u552 = {
                 set_nationality = TI4
             }
+            TIX_u2501 = {
+                set_nationality = TI4
+            }
             #南美远征军
             TIX_meiyinci = {
                 set_nationality = TI5
@@ -1340,6 +1416,9 @@ az_liekai_scripted_effects = {
                 set_nationality = TI5
             }
             TIX_yueke = {
+                set_nationality = TI5
+            }
+            TIX_yinmaiman = {
                 set_nationality = TI5
             }
         }
@@ -1399,6 +1478,9 @@ az_liekai_scripted_effects = {
             HUJ_texiusi = {
                 set_nationality = HU1
             }
+            HUJ_huali = {
+                set_nationality = HU1
+            }
             #皇家女仆团
             HUJ_beierfasite = {
                 set_nationality = HU2
@@ -1413,6 +1495,15 @@ az_liekai_scripted_effects = {
                 set_nationality = HU2
             }
             HUJ_hemin = {
+                set_nationality = HU2
+            }
+            HUJ_dengken = {
+                set_nationality = HU2
+            }
+            HUJ_hujsali = {
+                set_nationality = HU2
+            }
+            HUJ_dewenjun = {
                 set_nationality = HU2
             }
             #皇家骑士团
@@ -1443,6 +1534,15 @@ az_liekai_scripted_effects = {
             HUJ_deleike = {
                 set_nationality = HU3
             }
+            HUJ_gelifen = {
+                set_nationality = HU3
+            }
+            HUJ_yingxiong = {
+                set_nationality = HU3
+            }
+            HUJ_shi = {
+                set_nationality = HU3
+            }
             #非洲殖民总局
             HUJ_kewei = {
                 set_nationality = HU4
@@ -1463,6 +1563,15 @@ az_liekai_scripted_effects = {
                 set_nationality = HU4
             }
             HUJ_keliaopeitela = {
+                set_nationality = HU4
+            }
+            HUJ_hu = {
+                set_nationality = HU4
+            }
+            HUJ_jiaweisi = {
+                set_nationality = HU4
+            }
+            HUJ_nubiyaren = {
                 set_nationality = HU4
             }
             #东印度公司
@@ -1488,6 +1597,12 @@ az_liekai_scripted_effects = {
                 set_nationality = HU5
             }
             HUJ_yuanchou = {
+                set_nationality = HU5
+            }
+            HUJ_didui = {
+                set_nationality = HU5
+            }
+            HUJ_congmang = {
                 set_nationality = HU5
             }
             #马来亚探险队
@@ -1559,6 +1674,9 @@ az_liekai_scripted_effects = {
                 set_nationality = SA2
             }
             SAD_tianying = {
+                set_nationality = SA2
+            }
+            SAD_tianying_kelongren = {
                 set_nationality = SA2
             }
             SAD_xibeifeng = {
@@ -2096,6 +2214,15 @@ az_liekai_scripted_effects = {
             BYG_pizibao = {
                 set_nationality = BY1
             }
+            BYG_songdiao = {
+                set_nationality = BY1
+            }
+            BYG_shidifenbote = {
+                set_nationality = BY1
+            }
+            BYG_weilianbote = {
+                set_nationality = BY1
+            }
             #白鹰骑士团
             BYG_kelifulan = {
                 set_nationality = BY2
@@ -2132,6 +2259,9 @@ az_liekai_scripted_effects = {
             }
             BYG_fage = {
                 set_nationality = BY2
+            }
+            BYG_weikesibao = {
+                set_nationality = BY4
             }
             #南方州联盟
             BYG_baerdimo = {
@@ -2216,6 +2346,15 @@ az_liekai_scripted_effects = {
             BYG_yindiannabolisi = {
                 set_nationality = BY4
             }
+            BYG_beier = {
+                set_nationality = BY4
+            }
+            BYG_kelaite = {
+                set_nationality = BY4
+            }
+            BYG_halisen = {
+                set_nationality = BY4
+            }
             #西海岸司令部
             BYG_beikaluolaina = {
                 set_nationality = BY5
@@ -2272,6 +2411,12 @@ az_liekai_scripted_effects = {
                 set_nationality = BY5
             }
             BYG_haerfude = {
+                set_nationality = BY5
+            }
+            BYG_yuehanluojiesi = {
+                set_nationality = BY5
+            }
+            BYG_benningdun = {
                 set_nationality = BY5
             }
         }
@@ -2742,6 +2887,7 @@ az_liekai_scripted_effects = {
         SA1 = {
             inherit_technology = SAD
             transfer_state = 158
+            transfer_state = 114
             remove_country_leader_role = {
                 character = SAD_weineituo
                 ideology = fascism_ideology
@@ -3349,23 +3495,10 @@ az_shuaxinzhong_scripted_effects = {
             delete_unit = {
 			    disband = no
 		    }
-            add_ideas = az_meitanzuobi
             set_technology = {
 				az_jianniangguo_tech = 1
 				popup = no
 			}
-            #资源转化动态变量
-			add_dynamic_modifier = {
-				modifier = az_ziyuanzhuanhua_amount
-			}
-			#舰娘休假
-			add_dynamic_modifier = {
-				modifier = az_jianniangxiujia_modifier
-			}
-            set_variable = {
-				az_kaicaimofangkuang_modifier_var = 10
-			}
-            add_ideas = TY_haijunkeyan
             division_template = {
 		        name = "填线步兵师"
 		        regiments = {
@@ -3374,7 +3507,6 @@ az_shuaxinzhong_scripted_effects = {
 			        infantry = { x = 0 y = 2 }
                     infantry = { x = 1 y = 0 }
 			        infantry = { x = 1 y = 1 }
-                    infantry = { x = 1 y = 2 }
 		        }
 	        }
             division_template = {
@@ -3401,6 +3533,28 @@ az_shuaxinzhong_scripted_effects = {
 			    }
             }
         }
+        every_country = {
+            limit = {
+                OR = {
+                    shichijitag_trigger = yes
+                    shisairen_trigger = yes
+                }
+                shichijitag_trigger = yes
+            }
+            add_ideas = az_meitanzuobi
+            #资源转化动态变量
+			add_dynamic_modifier = {
+				modifier = az_ziyuanzhuanhua_amount
+			}
+			#舰娘休假
+			add_dynamic_modifier = {
+				modifier = az_jianniangxiujia_modifier
+			}
+            set_variable = {
+				az_kaicaimofangkuang_modifier_var = 10
+			}
+            add_ideas = TY_haijunkeyan
+        }
         LUX = {
             remove_state_core = 28
         }
@@ -3420,12 +3574,23 @@ az_shuaxinzhong_scripted_effects = {
             remove_state_core = 697
             remove_state_core = 698
             remove_state_core = 730
+            remove_state_core = 116
+            remove_state_core = 101
+            remove_state_core = 183
         }
         SR1 = {
             remove_state_core = 299
             remove_state_core = 720
             remove_state_core = 695
             remove_state_core = 691
+            remove_state_core = 691
+            remove_state_core = 690
+            remove_state_core = 693
+            remove_state_core = 689
+            remove_state_core = 686
+            remove_state_core = 694
+            remove_state_core = 308
+            remove_state_core = 692
         }
         SR2 = {
             remove_state_core = 709
@@ -3433,11 +3598,19 @@ az_shuaxinzhong_scripted_effects = {
             remove_state_core = 710
             remove_state_core = 704
             remove_state_core = 703
+            remove_state_core = 543
+            remove_state_core = 708
+            remove_state_core = 706
+            remove_state_core = 702
         }
         SR3 = {
             remove_state_core = 645
             remove_state_core = 648
             remove_state_core = 650
+            remove_state_core = 281
+            remove_state_core = 422
+            remove_state_core = 526
+            remove_state_core = 524
         }
         SR4 = {
             remove_state_core = 721
@@ -3445,6 +3618,22 @@ az_shuaxinzhong_scripted_effects = {
             remove_state_core = 712
             remove_state_core = 733
             remove_state_core = 641
+            remove_state_core = 1072
+            remove_state_core = 646
+            remove_state_core = 638
+            remove_state_core = 632
+            remove_state_core = 631
+            remove_state_core = 629
+            remove_state_core = 630
+            remove_state_core = 727
+            remove_state_core = 642
+            remove_state_core = 647
+            remove_state_core = 684
+            remove_state_core = 633
+            remove_state_core = 725
+            remove_state_core = 639
+            remove_state_core = 643
+            remove_state_core = 636
         }
         every_country = {
             limit = {
@@ -3459,12 +3648,6 @@ az_shuaxinzhong_scripted_effects = {
         #舰娘国部分
         every_country = {
             limit = {
-                shisairen_trigger = yes
-            }
-            add_manpower = 50000000
-        }
-        every_country = {
-            limit = {
                 OR = {
                     shisairen_trigger = yes
 				    tag = SIR
@@ -3472,6 +3655,7 @@ az_shuaxinzhong_scripted_effects = {
                 not = { tag = SR1 }
                 not = { tag = SR4 }
             }
+            add_manpower = 5000000
             add_ideas = SIR_buff5
             add_ideas = az_chiji_ty_idea_jianniang
             division_template = {
@@ -3480,50 +3664,56 @@ az_shuaxinzhong_scripted_effects = {
 			        infantry = { x = 0 y = 0 }
 			        infantry = { x = 0 y = 1 }
 			        infantry = { x = 0 y = 2 }
-                    infantry = { x = 0 y = 3 }
 			        infantry = { x = 1 y = 0 }
 			        infantry = { x = 1 y = 1 }
                     infantry = { x = 1 y = 2 }
-                    artillery_brigade = { x = 2 y = 0 }
-			        artillery_brigade = { x = 2 y = 1 }
+                    infantry = { x = 2 y = 0 }
+			        infantry = { x = 2 y = 1 }
+                    infantry = { x = 2 y = 2 }
+                    artillery_brigade = { x = 3 y = 0 }
 		        }
                 support = {
                     artillery = { x = 0 y = 0 }
                     engineer = { x = 0 y = 1 }
                     recon = { x = 0 y = 2 }
 	            }
+                regimental_support = {
+				    fire_support = { x = 0 y = 0 }
+                    fire_support = { x = 0 y = 1 }
+                    fire_support = { x = 0 y = 2 }
+			    }
 	        }
             every_controlled_state = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.5 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 10
+				    count = 3
 			    }
             }
         }
         SR4 = {
             add_ideas = SIR_buff5
             add_ideas = az_chiji_ty_idea
-            every_controlled_state = {
-                add_core_of = PREV
-                create_unit = {
-				    division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
-				    owner = PREV
-				    count = 3
-			    }
-            }
+            # every_controlled_state = {
+                # add_core_of = PREV
+                # create_unit = {
+				    # division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+				    # owner = PREV
+				    # count = 2
+			    # }
+            # }
         }
         SR1 = {
             add_ideas = SIR_buff5
             add_ideas = az_chiji_ty_idea
-            every_controlled_state = {
-                add_core_of = PREV
-                create_unit = {
-				    division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
-				    owner = PREV
-				    count = 3
-			    }
-            }
+            # every_controlled_state = {
+                # add_core_of = PREV
+                # create_unit = {
+				    # division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+				    # owner = PREV
+				    # count = 2
+			    # }
+            # }
         }
         every_country = {
             limit = {
@@ -3544,33 +3734,46 @@ az_shuaxinzhong_scripted_effects = {
 			        infantry = { x = 0 y = 0 }
 			        infantry = { x = 0 y = 1 }
 			        infantry = { x = 0 y = 2 }
-                    infantry = { x = 0 y = 3 }
 			        infantry = { x = 1 y = 0 }
 			        infantry = { x = 1 y = 1 }
                     infantry = { x = 1 y = 2 }
-                    artillery_brigade = { x = 2 y = 0 }
-			        artillery_brigade = { x = 2 y = 1 }
+                    infantry = { x = 2 y = 0 }
+			        infantry = { x = 2 y = 1 }
+                    infantry = { x = 2 y = 2 }
+                    artillery_brigade = { x = 3 y = 0 }
 		        }
                 support = {
                     artillery = { x = 0 y = 0 }
                     engineer = { x = 0 y = 1 }
                     recon = { x = 0 y = 2 }
 	            }
+                regimental_support = {
+				    fire_support = { x = 0 y = 0 }
+                    fire_support = { x = 0 y = 1 }
+                    fire_support = { x = 0 y = 2 }
+			    }
 	        }
             every_controlled_state = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.5 start_equipment_factor = 1" 
 				    owner = PREV
+				    count = 22
+			    }
+           }
+           every_controlled_state = {
+                create_unit = {
+				    division = "name = \"通用填线师\" division_template = \"通用填线师\" start_experience_factor = 0.5 start_equipment_factor = 1" 
+				    owner = PREV
 				    count = 20
 			    }
-            }
+           }
         }
         SA1 = {
             every_controlled_state = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 15
+				    count = 5
 			    }
             }
         }
@@ -3579,7 +3782,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 10
+				    count = 5
 			    }
             }
         }
@@ -3588,7 +3791,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.5 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 10
+				    count = 5
 			    }
             }
         }
@@ -3597,7 +3800,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 15
+				    count = 5
 			    }
             }
         }
@@ -3615,7 +3818,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 15
+				    count = 20
 			    }
             }
         }
@@ -3624,7 +3827,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 15
+				    count = 20
 			    }
             }
         }
@@ -3633,7 +3836,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"填线步兵师\" division_template = \"填线步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 50
+				    count = 30
 			    }
             }
         }
@@ -3642,7 +3845,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"填线步兵师\" division_template = \"填线步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 50
+				    count = 30
 			    }
             }
         }
@@ -3651,7 +3854,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"填线步兵师\" division_template = \"填线步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 50
+				    count = 30
 			    }
             }
         }
@@ -3660,7 +3863,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"填线步兵师\" division_template = \"填线步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 50
+				    count = 30
 			    }
             }
         }
@@ -3669,7 +3872,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 15
+				    count = 10
 			    }
             }
         }
@@ -3678,7 +3881,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 15
+				    count = 10
 			    }
             }
         }
@@ -3687,7 +3890,16 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 10
+				    count = 5
+			    }
+            }
+        }
+        HU5 = {
+            every_controlled_state = {
+                create_unit = {
+				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
+				    owner = PREV
+				    count = 15
 			    }
             }
         }
@@ -3696,7 +3908,7 @@ az_shuaxinzhong_scripted_effects = {
                 create_unit = {
 				    division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
 				    owner = PREV
-				    count = 15
+				    count = 10
 			    }
             }
         }
@@ -3712,7 +3924,25 @@ az_shuaxinzhong_scripted_effects = {
         JAP = {
             every_controlled_state = {
                 create_unit = {
-				    division = "name = \"通用步兵师\" division_template = \"通用步兵师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+				    division = "name = \"通用填线师\" division_template = \"通用填线师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+				    owner = PREV
+				    count = 5
+			    }
+            }
+        }
+        CHI = {
+            every_controlled_state = {
+                create_unit = {
+				    division = "name = \"通用填线师\" division_template = \"通用填线师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+				    owner = PREV
+				    count = 5
+			    }
+            }
+        }
+        RNG = {
+            every_controlled_state = {
+                create_unit = {
+				    division = "name = \"通用填线师\" division_template = \"通用填线师\" start_experience_factor = 0.3 start_equipment_factor = 1" 
 				    owner = PREV
 				    count = 5
 			    }
@@ -3725,6 +3955,15 @@ az_shuaxinzhong_scripted_effects = {
             declare_war_on = { target = DH2 type = annex_everything }
             declare_war_on = { target = DH4 type = annex_everything }
             declare_war_on = { target = CHI type = annex_everything }
+        }
+        XIC = {
+            declare_war_on = { target = DH3 type = annex_everything }
+        }
+        SHX = {
+            declare_war_on = { target = DH3 type = annex_everything }
+        }
+        NXM = {
+            declare_war_on = { target = DH3 type = annex_everything }
         }
         JAP = {
             declare_war_on = { target = CH1 type = annex_everything }

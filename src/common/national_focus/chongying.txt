@@ -2388,23 +2388,22 @@
 		available_if_capitulated = no
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			CHY_changmen = {
-				set_portraits = {
-					civilian = {
-						large = "gfx/leaders/CHY/changmen2.png"
-					}
-				}
-				add_country_leader_trait = {
-					trait = szz
-					ideology = neutrality
-				}
-				add_country_leader_trait = {
-					trait = ysxwx
-					ideology = neutrality
+			set_portraits = {
+				character = CHY_changmen
+				civilian = {
+					large = "gfx/leaders/CHY/changmen2.png"
 				}
 			}
 			set_politics = {
 				ruling_party = neutrality
+			}
+			add_country_leader_trait = {
+				trait = szz
+				ideology = neutrality
+			}
+			add_country_leader_trait = {
+				trait = ysxwx
+				ideology = neutrality
 			}
 			hidden_effect = {
 				news_event = aznews.22
@@ -2862,7 +2861,6 @@
 				bonus = 1
 				uses = 3
 				category = dd_tech
-				category = cl_tech
 				category = ca_tech
 			}
 		}
@@ -3506,7 +3504,7 @@
 			}
 			modifier = {
 				BFL = {
-					has_war = NO
+					has_war = no
 				}
 				add = 90
 			}
@@ -4042,7 +4040,7 @@
 					}
 				}
 				date > 1940.8.1
-				has_war = NO
+				has_war = no
 				add = 50
 			}
 		}

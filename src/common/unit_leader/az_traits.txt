@@ -178,8 +178,6 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-
-		mutually_exclusive = zhanlie_army_3
 		
 		trait_type = assignable_trait
 		any_parent = {hangmu_army}
@@ -458,17 +456,17 @@ leader_traits = {
 			jizaijianniang_fighter = {
 				air_attack_factor = 0.1
 				air_mission_efficiency = 0.15
-				air_agility_factor = 0.1
+				#air_agility_factor = 0.1
 			}
 			jizaijianniang_cas = {
 				naval_strike_attack_factor = 0.1
 				air_mission_efficiency = 0.15
-				air_agility_factor = 0.1
+				#air_agility_factor = 0.1
 			}
 			jizaijianniang_nb = {
 				naval_strike_attack_factor = 0.1
 				air_mission_efficiency = 0.15
-				air_agility_factor = 0.1
+				#air_agility_factor = 0.1
 			}
 		}
 		
@@ -580,9 +578,9 @@ leader_traits = {
 			battleship = {
 				naval_damage_factor = 0.1
 			}
-			battlecruiser = {
-				naval_damage_factor = 0.1
-			}	
+			# battlecruiser = {
+				# naval_damage_factor = 0.1
+			# }	
 		}
 		ai_will_do = {
 			factor = 2
@@ -590,7 +588,7 @@ leader_traits = {
 
 		trait_type = assignable_trait
 		any_parent = { hangmu_navy_jizaijianniangzhuanjia zhanlie_navy quzhu_navy xunyang_navy qianting_navy}
-		num_any_parents_needed = 1
+		#num_any_parents_needed = 1
 		gui_row = 18
 		gui_column = 2
 	}
@@ -720,8 +718,6 @@ leader_traits = {
 		trait_type = personality_trait
 		attack_skill = 2
 		defense_skill = 2
-		maneuvering_skill = 3
-		coordination_skill = 3
 		modifier = {
 			screening_efficiency = 0.1
 			positioning = 0.15

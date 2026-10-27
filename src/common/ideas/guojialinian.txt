@@ -1,0 +1,1461 @@
+ideas = {
+	country = {
+		gjln_tix_yx_idea = {
+			picture = ideas_tank_TIX
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {	
+				army_attack_against_major_factor = 0.1
+				army_defence_against_major_factor = 0.1
+				army_breakthrough_against_major_factor = 0.15
+			}
+		}
+		gjln_yuw_yx_idea = {
+			picture = ideas_gongye_YUW
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {	
+				global_building_slots_factor = 0.25
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+		gjln_huj_yx_idea = {
+			picture = ideas_plane_HUJ
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {	
+				air_agility_factor = 0.15
+				air_attack_factor = 0.15
+				air_defence_factor = 0.15
+			}
+		}
+		gjln_sad_yx_idea = {
+			picture = ideas_gongye_SAD
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {	
+				industrial_capacity_dockyard = 0.25
+				industrial_capacity_factory = 0.25
+			}
+		}
+		gjln_bfl_yx_idea = {
+			picture = ideas_tank_BFL
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {	
+				conscription_factor = 0.33
+				army_infantry_attack_factor = 0.15
+				army_infantry_defence_factor = 0.15
+			}
+		}
+		gjln_byg_yx_idea = {
+			picture = ideas_tank_BYG
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {	
+				army_attack_speed_factor = 0.25
+				army_breakthrough_against_major_factor = 0.15
+				army_breakthrough_against_minor_factor = 0.15
+			}
+		}
+		gjln_chy_yx_idea = {
+			picture = ideas_junxu_CHY
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {	
+				army_infantry_attack_factor = 0.15
+				army_infantry_defence_factor = 0.15
+				supply_consumption_factor = -0.25
+			}
+		}
+		gjln_doh_yx_idea = {
+			picture = ideas_gongye_DOH
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				production_lack_of_resource_penalty_factor = -0.1
+			}
+		}
+		gjln_az_yx_idea = {
+			picture = ideas_tank_all
+			allowed_civil_war = {
+				always = yes
+			}			
+			modifier = {
+				army_strength_factor = 0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+	}
+	guojialinian = {
+		#一级理念
+		gjln_tix1 = {
+			cost = 50
+			removal_cost = -1
+			picture = generic_intel_bonus
+			visible = {
+				shitixtag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			}
+			modifier = {
+				war_support_factor = 0.2
+				conscription = 0.01
+			}
+		}
+		gjln_yuw1 = {
+			cost = 50
+			removal_cost = -1
+			picture = FRA_national_resistance_council
+			visible = {
+				shiyuwtag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				stability_factor = 0.2
+				stability_weekly = 0.01
+			}
+		}
+		gjln_huj1 = {
+			cost = 50
+			removal_cost = -1
+			picture = generic_victors_of_ww1
+			visible = {
+				shihujtag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				political_power_factor = 0.1
+				political_power_cost = -0.1
+			}
+		}
+		gjln_sad1 = {
+			cost = 50
+			removal_cost = -1
+			picture = ITA_impero_italiano
+			visible = {
+				shisadtag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				army_infantry_attack_factor = 0.2
+				army_infantry_defence_factor = 0.2
+			}
+		}
+		gjln_bfl1 = {
+			cost = 50
+			removal_cost = -1
+			picture = SOV_fascist_womens_movement
+			visible = {
+				shibfltag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				political_advisor_cost_factor = -0.33
+				political_power_gain = 0.2
+			}
+		}
+		gjln_byg1 = {
+			cost = 50
+			removal_cost = -1
+			picture = generic_mild_economic_recovery
+			visible = {
+				shibygtag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				consumer_goods_factor = -0.2
+			}
+		}
+		gjln_chy1 = {
+			cost = 50
+			removal_cost = -1
+			picture = JAP_oriental_development_company
+			visible = {
+				shichytag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				global_building_slots_factor = 0.15
+				production_speed_infrastructure_factor = 0.25
+			}
+		}
+		gjln_doh1 = {
+			cost = 50
+			removal_cost = -1
+			picture = CHI_cradle_of_civilization
+			visible = {
+				shidohtag_trigger = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = 0.1
+			}
+		}
+		gjln_az1 = {
+			cost = 50
+			removal_cost = -1
+			picture = generic_morale_bonus
+			visible = {
+				shitixtag_trigger = no
+				shihujtag_trigger = no
+				shiyuwtag_trigger = no
+				shibfltag_trigger = no
+				shisadtag_trigger = no
+				shibygtag_trigger = no
+				shichytag_trigger = no
+				shidohtag_trigger = no
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1937.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+		#二级理念
+		gjln_tix2 = {
+			cost = 100
+			removal_cost = -1
+			picture = ger_rebuild_the_nation
+			visible = {
+				shitixtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_tix1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+		gjln_yuw2 = {
+			cost = 100
+			removal_cost = -1
+			picture = FRA_fortification_focus
+			visible = {
+				shiyuwtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_yuw1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				max_dig_in = 1
+				max_dig_in_factor = 0.1
+			}
+		}
+		gjln_huj2 = {
+			cost = 100
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			visible = {
+				shihujtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_huj1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				stability_factor = 0.2
+				war_support_factor = 0.2
+			}
+		}
+		gjln_sad2 = {
+			cost = 100
+			removal_cost = -1
+			picture = ITA_battaglie_per_la_nascite
+			visible = {
+				shisadtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_sad1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				conscription_factor = 0.33
+				army_infantry_attack_factor = 0.1
+				army_infantry_defence_factor = 0.1
+			}
+		}
+		gjln_bfl2 = {
+			cost = 100
+			removal_cost = -1
+			picture = SOV_the_road_of_life
+			visible = {
+				shibfltag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_bfl1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				supply_node_range = 0.1
+				production_speed_rail_way_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		gjln_byg2 = {
+			cost = 100
+			removal_cost = -1
+			picture = RAJ_independence_movement
+			visible = {
+				shibygtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_byg1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				political_power_factor = 0.15
+			}
+		}
+		gjln_chy2 = {
+			cost = 100
+			removal_cost = -1
+			picture = jap_militarism_showa
+			visible = {
+				shichytag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_chy1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				army_attack_factor = 0.1
+				army_attack_speed_factor = 0.2
+			}
+		}
+		gjln_doh2 = {
+			cost = 100
+			removal_cost = -1
+			picture = chi_chinese_unity
+			visible = {
+				shidohtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_doh1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				defensive_war_stability_factor = 0.3
+				war_support_factor = 0.3
+			}
+		}
+		gjln_az2 = {
+			cost = 100
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			visible = {
+				shitixtag_trigger = no
+				shihujtag_trigger = no
+				shiyuwtag_trigger = no
+				shibfltag_trigger = no
+				shisadtag_trigger = no
+				shibygtag_trigger = no
+				shichytag_trigger = no
+				shidohtag_trigger = no
+			}
+			available = {
+				has_idea = gjln_az1
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1938.1.1
+					add = 100
+				}
+			} 
+			modifier = {
+				political_power_factor = 0.1
+			}
+		}
+		#三级理念
+		gjln_tix3 = {
+			cost = 200
+			removal_cost = -1
+			picture = generic_research_bonus
+			visible = {
+				shitixtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_tix1
+				has_idea = gjln_tix2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+		gjln_yuw3 = {
+			cost = 200
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			visible = {
+				shiyuwtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_yuw1
+				has_idea = gjln_yuw2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				political_power_factor = 0.15
+				opinion_gain_monthly_factor = 0.2
+			}
+		}
+		gjln_huj3 = {
+			cost = 200
+			removal_cost = -1
+			picture = eng_the_sun_never_sets
+			visible = {
+				shihujtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_huj1
+				has_idea = gjln_huj2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				subjects_autonomy_gain = -0.5
+				required_garrison_factor = -0.5
+			}
+		}
+		gjln_sad3 = {
+			cost = 200
+			removal_cost = -1
+			picture = ITA_hardened_irregular_bands
+			visible = {
+				shisadtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_sad1
+				has_idea = gjln_sad2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				annex_cost_factor = -0.1
+				justify_war_goal_time = -0.5
+			}
+		}
+		gjln_bfl3 = {
+			cost = 200
+			removal_cost = -1
+			picture = generic_reserve_divisions
+			visible = {
+				shibfltag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_bfl1
+				has_idea = gjln_bfl2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				acclimatization_cold_climate_gain_factor = 0.5
+				army_defence_against_major_factor = 0.1
+				army_defence_against_minor_factor = 0.1
+			}
+		}
+		gjln_byg3 = {
+			cost = 200
+			removal_cost = -1
+			picture = generic_logistics
+			visible = {
+				shibygtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_byg1
+				has_idea = gjln_byg2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+			}
+		}
+		gjln_chy3 = {
+			cost = 200
+			removal_cost = -1
+			picture = JAP_showa_statism
+			visible = {
+				shichytag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_chy1
+				has_idea = gjln_chy2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				stability_factor = 0.3
+				war_stability_factor = 0.2
+			}
+		}
+		gjln_doh3 = {
+			cost = 200
+			removal_cost = -1
+			picture = CHI_protracted_warfare
+			visible = {
+				shidohtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_doh1
+				has_idea = gjln_doh2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				army_org_factor = 0.2
+				army_morale_factor = 0.2
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		gjln_az3 = {
+			cost = 200
+			removal_cost = -1
+			picture = TY_jiaoguanzhidaozhong
+			visible = {
+				shitixtag_trigger = no
+				shihujtag_trigger = no
+				shiyuwtag_trigger = no
+				shibfltag_trigger = no
+				shisadtag_trigger = no
+				shibygtag_trigger = no
+				shichytag_trigger = no
+				shidohtag_trigger = no
+			}
+			available = {
+				has_idea = gjln_az1
+				has_idea = gjln_az2
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1939.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		#四级理念
+		gjln_tix4 = {
+			cost = 300
+			removal_cost = -1
+			picture = ger_revive_the_kaiserreich
+			visible = {
+				shitixtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_tix1
+				has_idea = gjln_tix2
+				has_idea = gjln_tix3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				army_speed_factor = 0.05
+				air_bombing_targetting = 0.1
+				air_close_air_support_org_damage_factor = 0.1
+			}
+		}
+		gjln_yuw4 = {
+			cost = 300
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			visible = {
+				shiyuwtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_yuw1
+				has_idea = gjln_yuw2
+				has_idea = gjln_yuw3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				conscription = 0.025
+				army_org_factor = 0.15
+				army_morale_factor = 0.15
+			}
+		}
+		gjln_huj4 = {
+			cost = 300
+			removal_cost = -1
+			picture = ARG_public_works_investment
+			visible = {
+				shihujtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_huj1
+				has_idea = gjln_huj2
+				has_idea = gjln_huj3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				global_building_slots_factor = 0.25
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		gjln_sad4 = {
+			cost = 300
+			removal_cost = -1
+			picture = ITA_devaluated_lira
+			visible = {
+				shisadtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_sad1
+				has_idea = gjln_sad2
+				has_idea = gjln_sad3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.2
+				production_factory_start_efficiency_factor = 0.1
+			}
+		}
+		gjln_bfl4 = {
+			cost = 300
+			removal_cost = -1
+			picture = SOV_fourth_five_year_plan
+			visible = {
+				shibfltag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_bfl1
+				has_idea = gjln_bfl2
+				has_idea = gjln_bfl3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		gjln_byg4 = {
+			cost = 300
+			removal_cost = -1
+			picture = CHL_liberal_party_in_power
+			visible = {
+				shibygtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_byg1
+				has_idea = gjln_byg2
+				has_idea = gjln_byg3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				research_speed_factor = 0.15
+				special_project_speed_factor = 0.15
+				drift_defence_factor = 0.5
+			}
+		}
+		gjln_chy4 = {
+			cost = 300
+			removal_cost = -1
+			picture = JAP_east_asian_co_prosperity
+			visible = {
+				shichytag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_chy1
+				has_idea = gjln_chy2
+				has_idea = gjln_chy3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				war_support_factor = 0.5
+				weekly_bombing_war_support = 0.01
+				weekly_convoys_war_support = 0.01
+				weekly_casualties_war_support = 0.01
+			}
+		}
+		gjln_doh4 = {
+			cost = 300
+			removal_cost = -1
+			picture = PRC_nanjing_wireless_electronics_plant
+			visible = {
+				shidohtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_doh1
+				has_idea = gjln_doh2
+				has_idea = gjln_doh3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				global_building_slots_factor = 0.1
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		gjln_az4 = {
+			cost = 300
+			removal_cost = -1
+			picture = BFL_jiuyin2
+			visible = {
+				shitixtag_trigger = no
+				shihujtag_trigger = no
+				shiyuwtag_trigger = no
+				shibfltag_trigger = no
+				shisadtag_trigger = no
+				shibygtag_trigger = no
+				shichytag_trigger = no
+				shidohtag_trigger = no
+			}
+			available = {
+				has_idea = gjln_az1
+				has_idea = gjln_az2
+				has_idea = gjln_az3
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1940.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
+				breakthrough_factor = 0.1
+			}
+		}
+		#五级理念
+		gjln_tix5 = {
+			cost = 400
+			removal_cost = -1
+			picture = german_advisors
+			visible = {
+				shitixtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_tix1
+				has_idea = gjln_tix2
+				has_idea = gjln_tix3
+				has_idea = gjln_tix4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				max_planning_factor = 0.15
+				planning_speed = 0.25
+			}
+		}
+		gjln_yuw5 = {
+			cost = 400
+			removal_cost = -1
+			picture = generic_morale_bonus
+			visible = {
+				shiyuwtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_yuw1
+				has_idea = gjln_yuw2
+				has_idea = gjln_yuw3
+				has_idea = gjln_yuw4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				compliance_gain = 0.03
+				resistance_activity = -0.5
+			}
+		}
+		gjln_huj5 = {
+			cost = 400
+			removal_cost = -1
+			picture = generic_navy_bonus
+			visible = {
+				shihujtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_huj1
+				has_idea = gjln_huj2
+				has_idea = gjln_huj3
+				has_idea = gjln_huj4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				naval_damage_factor = 0.15
+				naval_defense_factor = 0.15
+				naval_critical_effect_factor = -0.5
+			}
+		}
+		gjln_sad5 = {
+			cost = 400
+			removal_cost = -1
+			picture = ITA_new_roman_empire_ns
+			visible = {
+				shisadtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_sad1
+				has_idea = gjln_sad2
+				has_idea = gjln_sad3
+				has_idea = gjln_sad4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				#army_attack_against_major_factor = 0.05
+				#army_defence_against_major_factor = 0.05
+				weekly_casualties_war_support = 0.01
+				weekly_convoys_war_support = 0.01
+				weekly_bombing_war_support = 0.01
+				local_resources_factor = 0.15
+			}
+		}
+		gjln_bfl5 = {
+			cost = 400
+			removal_cost = -1
+			picture = SOV_crowning_jewel_of_russia
+			visible = {
+				shibfltag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_bfl1
+				has_idea = gjln_bfl2
+				has_idea = gjln_bfl3
+				has_idea = gjln_bfl4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				political_power_factor = 0.25
+				war_stability_factor = 0.2
+				drift_defence_factor = 0.5
+			}
+		}
+		gjln_byg5 = {
+			cost = 400
+			removal_cost = -1
+			picture = generic_usa_conflict
+			visible = {
+				shibygtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_byg1
+				has_idea = gjln_byg2
+				has_idea = gjln_byg3
+				has_idea = gjln_byg4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				special_forces_attack_factor = 0.15
+	    		special_forces_defence_factor = 0.15
+				special_forces_no_supply_grace = 168
+			}
+		}
+		gjln_chy5 = {
+			cost = 400
+			removal_cost = -1
+			picture = JAP_danchi
+			visible = {
+				shichytag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_chy1
+				has_idea = gjln_chy2
+				has_idea = gjln_chy3
+				has_idea = gjln_chy4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				equipment_conversion_speed = 0.5
+				production_speed_buildings_factor = 0.15
+			}
+		}
+		gjln_doh5 = {
+			cost = 400
+			removal_cost = -1
+			picture = PRC_urbanization_idea
+			visible = {
+				shidohtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_doh1
+				has_idea = gjln_doh2
+				has_idea = gjln_doh3
+				has_idea = gjln_doh4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				political_power_factor = 0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		gjln_az5 = {
+			cost = 400
+			removal_cost = -1
+			picture = BYG_huayuanbaby
+			visible = {
+				shitixtag_trigger = no
+				shihujtag_trigger = no
+				shiyuwtag_trigger = no
+				shibfltag_trigger = no
+				shisadtag_trigger = no
+				shibygtag_trigger = no
+				shichytag_trigger = no
+				shidohtag_trigger = no
+			}
+			available = {
+				has_idea = gjln_az1
+				has_idea = gjln_az2
+				has_idea = gjln_az3
+				has_idea = gjln_az4
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1941.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				air_attack_factor = 0.02
+				air_defence_factor = 0.02
+				naval_damage_factor = 0.03
+				naval_defense_factor = 0.03
+			}
+		}
+		#六级理念
+		gjln_tix6 = {
+			cost = 500
+			removal_cost = -1
+			picture = GER_german_military
+			visible = {
+				shitixtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_tix1
+				has_idea = gjln_tix2
+				has_idea = gjln_tix3
+				has_idea = gjln_tix4
+				has_idea = gjln_tix5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				resistance_target = -0.1
+				political_power_gain = 0.1
+				political_power_factor = 0.5
+			}
+		}
+		gjln_yuw6 = {
+			cost = 500
+			removal_cost = -1
+			picture = FRA_la_deluge
+			visible = {
+				shiyuwtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_yuw1
+				has_idea = gjln_yuw2
+				has_idea = gjln_yuw3
+				has_idea = gjln_yuw4
+				has_idea = gjln_yuw5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+				army_claim_attack_factor = 0.25
+				army_claim_defence_factor = 0.25
+			}
+		}
+		gjln_huj6 = {
+			cost = 500
+			removal_cost = -1
+			picture = eng_service_overseas
+			visible = {
+				shihujtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_huj1
+				has_idea = gjln_huj2
+				has_idea = gjln_huj3
+				has_idea = gjln_huj4
+				has_idea = gjln_huj5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				send_volunteer_factor = 0.5
+				puppet_cost_factor = -0.25
+				send_volunteers_tension = -1
+				justify_war_goal_when_in_major_war_time = -0.8
+			}
+		}
+		gjln_sad6 = {
+			cost = 500
+			removal_cost = -1
+			picture = ITA_italia_irredenta_achieved
+			visible = {
+				shisadtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_sad1
+				has_idea = gjln_sad2
+				has_idea = gjln_sad3
+				has_idea = gjln_sad4
+				has_idea = gjln_sad5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				naval_morale_factor = 0.15
+				naval_enemy_fleet_size_ratio_penalty_factor = 0.25
+				naval_has_potf_in_combat_attack = 0.1
+				naval_has_potf_in_combat_defense = 0.1
+			}
+		}
+		gjln_bfl6 = {
+			cost = 500
+			removal_cost = -1
+			picture = SOV_stakhanovite_movement
+			visible = {
+				shibfltag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_bfl1
+				has_idea = gjln_bfl2
+				has_idea = gjln_bfl3
+				has_idea = gjln_bfl4
+				has_idea = gjln_bfl5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				army_strength_factor = 0.1
+				army_claim_attack_factor = 0.2
+				army_claim_defence_factor = 0.2
+			}
+		}
+		gjln_byg6 = {
+			cost = 500
+			removal_cost = -1
+			picture = generic_naval_invasion
+			visible = {
+				shibygtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_byg1
+				has_idea = gjln_byg2
+				has_idea = gjln_byg3
+				has_idea = gjln_byg4
+				has_idea = gjln_byg5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				navy_max_range_factor = 0.1
+				navy_org_factor = 0.1
+				naval_invasion_capacity = 10
+				naval_invasion_penalty = -0.5
+				amphibious_invasion = 1
+			}
+		}
+		gjln_chy6 = {
+			cost = 500
+			removal_cost = -1
+			picture = JAP_pan_asian_union
+			visible = {
+				shichytag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_chy1
+				has_idea = gjln_chy2
+				has_idea = gjln_chy3
+				has_idea = gjln_chy4
+				has_idea = gjln_chy5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				carrier_traffic = 0.5
+				navy_visibility = -0.1
+				naval_critical_score_chance_factor = 0.2
+				industrial_capacity_dockyard = 0.2
+			}
+		}
+		gjln_doh6 = {
+			cost = 500
+			removal_cost = -1
+			picture = PRC_factory_617
+			visible = {
+				shidohtag_trigger = yes
+			}
+			available = {
+				has_idea = gjln_doh1
+				has_idea = gjln_doh2
+				has_idea = gjln_doh3
+				has_idea = gjln_doh4
+				has_idea = gjln_doh5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				artillery_equipment = {
+					soft_attack = 0.15
+					hard_attack = 0.15
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		gjln_az6 = {
+			cost = 500
+			removal_cost = -1
+			picture = fengkuangai
+			visible = {
+				shitixtag_trigger = no
+				shihujtag_trigger = no
+				shiyuwtag_trigger = no
+				shibfltag_trigger = no
+				shisadtag_trigger = no
+				shibygtag_trigger = no
+				shichytag_trigger = no
+				shidohtag_trigger = no
+			}
+			available = {
+				has_idea = gjln_az1
+				has_idea = gjln_az2
+				has_idea = gjln_az3
+				has_idea = gjln_az4
+				has_idea = gjln_az5
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					date > 1942.1.1
+					add = 50
+				}
+			} 
+			modifier = {
+				stability_weekly = 0.01
+				war_support_weekly = 0.01
+				annex_cost_factor = -0.1
+				puppet_cost_factor = -0.1
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -1
+			}
+		}
+	}
+}

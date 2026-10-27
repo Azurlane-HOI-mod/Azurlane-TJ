@@ -2,9 +2,7 @@ armor_default = {
 	available_for = {
         SIR
 	}
-	roles = {
-		armor
-	}
+	role =  armor
 		upgrade_prio = {
 			base = 300
 			modifier = {
@@ -19,22 +17,6 @@ armor_default = {
 				factor = 100
 				NOT = {	has_idea = TY_dingzhenai }
 				NOT = { country_exists = BLI }
-			}
-			modifier = {
-				factor = 100
-			 	has_global_flag = az_chiji_flag
-			}
-		}
-		production_prio = {
-			base = 1
-			modifier = {
-				factor = 100
-				NOT = {	has_idea = TY_dingzhenai }
-				NOT = { country_exists = BLI }
-			}
-			modifier = {
-				factor = 100
-			 	has_global_flag = modoption_historicalbossai_on 
 			}
 			modifier = {
 				factor = 100
@@ -69,9 +51,7 @@ infantry_SIR = {
 	available_for = {
 		SIR
 	}
-	roles = {
-		infantry
-	}
+	role =  infantry
 	upgrade_prio = {
 			base = 10
 			modifier = {
@@ -90,15 +70,6 @@ infantry_SIR = {
 		NOT = { has_global_flag = modoption_historicalbossai_on }
 			}
 		}
-		production_prio = {
-			base = 0
-			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-		country_exists = BLI
-		NOT = { has_global_flag = modoption_historicalbossai_on }
-			}
-		}
 
 
 		target_template = {
@@ -110,10 +81,14 @@ infantry_SIR = {
 				medium_flame_tank = 1
 				helicopter_transport = 1
 			}
-			
+
+			regimental_support = {
+				fire_support = 3
+			}
+
 			regiments = {
 				infantry = 10
-				artillery_brigade = 5
+				#artillery_brigade = 5
 			}
 		}
 		
@@ -132,20 +107,12 @@ infantry_SIR = {
 				has_global_flag = modoption_historicalbossai_on
 			}
 		}
-		production_prio = {
-			base = 0
-			modifier = {
-				add = 100
-			NOT = {	has_idea = TY_dingzhenai }
-				NOT = { country_exists = BLI }
-			}
-			modifier = {
-				add = 100
-				has_global_flag = modoption_historicalbossai_on
-			}
-		}
 
 		target_template = {
+
+			regimental_support = {
+				fire_support = 3
+			}
 			
 			support = {
 				engineer = 1

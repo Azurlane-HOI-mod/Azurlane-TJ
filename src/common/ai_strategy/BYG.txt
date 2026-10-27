@@ -2089,3 +2089,40 @@ BYG_baohu_SAD = {
 		target = mainland_europe
 	}
 }
+
+BYG_home_guard_invaded = {
+	allowed = { original_tag = BYG }
+	enable = {
+		surrender_progress > 0.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		state_trigger = {
+			is_core_of = BYG
+		}
+		area = north_america
+		priority = 250
+		ratio = 0
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+		manual_attack = yes
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = north_america
+		value = 60
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		state_trigger = {
+			is_core_of = BYG
+		}
+		area = north_america
+		value = 250
+	}
+}

@@ -2,7 +2,7 @@ CHY_bentukaifa_decision = {
 
     CHY_touzijijian = {
 		icon = generic_merge_plant_materiel
-		cost = 150
+		cost = 50
 		visible = {
 		has_completed_focus = CHY_bentukaifa
 		}
@@ -81,18 +81,14 @@ CHY_bentukaifa_decision = {
 	}
     CHY_touzimingong = {
 		icon = generic_factory
-		cost = 200
+		cost = 100
 		visible = {
 		has_completed_focus = CHY_bentukaifa
 		}
-		days_remove = 180
-		days_re_enable = 180
+		days_remove = 120
+		#days_re_enable = 180
 		ai_will_do = {
-			base = 10
-			modifier = {
-				add = 9990
-		        date > 1939.1.1
-			}
+			base = 100
 		}
 		complete_effect = {
 			
@@ -134,18 +130,14 @@ CHY_bentukaifa_decision = {
 	}
 	CHY_touzijungong = {
 		icon = generic_construction
-		cost = 200
+		cost = 100
 		visible = {
 		has_completed_focus = CHY_bentukaifa
 		}
-		days_remove = 180
-		days_re_enable = 180
+		days_remove = 120
+		#days_re_enable = 180
 		ai_will_do = {
-			base = 10
-			modifier = {
-				add = 9990
-		        date > 1939.1.1
-			}
+			base = 100
 		}
 		complete_effect = {
 			
@@ -187,12 +179,12 @@ CHY_bentukaifa_decision = {
 	}
 	CHY_touzichuanwu = {
 		icon = generic_naval
-		cost = 200
+		cost = 100
 		visible = {
 		has_completed_focus = CHY_bentukaifa
 		}
-		days_remove = 180
-		days_re_enable = 180
+		days_remove = 120
+		#days_re_enable = 180
 		ai_will_do = {
 			base = 10
 			modifier = {
@@ -250,9 +242,9 @@ CHY_bentukaifa_decision = {
 		complete_effect = {
 			
 		}
-		days_remove = 180
+		days_remove = 90
 		days_re_enable = 365
-		cost = 100
+		cost = 50
 		remove_effect = {
 			random_owned_controlled_state = {
 			    limit = {
@@ -266,7 +258,7 @@ CHY_bentukaifa_decision = {
 			}
 			add_offsite_building = {
 				type = industrial_complex
-				level = 2
+				level = 3
 			}
 		}
 		ai_will_do = {
@@ -285,9 +277,9 @@ CHY_bentukaifa_decision = {
 		complete_effect = {
 			
 		}
-		days_remove = 180
+		days_remove = 90
 		days_re_enable = 365
-		cost = 100
+		cost = 50
 		remove_effect = {
 			random_owned_controlled_state = {
 			    limit = {
@@ -301,7 +293,7 @@ CHY_bentukaifa_decision = {
 			}
 			add_offsite_building = {
 				type = arms_factory
-				level = 2
+				level = 3
 			}
 		}
 		ai_will_do = {

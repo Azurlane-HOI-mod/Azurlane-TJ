@@ -47,7 +47,7 @@ on_actions = {
 			SIR = {
 				if = {
 					limit = {
-						is_ai = NO
+						is_ai = no
 					}
 					country_event = SIR_event.101
 					SIR_sairenjiaojisi = {
@@ -186,7 +186,7 @@ on_actions = {
 				}
 				if = {
 					limit = { 
-						is_ai = NO 
+						is_ai = no
 					}
 					#开始界面窗口
 					set_country_flag = az_startwindow_open
@@ -194,6 +194,16 @@ on_actions = {
 					country_event = az_tianjiang.0	#MOD说明
 					activate_mission = AZ_meizhoutiaozhan_jy_time	#每月挑战
 					add_ideas = az_meitanzuobi	#煤炭作弊
+				}
+				if = {
+					limit = {
+						is_ai = yes
+						OR = {
+							shijianniangguojia_trigger = yes
+							shisairen_trigger = yes
+						}
+					}
+					add_ideas = az_aimeitanzuobi
 				}
 				
 				if = {
@@ -265,7 +275,7 @@ on_actions = {
 			if = {
 				limit = { 
 					DH1 = { is_ai = yes } 
-					DOH = { is_ai = no } 
+					#DOH = { is_ai = no } 	#暂时屏蔽
 				}
 				DOH = { 
 					country_event = { id = DH1_event.999 days = 7 }
@@ -1255,7 +1265,7 @@ on_actions = {
 	on_unit_leader_level_up = {
 		effect = {
 			#约克城
-			every_country = {
+			BYG = {
 				BYG_yuekecheng = {
 					if = {
 						limit = {
@@ -1273,7 +1283,6 @@ on_actions = {
 						unit_leader_event = getzhg_event.2701
 					}
 				}
-				#哈曼
 				BYG_haman = {
 					if = {
 						limit = {
@@ -1291,7 +1300,10 @@ on_actions = {
 						unit_leader_event = getzhg_event.2702
 					}					
 				}
-				
+			}
+			#哈曼
+			
+			DOH = {
 				DOH_anshan = {
 					if = {
 						limit = {

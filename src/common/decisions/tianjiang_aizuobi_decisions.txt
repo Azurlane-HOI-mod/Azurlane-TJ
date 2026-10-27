@@ -1,4 +1,80 @@
 tianjiang_aizuobi = {
+	az_hq_zuobi = {
+		visible = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+		}
+		available = {
+			is_ai = yes
+			date > 1938.1.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = xunyangpao_equipment
+				amount = 100
+			}
+			delete_unit_template_and_units = {
+				division_template = "舰娘指挥部"
+				disband = yes
+			}
+			delete_unit_template_and_units = {
+				division_template = "集团军总部"
+				disband = yes
+			}
+			division_template = {
+				name = "舰娘指挥部"
+				#template_counter = 121
+				is_army_hq = yes
+
+				regiments = {
+					hq_shipgirl_infantry = { x = 0 y = 0 }
+					hq_shipgirl_infantry = { x = 0 y = 1 }
+					hq_shipgirl_infantry = { x = 0 y = 2 }
+					hq_shipgirl_infantry = { x = 0 y = 3 }
+				}
+
+				support = {
+					hq_air_liaison = { x = 0 y = 0 }
+					hq_support_company_shipgirl = { x = 0 y = 1 }
+					hq_naval_liaison_shipgirl = { x = 0 y = 2 }
+					hq_engineer_shipgirl = { x = 0 y = 3 }
+				}
+			}
+		}
+	}
+	ai_huj_zuobi_hexinbaohu = {
+		allowed = {
+			tag = HUJ
+		}
+		visible = {
+			tag = HUJ
+			is_ai = yes
+			is_faction_leader = yes
+			has_government = democratic
+		}
+		available = {
+			is_ai = yes
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			OR = {
+				TIX = { is_ai = no }
+				SAD = { is_ai = no }
+			}
+			date > 1937.1.1
+			BYG = { is_ai = yes }
+			BFL = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = HUJ_hxbh_idea
+		}
+	}
 	ai_yuw_zuobi_xuanzhanmiao = {
 		visible = {
 			tag = YUW
@@ -380,7 +456,7 @@ tianjiang_aizuobi = {
 			has_global_flag = AZ_fengkuangAI_citiao_5
 			}
 			add_ideas = TY_fkAI_gaojizhineng
-			every_character = {
+			every_army_leader = {
 				add_unit_leader_trait = fkAI_gaojizhinneng	
 			}
 			}
@@ -419,9 +495,97 @@ tianjiang_aizuobi = {
 			set_technology = {
 				az_shenjingbaizhan_tech = 1
 			}
-			every_character = {
+			every_army_leader = {
 				add_unit_leader_trait = fkAI_gaojizhinneng	
 			}
+			}
+			if = {
+				limit = {
+					shibygtag_trigger = yes
+				}
+				add_ideas = gjln_byg1
+				add_ideas = gjln_byg2
+				add_ideas = gjln_byg3
+				add_ideas = gjln_byg4
+				add_ideas = gjln_byg5
+				add_ideas = gjln_byg6
+			}
+			if = {
+				limit = {
+					shidohtag_trigger = yes
+				}
+				add_ideas = gjln_doh1
+				add_ideas = gjln_doh2
+				add_ideas = gjln_doh3
+				add_ideas = gjln_doh4
+				add_ideas = gjln_doh5
+				add_ideas = gjln_doh6
+			}
+			if = {
+				limit = {
+					shichytag_trigger = yes
+				}
+				add_ideas = gjln_chy1
+				add_ideas = gjln_chy2
+				add_ideas = gjln_chy3
+				add_ideas = gjln_chy4
+				add_ideas = gjln_chy5
+				add_ideas = gjln_chy6
+			}
+			if = {
+				limit = {
+					shibfltag_trigger = yes
+				}
+				add_ideas = gjln_bfl1
+				add_ideas = gjln_bfl2
+				add_ideas = gjln_bfl3
+				add_ideas = gjln_bfl4
+				add_ideas = gjln_bfl5
+				add_ideas = gjln_bfl6
+			}
+			if = {
+				limit = {
+					shisadtag_trigger = yes
+				}
+				add_ideas = gjln_sad1
+				add_ideas = gjln_sad2
+				add_ideas = gjln_sad3
+				add_ideas = gjln_sad4
+				add_ideas = gjln_sad5
+				add_ideas = gjln_sad6
+			}
+			if = {
+				limit = {
+					shiyuwtag_trigger = yes
+				}
+				add_ideas = gjln_yuw1
+				add_ideas = gjln_yuw2
+				add_ideas = gjln_yuw3
+				add_ideas = gjln_yuw4
+				add_ideas = gjln_yuw5
+				add_ideas = gjln_yuw6
+			}
+			if = {
+				limit = {
+					shihujtag_trigger = yes
+				}
+				add_ideas = gjln_huj1
+				add_ideas = gjln_huj2
+				add_ideas = gjln_huj3
+				add_ideas = gjln_huj4
+				add_ideas = gjln_huj5
+				add_ideas = gjln_huj6
+			}
+			if = {
+				limit = {
+					shitixtag_trigger = yes
+				}
+				add_ideas = gjln_tix1
+				add_ideas = gjln_tix2
+				add_ideas = gjln_tix3
+				add_ideas = gjln_tix4
+				add_ideas = gjln_tix5
+				add_ideas = gjln_tix6
 			}
 		}
 	}
@@ -628,7 +792,7 @@ tianjiang_aizuobi = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 			OR = {
 				TIX = {
-					is_ai = NO
+					is_ai = no
 				}
 				SAD = {
 					is_ai = no
@@ -675,7 +839,7 @@ tianjiang_aizuobi = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 			OR = {
 				TIX = {
-					is_ai = NO
+					is_ai = no
 				}
 				SAD = {
 					is_ai = no

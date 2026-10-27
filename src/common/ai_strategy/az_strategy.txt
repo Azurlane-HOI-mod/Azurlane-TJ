@@ -7,6 +7,8 @@ az_ai_highered_armored_production0 = {
 		num_of_military_factories > 55
 	}
 
+	abort_when_not_enabled = yes
+
 	ai_strategy = {
 		type = role_ratio
 		id = armor
@@ -25,6 +27,8 @@ az_ai_highered_armored_production1 = {
 	enable = {
 		num_of_military_factories > 109
 	}
+
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -49,6 +53,8 @@ az_ai_highered_armored_production2 = {
 	enable = {
 		num_of_military_factories > 209
 	}
+
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -180,6 +186,12 @@ az_no_unit_is_wrong = {
 		shijianniangguojia_trigger = yes
 	}
 	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = template_prio
+		id = hq_role
+		value = 200
+	}
 
 	ai_strategy = {
 		type = template_prio

@@ -250,7 +250,16 @@ characters={
 				small="gfx/interface/ideas/idea_longqibing.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = longqibing
+			traits = { trait_longqibing }
 
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		navy_leader = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -276,7 +285,16 @@ characters={
 				small="gfx/interface/ideas/idea_wenqinzuo.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = wenqinzuo
+			traits = { trait_wenqinzuo }
 
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -581,6 +599,16 @@ characters={
 			army = {
 				large="gfx/leaders/SAD/aerfuleiduo.png"
 				small="gfx/interface/ideas/idea_aerfuleiduo.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = aerfuleiduo
+			traits = { trait_aerfuleiduo }
+
+			ai_will_do = {
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -892,7 +920,7 @@ characters={
 			idea_token = geliqiya
 			traits = { trait_psh_huanxiangziyu }
 			ai_will_do = {
-				factor = 8
+				factor = 0
 				
 			}
 		}
@@ -1141,6 +1169,16 @@ characters={
 				small="gfx/interface/ideas/idea_fulangxisike.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = fulangxisike
+			traits = { trait_fulangxisike }
+
+			ai_will_do = {
+				factor = 8
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1204,6 +1242,28 @@ characters={
 			planning_skill = 1
 			logistics_skill = 3
 		}
+	}
+	SAD_tianying_kelongren = {
+		name = SAD_tianying
+		portraits={
+			army = {
+			    large="gfx/leaders/SAD/tianying.png"
+				small="gfx/interface/ideas/idea_tianying.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = tianying_kelongren
+			
+			
+			traits = { trait_tianying_kelongren }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+		
 	}
 	#scientists
 	SAD_xibeifeng_sci = {

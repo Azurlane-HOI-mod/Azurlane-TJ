@@ -1306,4 +1306,27 @@ shaixuan_leader_seffect = {
 		}
 	}
 
+	if = {
+		limit = { has_country_flag = leader_shaixuan_xihuan }
+		set_country_flag = az_fav_filter_ran
+		clear_array = ROOT.az_leader_list_array_temp_1
+		for_each_loop = {
+			array = ROOT.az_leader_list_array
+			value = fav_char
+			if = {
+				limit = { var:fav_char = { check_variable = { az_leadermenu_fav_var > 1 } } }
+				add_to_array = {
+					ROOT.az_leader_list_array_temp_1 = var:fav_char
+				}
+			}
+		}
+		clear_array = ROOT.az_leader_list_array
+		for_each_loop = {
+			array = ROOT.az_leader_list_array_temp_1
+			value = fav_char
+			add_to_array = {
+				ROOT.az_leader_list_array = var:fav_char
+			}
+		}
+	}
 }

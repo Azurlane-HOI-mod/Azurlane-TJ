@@ -123,6 +123,15 @@ armored_spearhead_TIX = {
     # EFFECTS
     army_speed_factor = 0.1
     enable_tactic = tactic_breakthrough
+    category_tanks= {
+        soft_attack = 0.1
+    }
+    medium_armor = {
+        combat_width = -0.5
+    }
+    light_armor = {
+        combat_width = -0.5
+    }
 
     rewards = {
         TIX1 = {
@@ -238,11 +247,23 @@ mobile_defense_BYG = {
     armored_engineer = {
         battalion_mult = {
             category = category_all_armor
-            entrenchment = 0.03
+            entrenchment = 0.05
         }
     }
     category_all_armor = {
         defense = 0.2
+    }
+    category_tanks= {
+        soft_attack = 0.1
+    }
+    medium_armor = {
+        combat_width = -0.5
+    }
+    light_armor = {
+        combat_width = -0.5
+    }
+    heavy_armor = {
+        combat_width = -0.5
     }
 
     rewards = {
@@ -354,6 +375,18 @@ streamlined_deployment_BFL = {
         soft_attack = 0.1
         breakthrough = 0.1
         defence = 0.1
+    }
+    category_tanks= {
+        soft_attack = 0.1
+    }
+    medium_armor = {
+        combat_width = -0.5
+    }
+    light_armor = {
+        combat_width = -0.5
+    }
+    heavy_armor = {
+        combat_width = -0.5
     }
 
 
@@ -469,6 +502,15 @@ armored_infantry_support_HUJ = {
     # EFFECTS
     motorized_attack_factor = 0.2
     mechanized_attack_factor = 0.2
+    category_tanks= {
+        soft_attack = 0.1
+    }
+    medium_armor = {
+        combat_width = -0.5
+    }
+    heavy_armor = {
+        combat_width = -0.5
+    }
     enable_tactic = tactic_blitz
     effect = {
         add_tech_bonus = {
@@ -591,12 +633,18 @@ armored_cavalry_CHY = {
     }
 
     armored_car = {
+        soft_attack = 0.2
+        hard_attack = 0.2
         max_organisation = 10
         defense = 0.2
+        combat_width = -1
     }
     mechanized =  {
         max_organisation = 10
         defense = 0.1
+    }
+    light_armor = {
+        combat_width = -1
     }
     # EFFECTS
     rewards = {
@@ -1002,7 +1050,7 @@ defensive_postures_HUJ = {
     #OTHER BASE REWARDS
     category_all_infantry = {
         supply_consumption = -0.02
-        entrenchment = 1
+        entrenchment = 0.5
     }
 
     rewards = {
@@ -1024,7 +1072,7 @@ defensive_postures_HUJ = {
         HUJ3 = {
             max_dig_in_factor = 0.5
             category_all_infantry = {
-                entrenchment = 1
+                entrenchment = 0.5
             }
         }
         HUJ4 = {
@@ -2000,7 +2048,7 @@ last_stand_AZ = {
             dig_in_speed_factor = 1
             out_of_supply_factor = -0.4
             category_all_infantry = {
-                entrenchment = 0.5
+                entrenchment = 0.3
             }
         }
         AZ4 = {
@@ -2248,15 +2296,15 @@ mobile_recon_and_assault_TIX = {
         }
         TIX4 = {
             category_self_propelled_artillery = {
-                soft_attack = 0.3
+                soft_attack = 0.2
             }
             category_self_propelled_anti_air= {
-                air_attack = 0.5
-                soft_attack = 0.3
+                air_attack = 0.3
+                soft_attack = 0.1
             }
             category_tank_destroyers = {
-                hard_attack = 0.3
-                ap_attack = 0.5
+                hard_attack = 0.1
+                ap_attack = 0.2
             }
             armored_car = {
                 breakthrough = 0.5
@@ -2273,10 +2321,10 @@ mobile_recon_and_assault_TIX = {
                 breakthrough = 0.5
             }
             category_tank_destroyer_regimental_support = {
-                breakthrough = 0.3		
+                breakthrough = 0.2		
 			}
 			category_self_propelled_anti_air_regimental_support = {
-                breakthrough = 0.3	
+                breakthrough = 0.2	
 			}
         }
     }
@@ -2762,7 +2810,7 @@ dispersed_operations_AZ = {
 			logistics_company = {			
 				battalion_mult = {
 					category = category_all_infantry
-					entrenchment = 0.5
+					entrenchment = 0.3
 					add = yes
 				}
 			}

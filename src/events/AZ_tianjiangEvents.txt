@@ -7562,6 +7562,9 @@ country_event = {
 	title = "我们是战狂！"
 	desc = "国际上十分谴责我们最近的扩张行为，这导致我们的国际声誉大量降低。"
 	picture = GFX_aze_txluoen2
+	mean_time_to_happen = {
+		days = 15
+	}
 	trigger = {
 		has_added_tension_amount > 39
 		not= { has_country_flag = beiqianzeguole_tj }
@@ -7591,6 +7594,9 @@ country_event = {
 		NOT = { has_country_flag = beibishile_tj }
 		is_in_faction = no
 	}
+	mean_time_to_happen = {
+		days = 15
+	}
 	option = {
 		name = "强者不需要外交"
 		set_country_flag = beibishile_tj
@@ -7606,6 +7612,9 @@ country_event = {
 	title = "国际声誉恢复正常"
 	desc = "我们的国际声誉如今改善回来了，现在其他国家不再鄙视我们了。"
 	picture = GFX_aze_txluoen2
+	mean_time_to_happen = {
+		days = 15
+	}
 	trigger = {
 		check_variable = {
 			var = guojishengyu_value
@@ -8954,6 +8963,9 @@ country_event = {
 		NOT = { has_country_flag = BFL_tufaqingsao_on }
 		has_country_flag = BFL_zzpianzhidu_on
 	}
+	mean_time_to_happen = {
+		days = 15
+	}
 	option = {
 		name = "又有一批黄鸡要遭殃了"
 		add_political_power = -50
@@ -9291,7 +9303,6 @@ country_event = {
 		start_civil_war = {
 			ideology = democratic
 			size = 0.6
-			only_own_territory = no
 		}
 		ai_chance = {
 			factor = 100
@@ -10429,7 +10440,7 @@ country_event = {
 country_event = {
 	id = az_tianjiang.301
 	title = "疯狂AI额外词条：统治海洋"
-	desc = "AI会获得极为逆天的海军产出加成，不过不用担心卡顿问题，碧蓝MOD一直都很流畅。"
+	desc = "AI会获得极为逆天的海军产出加成，不过不用担心卡顿问题。"
 	picture = GFX_aze_diannao
 	is_triggered_only = yes
 	option = {
@@ -10512,6 +10523,9 @@ country_event = {
 		}
 		has_global_flag = AZ_fengkuangAI_citiao_11
 		not = { has_country_flag = AZ_fengkuangAI_AIzhuanshudebuff_get }
+	}
+	mean_time_to_happen = {
+		days = 7
 	}
 	option = {
 		name = "呀咩咯！"
@@ -15915,6 +15929,296 @@ country_event = {
 		name = "就这吗喵"
 		add_political_power = -1
 		add_war_support = -0.01
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.476
+	title = az_tianjiang.476.t
+	desc = az_tianjiang.476.d
+	picture = GFX_aze_dai
+	is_triggered_only = yes
+	option = {
+		name = "牙白！"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.477
+	title = "科技抑制器准备就绪！"
+	desc = "科技抑制器已经准备就绪，随时可以启动。"
+	picture = GFX_aze_diannao
+	is_triggered_only = yes
+	minor_flavor = yes
+	option = {
+		name = "哇嘎哒"
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#解锁所有理念
+country_event = {
+	id = az_tianjiang.478
+	title = "解锁铁血雄心！"
+	desc = "你已经解锁了铁血的所有理念，可以获得额外加成了！"
+	trigger = {
+		shitixtag_trigger = yes
+		has_idea = gjln_tix1
+		has_idea = gjln_tix2
+		has_idea = gjln_tix3
+		has_idea = gjln_tix4
+		has_idea = gjln_tix5
+		has_idea = gjln_tix6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_tix_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.479
+	title = "解锁鸢尾雄心！"
+	desc = "你已经解锁了鸢尾的所有理念，可以获得额外加成了！"
+	trigger = {
+		shiyuwtag_trigger = yes
+		has_idea = gjln_yuw1
+		has_idea = gjln_yuw2
+		has_idea = gjln_yuw3
+		has_idea = gjln_yuw4
+		has_idea = gjln_yuw5
+		has_idea = gjln_yuw6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_yuw_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.480
+	title = "解锁皇家雄心！"
+	desc = "你已经解锁了皇家的所有理念，可以获得额外加成了！"
+	trigger = {
+		shihujtag_trigger = yes
+		has_idea = gjln_huj1
+		has_idea = gjln_huj2
+		has_idea = gjln_huj3
+		has_idea = gjln_huj4
+		has_idea = gjln_huj5
+		has_idea = gjln_huj6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_huj_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.481
+	title = "解锁撒丁雄心！"
+	desc = "你已经解锁了撒丁的所有理念，可以获得额外加成了！"
+	trigger = {
+		shisadtag_trigger = yes
+		has_idea = gjln_sad1
+		has_idea = gjln_sad2
+		has_idea = gjln_sad3
+		has_idea = gjln_sad4
+		has_idea = gjln_sad5
+		has_idea = gjln_sad6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_sad_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.482
+	title = "解锁北联雄心！"
+	desc = "你已经解锁了北联的所有理念，可以获得额外加成了！"
+	trigger = {
+		shibfltag_trigger = yes
+		has_idea = gjln_bfl1
+		has_idea = gjln_bfl2
+		has_idea = gjln_bfl3
+		has_idea = gjln_bfl4
+		has_idea = gjln_bfl5
+		has_idea = gjln_bfl6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_bfl_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.483
+	title = "解锁白鹰雄心！"
+	desc = "你已经解锁了白鹰的所有理念，可以获得额外加成了！"
+	trigger = {
+		shibygtag_trigger = yes
+		has_idea = gjln_byg1
+		has_idea = gjln_byg2
+		has_idea = gjln_byg3
+		has_idea = gjln_byg4
+		has_idea = gjln_byg5
+		has_idea = gjln_byg6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_byg_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.484
+	title = "解锁重樱雄心！"
+	desc = "你已经解锁了重樱的所有理念，可以获得额外加成了！"
+	trigger = {
+		shichytag_trigger = yes
+		has_idea = gjln_chy1
+		has_idea = gjln_chy2
+		has_idea = gjln_chy3
+		has_idea = gjln_chy4
+		has_idea = gjln_chy5
+		has_idea = gjln_chy6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_chy_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.485
+	title = "解锁东煌雄心！"
+	desc = "你已经解锁了东煌的所有理念，可以获得额外加成了！"
+	trigger = {
+		shidohtag_trigger = yes
+		has_idea = gjln_doh1
+		has_idea = gjln_doh2
+		has_idea = gjln_doh3
+		has_idea = gjln_doh4
+		has_idea = gjln_doh5
+		has_idea = gjln_doh6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_doh_yx_idea
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = az_tianjiang.486
+	title = "解锁通用加成！"
+	desc = "你已经解锁了所有的通用理念，可以获得额外加成了！"
+	trigger = {
+		has_idea = gjln_az1
+		has_idea = gjln_az2
+		has_idea = gjln_az3
+		has_idea = gjln_az4
+		has_idea = gjln_az5
+		has_idea = gjln_az6
+		not = { has_country_flag = az_yijiesuoyexin_yes }
+	}
+	immediate = {
+		set_country_flag = az_yijiesuoyexin_yes
+	}
+	mean_time_to_happen = {
+		days = 15
+	}
+	option = {
+		name = "太好了！"
+		add_ideas = gjln_az_yx_idea
 		ai_chance = {
 			base = 100
 		}

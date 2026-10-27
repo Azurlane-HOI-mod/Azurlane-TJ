@@ -936,12 +936,14 @@
 				type = infantry_equipment
 				amount = 5000
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_doctrine_cost_reduction = {
 				name = "人海学说"
 				cost_reduction = 0.75
 				uses = 2
 				category = land_doctrine
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_mastery_bonus = {
                 bonus = 0.5
                 days = 180
@@ -1006,14 +1008,14 @@
 
 		#search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			
-			add_ideas = BFL_bhfg 
 			add_tech_bonus = {
 				name = "饱和覆盖"
 				bonus = 1.5
 				uses = 1
 				category = artillery
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = BFL_bhfg 
 		}
 	}
 	focus = {
@@ -1069,6 +1071,7 @@
 		completion_reward = {
 			
 			add_ideas = YUW_ydz
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_mastery_bonus = {
                 bonus = 0.5
                 days = 180
@@ -5670,6 +5673,11 @@
 		}
 		completion_reward = {
 			custom_effect_tooltip = bfldaqingxi_tips2
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { BFL_60 BFL_61 BFL_62 }
+			  cost = 7
+			}
 		}
 	}
 	
@@ -5695,6 +5703,11 @@
 		}
 		completion_reward = {
 			custom_effect_tooltip = bfldaqingxi_tips3
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { BFL_60 BFL_61 BFL_62 }
+			  cost = 7
+			}
 		}
 	}
 	
@@ -5720,6 +5733,11 @@
 		}
 		completion_reward = {
 			custom_effect_tooltip = "最好还是谨慎些..."
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { BFL_60 BFL_61 BFL_62 }
+			  cost = 7
+			}
 		}
 	}
 	
@@ -5747,6 +5765,11 @@
 		}
 		completion_reward = {
 			custom_effect_tooltip = "连黄鸡也不放过？"
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { BFL_60 BFL_61 BFL_62 }
+			  cost = 7
+			}
 		}
 	}
 	
@@ -5774,6 +5797,11 @@
 		}
 		completion_reward = {
 			custom_effect_tooltip = bfldaqingxi_tips4
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+			  focus = { BFL_60 BFL_61 BFL_62 }
+			  cost = 7
+			}
 		}
 	}
 	
@@ -5885,7 +5913,7 @@
 		prerequisite = { focus = BFL_61 }
 		prerequisite = { focus = BFL_62 }
 		relative_position_id = BFL_61
-		cost = 10
+		cost = 5
 		allow_branch = {
 			has_global_flag = MOD_azurlane_tianjiangjianniang
 		}
@@ -5909,6 +5937,24 @@
 			custom_effect_tooltip = yichudaqingxi_tips
 			add_political_power = 200
 			add_war_support = 0.3
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = BFL_modify_the_politburo_ns_intro
+			add_to_variable = { 
+				BFL_combat_width_factor = -0.2 
+				tooltip = combat_width_factor_tt
+			}
+			add_to_variable = { 
+				BFL_planning_speed = 0.5
+				tooltip = planning_speed_tt
+			}
+			add_to_variable = { 
+				BFL_max_dig_in = 5
+				tooltip = max_dig_in_tt
+			}
+			add_to_variable = { 
+				BFL_dig_in_speed = 1
+				tooltip = dig_in_speed_tt
+			}
 			hidden_effect = {
 			remove_ideas = BFL_dqx_0
 			remove_ideas = BFL_dqx_1
@@ -6028,9 +6074,16 @@
 			}
 		}
 		bypass = {
-			has_war_with = TIX
-			HUJ = { not = { has_war_with = TIX } }
-			BYG = { not = { has_war_with = TIX } }
+			OR = {
+				AND = {
+					has_war_with = TIX
+					HUJ = { not = { has_war_with = TIX } }
+					BYG = { not = { has_war_with = TIX } }
+				}
+				not = { country_exists = TIX }
+				TIX = { is_subject = yes }
+				TIX = { has_capitulated = yes }
+			}
 		}
 		ai_will_do = {
 			factor = 100

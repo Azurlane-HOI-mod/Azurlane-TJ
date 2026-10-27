@@ -222,7 +222,7 @@ leader_traits = {
 	#奏响自由赞歌
 	trait_psh_zanxiangziyouzange= { 
 		random = no
-		experience_loss_factor = 0.15
+		#experience_loss_factor = 0.15
 		army_core_attack_factor = 0.2
 		army_core_defence_factor = 0.2
 		resistance_target_on_our_occupied_states = 0.35
@@ -247,8 +247,8 @@ leader_traits = {
 	#戈里齐亚
 	trait_psh_huanxiangziyu = {
 		random = no
-		army_speed_factor = 0.03
-		army_defence_factor = 0.12
+		army_speed_factor = 0.05
+		army_defence_factor = 0.1
 	}
 	#鸢尾之愿
 	trait_psh_yuanweizhiyuan = {
@@ -268,15 +268,16 @@ leader_traits = {
 	#迂缓在欲望之渊
 	trait_psh_yuhuanzaiyuwangzhiyuan = {
 		random = no
-		planning_speed = -0.5
-		max_planning = 0.25
-		army_speed_factor = 0.03
+		#planning_speed = -0.5
+		max_planning = 0.15
+		max_planning_factor = 0.05
+		#army_speed_factor = 0.03
 	}
 	#往昔之影
 	trait_psh_wangxizhiying = {
 		random = no
-		army_speed_factor = 0.12
-		army_defence_factor = -0.05
+		army_speed_factor = 0.15
+		#army_defence_factor = -0.05
 	}
 	#盖世太保的魔女
 	trait_psh_feiteliekaer = {
@@ -542,19 +543,19 @@ leader_traits = {
 		surrender_limit = 0.1
 		army_org_factor = 0.05
 		army_morale_factor = 0.05
-		army_core_attack_factor = 0.25
-		army_core_defence_factor = 0.25
+		army_core_attack_factor = 0.15
+		army_core_defence_factor = 0.15
 	}
 	#赤色元首2
 	trait_chiseyuanshou2 = {
 		random = no
-		surrender_limit = 0.15
+		surrender_limit = 0.1
 		army_org_factor = 0.15
 		army_morale_factor = 0.15
-		army_attack_factor = 0.15
-		army_defence_factor = 0.15
-		army_core_attack_factor = 0.35
-		army_core_defence_factor = 0.35
+		army_attack_factor = 0.05
+		army_defence_factor = 0.05
+		army_core_attack_factor = 0.25
+		army_core_defence_factor = 0.25
 	}
 	#斯库拉
 	trait_sikula = {
@@ -1021,5 +1022,453 @@ leader_traits = {
 		org_loss_at_low_org_factor = -0.2
 		army_attack_against_major_factor = 0.1
 		army_defence_against_major_factor = 0.1
+	}
+	#z47
+	trait_xinshengdai = {
+		random = no
+		political_power_gain = 0.1
+		stability_factor = 0.1
+		stability_weekly = 0.005
+		party_popularity_stability_factor = 0.1
+	}
+	#z52
+	trait_z52 = {
+		random = no
+		war_stability_factor = 0.1
+		war_support_weekly = 0.005
+		war_support_factor = 0.15
+		justify_war_goal_time = -0.25
+	}
+	#希佩尔
+	trait_xipeiershangjiang = {
+		random = no
+		political_power_factor = 0.15
+		political_advisor_cost_factor = -0.1
+		drift_defence_factor = 0.25
+	}
+	#纽伦堡
+	trait_niulunbao = {
+		random = no
+		annex_cost_factor = -0.1
+		puppet_cost_factor = -0.1
+		embargo_cost_factor = -1
+		justify_war_goal_when_in_major_war_time = -0.8
+	}
+	#曾克上将
+	trait_zengke = {
+		random = no
+		experience_gain_army = 0.3
+		max_planning_factor = 0.05
+		coordination_bonus = 0.1
+	}
+	#u2501
+	trait_u2501 = {
+		random = no
+		experience_gain_navy = 0.3
+		naval_coordination = 0.25
+		naval_hit_chance = 0.2
+		naval_critical_score_chance_factor = 0.2
+		convoy_retreat_speed = 0.5
+	}
+	#马克斯殷麦曼
+	trait_yinmaiman = {
+		random = no
+		experience_gain_air = 0.3
+		air_superiority_efficiency = 0.2
+		air_superiority_detect_factor = 0.2
+		air_intercept_efficiency = 0.2
+		air_accidents_factor = -0.5
+	}
+	#格奈森瑙
+	trait_genaisennao = {
+		random = no
+		max_dig_in_factor = 0.1
+		dig_in_speed_factor = 0.2
+		recon_factor_while_entrenched = 0.15
+		planning_speed = 0.5
+	}
+	#海因里希亲王
+	trait_haiyinlixi = {
+		random = no
+		supply_node_range = 0.05
+		army_fuel_capacity_factor = 0.1
+		attrition = -0.2
+		truck_attrition_factor = -0.5
+	}
+	#德意志
+	trait_deyizhi = {
+		random = no
+		resistance_target = -0.1
+		army_morale_factor = 0.05
+		army_attack_speed_factor = 0.1
+		army_core_attack_factor = 0.15
+		army_core_defence_factor = 0.15
+		army_claim_attack_factor = 0.15
+		army_claim_defence_factor = 0.15
+	}
+	#布伦希尔德
+	trait_bulunxierde = {
+		random = no
+		army_org_factor = 0.1
+		cas_damage_reduction = 0.1
+		pocket_penalty = -0.25
+		acclimatization_hot_climate_gain_factor = 0.2
+		acclimatization_cold_climate_gain_factor = 0.2
+	}
+	#拉·加利索尼埃
+	trait_jialisuoniai = {
+		random = no
+		intel_network_gain_factor = 0.1
+		intel_from_combat_factor = 0.1
+		agency_upgrade_time = -0.25
+		decryption_power_factor = 0.2
+	}
+	#香槟
+	trait_xiangbin = {
+		random = no
+		political_power_factor = 0.1
+		war_stability_factor = 0.1
+		consumer_goods_factor = -0.15
+		production_speed_buildings_factor = 0.1
+	}
+	#马塞纳
+	trait_masaina = {
+		random = no
+		experience_gain_army = 0.3
+		recon_factor = 0.15
+		experience_loss_factor = -0.15
+		coordination_bonus = 0.1
+	}
+	#塔尔图
+	trait_taertu = {
+		random = no
+		experience_gain_navy = 0.3
+		naval_coordination = 0.15
+		naval_has_potf_in_combat_attack = 0.1
+		naval_has_potf_in_combat_defense = 0.1
+	}
+	#阿罗芒什
+	trait_aluomangshi = {
+		random = no
+		experience_gain_air = 0.3
+		air_agility_factor = 0.15
+		air_nav_efficiency = 0.5
+		air_strategic_bomber_bombing_factor = 0.5
+	}
+	#暴风雨
+	trait_baofengyu = {
+		random = no
+		army_attack_speed_factor = 0.2
+		army_defence_against_major_factor = 0.1
+		army_breakthrough_against_major_factor = 0.1
+	}
+	#马耶·布雷泽
+	trait_mayebuleize = {
+		random = no
+		army_defence_factor = 0.05
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+		coordination_bonus = 0.1
+	}
+	#文琴佐·焦贝蒂
+	trait_wenqinzuo = {
+		random = no
+		experience_gain_army = 0.3
+		army_attack_speed_factor = 0.2
+		army_speed_factor = 0.1
+		breakthrough_factor = 0.05
+	}
+	#龙骑兵
+	trait_longqibing = {
+		random = no
+		experience_gain_navy = 0.3
+		naval_detection = 0.2
+		naval_torpedo_hit_chance_factor = 0.1
+		naval_torpedo_damage_reduction_factor = 0.1
+		naval_torpedo_enemy_critical_chance_factor = -0.1
+	}
+	#天鹰克隆人
+	trait_tianying_kelongren = {
+		random = no
+		experience_gain_air = 0.3
+		air_defence_factor = 0.1
+		air_escort_efficiency = 0.15
+		air_home_defence_factor = 0.25
+	}
+	#弗朗西斯科·卡拉乔洛
+	trait_fulangxisike = {
+		random = no
+		army_strength_factor = 0.1
+		army_defence_factor = 0.2
+	}
+	#阿尔弗雷多·奥里亚尼
+	trait_aerfuleiduo = {
+		random = no
+		intel_from_combat_factor = 0.2
+		org_loss_at_low_org_factor = -0.2
+		planning_speed = 0.4
+	}
+	#红色山脉
+	trait_hongseshanmai = {
+		random = no
+		political_power_factor = 0.1
+		compliance_gain = 0.02
+		war_support_factor = 0.3
+		resistance_target_on_our_occupied_states = 0.25
+	}
+	#波尔塔瓦
+	trait_boertawa = {
+		random = no
+		justify_war_goal_time = -0.2
+		enemy_justify_war_goal_time = 0.3
+		opinion_gain_monthly_factor = 0.5
+		justify_war_goal_when_in_major_war_time = -0.5
+	}
+	#顽皮
+	trait_wanpi = {
+		random = no
+		experience_gain_army = 0.3
+		army_artillery_attack_factor = 0.2
+		army_artillery_defence_factor = 0.2
+		army_org_factor = 0.1
+		planning_speed = 0.1
+	}
+	#灵敏
+	trait_lingmin = {
+		random = no
+		experience_gain_army = 0.3
+		army_speed_factor = 0.1
+		army_attack_speed_factor = 0.1
+		org_loss_when_moving = -0.1
+		org_loss_at_low_org_factor = -0.1
+	}
+	#威严
+	trait_weiyan = {
+		random = no
+		experience_gain_navy = 0.3
+		navy_org_factor = 0.1
+		navy_screen_attack_factor = 0.1
+		navy_screen_defence_factor = 0.1
+	}
+	#凶猛
+	trait_xiongmeng = {
+		random = no
+		army_org_factor = 0.1
+		army_morale_factor = 0.1
+		experience_gain_army_unit_factor = 0.2
+	}
+	#基辅
+	trait_jifu = {
+		random = no
+		combat_width_factor = -0.1
+		breakthrough_factor = 0.1
+		coordination_bonus = 0.2
+	}
+	#克利奥佩特拉
+	trait_keliaopeitela = {
+		random = no
+		industrial_factory_donations = 2
+		military_factory_donations = 2
+		subjects_autonomy_gain = 0.1
+		compliance_gain = 0.04
+	}
+	#忒修斯
+	trait_texiusi = {
+		random = no
+		research_speed_factor = 0.1
+		special_project_speed_factor  = 0.1
+		research_sharing_per_country_bonus_factor = 0.1
+	}
+	#胜利
+	trait_shengli = {
+		random = no
+		consumer_goods_factor = -0.15
+		production_speed_infrastructure_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_arms_factory_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+	}
+	#约克公爵
+	trait_yuekegongjue = {
+		random = no
+		political_power_cost = -0.15
+		stability_factor = 0.1
+		war_support_factor = 0.1
+		subjects_autonomy_gain = -0.5
+	}
+	#贾维斯
+	trait_jiaweisi = {
+		random = no
+		experience_gain_army = 0.3
+		attrition = -0.5
+		heat_attrition_factor = -0.25
+		winter_attrition_factor = -0.25
+		supply_consumption_factor = -0.15
+	}
+	#标枪
+	trait_biaoqiang = {
+		random = no
+		experience_gain_navy = 0.3
+		naval_speed_factor = 0.1
+		naval_light_gun_hit_chance_factor = 0.3
+		naval_torpedo_hit_chance_factor = 0.3
+	}
+	#光荣
+	trait_guangrong = {
+		random = no
+		experience_gain_navy = 0.3
+		positioning = 0.1
+		ships_at_battle_start = 0.25
+	}
+	#半人马
+	trait_banrenma = {
+		random = no
+		experience_gain_air = 0.3
+		navy_carrier_air_attack_factor = 0.3
+		air_nav_efficiency = 0.3
+		naval_strike_targetting_factor = 0.3
+		mines_planting_by_air_factor = 0.5
+	}
+	#努比亚人
+	trait_nubiyaren = {
+		random = no
+		experience_gain_air = 0.3
+		air_superiority_detect_factor = 0.1
+		air_strategic_bomber_bombing_factor = 0.2
+		air_strategic_bomber_night_penalty = -0.2
+		naval_heavy_gun_hit_chance_factor = 0.1
+		naval_light_gun_hit_chance_factor = 0.1
+	}
+	#虎
+	trait_hu = {
+		random = no
+		army_strength_factor = 0.1
+		army_morale_factor = 0.2
+		army_defence_against_major_factor = 0.1
+		strike_force_movement_org_loss = -0.33
+	}
+	#英雄
+	trait_yingxiong = {
+		random = no
+		grant_medal_cost_factor = -0.25
+		max_command_power = 25
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+	}
+	#海王星
+	trait_haiwangxing = {
+		random = no
+		night_spotting_chance = 0.15
+		convoy_escort_efficiency = 0.15
+		convoy_retreat_speed = 0.5
+		naval_retreat_speed = 0.5
+	}
+	#史蒂芬·波特
+	trait_shidifenbote = {
+		random = no
+		political_power_factor = 0.15
+		production_factory_start_efficiency_factor = 0.1
+		navy_carrier_air_attack_factor = 0.1
+		navy_carrier_air_targetting_factor = 0.1
+		navy_carrier_air_agility_factor = 0.1
+	}
+	#西雅图
+	trait_xiyatu = {
+		random = no
+		production_factory_efficiency_gain_factor = 0.1
+		production_factory_max_efficiency_factor = 0.1
+		navy_anti_air_attack_factor = 0.25
+		static_anti_air_damage_factor = 0.25
+		static_anti_air_hit_chance_factor = 0.25
+	}
+	#南达科他
+	trait_nandaketa = {
+		random = no
+		surrender_limit = 0.05
+		defensive_war_stability_factor = 0.3
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+		land_bunker_effectiveness_factor = 0.2
+		coastal_bunker_effectiveness_factor = 0.2
+	}
+	#里诺
+	trait_linuo = {
+		random = no
+		research_speed_factor = 0.1
+		special_project_speed_factor = 0.25
+	}
+	#阿拉巴马
+	trait_alabama = {
+		random = no
+		experience_gain_army = 0.3
+		army_armor_attack_factor = 0.1
+		army_armor_defence_factor = 0.1
+		breakthrough_factor = 0.1
+	}
+	#射水鱼
+	trait_sheshuiyu = {
+		random = no
+		experience_gain_navy = 0.3
+		navy_submarine_attack_factor = 0.2
+		positioning = 0.1
+		sub_retreat_speed = 0.33
+	}
+	#本宁顿
+	trait_benningdun = {
+		random = no
+		experience_gain_air = 0.3
+		air_accidents_factor = -0.25
+		air_superiority_efficiency = 0.2
+		air_agility_factor = 0.15
+	}
+	#北卡罗来纳
+	trait_beikaluolaina = {
+		random = no
+		army_org_factor = 0.1
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+		army_claim_attack_factor = 0.1
+		army_claim_defence_factor = 0.1
+	}
+	#佐治亚
+	trait_zuozhiya = {
+		random = no
+		army_non_core_attack_factor = 0.05
+		breakthrough_factor = 0.1
+		navy_capital_ship_attack_factor = 0.3
+		naval_heavy_gun_hit_chance_factor = 0.3
+	}
+	#西弗吉尼亚
+	trait_xifunijiya = {
+		random = no
+		army_non_core_attack_factor = 0.05
+		army_attack_against_minor_factor = 0.15
+		army_defence_against_minor_factor = 0.15
+		army_breakthrough_against_minor_factor = 0.15
+	}
+	#威廉·波特
+	trait_weilianbote = {
+		random = no
+		land_reinforce_rate = 0.05
+		coordination_bonus = 0.1
+		combat_width_factor = -0.1
+		navy_visibility = -0.1
+		navy_anti_air_attack_factor = 0.5
+	}
+	#科罗拉多
+	trait_keluoladuo = {
+		random = no
+		navy_max_range_factor = 0.1
+		army_defence_factor = 0.1
+		navy_capital_ship_attack_factor = 0.2
+		navy_capital_ship_defence_factor = 0.2
+	}
+	#哈曼
+	trait_haman = {
+		random = no
+		army_org_factor = 0.1
+		naval_speed_factor = 0.05
+		naval_has_potf_in_combat_defense = 0.2
+		naval_enemy_fleet_size_ratio_penalty_factor = 0.25
 	}
 }

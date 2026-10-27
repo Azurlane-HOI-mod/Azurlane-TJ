@@ -6,20 +6,22 @@ country_event = {
 	picture = GFX_aze_hit
 	is_triggered_only = yes	
 	option = {
+		trigger = { DH1 = { is_ai = yes }  }
 		name = DH1_event.999.a
 		ai_chance = {
-			factor = 0
+			factor = 100	#暂时屏蔽
 		}
 		DOH = {
 			annex_country = {
 				target = DH1
 			}
 		}
+		
 	}
 	option = {
 		name = DH1_event.999.b
 		ai_chance = {
-			factor = 1
+			factor = 0
 		}
 		
 	}

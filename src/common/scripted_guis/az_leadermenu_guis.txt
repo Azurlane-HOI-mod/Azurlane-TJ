@@ -39,7 +39,7 @@ scripted_gui = {
 				is_country_leader = no  
 			}
 			az_single_leader_xiuchangjia_visible = {
-				always = NO
+				always = no
 			}
 			az_single_leader_shiyue_click_enabled = {
 				NOT = { has_character_flag = xiujia_doing }
@@ -57,7 +57,7 @@ scripted_gui = {
 				check_variable = {
 					ROOT.wz_sl > var:THIS.xiujia_leader_wuzi_cost
 				}
-				#always = NO 
+				#always = no
 			}  
 			az_single_leader_qianghua_click_enabled = {
 				#lv1
@@ -178,7 +178,7 @@ scripted_gui = {
 						THIS = {
 							skill > 8
 							skill < 10 
-							#is_navy_leader = NO
+							#is_navy_leader = no
 						}
 					}
 					check_variable = {
@@ -199,7 +199,7 @@ scripted_gui = {
 							#skill > 8
 					#	}
 				#	}
-				#	always = NO
+				#	always = no
 				#}
 				#lv10
 				if = {
@@ -334,7 +334,7 @@ scripted_gui = {
 							skill > 19
 						}
 					}
-					always = NO
+					always = no
 				}
 			}
 		} 
@@ -705,6 +705,17 @@ scripted_gui = {
 				}
 				
 			}
+			az_single_leader_fav_click = {
+				if = {
+					limit = { has_character_flag = az_leadermenu_fav }
+					clr_character_flag = az_leadermenu_fav
+					set_variable = { az_leadermenu_fav_var = 1 }
+				}
+				else = {
+					set_character_flag = az_leadermenu_fav
+					set_variable = { az_leadermenu_fav_var = 2 }
+				}
+			}
 			az_single_leader_xiujia_click = {
 				ROOT = {
 					add_to_variable = { xiujia_leader_amount = 1 }
@@ -795,6 +806,11 @@ scripted_gui = {
 			}
 			
 		}
+	properties = {
+		az_single_leader_fav = {
+			frame = THIS.az_leadermenu_fav_var
+		}
+	}
 		dynamic_lists = {
             az_leadermenu_gridbox = {
                 array = ROOT.az_leader_list_array
@@ -1211,6 +1227,15 @@ scripted_gui = {
 						clr_country_flag = leader_shaixuan_dujia_1200
 						clr_country_flag = leader_shaixuan_dujia_over_1200
 					}
+				}
+			}
+			leader_shaixuan_btn10_click = {
+				if = {
+					limit = { NOT = { has_country_flag = leader_shaixuan_xihuan } }
+					set_country_flag = leader_shaixuan_xihuan
+				}
+				else = {
+					clr_country_flag = leader_shaixuan_xihuan
 				}
 			}
 			az_leadermenu_shaixuan_quanxuan_button_click = {

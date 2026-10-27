@@ -42,7 +42,7 @@ characters={
 		}
 
 		advisor = {
-			cost = 50
+			cost = 100
 			slot = political_advisor
 			idea_token = weiershi
 			traits = { trait_weiershi }
@@ -152,7 +152,7 @@ characters={
 
 			traits = { trait_yanzhan }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -223,7 +223,16 @@ characters={
 				small="gfx/interface/ideas/idea_shengli.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = shengli
+			traits = { trait_shengli }
+
+			ai_will_do = {
+				factor = 16
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -263,7 +272,7 @@ characters={
 			}
 			traits = { trait_beierfasite }
 			ai_will_do = {
-				factor = 10
+				factor = 20
 			}
 		}
 		corps_commander = {
@@ -331,7 +340,15 @@ characters={
 				small="gfx/interface/ideas/idea_yuekegongjue.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = yuekegongjue
+			traits = { trait_yuekegongjue }
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -404,7 +421,7 @@ characters={
 			idea_token = kewei
 			traits = { trait_kewei }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -642,7 +659,16 @@ characters={
 				small="gfx/interface/ideas/idea_guangrong.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = guangrong
+
+			traits = { trait_guangrong }
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		navy_leader = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -694,7 +720,16 @@ characters={
 				small="gfx/interface/ideas/idea_biaoqiang.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			idea_token = biaoqiang
+
+			traits = { trait_biaoqiang }
+			ai_will_do = {
+				factor = 10
+			}
+		}
 		navy_leader = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -795,7 +830,7 @@ characters={
 			idea_token = tianlangxing
 			traits = { trait_tianlangxing }
 			ai_will_do = {
-				factor = 10
+				factor = 0
 			}
 		}
 		corps_commander = {
@@ -893,7 +928,16 @@ characters={
 				small="gfx/interface/ideas/idea_banrenma.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = banrenma
+
+			traits = { trait_banrenma }
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1237,7 +1281,15 @@ characters={
 				small="gfx/interface/ideas/idea_haiwangxing.png"
 			}
 		}
-	
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = haiwangxing
+			traits = { trait_haiwangxing }
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1645,6 +1697,16 @@ characters={
 				small="gfx/interface/ideas/idea_keliaopeitela.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = keliaopeitela
+			traits = { trait_keliaopeitela }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1669,6 +1731,16 @@ characters={
 				small="gfx/interface/ideas/idea_texiusi.png"
 			}
 		}
+		advisor = {
+			cost = 100
+			slot = political_advisor
+			idea_token = texiusi
+			traits = { trait_texiusi }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
 		corps_commander = {
 			visible = { 
 				NOT = { has_character_flag = xiujia_doing } 
@@ -1683,6 +1755,332 @@ characters={
 			defense_skill = 3
 			planning_skill = 3
 			logistics_skill = 3
+		}
+	}
+	HUJ_dengken = {
+		name = HUJ_dengken
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/dengken.png"
+				small="gfx/interface/ideas/idea_dengken.png"
+			}
+		}
+	
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { zhanlie_navy }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+	HUJ_hujsali = {
+		name = HUJ_hujsali
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/hujsali.png"
+				small="gfx/interface/ideas/idea_hujsali.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
+	HUJ_huali = {
+		name = HUJ_huali
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/huali.png"
+				small="gfx/interface/ideas/idea_huali.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	HUJ_gelifen = {
+		name = HUJ_gelifen
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/gelifen.png"
+				small="gfx/interface/ideas/idea_gelifen.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	HUJ_hu = {
+		name = HUJ_hu
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/hu.png"
+				small="gfx/interface/ideas/idea_hu.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = hu
+			traits = { trait_hu }
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+	HUJ_didui = {
+		name = HUJ_didui
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/didui.png"
+				small="gfx/interface/ideas/idea_didui.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	HUJ_congmang = {
+		name = HUJ_congmang
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/congmang.png"
+				small="gfx/interface/ideas/idea_congmang.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	HUJ_jiaweisi = {
+		name = HUJ_jiaweisi
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/jiaweisi.png"
+				small="gfx/interface/ideas/idea_jiaweisi.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			idea_token = jiaweisi
+			traits = { trait_jiaweisi }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	HUJ_dewenjun = {
+		name = HUJ_dewenjun
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/dewenjun.png"
+				small="gfx/interface/ideas/idea_dewenjun.png"
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { xunyang_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	HUJ_nubiyaren = {
+		name = HUJ_nubiyaren
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/nubiyaren.png"
+				small="gfx/interface/ideas/idea_nubiyaren.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = nubiyaren
+
+			traits = { trait_nubiyaren }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { hangmu_army }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	HUJ_yingxiong = {
+		name = HUJ_yingxiong
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/yingxiong.png"
+				small="gfx/interface/ideas/idea_yingxiong.png"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			idea_token = yingxiong
+			traits = { trait_yingxiong }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { quzhu_army }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	HUJ_shi = {
+		name = HUJ_shi
+		portraits={
+			army = {
+				large="gfx/leaders/HUJ/shi.png"
+				small="gfx/interface/ideas/idea_shi.png"
+			}
+		}
+		navy_leader = {
+			visible = { 
+				NOT = { has_character_flag = xiujia_doing } 
+				OR = {
+					NOT = { tag = TAN }
+					is_ai = no
+				}
+			}
+			traits = { ironside zhanlie_navy }
+			skill = 5
+			attack_skill = 8
+			defense_skill = 6
+			maneuvering_skill = 6
+			coordination_skill = 8
 		}
 	}
 	#克隆人

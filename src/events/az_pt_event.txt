@@ -1,4 +1,4 @@
-﻿add_namespace = az_pt_1_event
+add_namespace = az_pt_1_event
 add_namespace = az_pt_2_event
 add_namespace = az_pt_3_event
 add_namespace = az_pt_4_event
@@ -612,7 +612,7 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	minor_flavor = yes
 	trigger = {
-        has_stability = 1 
+        has_stability > 0.99
 		NOT = { has_country_flag = az_PT_3_002 }
 	}	
 	mean_time_to_happen = {
@@ -630,7 +630,7 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	minor_flavor = yes
 	trigger = {
-		has_war_support = 1 
+		has_war_support > 0.99 
 		NOT = { has_country_flag = az_PT_3_003 }
 	}	
 	mean_time_to_happen = {
@@ -1851,9 +1851,9 @@ country_event = {
 	trigger = {
         any_owned_state = {
 			is_capital = yes
-			arms_factory = 0
-			industrial_complex = 0
-			dockyard = 0
+			arms_factory < 1
+			industrial_complex < 1
+			dockyard < 1
 		}		
 	    not = { has_country_flag = az_PT_6_004 }
     }	
@@ -1874,7 +1874,7 @@ country_event = {
 	trigger = {
 		date > 1939.01.01
 		has_intelligence_agency = yes
-		agency_upgrade_number = 0
+		agency_upgrade_number < 1
 	    not = { has_country_flag = az_PT_6_005 }
     }	
 	mean_time_to_happen = {
@@ -2728,7 +2728,7 @@ country_event = { #全面基建
 	trigger = {
 		num_of_controlled_states > 20
 		all_owned_state = {
-			infrastructure = 5
+			infrastructure > 4 infrastructure < 6
 		}		
 	not = { has_country_flag = az_PT_8_010 }
     }	
@@ -2749,7 +2749,7 @@ country_event = { #单个基建
 	trigger = {
 		num_of_controlled_states < 20
 		any_owned_state = {
-			infrastructure = 5
+			infrastructure > 4 infrastructure < 6
 		}	
 	not = { has_country_flag = az_PT_8_011 }
     }	

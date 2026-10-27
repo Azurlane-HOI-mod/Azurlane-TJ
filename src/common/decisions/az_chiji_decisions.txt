@@ -42,6 +42,7 @@ az_chiji_tyjy = {
 	ai_chiji_gfbuff_jy = {
 		visible = {
 			is_ai = yes
+			always = no	#暂时屏蔽
 		}
 		fire_only_once = yes
 		available = {
@@ -57,36 +58,36 @@ az_chiji_tyjy = {
 			factor = 100
 		}
 		complete_effect = {
-			add_ideas = ai_chiji_gfbuff
-			add_ideas = ai_chiji_gfbuff2
-			if = {
-				limit = {
-					not = { tag = SIR }
-					not = { tag = SR1 }
-					not = { tag = SR3 }
-				}
-				every_controlled_state = {
-                	create_unit = {
-				   		division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
-				    	owner = PREV
-				    	count = 30
-			   	 	}
-            	}
-			}
+			#add_ideas = ai_chiji_gfbuff
+			#add_ideas = ai_chiji_gfbuff2
+			# if = {
+				# limit = {
+					# not = { tag = SIR }
+					# not = { tag = SR1 }
+					# not = { tag = SR3 }
+				# }
+				# every_controlled_state = {
+                	# create_unit = {
+				   		# division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 0.7 start_equipment_factor = 1" 
+				    	# owner = PREV
+				    	# count = 30
+			   	 	# }
+            	# }
+			# }
 			if = {
 				limit = {
 					tag = SIR
 				}
 				add_offsite_building = { type = industrial_complex level = 100 }
-				add_offsite_building = { type = dockyard level = 300 }
-				add_offsite_building = { type = arms_factory level = 600 }
-				every_controlled_state = {
-                	create_unit = {
-				   		division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 1 start_equipment_factor = 1" 
-				    	owner = PREV
-				    	count = 5
-			   	 	}
-            	}
+				add_offsite_building = { type = dockyard level = 200 }
+				add_offsite_building = { type = arms_factory level = 300 }
+				# every_controlled_state = {
+                	# create_unit = {
+				   		# division = "name = \"通用步炮师\" division_template = \"通用步炮师\" start_experience_factor = 1 start_equipment_factor = 1" 
+				    	# owner = PREV
+				    	# count = 5
+			   	 	# }
+            	# }
 			}
 		}
 	}
@@ -125,12 +126,12 @@ az_chiji_tyjy = {
 			set_technology = {
 				centimetric_radar = 1
 			}
-			set_technology = {
-				improved_decimetric_radar = 1
-			}
-			set_technology = {
-				decimetric_radar = 1
-			}
+			# set_technology = {
+				# improved_decimetric_radar = 1
+			# }
+			# set_technology = {
+				# decimetric_radar = 1
+			# }
 			set_technology = {
 				radio_detection = 1
 			}
@@ -294,19 +295,19 @@ az_chiji_tyjy = {
 			}
 		}
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				shijianniangguojia_trigger = yes
-				add = 100
-			}
-			modifier = {
-				shisairen_trigger = yes
-				add = 100
-			}
-			modifier = {
-				tag = SIR
-				add = 100
-			}
+			factor = 100
+			# modifier = {
+				# shijianniangguojia_trigger = yes
+				# add = 100
+			# }
+			# modifier = {
+				# shisairen_trigger = yes
+				# add = 100
+			# }
+			# modifier = {
+				# tag = SIR
+				# add = 100
+			# }
 		}
 		fire_only_once = yes
 		days_remove = 7
@@ -1144,7 +1145,7 @@ az_chiji_tyjy = {
 			not = { country_exists = SCO }
 			not = { country_exists = NIR }
 			not = { country_exists = IRE }
-			not = { country_exists = RGB }
+			#not = { country_exists = RGB } #神秘P社RGB报错
 			not = { has_war_with = HU1 }
 			not = { has_war_with = HU2 }
 			not = { has_war_with = HU3 }
@@ -1437,7 +1438,7 @@ az_chiji_tyjy = {
 			owns_state = 64
 			not = { country_exists = TI1 }
 			not = { country_exists = TI2 }
-			not = { country_exists = TI4 }
+			#not = { country_exists = TI4 }
 		}
 		complete_effect = {
 			set_global_flag = tix_chijitongyi_yes
