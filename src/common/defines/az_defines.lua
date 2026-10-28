@@ -62,3 +62,13 @@ NDefines.NProduction.BASE_ENERGY_COST = 0.1            -- 单座工厂的基础�
 NDefines.NCountry.REINFORCEMENT_MANPOWER_CHUNK = 0.3				-- 人力补员运送的每次输送量，以该编制所需总人力的百分比表示
 NDefines.NCountry.REINFORCEMENT_MANPOWER_DELIVERY_SPEED = 30.0				-- 陆军人力补充送达速度（运输时间）的修正系数
 --NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 1.0          --对岸炮击数值上限（原0.33，应狗崽子要求改为1.0）1.0太高，屏蔽了
+NDefines.NAir.BOMBERS_DIVISION_FACTOR = 300 -- 【轰炸机视觉比例】默认 30。现在每 300 架真实轰炸机才绘制 1 个视觉 3D 模型。
+NDefines.NAir.FIGHTERS_DIVISION_FACTOR = 300 -- 【战斗机视觉比例】默认 30。同上，减轻空域卡顿。
+NDefines.NAir.MISSILES_DIVISION_FACTOR = 300 -- 【导弹视觉比例】默认 60。
+NDefines.NAir.TRANSPORT_DIVISION_FACTOR = 300 -- 【运输机视觉比例】默认 30。
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_TEMPLATE = 30 -- 【AI检查最佳师编制】默认 7 天。现在改为 30 天。AI 计算新师编制的频率降低
+NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 20 -- 【AI研究权重更新】默认 7 天。现在改为 20 天。
+NDefines.NAI.REFIT_SHIP_RELUCTANCE = 90 -- 【AI改装舰船意愿】默认 28 天。AI 现在要等 90 天才考虑改装船只。
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_EQUIPMENT = 30 -- 【AI检查最佳装备】默认 7 天。现在改为 30 天。
+NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 14 -- 【AI升级师编制意愿】默认 7 天。现在改为 14 天。
+

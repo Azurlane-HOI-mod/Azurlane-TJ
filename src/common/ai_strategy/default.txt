@@ -2064,3 +2064,51 @@ if_we_can_build_nuclear_missiles_we_want_nuclear_missiles = {
 		value = 1
 	}
 }
+
+default_major_SF_marines = {
+	enable = {
+		is_major = yes
+		OR = {
+			has_doctrine = marines_1
+			has_doctrine = marines_2
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 2
+	}
+}
+
+default_major_SF_para = {
+	enable = {
+		is_major = yes
+		OR = {
+			has_doctrine = paratroopers_1
+			has_doctrine = paratroopers_2
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 4
+	}
+}
+
+build_patrol_bombers = {
+	enable = {
+		has_dlc = "By Blood Alone"
+		has_navy_size = {
+			size > 1
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = unit_ratio
+		id = maritime_patrol_plane
+		value = 2
+	}
+}

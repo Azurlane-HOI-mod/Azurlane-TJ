@@ -32,20 +32,39 @@ tank_destroyer_force_AZ = {
                 hard_attack = 0.2
                 ap_attack = 0.3
             }
+            category_self_propelled_artillery = {
+                max_strength = 2
+            }
+            category_self_propelled_anti_air = {
+                max_strength = 2
+            }
+            category_tank_destroyers = {
+                max_strength = 2
+            }
 
         }
         committed_operational_units = {
             assault_engineer = {
                 battalion_mult = {
                     category = category_tank_destroyers
-                    reliability = 0.04
+                    reliability = 0.05
                     soft_attack = 0.1
                     hard_attack = 0.1
                 }
             }
+            category_self_propelled_artillery = {
+                max_strength = 3
+            }
+            category_self_propelled_anti_air = {
+                max_strength = 3
+            }
+            category_tank_destroyers = {
+                max_strength = 3
+            }
         }
         redeployment_priority = {
             category_tank_destroyers = {
+                breakthrough = 0.1
                 supply_consumption = -0.03
                 default_morale = 0.2
             }
@@ -53,6 +72,7 @@ tank_destroyer_force_AZ = {
 
         independent_counterattacks = {
             category_tank_destroyers = {
+                breakthrough = 0.05
                 max_organisation = 10
                 initiative = 0.02
             }
@@ -130,6 +150,9 @@ armored_spearhead_TIX = {
         combat_width = -0.5
     }
     light_armor = {
+        combat_width = -0.5
+    }
+    modern_armor = {
         combat_width = -0.5
     }
 
@@ -265,6 +288,9 @@ mobile_defense_BYG = {
     heavy_armor = {
         combat_width = -0.5
     }
+    modern_armor = {
+        combat_width = -0.5
+    }
 
     rewards = {
 
@@ -388,6 +414,9 @@ streamlined_deployment_BFL = {
     heavy_armor = {
         combat_width = -0.5
     }
+    modern_armor = {
+        combat_width = -0.5
+    }
 
 
     rewards = {
@@ -509,6 +538,9 @@ armored_infantry_support_HUJ = {
         combat_width = -0.5
     }
     heavy_armor = {
+        combat_width = -0.5
+    }
+    modern_armor = {
         combat_width = -0.5
     }
     enable_tactic = tactic_blitz
@@ -2573,6 +2605,9 @@ self_propelled_support_AZ = {
     ai_will_do = { base = 0 }
 
 
+    category_all_armor = {
+        breakthrough = 0.1
+    }
     category_self_propelled_artillery = {
         soft_attack = 0.1
     }
@@ -2589,12 +2624,15 @@ self_propelled_support_AZ = {
         AZ1 = {
             category_self_propelled_artillery = {
                 max_organisation = 15
+                breakthrough = 0.1
             }
             category_self_propelled_anti_air= {
                 max_organisation = 15
+                breakthrough = 0.1
             }
             category_tank_destroyers = {
                 max_organisation = 15
+                breakthrough = 0.1
             }
         }
         AZ2 = {
@@ -2624,12 +2662,15 @@ self_propelled_support_AZ = {
         AZ3 = {
             category_self_propelled_artillery = {
                 maximum_speed = 0.5
+                breakthrough = 0.1
             }
             category_self_propelled_anti_air = {
                 maximum_speed = 0.5
+                breakthrough = 0.1
             }
             category_tank_destroyers = {
                 maximum_speed = 0.5
+                breakthrough = 0.1
             }
         }
         AZ4 = {
@@ -2658,16 +2699,19 @@ self_propelled_support_AZ = {
             category_self_propelled_artillery = {
                 max_organisation = 15
                 default_morale = 0.2
+                breakthrough = 0.2
             }
             category_self_propelled_anti_air = {
                 max_organisation = 15
                 soft_attack = 0.2
                 default_morale = 0.2
+                breakthrough = 0.2
             }
             category_tank_destroyers = {
                 max_organisation = 15
                 hard_attack = 0.2
                 default_morale = 0.2
+                breakthrough = 0.2
             }
         }
 

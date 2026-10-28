@@ -223,11 +223,11 @@ az_no_unit_is_wrong = {
 		value = -50
 	}
 	
-	ai_strategy = {
-		type = template_prio
-		id = modern_armor
-		value = -50
-	}
+	# ai_strategy = {
+		# type = template_prio
+		# id = modern_armor
+		# value = -50
+	# }
 
 	ai_strategy = {
 		type = template_prio
@@ -271,11 +271,11 @@ az_no_unit_is_wrong = {
 		value = -50
 	}
 	
-	ai_strategy = {
-		type = role_ratio
-		id = modern_armor
-		value = -50
-	}
+	# ai_strategy = {
+		# type = role_ratio
+		# id = modern_armor
+		# value = -50
+	# }
 
 	ai_strategy = {
 		type = role_ratio
@@ -336,4 +336,26 @@ az_ai_invasion = {
     	value = 100
 	}
 
+}
+
+az_modern_tank_production = {
+	enable = {
+		shijianniangguojia_trigger = yes
+	}
+	abort_when_not_enabled = yes
+	enable = {
+		has_tech = main_battle_tank_chassis
+		date > 1940.1.1
+		arms_factory > 399
+	}
+	ai_strategy = {
+		type = role_ratio	#模板倾向
+		id = modern_armor
+		value = 500
+	}
+	ai_strategy = {
+		type = template_prio	#训练模板倾向
+		id = modern_armor
+		value = 500
+	}
 }
