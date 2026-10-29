@@ -681,7 +681,12 @@ az_chiji_tyjy = {
 	az_zsxzjy_sir2 = {
 		priority = 10000
 		allowed = {
-			shisairen_trigger = yes
+			OR = {
+				tag = SR1
+				tag = SR2
+				tag = SR3
+				tag = SR4
+			}
 			not = { tag = SIR }
 		}
 		visible = {

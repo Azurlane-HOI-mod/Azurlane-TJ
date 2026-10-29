@@ -969,7 +969,7 @@ TIX_jihua = {
 		targeted_modifier = {
 			tag = POL
 			attack_bonus_against = 0.5
-			defense_bonus_against = 0.5
+			breakthrough_factor = 0.5
 		}
 	}
 	TIX_yuw = {
@@ -1004,26 +1004,26 @@ TIX_jihua = {
 		}
 		targeted_modifier = {
 			tag = YUW
-			attack_bonus_against = 0.4
-			defense_bonus_against = 0.4
+			attack_bonus_against = 0.1
+			breakthrough_factor = 0.1
 		}
 		targeted_modifier = {
 			tag = HOL
-			attack_bonus_against = 0.4
-			defense_bonus_against = 0.4
+			attack_bonus_against = 0.2
+			breakthrough_factor = 0.2
 		}
 		targeted_modifier = {
 			tag = BEL
-			attack_bonus_against = 0.4
-			defense_bonus_against = 0.4
+			attack_bonus_against = 0.2
+			breakthrough_factor = 0.2
 		}
 		targeted_modifier = {
 			tag = LUX
-			attack_bonus_against = 0.4
-			defense_bonus_against = 0.4
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
 		}
 		modifier = {
-			army_speed_factor = 0.1
+			army_speed_factor = 0.05
 		}
 	}
 	TIX_huj = {
@@ -1062,8 +1062,8 @@ TIX_jihua = {
 		}
 		targeted_modifier = {
 			tag = HUJ
-			attack_bonus_against = 0.5
-			defense_bonus_against = 0.5
+			attack_bonus_against = 0.2
+			breakthrough_factor = 0.2
 		}
 		modifier = {
 			naval_invasion_capacity = 10
@@ -1103,11 +1103,11 @@ TIX_jihua = {
 		fire_only_once = yes
 		targeted_modifier = {
 			tag = BFL
-			attack_bonus_against = 0.4
-			defense_bonus_against = 0.4
+			attack_bonus_against = 0.1
+			breakthrough_factor = 0.1
 		}
 		modifier = {
-			supply_consumption_factor = -0.2
+			supply_consumption_factor = -0.1
 			winter_attrition_factor = -0.3
 			acclimatization_cold_climate_gain_factor = 0.2
 		}
@@ -1123,12 +1123,7 @@ TIX_jihua = {
 				has_government = neutrality
 				has_government = communism
 			}
-			OR = {
-				has_war_with = BYG
-				has_war_with = USA
-				has_war_with = CSA
-				has_war_with = USB
-			}
+			has_war_with = BYG
 		}
 		ai_will_do = {
 			factor = 100
@@ -1138,23 +1133,39 @@ TIX_jihua = {
 		fire_only_once = yes
 		targeted_modifier = {
 			tag = BYG
-			attack_bonus_against = 0.3
-			defense_bonus_against = 0.3
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_factor = 0.1
 		}
 		targeted_modifier = {
-			tag = USA
-			attack_bonus_against = 0.3
-			defense_bonus_against = 0.3
+			tag = BY1
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_factor = 0.1
 		}
 		targeted_modifier = {
-			tag = USB
-			attack_bonus_against = 0.3
-			defense_bonus_against = 0.3
+			tag = BY2
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_factor = 0.1
 		}
 		targeted_modifier = {
-			tag = CSA
-			attack_bonus_against = 0.3
-			defense_bonus_against = 0.3
+			tag = BY3
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_factor = 0.1
+		}
+		targeted_modifier = {
+			tag = BY4
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_factor = 0.1
+		}
+		targeted_modifier = {
+			tag = BY5
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+			breakthrough_factor = 0.1
 		}
 		modifier = {
 			industrial_capacity_dockyard = 0.3
@@ -1182,13 +1193,15 @@ TIX_jihua = {
 		fire_only_once = yes
 		targeted_modifier = {
 			tag = SAD
-			attack_bonus_against = 0.4
-			defense_bonus_against = 0.4
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
+			breakthrough_factor = 0.2
 		}
 		targeted_modifier = {
 			tag = ITA
-			attack_bonus_against = 0.4
-			defense_bonus_against = 0.4
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
+			breakthrough_factor = 0.2
 		}
 	}
 }
@@ -11550,12 +11563,51 @@ TIX_quanlipingheng = {
 }
 
 AZ_fkAIplayerjiaqiang = {
+	az_xiangyalida_dianzhege = {
+		visible = {
+			is_ai = no
+			has_global_flag = modoption_tiantangzhizhan_on
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			date < 1936.1.3
+			not = { has_global_flag = TY_fkAI_yourenjuedebugounan  }
+			not = { has_global_flag = TY_fkAI_yourenjuedebugounan2  }
+		}
+		available = {
+			is_ai = no
+			has_global_flag = modoption_tiantangzhizhan_on
+			has_global_flag = AZ_fengkuangAI_citiao_ex
+			date < 1936.1.3
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_global_flag = TY_fkAI_yourenjuedebugounan2
+			custom_effect_tooltip = az_dianzhiqiankanqingchu_tips
+			add_ideas = TY_fkAI_wanjiagangtiezhiqu
+			effect_tooltip = {
+				every_other_country = {
+					limit = {
+						shijianniangguojia_trigger = yes
+						is_ai = yes
+					}
+					swap_ideas = {
+						remove_idea = TY_fkAI_zuizhonghetiex
+						add_idea = TY_fkAI_zuizhonghetiex_kuaijiezou
+					}
+				}
+			}
+		}
+	}
 	az_qianzoule_dianzhege = {
 		visible = {
 			is_ai = no
 			has_global_flag = modoption_tiantangzhizhan_on
 			has_global_flag = AZ_fengkuangAI_citiao_ex
 			date < 1936.1.3
+			not = { has_global_flag = TY_fkAI_yourenjuedebugounan  }
+			not = { has_global_flag = TY_fkAI_yourenjuedebugounan2  }
 		}
 		available = {
 			is_ai = no
@@ -11570,6 +11622,7 @@ AZ_fkAIplayerjiaqiang = {
 		complete_effect = {
 			set_global_flag = TY_fkAI_yourenjuedebugounan
 			custom_effect_tooltip = az_dianzhiqiankanqingchu_tips
+			add_ideas = TY_fkAI_wanjiagangtiezhiqu
 			effect_tooltip = {
 				every_other_country = {
 					limit = {
@@ -11734,20 +11787,20 @@ AZ_fkAIplayerjiaqiang = {
 			limit = {
 			has_country_flag = AZ_fkAI_xuanzebuff_1
 			}
-			add_political_power = 1000
-			army_experience = 2000
-			navy_experience = 2000
-			air_experience = 2000
+			add_political_power = 500
+			army_experience = 1000
+			navy_experience = 1000
+			air_experience = 1000
 			add_command_power = 200
 			custom_effect_tooltip = wz_earn_50000
 			add_to_variable = {
 				var = wz_sl
 				value = 50000
 			}
-			custom_effect_tooltip = get_zs_shuliang_2000
+			custom_effect_tooltip = get_zs_shuliang_1000
 			add_to_variable = {
 				var = zs_sl
-				value = 2000
+				value = 1000
 			}
 			}
 			if = {
@@ -11782,21 +11835,21 @@ AZ_fkAIplayerjiaqiang = {
 			add_tech_bonus = {
 				name = "超级步枪卡"
 				bonus = 10
-				uses = 5
+				uses = 2
 				ahead_reduction = 10
 				category = infantry_weapons
 			}
 			add_tech_bonus = {
 				name = "超级支援卡"
 				bonus = 10
-				uses = 2
+				uses = 1
 				ahead_reduction = 10
 				category = support_tech
 			}
 			add_tech_bonus = {
 				name = "超级飞机卡"
 				bonus = 10
-				uses = 4
+				uses = 2
 				ahead_reduction = 10
 				category = air_equipment
 			}
@@ -11816,15 +11869,15 @@ AZ_fkAIplayerjiaqiang = {
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_land
-				value = 1.5
+				value = 1
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_naval
-				value = 1.5
+				value = 1
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_air
-				value = 1.5
+				value = 1
 			}
 			}
 			if = {
@@ -11867,7 +11920,7 @@ AZ_fkAIplayerjiaqiang = {
 			limit = {
 			has_country_flag = AZ_fkAI_xuanzebuff_9
 			}
-			add_offsite_building = { type = industrial_complex level = 30 }
+			add_offsite_building = { type = industrial_complex level = 15 }
 			}
 			if = {
 			limit = {

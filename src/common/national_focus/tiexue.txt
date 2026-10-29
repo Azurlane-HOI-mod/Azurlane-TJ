@@ -6897,21 +6897,20 @@ focus_tree = {
 				#	}
 				#}
 			}
-			if = {
-				limit = {
-					is_ai = yes
-					BFL = {
-						is_ai = yes
-					}
-					has_global_flag = AZ_fengkuangAI_citiao_ex
-				}
-				BFL = {
-					add_timed_idea = {
-						idea = BFL_weidadeweiguozhanzheng_ai
-						days = 650
-					}
-				}
-			}
+		    if = {
+			    limit = {
+				    BFL = {
+					    is_ai = yes
+				    }
+				    has_global_flag = AZ_fengkuangAI_citiao_ex
+			    }
+			    BFL = {
+				    add_timed_idea = {
+					    idea = BFL_weidadeweiguozhanzheng_ai
+					    days = 650
+				    }
+			    }
+		    }
 			if = {
 				limit = {
 					has_global_flag = AZ_fengkuangAI_citiao_ex

@@ -271,11 +271,6 @@ TIX_unit_production = {
 		value = 1
 	}
 	ai_strategy = {
-		type = equipment_production_min_factories	#装备倾向
-		id = mechanized_equipment	
-		value = 1
-	}
-	ai_strategy = {
 		type = equipment_production_factor	#装备倾向
 		id = armor			
 		value = 200
@@ -321,7 +316,7 @@ TIX_unit_production_expect_air = {
 	ai_strategy = {
 		type = unit_ratio
 		id = cas
-		value = 5
+		value = 40
 	}
 
 	ai_strategy = {
@@ -351,7 +346,7 @@ TIX_unit_production_expect_air = {
 	ai_strategy = {
 		type = equipment_production_factor
 		id = cas
-		value = 1
+		value = 20
 	}
 
 	ai_strategy = {
@@ -569,7 +564,6 @@ TIX_strike_BFL = {
 	enable = {
 		has_completed_focus = TIX_qifujuxiong
 		date < 1942.7.1
-		BFL = { is_ai = no }
 	}
 	abort = {
 	    date > 1942.7.1
@@ -600,45 +594,6 @@ TIX_strike_BFL = {
 		value = 20000 #value of stocked main front in active combat is usually around 35,000
 	}
 	
-}
-
-TIX_strike_BFL_aivsai = {
-    allowed = {
-		original_tag = TIX
-	}
-	enable = {
-		has_completed_focus = TIX_qifujuxiong
-		date < 1942.1.1
-		BFL = { is_ai = yes }
-	}
-	abort = {
-	    date > 1942.1.1
-	}
-
-    ai_strategy = {
-		type = front_control
-
-		tag = BFL
-
-		ratio = 0.5
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
-	
-	ai_strategy = {
-		type = strategic_air_importance
-		id = 39 #Strategic Region ID - Eastern Poland
-		value = 20000 #value of stocked main front in active combat is usually around 35,000
-	}
-
-	ai_strategy = {
-		type = strategic_air_importance
-		id = 130 #Strategic Region ID - Ukraine
-		value = 20000 #value of stocked main front in active combat is usually around 35,000
-	}
 }
 
 BFL_ally = {

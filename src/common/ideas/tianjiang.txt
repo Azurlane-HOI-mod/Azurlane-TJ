@@ -973,19 +973,24 @@ ideas = {
 				NOT = { has_war_with = TIX }
 			}
 			modifier = {
-				army_strength_factor = 0.1
-				army_org_factor = 0.5
-				army_morale_factor = 0.5
-				land_reinforce_rate = 0.25
-				army_core_attack_factor = 1.2
-				army_core_defence_factor = 3
+				#army_strength_factor = 0.1
+				army_org_factor = 0.2
+				army_morale_factor = 0.2
+				land_reinforce_rate = 0.2
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.8
 				#planning_speed = -1
 				#max_planning = -1
 			}
 			targeted_modifier = {
 				tag = TIX
-				attack_bonus_against = 0.5
-				defense_bonus_against = 1.5
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.3
+			}
+			targeted_modifier = {
+				tag = SAD
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.3
 			}
 		}
 		
@@ -1228,7 +1233,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_org_regain = 0.2
+				army_morale_factor = 0.2
 				army_org_factor = -0.2
 				army_core_attack_factor = 0.3
 				army_core_defence_factor = 0.3
@@ -1251,7 +1256,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_org_regain = 0.2
+				army_morale_factor = 0.2
 				army_org_factor = -0.1
 				army_core_attack_factor = 0.15
 				army_core_defence_factor = 0.15
@@ -1274,7 +1279,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_org_regain = 0.1
+				army_morale_factor = 0.1
 				army_core_attack_factor = 0.15
 				army_core_defence_factor = 0.15
 				army_attack_factor = -0.15
@@ -1296,7 +1301,7 @@ ideas = {
 			}
 			modifier = {
 				surrender_limit = 0.1
-				army_org_regain = 0.2
+				army_morale_factor = 0.2
 				army_core_attack_factor = 0.3
 				army_core_defence_factor = 0.3
 				army_attack_factor = 0.2
@@ -1928,7 +1933,7 @@ ideas = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
 				army_speed_factor = 0.05
-				army_org_regain = 0.1
+				army_morale_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.15
 				production_factory_max_efficiency_factor = 0.15
 			}
@@ -2006,7 +2011,7 @@ ideas = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
 				army_speed_factor = 0.05
-				army_org_regain = 0.1
+				army_morale_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.20
 				production_factory_max_efficiency_factor = 0.2
 			}
@@ -2500,12 +2505,11 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				political_power_cost = -0.5
-				army_org_factor = 0.2
-				army_morale_factor = 0.2
-				org_loss_when_moving = -0.2
-				army_armor_attack_factor = 0.2
-				army_armor_defence_factor = 0.2
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
+				org_loss_when_moving = -0.1
+				army_armor_attack_factor = 0.1
+				army_armor_defence_factor = 0.1
 				army_speed_factor = 0.1
 				ai_focus_aggressive_factor = 1
 			}
@@ -2517,18 +2521,16 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				political_power_cost = -0.5
-				air_accidents = -0.4
-				air_weather_penalty = -0.4
-				air_attack_factor = 0.3
-				air_ace_generation_chance_factor = 0.5
-				air_mission_efficiency = 0.3 
-				air_superiority_efficiency = 0.3
-				air_intercept_efficiency = 0.3
-				air_cas_efficiency = 0.5
-				air_night_penalty = -0.3
-				air_range_factor = 0.3
-				air_agility_factor = 0.3
+				air_accidents = -0.2
+				air_weather_penalty = -0.2
+				air_attack_factor = 0.2
+				air_ace_generation_chance_factor = 0.25
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+				air_night_penalty = -0.2
+				air_range_factor = 0.2
+				air_agility_factor = 0.1
 			}
 		}
 		
@@ -2538,19 +2540,12 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				political_power_gain = 0.5
 				army_attack_factor = 0.1
 				army_defence_factor = 0.1
-				army_morale_factor = 0.3
-				navy_screen_attack_factor = 0.2
-				navy_screen_defence_factor = 0.2
-				navy_capital_ship_attack_factor = 0.2
-				navy_capital_ship_defence_factor = 0.2
-				carrier_capacity_penalty_reduction = -0.2
-				naval_strike_attack_factor = 0.10
-				naval_strike_targetting_factor = 0.10
+				army_morale_factor = 0.1
+				carrier_capacity_penalty_reduction = -0.5
 				naval_speed_factor = 0.1
-				navy_max_range_factor = 0.3
+				navy_max_range_factor = 0.25
 				supply_consumption_factor = -0.1
 			}
 		}
@@ -2562,14 +2557,11 @@ ideas = {
 			}
 			modifier = {
 				attrition = -0.1
-				army_org_factor = 0.2
-				army_morale_factor = 0.3
+				army_org_factor = 0.15
+				army_morale_factor = 0.15
 				org_loss_when_moving = -0.1
-				breakthrough_factor = 0.1
-				recon_factor = 0.25
-				land_reinforce_rate = 0.02
+				recon_factor = 0.15
 				planning_speed = 0.5
-				max_planning = 0.3
 			}
 		}
 		
@@ -2579,20 +2571,16 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				air_accidents = -0.3
-				air_weather_penalty = -0.2
-				air_attack_factor = 0.2
-				air_ace_generation_chance_factor = 0.3
-				air_mission_efficiency = 0.2 
-				air_superiority_efficiency = 0.2
-				air_intercept_efficiency = 0.2
-				air_cas_efficiency = 0.5
-				air_night_penalty = -0.3
+				air_accidents = -0.2
+				air_attack_factor = 0.1
+				air_mission_efficiency = 0.1 
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.3
 				air_range_factor = 0.2
 				air_agility_factor = 0.2
-				industrial_capacity_dockyard = 1
-				navy_screen_attack_factor = 0.5
-				navy_screen_defence_factor = 0.5
+				navy_screen_attack_factor = 0.2
+				navy_screen_defence_factor = 0.2
 			}
 		}
 		
@@ -2602,12 +2590,11 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				political_power_cost = -0.8
-				line_change_production_efficiency_factor = 0.4
-				industrial_capacity_factory = 0.5
-				industrial_capacity_dockyard = 2.5
-				production_factory_max_efficiency_factor = 0.3
-				production_factory_efficiency_gain_factor = 2
+				political_power_cost = -0.5
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.2
 				training_time_army_factor = -0.1
 			}
 		}
@@ -2618,13 +2605,12 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				political_power_cost = -0.8
-				production_factory_efficiency_gain_factor = 1
-				army_infantry_attack_factor = 0.4
-				army_infantry_defence_factor = 0.4
-				land_reinforce_rate = 0.1
+				political_power_cost = -0.5
+				army_infantry_attack_factor = 0.1
+				army_infantry_defence_factor = 0.1
+				land_reinforce_rate = 0.02
 				army_org_factor = 0.1
-				army_morale_factor = 0.2
+				army_morale_factor = 0.1
 			}
 		}
 		
@@ -2634,11 +2620,11 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				war_support_factor = 1
-				#land_reinforce_rate = 0.2
-				command_power_gain_mult = 1
-				army_core_attack_factor = 0.5
-				army_core_defence_factor = 0.5
+				war_support_factor = 0.3
+				army_infantry_attack_factor = 0.1
+				army_infantry_defence_factor = 0.1
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
 				training_time_army_factor = -0.1
 			}
 		}
@@ -2959,11 +2945,11 @@ ideas = {
 			}			
 	
 			modifier = {
-				army_attack_factor = 0.8
-				breakthrough_factor = 0.5
-				org_loss_when_moving = -0.35
-				supply_consumption_factor = -0.25
-				no_supply_grace = 144
+				army_attack_factor = 0.5
+				breakthrough_factor = 0.3
+				org_loss_when_moving = -0.33
+				supply_consumption_factor = -0.15
+				no_supply_grace = 72
 				war_support_factor = 1
 			}
 		}
@@ -2975,10 +2961,10 @@ ideas = {
 			}			
 	
 			modifier = {
-				army_org_factor = 0.6
-				army_morale_factor = 0.6
-				army_attack_factor = 0.6
-				army_defence_factor = 0.6
+				army_org_factor = 0.3
+				army_morale_factor = 0.4
+				army_attack_factor = 0.3
+				army_defence_factor = 0.3
 			}
 		}
 		
@@ -2988,16 +2974,13 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				line_change_production_efficiency_factor = 0.2
-				industrial_capacity_factory = 0.25
-				industrial_capacity_dockyard = 0.25
-				non_core_manpower = 0.4
-				navy_screen_attack_factor = 0.5
-				navy_screen_defence_factor = 0.5
-				navy_capital_ship_attack_factor = 0.5
-				navy_capital_ship_defence_factor = 0.5
-				naval_speed_factor = 0.15
-				navy_max_range_factor = 0.5
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				non_core_manpower = 0.2
+				navy_screen_attack_factor = 0.2
+				navy_screen_defence_factor = 0.2
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.25
 			}
 		}
 		
@@ -3010,20 +2993,15 @@ ideas = {
 				can_join_factions = no
 			}
 			modifier = {
-				research_speed_factor = 1
-				line_change_production_efficiency_factor = 0.2
-				industrial_capacity_factory = 0.25
-				industrial_capacity_dockyard = 0.8
-				non_core_manpower = 0.2
-				navy_org = 10
-				navy_screen_attack_factor = 0.5
-				navy_screen_defence_factor = 0.5
-				navy_capital_ship_attack_factor = 0.5
-				navy_capital_ship_defence_factor = 0.5
-				naval_speed_factor = 0.3
-				navy_max_range_factor = 1
-				positioning = 0.25
-				spotting_chance = 0.5
+				research_speed_factor = 0.5
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.25
+				navy_screen_attack_factor = 0.3
+				navy_screen_defence_factor = 0.3
+				navy_capital_ship_attack_factor = 0.3
+				navy_capital_ship_defence_factor = 0.3
+				naval_speed_factor = 0.15
+				navy_max_range_factor = 0.5
 			}
 		}
 		
@@ -3385,14 +3363,11 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_attack_factor = 3
-				army_defence_factor = 3
-				army_org_factor = 3
-				army_morale_factor = 1
-				army_strength_factor = 5
-				production_speed_buildings_factor = 0.3
-				industrial_capacity_factory = 0.5
-				industrial_capacity_dockyard = 0.5
+				army_attack_factor = 1
+				army_defence_factor = 1
+				army_org_factor = 1
+				army_morale_factor = 0.5
+				army_strength_factor = 1
 			} 
 		}
 		
@@ -3402,14 +3377,11 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_attack_factor = 10
-				army_defence_factor = 10
-				army_org_factor = 5
-				army_morale_factor = 3
-				army_strength_factor = 10
-				production_speed_buildings_factor = 0.5
-				industrial_capacity_factory = 1
-				industrial_capacity_dockyard = 1
+				army_attack_factor = 3
+				army_defence_factor = 3
+				army_org_factor = 3
+				army_morale_factor = 1
+				army_strength_factor = 3
 			} 
 		}
 
@@ -3419,14 +3391,11 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_attack_factor = 20
-				army_defence_factor = 20
-				army_org_factor = 10
-				army_morale_factor = 5
-				army_strength_factor = 10
-				production_speed_buildings_factor = 1
-				industrial_capacity_factory = 3
-				industrial_capacity_dockyard = 3
+				army_attack_factor = 5
+				army_defence_factor = 5
+				army_org_factor = 5
+				army_morale_factor = 3
+				army_strength_factor = 5
 			} 
 		}
 		
@@ -3436,12 +3405,12 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_org_factor = 0.2
-				army_morale_factor = 0.2
+				#army_org_factor = 0.1
+				army_morale_factor = 0.1
 				org_loss_when_moving = -0.1
-				army_armor_attack_factor = 0.15
-				army_armor_defence_factor = 0.15
-				army_speed_factor = 0.05
+				army_armor_attack_factor = 0.1
+				army_armor_defence_factor = 0.1
+				#army_speed_factor = 0.05
 			}
 		}
 		
@@ -3451,17 +3420,17 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				air_accidents = -0.5
-				air_weather_penalty = -0.5
-				air_attack_factor = 0.4
-				air_ace_generation_chance_factor = 0.5
-				air_mission_efficiency = 0.4
-				air_superiority_efficiency = 0.4
-				air_intercept_efficiency = 0.4
-				air_cas_efficiency = 0.5
-				air_night_penalty = -0.5
-				air_range_factor = 0.4
-				air_agility_factor = 0.4
+				#air_accidents = -0.2
+				#air_weather_penalty = -0.2
+				air_attack_factor = 0.1
+				air_ace_generation_chance_factor = 0.2
+				#air_mission_efficiency = 0.2
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+				air_night_penalty = -0.2
+				air_range_factor = 0.2
+				air_agility_factor = 0.1
 			}
 		}
 		
@@ -3473,14 +3442,14 @@ ideas = {
 			modifier = {
 				army_attack_factor = 0.1
 				army_defence_factor = 0.1
-				army_morale_factor = 0.3
-				navy_screen_attack_factor = 0.2
-				navy_screen_defence_factor = 0.2
-				navy_capital_ship_attack_factor = 0.2
-				navy_capital_ship_defence_factor = 0.2
+				#army_morale_factor = 0.1
+				#navy_screen_attack_factor = 0.1
+				#navy_screen_defence_factor = 0.1
+				#navy_capital_ship_attack_factor = 0.1
+				#navy_capital_ship_defence_factor = 0.1
 				carrier_capacity_penalty_reduction = -0.5
-				naval_strike_attack_factor = 0.1
-				naval_strike_targetting_factor = 0.1
+				#naval_strike_attack_factor = 0.1
+				#naval_strike_targetting_factor = 0.1
 				naval_speed_factor = 0.05
 				navy_max_range_factor = 0.2
 				supply_consumption_factor = -0.1
@@ -3493,15 +3462,10 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				attrition = -0.1
 				army_org_factor = 0.1
-				army_morale_factor = 0.2
+				army_morale_factor = 0.1
 				org_loss_when_moving = -0.1
-				breakthrough_factor = 0.1
 				recon_factor = 0.1
-				land_reinforce_rate = 0.02
-				planning_speed = 0.3
-				max_planning = 0.1
 			}
 		}
 		
@@ -3511,21 +3475,21 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				air_accidents = -0.3
-				air_weather_penalty = -0.2
-				air_attack_factor = 0.3
-				air_ace_generation_chance_factor = 0.4
-				air_mission_efficiency = 0.3
-				air_superiority_efficiency = 0.3
-				air_intercept_efficiency = 0.3
-				air_cas_efficiency = 0.5
-				air_night_penalty = -0.3
-				air_range_factor = 0.3
-				air_agility_factor = 0.3
-				industrial_capacity_dockyard = 0.3
-				navy_screen_attack_factor = 0.25
-				navy_screen_defence_factor = 0.25
-				navy_capital_ship_attack_factor = 0.1
+				#air_accidents = -0.2
+				air_weather_penalty = -0.1
+				air_attack_factor = 0.1
+				#air_ace_generation_chance_factor = 0.2
+				#air_mission_efficiency = 0.1
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				#air_cas_efficiency = 0.3
+				#air_night_penalty = -0.1
+				air_range_factor = 0.2
+				air_agility_factor = 0.2
+				#industrial_capacity_dockyard = 0.1
+				navy_screen_attack_factor = 0.2
+				navy_screen_defence_factor = 0.2
+				#navy_capital_ship_attack_factor = 0.1
 			}
 		}
 		
@@ -3535,11 +3499,10 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				line_change_production_efficiency_factor = 0.2
-				industrial_capacity_factory = 0.3
-				industrial_capacity_dockyard = 0.5
-				production_factory_max_efficiency_factor = 0.2
-				production_factory_efficiency_gain_factor = 0.5
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
 		
@@ -3549,12 +3512,10 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.2
-				army_infantry_attack_factor = 0.3
-				army_infantry_defence_factor = 0.3
-				land_reinforce_rate = 0.05
+				army_infantry_attack_factor = 0.1
+				army_infantry_defence_factor = 0.1
+				land_reinforce_rate = 0.02
 				army_org_factor = 0.1
-				army_morale_factor = 0.1
 			}
 		}
 		
@@ -3564,20 +3525,18 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				war_support_factor = 0.5
-				#land_reinforce_rate = 0.2
-				command_power_gain_mult = 0.25
-				army_core_attack_factor = 0.5
-				army_core_defence_factor = 0.5
+				war_support_factor = 0.3
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
 			}
 			equipment_bonus = {
 				modern_tank_chassis = {
 					build_cost_ic = -0.1
-					armor_value = 0.2
-					soft_attack = 0.3
-					hard_attack = 0.3
+					armor_value = 0.1
+					soft_attack = 0.2
+					hard_attack = 0.2
 					ap_attack = 0.3
-					reliability_factor = 0.15
+					reliability_factor = 0.1
 					instant = yes
 				}
 			}
@@ -3601,7 +3560,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_strength_factor = 1
+				army_strength_factor = 0.15
 			} 
 		}
 		
@@ -3612,6 +3571,7 @@ ideas = {
 			}
 			modifier = {
 				planning_speed = 10
+				planning_decay_rate_factor = -0.3
 				production_factory_start_efficiency_factor = 1
 				line_change_production_efficiency_factor = 1
 				max_command_power = 500
@@ -3627,10 +3587,10 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				crypto_strength = 10
-				intelligence_agency_defense = 10
-				enemy_operative_capture_chance_factor = 0.3
-				enemy_operative_detection_chance = 20
+				crypto_strength = 3
+				intelligence_agency_defense = 3
+				#enemy_operative_capture_chance_factor = 0.3
+				#enemy_operative_detection_chance = 20
 				enemy_operative_forced_into_hiding_time_factor = 0.3
 			} 
 		}
@@ -3642,8 +3602,8 @@ ideas = {
 			}
 			modifier = {
 				#terrain_penalty_reduction = 1
-				fortification_collateral_chance = 1
-				experience_gain_factor = 10
+				fortification_collateral_chance = 0.5
+				experience_gain_factor = 1
 			} 
 		}
 		
@@ -3653,7 +3613,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				industrial_capacity_dockyard = 20
+				industrial_capacity_dockyard = 10
 				positioning = 2
 			} 
 			equipment_bonus = {
@@ -3682,14 +3642,14 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_attack_factor = 0.8
-				army_defence_factor = 0.8
-				army_attack_against_major_factor = 0.1
-				army_defence_against_major_factor = 0.1
-				army_breakthrough_against_major_factor = 0.1
-				army_attack_against_minor_factor = 0.1
-				army_defence_against_minor_factor = 0.1
-				army_breakthrough_against_minor_factor = 0.1
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				army_attack_against_major_factor = 0.05
+				army_defence_against_major_factor = 0.05
+				army_breakthrough_against_major_factor = 0.05
+				army_attack_against_minor_factor = 0.05
+				army_defence_against_minor_factor = 0.05
+				army_breakthrough_against_minor_factor = 0.05
 			} 
 		}
 		
@@ -3709,7 +3669,6 @@ ideas = {
 			modifier = {
 				army_attack_against_major_factor = -0.3
 				army_breakthrough_against_major_factor = -0.3
-				#army_org_factor = -0.5
 				training_time_army_factor = 0.5
 			} 
 			on_remove = {
@@ -3738,7 +3697,65 @@ ideas = {
 			}
 			modifier = {
 				conscription = 0.2
+				planning_decay_rate_factor = -0.5
+				army_strength_factor = 0.25
+				#army_org_factor = 1
+				#army_morale_factor = 1
+				planning_speed = 10
+				production_factory_start_efficiency_factor = 1
+				line_change_production_efficiency_factor = 1
+				max_command_power = 500
+				command_power_gain = 5
+				grant_medal_cost_factor = -1
+				crypto_strength = 5
+				intelligence_agency_defense = 5
+				#enemy_operative_capture_chance_factor = 0.3
+				#enemy_operative_detection_chance = 20
+				enemy_operative_forced_into_hiding_time_factor = 0.5
+				#terrain_penalty_reduction = 1
+				industrial_capacity_dockyard = 30
+				positioning = 2
+				army_attack_factor = 0.3
+				army_defence_factor = 0.3
+				army_attack_against_major_factor = 0.1
+				army_defence_against_major_factor = 0.1
+				army_breakthrough_against_major_factor = 0.1
+				army_attack_against_minor_factor = 0.1
+				army_defence_against_minor_factor = 0.1
+				army_breakthrough_against_minor_factor = 0.1
+				dig_in_speed = 10
+				fortification_collateral_chance = 0.5
+				experience_gain_factor = 1
+			}
+			equipment_bonus = {
+				ship_hull_cruiser = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				ship_hull_carrier = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				ship_hull_heavy = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+		}
+
+		TY_fkAI_zuizhonghetiex_kuaijiezou = {
+			picture = fengkuangai
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				conscription = 0.2
 				army_strength_factor = 2
+				planning_decay_rate_factor = -0.8
 				army_org_factor = 1
 				army_morale_factor = 1
 				planning_speed = 10
@@ -3747,11 +3764,11 @@ ideas = {
 				max_command_power = 500
 				command_power_gain = 5
 				grant_medal_cost_factor = -1
-				crypto_strength = 10
-				intelligence_agency_defense = 10
-				enemy_operative_capture_chance_factor = 0.3
-				enemy_operative_detection_chance = 20
-				enemy_operative_forced_into_hiding_time_factor = 0.3
+				crypto_strength = 5
+				intelligence_agency_defense = 5
+				#enemy_operative_capture_chance_factor = 0.3
+				#enemy_operative_detection_chance = 20
+				enemy_operative_forced_into_hiding_time_factor = 0.5
 				#terrain_penalty_reduction = 1
 				industrial_capacity_dockyard = 30
 				positioning = 2
@@ -3764,6 +3781,8 @@ ideas = {
 				army_defence_against_minor_factor = 0.2
 				army_breakthrough_against_minor_factor = 0.2
 				dig_in_speed = 10
+				fortification_collateral_chance = 0.5
+				experience_gain_factor = 1
 			}
 			equipment_bonus = {
 				ship_hull_cruiser = {
@@ -3793,6 +3812,7 @@ ideas = {
 			modifier = {
 				conscription = 0.5
 				army_strength_factor = 5
+				planning_decay_rate_factor = -0.8
 				army_org_factor = 5
 				army_morale_factor = 5
 				planning_speed = 10
@@ -3805,7 +3825,7 @@ ideas = {
 				intelligence_agency_defense = 10
 				enemy_operative_capture_chance_factor = 0.3
 				enemy_operative_detection_chance = 20
-				enemy_operative_forced_into_hiding_time_factor = 0.3
+				enemy_operative_forced_into_hiding_time_factor = 0.5
 				#terrain_penalty_reduction = 1
 				industrial_capacity_dockyard = 50
 				positioning = 2
@@ -3818,6 +3838,8 @@ ideas = {
 				army_defence_against_minor_factor = 3
 				army_breakthrough_against_minor_factor = 3
 				dig_in_speed = 20
+				fortification_collateral_chance = 1
+				experience_gain_factor = 10
 			}
 			equipment_bonus = {
 				ship_hull_cruiser = {
@@ -3865,10 +3887,10 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_attack_factor = 0.3
-				army_defence_factor = 0.3
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
 				planning_speed = 0.5
-				max_planning = 0.25
+				max_planning = 0.2
 				production_factory_start_efficiency_factor = 0.1
 				production_factory_max_efficiency_factor = 0.1
 				industrial_capacity_factory = 0.2
@@ -3885,17 +3907,15 @@ ideas = {
 				can_not_declare_war = yes
 			}
 			modifier = {
-				army_attack_factor = 0.3
-				army_defence_factor = 0.3
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
 				planning_speed = 1
-				max_planning = 0.5
-				line_change_production_efficiency_factor = 0.2
+				max_planning = 0.2
 				industrial_capacity_factory = 0.3
 				industrial_capacity_dockyard = 0.3
 				production_factory_max_efficiency_factor = 0.2
 				production_factory_efficiency_gain_factor = 0.2
-				army_org_factor = 0.2
-				army_morale_factor = 0.2
+				army_morale_factor = 0.1
 			} 
 		}
 		
@@ -3905,16 +3925,16 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_attack_factor = 0.4
-				army_defence_factor = 0.4
+				army_attack_factor = 0.3
+				army_defence_factor = 0.3
 				planning_speed = 1
-				max_planning = 0.6
+				max_planning = 0.4
 				line_change_production_efficiency_factor = 0.2
 				industrial_capacity_factory = 0.3
 				industrial_capacity_dockyard = 0.3
 				production_factory_max_efficiency_factor = 0.2
 				production_factory_efficiency_gain_factor = 0.2
-				army_org_factor = 0.2
+				army_org_factor = 0.1
 				army_morale_factor = 0.2
 			} 
 		}
@@ -3945,15 +3965,13 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				crypto_strength = 10
-				intelligence_agency_defense = 10
-				enemy_operative_capture_chance_factor = 0.5
-				enemy_operative_detection_chance = 50
+				crypto_strength = 5
+				intelligence_agency_defense = 5
+				enemy_operative_capture_chance_factor = 0.1
 				intel_network_gain_factor = 2
-				decryption_power = 500
-				own_operative_capture_chance_factor = -0.8
-				own_operative_detection_chance = -80
-				own_operative_harmed_time_factor = -0.8
+				decryption_power = 25
+				own_operative_capture_chance_factor = -0.1
+				own_operative_harmed_time_factor = -0.5
 				civilian_intel_factor = 100
 				army_intel_factor = 100
 				navy_intel_factor = 100
@@ -3968,8 +3986,8 @@ ideas = {
 			}
 			modifier = {
 				stability_factor = 0.1
-				war_support_factor = 0.2
-				political_power_factor = 0.25
+				war_support_factor = 0.1
+				political_power_factor = 0.15
 				research_speed_factor = 0.1
 				local_resources_factor = 0.2
 				industrial_capacity_dockyard = 0.3
@@ -3992,7 +4010,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				railway_gun_bombardment_factor = 0.25
+				railway_gun_bombardment_factor = 0.1
 			} 
 		}
 
@@ -4002,9 +4020,9 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				research_speed_factor = 0.2
-				special_project_speed_factor = 0.3
-				production_speed_facility_factor = 0.5
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.2
+				production_speed_facility_factor = 0.3
 			} 
 		}
 		
